@@ -1,0 +1,3605 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit II – Computer System Architecture – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper1.html"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper2.html" aria-current="page"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit2-computer-system-architecture.html">Unit II – Computer System Architecture</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 2 – Computer Science &amp; Applications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-discrete-structures-and-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Discrete Structures and Optimization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-computer-system-architecture.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit II – Computer System Architecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-programming-languages-and-computer-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Programming Languages and Computer Graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-database-management-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Database Management Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-system-software-and-operating-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – System Software and Operating System</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-software-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Software Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-structures-and-algorithms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Structures and Algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-theory-of-computation-and-compilers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Theory of Computation and Compilers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-data-communication-and-computer-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – Data Communication and Computer Networks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-artificial-intelligence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Artificial Intelligence (AI)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#digital-computers" id="toc-digital-computers" class="nav-link" data-scroll-target="#digital-computers">2. Digital Computers</a>
+  <ul class="collapse">
+  <li><a href="#major-components" id="toc-major-components" class="nav-link" data-scroll-target="#major-components">2.1 Major Components</a>
+  <ul class="collapse">
+  <li><a href="#input-unit" id="toc-input-unit" class="nav-link" data-scroll-target="#input-unit">Input Unit</a></li>
+  <li><a href="#memory-unit" id="toc-memory-unit" class="nav-link" data-scroll-target="#memory-unit">Memory Unit</a></li>
+  <li><a href="#arithmetic-logic-unit" id="toc-arithmetic-logic-unit" class="nav-link" data-scroll-target="#arithmetic-logic-unit">Arithmetic Logic Unit</a></li>
+  <li><a href="#control-unit" id="toc-control-unit" class="nav-link" data-scroll-target="#control-unit">Control Unit</a></li>
+  <li><a href="#output-unit" id="toc-output-unit" class="nav-link" data-scroll-target="#output-unit">Output Unit</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#logic-gates" id="toc-logic-gates" class="nav-link" data-scroll-target="#logic-gates">3. Logic Gates</a>
+  <ul class="collapse">
+  <li><a href="#and-gate" id="toc-and-gate" class="nav-link" data-scroll-target="#and-gate">3.1 AND Gate</a></li>
+  <li><a href="#or-gate" id="toc-or-gate" class="nav-link" data-scroll-target="#or-gate">3.2 OR Gate</a></li>
+  <li><a href="#not-gate" id="toc-not-gate" class="nav-link" data-scroll-target="#not-gate">3.3 NOT Gate</a></li>
+  <li><a href="#nand-gate" id="toc-nand-gate" class="nav-link" data-scroll-target="#nand-gate">3.4 NAND Gate</a></li>
+  <li><a href="#nor-gate" id="toc-nor-gate" class="nav-link" data-scroll-target="#nor-gate">3.5 NOR Gate</a></li>
+  <li><a href="#xor-gate" id="toc-xor-gate" class="nav-link" data-scroll-target="#xor-gate">3.6 XOR Gate</a></li>
+  <li><a href="#xnor-gate" id="toc-xnor-gate" class="nav-link" data-scroll-target="#xnor-gate">3.7 XNOR Gate</a>
+  <ul class="collapse">
+  <li><a href="#memory" id="toc-memory" class="nav-link" data-scroll-target="#memory">Memory</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#boolean-algebra" id="toc-boolean-algebra" class="nav-link" data-scroll-target="#boolean-algebra">4. Boolean Algebra</a>
+  <ul class="collapse">
+  <li><a href="#identity" id="toc-identity" class="nav-link" data-scroll-target="#identity">Identity</a></li>
+  <li><a href="#null" id="toc-null" class="nav-link" data-scroll-target="#null">Null</a></li>
+  <li><a href="#idempotent" id="toc-idempotent" class="nav-link" data-scroll-target="#idempotent">Idempotent</a></li>
+  <li><a href="#complement" id="toc-complement" class="nav-link" data-scroll-target="#complement">Complement</a></li>
+  <li><a href="#involution" id="toc-involution" class="nav-link" data-scroll-target="#involution">Involution</a></li>
+  <li><a href="#absorption" id="toc-absorption" class="nav-link" data-scroll-target="#absorption">Absorption</a></li>
+  <li><a href="#de-morgans-laws" id="toc-de-morgans-laws" class="nav-link" data-scroll-target="#de-morgans-laws">De Morgan’s Laws</a></li>
+  </ul></li>
+  <li><a href="#karnaugh-map-simplification" id="toc-karnaugh-map-simplification" class="nav-link" data-scroll-target="#karnaugh-map-simplification">5. Karnaugh Map Simplification</a></li>
+  <li><a href="#combinational-circuits" id="toc-combinational-circuits" class="nav-link" data-scroll-target="#combinational-circuits">6. Combinational Circuits</a>
+  <ul class="collapse">
+  <li><a href="#half-adder" id="toc-half-adder" class="nav-link" data-scroll-target="#half-adder">6.1 Half Adder</a></li>
+  <li><a href="#full-adder" id="toc-full-adder" class="nav-link" data-scroll-target="#full-adder">6.2 Full Adder</a></li>
+  <li><a href="#half-subtractor" id="toc-half-subtractor" class="nav-link" data-scroll-target="#half-subtractor">6.3 Half Subtractor</a></li>
+  <li><a href="#multiplexer" id="toc-multiplexer" class="nav-link" data-scroll-target="#multiplexer">6.4 Multiplexer</a></li>
+  <li><a href="#demultiplexer" id="toc-demultiplexer" class="nav-link" data-scroll-target="#demultiplexer">6.5 Demultiplexer</a></li>
+  <li><a href="#decoder" id="toc-decoder" class="nav-link" data-scroll-target="#decoder">6.6 Decoder</a></li>
+  <li><a href="#encoder" id="toc-encoder" class="nav-link" data-scroll-target="#encoder">6.7 Encoder</a></li>
+  </ul></li>
+  <li><a href="#sequential-circuits" id="toc-sequential-circuits" class="nav-link" data-scroll-target="#sequential-circuits">7. Sequential Circuits</a></li>
+  <li><a href="#flip-flops" id="toc-flip-flops" class="nav-link" data-scroll-target="#flip-flops">8. Flip-Flops</a>
+  <ul class="collapse">
+  <li><a href="#sr-flip-flop" id="toc-sr-flip-flop" class="nav-link" data-scroll-target="#sr-flip-flop">8.1 SR Flip-Flop</a></li>
+  <li><a href="#jk-flip-flop" id="toc-jk-flip-flop" class="nav-link" data-scroll-target="#jk-flip-flop">8.2 JK Flip-Flop</a></li>
+  <li><a href="#d-flip-flop" id="toc-d-flip-flop" class="nav-link" data-scroll-target="#d-flip-flop">8.3 D Flip-Flop</a></li>
+  <li><a href="#t-flip-flop" id="toc-t-flip-flop" class="nav-link" data-scroll-target="#t-flip-flop">8.4 T Flip-Flop</a></li>
+  </ul></li>
+  <li><a href="#race-around-condition" id="toc-race-around-condition" class="nav-link" data-scroll-target="#race-around-condition">9. Race-Around Condition</a></li>
+  <li><a href="#registers" id="toc-registers" class="nav-link" data-scroll-target="#registers">10. Registers</a>
+  <ul class="collapse">
+  <li><a href="#shift-registers" id="toc-shift-registers" class="nav-link" data-scroll-target="#shift-registers">Shift Registers</a></li>
+  </ul></li>
+  <li><a href="#counters" id="toc-counters" class="nav-link" data-scroll-target="#counters">11. Counters</a>
+  <ul class="collapse">
+  <li><a href="#asynchronous-counter" id="toc-asynchronous-counter" class="nav-link" data-scroll-target="#asynchronous-counter">Asynchronous Counter</a></li>
+  <li><a href="#synchronous-counter" id="toc-synchronous-counter" class="nav-link" data-scroll-target="#synchronous-counter">Synchronous Counter</a></li>
+  </ul></li>
+  <li><a href="#memory-unit-1" id="toc-memory-unit-1" class="nav-link" data-scroll-target="#memory-unit-1">12. Memory Unit</a></li>
+  <li><a href="#data-representation" id="toc-data-representation" class="nav-link" data-scroll-target="#data-representation">13. Data Representation</a></li>
+  <li><a href="#number-systems" id="toc-number-systems" class="nav-link" data-scroll-target="#number-systems">14. Number Systems</a></li>
+  <li><a href="#number-system-conversion" id="toc-number-system-conversion" class="nav-link" data-scroll-target="#number-system-conversion">15. Number-System Conversion</a>
+  <ul class="collapse">
+  <li><a href="#binary-to-decimal" id="toc-binary-to-decimal" class="nav-link" data-scroll-target="#binary-to-decimal">Binary to Decimal</a></li>
+  <li><a href="#decimal-to-binary" id="toc-decimal-to-binary" class="nav-link" data-scroll-target="#decimal-to-binary">Decimal to Binary</a></li>
+  <li><a href="#binary-to-octal" id="toc-binary-to-octal" class="nav-link" data-scroll-target="#binary-to-octal">Binary to Octal</a></li>
+  <li><a href="#binary-to-hexadecimal" id="toc-binary-to-hexadecimal" class="nav-link" data-scroll-target="#binary-to-hexadecimal">Binary to Hexadecimal</a></li>
+  </ul></li>
+  <li><a href="#hexadecimal-digits" id="toc-hexadecimal-digits" class="nav-link" data-scroll-target="#hexadecimal-digits">16. Hexadecimal Digits</a></li>
+  <li><a href="#complements" id="toc-complements" class="nav-link" data-scroll-target="#complements">17. Complements</a>
+  <ul class="collapse">
+  <li><a href="#s-complement" id="toc-s-complement" class="nav-link" data-scroll-target="#s-complement">1’s Complement</a></li>
+  <li><a href="#s-complement-1" id="toc-s-complement-1" class="nav-link" data-scroll-target="#s-complement-1">2’s Complement</a></li>
+  <li><a href="#s-complement-2" id="toc-s-complement-2" class="nav-link" data-scroll-target="#s-complement-2">9’s Complement</a></li>
+  <li><a href="#s-complement-3" id="toc-s-complement-3" class="nav-link" data-scroll-target="#s-complement-3">10’s Complement</a></li>
+  </ul></li>
+  <li><a href="#signed-number-representation" id="toc-signed-number-representation" class="nav-link" data-scroll-target="#signed-number-representation">18. Signed Number Representation</a></li>
+  <li><a href="#fixed-point-representation" id="toc-fixed-point-representation" class="nav-link" data-scroll-target="#fixed-point-representation">19. Fixed Point Representation</a></li>
+  <li><a href="#floating-point-representation" id="toc-floating-point-representation" class="nav-link" data-scroll-target="#floating-point-representation">20. Floating Point Representation</a>
+  <ul class="collapse">
+  <li><a href="#ieee-754" id="toc-ieee-754" class="nav-link" data-scroll-target="#ieee-754">IEEE 754</a></li>
+  </ul></li>
+  <li><a href="#error-detection-codes" id="toc-error-detection-codes" class="nav-link" data-scroll-target="#error-detection-codes">21. Error Detection Codes</a>
+  <ul class="collapse">
+  <li><a href="#parity" id="toc-parity" class="nav-link" data-scroll-target="#parity">Parity</a></li>
+  <li><a href="#checksum" id="toc-checksum" class="nav-link" data-scroll-target="#checksum">Checksum</a></li>
+  <li><a href="#crc" id="toc-crc" class="nav-link" data-scroll-target="#crc">CRC</a></li>
+  </ul></li>
+  <li><a href="#computer-arithmetic" id="toc-computer-arithmetic" class="nav-link" data-scroll-target="#computer-arithmetic">22. Computer Arithmetic</a>
+  <ul class="collapse">
+  <li><a href="#binary-addition" id="toc-binary-addition" class="nav-link" data-scroll-target="#binary-addition">Binary Addition</a></li>
+  <li><a href="#subtraction" id="toc-subtraction" class="nav-link" data-scroll-target="#subtraction">Subtraction</a></li>
+  <li><a href="#multiplication" id="toc-multiplication" class="nav-link" data-scroll-target="#multiplication">Multiplication</a></li>
+  <li><a href="#division" id="toc-division" class="nav-link" data-scroll-target="#division">Division</a></li>
+  </ul></li>
+  <li><a href="#booths-algorithm" id="toc-booths-algorithm" class="nav-link" data-scroll-target="#booths-algorithm">23. Booth’s Algorithm</a></li>
+  <li><a href="#register-transfer-language" id="toc-register-transfer-language" class="nav-link" data-scroll-target="#register-transfer-language">24. Register Transfer Language</a></li>
+  <li><a href="#bus-and-memory-transfers" id="toc-bus-and-memory-transfers" class="nav-link" data-scroll-target="#bus-and-memory-transfers">25. Bus and Memory Transfers</a></li>
+  <li><a href="#microoperations" id="toc-microoperations" class="nav-link" data-scroll-target="#microoperations">26. Microoperations</a>
+  <ul class="collapse">
+  <li><a href="#arithmetic" id="toc-arithmetic" class="nav-link" data-scroll-target="#arithmetic">Arithmetic</a></li>
+  <li><a href="#logic" id="toc-logic" class="nav-link" data-scroll-target="#logic">Logic</a></li>
+  <li><a href="#shift" id="toc-shift" class="nav-link" data-scroll-target="#shift">Shift</a></li>
+  </ul></li>
+  <li><a href="#logical-and-arithmetic-shifts" id="toc-logical-and-arithmetic-shifts" class="nav-link" data-scroll-target="#logical-and-arithmetic-shifts">27. Logical and Arithmetic Shifts</a>
+  <ul class="collapse">
+  <li><a href="#logical-shift" id="toc-logical-shift" class="nav-link" data-scroll-target="#logical-shift">Logical Shift</a></li>
+  <li><a href="#arithmetic-right-shift" id="toc-arithmetic-right-shift" class="nav-link" data-scroll-target="#arithmetic-right-shift">Arithmetic Right Shift</a></li>
+  <li><a href="#circular-shift" id="toc-circular-shift" class="nav-link" data-scroll-target="#circular-shift">Circular Shift</a></li>
+  </ul></li>
+  <li><a href="#basic-computer-organization" id="toc-basic-computer-organization" class="nav-link" data-scroll-target="#basic-computer-organization">28. Basic Computer Organization</a></li>
+  <li><a href="#stored-program-organization" id="toc-stored-program-organization" class="nav-link" data-scroll-target="#stored-program-organization">29. Stored Program Organization</a></li>
+  <li><a href="#instruction-code" id="toc-instruction-code" class="nav-link" data-scroll-target="#instruction-code">30. Instruction Code</a></li>
+  <li><a href="#important-computer-registers" id="toc-important-computer-registers" class="nav-link" data-scroll-target="#important-computer-registers">31. Important Computer Registers</a>
+  <ul class="collapse">
+  <li><a href="#program-counter" id="toc-program-counter" class="nav-link" data-scroll-target="#program-counter">Program Counter</a></li>
+  <li><a href="#instruction-register" id="toc-instruction-register" class="nav-link" data-scroll-target="#instruction-register">Instruction Register</a></li>
+  <li><a href="#accumulator" id="toc-accumulator" class="nav-link" data-scroll-target="#accumulator">Accumulator</a></li>
+  </ul></li>
+  <li><a href="#timing-and-control" id="toc-timing-and-control" class="nav-link" data-scroll-target="#timing-and-control">32. Timing and Control</a></li>
+  <li><a href="#instruction-cycle" id="toc-instruction-cycle" class="nav-link" data-scroll-target="#instruction-cycle">33. Instruction Cycle</a>
+  <ul class="collapse">
+  <li><a href="#fetch" id="toc-fetch" class="nav-link" data-scroll-target="#fetch">Fetch</a></li>
+  <li><a href="#decode" id="toc-decode" class="nav-link" data-scroll-target="#decode">Decode</a></li>
+  </ul></li>
+  <li><a href="#memory-reference-instructions" id="toc-memory-reference-instructions" class="nav-link" data-scroll-target="#memory-reference-instructions">34. Memory-Reference Instructions</a></li>
+  <li><a href="#input-output-and-interrupt" id="toc-input-output-and-interrupt" class="nav-link" data-scroll-target="#input-output-and-interrupt">35. Input-Output and Interrupt</a></li>
+  <li><a href="#interrupt-cycle" id="toc-interrupt-cycle" class="nav-link" data-scroll-target="#interrupt-cycle">36. Interrupt Cycle</a></li>
+  <li><a href="#programming-the-basic-computer" id="toc-programming-the-basic-computer" class="nav-link" data-scroll-target="#programming-the-basic-computer">37. Programming the Basic Computer</a>
+  <ul class="collapse">
+  <li><a href="#machine-language" id="toc-machine-language" class="nav-link" data-scroll-target="#machine-language">Machine Language</a></li>
+  <li><a href="#assembly-language" id="toc-assembly-language" class="nav-link" data-scroll-target="#assembly-language">Assembly Language</a></li>
+  <li><a href="#assembler" id="toc-assembler" class="nav-link" data-scroll-target="#assembler">Assembler</a></li>
+  </ul></li>
+  <li><a href="#program-loops" id="toc-program-loops" class="nav-link" data-scroll-target="#program-loops">38. Program Loops</a></li>
+  <li><a href="#subroutines" id="toc-subroutines" class="nav-link" data-scroll-target="#subroutines">39. Subroutines</a></li>
+  <li><a href="#io-programming" id="toc-io-programming" class="nav-link" data-scroll-target="#io-programming">40. I/O Programming</a></li>
+  <li><a href="#microprogrammed-control" id="toc-microprogrammed-control" class="nav-link" data-scroll-target="#microprogrammed-control">41. Microprogrammed Control</a>
+  <ul class="collapse">
+  <li><a href="#hardwired-control" id="toc-hardwired-control" class="nav-link" data-scroll-target="#hardwired-control">Hardwired Control</a></li>
+  <li><a href="#microprogrammed-control-1" id="toc-microprogrammed-control-1" class="nav-link" data-scroll-target="#microprogrammed-control-1">Microprogrammed Control</a></li>
+  </ul></li>
+  <li><a href="#control-memory" id="toc-control-memory" class="nav-link" data-scroll-target="#control-memory">42. Control Memory</a></li>
+  <li><a href="#address-sequencing" id="toc-address-sequencing" class="nav-link" data-scroll-target="#address-sequencing">43. Address Sequencing</a></li>
+  <li><a href="#central-processing-unit" id="toc-central-processing-unit" class="nav-link" data-scroll-target="#central-processing-unit">44. Central Processing Unit</a></li>
+  <li><a href="#general-register-organization" id="toc-general-register-organization" class="nav-link" data-scroll-target="#general-register-organization">45. General Register Organization</a></li>
+  <li><a href="#stack-organization" id="toc-stack-organization" class="nav-link" data-scroll-target="#stack-organization">46. Stack Organization</a></li>
+  <li><a href="#instruction-formats" id="toc-instruction-formats" class="nav-link" data-scroll-target="#instruction-formats">47. Instruction Formats</a>
+  <ul class="collapse">
+  <li><a href="#three-address" id="toc-three-address" class="nav-link" data-scroll-target="#three-address">Three-address</a></li>
+  <li><a href="#two-address" id="toc-two-address" class="nav-link" data-scroll-target="#two-address">Two-address</a></li>
+  <li><a href="#one-address" id="toc-one-address" class="nav-link" data-scroll-target="#one-address">One-address</a></li>
+  <li><a href="#zero-address" id="toc-zero-address" class="nav-link" data-scroll-target="#zero-address">Zero-address</a></li>
+  </ul></li>
+  <li><a href="#addressing-modes" id="toc-addressing-modes" class="nav-link" data-scroll-target="#addressing-modes">48. Addressing Modes</a>
+  <ul class="collapse">
+  <li><a href="#immediate" id="toc-immediate" class="nav-link" data-scroll-target="#immediate">Immediate</a></li>
+  <li><a href="#direct" id="toc-direct" class="nav-link" data-scroll-target="#direct">Direct</a></li>
+  <li><a href="#indirect" id="toc-indirect" class="nav-link" data-scroll-target="#indirect">Indirect</a></li>
+  <li><a href="#register" id="toc-register" class="nav-link" data-scroll-target="#register">Register</a></li>
+  <li><a href="#register-indirect" id="toc-register-indirect" class="nav-link" data-scroll-target="#register-indirect">Register Indirect</a></li>
+  <li><a href="#indexed" id="toc-indexed" class="nav-link" data-scroll-target="#indexed">Indexed</a></li>
+  <li><a href="#relative" id="toc-relative" class="nav-link" data-scroll-target="#relative">Relative</a></li>
+  </ul></li>
+  <li><a href="#risc" id="toc-risc" class="nav-link" data-scroll-target="#risc">49. RISC</a></li>
+  <li><a href="#cisc" id="toc-cisc" class="nav-link" data-scroll-target="#cisc">50. CISC</a></li>
+  <li><a href="#risc-vs-cisc" id="toc-risc-vs-cisc" class="nav-link" data-scroll-target="#risc-vs-cisc">51. RISC vs CISC</a></li>
+  <li><a href="#pipeline-processing" id="toc-pipeline-processing" class="nav-link" data-scroll-target="#pipeline-processing">52. Pipeline Processing</a></li>
+  <li><a href="#parallel-processing" id="toc-parallel-processing" class="nav-link" data-scroll-target="#parallel-processing">53. Parallel Processing</a></li>
+  <li><a href="#pipeline-performance" id="toc-pipeline-performance" class="nav-link" data-scroll-target="#pipeline-performance">54. Pipeline Performance</a></li>
+  <li><a href="#pipeline-hazards" id="toc-pipeline-hazards" class="nav-link" data-scroll-target="#pipeline-hazards">55. Pipeline Hazards</a>
+  <ul class="collapse">
+  <li><a href="#structural-hazard" id="toc-structural-hazard" class="nav-link" data-scroll-target="#structural-hazard">Structural Hazard</a></li>
+  <li><a href="#data-hazard" id="toc-data-hazard" class="nav-link" data-scroll-target="#data-hazard">Data Hazard</a></li>
+  <li><a href="#control-hazard" id="toc-control-hazard" class="nav-link" data-scroll-target="#control-hazard">Control Hazard</a></li>
+  </ul></li>
+  <li><a href="#arithmetic-pipeline" id="toc-arithmetic-pipeline" class="nav-link" data-scroll-target="#arithmetic-pipeline">56. Arithmetic Pipeline</a></li>
+  <li><a href="#instruction-pipeline" id="toc-instruction-pipeline" class="nav-link" data-scroll-target="#instruction-pipeline">57. Instruction Pipeline</a></li>
+  <li><a href="#vector-processing" id="toc-vector-processing" class="nav-link" data-scroll-target="#vector-processing">58. Vector Processing</a></li>
+  <li><a href="#array-processors" id="toc-array-processors" class="nav-link" data-scroll-target="#array-processors">59. Array Processors</a></li>
+  <li><a href="#input-output-organization" id="toc-input-output-organization" class="nav-link" data-scroll-target="#input-output-organization">60. Input-Output Organization</a></li>
+  <li><a href="#peripheral-devices" id="toc-peripheral-devices" class="nav-link" data-scroll-target="#peripheral-devices">61. Peripheral Devices</a>
+  <ul class="collapse">
+  <li><a href="#input" id="toc-input" class="nav-link" data-scroll-target="#input">Input</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  <li><a href="#storage" id="toc-storage" class="nav-link" data-scroll-target="#storage">Storage</a></li>
+  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication">Communication</a></li>
+  </ul></li>
+  <li><a href="#io-interface" id="toc-io-interface" class="nav-link" data-scroll-target="#io-interface">62. I/O Interface</a></li>
+  <li><a href="#asynchronous-data-transfer" id="toc-asynchronous-data-transfer" class="nav-link" data-scroll-target="#asynchronous-data-transfer">63. Asynchronous Data Transfer</a>
+  <ul class="collapse">
+  <li><a href="#strobe" id="toc-strobe" class="nav-link" data-scroll-target="#strobe">Strobe</a></li>
+  <li><a href="#handshaking" id="toc-handshaking" class="nav-link" data-scroll-target="#handshaking">Handshaking</a></li>
+  </ul></li>
+  <li><a href="#modes-of-transfer" id="toc-modes-of-transfer" class="nav-link" data-scroll-target="#modes-of-transfer">64. Modes of Transfer</a>
+  <ul class="collapse">
+  <li><a href="#programmed-io" id="toc-programmed-io" class="nav-link" data-scroll-target="#programmed-io">Programmed I/O</a></li>
+  <li><a href="#interrupt-io" id="toc-interrupt-io" class="nav-link" data-scroll-target="#interrupt-io">Interrupt I/O</a></li>
+  <li><a href="#dma" id="toc-dma" class="nav-link" data-scroll-target="#dma">DMA</a></li>
+  </ul></li>
+  <li><a href="#dma-1" id="toc-dma-1" class="nav-link" data-scroll-target="#dma-1">65. DMA</a></li>
+  <li><a href="#priority-interrupt" id="toc-priority-interrupt" class="nav-link" data-scroll-target="#priority-interrupt">66. Priority Interrupt</a></li>
+  <li><a href="#serial-communication" id="toc-serial-communication" class="nav-link" data-scroll-target="#serial-communication">67. Serial Communication</a></li>
+  <li><a href="#memory-hierarchy" id="toc-memory-hierarchy" class="nav-link" data-scroll-target="#memory-hierarchy">68. Memory Hierarchy</a></li>
+  <li><a href="#main-memory" id="toc-main-memory" class="nav-link" data-scroll-target="#main-memory">69. Main Memory</a></li>
+  <li><a href="#auxiliary-memory" id="toc-auxiliary-memory" class="nav-link" data-scroll-target="#auxiliary-memory">70. Auxiliary Memory</a></li>
+  <li><a href="#associative-memory" id="toc-associative-memory" class="nav-link" data-scroll-target="#associative-memory">71. Associative Memory</a></li>
+  <li><a href="#cache-memory" id="toc-cache-memory" class="nav-link" data-scroll-target="#cache-memory">72. Cache Memory</a>
+  <ul class="collapse">
+  <li><a href="#temporal-locality" id="toc-temporal-locality" class="nav-link" data-scroll-target="#temporal-locality">Temporal Locality</a></li>
+  <li><a href="#spatial-locality" id="toc-spatial-locality" class="nav-link" data-scroll-target="#spatial-locality">Spatial Locality</a></li>
+  </ul></li>
+  <li><a href="#cache-hit-and-miss" id="toc-cache-hit-and-miss" class="nav-link" data-scroll-target="#cache-hit-and-miss">73. Cache Hit and Miss</a>
+  <ul class="collapse">
+  <li><a href="#hit" id="toc-hit" class="nav-link" data-scroll-target="#hit">Hit</a></li>
+  <li><a href="#miss" id="toc-miss" class="nav-link" data-scroll-target="#miss">Miss</a></li>
+  </ul></li>
+  <li><a href="#cache-mapping" id="toc-cache-mapping" class="nav-link" data-scroll-target="#cache-mapping">74. Cache Mapping</a>
+  <ul class="collapse">
+  <li><a href="#direct-mapping" id="toc-direct-mapping" class="nav-link" data-scroll-target="#direct-mapping">Direct Mapping</a></li>
+  <li><a href="#fully-associative" id="toc-fully-associative" class="nav-link" data-scroll-target="#fully-associative">Fully Associative</a></li>
+  <li><a href="#set-associative" id="toc-set-associative" class="nav-link" data-scroll-target="#set-associative">Set Associative</a></li>
+  </ul></li>
+  <li><a href="#cache-replacement" id="toc-cache-replacement" class="nav-link" data-scroll-target="#cache-replacement">75. Cache Replacement</a></li>
+  <li><a href="#cache-write-policies" id="toc-cache-write-policies" class="nav-link" data-scroll-target="#cache-write-policies">76. Cache Write Policies</a>
+  <ul class="collapse">
+  <li><a href="#write-through" id="toc-write-through" class="nav-link" data-scroll-target="#write-through">Write-through</a></li>
+  <li><a href="#write-back" id="toc-write-back" class="nav-link" data-scroll-target="#write-back">Write-back</a></li>
+  </ul></li>
+  <li><a href="#virtual-memory" id="toc-virtual-memory" class="nav-link" data-scroll-target="#virtual-memory">77. Virtual Memory</a></li>
+  <li><a href="#paging" id="toc-paging" class="nav-link" data-scroll-target="#paging">78. Paging</a></li>
+  <li><a href="#page-fault" id="toc-page-fault" class="nav-link" data-scroll-target="#page-fault">79. Page Fault</a></li>
+  <li><a href="#tlb" id="toc-tlb" class="nav-link" data-scroll-target="#tlb">80. TLB</a></li>
+  <li><a href="#memory-management-hardware" id="toc-memory-management-hardware" class="nav-link" data-scroll-target="#memory-management-hardware">81. Memory Management Hardware</a></li>
+  <li><a href="#multiprocessors" id="toc-multiprocessors" class="nav-link" data-scroll-target="#multiprocessors">82. Multiprocessors</a></li>
+  <li><a href="#characteristics-of-multiprocessors" id="toc-characteristics-of-multiprocessors" class="nav-link" data-scroll-target="#characteristics-of-multiprocessors">83. Characteristics of Multiprocessors</a></li>
+  <li><a href="#interconnection-structures" id="toc-interconnection-structures" class="nav-link" data-scroll-target="#interconnection-structures">84. Interconnection Structures</a>
+  <ul class="collapse">
+  <li><a href="#shared-bus" id="toc-shared-bus" class="nav-link" data-scroll-target="#shared-bus">Shared Bus</a></li>
+  <li><a href="#crossbar" id="toc-crossbar" class="nav-link" data-scroll-target="#crossbar">Crossbar</a></li>
+  </ul></li>
+  <li><a href="#interprocessor-arbitration" id="toc-interprocessor-arbitration" class="nav-link" data-scroll-target="#interprocessor-arbitration">85. Interprocessor Arbitration</a></li>
+  <li><a href="#interprocessor-communication" id="toc-interprocessor-communication" class="nav-link" data-scroll-target="#interprocessor-communication">86. Interprocessor Communication</a></li>
+  <li><a href="#synchronization" id="toc-synchronization" class="nav-link" data-scroll-target="#synchronization">87. Synchronization</a></li>
+  <li><a href="#race-condition" id="toc-race-condition" class="nav-link" data-scroll-target="#race-condition">88. Race Condition</a></li>
+  <li><a href="#cache-coherence" id="toc-cache-coherence" class="nav-link" data-scroll-target="#cache-coherence">89. Cache Coherence</a></li>
+  <li><a href="#multicore-processors" id="toc-multicore-processors" class="nav-link" data-scroll-target="#multicore-processors">90. Multicore Processors</a></li>
+  <li><a href="#important-comparison-tables" id="toc-important-comparison-tables" class="nav-link" data-scroll-target="#important-comparison-tables">91. Important Comparison Tables</a>
+  <ul class="collapse">
+  <li><a href="#combinational-vs-sequential" id="toc-combinational-vs-sequential" class="nav-link" data-scroll-target="#combinational-vs-sequential">Combinational vs Sequential</a></li>
+  <li><a href="#risc-vs-cisc-1" id="toc-risc-vs-cisc-1" class="nav-link" data-scroll-target="#risc-vs-cisc-1">RISC vs CISC</a></li>
+  <li><a href="#io-methods" id="toc-io-methods" class="nav-link" data-scroll-target="#io-methods">I/O Methods</a></li>
+  <li><a href="#cache-vs-main-memory" id="toc-cache-vs-main-memory" class="nav-link" data-scroll-target="#cache-vs-main-memory">Cache vs Main Memory</a></li>
+  </ul></li>
+  <li><a href="#important-addressing-modes" id="toc-important-addressing-modes" class="nav-link" data-scroll-target="#important-addressing-modes">92. Important Addressing Modes</a></li>
+  <li><a href="#important-register-terms" id="toc-important-register-terms" class="nav-link" data-scroll-target="#important-register-terms">93. Important Register Terms</a></li>
+  <li><a href="#important-memory-terms" id="toc-important-memory-terms" class="nav-link" data-scroll-target="#important-memory-terms">94. Important Memory Terms</a></li>
+  <li><a href="#important-pipeline-terms" id="toc-important-pipeline-terms" class="nav-link" data-scroll-target="#important-pipeline-terms">95. Important Pipeline Terms</a></li>
+  <li><a href="#important-formulas-and-facts" id="toc-important-formulas-and-facts" class="nav-link" data-scroll-target="#important-formulas-and-facts">96. Important Formulas and Facts</a>
+  <ul class="collapse">
+  <li><a href="#truth-table-combinations" id="toc-truth-table-combinations" class="nav-link" data-scroll-target="#truth-table-combinations">Truth-table combinations</a></li>
+  <li><a href="#decoder-1" id="toc-decoder-1" class="nav-link" data-scroll-target="#decoder-1">Decoder</a></li>
+  <li><a href="#mux" id="toc-mux" class="nav-link" data-scroll-target="#mux">MUX</a></li>
+  <li><a href="#s-complement-range" id="toc-s-complement-range" class="nav-link" data-scroll-target="#s-complement-range">2’s complement range</a></li>
+  <li><a href="#ieee-754-binary32" id="toc-ieee-754-binary32" class="nav-link" data-scroll-target="#ieee-754-binary32">IEEE 754 binary32</a></li>
+  <li><a href="#ieee-754-binary64" id="toc-ieee-754-binary64" class="nav-link" data-scroll-target="#ieee-754-binary64">IEEE 754 binary64</a></li>
+  <li><a href="#ideal-pipeline-cycles" id="toc-ideal-pipeline-cycles" class="nav-link" data-scroll-target="#ideal-pipeline-cycles">Ideal pipeline cycles</a></li>
+  </ul></li>
+  <li><a href="#high-priority-ugc-net-topics" id="toc-high-priority-ugc-net-topics" class="nav-link" data-scroll-target="#high-priority-ugc-net-topics">97. High-Priority UGC NET Topics</a>
+  <ul class="collapse">
+  <li><a href="#digital-logic" id="toc-digital-logic" class="nav-link" data-scroll-target="#digital-logic">Digital Logic</a></li>
+  <li><a href="#data-representation-1" id="toc-data-representation-1" class="nav-link" data-scroll-target="#data-representation-1">Data Representation</a></li>
+  <li><a href="#basic-computer" id="toc-basic-computer" class="nav-link" data-scroll-target="#basic-computer">Basic Computer</a></li>
+  <li><a href="#cpu" id="toc-cpu" class="nav-link" data-scroll-target="#cpu">CPU</a></li>
+  <li><a href="#pipeline" id="toc-pipeline" class="nav-link" data-scroll-target="#pipeline">Pipeline</a></li>
+  <li><a href="#io" id="toc-io" class="nav-link" data-scroll-target="#io">I/O</a></li>
+  <li><a href="#memory-1" id="toc-memory-1" class="nav-link" data-scroll-target="#memory-1">Memory</a></li>
+  <li><a href="#multiprocessors-1" id="toc-multiprocessors-1" class="nav-link" data-scroll-target="#multiprocessors-1">Multiprocessors</a></li>
+  </ul></li>
+  <li><a href="#common-ugc-net-confusions" id="toc-common-ugc-net-confusions" class="nav-link" data-scroll-target="#common-ugc-net-confusions">98. Common UGC NET Confusions</a>
+  <ul class="collapse">
+  <li><a href="#nand-and-nor" id="toc-nand-and-nor" class="nav-link" data-scroll-target="#nand-and-nor">NAND and NOR</a></li>
+  <li><a href="#mux-and-demux" id="toc-mux-and-demux" class="nav-link" data-scroll-target="#mux-and-demux">MUX and DEMUX</a></li>
+  <li><a href="#encoder-and-decoder" id="toc-encoder-and-decoder" class="nav-link" data-scroll-target="#encoder-and-decoder">Encoder and Decoder</a></li>
+  <li><a href="#combinational-and-sequential" id="toc-combinational-and-sequential" class="nav-link" data-scroll-target="#combinational-and-sequential">Combinational and Sequential</a></li>
+  <li><a href="#risc-and-cisc" id="toc-risc-and-cisc" class="nav-link" data-scroll-target="#risc-and-cisc">RISC and CISC</a></li>
+  <li><a href="#cache-and-virtual-memory" id="toc-cache-and-virtual-memory" class="nav-link" data-scroll-target="#cache-and-virtual-memory">Cache and Virtual Memory</a></li>
+  <li><a href="#dma-and-interrupt-io" id="toc-dma-and-interrupt-io" class="nav-link" data-scroll-target="#dma-and-interrupt-io">DMA and Interrupt I/O</a></li>
+  </ul></li>
+  <li><a href="#quick-revision-map" id="toc-quick-revision-map" class="nav-link" data-scroll-target="#quick-revision-map">99. Quick Revision Map</a>
+  <ul class="collapse">
+  <li><a href="#digital-logic-1" id="toc-digital-logic-1" class="nav-link" data-scroll-target="#digital-logic-1">Digital Logic</a></li>
+  <li><a href="#data-representation-2" id="toc-data-representation-2" class="nav-link" data-scroll-target="#data-representation-2">Data Representation</a></li>
+  <li><a href="#basic-computer-1" id="toc-basic-computer-1" class="nav-link" data-scroll-target="#basic-computer-1">Basic Computer</a></li>
+  <li><a href="#cpu-1" id="toc-cpu-1" class="nav-link" data-scroll-target="#cpu-1">CPU</a></li>
+  <li><a href="#pipeline-1" id="toc-pipeline-1" class="nav-link" data-scroll-target="#pipeline-1">Pipeline</a></li>
+  <li><a href="#io-1" id="toc-io-1" class="nav-link" data-scroll-target="#io-1">I/O</a></li>
+  <li><a href="#memory-2" id="toc-memory-2" class="nav-link" data-scroll-target="#memory-2">Memory</a></li>
+  <li><a href="#multiprocessors-2" id="toc-multiprocessors-2" class="nav-link" data-scroll-target="#multiprocessors-2">Multiprocessors</a></li>
+  </ul></li>
+  <li><a href="#one-minute-revision" id="toc-one-minute-revision" class="nav-link" data-scroll-target="#one-minute-revision">100. One-Minute Revision</a></li>
+  <li><a href="#final-exam-strategy" id="toc-final-exam-strategy" class="nav-link" data-scroll-target="#final-exam-strategy">101. Final Exam Strategy</a>
+  <ul class="collapse">
+  <li><a href="#stage-1-understand" id="toc-stage-1-understand" class="nav-link" data-scroll-target="#stage-1-understand">Stage 1 – Understand</a></li>
+  <li><a href="#stage-2-memorize" id="toc-stage-2-memorize" class="nav-link" data-scroll-target="#stage-2-memorize">Stage 2 – Memorize</a></li>
+  <li><a href="#stage-3-solve" id="toc-stage-3-solve" class="nav-link" data-scroll-target="#stage-3-solve">Stage 3 – Solve</a></li>
+  <li><a href="#stage-4-revise" id="toc-stage-4-revise" class="nav-link" data-scroll-target="#stage-4-revise">Stage 4 – Revise</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit II – Computer System Architecture</h1>
+<p class="subtitle lead">UGC NET Computer Science and Applications – Paper 2</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>Computer System Architecture explains how the internal components of a computer are organized and how they work together.</p>
+<p>This unit covers:</p>
+<ul>
+<li>Digital Logic Circuits and Components</li>
+<li>Data Representation</li>
+<li>Register Transfer and Microoperations</li>
+<li>Basic Computer Organization and Design</li>
+<li>Programming the Basic Computer</li>
+<li>Microprogrammed Control</li>
+<li>Central Processing Unit</li>
+<li>Pipeline and Vector Processing</li>
+<li>Input-Output Organization</li>
+<li>Memory Hierarchy</li>
+<li>Multiprocessors</li>
+</ul>
+<p>A simple view is:</p>
+<p><strong>Input → Memory ↔︎ CPU → Output</strong></p>
+<p>The CPU contains:</p>
+<p><strong>Control Unit + ALU + Registers</strong></p>
+<hr>
+</section>
+<section id="digital-computers" class="level1">
+<h1>2. Digital Computers</h1>
+<p>A digital computer represents information using discrete values, normally binary digits 0 and 1.</p>
+<p>Major functions:</p>
+<ol type="1">
+<li>Input</li>
+<li>Storage</li>
+<li>Processing</li>
+<li>Output</li>
+</ol>
+<section id="major-components" class="level2">
+<h2 class="anchored" data-anchor-id="major-components">2.1 Major Components</h2>
+<section id="input-unit" class="level3">
+<h3 class="anchored" data-anchor-id="input-unit">Input Unit</h3>
+<p>Accepts data and instructions.</p>
+<p>Examples:</p>
+<ul>
+<li>Keyboard</li>
+<li>Mouse</li>
+<li>Scanner</li>
+<li>Microphone</li>
+</ul>
+</section>
+<section id="memory-unit" class="level3">
+<h3 class="anchored" data-anchor-id="memory-unit">Memory Unit</h3>
+<p>Stores:</p>
+<ul>
+<li>Instructions</li>
+<li>Data</li>
+<li>Intermediate results</li>
+<li>Final results</li>
+</ul>
+</section>
+<section id="arithmetic-logic-unit" class="level3">
+<h3 class="anchored" data-anchor-id="arithmetic-logic-unit">Arithmetic Logic Unit</h3>
+<p>The ALU performs:</p>
+<ul>
+<li>Addition</li>
+<li>Subtraction</li>
+<li>Logical operations</li>
+<li>Comparisons</li>
+<li>Shifting</li>
+</ul>
+</section>
+<section id="control-unit" class="level3">
+<h3 class="anchored" data-anchor-id="control-unit">Control Unit</h3>
+<p>Coordinates computer operations by generating control signals.</p>
+</section>
+<section id="output-unit" class="level3">
+<h3 class="anchored" data-anchor-id="output-unit">Output Unit</h3>
+<p>Provides results to the user.</p>
+<p>Examples:</p>
+<ul>
+<li>Monitor</li>
+<li>Printer</li>
+<li>Speaker</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="logic-gates" class="level1">
+<h1>3. Logic Gates</h1>
+<p>Logic gates are basic building blocks of digital circuits.</p>
+<p>Important gates:</p>
+<ul>
+<li>AND</li>
+<li>OR</li>
+<li>NOT</li>
+<li>NAND</li>
+<li>NOR</li>
+<li>XOR</li>
+<li>XNOR</li>
+</ul>
+<section id="and-gate" class="level2">
+<h2 class="anchored" data-anchor-id="and-gate">3.1 AND Gate</h2>
+<p><strong>Y = A · B</strong></p>
+<p>Output is 1 only when both inputs are 1.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="or-gate" class="level2">
+<h2 class="anchored" data-anchor-id="or-gate">3.2 OR Gate</h2>
+<p><strong>Y = A + B</strong></p>
+<p>Output is 1 when at least one input is 1.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="not-gate" class="level2">
+<h2 class="anchored" data-anchor-id="not-gate">3.3 NOT Gate</h2>
+<p><strong>Y = A’</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>A</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="nand-gate" class="level2">
+<h2 class="anchored" data-anchor-id="nand-gate">3.4 NAND Gate</h2>
+<p><strong>Y = (A · B)’</strong></p>
+<p>NAND is a universal gate.</p>
+</section>
+<section id="nor-gate" class="level2">
+<h2 class="anchored" data-anchor-id="nor-gate">3.5 NOR Gate</h2>
+<p><strong>Y = (A + B)’</strong></p>
+<p>NOR is also a universal gate.</p>
+</section>
+<section id="xor-gate" class="level2">
+<h2 class="anchored" data-anchor-id="xor-gate">3.6 XOR Gate</h2>
+<p><strong>Y = A ⊕ B</strong></p>
+<p>Output is 1 when inputs are different.</p>
+</section>
+<section id="xnor-gate" class="level2">
+<h2 class="anchored" data-anchor-id="xnor-gate">3.7 XNOR Gate</h2>
+<p>Output is 1 when inputs are the same.</p>
+<section id="memory" class="level3">
+<h3 class="anchored" data-anchor-id="memory">Memory</h3>
+<p><strong>XOR → Different</strong></p>
+<p><strong>XNOR → Same</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="boolean-algebra" class="level1">
+<h1>4. Boolean Algebra</h1>
+<p>Boolean algebra uses values 0 and 1.</p>
+<p>Important laws:</p>
+<section id="identity" class="level3">
+<h3 class="anchored" data-anchor-id="identity">Identity</h3>
+<p><strong>A + 0 = A</strong></p>
+<p><strong>A · 1 = A</strong></p>
+</section>
+<section id="null" class="level3">
+<h3 class="anchored" data-anchor-id="null">Null</h3>
+<p><strong>A + 1 = 1</strong></p>
+<p><strong>A · 0 = 0</strong></p>
+</section>
+<section id="idempotent" class="level3">
+<h3 class="anchored" data-anchor-id="idempotent">Idempotent</h3>
+<p><strong>A + A = A</strong></p>
+<p><strong>A · A = A</strong></p>
+</section>
+<section id="complement" class="level3">
+<h3 class="anchored" data-anchor-id="complement">Complement</h3>
+<p><strong>A + A’ = 1</strong></p>
+<p><strong>A · A’ = 0</strong></p>
+</section>
+<section id="involution" class="level3">
+<h3 class="anchored" data-anchor-id="involution">Involution</h3>
+<p><strong>(A’)’ = A</strong></p>
+</section>
+<section id="absorption" class="level3">
+<h3 class="anchored" data-anchor-id="absorption">Absorption</h3>
+<p><strong>A + A·B = A</strong></p>
+<p><strong>A(A+B) = A</strong></p>
+</section>
+<section id="de-morgans-laws" class="level3">
+<h3 class="anchored" data-anchor-id="de-morgans-laws">De Morgan’s Laws</h3>
+<p><strong>(A+B)’ = A’B’</strong></p>
+<p><strong>(AB)’ = A’ + B’</strong></p>
+<hr>
+</section>
+</section>
+<section id="karnaugh-map-simplification" class="level1">
+<h1>5. Karnaugh Map Simplification</h1>
+<p>A Karnaugh Map (K-map) is a graphical method for simplifying Boolean expressions.</p>
+<p>For SOP:</p>
+<p><strong>Group 1s.</strong></p>
+<p>For POS:</p>
+<p><strong>Group 0s.</strong></p>
+<p>Groups should normally contain:</p>
+<p><strong>1, 2, 4, 8, …</strong></p>
+<p>cells.</p>
+<p>Use the largest possible groups.</p>
+<p>K-map cells follow Gray-code ordering so adjacent cells differ in only one variable.</p>
+<hr>
+</section>
+<section id="combinational-circuits" class="level1">
+<h1>6. Combinational Circuits</h1>
+<p>A combinational circuit depends only on the present inputs.</p>
+<p>Examples:</p>
+<ul>
+<li>Adders</li>
+<li>Subtractors</li>
+<li>Multiplexers</li>
+<li>Demultiplexers</li>
+<li>Encoders</li>
+<li>Decoders</li>
+</ul>
+<p><strong>Combinational circuit → No memory</strong></p>
+<section id="half-adder" class="level2">
+<h2 class="anchored" data-anchor-id="half-adder">6.1 Half Adder</h2>
+<p>Adds two one-bit numbers.</p>
+<p>Outputs:</p>
+<ul>
+<li>Sum</li>
+<li>Carry</li>
+</ul>
+<p><strong>Sum = A ⊕ B</strong></p>
+<p><strong>Carry = A · B</strong></p>
+</section>
+<section id="full-adder" class="level2">
+<h2 class="anchored" data-anchor-id="full-adder">6.2 Full Adder</h2>
+<p>Adds A, B and carry-in.</p>
+<p><strong>S = A ⊕ B ⊕ Cin</strong></p>
+<p><strong>Cout = AB + ACin + BCin</strong></p>
+</section>
+<section id="half-subtractor" class="level2">
+<h2 class="anchored" data-anchor-id="half-subtractor">6.3 Half Subtractor</h2>
+<p>Performs A − B.</p>
+<p><strong>Difference = A ⊕ B</strong></p>
+<p><strong>Borrow = A’B</strong></p>
+</section>
+<section id="multiplexer" class="level2">
+<h2 class="anchored" data-anchor-id="multiplexer">6.4 Multiplexer</h2>
+<p>A MUX is a many-to-one selector.</p>
+<p>For 2^n inputs:</p>
+<p><strong>Select lines = n</strong></p>
+<p>Example:</p>
+<p>4-to-1 MUX → 4 inputs, 2 select lines, 1 output.</p>
+<p><strong>MUX → Many to One</strong></p>
+</section>
+<section id="demultiplexer" class="level2">
+<h2 class="anchored" data-anchor-id="demultiplexer">6.5 Demultiplexer</h2>
+<p>A DEMUX sends one input to one of several outputs.</p>
+<p><strong>DEMUX → One to Many</strong></p>
+</section>
+<section id="decoder" class="level2">
+<h2 class="anchored" data-anchor-id="decoder">6.6 Decoder</h2>
+<p>A decoder converts n input lines into up to 2^n output lines.</p>
+<p>Example:</p>
+<p>2-to-4 decoder → 2 inputs and 4 outputs.</p>
+</section>
+<section id="encoder" class="level2">
+<h2 class="anchored" data-anchor-id="encoder">6.7 Encoder</h2>
+<p>An encoder performs the reverse type of conversion:</p>
+<p><strong>2^n input lines → n output lines</strong></p>
+<p>A priority encoder gives priority when multiple inputs are active.</p>
+<hr>
+</section>
+</section>
+<section id="sequential-circuits" class="level1">
+<h1>7. Sequential Circuits</h1>
+<p>A sequential circuit depends on:</p>
+<ul>
+<li>Present inputs</li>
+<li>Previous state</li>
+</ul>
+<p>Therefore it has memory.</p>
+<p>Examples:</p>
+<ul>
+<li>Flip-flops</li>
+<li>Registers</li>
+<li>Counters</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Combinational</th>
+<th>Sequential</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Present input</td>
+<td>Present input + previous state</td>
+</tr>
+<tr class="even">
+<td>No memory</td>
+<td>Has memory</td>
+</tr>
+<tr class="odd">
+<td>Adders, MUX</td>
+<td>Flip-flops, counters</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="flip-flops" class="level1">
+<h1>8. Flip-Flops</h1>
+<p>A flip-flop stores one bit.</p>
+<p>Types:</p>
+<ul>
+<li>SR</li>
+<li>JK</li>
+<li>D</li>
+<li>T</li>
+</ul>
+<section id="sr-flip-flop" class="level2">
+<h2 class="anchored" data-anchor-id="sr-flip-flop">8.1 SR Flip-Flop</h2>
+<p>For a common active-high SR implementation:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>S</th>
+<th>R</th>
+<th>Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>Hold</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>Reset</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>Set</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>Invalid</td>
+</tr>
+</tbody>
+</table>
+<p>The exact invalid state depends on the implementation.</p>
+</section>
+<section id="jk-flip-flop" class="level2">
+<h2 class="anchored" data-anchor-id="jk-flip-flop">8.2 JK Flip-Flop</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>J</th>
+<th>K</th>
+<th>Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>Hold</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>Reset</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>Set</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>Toggle</td>
+</tr>
+</tbody>
+</table>
+<p><strong>J = K = 1 → Toggle</strong></p>
+</section>
+<section id="d-flip-flop" class="level2">
+<h2 class="anchored" data-anchor-id="d-flip-flop">8.3 D Flip-Flop</h2>
+<p><strong>Q(next) = D</strong></p>
+<p>Used extensively in registers and storage.</p>
+</section>
+<section id="t-flip-flop" class="level2">
+<h2 class="anchored" data-anchor-id="t-flip-flop">8.4 T Flip-Flop</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>T</th>
+<th>Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Hold</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Toggle</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Q(next) = T ⊕ Q</strong></p>
+<hr>
+</section>
+</section>
+<section id="race-around-condition" class="level1">
+<h1>9. Race-Around Condition</h1>
+<p>In a level-triggered JK flip-flop, race-around can occur when:</p>
+<p><strong>J = K = 1</strong></p>
+<p>and the clock pulse remains active long enough for repeated toggling.</p>
+<p>Solutions include:</p>
+<ul>
+<li>Edge triggering</li>
+<li>Master-slave JK flip-flop</li>
+<li>Short clock pulse</li>
+</ul>
+<hr>
+</section>
+<section id="registers" class="level1">
+<h1>10. Registers</h1>
+<p>A register is a group of flip-flops used to store multiple bits.</p>
+<p>A 4-bit register contains:</p>
+<p><strong>4 flip-flops</strong></p>
+<p>Registers are used for:</p>
+<ul>
+<li>Temporary storage</li>
+<li>Data transfer</li>
+<li>Shifting</li>
+<li>CPU operations</li>
+</ul>
+<section id="shift-registers" class="level2">
+<h2 class="anchored" data-anchor-id="shift-registers">Shift Registers</h2>
+<p>Types:</p>
+<ul>
+<li>SISO</li>
+<li>SIPO</li>
+<li>PISO</li>
+<li>PIPO</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SISO</td>
+<td>Serial In, Serial Out</td>
+</tr>
+<tr class="even">
+<td>SIPO</td>
+<td>Serial In, Parallel Out</td>
+</tr>
+<tr class="odd">
+<td>PISO</td>
+<td>Parallel In, Serial Out</td>
+</tr>
+<tr class="even">
+<td>PIPO</td>
+<td>Parallel In, Parallel Out</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="counters" class="level1">
+<h1>11. Counters</h1>
+<p>A counter is a sequential circuit that moves through a sequence of states.</p>
+<p>Types:</p>
+<ul>
+<li>Asynchronous/ripple</li>
+<li>Synchronous</li>
+<li>Up</li>
+<li>Down</li>
+<li>Up-down</li>
+<li>Ring</li>
+<li>Johnson</li>
+</ul>
+<section id="asynchronous-counter" class="level2">
+<h2 class="anchored" data-anchor-id="asynchronous-counter">Asynchronous Counter</h2>
+<p>Clock is applied to the first stage and ripples through later stages.</p>
+<p>Advantage:</p>
+<ul>
+<li>Simple</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Accumulated propagation delay</li>
+</ul>
+</section>
+<section id="synchronous-counter" class="level2">
+<h2 class="anchored" data-anchor-id="synchronous-counter">Synchronous Counter</h2>
+<p>All flip-flops receive the clock together.</p>
+<p>Advantage:</p>
+<ul>
+<li>Faster than ripple counters in many designs</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="memory-unit-1" class="level1">
+<h1>12. Memory Unit</h1>
+<p>Memory stores:</p>
+<ul>
+<li>Instructions</li>
+<li>Data</li>
+<li>Intermediate results</li>
+<li>Final results</li>
+</ul>
+<p>Important types:</p>
+<ul>
+<li>RAM</li>
+<li>ROM</li>
+<li>Cache</li>
+<li>Main memory</li>
+<li>Auxiliary memory</li>
+</ul>
+<hr>
+</section>
+<section id="data-representation" class="level1">
+<h1>13. Data Representation</h1>
+<p>Computers internally represent information using binary.</p>
+<p>Important topics:</p>
+<ul>
+<li>Number systems</li>
+<li>Conversions</li>
+<li>Complements</li>
+<li>Fixed point</li>
+<li>Floating point</li>
+<li>Error detection</li>
+<li>Computer arithmetic</li>
+</ul>
+<hr>
+</section>
+<section id="number-systems" class="level1">
+<h1>14. Number Systems</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>System</th>
+<th style="text-align: right;">Base</th>
+<th>Digits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Binary</td>
+<td style="text-align: right;">2</td>
+<td>0,1</td>
+</tr>
+<tr class="even">
+<td>Octal</td>
+<td style="text-align: right;">8</td>
+<td>0–7</td>
+</tr>
+<tr class="odd">
+<td>Decimal</td>
+<td style="text-align: right;">10</td>
+<td>0–9</td>
+</tr>
+<tr class="even">
+<td>Hexadecimal</td>
+<td style="text-align: right;">16</td>
+<td>0–9, A–F</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="number-system-conversion" class="level1">
+<h1>15. Number-System Conversion</h1>
+<section id="binary-to-decimal" class="level2">
+<h2 class="anchored" data-anchor-id="binary-to-decimal">Binary to Decimal</h2>
+<p>Example:</p>
+<p><strong>1011₂</strong></p>
+<p>= 1×2^3 + 0×2^2 + 1×2^1 + 1×2^0</p>
+<p>= 8 + 0 + 2 + 1</p>
+<p>= <strong>11₁₀</strong></p>
+</section>
+<section id="decimal-to-binary" class="level2">
+<h2 class="anchored" data-anchor-id="decimal-to-binary">Decimal to Binary</h2>
+<p>Repeatedly divide by 2 and read remainders from bottom to top.</p>
+<p>13 decimal:</p>
+<p>13 → remainder 1</p>
+<p>6 → remainder 0</p>
+<p>3 → remainder 1</p>
+<p>1 → remainder 1</p>
+<p>Therefore:</p>
+<p><strong>13₁₀ = 1101₂</strong></p>
+</section>
+<section id="binary-to-octal" class="level2">
+<h2 class="anchored" data-anchor-id="binary-to-octal">Binary to Octal</h2>
+<p>Group into 3 bits.</p>
+<p><strong>101101₂ = 101 | 101 = 55₈</strong></p>
+</section>
+<section id="binary-to-hexadecimal" class="level2">
+<h2 class="anchored" data-anchor-id="binary-to-hexadecimal">Binary to Hexadecimal</h2>
+<p>Group into 4 bits.</p>
+<p><strong>10101111₂ = 1010 | 1111 = AF₁₆</strong></p>
+<hr>
+</section>
+</section>
+<section id="hexadecimal-digits" class="level1">
+<h1>16. Hexadecimal Digits</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Decimal</th>
+<th>Hex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0–9</td>
+<td>0–9</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td>A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td>B</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td>C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td>D</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td>E</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="complements" class="level1">
+<h1>17. Complements</h1>
+<p>Complements are useful for negative representation and subtraction.</p>
+<p>Important types:</p>
+<ul>
+<li>1’s complement</li>
+<li>2’s complement</li>
+<li>9’s complement</li>
+<li>10’s complement</li>
+</ul>
+<section id="s-complement" class="level2">
+<h2 class="anchored" data-anchor-id="s-complement">1’s Complement</h2>
+<p>Invert every bit.</p>
+<p>Example:</p>
+<p><strong>101100 → 010011</strong></p>
+</section>
+<section id="s-complement-1" class="level2">
+<h2 class="anchored" data-anchor-id="s-complement-1">2’s Complement</h2>
+<p>Take 1’s complement and add 1.</p>
+<p><strong>101100 → 010011 → 010100</strong></p>
+<p>Therefore 2’s complement is:</p>
+<p><strong>010100</strong></p>
+</section>
+<section id="s-complement-2" class="level2">
+<h2 class="anchored" data-anchor-id="s-complement-2">9’s Complement</h2>
+<p>For each decimal digit d:</p>
+<p><strong>9 − d</strong></p>
+</section>
+<section id="s-complement-3" class="level2">
+<h2 class="anchored" data-anchor-id="s-complement-3">10’s Complement</h2>
+<p><strong>9’s complement + 1</strong></p>
+<hr>
+</section>
+</section>
+<section id="signed-number-representation" class="level1">
+<h1>18. Signed Number Representation</h1>
+<p>Common methods:</p>
+<ul>
+<li>Sign magnitude</li>
+<li>1’s complement</li>
+<li>2’s complement</li>
+</ul>
+<p>In sign magnitude:</p>
+<ul>
+<li>MSB 0 → positive</li>
+<li>MSB 1 → negative</li>
+</ul>
+<p>In n-bit 2’s complement representation:</p>
+<p><strong>Range = −2^(n−1) to 2^(n−1)−1</strong></p>
+<p>For 8 bits:</p>
+<p><strong>−128 to +127</strong></p>
+<hr>
+</section>
+<section id="fixed-point-representation" class="level1">
+<h1>19. Fixed Point Representation</h1>
+<p>Fixed-point representation places the binary point at a predetermined position.</p>
+<p>Example:</p>
+<p><strong>1011.101</strong></p>
+<p>Advantages:</p>
+<ul>
+<li>Simple hardware</li>
+<li>Fast arithmetic</li>
+<li>Useful in embedded systems</li>
+</ul>
+<p>Limitation:</p>
+<ul>
+<li>Fixed range and precision</li>
+</ul>
+<hr>
+</section>
+<section id="floating-point-representation" class="level1">
+<h1>20. Floating Point Representation</h1>
+<p>Floating point uses:</p>
+<p><strong>Sign + Exponent + Fraction/Significand</strong></p>
+<p>Conceptually:</p>
+<p><strong>(−1)^sign × significand × base^exponent</strong></p>
+<p>It provides a large dynamic range.</p>
+<section id="ieee-754" class="level2">
+<h2 class="anchored" data-anchor-id="ieee-754">IEEE 754</h2>
+<p>Binary32:</p>
+<ul>
+<li>1 sign bit</li>
+<li>8 exponent bits</li>
+<li>23 fraction bits</li>
+</ul>
+<p>Total:</p>
+<p><strong>32 bits</strong></p>
+<p>Binary64:</p>
+<ul>
+<li>1 sign bit</li>
+<li>11 exponent bits</li>
+<li>52 fraction bits</li>
+</ul>
+<p>Total:</p>
+<p><strong>64 bits</strong></p>
+<hr>
+</section>
+</section>
+<section id="error-detection-codes" class="level1">
+<h1>21. Error Detection Codes</h1>
+<p>Important error detection techniques:</p>
+<ul>
+<li>Parity</li>
+<li>Checksum</li>
+<li>CRC</li>
+</ul>
+<section id="parity" class="level2">
+<h2 class="anchored" data-anchor-id="parity">Parity</h2>
+<p>Even parity:</p>
+<p>Total number of 1s is even.</p>
+<p>Odd parity:</p>
+<p>Total number of 1s is odd.</p>
+<p>Parity detects many errors but cannot detect every possible multiple-bit error.</p>
+</section>
+<section id="checksum" class="level2">
+<h2 class="anchored" data-anchor-id="checksum">Checksum</h2>
+<p>A calculated value based on data is transmitted and checked by the receiver.</p>
+</section>
+<section id="crc" class="level2">
+<h2 class="anchored" data-anchor-id="crc">CRC</h2>
+<p>Cyclic Redundancy Check uses polynomial division over binary data.</p>
+<p>A generator polynomial is used to calculate a remainder.</p>
+<hr>
+</section>
+</section>
+<section id="computer-arithmetic" class="level1">
+<h1>22. Computer Arithmetic</h1>
+<p>Important operations:</p>
+<ul>
+<li>Addition</li>
+<li>Subtraction</li>
+<li>Multiplication</li>
+<li>Division</li>
+</ul>
+<section id="binary-addition" class="level2">
+<h2 class="anchored" data-anchor-id="binary-addition">Binary Addition</h2>
+<p><strong>0+0=0</strong></p>
+<p><strong>0+1=1</strong></p>
+<p><strong>1+0=1</strong></p>
+<p><strong>1+1=10</strong></p>
+<p><strong>1+1+1=11</strong></p>
+</section>
+<section id="subtraction" class="level2">
+<h2 class="anchored" data-anchor-id="subtraction">Subtraction</h2>
+<p>Subtraction can be implemented using complements.</p>
+<p>For 2’s complement arithmetic:</p>
+<p><strong>A − B = A + 2’s complement(B)</strong></p>
+</section>
+<section id="multiplication" class="level2">
+<h2 class="anchored" data-anchor-id="multiplication">Multiplication</h2>
+<p>Important algorithms:</p>
+<ul>
+<li>Shift-and-add</li>
+<li>Booth’s algorithm</li>
+</ul>
+</section>
+<section id="division" class="level2">
+<h2 class="anchored" data-anchor-id="division">Division</h2>
+<p>Important algorithms:</p>
+<ul>
+<li>Restoring division</li>
+<li>Non-restoring division</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="booths-algorithm" class="level1">
+<h1>23. Booth’s Algorithm</h1>
+<p>Booth’s algorithm is used for signed binary multiplication.</p>
+<p>In the standard version, examine the current and previous multiplier bits:</p>
+<ul>
+<li>00 → No operation</li>
+<li>11 → No operation</li>
+<li>01 → Add multiplicand</li>
+<li>10 → Subtract multiplicand</li>
+</ul>
+<p>Then perform an arithmetic shift.</p>
+<hr>
+</section>
+<section id="register-transfer-language" class="level1">
+<h1>24. Register Transfer Language</h1>
+<p>Register Transfer Language (RTL) describes transfers and microoperations.</p>
+<p>Example:</p>
+<p><strong>R2 ← R1</strong></p>
+<p>means the contents of R1 are transferred to R2.</p>
+<p>R1 itself is not changed by this transfer.</p>
+<hr>
+</section>
+<section id="bus-and-memory-transfers" class="level1">
+<h1>25. Bus and Memory Transfers</h1>
+<p>A bus is a shared communication path.</p>
+<p>It can transfer information between:</p>
+<ul>
+<li>Registers</li>
+<li>CPU</li>
+<li>Memory</li>
+<li>I/O</li>
+</ul>
+<p>Memory read conceptually:</p>
+<p><strong>Memory → Register</strong></p>
+<p>Memory write conceptually:</p>
+<p><strong>Register → Memory</strong></p>
+<hr>
+</section>
+<section id="microoperations" class="level1">
+<h1>26. Microoperations</h1>
+<p>A microoperation is a basic operation performed on data stored in registers.</p>
+<p>Main categories:</p>
+<ol type="1">
+<li>Arithmetic</li>
+<li>Logic</li>
+<li>Shift</li>
+</ol>
+<section id="arithmetic" class="level2">
+<h2 class="anchored" data-anchor-id="arithmetic">Arithmetic</h2>
+<ul>
+<li>Add</li>
+<li>Subtract</li>
+<li>Increment</li>
+<li>Decrement</li>
+<li>Negate</li>
+</ul>
+</section>
+<section id="logic" class="level2">
+<h2 class="anchored" data-anchor-id="logic">Logic</h2>
+<ul>
+<li>AND</li>
+<li>OR</li>
+<li>XOR</li>
+<li>Complement</li>
+</ul>
+</section>
+<section id="shift" class="level2">
+<h2 class="anchored" data-anchor-id="shift">Shift</h2>
+<ul>
+<li>Logical shift</li>
+<li>Arithmetic shift</li>
+<li>Circular shift</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="logical-and-arithmetic-shifts" class="level1">
+<h1>27. Logical and Arithmetic Shifts</h1>
+<section id="logical-shift" class="level3">
+<h3 class="anchored" data-anchor-id="logical-shift">Logical Shift</h3>
+<p>Zeros enter the vacated positions.</p>
+</section>
+<section id="arithmetic-right-shift" class="level3">
+<h3 class="anchored" data-anchor-id="arithmetic-right-shift">Arithmetic Right Shift</h3>
+<p>The sign bit is preserved.</p>
+</section>
+<section id="circular-shift" class="level3">
+<h3 class="anchored" data-anchor-id="circular-shift">Circular Shift</h3>
+<p>Bits shifted out at one end re-enter at the other end.</p>
+<hr>
+</section>
+</section>
+<section id="basic-computer-organization" class="level1">
+<h1>28. Basic Computer Organization</h1>
+<p>A basic computer contains:</p>
+<ul>
+<li>Memory</li>
+<li>CPU</li>
+<li>Input</li>
+<li>Output</li>
+<li>Registers</li>
+<li>Control unit</li>
+</ul>
+<p>The stored-program concept is fundamental.</p>
+<hr>
+</section>
+<section id="stored-program-organization" class="level1">
+<h1>29. Stored Program Organization</h1>
+<p>In a stored-program computer:</p>
+<blockquote class="blockquote">
+<p>Instructions and data are stored in memory.</p>
+</blockquote>
+<p>The processor:</p>
+<p><strong>Fetches → Decodes → Executes</strong></p>
+<p>instructions.</p>
+<hr>
+</section>
+<section id="instruction-code" class="level1">
+<h1>30. Instruction Code</h1>
+<p>An instruction can contain:</p>
+<ul>
+<li>Opcode</li>
+<li>Address field</li>
+<li>Register information</li>
+<li>Addressing information</li>
+</ul>
+<p>The opcode specifies the operation.</p>
+<p>Examples:</p>
+<ul>
+<li>ADD</li>
+<li>LOAD</li>
+<li>STORE</li>
+<li>JUMP</li>
+</ul>
+<hr>
+</section>
+<section id="important-computer-registers" class="level1">
+<h1>31. Important Computer Registers</h1>
+<p>Common registers include:</p>
+<ul>
+<li>Program Counter (PC)</li>
+<li>Instruction Register (IR)</li>
+<li>Accumulator (AC)</li>
+<li>Address Register / MAR</li>
+<li>Data Register / MDR</li>
+<li>Stack Pointer (SP)</li>
+<li>General-purpose registers</li>
+</ul>
+<section id="program-counter" class="level2">
+<h2 class="anchored" data-anchor-id="program-counter">Program Counter</h2>
+<p>Contains the address of the next instruction, subject to control-transfer operations.</p>
+</section>
+<section id="instruction-register" class="level2">
+<h2 class="anchored" data-anchor-id="instruction-register">Instruction Register</h2>
+<p>Contains the current instruction.</p>
+</section>
+<section id="accumulator" class="level2">
+<h2 class="anchored" data-anchor-id="accumulator">Accumulator</h2>
+<p>Stores operands and intermediate arithmetic/logic results in many basic computer organizations.</p>
+<hr>
+</section>
+</section>
+<section id="timing-and-control" class="level1">
+<h1>32. Timing and Control</h1>
+<p>The control unit generates signals that coordinate:</p>
+<ul>
+<li>Register transfers</li>
+<li>ALU operations</li>
+<li>Memory access</li>
+<li>I/O</li>
+<li>Instruction sequencing</li>
+</ul>
+<hr>
+</section>
+<section id="instruction-cycle" class="level1">
+<h1>33. Instruction Cycle</h1>
+<p>Basic instruction cycle:</p>
+<ol type="1">
+<li>Fetch</li>
+<li>Decode</li>
+<li>Determine effective address if required</li>
+<li>Execute</li>
+<li>Handle interrupt if applicable</li>
+</ol>
+<section id="fetch" class="level2">
+<h2 class="anchored" data-anchor-id="fetch">Fetch</h2>
+<p>Conceptually:</p>
+<p><strong>MAR ← PC</strong></p>
+<p><strong>Memory Read</strong></p>
+<p><strong>IR ← Memory</strong></p>
+<p><strong>PC ← PC + 1</strong></p>
+<p>Exact register names depend on the architecture.</p>
+</section>
+<section id="decode" class="level2">
+<h2 class="anchored" data-anchor-id="decode">Decode</h2>
+<p>Control unit determines:</p>
+<ul>
+<li>Opcode</li>
+<li>Addressing mode</li>
+<li>Operand location</li>
+<li>Required operations</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="memory-reference-instructions" class="level1">
+<h1>34. Memory-Reference Instructions</h1>
+<p>These instructions access memory for operands or results.</p>
+<p>Examples:</p>
+<ul>
+<li>Load</li>
+<li>Store</li>
+<li>Add</li>
+<li>Subtract</li>
+<li>Branch instructions with memory-based addressing in suitable architectures</li>
+</ul>
+<hr>
+</section>
+<section id="input-output-and-interrupt" class="level1">
+<h1>35. Input-Output and Interrupt</h1>
+<p>I/O instructions allow CPU communication with peripherals.</p>
+<p>An interrupt causes the CPU to temporarily suspend normal execution and service an event.</p>
+<p>Possible sources:</p>
+<ul>
+<li>I/O device</li>
+<li>Timer</li>
+<li>Hardware fault</li>
+<li>Software-generated event</li>
+</ul>
+<hr>
+</section>
+<section id="interrupt-cycle" class="level1">
+<h1>36. Interrupt Cycle</h1>
+<p>A simplified sequence:</p>
+<ol type="1">
+<li>Complete current instruction.</li>
+<li>Save necessary state.</li>
+<li>Identify interrupt source/vector.</li>
+<li>Transfer control to ISR.</li>
+<li>Execute ISR.</li>
+<li>Restore state.</li>
+<li>Resume interrupted program.</li>
+</ol>
+<p>ISR means:</p>
+<p><strong>Interrupt Service Routine</strong></p>
+<hr>
+</section>
+<section id="programming-the-basic-computer" class="level1">
+<h1>37. Programming the Basic Computer</h1>
+<section id="machine-language" class="level2">
+<h2 class="anchored" data-anchor-id="machine-language">Machine Language</h2>
+<p>Machine language consists of binary instructions directly understood by hardware.</p>
+<p>It is:</p>
+<ul>
+<li>Fast to execute</li>
+<li>Machine dependent</li>
+<li>Difficult to write</li>
+</ul>
+</section>
+<section id="assembly-language" class="level2">
+<h2 class="anchored" data-anchor-id="assembly-language">Assembly Language</h2>
+<p>Uses symbolic mnemonics such as:</p>
+<ul>
+<li>ADD</li>
+<li>LOAD</li>
+<li>STORE</li>
+<li>JMP</li>
+</ul>
+</section>
+<section id="assembler" class="level2">
+<h2 class="anchored" data-anchor-id="assembler">Assembler</h2>
+<p>Converts assembly language into machine/object code.</p>
+<p><strong>Assembly → Assembler → Machine/Object Code</strong></p>
+<hr>
+</section>
+</section>
+<section id="program-loops" class="level1">
+<h1>38. Program Loops</h1>
+<p>A loop repeats instructions.</p>
+<p>Typical structure:</p>
+<ol type="1">
+<li>Initialize</li>
+<li>Test</li>
+<li>Execute</li>
+<li>Update</li>
+<li>Repeat</li>
+</ol>
+<hr>
+</section>
+<section id="subroutines" class="level1">
+<h1>39. Subroutines</h1>
+<p>A subroutine is a reusable sequence of instructions.</p>
+<p>Benefits:</p>
+<ul>
+<li>Code reuse</li>
+<li>Less duplication</li>
+<li>Easier maintenance</li>
+</ul>
+<p>A CALL transfers control to the subroutine.</p>
+<p>A RETURN transfers control back.</p>
+<hr>
+</section>
+<section id="io-programming" class="level1">
+<h1>40. I/O Programming</h1>
+<p>Main approaches:</p>
+<ul>
+<li>Programmed I/O</li>
+<li>Interrupt-driven I/O</li>
+<li>DMA</li>
+</ul>
+<hr>
+</section>
+<section id="microprogrammed-control" class="level1">
+<h1>41. Microprogrammed Control</h1>
+<p>A control unit can be:</p>
+<ul>
+<li>Hardwired</li>
+<li>Microprogrammed</li>
+</ul>
+<section id="hardwired-control" class="level2">
+<h2 class="anchored" data-anchor-id="hardwired-control">Hardwired Control</h2>
+<p>Control signals are generated through hardware logic.</p>
+<p>Advantage:</p>
+<ul>
+<li>Usually faster</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Difficult to modify</li>
+</ul>
+</section>
+<section id="microprogrammed-control-1" class="level2">
+<h2 class="anchored" data-anchor-id="microprogrammed-control-1">Microprogrammed Control</h2>
+<p>Control signals are generated from microinstructions stored in control memory.</p>
+<p>Advantages:</p>
+<ul>
+<li>Easier to modify</li>
+<li>Useful for complex instruction sets</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="control-memory" class="level1">
+<h1>42. Control Memory</h1>
+<p>Control memory stores microinstructions.</p>
+<p>A microinstruction specifies the control signals or microoperations to be performed.</p>
+<hr>
+</section>
+<section id="address-sequencing" class="level1">
+<h1>43. Address Sequencing</h1>
+<p>Address sequencing determines the address of the next microinstruction.</p>
+<p>Sources may include:</p>
+<ul>
+<li>Next sequential address</li>
+<li>Branch address</li>
+<li>Instruction opcode mapping</li>
+<li>Conditional branch information</li>
+</ul>
+<hr>
+</section>
+<section id="central-processing-unit" class="level1">
+<h1>44. Central Processing Unit</h1>
+<p>Major CPU components:</p>
+<ul>
+<li>ALU</li>
+<li>Control Unit</li>
+<li>Registers</li>
+</ul>
+<p>CPU operations are coordinated by control signals.</p>
+<hr>
+</section>
+<section id="general-register-organization" class="level1">
+<h1>45. General Register Organization</h1>
+<p>A CPU may have a set of general-purpose registers connected through:</p>
+<ul>
+<li>Multiplexers</li>
+<li>ALU</li>
+<li>Control logic</li>
+</ul>
+<p>Registers hold:</p>
+<ul>
+<li>Operands</li>
+<li>Addresses</li>
+<li>Intermediate results</li>
+</ul>
+<hr>
+</section>
+<section id="stack-organization" class="level1">
+<h1>46. Stack Organization</h1>
+<p>A stack is:</p>
+<p><strong>LIFO = Last In, First Out</strong></p>
+<p>Operations:</p>
+<ul>
+<li>PUSH</li>
+<li>POP</li>
+</ul>
+<p>The stack pointer identifies the current top of the stack.</p>
+<p>Applications:</p>
+<ul>
+<li>Function calls</li>
+<li>Recursion</li>
+<li>Expression evaluation</li>
+<li>Interrupt handling</li>
+</ul>
+<hr>
+</section>
+<section id="instruction-formats" class="level1">
+<h1>47. Instruction Formats</h1>
+<p>An instruction format describes fields such as:</p>
+<ul>
+<li>Opcode</li>
+<li>Address</li>
+<li>Register</li>
+<li>Addressing mode</li>
+</ul>
+<p>Based on explicit addresses:</p>
+<ul>
+<li>Three-address</li>
+<li>Two-address</li>
+<li>One-address</li>
+<li>Zero-address</li>
+</ul>
+<section id="three-address" class="level2">
+<h2 class="anchored" data-anchor-id="three-address">Three-address</h2>
+<p><strong>ADD R1,R2,R3</strong></p>
+<p>Conceptually:</p>
+<p><strong>R1 ← R2 + R3</strong></p>
+</section>
+<section id="two-address" class="level2">
+<h2 class="anchored" data-anchor-id="two-address">Two-address</h2>
+<p><strong>ADD R1,R2</strong></p>
+<p>Conceptually:</p>
+<p><strong>R1 ← R1 + R2</strong></p>
+</section>
+<section id="one-address" class="level2">
+<h2 class="anchored" data-anchor-id="one-address">One-address</h2>
+<p>Uses an implied accumulator.</p>
+<p><strong>ADD X</strong></p>
+<p>Conceptually:</p>
+<p><strong>AC ← AC + M[X]</strong></p>
+</section>
+<section id="zero-address" class="level2">
+<h2 class="anchored" data-anchor-id="zero-address">Zero-address</h2>
+<p>Common in stack machines.</p>
+<p><strong>ADD</strong></p>
+<p>Uses operands implicitly from the stack.</p>
+<hr>
+</section>
+</section>
+<section id="addressing-modes" class="level1">
+<h1>48. Addressing Modes</h1>
+<p>Addressing mode determines how an operand or effective address is obtained.</p>
+<p>Important modes:</p>
+<ul>
+<li>Immediate</li>
+<li>Direct</li>
+<li>Indirect</li>
+<li>Register</li>
+<li>Register indirect</li>
+<li>Indexed</li>
+<li>Relative</li>
+<li>Base</li>
+<li>Auto-increment</li>
+<li>Auto-decrement</li>
+</ul>
+<section id="immediate" class="level2">
+<h2 class="anchored" data-anchor-id="immediate">Immediate</h2>
+<p>Operand is part of instruction.</p>
+<p>Example:</p>
+<p><strong>MOV R1,#25</strong></p>
+</section>
+<section id="direct" class="level2">
+<h2 class="anchored" data-anchor-id="direct">Direct</h2>
+<p><strong>EA = Address field</strong></p>
+</section>
+<section id="indirect" class="level2">
+<h2 class="anchored" data-anchor-id="indirect">Indirect</h2>
+<p><strong>EA = M[Address field]</strong></p>
+</section>
+<section id="register" class="level2">
+<h2 class="anchored" data-anchor-id="register">Register</h2>
+<p>Register contains operand.</p>
+</section>
+<section id="register-indirect" class="level2">
+<h2 class="anchored" data-anchor-id="register-indirect">Register Indirect</h2>
+<p>Register contains effective address.</p>
+</section>
+<section id="indexed" class="level2">
+<h2 class="anchored" data-anchor-id="indexed">Indexed</h2>
+<p><strong>EA = Address + Index Register</strong></p>
+</section>
+<section id="relative" class="level2">
+<h2 class="anchored" data-anchor-id="relative">Relative</h2>
+<p><strong>EA = PC + displacement</strong></p>
+<hr>
+</section>
+</section>
+<section id="risc" class="level1">
+<h1>49. RISC</h1>
+<p>RISC = <strong>Reduced Instruction Set Computer</strong></p>
+<p>Typical characteristics:</p>
+<ul>
+<li>Relatively simple instructions</li>
+<li>Load/store architecture common</li>
+<li>Large register use</li>
+<li>Fewer addressing modes</li>
+<li>Fixed-length instructions are common</li>
+<li>Pipeline-friendly design</li>
+</ul>
+<hr>
+</section>
+<section id="cisc" class="level1">
+<h1>50. CISC</h1>
+<p>CISC = <strong>Complex Instruction Set Computer</strong></p>
+<p>Typical characteristics:</p>
+<ul>
+<li>Large instruction set</li>
+<li>Complex instructions</li>
+<li>More addressing modes</li>
+<li>Variable-length instructions are common</li>
+<li>Memory operands may be supported by instructions</li>
+</ul>
+<hr>
+</section>
+<section id="risc-vs-cisc" class="level1">
+<h1>51. RISC vs CISC</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>RISC</th>
+<th>CISC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Smaller/simple instruction set</td>
+<td>Larger/complex instruction set</td>
+</tr>
+<tr class="even">
+<td>Fewer addressing modes</td>
+<td>More addressing modes</td>
+</tr>
+<tr class="odd">
+<td>Load/store architecture common</td>
+<td>Memory operands may be allowed</td>
+</tr>
+<tr class="even">
+<td>Fixed length often used</td>
+<td>Variable length often used</td>
+</tr>
+<tr class="odd">
+<td>Pipeline-friendly</td>
+<td>More complex decoding</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="pipeline-processing" class="level1">
+<h1>52. Pipeline Processing</h1>
+<p>Pipelining divides instruction execution into stages.</p>
+<p>Example:</p>
+<p><strong>Fetch → Decode → Execute → Memory → Write Back</strong></p>
+<p>Several instructions can occupy different stages at the same time.</p>
+<hr>
+</section>
+<section id="parallel-processing" class="level1">
+<h1>53. Parallel Processing</h1>
+<p>Parallel processing performs multiple operations concurrently.</p>
+<p>Types:</p>
+<ul>
+<li>Bit-level</li>
+<li>Instruction-level</li>
+<li>Data-level</li>
+<li>Task-level parallelism</li>
+</ul>
+<hr>
+</section>
+<section id="pipeline-performance" class="level1">
+<h1>54. Pipeline Performance</h1>
+<p>For k stages and n instructions, ideal completion time is approximately:</p>
+<p><strong>k + n − 1 cycles</strong></p>
+<p>when every stage takes one cycle and there are no stalls.</p>
+<p>Ideal speedup for a large number of instructions approaches approximately:</p>
+<p><strong>k</strong></p>
+<p>compared with a corresponding non-pipelined design.</p>
+<hr>
+</section>
+<section id="pipeline-hazards" class="level1">
+<h1>55. Pipeline Hazards</h1>
+<p>Three main hazards:</p>
+<ol type="1">
+<li>Structural</li>
+<li>Data</li>
+<li>Control</li>
+</ol>
+<section id="structural-hazard" class="level2">
+<h2 class="anchored" data-anchor-id="structural-hazard">Structural Hazard</h2>
+<p>Hardware resource conflict.</p>
+</section>
+<section id="data-hazard" class="level2">
+<h2 class="anchored" data-anchor-id="data-hazard">Data Hazard</h2>
+<p>Instructions depend on data from other instructions.</p>
+<p>Types:</p>
+<ul>
+<li>RAW</li>
+<li>WAR</li>
+<li>WAW</li>
+</ul>
+<p><strong>RAW = Read After Write</strong></p>
+</section>
+<section id="control-hazard" class="level2">
+<h2 class="anchored" data-anchor-id="control-hazard">Control Hazard</h2>
+<p>Caused by branches and control-transfer instructions.</p>
+<p>Solutions can include:</p>
+<ul>
+<li>Branch prediction</li>
+<li>Pipeline flushing</li>
+<li>Delayed branching</li>
+<li>Speculation</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="arithmetic-pipeline" class="level1">
+<h1>56. Arithmetic Pipeline</h1>
+<p>Arithmetic operations can be divided into stages.</p>
+<p>Example:</p>
+<p><strong>Fetch operands → Calculate → Normalize → Store</strong></p>
+<p>Different data items can be processed simultaneously in different stages.</p>
+<hr>
+</section>
+<section id="instruction-pipeline" class="level1">
+<h1>57. Instruction Pipeline</h1>
+<p>Typical stages:</p>
+<ol type="1">
+<li>Instruction Fetch</li>
+<li>Instruction Decode</li>
+<li>Operand Fetch</li>
+<li>Execute</li>
+<li>Memory Access</li>
+<li>Write Back</li>
+</ol>
+<p>Actual pipeline stages depend on architecture.</p>
+<hr>
+</section>
+<section id="vector-processing" class="level1">
+<h1>58. Vector Processing</h1>
+<p>Vector processing performs the same operation on multiple data elements.</p>
+<p>Example:</p>
+<p><strong>C[i] = A[i] + B[i]</strong></p>
+<p>Useful for:</p>
+<ul>
+<li>Scientific computing</li>
+<li>Image processing</li>
+<li>Matrix operations</li>
+<li>Machine learning</li>
+</ul>
+<hr>
+</section>
+<section id="array-processors" class="level1">
+<h1>59. Array Processors</h1>
+<p>Array processors contain multiple processing elements that can operate on data arrays in parallel.</p>
+<p>They are useful for data-parallel applications.</p>
+<hr>
+</section>
+<section id="input-output-organization" class="level1">
+<h1>60. Input-Output Organization</h1>
+<p>I/O organization manages communication among:</p>
+<ul>
+<li>CPU</li>
+<li>Memory</li>
+<li>Peripheral devices</li>
+</ul>
+<hr>
+</section>
+<section id="peripheral-devices" class="level1">
+<h1>61. Peripheral Devices</h1>
+<p>Examples:</p>
+<section id="input" class="level3">
+<h3 class="anchored" data-anchor-id="input">Input</h3>
+<ul>
+<li>Keyboard</li>
+<li>Mouse</li>
+<li>Scanner</li>
+</ul>
+</section>
+<section id="output" class="level3">
+<h3 class="anchored" data-anchor-id="output">Output</h3>
+<ul>
+<li>Monitor</li>
+<li>Printer</li>
+</ul>
+</section>
+<section id="storage" class="level3">
+<h3 class="anchored" data-anchor-id="storage">Storage</h3>
+<ul>
+<li>HDD</li>
+<li>SSD</li>
+<li>Optical storage</li>
+</ul>
+</section>
+<section id="communication" class="level3">
+<h3 class="anchored" data-anchor-id="communication">Communication</h3>
+<ul>
+<li>Network adapter</li>
+<li>Modem</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="io-interface" class="level1">
+<h1>62. I/O Interface</h1>
+<p>An I/O interface connects the CPU/system bus with peripheral devices.</p>
+<p>It may contain:</p>
+<ul>
+<li>Data register</li>
+<li>Status register</li>
+<li>Control register</li>
+<li>Address decoding</li>
+<li>Control logic</li>
+</ul>
+<hr>
+</section>
+<section id="asynchronous-data-transfer" class="level1">
+<h1>63. Asynchronous Data Transfer</h1>
+<p>Asynchronous transfer does not depend on a common clock between communicating units.</p>
+<p>Important methods:</p>
+<ul>
+<li>Strobe</li>
+<li>Handshaking</li>
+</ul>
+<section id="strobe" class="level2">
+<h2 class="anchored" data-anchor-id="strobe">Strobe</h2>
+<p>A strobe indicates when data is valid.</p>
+</section>
+<section id="handshaking" class="level2">
+<h2 class="anchored" data-anchor-id="handshaking">Handshaking</h2>
+<p>Uses request and acknowledge signals.</p>
+<p>Handshaking is more robust when communicating units have different speeds.</p>
+<hr>
+</section>
+</section>
+<section id="modes-of-transfer" class="level1">
+<h1>64. Modes of Transfer</h1>
+<p>Important modes:</p>
+<ol type="1">
+<li>Programmed I/O</li>
+<li>Interrupt-initiated I/O</li>
+<li>DMA</li>
+</ol>
+<section id="programmed-io" class="level2">
+<h2 class="anchored" data-anchor-id="programmed-io">Programmed I/O</h2>
+<p>CPU repeatedly checks device status.</p>
+<p>Also called polling in common usage.</p>
+<p>Disadvantage:</p>
+<p><strong>CPU time is wasted waiting.</strong></p>
+</section>
+<section id="interrupt-io" class="level2">
+<h2 class="anchored" data-anchor-id="interrupt-io">Interrupt I/O</h2>
+<p>Device interrupts CPU when service is required.</p>
+</section>
+<section id="dma" class="level2">
+<h2 class="anchored" data-anchor-id="dma">DMA</h2>
+<p>DMA transfers blocks of data between device and memory with limited CPU involvement after setup.</p>
+<hr>
+</section>
+</section>
+<section id="dma-1" class="level1">
+<h1>65. DMA</h1>
+<p>DMA = <strong>Direct Memory Access</strong></p>
+<p>Typical sequence:</p>
+<ol type="1">
+<li>CPU initializes DMA.</li>
+<li>DMA controller manages transfer.</li>
+<li>Data moves between device and memory.</li>
+<li>DMA reports completion, often through an interrupt.</li>
+</ol>
+<p>DMA is especially useful for large or high-speed transfers.</p>
+<hr>
+</section>
+<section id="priority-interrupt" class="level1">
+<h1>66. Priority Interrupt</h1>
+<p>When several devices request service, a priority mechanism determines which request is handled first.</p>
+<p>Methods include:</p>
+<ul>
+<li>Software polling</li>
+<li>Daisy chaining</li>
+<li>Parallel priority hardware</li>
+</ul>
+<hr>
+</section>
+<section id="serial-communication" class="level1">
+<h1>67. Serial Communication</h1>
+<p>Serial communication sends bits sequentially.</p>
+<p>Concepts:</p>
+<ul>
+<li>Baud rate</li>
+<li>Start bit</li>
+<li>Stop bit</li>
+<li>Parity</li>
+<li>Synchronous communication</li>
+<li>Asynchronous communication</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Fewer physical lines</li>
+<li>Suitable for many communication environments</li>
+</ul>
+<hr>
+</section>
+<section id="memory-hierarchy" class="level1">
+<h1>68. Memory Hierarchy</h1>
+<p>A simplified hierarchy:</p>
+<p><strong>Registers</strong></p>
+<p>↓</p>
+<p><strong>Cache</strong></p>
+<p>↓</p>
+<p><strong>Main Memory</strong></p>
+<p>↓</p>
+<p><strong>Auxiliary/Secondary Memory</strong></p>
+<p>Moving upward generally means:</p>
+<ul>
+<li>Faster</li>
+<li>Smaller</li>
+<li>More expensive per bit</li>
+</ul>
+<p>Moving downward generally means:</p>
+<ul>
+<li>Slower</li>
+<li>Larger</li>
+<li>Cheaper per bit</li>
+</ul>
+<hr>
+</section>
+<section id="main-memory" class="level1">
+<h1>69. Main Memory</h1>
+<p>Main memory directly supports CPU execution.</p>
+<p>Common forms include:</p>
+<ul>
+<li>RAM</li>
+<li>ROM</li>
+</ul>
+<p>RAM is generally volatile.</p>
+<hr>
+</section>
+<section id="auxiliary-memory" class="level1">
+<h1>70. Auxiliary Memory</h1>
+<p>Auxiliary memory provides large, non-volatile storage.</p>
+<p>Examples:</p>
+<ul>
+<li>HDD</li>
+<li>SSD</li>
+<li>Optical storage</li>
+</ul>
+<p>It is generally slower than main memory but has much larger capacity.</p>
+<hr>
+</section>
+<section id="associative-memory" class="level1">
+<h1>71. Associative Memory</h1>
+<p>Associative memory is also called:</p>
+<p><strong>Content Addressable Memory (CAM)</strong></p>
+<p>It searches for information based on content rather than a normal address.</p>
+<p>Applications include:</p>
+<ul>
+<li>Fast lookup</li>
+<li>Routing</li>
+<li>Cache-related structures</li>
+</ul>
+<hr>
+</section>
+<section id="cache-memory" class="level1">
+<h1>72. Cache Memory</h1>
+<p>Cache is a small, fast memory close to the CPU.</p>
+<p>It stores frequently used data and instructions.</p>
+<p>Cache exploits locality.</p>
+<section id="temporal-locality" class="level2">
+<h2 class="anchored" data-anchor-id="temporal-locality">Temporal Locality</h2>
+<p>Recently used data is likely to be used again.</p>
+<p>Example:</p>
+<p>Repeated loop instructions.</p>
+</section>
+<section id="spatial-locality" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-locality">Spatial Locality</h2>
+<p>Nearby memory locations are likely to be used.</p>
+<p>Example:</p>
+<p>Sequential array access.</p>
+<hr>
+</section>
+</section>
+<section id="cache-hit-and-miss" class="level1">
+<h1>73. Cache Hit and Miss</h1>
+<section id="hit" class="level3">
+<h3 class="anchored" data-anchor-id="hit">Hit</h3>
+<p>Requested data is found in cache.</p>
+</section>
+<section id="miss" class="level3">
+<h3 class="anchored" data-anchor-id="miss">Miss</h3>
+<p>Requested data is not found in cache.</p>
+<p>A miss requires additional memory access.</p>
+<hr>
+</section>
+</section>
+<section id="cache-mapping" class="level1">
+<h1>74. Cache Mapping</h1>
+<p>Main methods:</p>
+<ol type="1">
+<li>Direct mapping</li>
+<li>Fully associative mapping</li>
+<li>Set-associative mapping</li>
+</ol>
+<section id="direct-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="direct-mapping">Direct Mapping</h2>
+<p>Each memory block maps to one specific cache line.</p>
+<p>Advantage:</p>
+<ul>
+<li>Simple</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>More conflict misses</li>
+</ul>
+</section>
+<section id="fully-associative" class="level2">
+<h2 class="anchored" data-anchor-id="fully-associative">Fully Associative</h2>
+<p>A block can occupy any cache line.</p>
+<p>Advantage:</p>
+<ul>
+<li>Flexible</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Expensive hardware</li>
+</ul>
+</section>
+<section id="set-associative" class="level2">
+<h2 class="anchored" data-anchor-id="set-associative">Set Associative</h2>
+<p>A block maps to one set but can occupy any line within that set.</p>
+<p>This provides a compromise.</p>
+<hr>
+</section>
+</section>
+<section id="cache-replacement" class="level1">
+<h1>75. Cache Replacement</h1>
+<p>When replacement is necessary, policies include:</p>
+<ul>
+<li>LRU</li>
+<li>FIFO</li>
+<li>Random</li>
+</ul>
+<p>LRU means:</p>
+<p><strong>Least Recently Used</strong></p>
+<hr>
+</section>
+<section id="cache-write-policies" class="level1">
+<h1>76. Cache Write Policies</h1>
+<section id="write-through" class="level2">
+<h2 class="anchored" data-anchor-id="write-through">Write-through</h2>
+<p>Write to cache and main memory immediately.</p>
+<p>Advantage:</p>
+<ul>
+<li>Main memory remains current.</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>More memory traffic.</li>
+</ul>
+</section>
+<section id="write-back" class="level2">
+<h2 class="anchored" data-anchor-id="write-back">Write-back</h2>
+<p>Write to cache first and update main memory later.</p>
+<p>Advantage:</p>
+<ul>
+<li>Less memory traffic.</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>More management complexity.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="virtual-memory" class="level1">
+<h1>77. Virtual Memory</h1>
+<p>Virtual memory allows a program to use a logical address space larger than physical main memory.</p>
+<p>It uses secondary storage to support the virtual address space.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Pages</li>
+<li>Frames</li>
+<li>Page table</li>
+<li>Page fault</li>
+<li>TLB</li>
+</ul>
+<hr>
+</section>
+<section id="paging" class="level1">
+<h1>78. Paging</h1>
+<p>Virtual memory is commonly implemented using paging.</p>
+<p>Virtual address:</p>
+<p><strong>Page number + Offset</strong></p>
+<p>Physical address:</p>
+<p><strong>Frame number + Offset</strong></p>
+<p>A page table maps virtual pages to physical frames.</p>
+<hr>
+</section>
+<section id="page-fault" class="level1">
+<h1>79. Page Fault</h1>
+<p>A page fault occurs when a referenced virtual page is not currently in physical memory.</p>
+<p>Basic sequence:</p>
+<ol type="1">
+<li>Reference page.</li>
+<li>Page absent.</li>
+<li>Page fault.</li>
+<li>OS loads page from secondary storage.</li>
+<li>Page table is updated.</li>
+<li>Execution resumes.</li>
+</ol>
+<hr>
+</section>
+<section id="tlb" class="level1">
+<h1>80. TLB</h1>
+<p>TLB = <strong>Translation Lookaside Buffer</strong></p>
+<p>It is a fast cache containing recent address translations.</p>
+<p>It reduces virtual-to-physical translation time.</p>
+<hr>
+</section>
+<section id="memory-management-hardware" class="level1">
+<h1>81. Memory Management Hardware</h1>
+<p>Memory-management hardware supports:</p>
+<ul>
+<li>Address translation</li>
+<li>Protection</li>
+<li>Paging</li>
+<li>Segmentation</li>
+<li>TLB</li>
+<li>Access control</li>
+</ul>
+<p>The MMU commonly performs virtual-to-physical address translation.</p>
+<hr>
+</section>
+<section id="multiprocessors" class="level1">
+<h1>82. Multiprocessors</h1>
+<p>A multiprocessor system contains multiple processors working together.</p>
+<p>Advantages may include:</p>
+<ul>
+<li>Higher performance</li>
+<li>Parallel execution</li>
+<li>Higher throughput</li>
+<li>Better availability in some systems</li>
+</ul>
+<hr>
+</section>
+<section id="characteristics-of-multiprocessors" class="level1">
+<h1>83. Characteristics of Multiprocessors</h1>
+<p>Important features:</p>
+<ul>
+<li>Multiple processing units</li>
+<li>Shared or coordinated resources</li>
+<li>Parallel execution</li>
+<li>Interprocessor communication</li>
+<li>Synchronization</li>
+</ul>
+<hr>
+</section>
+<section id="interconnection-structures" class="level1">
+<h1>84. Interconnection Structures</h1>
+<p>Processors and memory communicate using structures such as:</p>
+<ul>
+<li>Shared bus</li>
+<li>Crossbar</li>
+<li>Multistage interconnection network</li>
+</ul>
+<section id="shared-bus" class="level2">
+<h2 class="anchored" data-anchor-id="shared-bus">Shared Bus</h2>
+<p>Simple and inexpensive but can become a bottleneck.</p>
+</section>
+<section id="crossbar" class="level2">
+<h2 class="anchored" data-anchor-id="crossbar">Crossbar</h2>
+<p>Allows many possible source-destination connections.</p>
+<p>Advantage:</p>
+<ul>
+<li>High communication parallelism</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Hardware cost increases substantially with size.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="interprocessor-arbitration" class="level1">
+<h1>85. Interprocessor Arbitration</h1>
+<p>When multiple processors request a shared resource simultaneously, arbitration decides who receives access.</p>
+<p>Methods:</p>
+<ul>
+<li>Priority</li>
+<li>Round-robin</li>
+<li>Daisy-chain</li>
+<li>Centralized arbitration</li>
+</ul>
+<hr>
+</section>
+<section id="interprocessor-communication" class="level1">
+<h1>86. Interprocessor Communication</h1>
+<p>Processors communicate using:</p>
+<ul>
+<li>Shared memory</li>
+<li>Message passing</li>
+<li>Interprocessor interrupts</li>
+</ul>
+<hr>
+</section>
+<section id="synchronization" class="level1">
+<h1>87. Synchronization</h1>
+<p>Synchronization coordinates concurrent processors or threads.</p>
+<p>Important mechanisms:</p>
+<ul>
+<li>Locks</li>
+<li>Semaphores</li>
+<li>Barriers</li>
+<li>Atomic instructions</li>
+<li>Mutual exclusion</li>
+</ul>
+<hr>
+</section>
+<section id="race-condition" class="level1">
+<h1>88. Race Condition</h1>
+<p>A race condition occurs when the result depends on the timing/order of concurrent operations.</p>
+<p>Example:</p>
+<p>Two processors update the same variable without proper synchronization.</p>
+<hr>
+</section>
+<section id="cache-coherence" class="level1">
+<h1>89. Cache Coherence</h1>
+<p>Multiple processors may have copies of the same data in their caches.</p>
+<p>If one processor changes a value, other caches may have stale copies.</p>
+<p>Cache coherence maintains consistency of cached copies according to the coherence protocol.</p>
+<p>Common approaches:</p>
+<ul>
+<li>Snooping</li>
+<li>Directory-based coherence</li>
+</ul>
+<p>MESI is a well-known protocol with:</p>
+<ul>
+<li>Modified</li>
+<li>Exclusive</li>
+<li>Shared</li>
+<li>Invalid</li>
+</ul>
+<hr>
+</section>
+<section id="multicore-processors" class="level1">
+<h1>90. Multicore Processors</h1>
+<p>A multicore processor contains multiple processing cores on a single chip/package.</p>
+<p>Benefits:</p>
+<ul>
+<li>Parallel execution</li>
+<li>Better multitasking</li>
+<li>Better performance for parallel workloads</li>
+<li>Potential energy efficiency</li>
+</ul>
+<p>Actual performance depends on software parallelism and architecture.</p>
+<hr>
+</section>
+<section id="important-comparison-tables" class="level1">
+<h1>91. Important Comparison Tables</h1>
+<section id="combinational-vs-sequential" class="level2">
+<h2 class="anchored" data-anchor-id="combinational-vs-sequential">Combinational vs Sequential</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Combinational</th>
+<th>Sequential</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Present input</td>
+<td>Present input + previous state</td>
+</tr>
+<tr class="even">
+<td>No memory</td>
+<td>Memory</td>
+</tr>
+<tr class="odd">
+<td>Adders, MUX</td>
+<td>Flip-flops, counters</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="risc-vs-cisc-1" class="level2">
+<h2 class="anchored" data-anchor-id="risc-vs-cisc-1">RISC vs CISC</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>RISC</th>
+<th>CISC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Simple instruction set</td>
+<td>Complex instruction set</td>
+</tr>
+<tr class="even">
+<td>Fewer addressing modes</td>
+<td>More addressing modes</td>
+</tr>
+<tr class="odd">
+<td>Load/store common</td>
+<td>Memory operands may be supported</td>
+</tr>
+<tr class="even">
+<td>Fixed length often common</td>
+<td>Variable length often common</td>
+</tr>
+<tr class="odd">
+<td>Pipeline-friendly</td>
+<td>More complex decoding</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="io-methods" class="level2">
+<h2 class="anchored" data-anchor-id="io-methods">I/O Methods</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Programmed I/O</th>
+<th>Interrupt I/O</th>
+<th>DMA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CPU polls</td>
+<td>Device interrupts CPU</td>
+<td>DMA controller transfers</td>
+</tr>
+<tr class="even">
+<td>CPU waiting is high</td>
+<td>Less waiting</td>
+<td>Minimal CPU involvement after setup</td>
+</tr>
+<tr class="odd">
+<td>Simple</td>
+<td>More efficient</td>
+<td>Good for bulk transfer</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cache-vs-main-memory" class="level2">
+<h2 class="anchored" data-anchor-id="cache-vs-main-memory">Cache vs Main Memory</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Cache</th>
+<th>Main Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Smaller</td>
+<td>Larger</td>
+</tr>
+<tr class="even">
+<td>Faster</td>
+<td>Slower</td>
+</tr>
+<tr class="odd">
+<td>Higher cost per bit</td>
+<td>Lower cost per bit</td>
+</tr>
+<tr class="even">
+<td>Near CPU</td>
+<td>Main working memory</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="important-addressing-modes" class="level1">
+<h1>92. Important Addressing Modes</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Mode</th>
+<th>Main idea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Immediate</td>
+<td>Operand is in instruction</td>
+</tr>
+<tr class="even">
+<td>Direct</td>
+<td>Address field is operand address</td>
+</tr>
+<tr class="odd">
+<td>Indirect</td>
+<td>Address field points to effective address</td>
+</tr>
+<tr class="even">
+<td>Register</td>
+<td>Register contains operand</td>
+</tr>
+<tr class="odd">
+<td>Register indirect</td>
+<td>Register contains effective address</td>
+</tr>
+<tr class="even">
+<td>Indexed</td>
+<td>Address + index</td>
+</tr>
+<tr class="odd">
+<td>Relative</td>
+<td>PC + displacement</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-register-terms" class="level1">
+<h1>93. Important Register Terms</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Register</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PC</td>
+<td>Next instruction address</td>
+</tr>
+<tr class="even">
+<td>IR</td>
+<td>Current instruction</td>
+</tr>
+<tr class="odd">
+<td>AC</td>
+<td>Accumulator/intermediate result</td>
+</tr>
+<tr class="even">
+<td>MAR/AR</td>
+<td>Memory address</td>
+</tr>
+<tr class="odd">
+<td>MDR/DR</td>
+<td>Memory data</td>
+</tr>
+<tr class="even">
+<td>SP</td>
+<td>Stack top</td>
+</tr>
+<tr class="odd">
+<td>General registers</td>
+<td>Operand/data storage</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-memory-terms" class="level1">
+<h1>94. Important Memory Terms</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cache</td>
+<td>Fast memory near CPU</td>
+</tr>
+<tr class="even">
+<td>CAM</td>
+<td>Content-based lookup</td>
+</tr>
+<tr class="odd">
+<td>Virtual memory</td>
+<td>Logical address space supported by secondary storage</td>
+</tr>
+<tr class="even">
+<td>Page</td>
+<td>Virtual-memory block</td>
+</tr>
+<tr class="odd">
+<td>Frame</td>
+<td>Physical-memory block</td>
+</tr>
+<tr class="even">
+<td>TLB</td>
+<td>Cache of address translations</td>
+</tr>
+<tr class="odd">
+<td>Page fault</td>
+<td>Referenced page not in physical memory</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-pipeline-terms" class="level1">
+<h1>95. Important Pipeline Terms</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pipeline</td>
+<td>Overlap execution stages</td>
+</tr>
+<tr class="even">
+<td>Structural hazard</td>
+<td>Resource conflict</td>
+</tr>
+<tr class="odd">
+<td>Data hazard</td>
+<td>Dependency</td>
+</tr>
+<tr class="even">
+<td>Control hazard</td>
+<td>Branch dependency</td>
+</tr>
+<tr class="odd">
+<td>RAW</td>
+<td>Read after write</td>
+</tr>
+<tr class="even">
+<td>WAR</td>
+<td>Write after read</td>
+</tr>
+<tr class="odd">
+<td>WAW</td>
+<td>Write after write</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-formulas-and-facts" class="level1">
+<h1>96. Important Formulas and Facts</h1>
+<section id="truth-table-combinations" class="level3">
+<h3 class="anchored" data-anchor-id="truth-table-combinations">Truth-table combinations</h3>
+<p><strong>n binary inputs → 2^n combinations</strong></p>
+</section>
+<section id="decoder-1" class="level3">
+<h3 class="anchored" data-anchor-id="decoder-1">Decoder</h3>
+<p><strong>n inputs → up to 2^n outputs</strong></p>
+</section>
+<section id="mux" class="level3">
+<h3 class="anchored" data-anchor-id="mux">MUX</h3>
+<p><strong>2^n inputs → n select lines</strong></p>
+</section>
+<section id="s-complement-range" class="level3">
+<h3 class="anchored" data-anchor-id="s-complement-range">2’s complement range</h3>
+<p>For n bits:</p>
+<p><strong>−2^(n−1) to 2^(n−1)−1</strong></p>
+</section>
+<section id="ieee-754-binary32" class="level3">
+<h3 class="anchored" data-anchor-id="ieee-754-binary32">IEEE 754 binary32</h3>
+<p><strong>1 + 8 + 23 = 32 bits</strong></p>
+</section>
+<section id="ieee-754-binary64" class="level3">
+<h3 class="anchored" data-anchor-id="ieee-754-binary64">IEEE 754 binary64</h3>
+<p><strong>1 + 11 + 52 = 64 bits</strong></p>
+</section>
+<section id="ideal-pipeline-cycles" class="level3">
+<h3 class="anchored" data-anchor-id="ideal-pipeline-cycles">Ideal pipeline cycles</h3>
+<p>For k stages and n instructions:</p>
+<p><strong>k + n − 1 cycles</strong></p>
+<p>under ideal assumptions.</p>
+<hr>
+</section>
+</section>
+<section id="high-priority-ugc-net-topics" class="level1">
+<h1>97. High-Priority UGC NET Topics</h1>
+<section id="digital-logic" class="level2">
+<h2 class="anchored" data-anchor-id="digital-logic">Digital Logic</h2>
+<ul>
+<li>Logic gates</li>
+<li>Universal gates</li>
+<li>Boolean algebra</li>
+<li>K-map</li>
+<li>Adders</li>
+<li>Multiplexers</li>
+<li>Decoders</li>
+<li>Flip-flops</li>
+<li>Registers</li>
+<li>Counters</li>
+</ul>
+</section>
+<section id="data-representation-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-representation-1">Data Representation</h2>
+<ul>
+<li>Number conversions</li>
+<li>Complements</li>
+<li>Signed numbers</li>
+<li>Fixed point</li>
+<li>Floating point</li>
+<li>IEEE 754</li>
+<li>Error detection</li>
+<li>Binary arithmetic</li>
+<li>Booth algorithm</li>
+</ul>
+</section>
+<section id="basic-computer" class="level2">
+<h2 class="anchored" data-anchor-id="basic-computer">Basic Computer</h2>
+<ul>
+<li>Registers</li>
+<li>Stored program</li>
+<li>Instruction format</li>
+<li>Instruction cycle</li>
+<li>Timing and control</li>
+<li>Interrupts</li>
+<li>I/O</li>
+</ul>
+</section>
+<section id="cpu" class="level2">
+<h2 class="anchored" data-anchor-id="cpu">CPU</h2>
+<ul>
+<li>General registers</li>
+<li>Stack</li>
+<li>Instruction formats</li>
+<li>Addressing modes</li>
+<li>RISC</li>
+<li>CISC</li>
+</ul>
+</section>
+<section id="pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="pipeline">Pipeline</h2>
+<ul>
+<li>Pipeline stages</li>
+<li>Hazards</li>
+<li>Speedup</li>
+<li>Arithmetic pipeline</li>
+<li>Instruction pipeline</li>
+<li>Vector processing</li>
+<li>Array processors</li>
+</ul>
+</section>
+<section id="io" class="level2">
+<h2 class="anchored" data-anchor-id="io">I/O</h2>
+<ul>
+<li>Interfaces</li>
+<li>Asynchronous transfer</li>
+<li>Programmed I/O</li>
+<li>Interrupt I/O</li>
+<li>DMA</li>
+<li>Priority interrupts</li>
+<li>Serial communication</li>
+</ul>
+</section>
+<section id="memory-1" class="level2">
+<h2 class="anchored" data-anchor-id="memory-1">Memory</h2>
+<ul>
+<li>Hierarchy</li>
+<li>Cache</li>
+<li>Mapping</li>
+<li>Replacement</li>
+<li>Virtual memory</li>
+<li>Paging</li>
+<li>TLB</li>
+<li>Associative memory</li>
+</ul>
+</section>
+<section id="multiprocessors-1" class="level2">
+<h2 class="anchored" data-anchor-id="multiprocessors-1">Multiprocessors</h2>
+<ul>
+<li>Interconnection</li>
+<li>Arbitration</li>
+<li>Communication</li>
+<li>Synchronization</li>
+<li>Cache coherence</li>
+<li>Multicore</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="common-ugc-net-confusions" class="level1">
+<h1>98. Common UGC NET Confusions</h1>
+<section id="nand-and-nor" class="level3">
+<h3 class="anchored" data-anchor-id="nand-and-nor">NAND and NOR</h3>
+<p>Both are universal gates.</p>
+</section>
+<section id="mux-and-demux" class="level3">
+<h3 class="anchored" data-anchor-id="mux-and-demux">MUX and DEMUX</h3>
+<p><strong>MUX → Many to One</strong></p>
+<p><strong>DEMUX → One to Many</strong></p>
+</section>
+<section id="encoder-and-decoder" class="level3">
+<h3 class="anchored" data-anchor-id="encoder-and-decoder">Encoder and Decoder</h3>
+<p><strong>Encoder → Many inputs to coded output</strong></p>
+<p><strong>Decoder → Coded input to multiple outputs</strong></p>
+</section>
+<section id="combinational-and-sequential" class="level3">
+<h3 class="anchored" data-anchor-id="combinational-and-sequential">Combinational and Sequential</h3>
+<p><strong>Combinational → No memory</strong></p>
+<p><strong>Sequential → Has memory</strong></p>
+</section>
+<section id="risc-and-cisc" class="level3">
+<h3 class="anchored" data-anchor-id="risc-and-cisc">RISC and CISC</h3>
+<p>RISC does not simply mean “better” or “faster”; the terms describe different instruction-set and implementation approaches.</p>
+</section>
+<section id="cache-and-virtual-memory" class="level3">
+<h3 class="anchored" data-anchor-id="cache-and-virtual-memory">Cache and Virtual Memory</h3>
+<p><strong>Cache → Reduces average memory access time</strong></p>
+<p><strong>Virtual memory → Provides a larger logical address space</strong></p>
+</section>
+<section id="dma-and-interrupt-io" class="level3">
+<h3 class="anchored" data-anchor-id="dma-and-interrupt-io">DMA and Interrupt I/O</h3>
+<p>Both reduce continuous polling, but DMA is designed for efficient bulk data transfer.</p>
+<hr>
+</section>
+</section>
+<section id="quick-revision-map" class="level1">
+<h1>99. Quick Revision Map</h1>
+<section id="digital-logic-1" class="level2">
+<h2 class="anchored" data-anchor-id="digital-logic-1">Digital Logic</h2>
+<p><strong>Gates → Boolean Algebra → K-map → Combinational → Flip-Flops → Sequential → Registers → Counters</strong></p>
+</section>
+<section id="data-representation-2" class="level2">
+<h2 class="anchored" data-anchor-id="data-representation-2">Data Representation</h2>
+<p><strong>Number Systems → Complements → Fixed Point → Floating Point → Error Detection → Arithmetic</strong></p>
+</section>
+<section id="basic-computer-1" class="level2">
+<h2 class="anchored" data-anchor-id="basic-computer-1">Basic Computer</h2>
+<p><strong>Registers → Instruction → Fetch → Decode → Execute → I/O → Interrupt</strong></p>
+</section>
+<section id="cpu-1" class="level2">
+<h2 class="anchored" data-anchor-id="cpu-1">CPU</h2>
+<p><strong>Registers → ALU → Control → Instruction Format → Addressing → RISC/CISC</strong></p>
+</section>
+<section id="pipeline-1" class="level2">
+<h2 class="anchored" data-anchor-id="pipeline-1">Pipeline</h2>
+<p><strong>Stages → Parallelism → Hazards → Arithmetic Pipeline → Instruction Pipeline → Vector Processing</strong></p>
+</section>
+<section id="io-1" class="level2">
+<h2 class="anchored" data-anchor-id="io-1">I/O</h2>
+<p><strong>Peripheral → Interface → Transfer → Interrupt → DMA → Serial Communication</strong></p>
+</section>
+<section id="memory-2" class="level2">
+<h2 class="anchored" data-anchor-id="memory-2">Memory</h2>
+<p><strong>Registers → Cache → Main Memory → Auxiliary Memory → Virtual Memory</strong></p>
+</section>
+<section id="multiprocessors-2" class="level2">
+<h2 class="anchored" data-anchor-id="multiprocessors-2">Multiprocessors</h2>
+<p><strong>Multiple processors → Interconnection → Arbitration → Communication → Synchronization → Coherence</strong></p>
+<hr>
+</section>
+</section>
+<section id="one-minute-revision" class="level1">
+<h1>100. One-Minute Revision</h1>
+<p>Remember:</p>
+<ul>
+<li><strong>NAND/NOR → Universal gates</strong></li>
+<li><strong>MUX → Many to one</strong></li>
+<li><strong>DEMUX → One to many</strong></li>
+<li><strong>Decoder → n to 2^n</strong></li>
+<li><strong>Combinational → No memory</strong></li>
+<li><strong>Sequential → Memory</strong></li>
+<li><strong>JK, J=K=1 → Toggle</strong></li>
+<li><strong>D flip-flop → Q(next)=D</strong></li>
+<li><strong>T flip-flop → Toggle</strong></li>
+<li><strong>Ripple counter → Asynchronous</strong></li>
+<li><strong>Synchronous counter → Common clock</strong></li>
+<li><strong>1’s complement → Invert bits</strong></li>
+<li><strong>2’s complement → 1’s complement + 1</strong></li>
+<li><strong>Binary32 → 32 bits</strong></li>
+<li><strong>Binary64 → 64 bits</strong></li>
+<li><strong>Parity → Error detection</strong></li>
+<li><strong>CRC → Polynomial error detection</strong></li>
+<li><strong>PC → Next instruction</strong></li>
+<li><strong>IR → Current instruction</strong></li>
+<li><strong>SP → Stack</strong></li>
+<li><strong>RISC → Reduced/simple instruction approach</strong></li>
+<li><strong>CISC → Complex instruction approach</strong></li>
+<li><strong>Pipeline → Overlapping stages</strong></li>
+<li><strong>RAW → Read after write</strong></li>
+<li><strong>DMA → Direct memory access</strong></li>
+<li><strong>Cache → Fast memory</strong></li>
+<li><strong>TLB → Translation cache</strong></li>
+<li><strong>Virtual memory → Pages and frames</strong></li>
+<li><strong>Cache coherence → Consistency of cached data</strong></li>
+<li><strong>Multicore → Multiple cores</strong></li>
+</ul>
+<hr>
+</section>
+<section id="final-exam-strategy" class="level1">
+<h1>101. Final Exam Strategy</h1>
+<p>Study this unit in four stages.</p>
+<section id="stage-1-understand" class="level2">
+<h2 class="anchored" data-anchor-id="stage-1-understand">Stage 1 – Understand</h2>
+<p>Understand the flow:</p>
+<p><strong>Gate → Circuit → Register → ALU → CPU → Memory → I/O</strong></p>
+</section>
+<section id="stage-2-memorize" class="level2">
+<h2 class="anchored" data-anchor-id="stage-2-memorize">Stage 2 – Memorize</h2>
+<p>Focus on:</p>
+<ul>
+<li>Truth tables</li>
+<li>Flip-flop tables</li>
+<li>Number systems</li>
+<li>Complements</li>
+<li>Addressing modes</li>
+<li>RISC/CISC</li>
+<li>I/O modes</li>
+<li>Cache mapping</li>
+<li>Pipeline hazards</li>
+</ul>
+</section>
+<section id="stage-3-solve" class="level2">
+<h2 class="anchored" data-anchor-id="stage-3-solve">Stage 3 – Solve</h2>
+<p>Practice:</p>
+<ul>
+<li>Binary conversion</li>
+<li>1’s and 2’s complement</li>
+<li>Floating-point representation</li>
+<li>Boolean simplification</li>
+<li>K-map</li>
+<li>Cache questions</li>
+<li>Addressing-mode questions</li>
+<li>Pipeline questions</li>
+<li>Memory questions</li>
+<li>DMA/I/O questions</li>
+</ul>
+</section>
+<section id="stage-4-revise" class="level2">
+<h2 class="anchored" data-anchor-id="stage-4-revise">Stage 4 – Revise</h2>
+<p>Use the one-minute revision and comparison tables repeatedly.</p>
+<p>The most useful sequence is:</p>
+<p><strong>Understand → Memorize → Solve → Revise</strong></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

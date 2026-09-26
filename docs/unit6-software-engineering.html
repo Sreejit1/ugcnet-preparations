@@ -1,0 +1,3433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit VI – Software Engineering – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper1.html"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper2.html" aria-current="page"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit6-software-engineering.html">Unit VI – Software Engineering</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 2 – Computer Science &amp; Applications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-discrete-structures-and-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Discrete Structures and Optimization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-computer-system-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Computer System Architecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-programming-languages-and-computer-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Programming Languages and Computer Graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-database-management-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Database Management Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-system-software-and-operating-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – System Software and Operating System</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-software-engineering.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit VI – Software Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-structures-and-algorithms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Structures and Algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-theory-of-computation-and-compilers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Theory of Computation and Compilers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-data-communication-and-computer-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – Data Communication and Computer Networks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-artificial-intelligence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Artificial Intelligence (AI)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-software-engineering" id="toc-introduction-to-software-engineering" class="nav-link active" data-scroll-target="#introduction-to-software-engineering">1. Introduction to Software Engineering</a>
+  <ul class="collapse">
+  <li><a href="#what-is-software" id="toc-what-is-software" class="nav-link" data-scroll-target="#what-is-software">1.1 What is Software?</a></li>
+  <li><a href="#what-is-software-engineering" id="toc-what-is-software-engineering" class="nav-link" data-scroll-target="#what-is-software-engineering">1.2 What is Software Engineering?</a></li>
+  <li><a href="#why-is-software-engineering-needed" id="toc-why-is-software-engineering-needed" class="nav-link" data-scroll-target="#why-is-software-engineering-needed">1.3 Why is Software Engineering Needed?</a></li>
+  </ul></li>
+  <li><a href="#software-process" id="toc-software-process" class="nav-link" data-scroll-target="#software-process">2. Software Process</a>
+  <ul class="collapse">
+  <li><a href="#generic-process-model" id="toc-generic-process-model" class="nav-link" data-scroll-target="#generic-process-model">2.1 Generic Process Model</a>
+  <ul class="collapse">
+  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication">1. Communication</a></li>
+  <li><a href="#planning" id="toc-planning" class="nav-link" data-scroll-target="#planning">2. Planning</a></li>
+  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">3. Modeling</a></li>
+  <li><a href="#construction" id="toc-construction" class="nav-link" data-scroll-target="#construction">4. Construction</a></li>
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">5. Deployment</a></li>
+  </ul></li>
+  <li><a href="#framework-activity" id="toc-framework-activity" class="nav-link" data-scroll-target="#framework-activity">2.2 Framework Activity</a></li>
+  <li><a href="#task-set" id="toc-task-set" class="nav-link" data-scroll-target="#task-set">2.3 Task Set</a></li>
+  <li><a href="#process-patterns" id="toc-process-patterns" class="nav-link" data-scroll-target="#process-patterns">2.4 Process Patterns</a></li>
+  </ul></li>
+  <li><a href="#process-lifecycle" id="toc-process-lifecycle" class="nav-link" data-scroll-target="#process-lifecycle">3. Process Lifecycle</a>
+  <ul class="collapse">
+  <li><a href="#important-lifecycle-activities" id="toc-important-lifecycle-activities" class="nav-link" data-scroll-target="#important-lifecycle-activities">3.1 Important Lifecycle Activities</a>
+  <ul class="collapse">
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
+  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a></li>
+  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">Testing</a></li>
+  <li><a href="#deployment-1" id="toc-deployment-1" class="nav-link" data-scroll-target="#deployment-1">Deployment</a></li>
+  <li><a href="#maintenance" id="toc-maintenance" class="nav-link" data-scroll-target="#maintenance">Maintenance</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#prescriptive-process-models" id="toc-prescriptive-process-models" class="nav-link" data-scroll-target="#prescriptive-process-models">4. Prescriptive Process Models</a></li>
+  <li><a href="#waterfall-model" id="toc-waterfall-model" class="nav-link" data-scroll-target="#waterfall-model">5. Waterfall Model</a>
+  <ul class="collapse">
+  <li><a href="#advantages" id="toc-advantages" class="nav-link" data-scroll-target="#advantages">Advantages</a></li>
+  <li><a href="#disadvantages" id="toc-disadvantages" class="nav-link" data-scroll-target="#disadvantages">Disadvantages</a></li>
+  <li><a href="#ugc-net-point" id="toc-ugc-net-point" class="nav-link" data-scroll-target="#ugc-net-point">UGC NET Point</a></li>
+  </ul></li>
+  <li><a href="#incremental-model" id="toc-incremental-model" class="nav-link" data-scroll-target="#incremental-model">6. Incremental Model</a>
+  <ul class="collapse">
+  <li><a href="#advantages-1" id="toc-advantages-1" class="nav-link" data-scroll-target="#advantages-1">Advantages</a></li>
+  </ul></li>
+  <li><a href="#evolutionary-process-models" id="toc-evolutionary-process-models" class="nav-link" data-scroll-target="#evolutionary-process-models">7. Evolutionary Process Models</a>
+  <ul class="collapse">
+  <li><a href="#prototyping" id="toc-prototyping" class="nav-link" data-scroll-target="#prototyping">7.1 Prototyping</a></li>
+  <li><a href="#spiral-model" id="toc-spiral-model" class="nav-link" data-scroll-target="#spiral-model">7.2 Spiral Model</a>
+  <ul class="collapse">
+  <li><a href="#important-point" id="toc-important-point" class="nav-link" data-scroll-target="#important-point">Important Point</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#component-based-development" id="toc-component-based-development" class="nav-link" data-scroll-target="#component-based-development">8. Component-Based Development</a>
+  <ul class="collapse">
+  <li><a href="#advantages-2" id="toc-advantages-2" class="nav-link" data-scroll-target="#advantages-2">Advantages</a></li>
+  </ul></li>
+  <li><a href="#aspect-oriented-software-development" id="toc-aspect-oriented-software-development" class="nav-link" data-scroll-target="#aspect-oriented-software-development">9. Aspect-Oriented Software Development</a>
+  <ul class="collapse">
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms">Key Terms</a></li>
+  </ul></li>
+  <li><a href="#formal-methods" id="toc-formal-methods" class="nav-link" data-scroll-target="#formal-methods">10. Formal Methods</a>
+  <ul class="collapse">
+  <li><a href="#advantages-3" id="toc-advantages-3" class="nav-link" data-scroll-target="#advantages-3">Advantages</a></li>
+  <li><a href="#limitation" id="toc-limitation" class="nav-link" data-scroll-target="#limitation">Limitation</a></li>
+  </ul></li>
+  <li><a href="#agile-process-models" id="toc-agile-process-models" class="nav-link" data-scroll-target="#agile-process-models">11. Agile Process Models</a>
+  <ul class="collapse">
+  <li><a href="#agile-values" id="toc-agile-values" class="nav-link" data-scroll-target="#agile-values">Agile Values</a></li>
+  </ul></li>
+  <li><a href="#extreme-programming-xp" id="toc-extreme-programming-xp" class="nav-link" data-scroll-target="#extreme-programming-xp">12. Extreme Programming (XP)</a>
+  <ul class="collapse">
+  <li><a href="#pair-programming" id="toc-pair-programming" class="nav-link" data-scroll-target="#pair-programming">Pair Programming</a></li>
+  <li><a href="#test-driven-development" id="toc-test-driven-development" class="nav-link" data-scroll-target="#test-driven-development">Test-Driven Development</a></li>
+  </ul></li>
+  <li><a href="#adaptive-software-development" id="toc-adaptive-software-development" class="nav-link" data-scroll-target="#adaptive-software-development">13. Adaptive Software Development</a>
+  <ul class="collapse">
+  <li><a href="#speculate" id="toc-speculate" class="nav-link" data-scroll-target="#speculate">Speculate</a></li>
+  <li><a href="#collaborate" id="toc-collaborate" class="nav-link" data-scroll-target="#collaborate">Collaborate</a></li>
+  <li><a href="#learn" id="toc-learn" class="nav-link" data-scroll-target="#learn">Learn</a></li>
+  </ul></li>
+  <li><a href="#scrum" id="toc-scrum" class="nav-link" data-scroll-target="#scrum">14. Scrum</a>
+  <ul class="collapse">
+  <li><a href="#product-backlog" id="toc-product-backlog" class="nav-link" data-scroll-target="#product-backlog">Product Backlog</a></li>
+  <li><a href="#sprint" id="toc-sprint" class="nav-link" data-scroll-target="#sprint">Sprint</a></li>
+  <li><a href="#sprint-backlog" id="toc-sprint-backlog" class="nav-link" data-scroll-target="#sprint-backlog">Sprint Backlog</a></li>
+  <li><a href="#product-owner" id="toc-product-owner" class="nav-link" data-scroll-target="#product-owner">Product Owner</a></li>
+  <li><a href="#scrum-master" id="toc-scrum-master" class="nav-link" data-scroll-target="#scrum-master">Scrum Master</a></li>
+  <li><a href="#daily-scrum" id="toc-daily-scrum" class="nav-link" data-scroll-target="#daily-scrum">Daily Scrum</a>
+  <ul class="collapse">
+  <li><a href="#ugc-net-focus" id="toc-ugc-net-focus" class="nav-link" data-scroll-target="#ugc-net-focus">UGC NET Focus</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#dynamic-systems-development-method" id="toc-dynamic-systems-development-method" class="nav-link" data-scroll-target="#dynamic-systems-development-method">15. Dynamic Systems Development Method</a></li>
+  <li><a href="#feature-driven-development" id="toc-feature-driven-development" class="nav-link" data-scroll-target="#feature-driven-development">16. Feature Driven Development</a></li>
+  <li><a href="#crystal" id="toc-crystal" class="nav-link" data-scroll-target="#crystal">17. Crystal</a></li>
+  <li><a href="#web-engineering" id="toc-web-engineering" class="nav-link" data-scroll-target="#web-engineering">18. Web Engineering</a></li>
+  <li><a href="#software-requirements" id="toc-software-requirements" class="nav-link" data-scroll-target="#software-requirements">19. Software Requirements</a></li>
+  <li><a href="#functional-requirements" id="toc-functional-requirements" class="nav-link" data-scroll-target="#functional-requirements">20. Functional Requirements</a>
+  <ul class="collapse">
+  <li><a href="#easy-way-to-remember" id="toc-easy-way-to-remember" class="nav-link" data-scroll-target="#easy-way-to-remember">Easy way to remember</a></li>
+  </ul></li>
+  <li><a href="#non-functional-requirements" id="toc-non-functional-requirements" class="nav-link" data-scroll-target="#non-functional-requirements">21. Non-Functional Requirements</a>
+  <ul class="collapse">
+  <li><a href="#comparison" id="toc-comparison" class="nav-link" data-scroll-target="#comparison">Comparison</a></li>
+  </ul></li>
+  <li><a href="#requirements-elicitation" id="toc-requirements-elicitation" class="nav-link" data-scroll-target="#requirements-elicitation">22. Requirements Elicitation</a>
+  <ul class="collapse">
+  <li><a href="#interview" id="toc-interview" class="nav-link" data-scroll-target="#interview">Interview</a></li>
+  <li><a href="#observation" id="toc-observation" class="nav-link" data-scroll-target="#observation">Observation</a></li>
+  <li><a href="#questionnaire" id="toc-questionnaire" class="nav-link" data-scroll-target="#questionnaire">Questionnaire</a></li>
+  <li><a href="#workshop" id="toc-workshop" class="nav-link" data-scroll-target="#workshop">Workshop</a></li>
+  <li><a href="#prototyping-1" id="toc-prototyping-1" class="nav-link" data-scroll-target="#prototyping-1">Prototyping</a></li>
+  </ul></li>
+  <li><a href="#developing-use-cases" id="toc-developing-use-cases" class="nav-link" data-scroll-target="#developing-use-cases">23. Developing Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#example-online-library" id="toc-example-online-library" class="nav-link" data-scroll-target="#example-online-library">Example: Online Library</a></li>
+  <li><a href="#important-terms" id="toc-important-terms" class="nav-link" data-scroll-target="#important-terms">Important Terms</a></li>
+  </ul></li>
+  <li><a href="#requirements-analysis-and-modelling" id="toc-requirements-analysis-and-modelling" class="nav-link" data-scroll-target="#requirements-analysis-and-modelling">24. Requirements Analysis and Modelling</a></li>
+  <li><a href="#requirements-review" id="toc-requirements-review" class="nav-link" data-scroll-target="#requirements-review">25. Requirements Review</a>
+  <ul class="collapse">
+  <li><a href="#common-requirement-problems" id="toc-common-requirement-problems" class="nav-link" data-scroll-target="#common-requirement-problems">Common Requirement Problems</a></li>
+  </ul></li>
+  <li><a href="#software-requirements-specification-srs" id="toc-software-requirements-specification-srs" class="nav-link" data-scroll-target="#software-requirements-specification-srs">26. Software Requirements Specification (SRS)</a>
+  <ul class="collapse">
+  <li><a href="#characteristics-of-a-good-srs" id="toc-characteristics-of-a-good-srs" class="nav-link" data-scroll-target="#characteristics-of-a-good-srs">Characteristics of a Good SRS</a>
+  <ul class="collapse">
+  <li><a href="#ugc-net-point-1" id="toc-ugc-net-point-1" class="nav-link" data-scroll-target="#ugc-net-point-1">UGC NET Point</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#software-design" id="toc-software-design" class="nav-link" data-scroll-target="#software-design">27. Software Design</a></li>
+  <li><a href="#abstraction" id="toc-abstraction" class="nav-link" data-scroll-target="#abstraction">28. Abstraction</a>
+  <ul class="collapse">
+  <li><a href="#simple-idea" id="toc-simple-idea" class="nav-link" data-scroll-target="#simple-idea">Simple idea</a></li>
+  </ul></li>
+  <li><a href="#software-architecture" id="toc-software-architecture" class="nav-link" data-scroll-target="#software-architecture">29. Software Architecture</a></li>
+  <li><a href="#design-patterns" id="toc-design-patterns" class="nav-link" data-scroll-target="#design-patterns">30. Design Patterns</a></li>
+  <li><a href="#separation-of-concerns" id="toc-separation-of-concerns" class="nav-link" data-scroll-target="#separation-of-concerns">31. Separation of Concerns</a></li>
+  <li><a href="#modularity" id="toc-modularity" class="nav-link" data-scroll-target="#modularity">32. Modularity</a></li>
+  <li><a href="#information-hiding" id="toc-information-hiding" class="nav-link" data-scroll-target="#information-hiding">33. Information Hiding</a>
+  <ul class="collapse">
+  <li><a href="#abstraction-vs-information-hiding" id="toc-abstraction-vs-information-hiding" class="nav-link" data-scroll-target="#abstraction-vs-information-hiding">Abstraction vs Information Hiding</a></li>
+  </ul></li>
+  <li><a href="#functional-independence" id="toc-functional-independence" class="nav-link" data-scroll-target="#functional-independence">34. Functional Independence</a>
+  <ul class="collapse">
+  <li><a href="#important-ugc-net-point" id="toc-important-ugc-net-point" class="nav-link" data-scroll-target="#important-ugc-net-point">Important UGC NET Point</a></li>
+  </ul></li>
+  <li><a href="#cohesion" id="toc-cohesion" class="nav-link" data-scroll-target="#cohesion">35. Cohesion</a>
+  <ul class="collapse">
+  <li><a href="#functional-cohesion" id="toc-functional-cohesion" class="nav-link" data-scroll-target="#functional-cohesion">Functional Cohesion</a></li>
+  </ul></li>
+  <li><a href="#coupling" id="toc-coupling" class="nav-link" data-scroll-target="#coupling">36. Coupling</a>
+  <ul class="collapse">
+  <li><a href="#key-point" id="toc-key-point" class="nav-link" data-scroll-target="#key-point">Key Point</a></li>
+  </ul></li>
+  <li><a href="#object-oriented-design" id="toc-object-oriented-design" class="nav-link" data-scroll-target="#object-oriented-design">37. Object-Oriented Design</a></li>
+  <li><a href="#data-design" id="toc-data-design" class="nav-link" data-scroll-target="#data-design">38. Data Design</a></li>
+  <li><a href="#architectural-design" id="toc-architectural-design" class="nav-link" data-scroll-target="#architectural-design">39. Architectural Design</a></li>
+  <li><a href="#user-interface-design" id="toc-user-interface-design" class="nav-link" data-scroll-target="#user-interface-design">40. User Interface Design</a></li>
+  <li><a href="#component-level-design" id="toc-component-level-design" class="nav-link" data-scroll-target="#component-level-design">41. Component-Level Design</a></li>
+  <li><a href="#software-quality" id="toc-software-quality" class="nav-link" data-scroll-target="#software-quality">42. Software Quality</a></li>
+  <li><a href="#mccalls-quality-factors" id="toc-mccalls-quality-factors" class="nav-link" data-scroll-target="#mccalls-quality-factors">43. McCall’s Quality Factors</a>
+  <ul class="collapse">
+  <li><a href="#product-operation" id="toc-product-operation" class="nav-link" data-scroll-target="#product-operation">Product Operation</a></li>
+  <li><a href="#product-revision" id="toc-product-revision" class="nav-link" data-scroll-target="#product-revision">Product Revision</a></li>
+  <li><a href="#product-transition" id="toc-product-transition" class="nav-link" data-scroll-target="#product-transition">Product Transition</a>
+  <ul class="collapse">
+  <li><a href="#easy-memory" id="toc-easy-memory" class="nav-link" data-scroll-target="#easy-memory">Easy Memory</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#iso-9126-quality-factors" id="toc-iso-9126-quality-factors" class="nav-link" data-scroll-target="#iso-9126-quality-factors">44. ISO 9126 Quality Factors</a>
+  <ul class="collapse">
+  <li><a href="#easy-memory-1" id="toc-easy-memory-1" class="nav-link" data-scroll-target="#easy-memory-1">Easy Memory</a></li>
+  </ul></li>
+  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control">45. Quality Control</a></li>
+  <li><a href="#quality-assurance" id="toc-quality-assurance" class="nav-link" data-scroll-target="#quality-assurance">46. Quality Assurance</a>
+  <ul class="collapse">
+  <li><a href="#qa-vs-qc" id="toc-qa-vs-qc" class="nav-link" data-scroll-target="#qa-vs-qc">QA vs QC</a></li>
+  </ul></li>
+  <li><a href="#risk-management" id="toc-risk-management" class="nav-link" data-scroll-target="#risk-management">47. Risk Management</a></li>
+  <li><a href="#risk-mitigation" id="toc-risk-mitigation" class="nav-link" data-scroll-target="#risk-mitigation">48. Risk Mitigation</a></li>
+  <li><a href="#rmmm-plan" id="toc-rmmm-plan" class="nav-link" data-scroll-target="#rmmm-plan">49. RMMM Plan</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#software-reliability" id="toc-software-reliability" class="nav-link" data-scroll-target="#software-reliability">50. Software Reliability</a></li>
+  <li><a href="#software-estimation" id="toc-software-estimation" class="nav-link" data-scroll-target="#software-estimation">51. Software Estimation</a></li>
+  <li><a href="#software-sizing" id="toc-software-sizing" class="nav-link" data-scroll-target="#software-sizing">52. Software Sizing</a></li>
+  <li><a href="#loc" id="toc-loc" class="nav-link" data-scroll-target="#loc">53. LOC</a>
+  <ul class="collapse">
+  <li><a href="#advantages-4" id="toc-advantages-4" class="nav-link" data-scroll-target="#advantages-4">Advantages</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  </ul></li>
+  <li><a href="#function-point-analysis" id="toc-function-point-analysis" class="nav-link" data-scroll-target="#function-point-analysis">54. Function Point Analysis</a>
+  <ul class="collapse">
+  <li><a href="#important-point-1" id="toc-important-point-1" class="nav-link" data-scroll-target="#important-point-1">Important Point</a></li>
+  </ul></li>
+  <li><a href="#cost-and-effort-estimation" id="toc-cost-and-effort-estimation" class="nav-link" data-scroll-target="#cost-and-effort-estimation">55. Cost and Effort Estimation</a></li>
+  <li><a href="#estimation-models" id="toc-estimation-models" class="nav-link" data-scroll-target="#estimation-models">56. Estimation Models</a></li>
+  <li><a href="#cocomo" id="toc-cocomo" class="nav-link" data-scroll-target="#cocomo">57. COCOMO</a></li>
+  <li><a href="#cocomo-project-modes" id="toc-cocomo-project-modes" class="nav-link" data-scroll-target="#cocomo-project-modes">58. COCOMO Project Modes</a>
+  <ul class="collapse">
+  <li><a href="#organic" id="toc-organic" class="nav-link" data-scroll-target="#organic">Organic</a></li>
+  <li><a href="#semi-detached" id="toc-semi-detached" class="nav-link" data-scroll-target="#semi-detached">Semi-detached</a></li>
+  <li><a href="#embedded" id="toc-embedded" class="nav-link" data-scroll-target="#embedded">Embedded</a></li>
+  <li><a href="#basic-cocomo-coefficients" id="toc-basic-cocomo-coefficients" class="nav-link" data-scroll-target="#basic-cocomo-coefficients">Basic COCOMO Coefficients</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  <li><a href="#ugc-net-focus-1" id="toc-ugc-net-focus-1" class="nav-link" data-scroll-target="#ugc-net-focus-1">UGC NET Focus</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#project-scheduling" id="toc-project-scheduling" class="nav-link" data-scroll-target="#project-scheduling">59. Project Scheduling</a></li>
+  <li><a href="#project-staffing" id="toc-project-staffing" class="nav-link" data-scroll-target="#project-staffing">60. Project Staffing</a></li>
+  <li><a href="#timeline-charts" id="toc-timeline-charts" class="nav-link" data-scroll-target="#timeline-charts">61. Timeline Charts</a></li>
+  <li><a href="#software-testing" id="toc-software-testing" class="nav-link" data-scroll-target="#software-testing">62. Software Testing</a></li>
+  <li><a href="#verification-and-validation" id="toc-verification-and-validation" class="nav-link" data-scroll-target="#verification-and-validation">63. Verification and Validation</a>
+  <ul class="collapse">
+  <li><a href="#verification" id="toc-verification" class="nav-link" data-scroll-target="#verification">Verification</a></li>
+  <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
+  <li><a href="#easy-memory-2" id="toc-easy-memory-2" class="nav-link" data-scroll-target="#easy-memory-2">Easy Memory</a></li>
+  </ul></li>
+  <li><a href="#error-fault-bug-and-failure" id="toc-error-fault-bug-and-failure" class="nav-link" data-scroll-target="#error-fault-bug-and-failure">64. Error, Fault, Bug and Failure</a>
+  <ul class="collapse">
+  <li><a href="#error" id="toc-error" class="nav-link" data-scroll-target="#error">Error</a></li>
+  <li><a href="#fault" id="toc-fault" class="nav-link" data-scroll-target="#fault">Fault</a></li>
+  <li><a href="#bug" id="toc-bug" class="nav-link" data-scroll-target="#bug">Bug</a></li>
+  <li><a href="#failure" id="toc-failure" class="nav-link" data-scroll-target="#failure">Failure</a></li>
+  <li><a href="#relationship" id="toc-relationship" class="nav-link" data-scroll-target="#relationship">Relationship</a></li>
+  </ul></li>
+  <li><a href="#unit-testing" id="toc-unit-testing" class="nav-link" data-scroll-target="#unit-testing">65. Unit Testing</a></li>
+  <li><a href="#integration-testing" id="toc-integration-testing" class="nav-link" data-scroll-target="#integration-testing">66. Integration Testing</a>
+  <ul class="collapse">
+  <li><a href="#unit-vs-integration" id="toc-unit-vs-integration" class="nav-link" data-scroll-target="#unit-vs-integration">Unit vs Integration</a></li>
+  </ul></li>
+  <li><a href="#white-box-testing" id="toc-white-box-testing" class="nav-link" data-scroll-target="#white-box-testing">67. White-Box Testing</a>
+  <ul class="collapse">
+  <li><a href="#easy-memory-3" id="toc-easy-memory-3" class="nav-link" data-scroll-target="#easy-memory-3">Easy Memory</a></li>
+  </ul></li>
+  <li><a href="#black-box-testing" id="toc-black-box-testing" class="nav-link" data-scroll-target="#black-box-testing">68. Black-Box Testing</a>
+  <ul class="collapse">
+  <li><a href="#easy-memory-4" id="toc-easy-memory-4" class="nav-link" data-scroll-target="#easy-memory-4">Easy Memory</a></li>
+  </ul></li>
+  <li><a href="#basis-path-testing" id="toc-basis-path-testing" class="nav-link" data-scroll-target="#basis-path-testing">69. Basis Path Testing</a>
+  <ul class="collapse">
+  <li><a href="#important-point-2" id="toc-important-point-2" class="nav-link" data-scroll-target="#important-point-2">Important Point</a></li>
+  </ul></li>
+  <li><a href="#control-structure-testing" id="toc-control-structure-testing" class="nav-link" data-scroll-target="#control-structure-testing">70. Control Structure Testing</a>
+  <ul class="collapse">
+  <li><a href="#loop-testing" id="toc-loop-testing" class="nav-link" data-scroll-target="#loop-testing">Loop Testing</a></li>
+  </ul></li>
+  <li><a href="#deriving-test-cases" id="toc-deriving-test-cases" class="nav-link" data-scroll-target="#deriving-test-cases">71. Deriving Test Cases</a></li>
+  <li><a href="#alpha-testing" id="toc-alpha-testing" class="nav-link" data-scroll-target="#alpha-testing">72. Alpha Testing</a></li>
+  <li><a href="#beta-testing" id="toc-beta-testing" class="nav-link" data-scroll-target="#beta-testing">73. Beta Testing</a>
+  <ul class="collapse">
+  <li><a href="#alpha-vs-beta" id="toc-alpha-vs-beta" class="nav-link" data-scroll-target="#alpha-vs-beta">Alpha vs Beta</a></li>
+  </ul></li>
+  <li><a href="#regression-testing" id="toc-regression-testing" class="nav-link" data-scroll-target="#regression-testing">74. Regression Testing</a>
+  <ul class="collapse">
+  <li><a href="#key-point-1" id="toc-key-point-1" class="nav-link" data-scroll-target="#key-point-1">Key Point</a></li>
+  </ul></li>
+  <li><a href="#performance-testing" id="toc-performance-testing" class="nav-link" data-scroll-target="#performance-testing">75. Performance Testing</a></li>
+  <li><a href="#stress-testing" id="toc-stress-testing" class="nav-link" data-scroll-target="#stress-testing">76. Stress Testing</a>
+  <ul class="collapse">
+  <li><a href="#performance-vs-stress" id="toc-performance-vs-stress" class="nav-link" data-scroll-target="#performance-vs-stress">Performance vs Stress</a></li>
+  </ul></li>
+  <li><a href="#software-configuration-management" id="toc-software-configuration-management" class="nav-link" data-scroll-target="#software-configuration-management">77. Software Configuration Management</a></li>
+  <li><a href="#change-control" id="toc-change-control" class="nav-link" data-scroll-target="#change-control">78. Change Control</a>
+  <ul class="collapse">
+  <li><a href="#why-change-control-is-needed" id="toc-why-change-control-is-needed" class="nav-link" data-scroll-target="#why-change-control-is-needed">Why Change Control is Needed</a></li>
+  </ul></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">79. Version Control</a>
+  <ul class="collapse">
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  </ul></li>
+  <li><a href="#software-reuse" id="toc-software-reuse" class="nav-link" data-scroll-target="#software-reuse">80. Software Reuse</a>
+  <ul class="collapse">
+  <li><a href="#advantages-5" id="toc-advantages-5" class="nav-link" data-scroll-target="#advantages-5">Advantages</a></li>
+  </ul></li>
+  <li><a href="#software-re-engineering" id="toc-software-re-engineering" class="nav-link" data-scroll-target="#software-re-engineering">81. Software Re-engineering</a>
+  <ul class="collapse">
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
+  </ul></li>
+  <li><a href="#reverse-engineering" id="toc-reverse-engineering" class="nav-link" data-scroll-target="#reverse-engineering">82. Reverse Engineering</a>
+  <ul class="collapse">
+  <li><a href="#important-difference" id="toc-important-difference" class="nav-link" data-scroll-target="#important-difference">Important Difference</a></li>
+  </ul></li>
+  <li><a href="#important-comparisons-for-ugc-net" id="toc-important-comparisons-for-ugc-net" class="nav-link" data-scroll-target="#important-comparisons-for-ugc-net">83. Important Comparisons for UGC NET</a>
+  <ul class="collapse">
+  <li><a href="#waterfall-vs-agile" id="toc-waterfall-vs-agile" class="nav-link" data-scroll-target="#waterfall-vs-agile">Waterfall vs Agile</a></li>
+  <li><a href="#functional-vs-non-functional-requirements" id="toc-functional-vs-non-functional-requirements" class="nav-link" data-scroll-target="#functional-vs-non-functional-requirements">Functional vs Non-functional Requirements</a></li>
+  <li><a href="#qa-vs-qc-1" id="toc-qa-vs-qc-1" class="nav-link" data-scroll-target="#qa-vs-qc-1">QA vs QC</a></li>
+  <li><a href="#white-box-vs-black-box" id="toc-white-box-vs-black-box" class="nav-link" data-scroll-target="#white-box-vs-black-box">White-box vs Black-box</a></li>
+  <li><a href="#reverse-engineering-vs-re-engineering" id="toc-reverse-engineering-vs-re-engineering" class="nav-link" data-scroll-target="#reverse-engineering-vs-re-engineering">Reverse Engineering vs Re-engineering</a></li>
+  </ul></li>
+  <li><a href="#important-formulas" id="toc-important-formulas" class="nav-link" data-scroll-target="#important-formulas">84. Important Formulas</a>
+  <ul class="collapse">
+  <li><a href="#cocomo-1" id="toc-cocomo-1" class="nav-link" data-scroll-target="#cocomo-1">COCOMO</a></li>
+  <li><a href="#function-points" id="toc-function-points" class="nav-link" data-scroll-target="#function-points">Function Points</a></li>
+  <li><a href="#cyclomatic-complexity" id="toc-cyclomatic-complexity" class="nav-link" data-scroll-target="#cyclomatic-complexity">Cyclomatic Complexity</a></li>
+  <li><a href="#availability" id="toc-availability" class="nav-link" data-scroll-target="#availability">Availability</a></li>
+  <li><a href="#effort" id="toc-effort" class="nav-link" data-scroll-target="#effort">Effort</a></li>
+  </ul></li>
+  <li><a href="#ugc-net-high-priority-topics" id="toc-ugc-net-high-priority-topics" class="nav-link" data-scroll-target="#ugc-net-high-priority-topics">85. UGC NET High-Priority Topics</a></li>
+  <li><a href="#common-ugc-net-confusions" id="toc-common-ugc-net-confusions" class="nav-link" data-scroll-target="#common-ugc-net-confusions">86. Common UGC NET Confusions</a>
+  <ul class="collapse">
+  <li><a href="#confusion-1" id="toc-confusion-1" class="nav-link" data-scroll-target="#confusion-1">Confusion 1</a></li>
+  <li><a href="#confusion-2" id="toc-confusion-2" class="nav-link" data-scroll-target="#confusion-2">Confusion 2</a></li>
+  <li><a href="#confusion-3" id="toc-confusion-3" class="nav-link" data-scroll-target="#confusion-3">Confusion 3</a></li>
+  <li><a href="#confusion-4" id="toc-confusion-4" class="nav-link" data-scroll-target="#confusion-4">Confusion 4</a></li>
+  <li><a href="#confusion-5" id="toc-confusion-5" class="nav-link" data-scroll-target="#confusion-5">Confusion 5</a></li>
+  <li><a href="#confusion-6" id="toc-confusion-6" class="nav-link" data-scroll-target="#confusion-6">Confusion 6</a></li>
+  </ul></li>
+  <li><a href="#one-minute-revision" id="toc-one-minute-revision" class="nav-link" data-scroll-target="#one-minute-revision">87. One-Minute Revision</a>
+  <ul class="collapse">
+  <li><a href="#software-process-1" id="toc-software-process-1" class="nav-link" data-scroll-target="#software-process-1">Software Process</a></li>
+  <li><a href="#agile" id="toc-agile" class="nav-link" data-scroll-target="#agile">Agile</a></li>
+  <li><a href="#requirements-1" id="toc-requirements-1" class="nav-link" data-scroll-target="#requirements-1">Requirements</a></li>
+  <li><a href="#design-1" id="toc-design-1" class="nav-link" data-scroll-target="#design-1">Design</a></li>
+  <li><a href="#quality" id="toc-quality" class="nav-link" data-scroll-target="#quality">Quality</a></li>
+  <li><a href="#risk" id="toc-risk" class="nav-link" data-scroll-target="#risk">Risk</a></li>
+  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation">Estimation</a></li>
+  <li><a href="#testing-1" id="toc-testing-1" class="nav-link" data-scroll-target="#testing-1">Testing</a></li>
+  <li><a href="#configuration" id="toc-configuration" class="nav-link" data-scroll-target="#configuration">Configuration</a></li>
+  <li><a href="#legacy-software" id="toc-legacy-software" class="nav-link" data-scroll-target="#legacy-software">Legacy Software</a></li>
+  </ul></li>
+  <li><a href="#final-exam-strategy" id="toc-final-exam-strategy" class="nav-link" data-scroll-target="#final-exam-strategy">88. Final Exam Strategy</a></li>
+  <li><a href="#final-quick-revision-table" id="toc-final-quick-revision-table" class="nav-link" data-scroll-target="#final-quick-revision-table">89. Final Quick Revision Table</a></li>
+  <li><a href="#final-summary" id="toc-final-summary" class="nav-link" data-scroll-target="#final-summary">90. Final Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit VI – Software Engineering</h1>
+<p class="subtitle lead">UGC NET Computer Science and Applications – Paper 2</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-to-software-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-software-engineering">1. Introduction to Software Engineering</h2>
+<section id="what-is-software" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-software">1.1 What is Software?</h3>
+<p>Software is a collection of programs, data, procedures, and related documentation that makes a computer perform useful tasks.</p>
+<p>Examples:</p>
+<ul>
+<li>Operating systems such as Windows and Linux</li>
+<li>Web applications</li>
+<li>Mobile applications</li>
+<li>Banking software</li>
+<li>Hospital management systems</li>
+<li>Artificial intelligence applications</li>
+</ul>
+</section>
+<section id="what-is-software-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-software-engineering">1.2 What is Software Engineering?</h3>
+<p><strong>Software Engineering</strong> is the systematic and disciplined approach used to develop, operate, maintain, and improve software.</p>
+<p>The main objectives are:</p>
+<ul>
+<li>Develop software that satisfies user requirements.</li>
+<li>Complete the project within the available time.</li>
+<li>Control development cost.</li>
+<li>Produce reliable and maintainable software.</li>
+<li>Detect and remove defects.</li>
+<li>Manage changes effectively.</li>
+</ul>
+</section>
+<section id="why-is-software-engineering-needed" class="level3">
+<h3 class="anchored" data-anchor-id="why-is-software-engineering-needed">1.3 Why is Software Engineering Needed?</h3>
+<p>Software projects can become difficult when:</p>
+<ul>
+<li>Requirements are unclear.</li>
+<li>The project is very large.</li>
+<li>Many developers work together.</li>
+<li>Requirements change frequently.</li>
+<li>Testing is inadequate.</li>
+<li>Cost and schedule are not controlled.</li>
+</ul>
+<p>Software engineering provides methods, processes, techniques, and tools to manage these problems.</p>
+<hr>
+</section>
+</section>
+<section id="software-process" class="level1">
+<h1>2. Software Process</h1>
+<p>A <strong>software process</strong> is a structured set of activities used to develop a software product.</p>
+<p>A general software process contains:</p>
+<ol type="1">
+<li>Communication</li>
+<li>Planning</li>
+<li>Modeling</li>
+<li>Construction</li>
+<li>Deployment</li>
+</ol>
+<p>These activities may be performed repeatedly depending on the process model.</p>
+<section id="generic-process-model" class="level2">
+<h2 class="anchored" data-anchor-id="generic-process-model">2.1 Generic Process Model</h2>
+<p>A generic software process framework commonly contains five framework activities.</p>
+<section id="communication" class="level3">
+<h3 class="anchored" data-anchor-id="communication">1. Communication</h3>
+<p>The development team communicates with customers and stakeholders.</p>
+<p>Activities include:</p>
+<ul>
+<li>Understanding the problem</li>
+<li>Identifying stakeholders</li>
+<li>Collecting requirements</li>
+<li>Clarifying user needs</li>
+</ul>
+</section>
+<section id="planning" class="level3">
+<h3 class="anchored" data-anchor-id="planning">2. Planning</h3>
+<p>The project is planned.</p>
+<p>Planning includes:</p>
+<ul>
+<li>Schedule</li>
+<li>Cost</li>
+<li>Resources</li>
+<li>Staffing</li>
+<li>Risks</li>
+<li>Milestones</li>
+</ul>
+</section>
+<section id="modeling" class="level3">
+<h3 class="anchored" data-anchor-id="modeling">3. Modeling</h3>
+<p>The requirements are converted into models.</p>
+<p>Examples:</p>
+<ul>
+<li>Data models</li>
+<li>Architectural models</li>
+<li>Interface models</li>
+<li>Design models</li>
+</ul>
+</section>
+<section id="construction" class="level3">
+<h3 class="anchored" data-anchor-id="construction">4. Construction</h3>
+<p>The actual software is produced.</p>
+<p>Construction includes:</p>
+<ul>
+<li>Coding</li>
+<li>Testing</li>
+<li>Debugging</li>
+</ul>
+</section>
+<section id="deployment" class="level3">
+<h3 class="anchored" data-anchor-id="deployment">5. Deployment</h3>
+<p>The software is delivered to users.</p>
+<p>Deployment may include:</p>
+<ul>
+<li>Installation</li>
+<li>Training</li>
+<li>Feedback</li>
+<li>Maintenance</li>
+</ul>
+</section>
+</section>
+<section id="framework-activity" class="level2">
+<h2 class="anchored" data-anchor-id="framework-activity">2.2 Framework Activity</h2>
+<p>A <strong>framework activity</strong> is a major activity in the software process.</p>
+<p>The major framework activities are:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Activity</th>
+<th>Main purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Communication</td>
+<td>Understand requirements</td>
+</tr>
+<tr class="even">
+<td>Planning</td>
+<td>Plan resources, time and cost</td>
+</tr>
+<tr class="odd">
+<td>Modeling</td>
+<td>Analyze and design</td>
+</tr>
+<tr class="even">
+<td>Construction</td>
+<td>Code and test</td>
+</tr>
+<tr class="odd">
+<td>Deployment</td>
+<td>Deliver and obtain feedback</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="task-set" class="level2">
+<h2 class="anchored" data-anchor-id="task-set">2.3 Task Set</h2>
+<p>A <strong>task set</strong> is a collection of tasks used to accomplish a framework activity.</p>
+<p>For example, under communication:</p>
+<ul>
+<li>Identify stakeholders</li>
+<li>Conduct interviews</li>
+<li>Collect requirements</li>
+<li>Document requirements</li>
+<li>Validate requirements</li>
+</ul>
+</section>
+<section id="process-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="process-patterns">2.4 Process Patterns</h2>
+<p>A <strong>process pattern</strong> describes a reusable solution to a recurring problem in software development.</p>
+<p>A process pattern generally describes:</p>
+<ul>
+<li>Problem</li>
+<li>Context</li>
+<li>Solution</li>
+<li>Consequences</li>
+</ul>
+<p>Process patterns help organizations reuse successful development practices.</p>
+<hr>
+</section>
+</section>
+<section id="process-lifecycle" class="level1">
+<h1>3. Process Lifecycle</h1>
+<p>The software process moves through different stages.</p>
+<p>A simplified lifecycle is:</p>
+<p><strong>Requirements → Design → Coding → Testing → Deployment → Maintenance</strong></p>
+<p>Maintenance may lead to new requirements, so the process can repeat.</p>
+<section id="important-lifecycle-activities" class="level2">
+<h2 class="anchored" data-anchor-id="important-lifecycle-activities">3.1 Important Lifecycle Activities</h2>
+<section id="requirements" class="level3">
+<h3 class="anchored" data-anchor-id="requirements">Requirements</h3>
+<p>Determine what the customer needs.</p>
+</section>
+<section id="design" class="level3">
+<h3 class="anchored" data-anchor-id="design">Design</h3>
+<p>Determine how the software will be built.</p>
+</section>
+<section id="implementation" class="level3">
+<h3 class="anchored" data-anchor-id="implementation">Implementation</h3>
+<p>Write the program.</p>
+</section>
+<section id="testing" class="level3">
+<h3 class="anchored" data-anchor-id="testing">Testing</h3>
+<p>Check whether the software works correctly.</p>
+</section>
+<section id="deployment-1" class="level3">
+<h3 class="anchored" data-anchor-id="deployment-1">Deployment</h3>
+<p>Make the software available to users.</p>
+</section>
+<section id="maintenance" class="level3">
+<h3 class="anchored" data-anchor-id="maintenance">Maintenance</h3>
+<p>Modify the software after delivery.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="prescriptive-process-models" class="level1">
+<h1>4. Prescriptive Process Models</h1>
+<p>A <strong>prescriptive process model</strong> defines a structured approach for software development.</p>
+<p>Important models include:</p>
+<ul>
+<li>Waterfall model</li>
+<li>Incremental model</li>
+<li>Evolutionary models</li>
+<li>Prototype model</li>
+<li>Spiral model</li>
+</ul>
+<hr>
+</section>
+<section id="waterfall-model" class="level1">
+<h1>5. Waterfall Model</h1>
+<p>The <strong>Waterfall model</strong> is a sequential software development model.</p>
+<p>Typical sequence:</p>
+<p><strong>Requirements → Design → Implementation → Testing → Deployment → Maintenance</strong></p>
+<p>Each phase generally finishes before the next phase begins.</p>
+<section id="advantages" class="level2">
+<h2 class="anchored" data-anchor-id="advantages">Advantages</h2>
+<ul>
+<li>Simple to understand</li>
+<li>Easy to manage</li>
+<li>Clear milestones</li>
+<li>Documentation is emphasized</li>
+</ul>
+</section>
+<section id="disadvantages" class="level2">
+<h2 class="anchored" data-anchor-id="disadvantages">Disadvantages</h2>
+<ul>
+<li>Difficult to accommodate changing requirements</li>
+<li>Working software appears relatively late</li>
+<li>Problems may be discovered late</li>
+<li>Not ideal when requirements are uncertain</li>
+</ul>
+</section>
+<section id="ugc-net-point" class="level2">
+<h2 class="anchored" data-anchor-id="ugc-net-point">UGC NET Point</h2>
+<p><strong>Waterfall = sequential development model.</strong></p>
+<hr>
+</section>
+</section>
+<section id="incremental-model" class="level1">
+<h1>6. Incremental Model</h1>
+<p>In the incremental model, the software is developed and delivered in multiple increments.</p>
+<p>For example:</p>
+<ul>
+<li>Increment 1: Login</li>
+<li>Increment 2: Student registration</li>
+<li>Increment 3: Payment</li>
+<li>Increment 4: Reports</li>
+</ul>
+<p>Each increment adds functionality.</p>
+<section id="advantages-1" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-1">Advantages</h2>
+<ul>
+<li>Early delivery of useful functionality</li>
+<li>Easier feedback</li>
+<li>Changes can be incorporated into later increments</li>
+<li>Lower risk than delivering everything at once</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="evolutionary-process-models" class="level1">
+<h1>7. Evolutionary Process Models</h1>
+<p>Evolutionary models develop software through repeated versions.</p>
+<p>Important examples:</p>
+<ul>
+<li>Prototyping</li>
+<li>Spiral model</li>
+</ul>
+<section id="prototyping" class="level2">
+<h2 class="anchored" data-anchor-id="prototyping">7.1 Prototyping</h2>
+<p>A prototype is an early version of a system developed to understand requirements or demonstrate functionality.</p>
+<p>Useful when:</p>
+<ul>
+<li>Requirements are unclear.</li>
+<li>Users need to see an early version.</li>
+<li>User interface requirements are uncertain.</li>
+</ul>
+</section>
+<section id="spiral-model" class="level2">
+<h2 class="anchored" data-anchor-id="spiral-model">7.2 Spiral Model</h2>
+<p>The Spiral model combines iterative development with systematic risk analysis.</p>
+<p>A typical cycle includes:</p>
+<ol type="1">
+<li>Planning</li>
+<li>Risk analysis</li>
+<li>Engineering</li>
+<li>Customer evaluation</li>
+</ol>
+<section id="important-point" class="level3">
+<h3 class="anchored" data-anchor-id="important-point">Important Point</h3>
+<p><strong>Risk analysis is a major characteristic of the Spiral model.</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="component-based-development" class="level1">
+<h1>8. Component-Based Development</h1>
+<p><strong>Component-Based Development (CBD)</strong> develops software by assembling reusable software components.</p>
+<p>A component is a relatively independent software unit that provides a defined service.</p>
+<p>Examples:</p>
+<ul>
+<li>Authentication component</li>
+<li>Payment component</li>
+<li>Reporting component</li>
+</ul>
+<section id="advantages-2" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-2">Advantages</h2>
+<ul>
+<li>Reuse</li>
+<li>Reduced development time</li>
+<li>Potentially lower cost</li>
+<li>Easier maintenance</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="aspect-oriented-software-development" class="level1">
+<h1>9. Aspect-Oriented Software Development</h1>
+<p>Some concerns affect many parts of a software system.</p>
+<p>Examples:</p>
+<ul>
+<li>Logging</li>
+<li>Security</li>
+<li>Error handling</li>
+<li>Transaction management</li>
+</ul>
+<p>These are called <strong>cross-cutting concerns</strong>.</p>
+<p>Aspect-Oriented Software Development separates such concerns from the main business logic.</p>
+<section id="key-terms" class="level3">
+<h3 class="anchored" data-anchor-id="key-terms">Key Terms</h3>
+<p><strong>Aspect:</strong> A modular representation of a cross-cutting concern.</p>
+<p><strong>Join point:</strong> A point in program execution where an aspect can be applied.</p>
+<p><strong>Advice:</strong> Action taken by an aspect at a join point.</p>
+<hr>
+</section>
+</section>
+<section id="formal-methods" class="level1">
+<h1>10. Formal Methods</h1>
+<p>Formal methods use mathematical techniques to specify and verify software systems.</p>
+<p>They are particularly useful when correctness and safety are extremely important.</p>
+<p>Examples:</p>
+<ul>
+<li>Safety-critical systems</li>
+<li>Aerospace systems</li>
+<li>Medical systems</li>
+<li>Nuclear control systems</li>
+</ul>
+<section id="advantages-3" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-3">Advantages</h2>
+<ul>
+<li>Precise specifications</li>
+<li>Can identify errors early</li>
+<li>Supports verification</li>
+</ul>
+</section>
+<section id="limitation" class="level2">
+<h2 class="anchored" data-anchor-id="limitation">Limitation</h2>
+<p>Formal methods can require specialized mathematical knowledge and may be expensive for some projects.</p>
+<hr>
+</section>
+</section>
+<section id="agile-process-models" class="level1">
+<h1>11. Agile Process Models</h1>
+<p><strong>Agile development</strong> emphasizes:</p>
+<ul>
+<li>Frequent delivery</li>
+<li>Customer collaboration</li>
+<li>Working software</li>
+<li>Continuous feedback</li>
+<li>Responding to change</li>
+</ul>
+<p>Agile is useful when requirements change frequently.</p>
+<section id="agile-values" class="level2">
+<h2 class="anchored" data-anchor-id="agile-values">Agile Values</h2>
+<p>Important ideas include:</p>
+<ul>
+<li>Individuals and interactions</li>
+<li>Working software</li>
+<li>Customer collaboration</li>
+<li>Responding to change</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="extreme-programming-xp" class="level1">
+<h1>12. Extreme Programming (XP)</h1>
+<p><strong>Extreme Programming (XP)</strong> is an Agile software development method.</p>
+<p>Important XP practices include:</p>
+<ul>
+<li>Pair programming</li>
+<li>Test-driven development</li>
+<li>Continuous integration</li>
+<li>Refactoring</li>
+<li>Small releases</li>
+<li>Simple design</li>
+<li>Customer involvement</li>
+</ul>
+<section id="pair-programming" class="level2">
+<h2 class="anchored" data-anchor-id="pair-programming">Pair Programming</h2>
+<p>Two programmers work together:</p>
+<ul>
+<li>One writes code.</li>
+<li>The other reviews the code.</li>
+</ul>
+<p>They can switch roles.</p>
+</section>
+<section id="test-driven-development" class="level2">
+<h2 class="anchored" data-anchor-id="test-driven-development">Test-Driven Development</h2>
+<p>TDD generally follows:</p>
+<p><strong>Write test → Write code → Refactor</strong></p>
+<hr>
+</section>
+</section>
+<section id="adaptive-software-development" class="level1">
+<h1>13. Adaptive Software Development</h1>
+<p><strong>Adaptive Software Development (ASD)</strong> is an Agile approach designed for environments with changing requirements.</p>
+<p>A commonly associated cycle is:</p>
+<p><strong>Speculate → Collaborate → Learn</strong></p>
+<section id="speculate" class="level3">
+<h3 class="anchored" data-anchor-id="speculate">Speculate</h3>
+<p>Develop an initial plan while accepting uncertainty.</p>
+</section>
+<section id="collaborate" class="level3">
+<h3 class="anchored" data-anchor-id="collaborate">Collaborate</h3>
+<p>Team members work together.</p>
+</section>
+<section id="learn" class="level3">
+<h3 class="anchored" data-anchor-id="learn">Learn</h3>
+<p>The team uses feedback and experience to improve the next iteration.</p>
+<hr>
+</section>
+</section>
+<section id="scrum" class="level1">
+<h1>14. Scrum</h1>
+<p><strong>Scrum</strong> is an Agile framework for iterative and incremental product development.</p>
+<p>Important Scrum concepts include:</p>
+<ul>
+<li>Product Backlog</li>
+<li>Sprint</li>
+<li>Sprint Backlog</li>
+<li>Increment</li>
+<li>Product Owner</li>
+<li>Scrum Master</li>
+<li>Developers</li>
+</ul>
+<section id="product-backlog" class="level2">
+<h2 class="anchored" data-anchor-id="product-backlog">Product Backlog</h2>
+<p>A prioritized list of desired product work.</p>
+</section>
+<section id="sprint" class="level2">
+<h2 class="anchored" data-anchor-id="sprint">Sprint</h2>
+<p>A fixed development period during which a usable increment is created.</p>
+</section>
+<section id="sprint-backlog" class="level2">
+<h2 class="anchored" data-anchor-id="sprint-backlog">Sprint Backlog</h2>
+<p>The selected work for a Sprint.</p>
+</section>
+<section id="product-owner" class="level2">
+<h2 class="anchored" data-anchor-id="product-owner">Product Owner</h2>
+<p>Responsible for maximizing product value and managing the Product Backlog.</p>
+</section>
+<section id="scrum-master" class="level2">
+<h2 class="anchored" data-anchor-id="scrum-master">Scrum Master</h2>
+<p>Helps the team understand and use Scrum and helps remove impediments.</p>
+</section>
+<section id="daily-scrum" class="level2">
+<h2 class="anchored" data-anchor-id="daily-scrum">Daily Scrum</h2>
+<p>A short daily event used by developers to inspect progress and adapt their plan.</p>
+<section id="ugc-net-focus" class="level3">
+<h3 class="anchored" data-anchor-id="ugc-net-focus">UGC NET Focus</h3>
+<p>Remember:</p>
+<p><strong>Product Backlog → overall prioritized work</strong></p>
+<p><strong>Sprint Backlog → work selected for a Sprint</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="dynamic-systems-development-method" class="level1">
+<h1>15. Dynamic Systems Development Method</h1>
+<p>The <strong>Dynamic Systems Development Method (DSDM)</strong> is an Agile approach that emphasizes:</p>
+<ul>
+<li>Frequent delivery</li>
+<li>Active user involvement</li>
+<li>Iterative development</li>
+<li>Business needs</li>
+<li>Timeboxing</li>
+</ul>
+<p>Timeboxing means allocating a fixed amount of time to a development activity.</p>
+<hr>
+</section>
+<section id="feature-driven-development" class="level1">
+<h1>16. Feature Driven Development</h1>
+<p><strong>Feature Driven Development (FDD)</strong> organizes development around features.</p>
+<p>A simplified sequence is:</p>
+<ol type="1">
+<li>Develop overall model</li>
+<li>Build feature list</li>
+<li>Plan by feature</li>
+<li>Design by feature</li>
+<li>Build by feature</li>
+</ol>
+<p>A feature represents a small client-valued capability.</p>
+<hr>
+</section>
+<section id="crystal" class="level1">
+<h1>17. Crystal</h1>
+<p><strong>Crystal</strong> is a family of Agile methodologies.</p>
+<p>Crystal emphasizes:</p>
+<ul>
+<li>People</li>
+<li>Communication</li>
+<li>Frequent delivery</li>
+<li>Adaptability</li>
+<li>Team interaction</li>
+</ul>
+<p>Different Crystal methods can be selected depending on factors such as team size and project criticality.</p>
+<hr>
+</section>
+<section id="web-engineering" class="level1">
+<h1>18. Web Engineering</h1>
+<p><strong>Web Engineering</strong> is the systematic approach to developing and maintaining web applications.</p>
+<p>It considers:</p>
+<ul>
+<li>Requirements</li>
+<li>Web architecture</li>
+<li>Navigation</li>
+<li>User interface</li>
+<li>Content</li>
+<li>Security</li>
+<li>Performance</li>
+<li>Testing</li>
+<li>Deployment</li>
+<li>Maintenance</li>
+</ul>
+<p>Web applications often have additional concerns such as:</p>
+<ul>
+<li>Browser compatibility</li>
+<li>Responsive design</li>
+<li>Searchability</li>
+<li>High traffic</li>
+<li>Security</li>
+<li>Frequent content changes</li>
+</ul>
+<hr>
+</section>
+<section id="software-requirements" class="level1">
+<h1>19. Software Requirements</h1>
+<p>A <strong>software requirement</strong> describes a capability or condition that the software must satisfy.</p>
+<p>Requirements answer:</p>
+<p><strong>What should the system do?</strong></p>
+<hr>
+</section>
+<section id="functional-requirements" class="level1">
+<h1>20. Functional Requirements</h1>
+<p>A <strong>functional requirement</strong> describes a specific function or service provided by the system.</p>
+<p>Examples:</p>
+<ul>
+<li>The system shall allow users to log in.</li>
+<li>The system shall calculate student marks.</li>
+<li>The system shall generate a monthly report.</li>
+<li>The system shall send an email confirmation.</li>
+</ul>
+<section id="easy-way-to-remember" class="level3">
+<h3 class="anchored" data-anchor-id="easy-way-to-remember">Easy way to remember</h3>
+<p><strong>Functional = What the system does.</strong></p>
+<hr>
+</section>
+</section>
+<section id="non-functional-requirements" class="level1">
+<h1>21. Non-Functional Requirements</h1>
+<p>Non-functional requirements describe qualities, constraints, or characteristics of the system.</p>
+<p>Examples:</p>
+<ul>
+<li>Performance</li>
+<li>Security</li>
+<li>Reliability</li>
+<li>Usability</li>
+<li>Maintainability</li>
+<li>Availability</li>
+<li>Scalability</li>
+</ul>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>The system shall respond to a user request within 2 seconds.</p>
+</blockquote>
+<p>This is a performance requirement.</p>
+<section id="comparison" class="level3">
+<h3 class="anchored" data-anchor-id="comparison">Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Functional</th>
+<th>Non-functional</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Describes functions</td>
+<td>Describes qualities/constraints</td>
+</tr>
+<tr class="even">
+<td>What the system does</td>
+<td>How well the system performs</td>
+</tr>
+<tr class="odd">
+<td>Login</td>
+<td>Response time</td>
+</tr>
+<tr class="even">
+<td>Generate report</td>
+<td>Security</td>
+</tr>
+<tr class="odd">
+<td>Calculate marks</td>
+<td>Reliability</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="requirements-elicitation" class="level1">
+<h1>22. Requirements Elicitation</h1>
+<p><strong>Requirements elicitation</strong> is the process of discovering and understanding requirements from stakeholders.</p>
+<p>Common techniques:</p>
+<ul>
+<li>Interviews</li>
+<li>Questionnaires</li>
+<li>Observation</li>
+<li>Workshops</li>
+<li>Brainstorming</li>
+<li>Document analysis</li>
+<li>Prototyping</li>
+<li>Focus groups</li>
+</ul>
+<section id="interview" class="level2">
+<h2 class="anchored" data-anchor-id="interview">Interview</h2>
+<p>The analyst asks stakeholders questions.</p>
+</section>
+<section id="observation" class="level2">
+<h2 class="anchored" data-anchor-id="observation">Observation</h2>
+<p>The analyst observes users performing their work.</p>
+</section>
+<section id="questionnaire" class="level2">
+<h2 class="anchored" data-anchor-id="questionnaire">Questionnaire</h2>
+<p>A structured set of questions is given to users.</p>
+</section>
+<section id="workshop" class="level2">
+<h2 class="anchored" data-anchor-id="workshop">Workshop</h2>
+<p>Stakeholders and analysts discuss requirements together.</p>
+</section>
+<section id="prototyping-1" class="level2">
+<h2 class="anchored" data-anchor-id="prototyping-1">Prototyping</h2>
+<p>An early model is developed to help users clarify requirements.</p>
+<hr>
+</section>
+</section>
+<section id="developing-use-cases" class="level1">
+<h1>23. Developing Use Cases</h1>
+<p>A <strong>use case</strong> describes how an actor interacts with a system to achieve a goal.</p>
+<section id="example-online-library" class="level3">
+<h3 class="anchored" data-anchor-id="example-online-library">Example: Online Library</h3>
+<p>Actor:</p>
+<p><strong>Student</strong></p>
+<p>Use cases:</p>
+<ul>
+<li>Search book</li>
+<li>Borrow book</li>
+<li>Return book</li>
+<li>Renew book</li>
+</ul>
+</section>
+<section id="important-terms" class="level3">
+<h3 class="anchored" data-anchor-id="important-terms">Important Terms</h3>
+<p><strong>Actor:</strong> Person or external system interacting with the system.</p>
+<p><strong>Use case:</strong> A goal-oriented interaction with the system.</p>
+<p><strong>System boundary:</strong> Defines what is inside the system.</p>
+<hr>
+</section>
+</section>
+<section id="requirements-analysis-and-modelling" class="level1">
+<h1>24. Requirements Analysis and Modelling</h1>
+<p>Requirements analysis examines collected requirements and identifies:</p>
+<ul>
+<li>Missing requirements</li>
+<li>Conflicting requirements</li>
+<li>Ambiguous requirements</li>
+<li>Incomplete requirements</li>
+<li>Feasibility issues</li>
+</ul>
+<p>Common models include:</p>
+<ul>
+<li>Use-case models</li>
+<li>Data-flow models</li>
+<li>Class models</li>
+<li>State models</li>
+<li>Entity-relationship models</li>
+</ul>
+<hr>
+</section>
+<section id="requirements-review" class="level1">
+<h1>25. Requirements Review</h1>
+<p>Requirements should be reviewed before design and implementation.</p>
+<p>Review checks:</p>
+<ul>
+<li>Correctness</li>
+<li>Completeness</li>
+<li>Consistency</li>
+<li>Clarity</li>
+<li>Feasibility</li>
+<li>Testability</li>
+<li>Traceability</li>
+</ul>
+<section id="common-requirement-problems" class="level3">
+<h3 class="anchored" data-anchor-id="common-requirement-problems">Common Requirement Problems</h3>
+<p><strong>Ambiguous:</strong> Can have multiple meanings.</p>
+<p><strong>Incomplete:</strong> Important information is missing.</p>
+<p><strong>Inconsistent:</strong> Two requirements conflict.</p>
+<hr>
+</section>
+</section>
+<section id="software-requirements-specification-srs" class="level1">
+<h1>26. Software Requirements Specification (SRS)</h1>
+<p>An <strong>SRS</strong> document describes the software requirements in a structured form.</p>
+<p>Typical SRS contents include:</p>
+<ol type="1">
+<li>Introduction</li>
+<li>Overall description</li>
+<li>Functional requirements</li>
+<li>Non-functional requirements</li>
+<li>External interface requirements</li>
+<li>Constraints</li>
+<li>Assumptions</li>
+<li>Other requirements</li>
+</ol>
+<section id="characteristics-of-a-good-srs" class="level2">
+<h2 class="anchored" data-anchor-id="characteristics-of-a-good-srs">Characteristics of a Good SRS</h2>
+<p>A good SRS should be:</p>
+<ul>
+<li>Correct</li>
+<li>Unambiguous</li>
+<li>Complete</li>
+<li>Consistent</li>
+<li>Verifiable</li>
+<li>Modifiable</li>
+<li>Traceable</li>
+</ul>
+<section id="ugc-net-point-1" class="level3">
+<h3 class="anchored" data-anchor-id="ugc-net-point-1">UGC NET Point</h3>
+<p><strong>SRS describes what the software must provide, not the detailed implementation of how it will be built.</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="software-design" class="level1">
+<h1>27. Software Design</h1>
+<p>Software design transforms requirements into a blueprint for implementation.</p>
+<p>The major design levels include:</p>
+<ul>
+<li>Data design</li>
+<li>Architectural design</li>
+<li>Interface design</li>
+<li>Component-level design</li>
+</ul>
+<hr>
+</section>
+<section id="abstraction" class="level1">
+<h1>28. Abstraction</h1>
+<p><strong>Abstraction</strong> means focusing on important features while hiding unnecessary details.</p>
+<p>Example:</p>
+<p>A user presses a <strong>Print</strong> button without knowing the internal printer communication mechanism.</p>
+<section id="simple-idea" class="level3">
+<h3 class="anchored" data-anchor-id="simple-idea">Simple idea</h3>
+<p><strong>Abstraction = Show important things, hide unnecessary details.</strong></p>
+<hr>
+</section>
+</section>
+<section id="software-architecture" class="level1">
+<h1>29. Software Architecture</h1>
+<p>Software architecture describes the high-level structure of a software system.</p>
+<p>It identifies:</p>
+<ul>
+<li>Major components</li>
+<li>Relationships between components</li>
+<li>Communication mechanisms</li>
+<li>Major architectural decisions</li>
+</ul>
+<p>Examples of architectural styles:</p>
+<ul>
+<li>Layered architecture</li>
+<li>Client-server architecture</li>
+<li>Repository architecture</li>
+<li>Pipe-and-filter architecture</li>
+</ul>
+<hr>
+</section>
+<section id="design-patterns" class="level1">
+<h1>30. Design Patterns</h1>
+<p>A <strong>design pattern</strong> is a reusable solution to a commonly occurring software design problem.</p>
+<p>Examples:</p>
+<ul>
+<li>Singleton</li>
+<li>Factory</li>
+<li>Observer</li>
+<li>Adapter</li>
+<li>Strategy</li>
+</ul>
+<p>A design pattern is not usually a complete program. It is a reusable design idea.</p>
+<hr>
+</section>
+<section id="separation-of-concerns" class="level1">
+<h1>31. Separation of Concerns</h1>
+<p><strong>Separation of concerns</strong> means dividing a system into parts so that each part deals with a particular concern.</p>
+<p>Example:</p>
+<p>A web application may separate:</p>
+<ul>
+<li>User interface</li>
+<li>Business logic</li>
+<li>Database access</li>
+</ul>
+<p>Benefits:</p>
+<ul>
+<li>Easier maintenance</li>
+<li>Better understanding</li>
+<li>Easier testing</li>
+<li>Reduced complexity</li>
+</ul>
+<hr>
+</section>
+<section id="modularity" class="level1">
+<h1>32. Modularity</h1>
+<p><strong>Modularity</strong> means dividing software into smaller modules.</p>
+<p>Example:</p>
+<p>A college management system may have:</p>
+<ul>
+<li>Student module</li>
+<li>Faculty module</li>
+<li>Examination module</li>
+<li>Fee module</li>
+<li>Attendance module</li>
+</ul>
+<p>Good modularity makes software easier to understand and maintain.</p>
+<hr>
+</section>
+<section id="information-hiding" class="level1">
+<h1>33. Information Hiding</h1>
+<p><strong>Information hiding</strong> means hiding internal implementation details of a module from other modules.</p>
+<p>For example, a class may expose methods for accessing data without exposing the internal representation of that data.</p>
+<section id="abstraction-vs-information-hiding" class="level3">
+<h3 class="anchored" data-anchor-id="abstraction-vs-information-hiding">Abstraction vs Information Hiding</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Abstraction</th>
+<th>Information Hiding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Focuses on essential features</td>
+<td>Hides design/implementation details</td>
+</tr>
+<tr class="even">
+<td>Reduces conceptual complexity</td>
+<td>Protects module internals</td>
+</tr>
+<tr class="odd">
+<td>What is important</td>
+<td>What should remain hidden</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="functional-independence" class="level1">
+<h1>34. Functional Independence</h1>
+<p>A module has <strong>functional independence</strong> when it performs a well-defined task and has minimal dependence on other modules.</p>
+<p>Functional independence is related to:</p>
+<ul>
+<li>High cohesion</li>
+<li>Low coupling</li>
+</ul>
+<section id="important-ugc-net-point" class="level3">
+<h3 class="anchored" data-anchor-id="important-ugc-net-point">Important UGC NET Point</h3>
+<p><strong>Good design → High cohesion + Low coupling</strong></p>
+<hr>
+</section>
+</section>
+<section id="cohesion" class="level1">
+<h1>35. Cohesion</h1>
+<p><strong>Cohesion</strong> measures how strongly the elements of a module belong together.</p>
+<p>Higher cohesion is generally desirable.</p>
+<p>From lower to higher cohesion, a commonly taught ordering is:</p>
+<ol type="1">
+<li>Coincidental</li>
+<li>Logical</li>
+<li>Temporal</li>
+<li>Procedural</li>
+<li>Communicational</li>
+<li>Sequential</li>
+<li>Functional</li>
+</ol>
+<section id="functional-cohesion" class="level3">
+<h3 class="anchored" data-anchor-id="functional-cohesion">Functional Cohesion</h3>
+<p>All elements of the module contribute to one well-defined function.</p>
+<hr>
+</section>
+</section>
+<section id="coupling" class="level1">
+<h1>36. Coupling</h1>
+<p><strong>Coupling</strong> measures the degree of dependency between modules.</p>
+<p>Lower coupling is generally desirable.</p>
+<p>A commonly taught ordering from stronger to weaker coupling is:</p>
+<ol type="1">
+<li>Content coupling</li>
+<li>Common coupling</li>
+<li>External coupling</li>
+<li>Control coupling</li>
+<li>Stamp coupling</li>
+<li>Data coupling</li>
+</ol>
+<section id="key-point" class="level3">
+<h3 class="anchored" data-anchor-id="key-point">Key Point</h3>
+<p><strong>High cohesion + Low coupling = desirable software design.</strong></p>
+<hr>
+</section>
+</section>
+<section id="object-oriented-design" class="level1">
+<h1>37. Object-Oriented Design</h1>
+<p>Object-oriented design represents a system using objects and classes.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Class</li>
+<li>Object</li>
+<li>Encapsulation</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+<li>Abstraction</li>
+</ul>
+<p>Example:</p>
+<p>Class:</p>
+<p><code>Student</code></p>
+<p>Attributes:</p>
+<ul>
+<li>Student ID</li>
+<li>Name</li>
+<li>Department</li>
+</ul>
+<p>Methods:</p>
+<ul>
+<li>Register()</li>
+<li>ViewMarks()</li>
+</ul>
+<hr>
+</section>
+<section id="data-design" class="level1">
+<h1>38. Data Design</h1>
+<p>Data design determines:</p>
+<ul>
+<li>Data structures</li>
+<li>Database structures</li>
+<li>Relationships</li>
+<li>Data organization</li>
+<li>Data storage</li>
+</ul>
+<p>The goal is to organize data efficiently and correctly.</p>
+<hr>
+</section>
+<section id="architectural-design" class="level1">
+<h1>39. Architectural Design</h1>
+<p>Architectural design identifies the major components of the software and their relationships.</p>
+<p>Example:</p>
+<p>A three-layer application:</p>
+<p><strong>Presentation Layer → Business Layer → Data Layer</strong></p>
+<hr>
+</section>
+<section id="user-interface-design" class="level1">
+<h1>40. User Interface Design</h1>
+<p>User interface design determines how users interact with software.</p>
+<p>Important principles:</p>
+<ul>
+<li>Consistency</li>
+<li>Simplicity</li>
+<li>Feedback</li>
+<li>Error prevention</li>
+<li>Easy navigation</li>
+<li>Clear messages</li>
+<li>Accessibility</li>
+</ul>
+<hr>
+</section>
+<section id="component-level-design" class="level1">
+<h1>41. Component-Level Design</h1>
+<p>Component-level design describes the internal design of individual software components.</p>
+<p>It may specify:</p>
+<ul>
+<li>Algorithms</li>
+<li>Data structures</li>
+<li>Interfaces</li>
+<li>Methods</li>
+<li>Processing logic</li>
+</ul>
+<hr>
+</section>
+<section id="software-quality" class="level1">
+<h1>42. Software Quality</h1>
+<p>Software quality refers to the degree to which software satisfies stated and implied requirements.</p>
+<p>Important quality attributes include:</p>
+<ul>
+<li>Correctness</li>
+<li>Reliability</li>
+<li>Usability</li>
+<li>Efficiency</li>
+<li>Maintainability</li>
+<li>Portability</li>
+<li>Security</li>
+</ul>
+<hr>
+</section>
+<section id="mccalls-quality-factors" class="level1">
+<h1>43. McCall’s Quality Factors</h1>
+<p>McCall’s model groups software quality factors into three broad categories.</p>
+<section id="product-operation" class="level2">
+<h2 class="anchored" data-anchor-id="product-operation">Product Operation</h2>
+<ul>
+<li>Correctness</li>
+<li>Reliability</li>
+<li>Efficiency</li>
+<li>Integrity</li>
+<li>Usability</li>
+</ul>
+</section>
+<section id="product-revision" class="level2">
+<h2 class="anchored" data-anchor-id="product-revision">Product Revision</h2>
+<ul>
+<li>Maintainability</li>
+<li>Flexibility</li>
+<li>Testability</li>
+</ul>
+</section>
+<section id="product-transition" class="level2">
+<h2 class="anchored" data-anchor-id="product-transition">Product Transition</h2>
+<ul>
+<li>Portability</li>
+<li>Reusability</li>
+<li>Interoperability</li>
+</ul>
+<section id="easy-memory" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory">Easy Memory</h3>
+<p><strong>Operation → Revision → Transition</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="iso-9126-quality-factors" class="level1">
+<h1>44. ISO 9126 Quality Factors</h1>
+<p>ISO/IEC 9126 traditionally identified six major software quality characteristics:</p>
+<ol type="1">
+<li>Functionality</li>
+<li>Reliability</li>
+<li>Usability</li>
+<li>Efficiency</li>
+<li>Maintainability</li>
+<li>Portability</li>
+</ol>
+<section id="easy-memory-1" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory-1">Easy Memory</h3>
+<p><strong>F R U E M P</strong></p>
+<p>Functionality → Reliability → Usability → Efficiency → Maintainability → Portability</p>
+<hr>
+</section>
+</section>
+<section id="quality-control" class="level1">
+<h1>45. Quality Control</h1>
+<p><strong>Quality Control (QC)</strong> focuses on identifying defects in products or deliverables.</p>
+<p>Examples:</p>
+<ul>
+<li>Testing</li>
+<li>Inspection</li>
+<li>Reviews</li>
+<li>Defect detection</li>
+</ul>
+<p>QC is mainly concerned with:</p>
+<p><strong>Finding defects.</strong></p>
+<hr>
+</section>
+<section id="quality-assurance" class="level1">
+<h1>46. Quality Assurance</h1>
+<p><strong>Quality Assurance (QA)</strong> focuses on improving and ensuring the processes used to produce software.</p>
+<p>Examples:</p>
+<ul>
+<li>Process standards</li>
+<li>Audits</li>
+<li>Reviews</li>
+<li>Process improvement</li>
+<li>Quality procedures</li>
+</ul>
+<section id="qa-vs-qc" class="level3">
+<h3 class="anchored" data-anchor-id="qa-vs-qc">QA vs QC</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>QA</th>
+<th>QC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Process-oriented</td>
+<td>Product-oriented</td>
+</tr>
+<tr class="even">
+<td>Preventive emphasis</td>
+<td>Detection emphasis</td>
+</tr>
+<tr class="odd">
+<td>Improves development process</td>
+<td>Finds defects</td>
+</tr>
+<tr class="even">
+<td>Establishes standards</td>
+<td>Performs testing/inspection</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="risk-management" class="level1">
+<h1>47. Risk Management</h1>
+<p>A <strong>risk</strong> is an uncertain event or condition that may negatively affect a project.</p>
+<p>Examples:</p>
+<ul>
+<li>Requirement changes</li>
+<li>Staff turnover</li>
+<li>Technology failure</li>
+<li>Schedule delay</li>
+<li>Budget problems</li>
+<li>Security problems</li>
+</ul>
+<p>Risk management includes:</p>
+<ol type="1">
+<li>Risk identification</li>
+<li>Risk analysis</li>
+<li>Risk planning</li>
+<li>Risk monitoring</li>
+</ol>
+<hr>
+</section>
+<section id="risk-mitigation" class="level1">
+<h1>48. Risk Mitigation</h1>
+<p>Risk mitigation means taking action to reduce the probability or impact of a risk.</p>
+<p>Example:</p>
+<p>Risk: Key developer may leave.</p>
+<p>Mitigation:</p>
+<ul>
+<li>Cross-training</li>
+<li>Documentation</li>
+<li>Knowledge sharing</li>
+</ul>
+<hr>
+</section>
+<section id="rmmm-plan" class="level1">
+<h1>49. RMMM Plan</h1>
+<p><strong>RMMM = Risk Mitigation, Monitoring and Management</strong></p>
+<p>An RMMM plan describes:</p>
+<ul>
+<li>Identified risks</li>
+<li>Risk mitigation</li>
+<li>Monitoring activities</li>
+<li>Management actions</li>
+</ul>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>Risk:</p>
+<p>Database server failure.</p>
+<p>Mitigation:</p>
+<p>Regular backup and redundant server.</p>
+<p>Monitoring:</p>
+<p>Monitor server health.</p>
+<p>Management:</p>
+<p>Switch to backup server when failure occurs.</p>
+<hr>
+</section>
+</section>
+<section id="software-reliability" class="level1">
+<h1>50. Software Reliability</h1>
+<p><strong>Software reliability</strong> is the probability that software performs its required functions without failure for a specified period under specified conditions.</p>
+<p>Important terms:</p>
+<ul>
+<li>Failure</li>
+<li>Reliability</li>
+<li>Availability</li>
+<li>Mean Time Between Failures (MTBF)</li>
+</ul>
+<p>A commonly used relationship is:</p>
+<p><strong>MTBF = MTTF + MTTR</strong></p>
+<p>where:</p>
+<ul>
+<li>MTTF = Mean Time To Failure</li>
+<li>MTTR = Mean Time To Repair</li>
+</ul>
+<p>Availability can be represented as:</p>
+<p><strong>Availability = MTBF ÷ (MTBF + MTTR)</strong></p>
+<hr>
+</section>
+<section id="software-estimation" class="level1">
+<h1>51. Software Estimation</h1>
+<p>Software estimation predicts:</p>
+<ul>
+<li>Size</li>
+<li>Effort</li>
+<li>Cost</li>
+<li>Schedule</li>
+<li>Resources</li>
+</ul>
+<p>Accurate estimation helps project managers plan effectively.</p>
+<hr>
+</section>
+<section id="software-sizing" class="level1">
+<h1>52. Software Sizing</h1>
+<p>Software size can be estimated using measures such as:</p>
+<ul>
+<li>LOC</li>
+<li>Function Points</li>
+</ul>
+<hr>
+</section>
+<section id="loc" class="level1">
+<h1>53. LOC</h1>
+<p><strong>LOC = Lines of Code</strong></p>
+<p>LOC estimates software size based on the number of source-code lines.</p>
+<p>Example:</p>
+<p>If a project contains approximately 20,000 lines of source code:</p>
+<p><strong>Size = 20 KLOC</strong></p>
+<p>where:</p>
+<p><strong>KLOC = Thousand Lines of Code</strong></p>
+<section id="advantages-4" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-4">Advantages</h2>
+<ul>
+<li>Easy to understand</li>
+<li>Can be used with historical data</li>
+</ul>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<ul>
+<li>Depends on programming language</li>
+<li>Difficult to estimate before coding</li>
+<li>Does not directly measure functionality</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="function-point-analysis" class="level1">
+<h1>54. Function Point Analysis</h1>
+<p>Function Point (FP) measures software size based on functionality delivered to the user.</p>
+<p>Traditional function point analysis considers:</p>
+<ol type="1">
+<li>External Inputs</li>
+<li>External Outputs</li>
+<li>External Inquiries</li>
+<li>Internal Logical Files</li>
+<li>External Interface Files</li>
+</ol>
+<p>A basic form is:</p>
+<p><strong>FP = UFP × VAF</strong></p>
+<p>where:</p>
+<ul>
+<li>UFP = Unadjusted Function Points</li>
+<li>VAF = Value Adjustment Factor</li>
+</ul>
+<section id="important-point-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-point-1">Important Point</h3>
+<p><strong>LOC measures code size; Function Points focus on functionality.</strong></p>
+<hr>
+</section>
+</section>
+<section id="cost-and-effort-estimation" class="level1">
+<h1>55. Cost and Effort Estimation</h1>
+<p>Software effort may be measured in:</p>
+<p><strong>Person-months</strong></p>
+<p>Example:</p>
+<p>If 5 people work for 4 months:</p>
+<p><strong>Effort = 5 × 4 = 20 person-months</strong></p>
+<p>This is a simple illustration; actual productivity varies.</p>
+<hr>
+</section>
+<section id="estimation-models" class="level1">
+<h1>56. Estimation Models</h1>
+<p>Estimation models use mathematical relationships and historical information to estimate project effort, cost, or schedule.</p>
+<p>Examples:</p>
+<ul>
+<li>COCOMO</li>
+<li>Function Point based estimation</li>
+<li>Expert judgment</li>
+<li>Analogy-based estimation</li>
+</ul>
+<hr>
+</section>
+<section id="cocomo" class="level1">
+<h1>57. COCOMO</h1>
+<p><strong>COCOMO = Constructive Cost Model</strong></p>
+<p>COCOMO was proposed by Barry Boehm.</p>
+<p>The basic COCOMO model estimates effort using:</p>
+<p><strong>Effort = a × (KLOC)^b</strong></p>
+<p>where:</p>
+<ul>
+<li>Effort is measured in person-months.</li>
+<li>KLOC = thousand lines of code.</li>
+<li>a and b depend on the project mode.</li>
+</ul>
+<p>Development time can be estimated using:</p>
+<p><strong>Development Time = c × (Effort)^d</strong></p>
+<hr>
+</section>
+<section id="cocomo-project-modes" class="level1">
+<h1>58. COCOMO Project Modes</h1>
+<p>The traditional Basic COCOMO model uses three project modes:</p>
+<section id="organic" class="level3">
+<h3 class="anchored" data-anchor-id="organic">Organic</h3>
+<p>Suitable for relatively small and simple projects with experienced teams.</p>
+</section>
+<section id="semi-detached" class="level3">
+<h3 class="anchored" data-anchor-id="semi-detached">Semi-detached</h3>
+<p>Suitable for projects of intermediate complexity.</p>
+</section>
+<section id="embedded" class="level3">
+<h3 class="anchored" data-anchor-id="embedded">Embedded</h3>
+<p>Suitable for complex projects with strong constraints.</p>
+</section>
+<section id="basic-cocomo-coefficients" class="level2">
+<h2 class="anchored" data-anchor-id="basic-cocomo-coefficients">Basic COCOMO Coefficients</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Mode</th>
+<th style="text-align: right;">a</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">c</th>
+<th style="text-align: right;">d</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Organic</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: right;">1.05</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">0.38</td>
+</tr>
+<tr class="even">
+<td>Semi-detached</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.12</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">0.35</td>
+</tr>
+<tr class="odd">
+<td>Embedded</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.20</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">0.32</td>
+</tr>
+</tbody>
+</table>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<p>Suppose an organic project has:</p>
+<p><strong>KLOC = 10</strong></p>
+<p>Then:</p>
+<p><strong>Effort = 2.4 × (10)^1.05</strong></p>
+<p>The result is approximately <strong>26.9 person-months</strong>.</p>
+</section>
+<section id="ugc-net-focus-1" class="level3">
+<h3 class="anchored" data-anchor-id="ugc-net-focus-1">UGC NET Focus</h3>
+<p>Remember:</p>
+<p><strong>COCOMO → Effort, Development Time, KLOC, Project Mode</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="project-scheduling" class="level1">
+<h1>59. Project Scheduling</h1>
+<p>Project scheduling determines:</p>
+<ul>
+<li>What tasks must be performed</li>
+<li>When tasks begin</li>
+<li>When tasks finish</li>
+<li>Dependencies between tasks</li>
+<li>Who performs each task</li>
+</ul>
+<p>Important scheduling concepts:</p>
+<ul>
+<li>Activities</li>
+<li>Milestones</li>
+<li>Dependencies</li>
+<li>Resources</li>
+<li>Deadlines</li>
+</ul>
+<hr>
+</section>
+<section id="project-staffing" class="level1">
+<h1>60. Project Staffing</h1>
+<p>Staffing determines the people required for the project.</p>
+<p>It considers:</p>
+<ul>
+<li>Number of developers</li>
+<li>Required skills</li>
+<li>Project phase</li>
+<li>Workload</li>
+<li>Availability</li>
+<li>Cost</li>
+</ul>
+<p>Adding more people does not always reduce project duration because communication and coordination overhead can increase.</p>
+<hr>
+</section>
+<section id="timeline-charts" class="level1">
+<h1>61. Timeline Charts</h1>
+<p>A timeline chart shows project activities against time.</p>
+<p>A common example is the <strong>Gantt chart</strong>.</p>
+<p>A Gantt chart represents:</p>
+<ul>
+<li>Tasks</li>
+<li>Start dates</li>
+<li>End dates</li>
+<li>Duration</li>
+<li>Progress</li>
+</ul>
+<p>Example:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Week 1</th>
+<th>Week 2</th>
+<th>Week 3</th>
+<th>Week 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Requirements</td>
+<td>███</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Design</td>
+<td></td>
+<td>███</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Coding</td>
+<td></td>
+<td></td>
+<td>███</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Testing</td>
+<td></td>
+<td></td>
+<td></td>
+<td>███</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="software-testing" class="level1">
+<h1>62. Software Testing</h1>
+<p>Software testing is the process of evaluating software to find defects and determine whether it satisfies requirements.</p>
+<p>Testing can reveal:</p>
+<ul>
+<li>Incorrect output</li>
+<li>Missing functionality</li>
+<li>Performance problems</li>
+<li>Security problems</li>
+<li>Interface problems</li>
+</ul>
+<hr>
+</section>
+<section id="verification-and-validation" class="level1">
+<h1>63. Verification and Validation</h1>
+<section id="verification" class="level3">
+<h3 class="anchored" data-anchor-id="verification">Verification</h3>
+<p>Verification asks:</p>
+<p><strong>Are we building the product right?</strong></p>
+<p>It checks whether software work products satisfy specified requirements.</p>
+<p>Examples:</p>
+<ul>
+<li>Reviews</li>
+<li>Inspections</li>
+<li>Walkthroughs</li>
+</ul>
+</section>
+<section id="validation" class="level3">
+<h3 class="anchored" data-anchor-id="validation">Validation</h3>
+<p>Validation asks:</p>
+<p><strong>Are we building the right product?</strong></p>
+<p>It checks whether the final software satisfies user needs.</p>
+<p>Examples:</p>
+<ul>
+<li>Testing</li>
+<li>User acceptance testing</li>
+</ul>
+</section>
+<section id="easy-memory-2" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory-2">Easy Memory</h3>
+<p><strong>Verification → Product built right</strong></p>
+<p><strong>Validation → Right product</strong></p>
+<hr>
+</section>
+</section>
+<section id="error-fault-bug-and-failure" class="level1">
+<h1>64. Error, Fault, Bug and Failure</h1>
+<p>These terms are related but different.</p>
+<section id="error" class="level3">
+<h3 class="anchored" data-anchor-id="error">Error</h3>
+<p>A human mistake.</p>
+<p>Example:</p>
+<p>Developer writes <code>x + y</code> instead of <code>x - y</code>.</p>
+</section>
+<section id="fault" class="level3">
+<h3 class="anchored" data-anchor-id="fault">Fault</h3>
+<p>A defect in the software caused by an error.</p>
+</section>
+<section id="bug" class="level3">
+<h3 class="anchored" data-anchor-id="bug">Bug</h3>
+<p>Common informal term for a software defect.</p>
+</section>
+<section id="failure" class="level3">
+<h3 class="anchored" data-anchor-id="failure">Failure</h3>
+<p>The software behaves incorrectly during execution.</p>
+</section>
+<section id="relationship" class="level3">
+<h3 class="anchored" data-anchor-id="relationship">Relationship</h3>
+<p><strong>Human Error → Fault/Bug → Failure</strong></p>
+<hr>
+</section>
+</section>
+<section id="unit-testing" class="level1">
+<h1>65. Unit Testing</h1>
+<p>Unit testing tests individual software units.</p>
+<p>A unit may be:</p>
+<ul>
+<li>Function</li>
+<li>Method</li>
+<li>Class</li>
+<li>Module</li>
+</ul>
+<p>Example:</p>
+<p>Testing a function that calculates student percentage.</p>
+<hr>
+</section>
+<section id="integration-testing" class="level1">
+<h1>66. Integration Testing</h1>
+<p>Integration testing tests interactions between combined modules.</p>
+<p>Example:</p>
+<ul>
+<li>Student registration module</li>
+<li>Payment module</li>
+<li>Database module</li>
+</ul>
+<p>The purpose is to find interface and interaction problems.</p>
+<section id="unit-vs-integration" class="level3">
+<h3 class="anchored" data-anchor-id="unit-vs-integration">Unit vs Integration</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Unit Testing</th>
+<th>Integration Testing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tests individual units</td>
+<td>Tests combined units</td>
+</tr>
+<tr class="even">
+<td>Early testing</td>
+<td>After individual units are available</td>
+</tr>
+<tr class="odd">
+<td>Focus on local behavior</td>
+<td>Focus on interactions</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="white-box-testing" class="level1">
+<h1>67. White-Box Testing</h1>
+<p>White-box testing uses knowledge of the internal program structure.</p>
+<p>The tester can examine:</p>
+<ul>
+<li>Statements</li>
+<li>Branches</li>
+<li>Conditions</li>
+<li>Paths</li>
+<li>Loops</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Basis path testing</li>
+<li>Control structure testing</li>
+</ul>
+<section id="easy-memory-3" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory-3">Easy Memory</h3>
+<p><strong>White-box → Inside the code is known.</strong></p>
+<hr>
+</section>
+</section>
+<section id="black-box-testing" class="level1">
+<h1>68. Black-Box Testing</h1>
+<p>Black-box testing tests functionality without requiring knowledge of the internal implementation.</p>
+<p>The tester focuses on:</p>
+<ul>
+<li>Inputs</li>
+<li>Outputs</li>
+<li>Requirements</li>
+<li>External behavior</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Equivalence partitioning</li>
+<li>Boundary value analysis</li>
+<li>Decision table testing</li>
+</ul>
+<section id="easy-memory-4" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory-4">Easy Memory</h3>
+<p><strong>Black-box → Internal code is not the focus.</strong></p>
+<hr>
+</section>
+</section>
+<section id="basis-path-testing" class="level1">
+<h1>69. Basis Path Testing</h1>
+<p>Basis path testing is a white-box testing technique based on the control-flow structure of a program.</p>
+<p>It uses <strong>cyclomatic complexity</strong> to determine the number of linearly independent paths.</p>
+<p>A common formula is:</p>
+<p><strong>V(G) = E - N + 2</strong></p>
+<p>where:</p>
+<ul>
+<li>E = number of edges</li>
+<li>N = number of nodes</li>
+</ul>
+<p>For a connected flow graph, cyclomatic complexity can also be calculated as:</p>
+<p><strong>V(G) = P + 1</strong></p>
+<p>where:</p>
+<ul>
+<li>P = number of predicate nodes</li>
+</ul>
+<section id="important-point-2" class="level3">
+<h3 class="anchored" data-anchor-id="important-point-2">Important Point</h3>
+<p>Cyclomatic complexity gives the number of independent paths that form a basis set.</p>
+<hr>
+</section>
+</section>
+<section id="control-structure-testing" class="level1">
+<h1>70. Control Structure Testing</h1>
+<p>Control structure testing examines control structures in a program.</p>
+<p>Examples:</p>
+<ul>
+<li>Condition testing</li>
+<li>Loop testing</li>
+<li>Data-flow testing</li>
+</ul>
+<section id="loop-testing" class="level2">
+<h2 class="anchored" data-anchor-id="loop-testing">Loop Testing</h2>
+<p>Loops should be tested for cases such as:</p>
+<ul>
+<li>Zero iterations</li>
+<li>One iteration</li>
+<li>Typical iterations</li>
+<li>Maximum iterations</li>
+<li>Boundary conditions</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="deriving-test-cases" class="level1">
+<h1>71. Deriving Test Cases</h1>
+<p>A good test case should specify:</p>
+<ul>
+<li>Input</li>
+<li>Preconditions</li>
+<li>Expected output</li>
+<li>Actual output</li>
+<li>Pass/fail result</li>
+</ul>
+<p>Test cases should include normal and abnormal situations.</p>
+<hr>
+</section>
+<section id="alpha-testing" class="level1">
+<h1>72. Alpha Testing</h1>
+<p><strong>Alpha testing</strong> is performed at the developer’s site or controlled development environment before wider release.</p>
+<p>It is generally performed by internal testers and/or selected users under controlled conditions.</p>
+<hr>
+</section>
+<section id="beta-testing" class="level1">
+<h1>73. Beta Testing</h1>
+<p><strong>Beta testing</strong> is performed by selected external users in a real or realistic user environment before final release.</p>
+<section id="alpha-vs-beta" class="level3">
+<h3 class="anchored" data-anchor-id="alpha-vs-beta">Alpha vs Beta</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Alpha</th>
+<th>Beta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Controlled environment</td>
+<td>Real user environment</td>
+</tr>
+<tr class="even">
+<td>Usually before beta</td>
+<td>After alpha</td>
+</tr>
+<tr class="odd">
+<td>Developer organization</td>
+<td>Selected external users</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="regression-testing" class="level1">
+<h1>74. Regression Testing</h1>
+<p><strong>Regression testing</strong> ensures that changes have not introduced unintended defects into previously working functionality.</p>
+<p>It is important after:</p>
+<ul>
+<li>Bug fixes</li>
+<li>New features</li>
+<li>Code modifications</li>
+<li>Configuration changes</li>
+</ul>
+<section id="key-point-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-point-1">Key Point</h3>
+<p><strong>Regression testing = retest affected existing functionality after changes.</strong></p>
+<hr>
+</section>
+</section>
+<section id="performance-testing" class="level1">
+<h1>75. Performance Testing</h1>
+<p>Performance testing evaluates system behavior under expected workloads.</p>
+<p>It may examine:</p>
+<ul>
+<li>Response time</li>
+<li>Throughput</li>
+<li>Resource utilization</li>
+<li>Scalability</li>
+</ul>
+<hr>
+</section>
+<section id="stress-testing" class="level1">
+<h1>76. Stress Testing</h1>
+<p>Stress testing evaluates software under extreme or beyond-normal conditions.</p>
+<p>Examples:</p>
+<ul>
+<li>Very high number of users</li>
+<li>Very large input</li>
+<li>Limited memory</li>
+<li>High transaction load</li>
+</ul>
+<section id="performance-vs-stress" class="level3">
+<h3 class="anchored" data-anchor-id="performance-vs-stress">Performance vs Stress</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Performance Testing</th>
+<th>Stress Testing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Expected workload</td>
+<td>Extreme workload</td>
+</tr>
+<tr class="even">
+<td>Measures performance</td>
+<td>Tests behavior under overload</td>
+</tr>
+<tr class="odd">
+<td>Response time/throughput</td>
+<td>Stability and failure behavior</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="software-configuration-management" class="level1">
+<h1>77. Software Configuration Management</h1>
+<p><strong>Software Configuration Management (SCM)</strong> manages changes to software and related artifacts throughout the software lifecycle.</p>
+<p>SCM helps maintain consistency and traceability.</p>
+<p>Configuration items may include:</p>
+<ul>
+<li>Source code</li>
+<li>Requirements</li>
+<li>Design documents</li>
+<li>Test cases</li>
+<li>Build files</li>
+<li>Documentation</li>
+</ul>
+<hr>
+</section>
+<section id="change-control" class="level1">
+<h1>78. Change Control</h1>
+<p>Change control is a systematic process for handling requested changes.</p>
+<p>Typical steps:</p>
+<ol type="1">
+<li>Submit change request</li>
+<li>Analyze impact</li>
+<li>Approve or reject</li>
+<li>Implement change</li>
+<li>Test change</li>
+<li>Record change</li>
+</ol>
+<section id="why-change-control-is-needed" class="level3">
+<h3 class="anchored" data-anchor-id="why-change-control-is-needed">Why Change Control is Needed</h3>
+<p>Without controlled changes:</p>
+<ul>
+<li>Versions can become inconsistent.</li>
+<li>Defects may be introduced.</li>
+<li>Requirements may be lost.</li>
+<li>Project cost may increase.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="version-control" class="level1">
+<h1>79. Version Control</h1>
+<p>Version control manages different versions of files and source code.</p>
+<p>Examples of version control systems include:</p>
+<ul>
+<li>Git</li>
+<li>Subversion</li>
+</ul>
+<p>Version control provides:</p>
+<ul>
+<li>History</li>
+<li>Branching</li>
+<li>Merging</li>
+<li>Collaboration</li>
+<li>Rollback</li>
+</ul>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example</h3>
+<p>A Git repository can maintain:</p>
+<ul>
+<li>Version 1.0</li>
+<li>Version 1.1</li>
+<li>Version 2.0</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="software-reuse" class="level1">
+<h1>80. Software Reuse</h1>
+<p><strong>Software reuse</strong> means using existing software assets to develop new software.</p>
+<p>Reusable assets may include:</p>
+<ul>
+<li>Code</li>
+<li>Components</li>
+<li>Libraries</li>
+<li>Frameworks</li>
+<li>Designs</li>
+<li>Requirements</li>
+<li>Test cases</li>
+</ul>
+<section id="advantages-5" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-5">Advantages</h2>
+<ul>
+<li>Reduced development time</li>
+<li>Lower cost</li>
+<li>Improved reliability when reused components are proven</li>
+<li>Reduced duplication</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="software-re-engineering" class="level1">
+<h1>81. Software Re-engineering</h1>
+<p><strong>Software re-engineering</strong> is the process of examining and modifying an existing software system to improve it, maintain it, or migrate it to a better form.</p>
+<p>It may involve:</p>
+<ul>
+<li>Code restructuring</li>
+<li>Data restructuring</li>
+<li>Documentation improvement</li>
+<li>Architecture improvement</li>
+<li>Migration</li>
+</ul>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example</h3>
+<p>An old desktop application may be re-engineered into a modern web-based application.</p>
+<hr>
+</section>
+</section>
+<section id="reverse-engineering" class="level1">
+<h1>82. Reverse Engineering</h1>
+<p><strong>Reverse engineering</strong> extracts higher-level information from an existing software system.</p>
+<p>For example:</p>
+<p><strong>Source code → Design information</strong></p>
+<p>It attempts to understand an existing system.</p>
+<section id="important-difference" class="level3">
+<h3 class="anchored" data-anchor-id="important-difference">Important Difference</h3>
+<p><strong>Reverse engineering:</strong> Understand an existing system.</p>
+<p><strong>Re-engineering:</strong> Modify/improve an existing system.</p>
+<hr>
+</section>
+</section>
+<section id="important-comparisons-for-ugc-net" class="level1">
+<h1>83. Important Comparisons for UGC NET</h1>
+<section id="waterfall-vs-agile" class="level2">
+<h2 class="anchored" data-anchor-id="waterfall-vs-agile">Waterfall vs Agile</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Waterfall</th>
+<th>Agile</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sequential</td>
+<td>Iterative/incremental</td>
+</tr>
+<tr class="even">
+<td>Change is more difficult</td>
+<td>Welcomes changing requirements</td>
+</tr>
+<tr class="odd">
+<td>Feedback usually later</td>
+<td>Frequent feedback</td>
+</tr>
+<tr class="even">
+<td>Detailed upfront planning</td>
+<td>Adaptive planning</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functional-vs-non-functional-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="functional-vs-non-functional-requirements">Functional vs Non-functional Requirements</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Functional</th>
+<th>Non-functional</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What system does</td>
+<td>Quality/constraint</td>
+</tr>
+<tr class="even">
+<td>Login</td>
+<td>Security</td>
+</tr>
+<tr class="odd">
+<td>Calculate salary</td>
+<td>Performance</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="qa-vs-qc-1" class="level2">
+<h2 class="anchored" data-anchor-id="qa-vs-qc-1">QA vs QC</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>QA</th>
+<th>QC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Process</td>
+<td>Product</td>
+</tr>
+<tr class="even">
+<td>Preventive emphasis</td>
+<td>Defect detection</td>
+</tr>
+<tr class="odd">
+<td>Standards and process improvement</td>
+<td>Testing and inspection</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="white-box-vs-black-box" class="level2">
+<h2 class="anchored" data-anchor-id="white-box-vs-black-box">White-box vs Black-box</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>White-box</th>
+<th>Black-box</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Internal structure known/used</td>
+<td>Internal implementation not required</td>
+</tr>
+<tr class="even">
+<td>Code-oriented</td>
+<td>Requirement/function-oriented</td>
+</tr>
+<tr class="odd">
+<td>Basis path</td>
+<td>Boundary value analysis</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reverse-engineering-vs-re-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="reverse-engineering-vs-re-engineering">Reverse Engineering vs Re-engineering</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Reverse Engineering</th>
+<th>Re-engineering</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Understand existing system</td>
+<td>Improve/modify existing system</td>
+</tr>
+<tr class="even">
+<td>Extract higher-level information</td>
+<td>Transform existing system</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="important-formulas" class="level1">
+<h1>84. Important Formulas</h1>
+<section id="cocomo-1" class="level2">
+<h2 class="anchored" data-anchor-id="cocomo-1">COCOMO</h2>
+<p><strong>Effort = a × (KLOC)^b</strong></p>
+<p><strong>Development Time = c × (Effort)^d</strong></p>
+</section>
+<section id="function-points" class="level2">
+<h2 class="anchored" data-anchor-id="function-points">Function Points</h2>
+<p><strong>FP = UFP × VAF</strong></p>
+</section>
+<section id="cyclomatic-complexity" class="level2">
+<h2 class="anchored" data-anchor-id="cyclomatic-complexity">Cyclomatic Complexity</h2>
+<p><strong>V(G) = E - N + 2</strong></p>
+<p>or</p>
+<p><strong>V(G) = P + 1</strong></p>
+</section>
+<section id="availability" class="level2">
+<h2 class="anchored" data-anchor-id="availability">Availability</h2>
+<p><strong>Availability = MTBF ÷ (MTBF + MTTR)</strong></p>
+</section>
+<section id="effort" class="level2">
+<h2 class="anchored" data-anchor-id="effort">Effort</h2>
+<p><strong>Effort = Number of people × Time</strong></p>
+<hr>
+</section>
+</section>
+<section id="ugc-net-high-priority-topics" class="level1">
+<h1>85. UGC NET High-Priority Topics</h1>
+<p>Focus especially on:</p>
+<ol type="1">
+<li>Waterfall model</li>
+<li>Spiral model</li>
+<li>Agile development</li>
+<li>XP</li>
+<li>Scrum</li>
+<li>ASD</li>
+<li>DSDM</li>
+<li>FDD</li>
+<li>Functional and non-functional requirements</li>
+<li>Requirements elicitation</li>
+<li>Use cases</li>
+<li>SRS characteristics</li>
+<li>Cohesion and coupling</li>
+<li>Abstraction and information hiding</li>
+<li>Design patterns</li>
+<li>McCall’s quality factors</li>
+<li>ISO 9126</li>
+<li>QA vs QC</li>
+<li>Risk management</li>
+<li>RMMM</li>
+<li>LOC vs Function Points</li>
+<li>COCOMO</li>
+<li>Verification vs validation</li>
+<li>Error/fault/failure</li>
+<li>Unit and integration testing</li>
+<li>White-box and black-box testing</li>
+<li>Cyclomatic complexity</li>
+<li>Alpha and beta testing</li>
+<li>Regression testing</li>
+<li>Performance vs stress testing</li>
+<li>Configuration management</li>
+<li>Version control</li>
+<li>Reuse</li>
+<li>Reverse engineering</li>
+<li>Re-engineering</li>
+</ol>
+<hr>
+</section>
+<section id="common-ugc-net-confusions" class="level1">
+<h1>86. Common UGC NET Confusions</h1>
+<section id="confusion-1" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-1">Confusion 1</h3>
+<p><strong>Verification vs Validation</strong></p>
+<p>Remember:</p>
+<blockquote class="blockquote">
+<p>Verification = Are we building the product right?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Validation = Are we building the right product?</p>
+</blockquote>
+</section>
+<section id="confusion-2" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-2">Confusion 2</h3>
+<p><strong>Cohesion vs Coupling</strong></p>
+<p>Remember:</p>
+<blockquote class="blockquote">
+<p>Cohesion = relationship within a module.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Coupling = relationship between modules.</p>
+</blockquote>
+<p>Desired:</p>
+<p><strong>High cohesion + Low coupling</strong></p>
+</section>
+<section id="confusion-3" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-3">Confusion 3</h3>
+<p><strong>QA vs QC</strong></p>
+<p>Remember:</p>
+<blockquote class="blockquote">
+<p>QA = process-oriented.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>QC = product-oriented.</p>
+</blockquote>
+</section>
+<section id="confusion-4" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-4">Confusion 4</h3>
+<p><strong>White-box vs Black-box</strong></p>
+<p>Remember:</p>
+<blockquote class="blockquote">
+<p>White-box = internal program structure.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Black-box = external behavior.</p>
+</blockquote>
+</section>
+<section id="confusion-5" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-5">Confusion 5</h3>
+<p><strong>Reverse Engineering vs Re-engineering</strong></p>
+<p>Remember:</p>
+<blockquote class="blockquote">
+<p>Reverse = understand.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Re-engineering = transform/improve.</p>
+</blockquote>
+</section>
+<section id="confusion-6" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-6">Confusion 6</h3>
+<p><strong>Alpha vs Beta</strong></p>
+<p>Remember:</p>
+<blockquote class="blockquote">
+<p>Alpha = controlled/developer environment.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Beta = selected external users/realistic environment.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="one-minute-revision" class="level1">
+<h1>87. One-Minute Revision</h1>
+<section id="software-process-1" class="level2">
+<h2 class="anchored" data-anchor-id="software-process-1">Software Process</h2>
+<p><strong>Communication → Planning → Modeling → Construction → Deployment</strong></p>
+</section>
+<section id="agile" class="level2">
+<h2 class="anchored" data-anchor-id="agile">Agile</h2>
+<p><strong>Frequent delivery + customer collaboration + adaptability</strong></p>
+</section>
+<section id="requirements-1" class="level2">
+<h2 class="anchored" data-anchor-id="requirements-1">Requirements</h2>
+<p><strong>Functional = what</strong></p>
+<p><strong>Non-functional = quality/constraint</strong></p>
+</section>
+<section id="design-1" class="level2">
+<h2 class="anchored" data-anchor-id="design-1">Design</h2>
+<p><strong>High cohesion + Low coupling</strong></p>
+</section>
+<section id="quality" class="level2">
+<h2 class="anchored" data-anchor-id="quality">Quality</h2>
+<p><strong>QA = process</strong></p>
+<p><strong>QC = product</strong></p>
+</section>
+<section id="risk" class="level2">
+<h2 class="anchored" data-anchor-id="risk">Risk</h2>
+<p><strong>Identify → Analyze → Plan → Monitor</strong></p>
+</section>
+<section id="estimation" class="level2">
+<h2 class="anchored" data-anchor-id="estimation">Estimation</h2>
+<p><strong>LOC → code size</strong></p>
+<p><strong>FP → functionality</strong></p>
+<p><strong>COCOMO → effort/time estimation</strong></p>
+</section>
+<section id="testing-1" class="level2">
+<h2 class="anchored" data-anchor-id="testing-1">Testing</h2>
+<p><strong>Verification → building the product right</strong></p>
+<p><strong>Validation → building the right product</strong></p>
+<p><strong>White-box → internal structure</strong></p>
+<p><strong>Black-box → external behavior</strong></p>
+</section>
+<section id="configuration" class="level2">
+<h2 class="anchored" data-anchor-id="configuration">Configuration</h2>
+<p><strong>Change control + Version control</strong></p>
+</section>
+<section id="legacy-software" class="level2">
+<h2 class="anchored" data-anchor-id="legacy-software">Legacy Software</h2>
+<p><strong>Reverse engineering → understand</strong></p>
+<p><strong>Re-engineering → improve/transform</strong></p>
+<hr>
+</section>
+</section>
+<section id="final-exam-strategy" class="level1">
+<h1>88. Final Exam Strategy</h1>
+<p>For Software Engineering questions, concentrate on:</p>
+<ul>
+<li>Definitions</li>
+<li>Process model characteristics</li>
+<li>Agile terminology</li>
+<li>Scrum roles and artifacts</li>
+<li>SRS characteristics</li>
+<li>Cohesion and coupling</li>
+<li>Quality models</li>
+<li>COCOMO equations</li>
+<li>Cyclomatic complexity</li>
+<li>Testing classifications</li>
+<li>QA and QC</li>
+<li>Risk management</li>
+<li>Configuration management</li>
+<li>Reverse engineering and re-engineering</li>
+</ul>
+<p>For numerical questions, practice:</p>
+<ul>
+<li>COCOMO</li>
+<li>Function Point calculations</li>
+<li>Cyclomatic complexity</li>
+<li>Reliability and availability</li>
+<li>Effort calculations</li>
+</ul>
+<p>For comparison questions, memorize the differences between:</p>
+<ul>
+<li>Waterfall and Agile</li>
+<li>Functional and non-functional requirements</li>
+<li>Cohesion and coupling</li>
+<li>QA and QC</li>
+<li>Verification and validation</li>
+<li>White-box and black-box testing</li>
+<li>Alpha and beta testing</li>
+<li>Performance and stress testing</li>
+<li>Reverse engineering and re-engineering</li>
+</ul>
+<hr>
+</section>
+<section id="final-quick-revision-table" class="level1">
+<h1>89. Final Quick Revision Table</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Key Point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Waterfall</td>
+<td>Sequential</td>
+</tr>
+<tr class="even">
+<td>Spiral</td>
+<td>Risk-driven</td>
+</tr>
+<tr class="odd">
+<td>Agile</td>
+<td>Adaptive and iterative</td>
+</tr>
+<tr class="even">
+<td>XP</td>
+<td>Agile method</td>
+</tr>
+<tr class="odd">
+<td>Scrum</td>
+<td>Agile framework</td>
+</tr>
+<tr class="even">
+<td>Functional requirement</td>
+<td>What system does</td>
+</tr>
+<tr class="odd">
+<td>Non-functional requirement</td>
+<td>Quality/constraint</td>
+</tr>
+<tr class="even">
+<td>SRS</td>
+<td>Requirements specification</td>
+</tr>
+<tr class="odd">
+<td>Cohesion</td>
+<td>Within a module</td>
+</tr>
+<tr class="even">
+<td>Coupling</td>
+<td>Between modules</td>
+</tr>
+<tr class="odd">
+<td>Good design</td>
+<td>High cohesion, low coupling</td>
+</tr>
+<tr class="even">
+<td>McCall</td>
+<td>Software quality factors</td>
+</tr>
+<tr class="odd">
+<td>ISO 9126</td>
+<td>Six quality characteristics</td>
+</tr>
+<tr class="even">
+<td>QA</td>
+<td>Process-oriented</td>
+</tr>
+<tr class="odd">
+<td>QC</td>
+<td>Product-oriented</td>
+</tr>
+<tr class="even">
+<td>LOC</td>
+<td>Lines of Code</td>
+</tr>
+<tr class="odd">
+<td>FP</td>
+<td>Functionality</td>
+</tr>
+<tr class="even">
+<td>COCOMO</td>
+<td>Effort estimation model</td>
+</tr>
+<tr class="odd">
+<td>Verification</td>
+<td>Building product right</td>
+</tr>
+<tr class="even">
+<td>Validation</td>
+<td>Building right product</td>
+</tr>
+<tr class="odd">
+<td>Unit testing</td>
+<td>Individual unit</td>
+</tr>
+<tr class="even">
+<td>Integration testing</td>
+<td>Interaction between units</td>
+</tr>
+<tr class="odd">
+<td>White-box</td>
+<td>Internal structure</td>
+</tr>
+<tr class="even">
+<td>Black-box</td>
+<td>External behavior</td>
+</tr>
+<tr class="odd">
+<td>Cyclomatic complexity</td>
+<td>Independent paths</td>
+</tr>
+<tr class="even">
+<td>Alpha testing</td>
+<td>Controlled/internal environment</td>
+</tr>
+<tr class="odd">
+<td>Beta testing</td>
+<td>Selected external users</td>
+</tr>
+<tr class="even">
+<td>Regression testing</td>
+<td>Test after changes</td>
+</tr>
+<tr class="odd">
+<td>Stress testing</td>
+<td>Extreme load</td>
+</tr>
+<tr class="even">
+<td>SCM</td>
+<td>Manage software changes</td>
+</tr>
+<tr class="odd">
+<td>Version control</td>
+<td>Manage versions</td>
+</tr>
+<tr class="even">
+<td>Reverse engineering</td>
+<td>Understand existing system</td>
+</tr>
+<tr class="odd">
+<td>Re-engineering</td>
+<td>Improve/transform existing system</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="final-summary" class="level1">
+<h1>90. Final Summary</h1>
+<p>Software Engineering provides systematic methods for developing reliable and maintainable software.</p>
+<p>The major areas in this unit are:</p>
+<p><strong>Software Process → Requirements → Design → Quality → Estimation → Scheduling → Testing → Configuration Management</strong></p>
+<p>For UGC NET, understand the concepts rather than memorizing isolated definitions.</p>
+<p>The most important relationships to remember are:</p>
+<p><strong>High Cohesion + Low Coupling</strong></p>
+<p><strong>QA = Process</strong></p>
+<p><strong>QC = Product</strong></p>
+<p><strong>Verification = Product right</strong></p>
+<p><strong>Validation = Right product</strong></p>
+<p><strong>White-box = Internal structure</strong></p>
+<p><strong>Black-box = External behavior</strong></p>
+<p><strong>Reverse Engineering = Understand</strong></p>
+<p><strong>Re-engineering = Improve/Transform</strong></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

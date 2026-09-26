@@ -1,0 +1,3209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit VII – Data Structures and Algorithms – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper1.html"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper2.html" aria-current="page"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit7-data-structures-and-algorithms.html">Unit VII – Data Structures and Algorithms</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 2 – Computer Science &amp; Applications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-discrete-structures-and-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Discrete Structures and Optimization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-computer-system-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Computer System Architecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-programming-languages-and-computer-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Programming Languages and Computer Graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-database-management-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Database Management Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-system-software-and-operating-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – System Software and Operating System</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-software-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Software Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-structures-and-algorithms.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit VII – Data Structures and Algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-theory-of-computation-and-compilers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Theory of Computation and Compilers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-data-communication-and-computer-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – Data Communication and Computer Networks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-artificial-intelligence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Artificial Intelligence (AI)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">2. Data Structures</a>
+  <ul class="collapse">
+  <li><a href="#linear-data-structures" id="toc-linear-data-structures" class="nav-link" data-scroll-target="#linear-data-structures">Linear Data Structures</a></li>
+  <li><a href="#non-linear-data-structures" id="toc-non-linear-data-structures" class="nav-link" data-scroll-target="#non-linear-data-structures">Non-Linear Data Structures</a></li>
+  </ul></li>
+  <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays">3. Arrays</a>
+  <ul class="collapse">
+  <li><a href="#advantages" id="toc-advantages" class="nav-link" data-scroll-target="#advantages">3.1 Advantages</a></li>
+  <li><a href="#disadvantages" id="toc-disadvantages" class="nav-link" data-scroll-target="#disadvantages">3.2 Disadvantages</a></li>
+  <li><a href="#array-applications" id="toc-array-applications" class="nav-link" data-scroll-target="#array-applications">3.3 Array Applications</a>
+  <ul class="collapse">
+  <li><a href="#array-access" id="toc-array-access" class="nav-link" data-scroll-target="#array-access">Array Access</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sparse-matrix" id="toc-sparse-matrix" class="nav-link" data-scroll-target="#sparse-matrix">4. Sparse Matrix</a>
+  <ul class="collapse">
+  <li><a href="#triplet-representation" id="toc-triplet-representation" class="nav-link" data-scroll-target="#triplet-representation">4.1 Triplet Representation</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a></li>
+  </ul></li>
+  <li><a href="#stack" id="toc-stack" class="nav-link" data-scroll-target="#stack">5. Stack</a>
+  <ul class="collapse">
+  <li><a href="#stack-operations" id="toc-stack-operations" class="nav-link" data-scroll-target="#stack-operations">5.1 Stack Operations</a>
+  <ul class="collapse">
+  <li><a href="#push" id="toc-push" class="nav-link" data-scroll-target="#push">Push</a></li>
+  <li><a href="#pop" id="toc-pop" class="nav-link" data-scroll-target="#pop">Pop</a></li>
+  <li><a href="#peektop" id="toc-peektop" class="nav-link" data-scroll-target="#peektop">Peek/Top</a></li>
+  <li><a href="#isempty" id="toc-isempty" class="nav-link" data-scroll-target="#isempty">IsEmpty</a></li>
+  </ul></li>
+  <li><a href="#applications-1" id="toc-applications-1" class="nav-link" data-scroll-target="#applications-1">5.2 Applications</a></li>
+  <li><a href="#complexity" id="toc-complexity" class="nav-link" data-scroll-target="#complexity">Complexity</a></li>
+  </ul></li>
+  <li><a href="#queue" id="toc-queue" class="nav-link" data-scroll-target="#queue">6. Queue</a>
+  <ul class="collapse">
+  <li><a href="#queue-operations" id="toc-queue-operations" class="nav-link" data-scroll-target="#queue-operations">6.1 Queue Operations</a></li>
+  <li><a href="#applications-2" id="toc-applications-2" class="nav-link" data-scroll-target="#applications-2">Applications</a></li>
+  </ul></li>
+  <li><a href="#circular-queue" id="toc-circular-queue" class="nav-link" data-scroll-target="#circular-queue">7. Circular Queue</a>
+  <ul class="collapse">
+  <li><a href="#important-idea" id="toc-important-idea" class="nav-link" data-scroll-target="#important-idea">Important Idea</a></li>
+  </ul></li>
+  <li><a href="#priority-queue" id="toc-priority-queue" class="nav-link" data-scroll-target="#priority-queue">8. Priority Queue</a>
+  <ul class="collapse">
+  <li><a href="#applications-3" id="toc-applications-3" class="nav-link" data-scroll-target="#applications-3">Applications</a></li>
+  </ul></li>
+  <li><a href="#linked-lists" id="toc-linked-lists" class="nav-link" data-scroll-target="#linked-lists">9. Linked Lists</a>
+  <ul class="collapse">
+  <li><a href="#advantages-1" id="toc-advantages-1" class="nav-link" data-scroll-target="#advantages-1">Advantages</a></li>
+  <li><a href="#disadvantages-1" id="toc-disadvantages-1" class="nav-link" data-scroll-target="#disadvantages-1">Disadvantages</a></li>
+  </ul></li>
+  <li><a href="#types-of-linked-lists" id="toc-types-of-linked-lists" class="nav-link" data-scroll-target="#types-of-linked-lists">10. Types of Linked Lists</a>
+  <ul class="collapse">
+  <li><a href="#singly-linked-list" id="toc-singly-linked-list" class="nav-link" data-scroll-target="#singly-linked-list">10.1 Singly Linked List</a></li>
+  <li><a href="#doubly-linked-list" id="toc-doubly-linked-list" class="nav-link" data-scroll-target="#doubly-linked-list">10.2 Doubly Linked List</a></li>
+  <li><a href="#circular-linked-list" id="toc-circular-linked-list" class="nav-link" data-scroll-target="#circular-linked-list">10.3 Circular Linked List</a></li>
+  </ul></li>
+  <li><a href="#trees" id="toc-trees" class="nav-link" data-scroll-target="#trees">11. Trees</a></li>
+  <li><a href="#forest" id="toc-forest" class="nav-link" data-scroll-target="#forest">12. Forest</a>
+  <ul class="collapse">
+  <li><a href="#important-relationship" id="toc-important-relationship" class="nav-link" data-scroll-target="#important-relationship">Important Relationship</a></li>
+  </ul></li>
+  <li><a href="#binary-tree" id="toc-binary-tree" class="nav-link" data-scroll-target="#binary-tree">13. Binary Tree</a>
+  <ul class="collapse">
+  <li><a href="#important-properties" id="toc-important-properties" class="nav-link" data-scroll-target="#important-properties">Important Properties</a></li>
+  </ul></li>
+  <li><a href="#tree-traversals" id="toc-tree-traversals" class="nav-link" data-scroll-target="#tree-traversals">14. Tree Traversals</a>
+  <ul class="collapse">
+  <li><a href="#preorder" id="toc-preorder" class="nav-link" data-scroll-target="#preorder">14.1 Preorder</a></li>
+  <li><a href="#inorder" id="toc-inorder" class="nav-link" data-scroll-target="#inorder">14.2 Inorder</a></li>
+  <li><a href="#postorder" id="toc-postorder" class="nav-link" data-scroll-target="#postorder">14.3 Postorder</a></li>
+  <li><a href="#level-order" id="toc-level-order" class="nav-link" data-scroll-target="#level-order">14.4 Level Order</a></li>
+  </ul></li>
+  <li><a href="#threaded-binary-tree" id="toc-threaded-binary-tree" class="nav-link" data-scroll-target="#threaded-binary-tree">15. Threaded Binary Tree</a>
+  <ul class="collapse">
+  <li><a href="#advantage" id="toc-advantage" class="nav-link" data-scroll-target="#advantage">Advantage</a></li>
+  </ul></li>
+  <li><a href="#binary-search-tree" id="toc-binary-search-tree" class="nav-link" data-scroll-target="#binary-search-tree">16. Binary Search Tree</a>
+  <ul class="collapse">
+  <li><a href="#searching" id="toc-searching" class="nav-link" data-scroll-target="#searching">Searching</a></li>
+  <li><a href="#complexity-1" id="toc-complexity-1" class="nav-link" data-scroll-target="#complexity-1">Complexity</a>
+  <ul class="collapse">
+  <li><a href="#important-ugc-net-point" id="toc-important-ugc-net-point" class="nav-link" data-scroll-target="#important-ugc-net-point">Important UGC NET Point</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#avl-tree" id="toc-avl-tree" class="nav-link" data-scroll-target="#avl-tree">17. AVL Tree</a>
+  <ul class="collapse">
+  <li><a href="#types-of-rotations" id="toc-types-of-rotations" class="nav-link" data-scroll-target="#types-of-rotations">Types of Rotations</a>
+  <ul class="collapse">
+  <li><a href="#ll-case" id="toc-ll-case" class="nav-link" data-scroll-target="#ll-case">LL Case</a></li>
+  <li><a href="#rr-case" id="toc-rr-case" class="nav-link" data-scroll-target="#rr-case">RR Case</a></li>
+  <li><a href="#lr-case" id="toc-lr-case" class="nav-link" data-scroll-target="#lr-case">LR Case</a></li>
+  <li><a href="#rl-case" id="toc-rl-case" class="nav-link" data-scroll-target="#rl-case">RL Case</a></li>
+  </ul></li>
+  <li><a href="#complexity-2" id="toc-complexity-2" class="nav-link" data-scroll-target="#complexity-2">Complexity</a></li>
+  </ul></li>
+  <li><a href="#b-tree" id="toc-b-tree" class="nav-link" data-scroll-target="#b-tree">18. B-Tree</a>
+  <ul class="collapse">
+  <li><a href="#important-properties-1" id="toc-important-properties-1" class="nav-link" data-scroll-target="#important-properties-1">Important Properties</a></li>
+  </ul></li>
+  <li><a href="#b-tree-1" id="toc-b-tree-1" class="nav-link" data-scroll-target="#b-tree-1">19. B+ Tree</a>
+  <ul class="collapse">
+  <li><a href="#advantage-1" id="toc-advantage-1" class="nav-link" data-scroll-target="#advantage-1">Advantage</a></li>
+  </ul></li>
+  <li><a href="#b-tree-2" id="toc-b-tree-2" class="nav-link" data-scroll-target="#b-tree-2">20. B* Tree</a>
+  <ul class="collapse">
+  <li><a href="#important-point" id="toc-important-point" class="nav-link" data-scroll-target="#important-point">Important Point</a></li>
+  </ul></li>
+  <li><a href="#data-structures-for-sets" id="toc-data-structures-for-sets" class="nav-link" data-scroll-target="#data-structures-for-sets">21. Data Structures for Sets</a>
+  <ul class="collapse">
+  <li><a href="#disjoint-set-union-find" id="toc-disjoint-set-union-find" class="nav-link" data-scroll-target="#disjoint-set-union-find">Disjoint Set / Union-Find</a>
+  <ul class="collapse">
+  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#graphs" id="toc-graphs" class="nav-link" data-scroll-target="#graphs">22. Graphs</a></li>
+  <li><a href="#types-of-graphs" id="toc-types-of-graphs" class="nav-link" data-scroll-target="#types-of-graphs">23. Types of Graphs</a>
+  <ul class="collapse">
+  <li><a href="#undirected-graph" id="toc-undirected-graph" class="nav-link" data-scroll-target="#undirected-graph">Undirected Graph</a></li>
+  <li><a href="#directed-graph" id="toc-directed-graph" class="nav-link" data-scroll-target="#directed-graph">Directed Graph</a></li>
+  <li><a href="#weighted-graph" id="toc-weighted-graph" class="nav-link" data-scroll-target="#weighted-graph">Weighted Graph</a></li>
+  <li><a href="#complete-graph" id="toc-complete-graph" class="nav-link" data-scroll-target="#complete-graph">Complete Graph</a></li>
+  </ul></li>
+  <li><a href="#graph-representation" id="toc-graph-representation" class="nav-link" data-scroll-target="#graph-representation">24. Graph Representation</a>
+  <ul class="collapse">
+  <li><a href="#adjacency-matrix" id="toc-adjacency-matrix" class="nav-link" data-scroll-target="#adjacency-matrix">24.1 Adjacency Matrix</a></li>
+  <li><a href="#adjacency-list" id="toc-adjacency-list" class="nav-link" data-scroll-target="#adjacency-list">24.2 Adjacency List</a>
+  <ul class="collapse">
+  <li><a href="#comparison" id="toc-comparison" class="nav-link" data-scroll-target="#comparison">Comparison</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sorting-algorithms" id="toc-sorting-algorithms" class="nav-link" data-scroll-target="#sorting-algorithms">25. Sorting Algorithms</a></li>
+  <li><a href="#bubble-sort" id="toc-bubble-sort" class="nav-link" data-scroll-target="#bubble-sort">26. Bubble Sort</a>
+  <ul class="collapse">
+  <li><a href="#complexity-3" id="toc-complexity-3" class="nav-link" data-scroll-target="#complexity-3">Complexity</a></li>
+  <li><a href="#stable" id="toc-stable" class="nav-link" data-scroll-target="#stable">Stable?</a></li>
+  </ul></li>
+  <li><a href="#selection-sort" id="toc-selection-sort" class="nav-link" data-scroll-target="#selection-sort">27. Selection Sort</a>
+  <ul class="collapse">
+  <li><a href="#complexity-4" id="toc-complexity-4" class="nav-link" data-scroll-target="#complexity-4">Complexity</a></li>
+  </ul></li>
+  <li><a href="#insertion-sort" id="toc-insertion-sort" class="nav-link" data-scroll-target="#insertion-sort">28. Insertion Sort</a>
+  <ul class="collapse">
+  <li><a href="#complexity-5" id="toc-complexity-5" class="nav-link" data-scroll-target="#complexity-5">Complexity</a></li>
+  </ul></li>
+  <li><a href="#merge-sort" id="toc-merge-sort" class="nav-link" data-scroll-target="#merge-sort">29. Merge Sort</a>
+  <ul class="collapse">
+  <li><a href="#complexity-6" id="toc-complexity-6" class="nav-link" data-scroll-target="#complexity-6">Complexity</a></li>
+  <li><a href="#space" id="toc-space" class="nav-link" data-scroll-target="#space">Space</a></li>
+  <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">Important</a></li>
+  </ul></li>
+  <li><a href="#quick-sort" id="toc-quick-sort" class="nav-link" data-scroll-target="#quick-sort">30. Quick Sort</a>
+  <ul class="collapse">
+  <li><a href="#complexity-7" id="toc-complexity-7" class="nav-link" data-scroll-target="#complexity-7">Complexity</a></li>
+  <li><a href="#important-1" id="toc-important-1" class="nav-link" data-scroll-target="#important-1">Important</a></li>
+  </ul></li>
+  <li><a href="#heap-sort" id="toc-heap-sort" class="nav-link" data-scroll-target="#heap-sort">31. Heap Sort</a>
+  <ul class="collapse">
+  <li><a href="#complexity-8" id="toc-complexity-8" class="nav-link" data-scroll-target="#complexity-8">Complexity</a></li>
+  </ul></li>
+  <li><a href="#sorting-comparison" id="toc-sorting-comparison" class="nav-link" data-scroll-target="#sorting-comparison">32. Sorting Comparison</a></li>
+  <li><a href="#searching-algorithms" id="toc-searching-algorithms" class="nav-link" data-scroll-target="#searching-algorithms">33. Searching Algorithms</a>
+  <ul class="collapse">
+  <li><a href="#linear-search" id="toc-linear-search" class="nav-link" data-scroll-target="#linear-search">33.1 Linear Search</a></li>
+  <li><a href="#binary-search" id="toc-binary-search" class="nav-link" data-scroll-target="#binary-search">33.2 Binary Search</a>
+  <ul class="collapse">
+  <li><a href="#important-2" id="toc-important-2" class="nav-link" data-scroll-target="#important-2">Important</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#hashing" id="toc-hashing" class="nav-link" data-scroll-target="#hashing">34. Hashing</a>
+  <ul class="collapse">
+  <li><a href="#collision" id="toc-collision" class="nav-link" data-scroll-target="#collision">Collision</a>
+  <ul class="collapse">
+  <li><a href="#collision-resolution" id="toc-collision-resolution" class="nav-link" data-scroll-target="#collision-resolution">Collision Resolution</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#load-factor" id="toc-load-factor" class="nav-link" data-scroll-target="#load-factor">35. Load Factor</a></li>
+  <li><a href="#performance-analysis-of-algorithms" id="toc-performance-analysis-of-algorithms" class="nav-link" data-scroll-target="#performance-analysis-of-algorithms">36. Performance Analysis of Algorithms</a></li>
+  <li><a href="#time-complexity" id="toc-time-complexity" class="nav-link" data-scroll-target="#time-complexity">37. Time Complexity</a></li>
+  <li><a href="#space-complexity" id="toc-space-complexity" class="nav-link" data-scroll-target="#space-complexity">38. Space Complexity</a></li>
+  <li><a href="#asymptotic-notation" id="toc-asymptotic-notation" class="nav-link" data-scroll-target="#asymptotic-notation">39. Asymptotic Notation</a>
+  <ul class="collapse">
+  <li><a href="#big-o" id="toc-big-o" class="nav-link" data-scroll-target="#big-o">Big O</a></li>
+  <li><a href="#big-omega" id="toc-big-omega" class="nav-link" data-scroll-target="#big-omega">Big Omega</a></li>
+  <li><a href="#big-theta" id="toc-big-theta" class="nav-link" data-scroll-target="#big-theta">Big Theta</a>
+  <ul class="collapse">
+  <li><a href="#important-3" id="toc-important-3" class="nav-link" data-scroll-target="#important-3">Important</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#growth-rate" id="toc-growth-rate" class="nav-link" data-scroll-target="#growth-rate">40. Growth Rate</a></li>
+  <li><a href="#recurrence-relations" id="toc-recurrence-relations" class="nav-link" data-scroll-target="#recurrence-relations">41. Recurrence Relations</a></li>
+  <li><a href="#master-theorem" id="toc-master-theorem" class="nav-link" data-scroll-target="#master-theorem">42. Master Theorem</a>
+  <ul class="collapse">
+  <li><a href="#common-examples" id="toc-common-examples" class="nav-link" data-scroll-target="#common-examples">Common Examples</a></li>
+  </ul></li>
+  <li><a href="#divide-and-conquer" id="toc-divide-and-conquer" class="nav-link" data-scroll-target="#divide-and-conquer">43. Divide and Conquer</a>
+  <ul class="collapse">
+  <li><a href="#example-merge-sort" id="toc-example-merge-sort" class="nav-link" data-scroll-target="#example-merge-sort">Example: Merge Sort</a></li>
+  </ul></li>
+  <li><a href="#dynamic-programming" id="toc-dynamic-programming" class="nav-link" data-scroll-target="#dynamic-programming">44. Dynamic Programming</a>
+  <ul class="collapse">
+  <li><a href="#top-down" id="toc-top-down" class="nav-link" data-scroll-target="#top-down">Top-Down</a></li>
+  <li><a href="#bottom-up" id="toc-bottom-up" class="nav-link" data-scroll-target="#bottom-up">Bottom-Up</a></li>
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1">Examples</a></li>
+  </ul></li>
+  <li><a href="#greedy-algorithms" id="toc-greedy-algorithms" class="nav-link" data-scroll-target="#greedy-algorithms">45. Greedy Algorithms</a>
+  <ul class="collapse">
+  <li><a href="#important-4" id="toc-important-4" class="nav-link" data-scroll-target="#important-4">Important</a></li>
+  </ul></li>
+  <li><a href="#backtracking" id="toc-backtracking" class="nav-link" data-scroll-target="#backtracking">46. Backtracking</a></li>
+  <li><a href="#branch-and-bound" id="toc-branch-and-bound" class="nav-link" data-scroll-target="#branch-and-bound">47. Branch and Bound</a>
+  <ul class="collapse">
+  <li><a href="#backtracking-vs-branch-and-bound" id="toc-backtracking-vs-branch-and-bound" class="nav-link" data-scroll-target="#backtracking-vs-branch-and-bound">Backtracking vs Branch and Bound</a></li>
+  </ul></li>
+  <li><a href="#lower-bound-theory" id="toc-lower-bound-theory" class="nav-link" data-scroll-target="#lower-bound-theory">48. Lower Bound Theory</a></li>
+  <li><a href="#comparison-trees" id="toc-comparison-trees" class="nav-link" data-scroll-target="#comparison-trees">49. Comparison Trees</a></li>
+  <li><a href="#lower-bounds-through-reductions" id="toc-lower-bounds-through-reductions" class="nav-link" data-scroll-target="#lower-bounds-through-reductions">50. Lower Bounds Through Reductions</a></li>
+  <li><a href="#breadth-first-search" id="toc-breadth-first-search" class="nav-link" data-scroll-target="#breadth-first-search">51. Breadth-First Search</a>
+  <ul class="collapse">
+  <li><a href="#complexity-9" id="toc-complexity-9" class="nav-link" data-scroll-target="#complexity-9">Complexity</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">Application</a></li>
+  </ul></li>
+  <li><a href="#depth-first-search" id="toc-depth-first-search" class="nav-link" data-scroll-target="#depth-first-search">52. Depth-First Search</a>
+  <ul class="collapse">
+  <li><a href="#complexity-10" id="toc-complexity-10" class="nav-link" data-scroll-target="#complexity-10">Complexity</a></li>
+  </ul></li>
+  <li><a href="#bfs-vs-dfs" id="toc-bfs-vs-dfs" class="nav-link" data-scroll-target="#bfs-vs-dfs">53. BFS vs DFS</a></li>
+  <li><a href="#shortest-path-algorithms" id="toc-shortest-path-algorithms" class="nav-link" data-scroll-target="#shortest-path-algorithms">54. Shortest Path Algorithms</a></li>
+  <li><a href="#dijkstras-algorithm" id="toc-dijkstras-algorithm" class="nav-link" data-scroll-target="#dijkstras-algorithm">55. Dijkstra’s Algorithm</a>
+  <ul class="collapse">
+  <li><a href="#important-5" id="toc-important-5" class="nav-link" data-scroll-target="#important-5">Important</a></li>
+  </ul></li>
+  <li><a href="#bellman-ford-algorithm" id="toc-bellman-ford-algorithm" class="nav-link" data-scroll-target="#bellman-ford-algorithm">56. Bellman-Ford Algorithm</a></li>
+  <li><a href="#floyd-warshall-algorithm" id="toc-floyd-warshall-algorithm" class="nav-link" data-scroll-target="#floyd-warshall-algorithm">57. Floyd-Warshall Algorithm</a></li>
+  <li><a href="#minimum-spanning-tree" id="toc-minimum-spanning-tree" class="nav-link" data-scroll-target="#minimum-spanning-tree">58. Minimum Spanning Tree</a></li>
+  <li><a href="#kruskals-algorithm" id="toc-kruskals-algorithm" class="nav-link" data-scroll-target="#kruskals-algorithm">59. Kruskal’s Algorithm</a>
+  <ul class="collapse">
+  <li><a href="#complexity-11" id="toc-complexity-11" class="nav-link" data-scroll-target="#complexity-11">Complexity</a></li>
+  </ul></li>
+  <li><a href="#prims-algorithm" id="toc-prims-algorithm" class="nav-link" data-scroll-target="#prims-algorithm">60. Prim’s Algorithm</a></li>
+  <li><a href="#kruskal-vs-prim" id="toc-kruskal-vs-prim" class="nav-link" data-scroll-target="#kruskal-vs-prim">61. Kruskal vs Prim</a></li>
+  <li><a href="#maximum-flow" id="toc-maximum-flow" class="nav-link" data-scroll-target="#maximum-flow">62. Maximum Flow</a></li>
+  <li><a href="#ford-fulkerson-method" id="toc-ford-fulkerson-method" class="nav-link" data-scroll-target="#ford-fulkerson-method">63. Ford-Fulkerson Method</a>
+  <ul class="collapse">
+  <li><a href="#important-theorem" id="toc-important-theorem" class="nav-link" data-scroll-target="#important-theorem">Important Theorem</a></li>
+  </ul></li>
+  <li><a href="#edmonds-karp-algorithm" id="toc-edmonds-karp-algorithm" class="nav-link" data-scroll-target="#edmonds-karp-algorithm">64. Edmonds-Karp Algorithm</a></li>
+  <li><a href="#complexity-theory" id="toc-complexity-theory" class="nav-link" data-scroll-target="#complexity-theory">65. Complexity Theory</a></li>
+  <li><a href="#class-p" id="toc-class-p" class="nav-link" data-scroll-target="#class-p">66. Class P</a></li>
+  <li><a href="#class-np" id="toc-class-np" class="nav-link" data-scroll-target="#class-np">67. Class NP</a>
+  <ul class="collapse">
+  <li><a href="#important-6" id="toc-important-6" class="nav-link" data-scroll-target="#important-6">Important</a></li>
+  </ul></li>
+  <li><a href="#np-hard" id="toc-np-hard" class="nav-link" data-scroll-target="#np-hard">68. NP-Hard</a></li>
+  <li><a href="#np-complete" id="toc-np-complete" class="nav-link" data-scroll-target="#np-complete">69. NP-Complete</a></li>
+  <li><a href="#polynomial-time-reducibility" id="toc-polynomial-time-reducibility" class="nav-link" data-scroll-target="#polynomial-time-reducibility">70. Polynomial-Time Reducibility</a>
+  <ul class="collapse">
+  <li><a href="#important-direction" id="toc-important-direction" class="nav-link" data-scroll-target="#important-direction">Important Direction</a></li>
+  </ul></li>
+  <li><a href="#number-theoretic-algorithms" id="toc-number-theoretic-algorithms" class="nav-link" data-scroll-target="#number-theoretic-algorithms">71. Number Theoretic Algorithms</a></li>
+  <li><a href="#euclidean-algorithm" id="toc-euclidean-algorithm" class="nav-link" data-scroll-target="#euclidean-algorithm">72. Euclidean Algorithm</a></li>
+  <li><a href="#extended-euclidean-algorithm" id="toc-extended-euclidean-algorithm" class="nav-link" data-scroll-target="#extended-euclidean-algorithm">73. Extended Euclidean Algorithm</a></li>
+  <li><a href="#polynomial-arithmetic" id="toc-polynomial-arithmetic" class="nav-link" data-scroll-target="#polynomial-arithmetic">74. Polynomial Arithmetic</a></li>
+  <li><a href="#fast-fourier-transform" id="toc-fast-fourier-transform" class="nav-link" data-scroll-target="#fast-fourier-transform">75. Fast Fourier Transform</a>
+  <ul class="collapse">
+  <li><a href="#important-ugc-net-point-1" id="toc-important-ugc-net-point-1" class="nav-link" data-scroll-target="#important-ugc-net-point-1">Important UGC NET Point</a></li>
+  </ul></li>
+  <li><a href="#string-matching-algorithms" id="toc-string-matching-algorithms" class="nav-link" data-scroll-target="#string-matching-algorithms">76. String Matching Algorithms</a></li>
+  <li><a href="#naive-string-matching" id="toc-naive-string-matching" class="nav-link" data-scroll-target="#naive-string-matching">77. Naive String Matching</a></li>
+  <li><a href="#kmp-algorithm" id="toc-kmp-algorithm" class="nav-link" data-scroll-target="#kmp-algorithm">78. KMP Algorithm</a></li>
+  <li><a href="#rabin-karp-algorithm" id="toc-rabin-karp-algorithm" class="nav-link" data-scroll-target="#rabin-karp-algorithm">79. Rabin-Karp Algorithm</a></li>
+  <li><a href="#boyer-moore-algorithm" id="toc-boyer-moore-algorithm" class="nav-link" data-scroll-target="#boyer-moore-algorithm">80. Boyer-Moore Algorithm</a></li>
+  <li><a href="#advanced-algorithms" id="toc-advanced-algorithms" class="nav-link" data-scroll-target="#advanced-algorithms">81. Advanced Algorithms</a></li>
+  <li><a href="#parallel-algorithms" id="toc-parallel-algorithms" class="nav-link" data-scroll-target="#parallel-algorithms">82. Parallel Algorithms</a></li>
+  <li><a href="#parallel-sorting" id="toc-parallel-sorting" class="nav-link" data-scroll-target="#parallel-sorting">83. Parallel Sorting</a></li>
+  <li><a href="#parallel-searching" id="toc-parallel-searching" class="nav-link" data-scroll-target="#parallel-searching">84. Parallel Searching</a></li>
+  <li><a href="#parallel-merging" id="toc-parallel-merging" class="nav-link" data-scroll-target="#parallel-merging">85. Parallel Merging</a></li>
+  <li><a href="#approximation-algorithms" id="toc-approximation-algorithms" class="nav-link" data-scroll-target="#approximation-algorithms">86. Approximation Algorithms</a></li>
+  <li><a href="#randomized-algorithms" id="toc-randomized-algorithms" class="nav-link" data-scroll-target="#randomized-algorithms">87. Randomized Algorithms</a>
+  <ul class="collapse">
+  <li><a href="#las-vegas-algorithm" id="toc-las-vegas-algorithm" class="nav-link" data-scroll-target="#las-vegas-algorithm">Las Vegas Algorithm</a></li>
+  <li><a href="#monte-carlo-algorithm" id="toc-monte-carlo-algorithm" class="nav-link" data-scroll-target="#monte-carlo-algorithm">Monte Carlo Algorithm</a></li>
+  <li><a href="#easy-comparison" id="toc-easy-comparison" class="nav-link" data-scroll-target="#easy-comparison">Easy Comparison</a></li>
+  </ul></li>
+  <li><a href="#important-complexity-table" id="toc-important-complexity-table" class="nav-link" data-scroll-target="#important-complexity-table">88. Important Complexity Table</a></li>
+  <li><a href="#important-algorithm-design-comparison" id="toc-important-algorithm-design-comparison" class="nav-link" data-scroll-target="#important-algorithm-design-comparison">89. Important Algorithm Design Comparison</a></li>
+  <li><a href="#important-tree-comparison" id="toc-important-tree-comparison" class="nav-link" data-scroll-target="#important-tree-comparison">90. Important Tree Comparison</a></li>
+  <li><a href="#important-searching-comparison" id="toc-important-searching-comparison" class="nav-link" data-scroll-target="#important-searching-comparison">91. Important Searching Comparison</a></li>
+  <li><a href="#important-graph-algorithm-comparison" id="toc-important-graph-algorithm-comparison" class="nav-link" data-scroll-target="#important-graph-algorithm-comparison">92. Important Graph Algorithm Comparison</a></li>
+  <li><a href="#common-ugc-net-mistakes" id="toc-common-ugc-net-mistakes" class="nav-link" data-scroll-target="#common-ugc-net-mistakes">93. Common UGC NET Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#mistake-1" id="toc-mistake-1" class="nav-link" data-scroll-target="#mistake-1">Mistake 1</a></li>
+  <li><a href="#mistake-2" id="toc-mistake-2" class="nav-link" data-scroll-target="#mistake-2">Mistake 2</a></li>
+  <li><a href="#mistake-3" id="toc-mistake-3" class="nav-link" data-scroll-target="#mistake-3">Mistake 3</a></li>
+  <li><a href="#mistake-4" id="toc-mistake-4" class="nav-link" data-scroll-target="#mistake-4">Mistake 4</a></li>
+  <li><a href="#mistake-5" id="toc-mistake-5" class="nav-link" data-scroll-target="#mistake-5">Mistake 5</a></li>
+  <li><a href="#mistake-6" id="toc-mistake-6" class="nav-link" data-scroll-target="#mistake-6">Mistake 6</a></li>
+  <li><a href="#mistake-7" id="toc-mistake-7" class="nav-link" data-scroll-target="#mistake-7">Mistake 7</a></li>
+  <li><a href="#mistake-8" id="toc-mistake-8" class="nav-link" data-scroll-target="#mistake-8">Mistake 8</a></li>
+  </ul></li>
+  <li><a href="#ugc-net-high-priority-topics" id="toc-ugc-net-high-priority-topics" class="nav-link" data-scroll-target="#ugc-net-high-priority-topics">94. UGC NET High-Priority Topics</a></li>
+  <li><a href="#one-minute-revision" id="toc-one-minute-revision" class="nav-link" data-scroll-target="#one-minute-revision">95. One-Minute Revision</a>
+  <ul class="collapse">
+  <li><a href="#linear-structures" id="toc-linear-structures" class="nav-link" data-scroll-target="#linear-structures">Linear Structures</a></li>
+  <li><a href="#trees-1" id="toc-trees-1" class="nav-link" data-scroll-target="#trees-1">Trees</a></li>
+  <li><a href="#graphs-1" id="toc-graphs-1" class="nav-link" data-scroll-target="#graphs-1">Graphs</a></li>
+  <li><a href="#design-techniques" id="toc-design-techniques" class="nav-link" data-scroll-target="#design-techniques">Design Techniques</a></li>
+  <li><a href="#complexity-12" id="toc-complexity-12" class="nav-link" data-scroll-target="#complexity-12">Complexity</a></li>
+  <li><a href="#complexity-classes" id="toc-complexity-classes" class="nav-link" data-scroll-target="#complexity-classes">Complexity Classes</a></li>
+  </ul></li>
+  <li><a href="#final-exam-strategy" id="toc-final-exam-strategy" class="nav-link" data-scroll-target="#final-exam-strategy">96. Final Exam Strategy</a>
+  <ul class="collapse">
+  <li><a href="#must-practice-calculations" id="toc-must-practice-calculations" class="nav-link" data-scroll-target="#must-practice-calculations">Must-practice calculations</a></li>
+  <li><a href="#must-memorize-differences" id="toc-must-memorize-differences" class="nav-link" data-scroll-target="#must-memorize-differences">Must-memorize differences</a></li>
+  </ul></li>
+  <li><a href="#final-summary" id="toc-final-summary" class="nav-link" data-scroll-target="#final-summary">97. Final Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit VII – Data Structures and Algorithms</h1>
+<p class="subtitle lead">UGC NET Computer Science and Applications – Paper 2</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>A <strong>data structure</strong> is a method of organizing and storing data so that it can be accessed and modified efficiently.</p>
+<p>An <strong>algorithm</strong> is a finite sequence of well-defined steps used to solve a problem.</p>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<ul>
+<li>Array → store elements in contiguous positions.</li>
+<li>Stack → follow LIFO.</li>
+<li>Queue → follow FIFO.</li>
+<li>Tree → represent hierarchical data.</li>
+<li>Graph → represent relationships.</li>
+<li>Hash table → provide fast average-case lookup.</li>
+</ul>
+<p>The major goals of this unit are:</p>
+<ul>
+<li>Understand important data structures.</li>
+<li>Analyze algorithm efficiency.</li>
+<li>Learn algorithm design techniques.</li>
+<li>Understand graph algorithms.</li>
+<li>Understand computational complexity.</li>
+<li>Study advanced algorithms.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="data-structures" class="level1">
+<h1>2. Data Structures</h1>
+<p>Data structures can broadly be classified as:</p>
+<section id="linear-data-structures" class="level3">
+<h3 class="anchored" data-anchor-id="linear-data-structures">Linear Data Structures</h3>
+<p>Elements are arranged sequentially.</p>
+<p>Examples:</p>
+<ul>
+<li>Arrays</li>
+<li>Linked lists</li>
+<li>Stacks</li>
+<li>Queues</li>
+</ul>
+</section>
+<section id="non-linear-data-structures" class="level3">
+<h3 class="anchored" data-anchor-id="non-linear-data-structures">Non-Linear Data Structures</h3>
+<p>Elements are organized hierarchically or as networks.</p>
+<p>Examples:</p>
+<ul>
+<li>Trees</li>
+<li>Graphs</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="arrays" class="level1">
+<h1>3. Arrays</h1>
+<p>An <strong>array</strong> is a collection of elements stored in contiguous memory locations.</p>
+<p>Example:</p>
+<pre class="text"><code>A = [10, 20, 30, 40, 50]</code></pre>
+<p>Indexes:</p>
+<pre class="text"><code>Index:  0   1   2   3   4
+Value: 10  20  30  40  50</code></pre>
+<section id="advantages" class="level2">
+<h2 class="anchored" data-anchor-id="advantages">3.1 Advantages</h2>
+<ul>
+<li>Direct/random access</li>
+<li>Simple representation</li>
+<li>Efficient traversal</li>
+<li>Good cache locality</li>
+</ul>
+</section>
+<section id="disadvantages" class="level2">
+<h2 class="anchored" data-anchor-id="disadvantages">3.2 Disadvantages</h2>
+<ul>
+<li>Fixed-size arrays may be difficult to resize.</li>
+<li>Insertion in the middle may require shifting.</li>
+<li>Deletion may require shifting.</li>
+</ul>
+</section>
+<section id="array-applications" class="level2">
+<h2 class="anchored" data-anchor-id="array-applications">3.3 Array Applications</h2>
+<p>Arrays are used for:</p>
+<ul>
+<li>Matrices</li>
+<li>Tables</li>
+<li>Strings</li>
+<li>Heaps</li>
+<li>Lookup tables</li>
+<li>Implementing stacks and queues</li>
+</ul>
+<section id="array-access" class="level3">
+<h3 class="anchored" data-anchor-id="array-access">Array Access</h3>
+<p>Accessing an element by index is generally:</p>
+<p><strong>Time = O(1)</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="sparse-matrix" class="level1">
+<h1>4. Sparse Matrix</h1>
+<p>A <strong>sparse matrix</strong> is a matrix in which most elements are zero.</p>
+<p>Example:</p>
+<pre class="text"><code>0  0  0  5
+0  0  0  0
+0  3  0  0
+0  0  0  7</code></pre>
+<p>There are only a few non-zero values.</p>
+<p>Storing every zero wastes memory.</p>
+<section id="triplet-representation" class="level2">
+<h2 class="anchored" data-anchor-id="triplet-representation">4.1 Triplet Representation</h2>
+<p>A sparse matrix can be represented using:</p>
+<pre class="text"><code>Row   Column   Value
+1     4        5
+3     2        3
+4     4        7</code></pre>
+<p>A header may store:</p>
+<pre class="text"><code>Rows   Columns   Non-zero elements
+4      4         3</code></pre>
+</section>
+<section id="applications" class="level2">
+<h2 class="anchored" data-anchor-id="applications">Applications</h2>
+<p>Sparse matrices occur in:</p>
+<ul>
+<li>Graph representation</li>
+<li>Scientific computing</li>
+<li>Machine learning</li>
+<li>Information retrieval</li>
+<li>Numerical methods</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="stack" class="level1">
+<h1>5. Stack</h1>
+<p>A <strong>stack</strong> is a linear data structure that follows:</p>
+<p><strong>LIFO = Last In, First Out</strong></p>
+<p>Example:</p>
+<pre class="text"><code>Push 10
+Push 20
+Push 30
+
+Top → 30
+       20
+       10</code></pre>
+<p>The first element removed is 30.</p>
+<section id="stack-operations" class="level2">
+<h2 class="anchored" data-anchor-id="stack-operations">5.1 Stack Operations</h2>
+<section id="push" class="level3">
+<h3 class="anchored" data-anchor-id="push">Push</h3>
+<p>Adds an element.</p>
+</section>
+<section id="pop" class="level3">
+<h3 class="anchored" data-anchor-id="pop">Pop</h3>
+<p>Removes the top element.</p>
+</section>
+<section id="peektop" class="level3">
+<h3 class="anchored" data-anchor-id="peektop">Peek/Top</h3>
+<p>Returns the top element without removing it.</p>
+</section>
+<section id="isempty" class="level3">
+<h3 class="anchored" data-anchor-id="isempty">IsEmpty</h3>
+<p>Checks whether the stack is empty.</p>
+</section>
+</section>
+<section id="applications-1" class="level2">
+<h2 class="anchored" data-anchor-id="applications-1">5.2 Applications</h2>
+<p>Stacks are used in:</p>
+<ul>
+<li>Function calls</li>
+<li>Recursion</li>
+<li>Expression evaluation</li>
+<li>Parenthesis matching</li>
+<li>Undo operations</li>
+<li>Backtracking</li>
+<li>Depth-First Search</li>
+</ul>
+</section>
+<section id="complexity" class="level2">
+<h2 class="anchored" data-anchor-id="complexity">Complexity</h2>
+<p>For an array-based stack:</p>
+<ul>
+<li>Push → O(1)</li>
+<li>Pop → O(1)</li>
+<li>Peek → O(1)</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="queue" class="level1">
+<h1>6. Queue</h1>
+<p>A <strong>queue</strong> is a linear data structure that follows:</p>
+<p><strong>FIFO = First In, First Out</strong></p>
+<p>Example:</p>
+<pre class="text"><code>Front → 10  20  30  40 ← Rear</code></pre>
+<p>10 is removed first.</p>
+<section id="queue-operations" class="level2">
+<h2 class="anchored" data-anchor-id="queue-operations">6.1 Queue Operations</h2>
+<ul>
+<li>Enqueue → insert at rear</li>
+<li>Dequeue → remove from front</li>
+<li>Front/Peek → inspect first element</li>
+</ul>
+</section>
+<section id="applications-2" class="level2">
+<h2 class="anchored" data-anchor-id="applications-2">Applications</h2>
+<ul>
+<li>CPU scheduling</li>
+<li>Printer queues</li>
+<li>Network buffering</li>
+<li>Breadth-First Search</li>
+<li>Customer service systems</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="circular-queue" class="level1">
+<h1>7. Circular Queue</h1>
+<p>A circular queue connects the last position back to the first position.</p>
+<p>This avoids wasting unused positions in a normal array queue.</p>
+<section id="important-idea" class="level3">
+<h3 class="anchored" data-anchor-id="important-idea">Important Idea</h3>
+<p>The rear can wrap around to the beginning.</p>
+<p>Circular queues are useful in:</p>
+<ul>
+<li>Buffers</li>
+<li>Scheduling</li>
+<li>Streaming systems</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="priority-queue" class="level1">
+<h1>8. Priority Queue</h1>
+<p>A <strong>priority queue</strong> removes elements according to priority rather than simply arrival order.</p>
+<p>Example:</p>
+<pre class="text"><code>Patient A → priority 2
+Patient B → priority 5
+Patient C → priority 1</code></pre>
+<p>If larger priority means more important, Patient B may be processed first.</p>
+<p>Priority queues are commonly implemented using <strong>heaps</strong>.</p>
+<section id="applications-3" class="level2">
+<h2 class="anchored" data-anchor-id="applications-3">Applications</h2>
+<ul>
+<li>CPU scheduling</li>
+<li>Dijkstra’s algorithm</li>
+<li>Prim’s algorithm</li>
+<li>Event simulation</li>
+<li>Network routing</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="linked-lists" class="level1">
+<h1>9. Linked Lists</h1>
+<p>A linked list consists of nodes connected using links.</p>
+<p>A singly linked-list node contains:</p>
+<pre class="text"><code>[Data | Next]</code></pre>
+<p>Example:</p>
+<pre class="text"><code>10 → 20 → 30 → NULL</code></pre>
+<section id="advantages-1" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-1">Advantages</h2>
+<ul>
+<li>Dynamic size</li>
+<li>Easy insertion/deletion when the position/node is known</li>
+<li>Does not require contiguous memory</li>
+</ul>
+</section>
+<section id="disadvantages-1" class="level2">
+<h2 class="anchored" data-anchor-id="disadvantages-1">Disadvantages</h2>
+<ul>
+<li>No direct random access</li>
+<li>Extra memory for links</li>
+<li>Traversal is sequential</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="types-of-linked-lists" class="level1">
+<h1>10. Types of Linked Lists</h1>
+<section id="singly-linked-list" class="level2">
+<h2 class="anchored" data-anchor-id="singly-linked-list">10.1 Singly Linked List</h2>
+<p>Each node points to the next node.</p>
+<pre class="text"><code>10 → 20 → 30 → NULL</code></pre>
+</section>
+<section id="doubly-linked-list" class="level2">
+<h2 class="anchored" data-anchor-id="doubly-linked-list">10.2 Doubly Linked List</h2>
+<p>Each node has two links.</p>
+<pre class="text"><code>NULL ← 10 ⇄ 20 ⇄ 30 → NULL</code></pre>
+<p>Links:</p>
+<ul>
+<li>Previous</li>
+<li>Next</li>
+</ul>
+</section>
+<section id="circular-linked-list" class="level2">
+<h2 class="anchored" data-anchor-id="circular-linked-list">10.3 Circular Linked List</h2>
+<p>The last node points back to the first.</p>
+<pre class="text"><code>10 → 20 → 30
+↑         ↓
+└─────────┘</code></pre>
+<hr>
+</section>
+</section>
+<section id="trees" class="level1">
+<h1>11. Trees</h1>
+<p>A <strong>tree</strong> is a non-linear hierarchical data structure.</p>
+<p>Important terms:</p>
+<ul>
+<li>Root</li>
+<li>Parent</li>
+<li>Child</li>
+<li>Sibling</li>
+<li>Leaf</li>
+<li>Internal node</li>
+<li>Edge</li>
+<li>Path</li>
+<li>Level</li>
+<li>Height</li>
+<li>Depth</li>
+<li>Subtree</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>        A
+       / \
+      B   C
+     / \
+    D   E</code></pre>
+<p>A is the root.</p>
+<p>D and E are leaf nodes.</p>
+<hr>
+</section>
+<section id="forest" class="level1">
+<h1>12. Forest</h1>
+<p>A <strong>forest</strong> is a collection of disjoint trees.</p>
+<p>Example:</p>
+<pre class="text"><code>Tree 1        Tree 2
+
+   A             X
+  / \           / \
+ B   C         Y   Z</code></pre>
+<p>Together they form a forest.</p>
+<section id="important-relationship" class="level3">
+<h3 class="anchored" data-anchor-id="important-relationship">Important Relationship</h3>
+<p>Removing the root of a tree can produce a forest of its subtrees.</p>
+<hr>
+</section>
+</section>
+<section id="binary-tree" class="level1">
+<h1>13. Binary Tree</h1>
+<p>A <strong>binary tree</strong> is a tree in which each node has at most two children.</p>
+<p>The children are called:</p>
+<ul>
+<li>Left child</li>
+<li>Right child</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>        10
+       /  \
+      5    20</code></pre>
+<section id="important-properties" class="level2">
+<h2 class="anchored" data-anchor-id="important-properties">Important Properties</h2>
+<p>For a binary tree:</p>
+<ul>
+<li>Maximum children of a node = 2.</li>
+<li>Maximum nodes at level <code>i</code>, when root is at level 0 = 2^i.</li>
+<li>Maximum nodes in a binary tree of height <code>h</code>, when height is measured in edges = 2^(h+1) - 1.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="tree-traversals" class="level1">
+<h1>14. Tree Traversals</h1>
+<section id="preorder" class="level2">
+<h2 class="anchored" data-anchor-id="preorder">14.1 Preorder</h2>
+<p>Order:</p>
+<p><strong>Root → Left → Right</strong></p>
+<p>For:</p>
+<pre class="text"><code>    A
+   / \
+  B   C</code></pre>
+<p>Preorder:</p>
+<p><strong>A B C</strong></p>
+</section>
+<section id="inorder" class="level2">
+<h2 class="anchored" data-anchor-id="inorder">14.2 Inorder</h2>
+<p>Order:</p>
+<p><strong>Left → Root → Right</strong></p>
+<p>Result:</p>
+<p><strong>B A C</strong></p>
+</section>
+<section id="postorder" class="level2">
+<h2 class="anchored" data-anchor-id="postorder">14.3 Postorder</h2>
+<p>Order:</p>
+<p><strong>Left → Right → Root</strong></p>
+<p>Result:</p>
+<p><strong>B C A</strong></p>
+</section>
+<section id="level-order" class="level2">
+<h2 class="anchored" data-anchor-id="level-order">14.4 Level Order</h2>
+<p>Visit nodes level by level.</p>
+<p>Result:</p>
+<p><strong>A B C</strong></p>
+<p>Level-order traversal commonly uses a queue.</p>
+<hr>
+</section>
+</section>
+<section id="threaded-binary-tree" class="level1">
+<h1>15. Threaded Binary Tree</h1>
+<p>In an ordinary binary tree, many child pointers may be NULL.</p>
+<p>A <strong>threaded binary tree</strong> uses otherwise unused pointers to store links to traversal-related nodes.</p>
+<p>In an inorder-threaded tree, a thread can point to the inorder predecessor or successor.</p>
+<section id="advantage" class="level3">
+<h3 class="anchored" data-anchor-id="advantage">Advantage</h3>
+<p>Traversal can be performed with less dependence on recursion or an explicit stack.</p>
+<hr>
+</section>
+</section>
+<section id="binary-search-tree" class="level1">
+<h1>16. Binary Search Tree</h1>
+<p>A <strong>Binary Search Tree (BST)</strong> is a binary tree satisfying an ordering property.</p>
+<p>For each node:</p>
+<p><strong>Left subtree values &lt; Node value &lt; Right subtree values</strong></p>
+<p>Example:</p>
+<pre class="text"><code>       50
+      /  \
+    30    70
+   / \    / \
+ 20  40  60 80</code></pre>
+<section id="searching" class="level2">
+<h2 class="anchored" data-anchor-id="searching">Searching</h2>
+<p>At each node:</p>
+<ul>
+<li>If target = node → found.</li>
+<li>If target &lt; node → search left.</li>
+<li>If target &gt; node → search right.</li>
+</ul>
+</section>
+<section id="complexity-1" class="level2">
+<h2 class="anchored" data-anchor-id="complexity-1">Complexity</h2>
+<p>Average case for a balanced BST:</p>
+<p><strong>O(log n)</strong></p>
+<p>Worst case for a highly skewed BST:</p>
+<p><strong>O(n)</strong></p>
+<section id="important-ugc-net-point" class="level3">
+<h3 class="anchored" data-anchor-id="important-ugc-net-point">Important UGC NET Point</h3>
+<p><strong>Inorder traversal of a BST produces sorted order.</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="avl-tree" class="level1">
+<h1>17. AVL Tree</h1>
+<p>An <strong>AVL tree</strong> is a self-balancing binary search tree.</p>
+<p>For every node:</p>
+<p><strong>Balance Factor = Height(left subtree) - Height(right subtree)</strong></p>
+<p>Allowed values:</p>
+<p><strong>-1, 0, +1</strong></p>
+<p>If the balance factor becomes outside this range, rotations are performed.</p>
+<section id="types-of-rotations" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-rotations">Types of Rotations</h2>
+<ul>
+<li>LL</li>
+<li>RR</li>
+<li>LR</li>
+<li>RL</li>
+</ul>
+<section id="ll-case" class="level3">
+<h3 class="anchored" data-anchor-id="ll-case">LL Case</h3>
+<p>Solved using a right rotation.</p>
+</section>
+<section id="rr-case" class="level3">
+<h3 class="anchored" data-anchor-id="rr-case">RR Case</h3>
+<p>Solved using a left rotation.</p>
+</section>
+<section id="lr-case" class="level3">
+<h3 class="anchored" data-anchor-id="lr-case">LR Case</h3>
+<p>Left rotation followed by right rotation.</p>
+</section>
+<section id="rl-case" class="level3">
+<h3 class="anchored" data-anchor-id="rl-case">RL Case</h3>
+<p>Right rotation followed by left rotation.</p>
+</section>
+</section>
+<section id="complexity-2" class="level2">
+<h2 class="anchored" data-anchor-id="complexity-2">Complexity</h2>
+<p>Search, insertion and deletion are:</p>
+<p><strong>O(log n)</strong></p>
+<p>in the worst case.</p>
+<hr>
+</section>
+</section>
+<section id="b-tree" class="level1">
+<h1>18. B-Tree</h1>
+<p>A <strong>B-tree</strong> is a balanced multiway search tree.</p>
+<p>It is particularly useful for:</p>
+<ul>
+<li>Databases</li>
+<li>File systems</li>
+<li>Secondary storage</li>
+</ul>
+<p>Unlike a binary tree, a B-tree node can contain multiple keys and children.</p>
+<section id="important-properties-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-properties-1">Important Properties</h3>
+<ul>
+<li>Balanced tree</li>
+<li>Keys are stored in sorted order.</li>
+<li>All leaves are at the same level.</li>
+<li>Designed to reduce disk accesses.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="b-tree-1" class="level1">
+<h1>19. B+ Tree</h1>
+<p>A <strong>B+ tree</strong> is a variation of a B-tree commonly used in databases and file systems.</p>
+<p>Important characteristics:</p>
+<ul>
+<li>Internal nodes mainly store keys for navigation.</li>
+<li>Actual record pointers/data are typically stored at leaf nodes.</li>
+<li>Leaf nodes are commonly linked.</li>
+</ul>
+<section id="advantage-1" class="level3">
+<h3 class="anchored" data-anchor-id="advantage-1">Advantage</h3>
+<p>Linked leaves make range queries efficient.</p>
+<p>Example:</p>
+<pre class="text"><code>        [30 | 60]
+       /    |    \
+    Leaf  Leaf   Leaf
+      ⇄     ⇄      ⇄</code></pre>
+<hr>
+</section>
+</section>
+<section id="b-tree-2" class="level1">
+<h1>20. B* Tree</h1>
+<p>A <strong>B* tree</strong> is a variant of the B-tree that aims for higher node occupancy.</p>
+<p>It generally redistributes keys with neighboring nodes before splitting.</p>
+<section id="important-point" class="level3">
+<h3 class="anchored" data-anchor-id="important-point">Important Point</h3>
+<p>B* trees are designed to use storage more efficiently by maintaining higher minimum occupancy than ordinary B-trees.</p>
+<hr>
+</section>
+</section>
+<section id="data-structures-for-sets" class="level1">
+<h1>21. Data Structures for Sets</h1>
+<p>A <strong>set</strong> is a collection of distinct elements.</p>
+<p>Common operations:</p>
+<ul>
+<li>Insert</li>
+<li>Delete</li>
+<li>Search</li>
+<li>Union</li>
+<li>Intersection</li>
+<li>Difference</li>
+</ul>
+<p>Possible implementations:</p>
+<ul>
+<li>Arrays</li>
+<li>Linked lists</li>
+<li>Balanced search trees</li>
+<li>Hash tables</li>
+<li>Bit vectors</li>
+</ul>
+<section id="disjoint-set-union-find" class="level2">
+<h2 class="anchored" data-anchor-id="disjoint-set-union-find">Disjoint Set / Union-Find</h2>
+<p>A disjoint-set data structure maintains a collection of non-overlapping sets.</p>
+<p>Important operations:</p>
+<ul>
+<li>Make-Set</li>
+<li>Find</li>
+<li>Union</li>
+</ul>
+<p>It is useful in:</p>
+<ul>
+<li>Kruskal’s minimum spanning tree algorithm</li>
+<li>Connectivity problems</li>
+</ul>
+<section id="optimization" class="level3">
+<h3 class="anchored" data-anchor-id="optimization">Optimization</h3>
+<p><strong>Path compression</strong> and <strong>union by rank/size</strong> make operations very efficient.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="graphs" class="level1">
+<h1>22. Graphs</h1>
+<p>A <strong>graph</strong> consists of:</p>
+<ul>
+<li>Vertices/nodes</li>
+<li>Edges</li>
+</ul>
+<p>It is represented as:</p>
+<p><strong>G = (V, E)</strong></p>
+<p>where:</p>
+<ul>
+<li>V = set of vertices</li>
+<li>E = set of edges</li>
+</ul>
+<hr>
+</section>
+<section id="types-of-graphs" class="level1">
+<h1>23. Types of Graphs</h1>
+<section id="undirected-graph" class="level3">
+<h3 class="anchored" data-anchor-id="undirected-graph">Undirected Graph</h3>
+<p>Edges do not have direction.</p>
+<pre class="text"><code>A — B</code></pre>
+</section>
+<section id="directed-graph" class="level3">
+<h3 class="anchored" data-anchor-id="directed-graph">Directed Graph</h3>
+<p>Edges have direction.</p>
+<pre class="text"><code>A → B</code></pre>
+</section>
+<section id="weighted-graph" class="level3">
+<h3 class="anchored" data-anchor-id="weighted-graph">Weighted Graph</h3>
+<p>Edges have weights/costs.</p>
+<pre class="text"><code>A --5-- B</code></pre>
+</section>
+<section id="complete-graph" class="level3">
+<h3 class="anchored" data-anchor-id="complete-graph">Complete Graph</h3>
+<p>Every pair of distinct vertices is connected by an edge.</p>
+<hr>
+</section>
+</section>
+<section id="graph-representation" class="level1">
+<h1>24. Graph Representation</h1>
+<section id="adjacency-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="adjacency-matrix">24.1 Adjacency Matrix</h2>
+<p>A two-dimensional matrix represents whether an edge exists.</p>
+<p>For <code>V</code> vertices:</p>
+<p><strong>Space = O(V²)</strong></p>
+<p>Good for dense graphs.</p>
+</section>
+<section id="adjacency-list" class="level2">
+<h2 class="anchored" data-anchor-id="adjacency-list">24.2 Adjacency List</h2>
+<p>Each vertex stores a list of adjacent vertices.</p>
+<p>Space:</p>
+<p><strong>O(V + E)</strong></p>
+<p>Good for sparse graphs.</p>
+<section id="comparison" class="level3">
+<h3 class="anchored" data-anchor-id="comparison">Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Adjacency Matrix</th>
+<th>Adjacency List</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>O(V²) space</td>
+<td>O(V + E) space</td>
+</tr>
+<tr class="even">
+<td>Good for dense graphs</td>
+<td>Good for sparse graphs</td>
+</tr>
+<tr class="odd">
+<td>Edge lookup is fast</td>
+<td>Traversal is efficient for sparse graphs</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+</section>
+<section id="sorting-algorithms" class="level1">
+<h1>25. Sorting Algorithms</h1>
+<p>Sorting arranges data in a specified order.</p>
+<p>Common algorithms:</p>
+<ul>
+<li>Bubble Sort</li>
+<li>Selection Sort</li>
+<li>Insertion Sort</li>
+<li>Merge Sort</li>
+<li>Quick Sort</li>
+<li>Heap Sort</li>
+</ul>
+<hr>
+</section>
+<section id="bubble-sort" class="level1">
+<h1>26. Bubble Sort</h1>
+<p>Bubble Sort repeatedly compares adjacent elements and swaps them if they are in the wrong order.</p>
+<p>Example:</p>
+<pre class="text"><code>5  2  4
+
+Compare 5 and 2
+2  5  4
+
+Compare 5 and 4
+2  4  5</code></pre>
+<section id="complexity-3" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-3">Complexity</h3>
+<p>Worst case:</p>
+<p><strong>O(n²)</strong></p>
+<p>Average case:</p>
+<p><strong>O(n²)</strong></p>
+<p>Best case with an optimized implementation:</p>
+<p><strong>O(n)</strong></p>
+</section>
+<section id="stable" class="level3">
+<h3 class="anchored" data-anchor-id="stable">Stable?</h3>
+<p>Yes, with the standard implementation.</p>
+<hr>
+</section>
+</section>
+<section id="selection-sort" class="level1">
+<h1>27. Selection Sort</h1>
+<p>Selection Sort repeatedly selects the smallest element and places it in the correct position.</p>
+<section id="complexity-4" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-4">Complexity</h3>
+<p>Best/Average/Worst:</p>
+<p><strong>O(n²)</strong></p>
+<p>It performs relatively few swaps.</p>
+<hr>
+</section>
+</section>
+<section id="insertion-sort" class="level1">
+<h1>28. Insertion Sort</h1>
+<p>Insertion Sort builds the sorted sequence one element at a time.</p>
+<p>Example:</p>
+<pre class="text"><code>5  2  4
+
+5
+2 5
+2 4 5</code></pre>
+<section id="complexity-5" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-5">Complexity</h3>
+<p>Best:</p>
+<p><strong>O(n)</strong></p>
+<p>Average:</p>
+<p><strong>O(n²)</strong></p>
+<p>Worst:</p>
+<p><strong>O(n²)</strong></p>
+<p>Insertion Sort works well for small or nearly sorted data.</p>
+<hr>
+</section>
+</section>
+<section id="merge-sort" class="level1">
+<h1>29. Merge Sort</h1>
+<p>Merge Sort uses <strong>divide and conquer</strong>.</p>
+<p>Steps:</p>
+<ol type="1">
+<li>Divide the array.</li>
+<li>Recursively sort the parts.</li>
+<li>Merge the sorted parts.</li>
+</ol>
+<section id="complexity-6" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-6">Complexity</h3>
+<p>Best/Average/Worst:</p>
+<p><strong>O(n log n)</strong></p>
+</section>
+<section id="space" class="level3">
+<h3 class="anchored" data-anchor-id="space">Space</h3>
+<p>Typical array implementation requires:</p>
+<p><strong>O(n)</strong> auxiliary space.</p>
+</section>
+<section id="important" class="level3">
+<h3 class="anchored" data-anchor-id="important">Important</h3>
+<p>Merge Sort is generally stable.</p>
+<hr>
+</section>
+</section>
+<section id="quick-sort" class="level1">
+<h1>30. Quick Sort</h1>
+<p>Quick Sort uses a pivot.</p>
+<p>Basic steps:</p>
+<ol type="1">
+<li>Select pivot.</li>
+<li>Partition the array.</li>
+<li>Recursively sort left and right parts.</li>
+</ol>
+<section id="complexity-7" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-7">Complexity</h3>
+<p>Average:</p>
+<p><strong>O(n log n)</strong></p>
+<p>Worst:</p>
+<p><strong>O(n²)</strong></p>
+<p>The worst case can occur with consistently poor pivot choices.</p>
+</section>
+<section id="important-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-1">Important</h3>
+<p>Good pivot selection can greatly improve practical performance.</p>
+<hr>
+</section>
+</section>
+<section id="heap-sort" class="level1">
+<h1>31. Heap Sort</h1>
+<p>Heap Sort uses a heap.</p>
+<p>For ascending sorting, a max-heap can be used.</p>
+<section id="complexity-8" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-8">Complexity</h3>
+<p>Best/Average/Worst:</p>
+<p><strong>O(n log n)</strong></p>
+<p>Typical in-place heap sort uses:</p>
+<p><strong>O(1)</strong> auxiliary array space.</p>
+<hr>
+</section>
+</section>
+<section id="sorting-comparison" class="level1">
+<h1>32. Sorting Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th style="text-align: right;">Best</th>
+<th style="text-align: right;">Average</th>
+<th style="text-align: right;">Worst</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bubble</td>
+<td style="text-align: right;">O(n)</td>
+<td style="text-align: right;">O(n²)</td>
+<td style="text-align: right;">O(n²)</td>
+</tr>
+<tr class="even">
+<td>Selection</td>
+<td style="text-align: right;">O(n²)</td>
+<td style="text-align: right;">O(n²)</td>
+<td style="text-align: right;">O(n²)</td>
+</tr>
+<tr class="odd">
+<td>Insertion</td>
+<td style="text-align: right;">O(n)</td>
+<td style="text-align: right;">O(n²)</td>
+<td style="text-align: right;">O(n²)</td>
+</tr>
+<tr class="even">
+<td>Merge</td>
+<td style="text-align: right;">O(n log n)</td>
+<td style="text-align: right;">O(n log n)</td>
+<td style="text-align: right;">O(n log n)</td>
+</tr>
+<tr class="odd">
+<td>Quick</td>
+<td style="text-align: right;">O(n log n)</td>
+<td style="text-align: right;">O(n log n)</td>
+<td style="text-align: right;">O(n²)</td>
+</tr>
+<tr class="even">
+<td>Heap</td>
+<td style="text-align: right;">O(n log n)</td>
+<td style="text-align: right;">O(n log n)</td>
+<td style="text-align: right;">O(n log n)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="searching-algorithms" class="level1">
+<h1>33. Searching Algorithms</h1>
+<section id="linear-search" class="level2">
+<h2 class="anchored" data-anchor-id="linear-search">33.1 Linear Search</h2>
+<p>Checks elements one by one.</p>
+<p>Best case:</p>
+<p><strong>O(1)</strong></p>
+<p>Worst case:</p>
+<p><strong>O(n)</strong></p>
+<p>Works on unsorted data.</p>
+</section>
+<section id="binary-search" class="level2">
+<h2 class="anchored" data-anchor-id="binary-search">33.2 Binary Search</h2>
+<p>Binary Search requires sorted data.</p>
+<p>Steps:</p>
+<ol type="1">
+<li>Find middle element.</li>
+<li>Compare target with middle.</li>
+<li>Search left or right half.</li>
+<li>Repeat.</li>
+</ol>
+<p>Complexity:</p>
+<p><strong>O(log n)</strong></p>
+<section id="important-2" class="level3">
+<h3 class="anchored" data-anchor-id="important-2">Important</h3>
+<p><strong>Binary Search requires sorted data.</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="hashing" class="level1">
+<h1>34. Hashing</h1>
+<p>Hashing maps a key to an index using a hash function.</p>
+<p>Example:</p>
+<p><strong>h(key) = key mod table_size</strong></p>
+<p>If:</p>
+<pre class="text"><code>key = 27
+table_size = 10</code></pre>
+<p>then:</p>
+<p><strong>h(27) = 7</strong></p>
+<section id="collision" class="level2">
+<h2 class="anchored" data-anchor-id="collision">Collision</h2>
+<p>A collision occurs when two keys produce the same hash index.</p>
+<section id="collision-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="collision-resolution">Collision Resolution</h3>
+<ol type="1">
+<li>Separate chaining</li>
+<li>Open addressing</li>
+</ol>
+<p>Open addressing methods include:</p>
+<ul>
+<li>Linear probing</li>
+<li>Quadratic probing</li>
+<li>Double hashing</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="load-factor" class="level1">
+<h1>35. Load Factor</h1>
+<p>For a hash table:</p>
+<p><strong>Load Factor = Number of stored elements ÷ Table size</strong></p>
+<p>A high load factor can increase collisions.</p>
+<hr>
+</section>
+<section id="performance-analysis-of-algorithms" class="level1">
+<h1>36. Performance Analysis of Algorithms</h1>
+<p>Algorithm analysis studies the resources required by an algorithm.</p>
+<p>Main resources:</p>
+<ul>
+<li>Time</li>
+<li>Space</li>
+</ul>
+<hr>
+</section>
+<section id="time-complexity" class="level1">
+<h1>37. Time Complexity</h1>
+<p>Time complexity describes how running time grows with input size.</p>
+<p>Examples:</p>
+<ul>
+<li>O(1)</li>
+<li>O(log n)</li>
+<li>O(n)</li>
+<li>O(n log n)</li>
+<li>O(n²)</li>
+<li>O(2^n)</li>
+<li>O(n!)</li>
+</ul>
+<p>Generally, polynomial-time growth is much more manageable than exponential or factorial growth for large inputs.</p>
+<hr>
+</section>
+<section id="space-complexity" class="level1">
+<h1>38. Space Complexity</h1>
+<p>Space complexity describes the memory requirements of an algorithm.</p>
+<p>It may include:</p>
+<ul>
+<li>Input storage</li>
+<li>Auxiliary memory</li>
+<li>Recursion stack</li>
+<li>Temporary structures</li>
+</ul>
+<p>Example:</p>
+<p>An algorithm using an additional array of size n has:</p>
+<p><strong>Auxiliary space = O(n)</strong></p>
+<hr>
+</section>
+<section id="asymptotic-notation" class="level1">
+<h1>39. Asymptotic Notation</h1>
+<p>Asymptotic notation describes growth rates for large input sizes.</p>
+<section id="big-o" class="level2">
+<h2 class="anchored" data-anchor-id="big-o">Big O</h2>
+<p><strong>O(g(n))</strong> gives an asymptotic upper bound.</p>
+<p>Example:</p>
+<p>If:</p>
+<p><strong>T(n) = 3n² + 5n + 2</strong></p>
+<p>then:</p>
+<p><strong>T(n) = O(n²)</strong></p>
+</section>
+<section id="big-omega" class="level2">
+<h2 class="anchored" data-anchor-id="big-omega">Big Omega</h2>
+<p><strong>Ω(g(n))</strong> gives an asymptotic lower bound.</p>
+</section>
+<section id="big-theta" class="level2">
+<h2 class="anchored" data-anchor-id="big-theta">Big Theta</h2>
+<p><strong>Θ(g(n))</strong> gives a tight asymptotic bound.</p>
+<p>Example:</p>
+<p><strong>3n² + 5n + 2 = Θ(n²)</strong></p>
+<section id="important-3" class="level3">
+<h3 class="anchored" data-anchor-id="important-3">Important</h3>
+<p>For:</p>
+<p><strong>T(n) = 5n + 10</strong></p>
+<p>the dominant term is n.</p>
+<p>Therefore:</p>
+<p><strong>T(n) = Θ(n)</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="growth-rate" class="level1">
+<h1>40. Growth Rate</h1>
+<p>From generally smaller growth to larger growth:</p>
+<pre class="text"><code>O(1)
+O(log n)
+O(n)
+O(n log n)
+O(n²)
+O(n³)
+O(2^n)
+O(n!)</code></pre>
+<p>This ordering is important for UGC NET.</p>
+<hr>
+</section>
+<section id="recurrence-relations" class="level1">
+<h1>41. Recurrence Relations</h1>
+<p>A recurrence relation describes the running time of a recursive algorithm in terms of smaller inputs.</p>
+<p>Example:</p>
+<p><strong>T(n) = 2T(n/2) + n</strong></p>
+<p>This describes an algorithm that creates two subproblems of size n/2 and performs n additional work.</p>
+<p>Its solution is:</p>
+<p><strong>T(n) = O(n log n)</strong></p>
+<hr>
+</section>
+<section id="master-theorem" class="level1">
+<h1>42. Master Theorem</h1>
+<p>For recurrences of the form:</p>
+<p><strong>T(n) = aT(n/b) + f(n)</strong></p>
+<p>the Master Theorem can often be used.</p>
+<p>Compare:</p>
+<p><strong>f(n)</strong></p>
+<p>with:</p>
+<p><strong>n^(log_b a)</strong></p>
+<section id="common-examples" class="level3">
+<h3 class="anchored" data-anchor-id="common-examples">Common Examples</h3>
+<p>Merge Sort:</p>
+<p><strong>T(n) = 2T(n/2) + O(n)</strong></p>
+<p>Therefore:</p>
+<p><strong>T(n) = O(n log n)</strong></p>
+<p>Binary Search:</p>
+<p><strong>T(n) = T(n/2) + O(1)</strong></p>
+<p>Therefore:</p>
+<p><strong>T(n) = O(log n)</strong></p>
+<hr>
+</section>
+</section>
+<section id="divide-and-conquer" class="level1">
+<h1>43. Divide and Conquer</h1>
+<p>Divide and Conquer has three major steps:</p>
+<ol type="1">
+<li>Divide</li>
+<li>Conquer</li>
+<li>Combine</li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li>Merge Sort</li>
+<li>Quick Sort</li>
+<li>Binary Search</li>
+</ul>
+<section id="example-merge-sort" class="level3">
+<h3 class="anchored" data-anchor-id="example-merge-sort">Example: Merge Sort</h3>
+<p>Divide:</p>
+<p>Split array into two parts.</p>
+<p>Conquer:</p>
+<p>Sort each part.</p>
+<p>Combine:</p>
+<p>Merge sorted parts.</p>
+<hr>
+</section>
+</section>
+<section id="dynamic-programming" class="level1">
+<h1>44. Dynamic Programming</h1>
+<p>Dynamic Programming (DP) solves problems by storing results of overlapping subproblems.</p>
+<p>Two important characteristics are:</p>
+<ul>
+<li>Overlapping subproblems</li>
+<li>Optimal substructure</li>
+</ul>
+<p>Two common approaches:</p>
+<section id="top-down" class="level3">
+<h3 class="anchored" data-anchor-id="top-down">Top-Down</h3>
+<p>Memoization.</p>
+</section>
+<section id="bottom-up" class="level3">
+<h3 class="anchored" data-anchor-id="bottom-up">Bottom-Up</h3>
+<p>Tabulation.</p>
+</section>
+<section id="examples-1" class="level2">
+<h2 class="anchored" data-anchor-id="examples-1">Examples</h2>
+<ul>
+<li>Fibonacci</li>
+<li>0/1 Knapsack</li>
+<li>Matrix-chain multiplication</li>
+<li>Longest Common Subsequence</li>
+<li>Floyd-Warshall</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="greedy-algorithms" class="level1">
+<h1>45. Greedy Algorithms</h1>
+<p>A greedy algorithm makes the locally best choice at each step.</p>
+<p>Examples:</p>
+<ul>
+<li>Kruskal’s algorithm</li>
+<li>Prim’s algorithm</li>
+<li>Dijkstra’s algorithm under its standard non-negative-edge assumption</li>
+<li>Huffman coding</li>
+<li>Fractional Knapsack</li>
+</ul>
+<section id="important-4" class="level3">
+<h3 class="anchored" data-anchor-id="important-4">Important</h3>
+<p>A greedy algorithm does not always produce an optimal solution for every problem.</p>
+<p>For example:</p>
+<p><strong>Fractional Knapsack → greedy works</strong></p>
+<p><strong>0/1 Knapsack → ordinary greedy strategy is not guaranteed to work</strong></p>
+<hr>
+</section>
+</section>
+<section id="backtracking" class="level1">
+<h1>46. Backtracking</h1>
+<p>Backtracking builds a solution incrementally and abandons a partial solution when it cannot lead to a valid complete solution.</p>
+<p>Examples:</p>
+<ul>
+<li>N-Queens</li>
+<li>Sudoku</li>
+<li>Graph coloring</li>
+<li>Hamiltonian path</li>
+</ul>
+<p>General idea:</p>
+<pre class="text"><code>Choose
+  ↓
+Check
+  ↓
+Continue if valid
+  ↓
+Undo if invalid</code></pre>
+<hr>
+</section>
+<section id="branch-and-bound" class="level1">
+<h1>47. Branch and Bound</h1>
+<p>Branch and Bound is used for optimization problems.</p>
+<p>It systematically explores possible solutions while using bounds to eliminate branches that cannot produce a better solution.</p>
+<p>Applications:</p>
+<ul>
+<li>Travelling Salesperson Problem</li>
+<li>0/1 Knapsack</li>
+<li>Scheduling</li>
+</ul>
+<section id="backtracking-vs-branch-and-bound" class="level3">
+<h3 class="anchored" data-anchor-id="backtracking-vs-branch-and-bound">Backtracking vs Branch and Bound</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Backtracking</th>
+<th>Branch and Bound</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Usually constraint satisfaction</td>
+<td>Usually optimization</td>
+</tr>
+<tr class="even">
+<td>Prunes infeasible solutions</td>
+<td>Prunes solutions that cannot improve bound</td>
+</tr>
+<tr class="odd">
+<td>N-Queens</td>
+<td>TSP optimization</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="lower-bound-theory" class="level1">
+<h1>48. Lower Bound Theory</h1>
+<p>A lower bound tells us the minimum amount of computational work required for a problem under a particular computational model.</p>
+<p>For a problem, if every comparison-based sorting algorithm requires at least:</p>
+<p><strong>Ω(n log n)</strong></p>
+<p>comparisons in the worst case, then no comparison-based sorting algorithm can have a better asymptotic worst-case comparison bound.</p>
+<hr>
+</section>
+<section id="comparison-trees" class="level1">
+<h1>49. Comparison Trees</h1>
+<p>A comparison tree represents the comparisons performed by a comparison-based algorithm.</p>
+<p>For sorting n distinct elements:</p>
+<p>There are:</p>
+<p><strong>n!</strong></p>
+<p>possible input orderings.</p>
+<p>A binary comparison tree must have at least n! leaves.</p>
+<p>Therefore its height must satisfy:</p>
+<p><strong>2^h ≥ n!</strong></p>
+<p>Taking logarithms:</p>
+<p><strong>h ≥ log₂(n!)</strong></p>
+<p>Using Stirling-type reasoning:</p>
+<p><strong>log₂(n!) = Ω(n log n)</strong></p>
+<p>Therefore comparison-based sorting has a lower bound of:</p>
+<p><strong>Ω(n log n)</strong></p>
+<hr>
+</section>
+<section id="lower-bounds-through-reductions" class="level1">
+<h1>50. Lower Bounds Through Reductions</h1>
+<p>A reduction transforms one problem into another.</p>
+<p>If problem A can be transformed efficiently into problem B, and A is known to be hard, then B must be at least as hard under the relevant reduction.</p>
+<p>Reductions are important in:</p>
+<ul>
+<li>Complexity theory</li>
+<li>NP-completeness</li>
+<li>Lower-bound arguments</li>
+</ul>
+<hr>
+</section>
+<section id="breadth-first-search" class="level1">
+<h1>51. Breadth-First Search</h1>
+<p><strong>BFS</strong> explores a graph level by level.</p>
+<p>It uses a <strong>queue</strong>.</p>
+<p>Basic steps:</p>
+<ol type="1">
+<li>Start from a source vertex.</li>
+<li>Mark it visited.</li>
+<li>Insert it into a queue.</li>
+<li>Remove a vertex from the queue.</li>
+<li>Visit its unvisited neighbors.</li>
+<li>Continue.</li>
+</ol>
+<section id="complexity-9" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-9">Complexity</h3>
+<p>With an adjacency list:</p>
+<p><strong>O(V + E)</strong></p>
+</section>
+<section id="application" class="level3">
+<h3 class="anchored" data-anchor-id="application">Application</h3>
+<p>BFS finds shortest paths in an <strong>unweighted graph</strong> in terms of number of edges.</p>
+<hr>
+</section>
+</section>
+<section id="depth-first-search" class="level1">
+<h1>52. Depth-First Search</h1>
+<p><strong>DFS</strong> explores as deeply as possible before backtracking.</p>
+<p>It uses:</p>
+<ul>
+<li>Recursion, or</li>
+<li>Explicit stack</li>
+</ul>
+<section id="complexity-10" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-10">Complexity</h3>
+<p>With an adjacency list:</p>
+<p><strong>O(V + E)</strong></p>
+<p>Applications:</p>
+<ul>
+<li>Cycle detection</li>
+<li>Topological sorting</li>
+<li>Connected components</li>
+<li>Path finding</li>
+<li>Strongly connected component algorithms</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="bfs-vs-dfs" class="level1">
+<h1>53. BFS vs DFS</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>BFS</th>
+<th>DFS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Uses queue</td>
+<td>Uses stack/recursion</td>
+</tr>
+<tr class="even">
+<td>Level-by-level</td>
+<td>Depth-first</td>
+</tr>
+<tr class="odd">
+<td>Shortest path in unweighted graph</td>
+<td>Useful for structural exploration</td>
+</tr>
+<tr class="even">
+<td>O(V + E)</td>
+<td>O(V + E)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="shortest-path-algorithms" class="level1">
+<h1>54. Shortest Path Algorithms</h1>
+<p>Important algorithms:</p>
+<ul>
+<li>Dijkstra</li>
+<li>Bellman-Ford</li>
+<li>Floyd-Warshall</li>
+</ul>
+<hr>
+</section>
+<section id="dijkstras-algorithm" class="level1">
+<h1>55. Dijkstra’s Algorithm</h1>
+<p>Dijkstra’s algorithm finds shortest paths from a source vertex when edge weights are non-negative.</p>
+<p>Basic idea:</p>
+<ol type="1">
+<li>Select the unvisited vertex with smallest tentative distance.</li>
+<li>Finalize it.</li>
+<li>Relax its outgoing edges.</li>
+<li>Repeat.</li>
+</ol>
+<section id="important-5" class="level3">
+<h3 class="anchored" data-anchor-id="important-5">Important</h3>
+<p><strong>Dijkstra does not correctly handle graphs with negative edge weights.</strong></p>
+<hr>
+</section>
+</section>
+<section id="bellman-ford-algorithm" class="level1">
+<h1>56. Bellman-Ford Algorithm</h1>
+<p>Bellman-Ford finds single-source shortest paths and can handle negative edge weights.</p>
+<p>It can also detect a reachable negative-weight cycle.</p>
+<p>Typical complexity:</p>
+<p><strong>O(VE)</strong></p>
+<hr>
+</section>
+<section id="floyd-warshall-algorithm" class="level1">
+<h1>57. Floyd-Warshall Algorithm</h1>
+<p>Floyd-Warshall solves the all-pairs shortest path problem using dynamic programming.</p>
+<p>Typical complexity:</p>
+<p><strong>O(V³)</strong></p>
+<p>It can handle negative edge weights, provided there is no relevant negative cycle for the shortest-path interpretation.</p>
+<hr>
+</section>
+<section id="minimum-spanning-tree" class="level1">
+<h1>58. Minimum Spanning Tree</h1>
+<p>A <strong>Minimum Spanning Tree (MST)</strong> is a spanning tree of a connected weighted undirected graph with minimum total edge weight.</p>
+<p>Important algorithms:</p>
+<ul>
+<li>Kruskal</li>
+<li>Prim</li>
+</ul>
+<hr>
+</section>
+<section id="kruskals-algorithm" class="level1">
+<h1>59. Kruskal’s Algorithm</h1>
+<p>Kruskal’s algorithm:</p>
+<ol type="1">
+<li>Sort edges by increasing weight.</li>
+<li>Select the smallest edge that does not form a cycle.</li>
+<li>Continue until the MST has V - 1 edges.</li>
+</ol>
+<p>It commonly uses:</p>
+<p><strong>Disjoint Set / Union-Find</strong></p>
+<section id="complexity-11" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-11">Complexity</h3>
+<p>With efficient sorting and union-find, a common bound is:</p>
+<p><strong>O(E log E)</strong></p>
+<hr>
+</section>
+</section>
+<section id="prims-algorithm" class="level1">
+<h1>60. Prim’s Algorithm</h1>
+<p>Prim’s algorithm grows one tree from a starting vertex.</p>
+<p>At each step, choose the minimum-weight edge connecting the current tree to an outside vertex.</p>
+<p>With a suitable priority queue and adjacency list, common implementations achieve:</p>
+<p><strong>O(E log V)</strong></p>
+<hr>
+</section>
+<section id="kruskal-vs-prim" class="level1">
+<h1>61. Kruskal vs Prim</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kruskal</th>
+<th>Prim</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Edge-oriented</td>
+<td>Vertex/tree-oriented</td>
+</tr>
+<tr class="even">
+<td>Sorts edges</td>
+<td>Uses minimum connecting edge</td>
+</tr>
+<tr class="odd">
+<td>Uses Union-Find</td>
+<td>Commonly uses priority queue</td>
+</tr>
+<tr class="even">
+<td>Often useful for sparse graphs</td>
+<td>Often useful with adjacency structures</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="maximum-flow" class="level1">
+<h1>62. Maximum Flow</h1>
+<p>A flow network contains:</p>
+<ul>
+<li>Source</li>
+<li>Sink</li>
+<li>Directed edges</li>
+<li>Capacities</li>
+</ul>
+<p>The objective is to maximize the amount of flow from source to sink.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Capacity</li>
+<li>Flow</li>
+<li>Residual graph</li>
+<li>Augmenting path</li>
+<li>Minimum cut</li>
+</ul>
+<hr>
+</section>
+<section id="ford-fulkerson-method" class="level1">
+<h1>63. Ford-Fulkerson Method</h1>
+<p>Ford-Fulkerson repeatedly finds an augmenting path from source to sink and increases the flow along that path.</p>
+<p>The process stops when no augmenting path remains.</p>
+<section id="important-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="important-theorem">Important Theorem</h3>
+<p><strong>Max-flow min-cut theorem:</strong></p>
+<p>The maximum flow value equals the minimum capacity of an s-t cut.</p>
+<hr>
+</section>
+</section>
+<section id="edmonds-karp-algorithm" class="level1">
+<h1>64. Edmonds-Karp Algorithm</h1>
+<p>Edmonds-Karp is a specific implementation of Ford-Fulkerson that uses BFS to find augmenting paths.</p>
+<p>A commonly stated complexity is:</p>
+<p><strong>O(VE²)</strong></p>
+<hr>
+</section>
+<section id="complexity-theory" class="level1">
+<h1>65. Complexity Theory</h1>
+<p>Complexity theory studies the computational resources required to solve problems.</p>
+<p>Important classes:</p>
+<ul>
+<li>P</li>
+<li>NP</li>
+<li>NP-hard</li>
+<li>NP-complete</li>
+</ul>
+<hr>
+</section>
+<section id="class-p" class="level1">
+<h1>66. Class P</h1>
+<p><strong>P</strong> is the class of decision problems solvable by a deterministic algorithm in polynomial time.</p>
+<p>Examples include:</p>
+<ul>
+<li>Sorting-related decision problems</li>
+<li>Shortest path decision problems</li>
+<li>Minimum spanning tree decision formulations</li>
+</ul>
+<hr>
+</section>
+<section id="class-np" class="level1">
+<h1>67. Class NP</h1>
+<p><strong>NP</strong> is the class of decision problems for which a proposed solution can be verified in polynomial time by a deterministic machine.</p>
+<p>Another equivalent characterization is that NP problems can be solved in polynomial time by a nondeterministic Turing machine.</p>
+<section id="important-6" class="level3">
+<h3 class="anchored" data-anchor-id="important-6">Important</h3>
+<p>NP does <strong>not</strong> simply mean “not polynomial.”</p>
+<hr>
+</section>
+</section>
+<section id="np-hard" class="level1">
+<h1>68. NP-Hard</h1>
+<p>A problem is <strong>NP-hard</strong> if every problem in NP can be reduced to it using the relevant polynomial-time reduction.</p>
+<p>An NP-hard problem:</p>
+<ul>
+<li>Need not be in NP.</li>
+<li>Need not be a decision problem.</li>
+</ul>
+<hr>
+</section>
+<section id="np-complete" class="level1">
+<h1>69. NP-Complete</h1>
+<p>A problem is <strong>NP-complete</strong> if:</p>
+<ol type="1">
+<li>It belongs to NP.</li>
+<li>It is NP-hard.</li>
+</ol>
+<p>Therefore:</p>
+<p><strong>NP-complete = NP + NP-hard</strong></p>
+<p>Examples:</p>
+<ul>
+<li>SAT</li>
+<li>3-SAT</li>
+<li>Clique decision problem</li>
+<li>Vertex Cover decision problem</li>
+<li>Hamiltonian Cycle decision problem</li>
+</ul>
+<hr>
+</section>
+<section id="polynomial-time-reducibility" class="level1">
+<h1>70. Polynomial-Time Reducibility</h1>
+<p>Suppose problem A can be transformed into problem B in polynomial time.</p>
+<p>This can be written as:</p>
+<p><strong>A ≤p B</strong></p>
+<p>If A is known to be NP-hard and:</p>
+<p><strong>A ≤p B</strong></p>
+<p>then B is at least as hard as A, and this can help establish that B is NP-hard.</p>
+<section id="important-direction" class="level3">
+<h3 class="anchored" data-anchor-id="important-direction">Important Direction</h3>
+<p>To prove B is NP-hard, reduce a known hard problem <strong>to B</strong>, not B to the known hard problem.</p>
+<hr>
+</section>
+</section>
+<section id="number-theoretic-algorithms" class="level1">
+<h1>71. Number Theoretic Algorithms</h1>
+<p>Number-theoretic algorithms operate on integers and their properties.</p>
+<p>Important topics:</p>
+<ul>
+<li>Greatest Common Divisor</li>
+<li>Extended Euclidean algorithm</li>
+<li>Modular arithmetic</li>
+<li>Modular exponentiation</li>
+<li>Prime numbers</li>
+</ul>
+<hr>
+</section>
+<section id="euclidean-algorithm" class="level1">
+<h1>72. Euclidean Algorithm</h1>
+<p>The Euclidean algorithm finds:</p>
+<p><strong>gcd(a, b)</strong></p>
+<p>using repeated remainders.</p>
+<p>Example:</p>
+<p>Find gcd(48, 18).</p>
+<pre class="text"><code>48 = 18 × 2 + 12
+18 = 12 × 1 + 6
+12 = 6 × 2 + 0</code></pre>
+<p>Therefore:</p>
+<p><strong>gcd(48, 18) = 6</strong></p>
+<hr>
+</section>
+<section id="extended-euclidean-algorithm" class="level1">
+<h1>73. Extended Euclidean Algorithm</h1>
+<p>The Extended Euclidean algorithm finds integers x and y such that:</p>
+<p><strong>ax + by = gcd(a,b)</strong></p>
+<p>It is useful for:</p>
+<ul>
+<li>Modular inverses</li>
+<li>Number theory</li>
+<li>Cryptographic algorithms</li>
+</ul>
+<hr>
+</section>
+<section id="polynomial-arithmetic" class="level1">
+<h1>74. Polynomial Arithmetic</h1>
+<p>A polynomial can be represented using:</p>
+<ul>
+<li>Array</li>
+<li>Linked list</li>
+</ul>
+<p>Example:</p>
+<p><strong>P(x) = 5x³ + 2x + 7</strong></p>
+<p>Array representation can store coefficients according to exponent.</p>
+<p>Polynomial operations include:</p>
+<ul>
+<li>Addition</li>
+<li>Subtraction</li>
+<li>Multiplication</li>
+<li>Evaluation</li>
+</ul>
+<hr>
+</section>
+<section id="fast-fourier-transform" class="level1">
+<h1>75. Fast Fourier Transform</h1>
+<p><strong>FFT = Fast Fourier Transform</strong></p>
+<p>FFT efficiently computes the Discrete Fourier Transform.</p>
+<p>The straightforward DFT computation takes approximately:</p>
+<p><strong>O(n²)</strong></p>
+<p>FFT can reduce this to:</p>
+<p><strong>O(n log n)</strong></p>
+<p>FFT is important in:</p>
+<ul>
+<li>Signal processing</li>
+<li>Polynomial multiplication</li>
+<li>Image processing</li>
+<li>Audio processing</li>
+<li>Scientific computing</li>
+</ul>
+<section id="important-ugc-net-point-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-ugc-net-point-1">Important UGC NET Point</h3>
+<p><strong>FFT → O(n log n)</strong></p>
+<hr>
+</section>
+</section>
+<section id="string-matching-algorithms" class="level1">
+<h1>76. String Matching Algorithms</h1>
+<p>String matching finds occurrences of a pattern in a text.</p>
+<p>Important algorithms:</p>
+<ul>
+<li>Naive string matching</li>
+<li>KMP</li>
+<li>Rabin-Karp</li>
+<li>Boyer-Moore</li>
+</ul>
+<hr>
+</section>
+<section id="naive-string-matching" class="level1">
+<h1>77. Naive String Matching</h1>
+<p>The pattern is compared with the text at every possible position.</p>
+<p>If:</p>
+<ul>
+<li>Text length = n</li>
+<li>Pattern length = m</li>
+</ul>
+<p>Worst-case complexity is:</p>
+<p><strong>O(nm)</strong></p>
+<hr>
+</section>
+<section id="kmp-algorithm" class="level1">
+<h1>78. KMP Algorithm</h1>
+<p><strong>KMP = Knuth-Morris-Pratt</strong></p>
+<p>KMP avoids unnecessary re-comparisons using a prefix-function/LPS table.</p>
+<p>LPS means:</p>
+<p><strong>Longest Proper Prefix which is also a Suffix</strong></p>
+<p>Typical complexity:</p>
+<p><strong>O(n + m)</strong></p>
+<hr>
+</section>
+<section id="rabin-karp-algorithm" class="level1">
+<h1>79. Rabin-Karp Algorithm</h1>
+<p>Rabin-Karp uses hashing to compare pattern and text windows.</p>
+<p>It uses a rolling hash to update the hash efficiently.</p>
+<p>Average-case behavior can be efficient, while the worst case can be:</p>
+<p><strong>O(nm)</strong></p>
+<p>depending on collisions and implementation.</p>
+<hr>
+</section>
+<section id="boyer-moore-algorithm" class="level1">
+<h1>80. Boyer-Moore Algorithm</h1>
+<p>Boyer-Moore compares characters from right to left and uses shifts to skip portions of the text.</p>
+<p>Important heuristics include:</p>
+<ul>
+<li>Bad-character rule</li>
+<li>Good-suffix rule</li>
+</ul>
+<p>It is often very efficient in practical text searching.</p>
+<hr>
+</section>
+<section id="advanced-algorithms" class="level1">
+<h1>81. Advanced Algorithms</h1>
+<p>Advanced topics include:</p>
+<ul>
+<li>Parallel algorithms</li>
+<li>Approximation algorithms</li>
+<li>Randomized algorithms</li>
+</ul>
+<hr>
+</section>
+<section id="parallel-algorithms" class="level1">
+<h1>82. Parallel Algorithms</h1>
+<p>A parallel algorithm divides computation among multiple processors or computing units.</p>
+<p>The goals include:</p>
+<ul>
+<li>Reduce execution time</li>
+<li>Increase throughput</li>
+<li>Process large datasets efficiently</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Parallel sorting</li>
+<li>Parallel searching</li>
+<li>Parallel merging</li>
+</ul>
+<hr>
+</section>
+<section id="parallel-sorting" class="level1">
+<h1>83. Parallel Sorting</h1>
+<p>Sorting can be parallelized by dividing data among processors.</p>
+<p>A common strategy:</p>
+<ol type="1">
+<li>Divide data.</li>
+<li>Sort partitions in parallel.</li>
+<li>Merge sorted partitions.</li>
+</ol>
+<p>Parallel merge sort is an example.</p>
+<hr>
+</section>
+<section id="parallel-searching" class="level1">
+<h1>84. Parallel Searching</h1>
+<p>Search operations can be divided among processors.</p>
+<p>Example:</p>
+<p>An array of one million elements can be divided among multiple processors.</p>
+<p>Each processor searches its assigned portion.</p>
+<p>The results are then combined.</p>
+<hr>
+</section>
+<section id="parallel-merging" class="level1">
+<h1>85. Parallel Merging</h1>
+<p>Two sorted lists can be merged using multiple processors by dividing the merging task into independent ranges.</p>
+<p>The objective is to reduce total execution time.</p>
+<hr>
+</section>
+<section id="approximation-algorithms" class="level1">
+<h1>86. Approximation Algorithms</h1>
+<p>Some optimization problems are computationally difficult.</p>
+<p>An approximation algorithm finds a solution that is close to the optimum within a known or useful bound.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Approximation ratio</li>
+<li>Polynomial-time approximation</li>
+<li>Trade-off between solution quality and computation time</li>
+</ul>
+<p>Approximation algorithms are commonly studied for NP-hard optimization problems.</p>
+<hr>
+</section>
+<section id="randomized-algorithms" class="level1">
+<h1>87. Randomized Algorithms</h1>
+<p>A randomized algorithm uses random choices during execution.</p>
+<p>Types include:</p>
+<section id="las-vegas-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="las-vegas-algorithm">Las Vegas Algorithm</h3>
+<p>Always produces a correct result, but running time may vary.</p>
+</section>
+<section id="monte-carlo-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="monte-carlo-algorithm">Monte Carlo Algorithm</h3>
+<p>Has a bounded or controlled running time but may have a probability of producing an incorrect result.</p>
+</section>
+<section id="easy-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="easy-comparison">Easy Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Las Vegas</th>
+<th>Monte Carlo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Always correct</td>
+<td>May be incorrect with some probability</td>
+</tr>
+<tr class="even">
+<td>Running time may vary</td>
+<td>Usually controlled/bounded time</td>
+</tr>
+<tr class="odd">
+<td>Randomness affects time</td>
+<td>Randomness can affect correctness</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="important-complexity-table" class="level1">
+<h1>88. Important Complexity Table</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operation/Algorithm</th>
+<th style="text-align: right;">Typical Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Array access</td>
+<td style="text-align: right;">O(1)</td>
+</tr>
+<tr class="even">
+<td>Linear search</td>
+<td style="text-align: right;">O(n)</td>
+</tr>
+<tr class="odd">
+<td>Binary search</td>
+<td style="text-align: right;">O(log n)</td>
+</tr>
+<tr class="even">
+<td>Stack push</td>
+<td style="text-align: right;">O(1)</td>
+</tr>
+<tr class="odd">
+<td>Stack pop</td>
+<td style="text-align: right;">O(1)</td>
+</tr>
+<tr class="even">
+<td>Queue enqueue</td>
+<td style="text-align: right;">O(1)</td>
+</tr>
+<tr class="odd">
+<td>Queue dequeue</td>
+<td style="text-align: right;">O(1)</td>
+</tr>
+<tr class="even">
+<td>BST search average</td>
+<td style="text-align: right;">O(log n)</td>
+</tr>
+<tr class="odd">
+<td>BST search worst</td>
+<td style="text-align: right;">O(n)</td>
+</tr>
+<tr class="even">
+<td>AVL search</td>
+<td style="text-align: right;">O(log n)</td>
+</tr>
+<tr class="odd">
+<td>Merge Sort</td>
+<td style="text-align: right;">O(n log n)</td>
+</tr>
+<tr class="even">
+<td>Quick Sort average</td>
+<td style="text-align: right;">O(n log n)</td>
+</tr>
+<tr class="odd">
+<td>Quick Sort worst</td>
+<td style="text-align: right;">O(n²)</td>
+</tr>
+<tr class="even">
+<td>Heap Sort</td>
+<td style="text-align: right;">O(n log n)</td>
+</tr>
+<tr class="odd">
+<td>BFS</td>
+<td style="text-align: right;">O(V + E)</td>
+</tr>
+<tr class="even">
+<td>DFS</td>
+<td style="text-align: right;">O(V + E)</td>
+</tr>
+<tr class="odd">
+<td>Dijkstra with binary heap</td>
+<td style="text-align: right;">O((V + E) log V)</td>
+</tr>
+<tr class="even">
+<td>Bellman-Ford</td>
+<td style="text-align: right;">O(VE)</td>
+</tr>
+<tr class="odd">
+<td>Floyd-Warshall</td>
+<td style="text-align: right;">O(V³)</td>
+</tr>
+<tr class="even">
+<td>Kruskal</td>
+<td style="text-align: right;">O(E log E)</td>
+</tr>
+<tr class="odd">
+<td>Prim with binary heap</td>
+<td style="text-align: right;">O(E log V)</td>
+</tr>
+<tr class="even">
+<td>FFT</td>
+<td style="text-align: right;">O(n log n)</td>
+</tr>
+<tr class="odd">
+<td>KMP</td>
+<td style="text-align: right;">O(n + m)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-algorithm-design-comparison" class="level1">
+<h1>89. Important Algorithm Design Comparison</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Technique</th>
+<th>Main Idea</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Divide and Conquer</td>
+<td>Divide into independent subproblems</td>
+<td>Merge Sort</td>
+</tr>
+<tr class="even">
+<td>Dynamic Programming</td>
+<td>Store overlapping subproblem results</td>
+<td>Knapsack, LCS</td>
+</tr>
+<tr class="odd">
+<td>Greedy</td>
+<td>Take locally best choice</td>
+<td>Kruskal, Prim</td>
+</tr>
+<tr class="even">
+<td>Backtracking</td>
+<td>Explore and abandon invalid choices</td>
+<td>N-Queens</td>
+</tr>
+<tr class="odd">
+<td>Branch and Bound</td>
+<td>Explore optimization choices and prune using bounds</td>
+<td>TSP</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-tree-comparison" class="level1">
+<h1>90. Important Tree Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tree</th>
+<th>Important Characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Binary Tree</td>
+<td>At most 2 children</td>
+</tr>
+<tr class="even">
+<td>BST</td>
+<td>Ordered binary tree</td>
+</tr>
+<tr class="odd">
+<td>AVL</td>
+<td>Self-balancing BST</td>
+</tr>
+<tr class="even">
+<td>B-tree</td>
+<td>Balanced multiway search tree</td>
+</tr>
+<tr class="odd">
+<td>B+ tree</td>
+<td>Records typically at leaves; linked leaves</td>
+</tr>
+<tr class="even">
+<td>B* tree</td>
+<td>Higher node occupancy</td>
+</tr>
+<tr class="odd">
+<td>Threaded Binary Tree</td>
+<td>Uses otherwise unused pointers as threads</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-searching-comparison" class="level1">
+<h1>91. Important Searching Comparison</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Requirement</th>
+<th style="text-align: right;">Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Linear Search</td>
+<td>No sorting required</td>
+<td style="text-align: right;">O(n)</td>
+</tr>
+<tr class="even">
+<td>Binary Search</td>
+<td>Sorted data</td>
+<td style="text-align: right;">O(log n)</td>
+</tr>
+<tr class="odd">
+<td>Hash Search</td>
+<td>Hash function/table</td>
+<td style="text-align: right;">Average O(1) under suitable assumptions</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-graph-algorithm-comparison" class="level1">
+<h1>92. Important Graph Algorithm Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BFS</td>
+<td>Graph traversal; shortest path in unweighted graph</td>
+</tr>
+<tr class="even">
+<td>DFS</td>
+<td>Graph traversal and structural analysis</td>
+</tr>
+<tr class="odd">
+<td>Dijkstra</td>
+<td>Single-source shortest path with non-negative edges</td>
+</tr>
+<tr class="even">
+<td>Bellman-Ford</td>
+<td>Single-source shortest path with negative edges</td>
+</tr>
+<tr class="odd">
+<td>Floyd-Warshall</td>
+<td>All-pairs shortest paths</td>
+</tr>
+<tr class="even">
+<td>Kruskal</td>
+<td>Minimum spanning tree</td>
+</tr>
+<tr class="odd">
+<td>Prim</td>
+<td>Minimum spanning tree</td>
+</tr>
+<tr class="even">
+<td>Ford-Fulkerson</td>
+<td>Maximum flow</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="common-ugc-net-mistakes" class="level1">
+<h1>93. Common UGC NET Mistakes</h1>
+<section id="mistake-1" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-1">Mistake 1</h3>
+<p>Thinking binary search works on unsorted data.</p>
+<p><strong>Correction:</strong> Binary search requires sorted data.</p>
+</section>
+<section id="mistake-2" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-2">Mistake 2</h3>
+<p>Thinking BST is always O(log n).</p>
+<p><strong>Correction:</strong> A highly skewed BST can have O(n) search time.</p>
+</section>
+<section id="mistake-3" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-3">Mistake 3</h3>
+<p>Thinking NP means “not polynomial.”</p>
+<p><strong>Correction:</strong> NP refers to polynomial-time verification of certificates for decision problems.</p>
+</section>
+<section id="mistake-4" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-4">Mistake 4</h3>
+<p>Using Dijkstra with negative edge weights.</p>
+<p><strong>Correction:</strong> Standard Dijkstra requires non-negative edge weights.</p>
+</section>
+<section id="mistake-5" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-5">Mistake 5</h3>
+<p>Confusing BFS and DFS.</p>
+<p><strong>BFS → Queue</strong></p>
+<p><strong>DFS → Stack/Recursion</strong></p>
+</section>
+<section id="mistake-6" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-6">Mistake 6</h3>
+<p>Confusing MST with shortest path.</p>
+<p><strong>MST:</strong> connects all vertices with minimum total edge weight.</p>
+<p><strong>Shortest path:</strong> minimizes path distance between specified vertices.</p>
+</section>
+<section id="mistake-7" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-7">Mistake 7</h3>
+<p>Confusing dynamic programming with divide and conquer.</p>
+<p><strong>DP:</strong> overlapping subproblems + stored results.</p>
+<p><strong>Divide and conquer:</strong> independently solve subproblems and combine.</p>
+</section>
+<section id="mistake-8" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-8">Mistake 8</h3>
+<p>Assuming greedy always gives the optimum.</p>
+<p>Greedy works optimally only for problems having the appropriate greedy-choice property and optimal-substructure conditions.</p>
+<hr>
+</section>
+</section>
+<section id="ugc-net-high-priority-topics" class="level1">
+<h1>94. UGC NET High-Priority Topics</h1>
+<p>Focus strongly on:</p>
+<ol type="1">
+<li>Array operations</li>
+<li>Sparse matrices</li>
+<li>Stack and queue</li>
+<li>Circular queue</li>
+<li>Priority queue</li>
+<li>Linked lists</li>
+<li>Tree terminology</li>
+<li>Tree traversals</li>
+<li>BST</li>
+<li>AVL rotations</li>
+<li>B-tree</li>
+<li>B+ tree</li>
+<li>B* tree</li>
+<li>Graph representation</li>
+<li>Sorting complexities</li>
+<li>Searching algorithms</li>
+<li>Hashing and collision resolution</li>
+<li>Big O, Big Omega and Big Theta</li>
+<li>Recurrence relations</li>
+<li>Master Theorem</li>
+<li>Divide and conquer</li>
+<li>Dynamic programming</li>
+<li>Greedy algorithms</li>
+<li>Backtracking</li>
+<li>Branch and bound</li>
+<li>Comparison sorting lower bound</li>
+<li>BFS and DFS</li>
+<li>Dijkstra</li>
+<li>Bellman-Ford</li>
+<li>Floyd-Warshall</li>
+<li>Kruskal and Prim</li>
+<li>Maximum flow</li>
+<li>P and NP</li>
+<li>NP-hard and NP-complete</li>
+<li>Polynomial reductions</li>
+<li>Euclidean algorithm</li>
+<li>FFT</li>
+<li>KMP</li>
+<li>Parallel algorithms</li>
+<li>Approximation algorithms</li>
+<li>Randomized algorithms</li>
+</ol>
+<hr>
+</section>
+<section id="one-minute-revision" class="level1">
+<h1>95. One-Minute Revision</h1>
+<section id="linear-structures" class="level2">
+<h2 class="anchored" data-anchor-id="linear-structures">Linear Structures</h2>
+<p><strong>Array → indexed storage</strong></p>
+<p><strong>Stack → LIFO</strong></p>
+<p><strong>Queue → FIFO</strong></p>
+<p><strong>Priority Queue → priority-based removal</strong></p>
+<p><strong>Linked List → nodes connected by links</strong></p>
+</section>
+<section id="trees-1" class="level2">
+<h2 class="anchored" data-anchor-id="trees-1">Trees</h2>
+<p><strong>BST → ordered binary tree</strong></p>
+<p><strong>AVL → balanced BST</strong></p>
+<p><strong>B-tree → multiway balanced tree</strong></p>
+<p><strong>B+ tree → data/record entries typically at leaves</strong></p>
+<p><strong>B* tree → high occupancy</strong></p>
+</section>
+<section id="graphs-1" class="level2">
+<h2 class="anchored" data-anchor-id="graphs-1">Graphs</h2>
+<p><strong>BFS → Queue</strong></p>
+<p><strong>DFS → Stack/Recursion</strong></p>
+<p><strong>Dijkstra → non-negative weighted shortest paths</strong></p>
+<p><strong>Bellman-Ford → negative edges allowed</strong></p>
+<p><strong>Floyd-Warshall → all-pairs shortest paths</strong></p>
+<p><strong>Kruskal/Prim → MST</strong></p>
+</section>
+<section id="design-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="design-techniques">Design Techniques</h2>
+<p><strong>Divide and Conquer → Divide, solve, combine</strong></p>
+<p><strong>DP → Store repeated subproblems</strong></p>
+<p><strong>Greedy → Local best choice</strong></p>
+<p><strong>Backtracking → Try and undo</strong></p>
+<p><strong>Branch and Bound → Optimize and prune</strong></p>
+</section>
+<section id="complexity-12" class="level2">
+<h2 class="anchored" data-anchor-id="complexity-12">Complexity</h2>
+<p><strong>O → upper bound</strong></p>
+<p><strong>Ω → lower bound</strong></p>
+<p><strong>Θ → tight bound</strong></p>
+<p><strong>Comparison sorting lower bound → Ω(n log n)</strong></p>
+</section>
+<section id="complexity-classes" class="level2">
+<h2 class="anchored" data-anchor-id="complexity-classes">Complexity Classes</h2>
+<p><strong>P → polynomial-time solvable decision problems</strong></p>
+<p><strong>NP → polynomial-time verifiable decision problems</strong></p>
+<p><strong>NP-complete → NP + NP-hard</strong></p>
+<p><strong>NP-hard → at least as hard as every NP problem under the relevant reduction</strong></p>
+<hr>
+</section>
+</section>
+<section id="final-exam-strategy" class="level1">
+<h1>96. Final Exam Strategy</h1>
+<p>For UGC NET, practice both <strong>conceptual questions and numerical problems</strong>.</p>
+<section id="must-practice-calculations" class="level3">
+<h3 class="anchored" data-anchor-id="must-practice-calculations">Must-practice calculations</h3>
+<ul>
+<li>Big O</li>
+<li>Big Omega</li>
+<li>Big Theta</li>
+<li>Recurrence relations</li>
+<li>Master Theorem</li>
+<li>AVL balance factors</li>
+<li>Tree traversal</li>
+<li>Hash table indexing</li>
+<li>Sorting comparisons</li>
+<li>Graph traversal</li>
+<li>Shortest paths</li>
+<li>MST</li>
+<li>Maximum flow</li>
+<li>Cyclomatic-style graph reasoning where applicable to algorithms</li>
+<li>Probability/expected behavior in randomized algorithms when included in questions</li>
+</ul>
+</section>
+<section id="must-memorize-differences" class="level3">
+<h3 class="anchored" data-anchor-id="must-memorize-differences">Must-memorize differences</h3>
+<ul>
+<li>Stack vs Queue</li>
+<li>Array vs Linked List</li>
+<li>BST vs AVL</li>
+<li>B-tree vs B+ tree</li>
+<li>BFS vs DFS</li>
+<li>Dijkstra vs Bellman-Ford</li>
+<li>Kruskal vs Prim</li>
+<li>Divide and Conquer vs Dynamic Programming</li>
+<li>Greedy vs Dynamic Programming</li>
+<li>Backtracking vs Branch and Bound</li>
+<li>P vs NP</li>
+<li>NP-hard vs NP-complete</li>
+<li>Las Vegas vs Monte Carlo</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="final-summary" class="level1">
+<h1>97. Final Summary</h1>
+<p>Data Structures and Algorithms is one of the most important problem-solving areas in Computer Science.</p>
+<p>The unit can be remembered as:</p>
+<p><strong>Data Structures → Complexity → Design Techniques → Lower Bounds → Graph Algorithms → Complexity Theory → Selected Algorithms → Advanced Algorithms</strong></p>
+<p>The most important facts are:</p>
+<ul>
+<li><strong>Array access → O(1)</strong></li>
+<li><strong>Binary Search → O(log n)</strong></li>
+<li><strong>Merge Sort → O(n log n)</strong></li>
+<li><strong>Quick Sort average → O(n log n)</strong></li>
+<li><strong>Quick Sort worst → O(n²)</strong></li>
+<li><strong>Heap Sort → O(n log n)</strong></li>
+<li><strong>BFS → O(V + E)</strong></li>
+<li><strong>DFS → O(V + E)</strong></li>
+<li><strong>Dijkstra → non-negative edge weights</strong></li>
+<li><strong>Bellman-Ford → can handle negative edges</strong></li>
+<li><strong>Floyd-Warshall → all-pairs shortest paths</strong></li>
+<li><strong>Kruskal/Prim → MST</strong></li>
+<li><strong>FFT → O(n log n)</strong></li>
+<li><strong>KMP → O(n + m)</strong></li>
+<li><strong>Comparison sorting lower bound → Ω(n log n)</strong></li>
+<li><strong>P and NP are classes of decision problems</strong></li>
+<li><strong>NP-complete = NP + NP-hard</strong></li>
+</ul>
+<p>For UGC NET, do not only memorize the names of algorithms. Learn:</p>
+<p><strong>What problem does the algorithm solve?</strong></p>
+<p><strong>What data structure does it use?</strong></p>
+<p><strong>What is its time complexity?</strong></p>
+<p><strong>What assumptions does it require?</strong></p>
+<p><strong>When should it be used?</strong></p>
+<p>These five questions make algorithm-based UGC NET questions much easier.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

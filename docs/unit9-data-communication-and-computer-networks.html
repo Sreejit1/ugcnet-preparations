@@ -1,0 +1,4262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit IX – Data Communication and Computer Networks – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper1.html"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper2.html" aria-current="page"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit9-data-communication-and-computer-networks.html">Unit IX – Data Communication and Computer Networks</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 2 – Computer Science &amp; Applications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-discrete-structures-and-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Discrete Structures and Optimization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-computer-system-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Computer System Architecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-programming-languages-and-computer-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Programming Languages and Computer Graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-database-management-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Database Management Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-system-software-and-operating-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – System Software and Operating System</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-software-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Software Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-structures-and-algorithms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Structures and Algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-theory-of-computation-and-compilers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Theory of Computation and Compilers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-data-communication-and-computer-networks.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit IX – Data Communication and Computer Networks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-artificial-intelligence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Artificial Intelligence (AI)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#components-of-a-data-communication-system" id="toc-components-of-a-data-communication-system" class="nav-link" data-scroll-target="#components-of-a-data-communication-system">2. Components of a Data Communication System</a>
+  <ul class="collapse">
+  <li><a href="#sender" id="toc-sender" class="nav-link" data-scroll-target="#sender">Sender</a></li>
+  <li><a href="#receiver" id="toc-receiver" class="nav-link" data-scroll-target="#receiver">Receiver</a></li>
+  <li><a href="#message" id="toc-message" class="nav-link" data-scroll-target="#message">Message</a></li>
+  <li><a href="#transmission-medium" id="toc-transmission-medium" class="nav-link" data-scroll-target="#transmission-medium">Transmission Medium</a></li>
+  <li><a href="#protocol" id="toc-protocol" class="nav-link" data-scroll-target="#protocol">Protocol</a></li>
+  </ul></li>
+  <li><a href="#modes-of-communication" id="toc-modes-of-communication" class="nav-link" data-scroll-target="#modes-of-communication">3. Modes of Communication</a>
+  <ul class="collapse">
+  <li><a href="#simplex" id="toc-simplex" class="nav-link" data-scroll-target="#simplex">3.1 Simplex</a></li>
+  <li><a href="#half-duplex" id="toc-half-duplex" class="nav-link" data-scroll-target="#half-duplex">3.2 Half-Duplex</a></li>
+  <li><a href="#full-duplex" id="toc-full-duplex" class="nav-link" data-scroll-target="#full-duplex">3.3 Full-Duplex</a>
+  <ul class="collapse">
+  <li><a href="#comparison" id="toc-comparison" class="nav-link" data-scroll-target="#comparison">Comparison</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#analog-and-digital-signals" id="toc-analog-and-digital-signals" class="nav-link" data-scroll-target="#analog-and-digital-signals">4. Analog and Digital Signals</a>
+  <ul class="collapse">
+  <li><a href="#analog-signal" id="toc-analog-signal" class="nav-link" data-scroll-target="#analog-signal">Analog Signal</a></li>
+  <li><a href="#digital-signal" id="toc-digital-signal" class="nav-link" data-scroll-target="#digital-signal">Digital Signal</a>
+  <ul class="collapse">
+  <li><a href="#comparison-1" id="toc-comparison-1" class="nav-link" data-scroll-target="#comparison-1">Comparison</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#periodic-signal" id="toc-periodic-signal" class="nav-link" data-scroll-target="#periodic-signal">5. Periodic Signal</a>
+  <ul class="collapse">
+  <li><a href="#amplitude" id="toc-amplitude" class="nav-link" data-scroll-target="#amplitude">Amplitude</a></li>
+  <li><a href="#frequency" id="toc-frequency" class="nav-link" data-scroll-target="#frequency">Frequency</a></li>
+  <li><a href="#period" id="toc-period" class="nav-link" data-scroll-target="#period">Period</a></li>
+  <li><a href="#phase" id="toc-phase" class="nav-link" data-scroll-target="#phase">Phase</a></li>
+  </ul></li>
+  <li><a href="#wavelength" id="toc-wavelength" class="nav-link" data-scroll-target="#wavelength">6. Wavelength</a></li>
+  <li><a href="#noiseless-and-noisy-channels" id="toc-noiseless-and-noisy-channels" class="nav-link" data-scroll-target="#noiseless-and-noisy-channels">7. Noiseless and Noisy Channels</a>
+  <ul class="collapse">
+  <li><a href="#noiseless-channel" id="toc-noiseless-channel" class="nav-link" data-scroll-target="#noiseless-channel">Noiseless Channel</a></li>
+  <li><a href="#noisy-channel" id="toc-noisy-channel" class="nav-link" data-scroll-target="#noisy-channel">Noisy Channel</a>
+  <ul class="collapse">
+  <li><a href="#ugc-net-point" id="toc-ugc-net-point" class="nav-link" data-scroll-target="#ugc-net-point">UGC NET Point</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#bandwidth" id="toc-bandwidth" class="nav-link" data-scroll-target="#bandwidth">8. Bandwidth</a></li>
+  <li><a href="#throughput" id="toc-throughput" class="nav-link" data-scroll-target="#throughput">9. Throughput</a></li>
+  <li><a href="#latency" id="toc-latency" class="nav-link" data-scroll-target="#latency">10. Latency</a>
+  <ul class="collapse">
+  <li><a href="#transmission-delay" id="toc-transmission-delay" class="nav-link" data-scroll-target="#transmission-delay">Transmission Delay</a></li>
+  <li><a href="#propagation-delay" id="toc-propagation-delay" class="nav-link" data-scroll-target="#propagation-delay">Propagation Delay</a></li>
+  </ul></li>
+  <li><a href="#digital-transmission" id="toc-digital-transmission" class="nav-link" data-scroll-target="#digital-transmission">11. Digital Transmission</a></li>
+  <li><a href="#analog-transmission" id="toc-analog-transmission" class="nav-link" data-scroll-target="#analog-transmission">12. Analog Transmission</a></li>
+  <li><a href="#data-encoding" id="toc-data-encoding" class="nav-link" data-scroll-target="#data-encoding">13. Data Encoding</a>
+  <ul class="collapse">
+  <li><a href="#nrz" id="toc-nrz" class="nav-link" data-scroll-target="#nrz">NRZ</a></li>
+  <li><a href="#manchester-encoding" id="toc-manchester-encoding" class="nav-link" data-scroll-target="#manchester-encoding">Manchester Encoding</a></li>
+  <li><a href="#differential-manchester" id="toc-differential-manchester" class="nav-link" data-scroll-target="#differential-manchester">Differential Manchester</a></li>
+  </ul></li>
+  <li><a href="#modulation-techniques" id="toc-modulation-techniques" class="nav-link" data-scroll-target="#modulation-techniques">14. Modulation Techniques</a>
+  <ul class="collapse">
+  <li><a href="#ask" id="toc-ask" class="nav-link" data-scroll-target="#ask">ASK</a></li>
+  <li><a href="#fsk" id="toc-fsk" class="nav-link" data-scroll-target="#fsk">FSK</a></li>
+  <li><a href="#psk" id="toc-psk" class="nav-link" data-scroll-target="#psk">PSK</a></li>
+  <li><a href="#qam" id="toc-qam" class="nav-link" data-scroll-target="#qam">QAM</a>
+  <ul class="collapse">
+  <li><a href="#comparison-2" id="toc-comparison-2" class="nav-link" data-scroll-target="#comparison-2">Comparison</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#broadband-and-baseband-transmission" id="toc-broadband-and-baseband-transmission" class="nav-link" data-scroll-target="#broadband-and-baseband-transmission">15. Broadband and Baseband Transmission</a>
+  <ul class="collapse">
+  <li><a href="#baseband" id="toc-baseband" class="nav-link" data-scroll-target="#baseband">Baseband</a></li>
+  <li><a href="#broadband" id="toc-broadband" class="nav-link" data-scroll-target="#broadband">Broadband</a>
+  <ul class="collapse">
+  <li><a href="#comparison-3" id="toc-comparison-3" class="nav-link" data-scroll-target="#comparison-3">Comparison</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#multiplexing" id="toc-multiplexing" class="nav-link" data-scroll-target="#multiplexing">16. Multiplexing</a></li>
+  <li><a href="#frequency-division-multiplexing" id="toc-frequency-division-multiplexing" class="nav-link" data-scroll-target="#frequency-division-multiplexing">17. Frequency Division Multiplexing</a></li>
+  <li><a href="#time-division-multiplexing" id="toc-time-division-multiplexing" class="nav-link" data-scroll-target="#time-division-multiplexing">18. Time Division Multiplexing</a></li>
+  <li><a href="#wavelength-division-multiplexing" id="toc-wavelength-division-multiplexing" class="nav-link" data-scroll-target="#wavelength-division-multiplexing">19. Wavelength Division Multiplexing</a></li>
+  <li><a href="#transmission-media" id="toc-transmission-media" class="nav-link" data-scroll-target="#transmission-media">20. Transmission Media</a>
+  <ul class="collapse">
+  <li><a href="#guided-media" id="toc-guided-media" class="nav-link" data-scroll-target="#guided-media">Guided Media</a></li>
+  <li><a href="#unguided-media" id="toc-unguided-media" class="nav-link" data-scroll-target="#unguided-media">Unguided Media</a></li>
+  </ul></li>
+  <li><a href="#twisted-pair-cable" id="toc-twisted-pair-cable" class="nav-link" data-scroll-target="#twisted-pair-cable">21. Twisted-Pair Cable</a>
+  <ul class="collapse">
+  <li><a href="#advantages" id="toc-advantages" class="nav-link" data-scroll-target="#advantages">Advantages</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  </ul></li>
+  <li><a href="#coaxial-cable" id="toc-coaxial-cable" class="nav-link" data-scroll-target="#coaxial-cable">22. Coaxial Cable</a></li>
+  <li><a href="#optical-fiber" id="toc-optical-fiber" class="nav-link" data-scroll-target="#optical-fiber">23. Optical Fiber</a>
+  <ul class="collapse">
+  <li><a href="#advantages-1" id="toc-advantages-1" class="nav-link" data-scroll-target="#advantages-1">Advantages</a></li>
+  <li><a href="#limitations-1" id="toc-limitations-1" class="nav-link" data-scroll-target="#limitations-1">Limitations</a></li>
+  </ul></li>
+  <li><a href="#wireless-media" id="toc-wireless-media" class="nav-link" data-scroll-target="#wireless-media">24. Wireless Media</a></li>
+  <li><a href="#transmission-errors" id="toc-transmission-errors" class="nav-link" data-scroll-target="#transmission-errors">25. Transmission Errors</a>
+  <ul class="collapse">
+  <li><a href="#single-bit-error" id="toc-single-bit-error" class="nav-link" data-scroll-target="#single-bit-error">Single-Bit Error</a></li>
+  <li><a href="#burst-error" id="toc-burst-error" class="nav-link" data-scroll-target="#burst-error">Burst Error</a></li>
+  </ul></li>
+  <li><a href="#error-detection" id="toc-error-detection" class="nav-link" data-scroll-target="#error-detection">26. Error Detection</a></li>
+  <li><a href="#parity" id="toc-parity" class="nav-link" data-scroll-target="#parity">27. Parity</a>
+  <ul class="collapse">
+  <li><a href="#even-parity" id="toc-even-parity" class="nav-link" data-scroll-target="#even-parity">Even Parity</a></li>
+  <li><a href="#odd-parity" id="toc-odd-parity" class="nav-link" data-scroll-target="#odd-parity">Odd Parity</a></li>
+  </ul></li>
+  <li><a href="#checksum" id="toc-checksum" class="nav-link" data-scroll-target="#checksum">28. Checksum</a></li>
+  <li><a href="#crc" id="toc-crc" class="nav-link" data-scroll-target="#crc">29. CRC</a></li>
+  <li><a href="#error-handling" id="toc-error-handling" class="nav-link" data-scroll-target="#error-handling">30. Error Handling</a></li>
+  <li><a href="#computer-networks" id="toc-computer-networks" class="nav-link" data-scroll-target="#computer-networks">31. Computer Networks</a></li>
+  <li><a href="#network-topologies" id="toc-network-topologies" class="nav-link" data-scroll-target="#network-topologies">32. Network Topologies</a></li>
+  <li><a href="#bus-topology" id="toc-bus-topology" class="nav-link" data-scroll-target="#bus-topology">33. Bus Topology</a>
+  <ul class="collapse">
+  <li><a href="#advantage" id="toc-advantage" class="nav-link" data-scroll-target="#advantage">Advantage</a></li>
+  <li><a href="#limitation" id="toc-limitation" class="nav-link" data-scroll-target="#limitation">Limitation</a></li>
+  </ul></li>
+  <li><a href="#star-topology" id="toc-star-topology" class="nav-link" data-scroll-target="#star-topology">34. Star Topology</a>
+  <ul class="collapse">
+  <li><a href="#advantages-2" id="toc-advantages-2" class="nav-link" data-scroll-target="#advantages-2">Advantages</a></li>
+  <li><a href="#limitation-1" id="toc-limitation-1" class="nav-link" data-scroll-target="#limitation-1">Limitation</a></li>
+  </ul></li>
+  <li><a href="#ring-topology" id="toc-ring-topology" class="nav-link" data-scroll-target="#ring-topology">35. Ring Topology</a></li>
+  <li><a href="#mesh-topology" id="toc-mesh-topology" class="nav-link" data-scroll-target="#mesh-topology">36. Mesh Topology</a>
+  <ul class="collapse">
+  <li><a href="#advantage-1" id="toc-advantage-1" class="nav-link" data-scroll-target="#advantage-1">Advantage</a></li>
+  <li><a href="#disadvantage" id="toc-disadvantage" class="nav-link" data-scroll-target="#disadvantage">Disadvantage</a></li>
+  </ul></li>
+  <li><a href="#lan-man-and-wan" id="toc-lan-man-and-wan" class="nav-link" data-scroll-target="#lan-man-and-wan">37. LAN, MAN and WAN</a>
+  <ul class="collapse">
+  <li><a href="#lan" id="toc-lan" class="nav-link" data-scroll-target="#lan">LAN</a></li>
+  <li><a href="#man" id="toc-man" class="nav-link" data-scroll-target="#man">MAN</a></li>
+  <li><a href="#wan" id="toc-wan" class="nav-link" data-scroll-target="#wan">WAN</a>
+  <ul class="collapse">
+  <li><a href="#comparison-4" id="toc-comparison-4" class="nav-link" data-scroll-target="#comparison-4">Comparison</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#wireless-networks" id="toc-wireless-networks" class="nav-link" data-scroll-target="#wireless-networks">38. Wireless Networks</a></li>
+  <li><a href="#internet" id="toc-internet" class="nav-link" data-scroll-target="#internet">39. Internet</a></li>
+  <li><a href="#layered-network-architecture" id="toc-layered-network-architecture" class="nav-link" data-scroll-target="#layered-network-architecture">40. Layered Network Architecture</a></li>
+  <li><a href="#osi-reference-model" id="toc-osi-reference-model" class="nav-link" data-scroll-target="#osi-reference-model">41. OSI Reference Model</a>
+  <ul class="collapse">
+  <li><a href="#memory-aid" id="toc-memory-aid" class="nav-link" data-scroll-target="#memory-aid">Memory Aid</a></li>
+  </ul></li>
+  <li><a href="#physical-layer" id="toc-physical-layer" class="nav-link" data-scroll-target="#physical-layer">42. Physical Layer</a></li>
+  <li><a href="#data-link-layer" id="toc-data-link-layer" class="nav-link" data-scroll-target="#data-link-layer">43. Data Link Layer</a></li>
+  <li><a href="#network-layer" id="toc-network-layer" class="nav-link" data-scroll-target="#network-layer">44. Network Layer</a></li>
+  <li><a href="#transport-layer" id="toc-transport-layer" class="nav-link" data-scroll-target="#transport-layer">45. Transport Layer</a></li>
+  <li><a href="#session-layer" id="toc-session-layer" class="nav-link" data-scroll-target="#session-layer">46. Session Layer</a></li>
+  <li><a href="#presentation-layer" id="toc-presentation-layer" class="nav-link" data-scroll-target="#presentation-layer">47. Presentation Layer</a></li>
+  <li><a href="#application-layer" id="toc-application-layer" class="nav-link" data-scroll-target="#application-layer">48. Application Layer</a></li>
+  <li><a href="#tcpip-protocol-suite" id="toc-tcpip-protocol-suite" class="nav-link" data-scroll-target="#tcpip-protocol-suite">49. TCP/IP Protocol Suite</a>
+  <ul class="collapse">
+  <li><a href="#osi-and-tcpip" id="toc-osi-and-tcpip" class="nav-link" data-scroll-target="#osi-and-tcpip">OSI and TCP/IP</a></li>
+  </ul></li>
+  <li><a href="#network-addresses" id="toc-network-addresses" class="nav-link" data-scroll-target="#network-addresses">50. Network Addresses</a>
+  <ul class="collapse">
+  <li><a href="#physical-address" id="toc-physical-address" class="nav-link" data-scroll-target="#physical-address">Physical Address</a></li>
+  <li><a href="#logical-address" id="toc-logical-address" class="nav-link" data-scroll-target="#logical-address">Logical Address</a></li>
+  <li><a href="#port-address" id="toc-port-address" class="nav-link" data-scroll-target="#port-address">Port Address</a></li>
+  <li><a href="#specific-address" id="toc-specific-address" class="nav-link" data-scroll-target="#specific-address">Specific Address</a>
+  <ul class="collapse">
+  <li><a href="#sequence" id="toc-sequence" class="nav-link" data-scroll-target="#sequence">Sequence</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#switching-techniques" id="toc-switching-techniques" class="nav-link" data-scroll-target="#switching-techniques">51. Switching Techniques</a></li>
+  <li><a href="#circuit-switching" id="toc-circuit-switching" class="nav-link" data-scroll-target="#circuit-switching">52. Circuit Switching</a></li>
+  <li><a href="#packet-switching" id="toc-packet-switching" class="nav-link" data-scroll-target="#packet-switching">53. Packet Switching</a></li>
+  <li><a href="#message-switching" id="toc-message-switching" class="nav-link" data-scroll-target="#message-switching">54. Message Switching</a></li>
+  <li><a href="#framing" id="toc-framing" class="nav-link" data-scroll-target="#framing">55. Framing</a></li>
+  <li><a href="#flow-control" id="toc-flow-control" class="nav-link" data-scroll-target="#flow-control">56. Flow Control</a></li>
+  <li><a href="#error-control" id="toc-error-control" class="nav-link" data-scroll-target="#error-control">57. Error Control</a></li>
+  <li><a href="#sliding-window-protocol" id="toc-sliding-window-protocol" class="nav-link" data-scroll-target="#sliding-window-protocol">58. Sliding Window Protocol</a></li>
+  <li><a href="#go-back-n" id="toc-go-back-n" class="nav-link" data-scroll-target="#go-back-n">59. Go-Back-N</a></li>
+  <li><a href="#selective-repeat" id="toc-selective-repeat" class="nav-link" data-scroll-target="#selective-repeat">60. Selective Repeat</a></li>
+  <li><a href="#hdlc" id="toc-hdlc" class="nav-link" data-scroll-target="#hdlc">61. HDLC</a></li>
+  <li><a href="#multiple-access" id="toc-multiple-access" class="nav-link" data-scroll-target="#multiple-access">62. Multiple Access</a></li>
+  <li><a href="#csmacd" id="toc-csmacd" class="nav-link" data-scroll-target="#csmacd">63. CSMA/CD</a></li>
+  <li><a href="#csmaca" id="toc-csmaca" class="nav-link" data-scroll-target="#csmaca">64. CSMA/CA</a></li>
+  <li><a href="#reservation" id="toc-reservation" class="nav-link" data-scroll-target="#reservation">65. Reservation</a></li>
+  <li><a href="#polling" id="toc-polling" class="nav-link" data-scroll-target="#polling">66. Polling</a>
+  <ul class="collapse">
+  <li><a href="#advantage-2" id="toc-advantage-2" class="nav-link" data-scroll-target="#advantage-2">Advantage</a></li>
+  <li><a href="#limitation-2" id="toc-limitation-2" class="nav-link" data-scroll-target="#limitation-2">Limitation</a></li>
+  </ul></li>
+  <li><a href="#token-passing" id="toc-token-passing" class="nav-link" data-scroll-target="#token-passing">67. Token Passing</a>
+  <ul class="collapse">
+  <li><a href="#advantage-3" id="toc-advantage-3" class="nav-link" data-scroll-target="#advantage-3">Advantage</a></li>
+  </ul></li>
+  <li><a href="#fdma-tdma-and-cdma" id="toc-fdma-tdma-and-cdma" class="nav-link" data-scroll-target="#fdma-tdma-and-cdma">68. FDMA, TDMA and CDMA</a>
+  <ul class="collapse">
+  <li><a href="#fdma" id="toc-fdma" class="nav-link" data-scroll-target="#fdma">FDMA</a></li>
+  <li><a href="#tdma" id="toc-tdma" class="nav-link" data-scroll-target="#tdma">TDMA</a></li>
+  <li><a href="#cdma" id="toc-cdma" class="nav-link" data-scroll-target="#cdma">CDMA</a>
+  <ul class="collapse">
+  <li><a href="#easy-memory" id="toc-easy-memory" class="nav-link" data-scroll-target="#easy-memory">Easy Memory</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#network-devices" id="toc-network-devices" class="nav-link" data-scroll-target="#network-devices">69. Network Devices</a>
+  <ul class="collapse">
+  <li><a href="#repeater" id="toc-repeater" class="nav-link" data-scroll-target="#repeater">Repeater</a></li>
+  <li><a href="#hub" id="toc-hub" class="nav-link" data-scroll-target="#hub">Hub</a></li>
+  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge">Bridge</a></li>
+  <li><a href="#switch" id="toc-switch" class="nav-link" data-scroll-target="#switch">Switch</a></li>
+  <li><a href="#router" id="toc-router" class="nav-link" data-scroll-target="#router">Router</a></li>
+  <li><a href="#gateway" id="toc-gateway" class="nav-link" data-scroll-target="#gateway">Gateway</a></li>
+  <li><a href="#access-point" id="toc-access-point" class="nav-link" data-scroll-target="#access-point">Access Point</a></li>
+  <li><a href="#modem" id="toc-modem" class="nav-link" data-scroll-target="#modem">Modem</a></li>
+  </ul></li>
+  <li><a href="#backbone-networks" id="toc-backbone-networks" class="nav-link" data-scroll-target="#backbone-networks">70. Backbone Networks</a></li>
+  <li><a href="#virtual-lan" id="toc-virtual-lan" class="nav-link" data-scroll-target="#virtual-lan">71. Virtual LAN</a></li>
+  <li><a href="#ipv4-structure" id="toc-ipv4-structure" class="nav-link" data-scroll-target="#ipv4-structure">72. IPv4 Structure</a></li>
+  <li><a href="#ipv4-address-space" id="toc-ipv4-address-space" class="nav-link" data-scroll-target="#ipv4-address-space">73. IPv4 Address Space</a></li>
+  <li><a href="#classful-addressing" id="toc-classful-addressing" class="nav-link" data-scroll-target="#classful-addressing">74. Classful Addressing</a></li>
+  <li><a href="#classless-addressing" id="toc-classless-addressing" class="nav-link" data-scroll-target="#classless-addressing">75. Classless Addressing</a></li>
+  <li><a href="#ipv4-datagram" id="toc-ipv4-datagram" class="nav-link" data-scroll-target="#ipv4-datagram">76. IPv4 Datagram</a></li>
+  <li><a href="#ipv4-fragmentation" id="toc-ipv4-fragmentation" class="nav-link" data-scroll-target="#ipv4-fragmentation">77. IPv4 Fragmentation</a>
+  <ul class="collapse">
+  <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">Important</a></li>
+  </ul></li>
+  <li><a href="#ipv4-checksum" id="toc-ipv4-checksum" class="nav-link" data-scroll-target="#ipv4-checksum">78. IPv4 Checksum</a></li>
+  <li><a href="#ipv6" id="toc-ipv6" class="nav-link" data-scroll-target="#ipv6">79. IPv6</a></li>
+  <li><a href="#ipv6-packet-format" id="toc-ipv6-packet-format" class="nav-link" data-scroll-target="#ipv6-packet-format">80. IPv6 Packet Format</a></li>
+  <li><a href="#arp" id="toc-arp" class="nav-link" data-scroll-target="#arp">81. ARP</a>
+  <ul class="collapse">
+  <li><a href="#important-1" id="toc-important-1" class="nav-link" data-scroll-target="#important-1">Important</a></li>
+  </ul></li>
+  <li><a href="#direct-and-indirect-delivery" id="toc-direct-and-indirect-delivery" class="nav-link" data-scroll-target="#direct-and-indirect-delivery">82. Direct and Indirect Delivery</a>
+  <ul class="collapse">
+  <li><a href="#direct-delivery" id="toc-direct-delivery" class="nav-link" data-scroll-target="#direct-delivery">Direct Delivery</a></li>
+  <li><a href="#indirect-delivery" id="toc-indirect-delivery" class="nav-link" data-scroll-target="#indirect-delivery">Indirect Delivery</a></li>
+  </ul></li>
+  <li><a href="#routing-algorithms" id="toc-routing-algorithms" class="nav-link" data-scroll-target="#routing-algorithms">83. Routing Algorithms</a></li>
+  <li><a href="#distance-vector-routing" id="toc-distance-vector-routing" class="nav-link" data-scroll-target="#distance-vector-routing">84. Distance Vector Routing</a></li>
+  <li><a href="#link-state-routing" id="toc-link-state-routing" class="nav-link" data-scroll-target="#link-state-routing">85. Link State Routing</a></li>
+  <li><a href="#path-vector-routing" id="toc-path-vector-routing" class="nav-link" data-scroll-target="#path-vector-routing">86. Path Vector Routing</a></li>
+  <li><a href="#tcp" id="toc-tcp" class="nav-link" data-scroll-target="#tcp">87. TCP</a></li>
+  <li><a href="#udp" id="toc-udp" class="nav-link" data-scroll-target="#udp">88. UDP</a></li>
+  <li><a href="#sctp" id="toc-sctp" class="nav-link" data-scroll-target="#sctp">89. SCTP</a>
+  <ul class="collapse">
+  <li><a href="#comparison-5" id="toc-comparison-5" class="nav-link" data-scroll-target="#comparison-5">Comparison</a></li>
+  </ul></li>
+  <li><a href="#tcp-flow-control" id="toc-tcp-flow-control" class="nav-link" data-scroll-target="#tcp-flow-control">90. TCP Flow Control</a></li>
+  <li><a href="#tcp-error-control" id="toc-tcp-error-control" class="nav-link" data-scroll-target="#tcp-error-control">91. TCP Error Control</a></li>
+  <li><a href="#tcp-congestion-control" id="toc-tcp-congestion-control" class="nav-link" data-scroll-target="#tcp-congestion-control">92. TCP Congestion Control</a></li>
+  <li><a href="#sctp-flow-error-and-congestion-control" id="toc-sctp-flow-error-and-congestion-control" class="nav-link" data-scroll-target="#sctp-flow-error-and-congestion-control">93. SCTP Flow, Error and Congestion Control</a></li>
+  <li><a href="#world-wide-web" id="toc-world-wide-web" class="nav-link" data-scroll-target="#world-wide-web">94. World Wide Web</a>
+  <ul class="collapse">
+  <li><a href="#internet-vs-www" id="toc-internet-vs-www" class="nav-link" data-scroll-target="#internet-vs-www">Internet vs WWW</a></li>
+  </ul></li>
+  <li><a href="#url" id="toc-url" class="nav-link" data-scroll-target="#url">95. URL</a></li>
+  <li><a href="#dns" id="toc-dns" class="nav-link" data-scroll-target="#dns">96. DNS</a></li>
+  <li><a href="#dns-resolution" id="toc-dns-resolution" class="nav-link" data-scroll-target="#dns-resolution">97. DNS Resolution</a></li>
+  <li><a href="#electronic-mail-architecture" id="toc-electronic-mail-architecture" class="nav-link" data-scroll-target="#electronic-mail-architecture">98. Electronic Mail Architecture</a></li>
+  <li><a href="#smtp" id="toc-smtp" class="nav-link" data-scroll-target="#smtp">99. SMTP</a></li>
+  <li><a href="#pop" id="toc-pop" class="nav-link" data-scroll-target="#pop">100. POP</a></li>
+  <li><a href="#imap" id="toc-imap" class="nav-link" data-scroll-target="#imap">101. IMAP</a>
+  <ul class="collapse">
+  <li><a href="#pop-vs-imap" id="toc-pop-vs-imap" class="nav-link" data-scroll-target="#pop-vs-imap">POP vs IMAP</a></li>
+  </ul></li>
+  <li><a href="#telnet" id="toc-telnet" class="nav-link" data-scroll-target="#telnet">102. TELNET</a></li>
+  <li><a href="#ftp" id="toc-ftp" class="nav-link" data-scroll-target="#ftp">103. FTP</a></li>
+  <li><a href="#network-security" id="toc-network-security" class="nav-link" data-scroll-target="#network-security">104. Network Security</a></li>
+  <li><a href="#malware" id="toc-malware" class="nav-link" data-scroll-target="#malware">105. Malware</a>
+  <ul class="collapse">
+  <li><a href="#virus" id="toc-virus" class="nav-link" data-scroll-target="#virus">Virus</a></li>
+  <li><a href="#worm" id="toc-worm" class="nav-link" data-scroll-target="#worm">Worm</a></li>
+  <li><a href="#trojan" id="toc-trojan" class="nav-link" data-scroll-target="#trojan">Trojan</a></li>
+  <li><a href="#ransomware" id="toc-ransomware" class="nav-link" data-scroll-target="#ransomware">Ransomware</a></li>
+  </ul></li>
+  <li><a href="#cryptography" id="toc-cryptography" class="nav-link" data-scroll-target="#cryptography">106. Cryptography</a></li>
+  <li><a href="#secret-key-algorithms" id="toc-secret-key-algorithms" class="nav-link" data-scroll-target="#secret-key-algorithms">107. Secret-Key Algorithms</a>
+  <ul class="collapse">
+  <li><a href="#advantage-4" id="toc-advantage-4" class="nav-link" data-scroll-target="#advantage-4">Advantage</a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">Challenge</a></li>
+  </ul></li>
+  <li><a href="#public-key-algorithms" id="toc-public-key-algorithms" class="nav-link" data-scroll-target="#public-key-algorithms">108. Public-Key Algorithms</a></li>
+  <li><a href="#digital-signature" id="toc-digital-signature" class="nav-link" data-scroll-target="#digital-signature">109. Digital Signature</a>
+  <ul class="collapse">
+  <li><a href="#important-2" id="toc-important-2" class="nav-link" data-scroll-target="#important-2">Important</a></li>
+  </ul></li>
+  <li><a href="#steganography" id="toc-steganography" class="nav-link" data-scroll-target="#steganography">110. Steganography</a>
+  <ul class="collapse">
+  <li><a href="#cryptography-vs-steganography" id="toc-cryptography-vs-steganography" class="nav-link" data-scroll-target="#cryptography-vs-steganography">Cryptography vs Steganography</a></li>
+  </ul></li>
+  <li><a href="#virtual-private-network" id="toc-virtual-private-network" class="nav-link" data-scroll-target="#virtual-private-network">111. Virtual Private Network</a></li>
+  <li><a href="#firewalls" id="toc-firewalls" class="nav-link" data-scroll-target="#firewalls">112. Firewalls</a></li>
+  <li><a href="#mobile-technology" id="toc-mobile-technology" class="nav-link" data-scroll-target="#mobile-technology">113. Mobile Technology</a></li>
+  <li><a href="#gsm" id="toc-gsm" class="nav-link" data-scroll-target="#gsm">114. GSM</a></li>
+  <li><a href="#gsm-services" id="toc-gsm-services" class="nav-link" data-scroll-target="#gsm-services">115. GSM Services</a></li>
+  <li><a href="#cdma-1" id="toc-cdma-1" class="nav-link" data-scroll-target="#cdma-1">116. CDMA</a></li>
+  <li><a href="#mobile-computing" id="toc-mobile-computing" class="nav-link" data-scroll-target="#mobile-computing">117. Mobile Computing</a></li>
+  <li><a href="#middleware" id="toc-middleware" class="nav-link" data-scroll-target="#middleware">118. Middleware</a></li>
+  <li><a href="#gateway-for-mobile-computing" id="toc-gateway-for-mobile-computing" class="nav-link" data-scroll-target="#gateway-for-mobile-computing">119. Gateway for Mobile Computing</a></li>
+  <li><a href="#mobile-ip" id="toc-mobile-ip" class="nav-link" data-scroll-target="#mobile-ip">120. Mobile IP</a></li>
+  <li><a href="#communication-satellites" id="toc-communication-satellites" class="nav-link" data-scroll-target="#communication-satellites">121. Communication Satellites</a>
+  <ul class="collapse">
+  <li><a href="#advantages-3" id="toc-advantages-3" class="nav-link" data-scroll-target="#advantages-3">Advantages</a></li>
+  <li><a href="#limitations-2" id="toc-limitations-2" class="nav-link" data-scroll-target="#limitations-2">Limitations</a></li>
+  </ul></li>
+  <li><a href="#wireless-networks-and-topologies" id="toc-wireless-networks-and-topologies" class="nav-link" data-scroll-target="#wireless-networks-and-topologies">122. Wireless Networks and Topologies</a></li>
+  <li><a href="#cellular-topology" id="toc-cellular-topology" class="nav-link" data-scroll-target="#cellular-topology">123. Cellular Topology</a></li>
+  <li><a href="#mobile-ad-hoc-network" id="toc-mobile-ad-hoc-network" class="nav-link" data-scroll-target="#mobile-ad-hoc-network">124. Mobile Ad Hoc Network</a></li>
+  <li><a href="#wireless-lan" id="toc-wireless-lan" class="nav-link" data-scroll-target="#wireless-lan">125. Wireless LAN</a></li>
+  <li><a href="#wireless-geolocation" id="toc-wireless-geolocation" class="nav-link" data-scroll-target="#wireless-geolocation">126. Wireless Geolocation</a></li>
+  <li><a href="#gprs" id="toc-gprs" class="nav-link" data-scroll-target="#gprs">127. GPRS</a></li>
+  <li><a href="#sms" id="toc-sms" class="nav-link" data-scroll-target="#sms">128. SMS</a></li>
+  <li><a href="#cloud-computing" id="toc-cloud-computing" class="nav-link" data-scroll-target="#cloud-computing">129. Cloud Computing</a></li>
+  <li><a href="#saas" id="toc-saas" class="nav-link" data-scroll-target="#saas">130. SaaS</a></li>
+  <li><a href="#paas" id="toc-paas" class="nav-link" data-scroll-target="#paas">131. PaaS</a></li>
+  <li><a href="#iaas" id="toc-iaas" class="nav-link" data-scroll-target="#iaas">132. IaaS</a></li>
+  <li><a href="#cloud-service-model-comparison" id="toc-cloud-service-model-comparison" class="nav-link" data-scroll-target="#cloud-service-model-comparison">133. Cloud Service Model Comparison</a>
+  <ul class="collapse">
+  <li><a href="#memory" id="toc-memory" class="nav-link" data-scroll-target="#memory">Memory</a></li>
+  </ul></li>
+  <li><a href="#public-and-private-cloud" id="toc-public-and-private-cloud" class="nav-link" data-scroll-target="#public-and-private-cloud">134. Public and Private Cloud</a>
+  <ul class="collapse">
+  <li><a href="#public-cloud" id="toc-public-cloud" class="nav-link" data-scroll-target="#public-cloud">Public Cloud</a></li>
+  <li><a href="#private-cloud" id="toc-private-cloud" class="nav-link" data-scroll-target="#private-cloud">Private Cloud</a>
+  <ul class="collapse">
+  <li><a href="#comparison-6" id="toc-comparison-6" class="nav-link" data-scroll-target="#comparison-6">Comparison</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#virtualization" id="toc-virtualization" class="nav-link" data-scroll-target="#virtualization">135. Virtualization</a></li>
+  <li><a href="#virtual-server" id="toc-virtual-server" class="nav-link" data-scroll-target="#virtual-server">136. Virtual Server</a></li>
+  <li><a href="#cloud-storage" id="toc-cloud-storage" class="nav-link" data-scroll-target="#cloud-storage">137. Cloud Storage</a></li>
+  <li><a href="#database-storage-in-cloud" id="toc-database-storage-in-cloud" class="nav-link" data-scroll-target="#database-storage-in-cloud">138. Database Storage in Cloud</a></li>
+  <li><a href="#resource-management" id="toc-resource-management" class="nav-link" data-scroll-target="#resource-management">139. Resource Management</a></li>
+  <li><a href="#service-level-agreement" id="toc-service-level-agreement" class="nav-link" data-scroll-target="#service-level-agreement">140. Service Level Agreement</a></li>
+  <li><a href="#internet-of-things" id="toc-internet-of-things" class="nav-link" data-scroll-target="#internet-of-things">141. Internet of Things</a></li>
+  <li><a href="#basic-iot-architecture" id="toc-basic-iot-architecture" class="nav-link" data-scroll-target="#basic-iot-architecture">142. Basic IoT Architecture</a></li>
+  <li><a href="#sensors-and-actuators" id="toc-sensors-and-actuators" class="nav-link" data-scroll-target="#sensors-and-actuators">143. Sensors and Actuators</a>
+  <ul class="collapse">
+  <li><a href="#sensor" id="toc-sensor" class="nav-link" data-scroll-target="#sensor">Sensor</a></li>
+  <li><a href="#actuator" id="toc-actuator" class="nav-link" data-scroll-target="#actuator">Actuator</a>
+  <ul class="collapse">
+  <li><a href="#memory-1" id="toc-memory-1" class="nav-link" data-scroll-target="#memory-1">Memory</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#iot-communication-technologies" id="toc-iot-communication-technologies" class="nav-link" data-scroll-target="#iot-communication-technologies">144. IoT Communication Technologies</a></li>
+  <li><a href="#important-protocol-associations" id="toc-important-protocol-associations" class="nav-link" data-scroll-target="#important-protocol-associations">145. Important Protocol Associations</a></li>
+  <li><a href="#common-port-numbers" id="toc-common-port-numbers" class="nav-link" data-scroll-target="#common-port-numbers">146. Common Port Numbers</a></li>
+  <li><a href="#important-comparisons" id="toc-important-comparisons" class="nav-link" data-scroll-target="#important-comparisons">147. Important Comparisons</a>
+  <ul class="collapse">
+  <li><a href="#simplex-vs-half-duplex-vs-full-duplex" id="toc-simplex-vs-half-duplex-vs-full-duplex" class="nav-link" data-scroll-target="#simplex-vs-half-duplex-vs-full-duplex">Simplex vs Half-Duplex vs Full-Duplex</a></li>
+  <li><a href="#bandwidth-vs-throughput-vs-latency" id="toc-bandwidth-vs-throughput-vs-latency" class="nav-link" data-scroll-target="#bandwidth-vs-throughput-vs-latency">Bandwidth vs Throughput vs Latency</a></li>
+  <li><a href="#tcp-vs-udp" id="toc-tcp-vs-udp" class="nav-link" data-scroll-target="#tcp-vs-udp">TCP vs UDP</a></li>
+  <li><a href="#ipv4-vs-ipv6" id="toc-ipv4-vs-ipv6" class="nav-link" data-scroll-target="#ipv4-vs-ipv6">IPv4 vs IPv6</a></li>
+  </ul></li>
+  <li><a href="#important-numerical-formulas" id="toc-important-numerical-formulas" class="nav-link" data-scroll-target="#important-numerical-formulas">148. Important Numerical Formulas</a>
+  <ul class="collapse">
+  <li><a href="#bandwidth-1" id="toc-bandwidth-1" class="nav-link" data-scroll-target="#bandwidth-1">Bandwidth</a></li>
+  <li><a href="#frequency-1" id="toc-frequency-1" class="nav-link" data-scroll-target="#frequency-1">Frequency</a></li>
+  <li><a href="#wavelength-1" id="toc-wavelength-1" class="nav-link" data-scroll-target="#wavelength-1">Wavelength</a></li>
+  <li><a href="#transmission-delay-1" id="toc-transmission-delay-1" class="nav-link" data-scroll-target="#transmission-delay-1">Transmission Delay</a></li>
+  <li><a href="#propagation-delay-1" id="toc-propagation-delay-1" class="nav-link" data-scroll-target="#propagation-delay-1">Propagation Delay</a></li>
+  <li><a href="#nyquist" id="toc-nyquist" class="nav-link" data-scroll-target="#nyquist">Nyquist</a></li>
+  <li><a href="#shannon" id="toc-shannon" class="nav-link" data-scroll-target="#shannon">Shannon</a></li>
+  <li><a href="#snr" id="toc-snr" class="nav-link" data-scroll-target="#snr">SNR</a></li>
+  <li><a href="#full-mesh" id="toc-full-mesh" class="nav-link" data-scroll-target="#full-mesh">Full Mesh</a></li>
+  <li><a href="#ipv4" id="toc-ipv4" class="nav-link" data-scroll-target="#ipv4">IPv4</a></li>
+  <li><a href="#ipv6-1" id="toc-ipv6-1" class="nav-link" data-scroll-target="#ipv6-1">IPv6</a></li>
+  </ul></li>
+  <li><a href="#ugc-net-high-priority-topics" id="toc-ugc-net-high-priority-topics" class="nav-link" data-scroll-target="#ugc-net-high-priority-topics">149. UGC NET High-Priority Topics</a></li>
+  <li><a href="#common-ugc-net-mistakes" id="toc-common-ugc-net-mistakes" class="nav-link" data-scroll-target="#common-ugc-net-mistakes">150. Common UGC NET Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#mistake-1-bandwidth-vs-throughput" id="toc-mistake-1-bandwidth-vs-throughput" class="nav-link" data-scroll-target="#mistake-1-bandwidth-vs-throughput">Mistake 1: Bandwidth vs Throughput</a></li>
+  <li><a href="#mistake-2-transmission-vs-propagation-delay" id="toc-mistake-2-transmission-vs-propagation-delay" class="nav-link" data-scroll-target="#mistake-2-transmission-vs-propagation-delay">Mistake 2: Transmission vs Propagation Delay</a></li>
+  <li><a href="#mistake-3-nyquist-vs-shannon" id="toc-mistake-3-nyquist-vs-shannon" class="nav-link" data-scroll-target="#mistake-3-nyquist-vs-shannon">Mistake 3: Nyquist vs Shannon</a></li>
+  <li><a href="#mistake-4-mac-vs-ip" id="toc-mistake-4-mac-vs-ip" class="nav-link" data-scroll-target="#mistake-4-mac-vs-ip">Mistake 4: MAC vs IP</a></li>
+  <li><a href="#mistake-5-arp-vs-dns" id="toc-mistake-5-arp-vs-dns" class="nav-link" data-scroll-target="#mistake-5-arp-vs-dns">Mistake 5: ARP vs DNS</a></li>
+  <li><a href="#mistake-6-tcp-vs-udp" id="toc-mistake-6-tcp-vs-udp" class="nav-link" data-scroll-target="#mistake-6-tcp-vs-udp">Mistake 6: TCP vs UDP</a></li>
+  <li><a href="#mistake-7-csmacd-vs-csmaca" id="toc-mistake-7-csmacd-vs-csmaca" class="nav-link" data-scroll-target="#mistake-7-csmacd-vs-csmaca">Mistake 7: CSMA/CD vs CSMA/CA</a></li>
+  <li><a href="#mistake-8-fdm-vs-tdm-vs-cdm" id="toc-mistake-8-fdm-vs-tdm-vs-cdm" class="nav-link" data-scroll-target="#mistake-8-fdm-vs-tdm-vs-cdm">Mistake 8: FDM vs TDM vs CDM</a></li>
+  <li><a href="#mistake-9-smtp-vs-pop-vs-imap" id="toc-mistake-9-smtp-vs-pop-vs-imap" class="nav-link" data-scroll-target="#mistake-9-smtp-vs-pop-vs-imap">Mistake 9: SMTP vs POP vs IMAP</a></li>
+  <li><a href="#mistake-10-saas-vs-paas-vs-iaas" id="toc-mistake-10-saas-vs-paas-vs-iaas" class="nav-link" data-scroll-target="#mistake-10-saas-vs-paas-vs-iaas">Mistake 10: SaaS vs PaaS vs IaaS</a></li>
+  </ul></li>
+  <li><a href="#one-minute-revision" id="toc-one-minute-revision" class="nav-link" data-scroll-target="#one-minute-revision">151. One-Minute Revision</a>
+  <ul class="collapse">
+  <li><a href="#data-communication" id="toc-data-communication" class="nav-link" data-scroll-target="#data-communication">Data Communication</a></li>
+  <li><a href="#signals" id="toc-signals" class="nav-link" data-scroll-target="#signals">Signals</a></li>
+  <li><a href="#channel" id="toc-channel" class="nav-link" data-scroll-target="#channel">Channel</a></li>
+  <li><a href="#multiplexing-1" id="toc-multiplexing-1" class="nav-link" data-scroll-target="#multiplexing-1">Multiplexing</a></li>
+  <li><a href="#osi" id="toc-osi" class="nav-link" data-scroll-target="#osi">OSI</a></li>
+  <li><a href="#addressing" id="toc-addressing" class="nav-link" data-scroll-target="#addressing">Addressing</a></li>
+  <li><a href="#transport" id="toc-transport" class="nav-link" data-scroll-target="#transport">Transport</a></li>
+  <li><a href="#network" id="toc-network" class="nav-link" data-scroll-target="#network">Network</a></li>
+  <li><a href="#internet-1" id="toc-internet-1" class="nav-link" data-scroll-target="#internet-1">Internet</a></li>
+  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security">Security</a></li>
+  <li><a href="#cloud" id="toc-cloud" class="nav-link" data-scroll-target="#cloud">Cloud</a></li>
+  <li><a href="#iot" id="toc-iot" class="nav-link" data-scroll-target="#iot">IoT</a></li>
+  </ul></li>
+  <li><a href="#final-exam-strategy" id="toc-final-exam-strategy" class="nav-link" data-scroll-target="#final-exam-strategy">152. Final Exam Strategy</a>
+  <ul class="collapse">
+  <li><a href="#block-1-data-communication" id="toc-block-1-data-communication" class="nav-link" data-scroll-target="#block-1-data-communication">Block 1: Data Communication</a></li>
+  <li><a href="#block-2-network-models" id="toc-block-2-network-models" class="nav-link" data-scroll-target="#block-2-network-models">Block 2: Network Models</a></li>
+  <li><a href="#block-3-data-link" id="toc-block-3-data-link" class="nav-link" data-scroll-target="#block-3-data-link">Block 3: Data Link</a></li>
+  <li><a href="#block-4-network-and-transport" id="toc-block-4-network-and-transport" class="nav-link" data-scroll-target="#block-4-network-and-transport">Block 4: Network and Transport</a></li>
+  <li><a href="#block-5-internet-and-security" id="toc-block-5-internet-and-security" class="nav-link" data-scroll-target="#block-5-internet-and-security">Block 5: Internet and Security</a></li>
+  <li><a href="#block-6-mobile-cloud-and-iot" id="toc-block-6-mobile-cloud-and-iot" class="nav-link" data-scroll-target="#block-6-mobile-cloud-and-iot">Block 6: Mobile, Cloud and IoT</a></li>
+  </ul></li>
+  <li><a href="#final-summary" id="toc-final-summary" class="nav-link" data-scroll-target="#final-summary">153. Final Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit IX – Data Communication and Computer Networks</h1>
+<p class="subtitle lead">UGC NET Computer Science and Applications – Paper 2</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p><strong>Data communication</strong> is the exchange of data between two or more devices through a communication medium.</p>
+<p>A <strong>computer network</strong> is a collection of interconnected devices that communicate and share resources.</p>
+<p>This unit covers:</p>
+<ul>
+<li>Data communication fundamentals</li>
+<li>Signals, bandwidth, throughput and latency</li>
+<li>Transmission, encoding and modulation</li>
+<li>Multiplexing and transmission media</li>
+<li>Errors and error handling</li>
+<li>LAN, MAN, WAN and wireless networks</li>
+<li>OSI and TCP/IP models</li>
+<li>Addressing and switching</li>
+<li>Framing, flow/error control and multiple access</li>
+<li>IPv4 and IPv6</li>
+<li>ARP and routing</li>
+<li>TCP, UDP and SCTP</li>
+<li>WWW, DNS and email</li>
+<li>Network security</li>
+<li>Mobile technology</li>
+<li>Cloud computing</li>
+<li>Internet of Things</li>
+</ul>
+<hr>
+</section>
+<section id="components-of-a-data-communication-system" class="level1">
+<h1>2. Components of a Data Communication System</h1>
+<p>A basic data communication system has five components:</p>
+<ol type="1">
+<li>Sender</li>
+<li>Receiver</li>
+<li>Message</li>
+<li>Transmission medium</li>
+<li>Protocol</li>
+</ol>
+<section id="sender" class="level3">
+<h3 class="anchored" data-anchor-id="sender">Sender</h3>
+<p>The device that sends information.</p>
+</section>
+<section id="receiver" class="level3">
+<h3 class="anchored" data-anchor-id="receiver">Receiver</h3>
+<p>The device that receives information.</p>
+</section>
+<section id="message" class="level3">
+<h3 class="anchored" data-anchor-id="message">Message</h3>
+<p>The information being transmitted.</p>
+<p>Examples:</p>
+<ul>
+<li>Text</li>
+<li>Image</li>
+<li>Audio</li>
+<li>Video</li>
+<li>File</li>
+</ul>
+</section>
+<section id="transmission-medium" class="level3">
+<h3 class="anchored" data-anchor-id="transmission-medium">Transmission Medium</h3>
+<p>The path through which data travels.</p>
+<p>Examples:</p>
+<ul>
+<li>Twisted-pair cable</li>
+<li>Coaxial cable</li>
+<li>Optical fiber</li>
+<li>Radio waves</li>
+</ul>
+</section>
+<section id="protocol" class="level3">
+<h3 class="anchored" data-anchor-id="protocol">Protocol</h3>
+<p>A set of rules governing communication.</p>
+<p>Examples:</p>
+<ul>
+<li>TCP</li>
+<li>IP</li>
+<li>HTTP</li>
+<li>FTP</li>
+<li>SMTP</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="modes-of-communication" class="level1">
+<h1>3. Modes of Communication</h1>
+<section id="simplex" class="level2">
+<h2 class="anchored" data-anchor-id="simplex">3.1 Simplex</h2>
+<p>Communication takes place in only one direction.</p>
+<pre class="text"><code>Sender ─────────→ Receiver</code></pre>
+<p>Example:</p>
+<ul>
+<li>Traditional television broadcasting</li>
+</ul>
+</section>
+<section id="half-duplex" class="level2">
+<h2 class="anchored" data-anchor-id="half-duplex">3.2 Half-Duplex</h2>
+<p>Communication occurs in both directions, but not simultaneously.</p>
+<pre class="text"><code>A ─────────→ B
+A ←───────── B</code></pre>
+<p>Example:</p>
+<ul>
+<li>Walkie-talkie</li>
+</ul>
+</section>
+<section id="full-duplex" class="level2">
+<h2 class="anchored" data-anchor-id="full-duplex">3.3 Full-Duplex</h2>
+<p>Communication occurs in both directions simultaneously.</p>
+<p>Example:</p>
+<ul>
+<li>Telephone conversation</li>
+</ul>
+<section id="comparison" class="level3">
+<h3 class="anchored" data-anchor-id="comparison">Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Mode</th>
+<th>Direction</th>
+<th>Simultaneous?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Simplex</td>
+<td>One direction</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Half-duplex</td>
+<td>Both directions</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Full-duplex</td>
+<td>Both directions</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+</section>
+<section id="analog-and-digital-signals" class="level1">
+<h1>4. Analog and Digital Signals</h1>
+<p>A signal carries information through a communication system.</p>
+<section id="analog-signal" class="level2">
+<h2 class="anchored" data-anchor-id="analog-signal">Analog Signal</h2>
+<p>An analog signal varies continuously.</p>
+<p>Examples:</p>
+<ul>
+<li>Traditional voice signal</li>
+<li>Analog radio</li>
+</ul>
+</section>
+<section id="digital-signal" class="level2">
+<h2 class="anchored" data-anchor-id="digital-signal">Digital Signal</h2>
+<p>A digital signal uses discrete values.</p>
+<p>A common digital representation uses:</p>
+<pre class="text"><code>0 and 1</code></pre>
+<section id="comparison-1" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-1">Comparison</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Analog</th>
+<th>Digital</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Continuous</td>
+<td>Discrete</td>
+</tr>
+<tr class="even">
+<td>More directly affected by accumulated noise</td>
+<td>Can often be regenerated</td>
+</tr>
+<tr class="odd">
+<td>Common in traditional analog systems</td>
+<td>Common in computer communication</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+</section>
+<section id="periodic-signal" class="level1">
+<h1>5. Periodic Signal</h1>
+<p>A periodic signal repeats after a fixed interval.</p>
+<p>Important characteristics:</p>
+<ul>
+<li>Amplitude</li>
+<li>Frequency</li>
+<li>Period</li>
+<li>Phase</li>
+</ul>
+<section id="amplitude" class="level2">
+<h2 class="anchored" data-anchor-id="amplitude">Amplitude</h2>
+<p>The maximum magnitude of the signal.</p>
+</section>
+<section id="frequency" class="level2">
+<h2 class="anchored" data-anchor-id="frequency">Frequency</h2>
+<p>Number of cycles per second.</p>
+<p>Unit:</p>
+<p><strong>Hertz (Hz)</strong></p>
+</section>
+<section id="period" class="level2">
+<h2 class="anchored" data-anchor-id="period">Period</h2>
+<p>Time for one complete cycle.</p>
+<p><strong>f = 1/T</strong></p>
+<p>where:</p>
+<ul>
+<li>f = frequency</li>
+<li>T = period</li>
+</ul>
+</section>
+<section id="phase" class="level2">
+<h2 class="anchored" data-anchor-id="phase">Phase</h2>
+<p>Describes the position of a waveform relative to a reference.</p>
+<hr>
+</section>
+</section>
+<section id="wavelength" class="level1">
+<h1>6. Wavelength</h1>
+<p>Wavelength is the distance travelled by a wave during one cycle.</p>
+<p><strong>λ = v/f</strong></p>
+<p>where:</p>
+<ul>
+<li>λ = wavelength</li>
+<li>v = propagation speed</li>
+<li>f = frequency</li>
+</ul>
+<hr>
+</section>
+<section id="noiseless-and-noisy-channels" class="level1">
+<h1>7. Noiseless and Noisy Channels</h1>
+<section id="noiseless-channel" class="level2">
+<h2 class="anchored" data-anchor-id="noiseless-channel">Noiseless Channel</h2>
+<p>A theoretical channel in which transmission does not introduce noise errors.</p>
+<p>For a noiseless channel, the Nyquist formula gives the maximum theoretical bit rate:</p>
+<p><strong>Bit Rate = 2 × Bandwidth × log₂(L)</strong></p>
+<p>where L is the number of signal levels.</p>
+</section>
+<section id="noisy-channel" class="level2">
+<h2 class="anchored" data-anchor-id="noisy-channel">Noisy Channel</h2>
+<p>Real channels may contain noise.</p>
+<p>The Shannon channel capacity is:</p>
+<p><strong>Capacity = Bandwidth × log₂(1 + S/N)</strong></p>
+<p>where:</p>
+<ul>
+<li>S = signal power</li>
+<li>N = noise power</li>
+</ul>
+<p>If S/N is expressed in decibels:</p>
+<p><strong>SNR(dB) = 10 × log₁₀(S/N)</strong></p>
+<section id="ugc-net-point" class="level3">
+<h3 class="anchored" data-anchor-id="ugc-net-point">UGC NET Point</h3>
+<p><strong>Nyquist → noiseless channel</strong></p>
+<p><strong>Shannon → noisy channel</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="bandwidth" class="level1">
+<h1>8. Bandwidth</h1>
+<p>Bandwidth can refer to the range of frequencies occupied by a signal or supported by a channel.</p>
+<p>For a frequency range:</p>
+<p><strong>Bandwidth = Highest frequency − Lowest frequency</strong></p>
+<p>Example:</p>
+<p>If the frequency range is 3 MHz to 5 MHz:</p>
+<p><strong>Bandwidth = 2 MHz</strong></p>
+<hr>
+</section>
+<section id="throughput" class="level1">
+<h1>9. Throughput</h1>
+<p><strong>Throughput</strong> is the actual rate at which data is successfully transferred.</p>
+<p>Example:</p>
+<p>A link may have a nominal capacity of 100 Mbps but achieve only 80 Mbps of actual throughput.</p>
+<p>Therefore:</p>
+<p><strong>Bandwidth/capacity is not necessarily equal to actual throughput.</strong></p>
+<hr>
+</section>
+<section id="latency" class="level1">
+<h1>10. Latency</h1>
+<p><strong>Latency</strong> is the time taken for data to travel through a communication system.</p>
+<p>Important components:</p>
+<ul>
+<li>Processing delay</li>
+<li>Queuing delay</li>
+<li>Transmission delay</li>
+<li>Propagation delay</li>
+</ul>
+<section id="transmission-delay" class="level2">
+<h2 class="anchored" data-anchor-id="transmission-delay">Transmission Delay</h2>
+<p>Time needed to put all packet bits onto the link.</p>
+<p><strong>Transmission delay = Packet size ÷ Data rate</strong></p>
+</section>
+<section id="propagation-delay" class="level2">
+<h2 class="anchored" data-anchor-id="propagation-delay">Propagation Delay</h2>
+<p>Time required for the signal to travel through the medium.</p>
+<p><strong>Propagation delay = Distance ÷ Propagation speed</strong></p>
+<hr>
+</section>
+</section>
+<section id="digital-transmission" class="level1">
+<h1>11. Digital Transmission</h1>
+<p>Digital transmission communicates information using digital signals.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Line coding</li>
+<li>Digital-to-digital encoding</li>
+<li>Pulse-based transmission</li>
+</ul>
+<p>Examples of line coding:</p>
+<ul>
+<li>NRZ</li>
+<li>Manchester</li>
+<li>Differential Manchester</li>
+</ul>
+<hr>
+</section>
+<section id="analog-transmission" class="level1">
+<h1>12. Analog Transmission</h1>
+<p>Analog transmission uses an analog carrier signal.</p>
+<p>Digital data can be converted to an analog signal using modulation.</p>
+<p>Important methods:</p>
+<ul>
+<li>ASK</li>
+<li>FSK</li>
+<li>PSK</li>
+<li>QAM</li>
+</ul>
+<hr>
+</section>
+<section id="data-encoding" class="level1">
+<h1>13. Data Encoding</h1>
+<p>Encoding converts data into an appropriate signal representation.</p>
+<section id="nrz" class="level2">
+<h2 class="anchored" data-anchor-id="nrz">NRZ</h2>
+<p><strong>NRZ = Non-Return-to-Zero</strong></p>
+<p>The signal level remains at a particular level during a bit interval.</p>
+</section>
+<section id="manchester-encoding" class="level2">
+<h2 class="anchored" data-anchor-id="manchester-encoding">Manchester Encoding</h2>
+<p>There is a transition in the middle of each bit period.</p>
+<p>A major advantage is synchronization.</p>
+</section>
+<section id="differential-manchester" class="level2">
+<h2 class="anchored" data-anchor-id="differential-manchester">Differential Manchester</h2>
+<p>Information is represented using transitions and is less dependent on the absolute signal level.</p>
+<hr>
+</section>
+</section>
+<section id="modulation-techniques" class="level1">
+<h1>14. Modulation Techniques</h1>
+<section id="ask" class="level2">
+<h2 class="anchored" data-anchor-id="ask">ASK</h2>
+<p><strong>Amplitude Shift Keying</strong></p>
+<p>Amplitude of the carrier is changed.</p>
+</section>
+<section id="fsk" class="level2">
+<h2 class="anchored" data-anchor-id="fsk">FSK</h2>
+<p><strong>Frequency Shift Keying</strong></p>
+<p>Frequency of the carrier is changed.</p>
+</section>
+<section id="psk" class="level2">
+<h2 class="anchored" data-anchor-id="psk">PSK</h2>
+<p><strong>Phase Shift Keying</strong></p>
+<p>Phase of the carrier is changed.</p>
+</section>
+<section id="qam" class="level2">
+<h2 class="anchored" data-anchor-id="qam">QAM</h2>
+<p><strong>Quadrature Amplitude Modulation</strong></p>
+<p>Both amplitude and phase are varied.</p>
+<section id="comparison-2" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-2">Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Technique</th>
+<th>Main Property Changed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ASK</td>
+<td>Amplitude</td>
+</tr>
+<tr class="even">
+<td>FSK</td>
+<td>Frequency</td>
+</tr>
+<tr class="odd">
+<td>PSK</td>
+<td>Phase</td>
+</tr>
+<tr class="even">
+<td>QAM</td>
+<td>Amplitude + Phase</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+</section>
+<section id="broadband-and-baseband-transmission" class="level1">
+<h1>15. Broadband and Baseband Transmission</h1>
+<section id="baseband" class="level2">
+<h2 class="anchored" data-anchor-id="baseband">Baseband</h2>
+<p>The signal is transmitted directly over the communication channel without shifting it to a separate carrier frequency.</p>
+<p>Baseband is common in many LAN technologies.</p>
+</section>
+<section id="broadband" class="level2">
+<h2 class="anchored" data-anchor-id="broadband">Broadband</h2>
+<p>The available frequency range can support multiple channels or carrier-modulated signals.</p>
+<section id="comparison-3" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-3">Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Baseband</th>
+<th>Broadband</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Direct/baseband signaling</td>
+<td>Often carrier/modulation based</td>
+</tr>
+<tr class="even">
+<td>Common in LANs</td>
+<td>Common in many wideband systems</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+</section>
+<section id="multiplexing" class="level1">
+<h1>16. Multiplexing</h1>
+<p><strong>Multiplexing</strong> allows multiple signals to share a communication medium.</p>
+<p>A multiplexer combines signals.</p>
+<p>A demultiplexer separates them.</p>
+<p>Important techniques:</p>
+<ul>
+<li>FDM</li>
+<li>TDM</li>
+<li>WDM</li>
+<li>CDM</li>
+</ul>
+<hr>
+</section>
+<section id="frequency-division-multiplexing" class="level1">
+<h1>17. Frequency Division Multiplexing</h1>
+<p><strong>FDM = Frequency Division Multiplexing</strong></p>
+<p>Different users/signals use different frequency bands.</p>
+<pre class="text"><code>Frequency
+|---A---|---B---|---C---|</code></pre>
+<hr>
+</section>
+<section id="time-division-multiplexing" class="level1">
+<h1>18. Time Division Multiplexing</h1>
+<p><strong>TDM = Time Division Multiplexing</strong></p>
+<p>Different users/signals use different time slots.</p>
+<pre class="text"><code>Time
+| A | B | C | A | B | C |</code></pre>
+<hr>
+</section>
+<section id="wavelength-division-multiplexing" class="level1">
+<h1>19. Wavelength Division Multiplexing</h1>
+<p><strong>WDM = Wavelength Division Multiplexing</strong></p>
+<p>WDM is mainly associated with optical fiber.</p>
+<p>Different optical wavelengths carry different signals.</p>
+<hr>
+</section>
+<section id="transmission-media" class="level1">
+<h1>20. Transmission Media</h1>
+<p>Transmission media are classified into:</p>
+<section id="guided-media" class="level2">
+<h2 class="anchored" data-anchor-id="guided-media">Guided Media</h2>
+<p>Signals travel through a physical path.</p>
+<p>Examples:</p>
+<ul>
+<li>Twisted pair</li>
+<li>Coaxial cable</li>
+<li>Optical fiber</li>
+</ul>
+</section>
+<section id="unguided-media" class="level2">
+<h2 class="anchored" data-anchor-id="unguided-media">Unguided Media</h2>
+<p>Signals travel through free space.</p>
+<p>Examples:</p>
+<ul>
+<li>Radio</li>
+<li>Microwave</li>
+<li>Infrared</li>
+<li>Satellite</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="twisted-pair-cable" class="level1">
+<h1>21. Twisted-Pair Cable</h1>
+<p>Twisted-pair cable contains pairs of insulated copper wires twisted together.</p>
+<p>Types:</p>
+<ul>
+<li>UTP</li>
+<li>STP</li>
+</ul>
+<section id="advantages" class="level3">
+<h3 class="anchored" data-anchor-id="advantages">Advantages</h3>
+<ul>
+<li>Low cost</li>
+<li>Easy installation</li>
+<li>Widely used</li>
+</ul>
+</section>
+<section id="limitations" class="level3">
+<h3 class="anchored" data-anchor-id="limitations">Limitations</h3>
+<ul>
+<li>More susceptible to interference than optical fiber</li>
+<li>Limited range compared with some fiber systems</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="coaxial-cable" class="level1">
+<h1>22. Coaxial Cable</h1>
+<p>A coaxial cable contains:</p>
+<ul>
+<li>Central conductor</li>
+<li>Insulating layer</li>
+<li>Shield</li>
+<li>Outer protective layer</li>
+</ul>
+<p>It provides better shielding than ordinary twisted pair.</p>
+<p>Applications include:</p>
+<ul>
+<li>Cable television</li>
+<li>Broadband systems</li>
+<li>Older network technologies</li>
+</ul>
+<hr>
+</section>
+<section id="optical-fiber" class="level1">
+<h1>23. Optical Fiber</h1>
+<p>Optical fiber carries information using light.</p>
+<p>Main parts:</p>
+<ul>
+<li>Core</li>
+<li>Cladding</li>
+<li>Protective coating</li>
+</ul>
+<section id="advantages-1" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-1">Advantages</h3>
+<ul>
+<li>High bandwidth</li>
+<li>Low attenuation</li>
+<li>Resistant to electromagnetic interference</li>
+<li>Long-distance transmission</li>
+</ul>
+</section>
+<section id="limitations-1" class="level3">
+<h3 class="anchored" data-anchor-id="limitations-1">Limitations</h3>
+<ul>
+<li>More difficult installation</li>
+<li>Specialized equipment</li>
+<li>Can be physically fragile</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="wireless-media" class="level1">
+<h1>24. Wireless Media</h1>
+<p>Examples:</p>
+<ul>
+<li>Radio</li>
+<li>Microwave</li>
+<li>Infrared</li>
+<li>Satellite</li>
+</ul>
+<p>Wireless communication supports mobility and reduces cabling.</p>
+<hr>
+</section>
+<section id="transmission-errors" class="level1">
+<h1>25. Transmission Errors</h1>
+<p>A transmission error occurs when received data differs from transmitted data.</p>
+<section id="single-bit-error" class="level2">
+<h2 class="anchored" data-anchor-id="single-bit-error">Single-Bit Error</h2>
+<p>One bit is changed.</p>
+</section>
+<section id="burst-error" class="level2">
+<h2 class="anchored" data-anchor-id="burst-error">Burst Error</h2>
+<p>Multiple bits in a sequence are affected.</p>
+<hr>
+</section>
+</section>
+<section id="error-detection" class="level1">
+<h1>26. Error Detection</h1>
+<p>Important methods:</p>
+<ul>
+<li>Parity</li>
+<li>Checksum</li>
+<li>CRC</li>
+</ul>
+<hr>
+</section>
+<section id="parity" class="level1">
+<h1>27. Parity</h1>
+<p>A parity bit is added to a data unit.</p>
+<section id="even-parity" class="level3">
+<h3 class="anchored" data-anchor-id="even-parity">Even Parity</h3>
+<p>The total number of 1s is made even.</p>
+</section>
+<section id="odd-parity" class="level3">
+<h3 class="anchored" data-anchor-id="odd-parity">Odd Parity</h3>
+<p>The total number of 1s is made odd.</p>
+<p>Parity is simple but cannot detect every possible error pattern.</p>
+<hr>
+</section>
+</section>
+<section id="checksum" class="level1">
+<h1>28. Checksum</h1>
+<p>A checksum is calculated from a block of data and sent with the data.</p>
+<p>The receiver performs a corresponding calculation to detect errors.</p>
+<hr>
+</section>
+<section id="crc" class="level1">
+<h1>29. CRC</h1>
+<p><strong>CRC = Cyclic Redundancy Check</strong></p>
+<p>CRC uses polynomial-style binary division with a generator polynomial.</p>
+<p>The remainder becomes the CRC value.</p>
+<p>CRC is particularly effective for detecting burst errors.</p>
+<hr>
+</section>
+<section id="error-handling" class="level1">
+<h1>30. Error Handling</h1>
+<p>Error handling can use:</p>
+<ul>
+<li>Error detection</li>
+<li>Acknowledgements</li>
+<li>Sequence numbers</li>
+<li>Timers</li>
+<li>Retransmissions</li>
+</ul>
+<p>Important ARQ methods:</p>
+<ul>
+<li>Stop-and-Wait ARQ</li>
+<li>Go-Back-N</li>
+<li>Selective Repeat</li>
+</ul>
+<hr>
+</section>
+<section id="computer-networks" class="level1">
+<h1>31. Computer Networks</h1>
+<p>A computer network connects devices so that they can communicate and share resources.</p>
+<p>Benefits include:</p>
+<ul>
+<li>Resource sharing</li>
+<li>File sharing</li>
+<li>Communication</li>
+<li>Centralized services</li>
+<li>Internet access</li>
+<li>Distributed applications</li>
+</ul>
+<hr>
+</section>
+<section id="network-topologies" class="level1">
+<h1>32. Network Topologies</h1>
+<p>Important network topologies:</p>
+<ul>
+<li>Bus</li>
+<li>Star</li>
+<li>Ring</li>
+<li>Mesh</li>
+<li>Tree</li>
+<li>Hybrid</li>
+</ul>
+<hr>
+</section>
+<section id="bus-topology" class="level1">
+<h1>33. Bus Topology</h1>
+<p>All devices share a common backbone.</p>
+<pre class="text"><code>A ── B ── C ── D
+      Backbone</code></pre>
+<section id="advantage" class="level3">
+<h3 class="anchored" data-anchor-id="advantage">Advantage</h3>
+<p>Simple structure.</p>
+</section>
+<section id="limitation" class="level3">
+<h3 class="anchored" data-anchor-id="limitation">Limitation</h3>
+<p>A backbone failure can affect communication for the network.</p>
+<hr>
+</section>
+</section>
+<section id="star-topology" class="level1">
+<h1>34. Star Topology</h1>
+<p>All devices connect to a central device.</p>
+<pre class="text"><code>       A
+       |
+B ---- Switch ---- C
+       |
+       D</code></pre>
+<section id="advantages-2" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-2">Advantages</h3>
+<ul>
+<li>Easy management</li>
+<li>Easy expansion</li>
+<li>Failure of one access link generally affects one device</li>
+</ul>
+</section>
+<section id="limitation-1" class="level3">
+<h3 class="anchored" data-anchor-id="limitation-1">Limitation</h3>
+<p>Failure of the central device can affect connected devices.</p>
+<hr>
+</section>
+</section>
+<section id="ring-topology" class="level1">
+<h1>35. Ring Topology</h1>
+<p>Each node connects to neighboring nodes.</p>
+<pre class="text"><code>A → B → C → D
+↑           ↓
+└───────────┘</code></pre>
+<hr>
+</section>
+<section id="mesh-topology" class="level1">
+<h1>36. Mesh Topology</h1>
+<p>Devices have multiple interconnections.</p>
+<p>For a full mesh with n devices:</p>
+<p><strong>Number of links = n(n − 1) ÷ 2</strong></p>
+<section id="advantage-1" class="level3">
+<h3 class="anchored" data-anchor-id="advantage-1">Advantage</h3>
+<p>High redundancy.</p>
+</section>
+<section id="disadvantage" class="level3">
+<h3 class="anchored" data-anchor-id="disadvantage">Disadvantage</h3>
+<p>Large number of links.</p>
+<hr>
+</section>
+</section>
+<section id="lan-man-and-wan" class="level1">
+<h1>37. LAN, MAN and WAN</h1>
+<section id="lan" class="level2">
+<h2 class="anchored" data-anchor-id="lan">LAN</h2>
+<p><strong>Local Area Network</strong></p>
+<p>Covers a limited area.</p>
+<p>Examples:</p>
+<ul>
+<li>Lab</li>
+<li>Office</li>
+<li>Building</li>
+<li>Campus</li>
+</ul>
+</section>
+<section id="man" class="level2">
+<h2 class="anchored" data-anchor-id="man">MAN</h2>
+<p><strong>Metropolitan Area Network</strong></p>
+<p>Covers a city or metropolitan area.</p>
+</section>
+<section id="wan" class="level2">
+<h2 class="anchored" data-anchor-id="wan">WAN</h2>
+<p><strong>Wide Area Network</strong></p>
+<p>Covers large geographical areas.</p>
+<p>Example:</p>
+<ul>
+<li>Internet</li>
+</ul>
+<section id="comparison-4" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-4">Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Typical Area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LAN</td>
+<td>Local building/campus</td>
+</tr>
+<tr class="even">
+<td>MAN</td>
+<td>City/metropolitan area</td>
+</tr>
+<tr class="odd">
+<td>WAN</td>
+<td>Large geographical area</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+</section>
+<section id="wireless-networks" class="level1">
+<h1>38. Wireless Networks</h1>
+<p>Wireless networks use electromagnetic signals.</p>
+<p>Examples:</p>
+<ul>
+<li>Wi-Fi</li>
+<li>Bluetooth</li>
+<li>Cellular networks</li>
+<li>Wireless sensor networks</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Mobility</li>
+<li>Easy deployment</li>
+<li>Reduced cabling</li>
+</ul>
+<p>Challenges:</p>
+<ul>
+<li>Interference</li>
+<li>Security</li>
+<li>Signal attenuation</li>
+<li>Spectrum limitations</li>
+</ul>
+<hr>
+</section>
+<section id="internet" class="level1">
+<h1>39. Internet</h1>
+<p>The Internet is a global interconnection of networks using the Internet protocol suite.</p>
+<p>Services include:</p>
+<ul>
+<li>Web</li>
+<li>Email</li>
+<li>File transfer</li>
+<li>Remote access</li>
+<li>Streaming</li>
+<li>Cloud services</li>
+</ul>
+<hr>
+</section>
+<section id="layered-network-architecture" class="level1">
+<h1>40. Layered Network Architecture</h1>
+<p>Layering divides communication functions into separate levels.</p>
+<p>Benefits:</p>
+<ul>
+<li>Modularity</li>
+<li>Easier troubleshooting</li>
+<li>Interoperability</li>
+<li>Easier protocol development</li>
+<li>Separation of responsibilities</li>
+</ul>
+<p>Two major models:</p>
+<ul>
+<li>OSI</li>
+<li>TCP/IP</li>
+</ul>
+<hr>
+</section>
+<section id="osi-reference-model" class="level1">
+<h1>41. OSI Reference Model</h1>
+<p>The OSI model has seven layers:</p>
+<ol type="1">
+<li>Application</li>
+<li>Presentation</li>
+<li>Session</li>
+<li>Transport</li>
+<li>Network</li>
+<li>Data Link</li>
+<li>Physical</li>
+</ol>
+<section id="memory-aid" class="level3">
+<h3 class="anchored" data-anchor-id="memory-aid">Memory Aid</h3>
+<p><strong>All People Seem To Need Data Processing</strong></p>
+<hr>
+</section>
+</section>
+<section id="physical-layer" class="level1">
+<h1>42. Physical Layer</h1>
+<p>Responsible for transmission of raw bits.</p>
+<p>Functions include:</p>
+<ul>
+<li>Signal representation</li>
+<li>Data rate</li>
+<li>Physical interfaces</li>
+<li>Connectors</li>
+<li>Transmission medium</li>
+</ul>
+<hr>
+</section>
+<section id="data-link-layer" class="level1">
+<h1>43. Data Link Layer</h1>
+<p>Provides node-to-node delivery.</p>
+<p>Functions:</p>
+<ul>
+<li>Framing</li>
+<li>Physical addressing</li>
+<li>Error detection</li>
+<li>Error control</li>
+<li>Media access control</li>
+<li>Flow control in appropriate protocols</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Ethernet</li>
+<li>HDLC</li>
+</ul>
+<hr>
+</section>
+<section id="network-layer" class="level1">
+<h1>44. Network Layer</h1>
+<p>Provides network-to-network delivery.</p>
+<p>Functions:</p>
+<ul>
+<li>Logical addressing</li>
+<li>Routing</li>
+<li>Packet forwarding</li>
+<li>IPv4 fragmentation</li>
+</ul>
+<p>Main protocol:</p>
+<p><strong>IP</strong></p>
+<hr>
+</section>
+<section id="transport-layer" class="level1">
+<h1>45. Transport Layer</h1>
+<p>Provides process-to-process communication.</p>
+<p>Protocols:</p>
+<ul>
+<li>TCP</li>
+<li>UDP</li>
+<li>SCTP</li>
+</ul>
+<p>Functions may include:</p>
+<ul>
+<li>Segmentation</li>
+<li>Reassembly</li>
+<li>Flow control</li>
+<li>Error control</li>
+<li>Congestion control</li>
+</ul>
+<hr>
+</section>
+<section id="session-layer" class="level1">
+<h1>46. Session Layer</h1>
+<p>Manages communication sessions.</p>
+<p>Functions may include:</p>
+<ul>
+<li>Session establishment</li>
+<li>Session management</li>
+<li>Session termination</li>
+<li>Synchronization</li>
+</ul>
+<hr>
+</section>
+<section id="presentation-layer" class="level1">
+<h1>47. Presentation Layer</h1>
+<p>Deals with data representation.</p>
+<p>Functions can include:</p>
+<ul>
+<li>Translation</li>
+<li>Encryption/decryption</li>
+<li>Compression/decompression</li>
+</ul>
+<hr>
+</section>
+<section id="application-layer" class="level1">
+<h1>48. Application Layer</h1>
+<p>Provides network services to applications.</p>
+<p>Examples:</p>
+<ul>
+<li>HTTP</li>
+<li>FTP</li>
+<li>SMTP</li>
+<li>DNS</li>
+<li>Telnet</li>
+</ul>
+<hr>
+</section>
+<section id="tcpip-protocol-suite" class="level1">
+<h1>49. TCP/IP Protocol Suite</h1>
+<p>A commonly used four-layer representation is:</p>
+<ol type="1">
+<li>Application</li>
+<li>Transport</li>
+<li>Internet</li>
+<li>Link/Network Access</li>
+</ol>
+<p>The exact naming of the lower layer varies among textbooks.</p>
+<section id="osi-and-tcpip" class="level3">
+<h3 class="anchored" data-anchor-id="osi-and-tcpip">OSI and TCP/IP</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>OSI</th>
+<th>TCP/IP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>7 layers</td>
+<td>Commonly 4 layers</td>
+</tr>
+<tr class="even">
+<td>Reference model</td>
+<td>Protocol architecture/suite</td>
+</tr>
+<tr class="odd">
+<td>Separate Session and Presentation</td>
+<td>Usually handled within Application</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="network-addresses" class="level1">
+<h1>50. Network Addresses</h1>
+<p>Different layers use different forms of addressing.</p>
+<section id="physical-address" class="level2">
+<h2 class="anchored" data-anchor-id="physical-address">Physical Address</h2>
+<p>Usually a link-layer address.</p>
+<p>Example:</p>
+<p><strong>MAC address</strong></p>
+</section>
+<section id="logical-address" class="level2">
+<h2 class="anchored" data-anchor-id="logical-address">Logical Address</h2>
+<p>Network-layer address.</p>
+<p>Example:</p>
+<p><strong>IP address</strong></p>
+</section>
+<section id="port-address" class="level2">
+<h2 class="anchored" data-anchor-id="port-address">Port Address</h2>
+<p>Identifies a process/service.</p>
+<p>Example:</p>
+<p><strong>TCP port 80</strong></p>
+</section>
+<section id="specific-address" class="level2">
+<h2 class="anchored" data-anchor-id="specific-address">Specific Address</h2>
+<p>Application-level identifier.</p>
+<p>Examples:</p>
+<ul>
+<li>URL</li>
+<li>Email address</li>
+</ul>
+<section id="sequence" class="level3">
+<h3 class="anchored" data-anchor-id="sequence">Sequence</h3>
+<p><strong>Physical → Logical → Port → Specific</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="switching-techniques" class="level1">
+<h1>51. Switching Techniques</h1>
+<p>Important switching techniques:</p>
+<ul>
+<li>Circuit switching</li>
+<li>Packet switching</li>
+<li>Message switching</li>
+</ul>
+<hr>
+</section>
+<section id="circuit-switching" class="level1">
+<h1>52. Circuit Switching</h1>
+<p>A dedicated communication path is established before data transfer.</p>
+<p>Phases:</p>
+<ol type="1">
+<li>Connection setup</li>
+<li>Data transfer</li>
+<li>Connection release</li>
+</ol>
+<p>Traditional telephone systems are associated with circuit switching.</p>
+<hr>
+</section>
+<section id="packet-switching" class="level1">
+<h1>53. Packet Switching</h1>
+<p>Data is divided into packets.</p>
+<p>Two important approaches:</p>
+<ul>
+<li>Datagram</li>
+<li>Virtual circuit</li>
+</ul>
+<p>The Internet is based primarily on packet switching.</p>
+<hr>
+</section>
+<section id="message-switching" class="level1">
+<h1>54. Message Switching</h1>
+<p>The entire message is stored and forwarded between nodes.</p>
+<p>A dedicated end-to-end circuit is not required.</p>
+<hr>
+</section>
+<section id="framing" class="level1">
+<h1>55. Framing</h1>
+<p>Framing divides a bit stream into frames.</p>
+<p>It allows the Data Link layer to identify boundaries between units of transmitted data.</p>
+<p>Framing can support:</p>
+<ul>
+<li>Error detection</li>
+<li>Addressing</li>
+<li>Flow control</li>
+<li>Media access</li>
+</ul>
+<hr>
+</section>
+<section id="flow-control" class="level1">
+<h1>56. Flow Control</h1>
+<p>Flow control prevents a sender from overwhelming a receiver.</p>
+<p>Important methods:</p>
+<ul>
+<li>Stop-and-Wait</li>
+<li>Sliding Window</li>
+</ul>
+<hr>
+</section>
+<section id="error-control" class="level1">
+<h1>57. Error Control</h1>
+<p>Error control provides mechanisms for reliable transmission.</p>
+<p>It can use:</p>
+<ul>
+<li>Acknowledgements</li>
+<li>Sequence numbers</li>
+<li>Retransmissions</li>
+<li>Timers</li>
+<li>Error detection</li>
+</ul>
+<hr>
+</section>
+<section id="sliding-window-protocol" class="level1">
+<h1>58. Sliding Window Protocol</h1>
+<p>A sender can transmit multiple frames/segments before waiting for acknowledgements, subject to a window.</p>
+<p>Advantages:</p>
+<ul>
+<li>Better channel utilization</li>
+<li>Higher throughput</li>
+<li>Less waiting</li>
+</ul>
+<p>Important protocols:</p>
+<ul>
+<li>Go-Back-N</li>
+<li>Selective Repeat</li>
+</ul>
+<hr>
+</section>
+<section id="go-back-n" class="level1">
+<h1>59. Go-Back-N</h1>
+<p>If frame 3 is lost:</p>
+<pre class="text"><code>1 2 3 4 5
+    X</code></pre>
+<p>The sender may retransmit:</p>
+<pre class="text"><code>3 4 5</code></pre>
+<p>The receiver generally maintains a cumulative acknowledgement scheme.</p>
+<hr>
+</section>
+<section id="selective-repeat" class="level1">
+<h1>60. Selective Repeat</h1>
+<p>If frame 3 is lost:</p>
+<pre class="text"><code>1 2 3 4 5
+    X</code></pre>
+<p>Only frame 3 may be retransmitted:</p>
+<pre class="text"><code>3</code></pre>
+<p>It requires more receiver buffering and bookkeeping.</p>
+<hr>
+</section>
+<section id="hdlc" class="level1">
+<h1>61. HDLC</h1>
+<p><strong>HDLC = High-Level Data Link Control</strong></p>
+<p>HDLC is a bit-oriented Data Link protocol.</p>
+<p>A common frame structure is:</p>
+<pre class="text"><code>Flag | Address | Control | Information | FCS | Flag</code></pre>
+<p>FCS means:</p>
+<p><strong>Frame Check Sequence</strong></p>
+<hr>
+</section>
+<section id="multiple-access" class="level1">
+<h1>62. Multiple Access</h1>
+<p>Multiple access protocols control how multiple devices share a common medium.</p>
+<p>Important methods:</p>
+<ul>
+<li>CSMA/CD</li>
+<li>CSMA/CA</li>
+<li>Reservation</li>
+<li>Polling</li>
+<li>Token passing</li>
+<li>FDMA</li>
+<li>TDMA</li>
+<li>CDMA</li>
+</ul>
+<hr>
+</section>
+<section id="csmacd" class="level1">
+<h1>63. CSMA/CD</h1>
+<p><strong>Carrier Sense Multiple Access with Collision Detection</strong></p>
+<p>Historically associated with shared-medium half-duplex Ethernet.</p>
+<p>Basic idea:</p>
+<ol type="1">
+<li>Sense the channel.</li>
+<li>Transmit if idle.</li>
+<li>Detect collision.</li>
+<li>Stop transmission if collision occurs.</li>
+<li>Wait using a backoff algorithm.</li>
+<li>Retransmit.</li>
+</ol>
+<p>Modern switched full-duplex Ethernet normally does not use CSMA/CD.</p>
+<hr>
+</section>
+<section id="csmaca" class="level1">
+<h1>64. CSMA/CA</h1>
+<p><strong>Carrier Sense Multiple Access with Collision Avoidance</strong></p>
+<p>Commonly associated with wireless LANs.</p>
+<p>It attempts to reduce the probability of collisions before transmission.</p>
+<p>Associated technology:</p>
+<p><strong>IEEE 802.11 Wi-Fi</strong></p>
+<hr>
+</section>
+<section id="reservation" class="level1">
+<h1>65. Reservation</h1>
+<p>Stations reserve transmission opportunities before transmitting.</p>
+<p>This can reduce collisions when many devices share a channel.</p>
+<hr>
+</section>
+<section id="polling" class="level1">
+<h1>66. Polling</h1>
+<p>A central controller gives devices opportunities to transmit.</p>
+<section id="advantage-2" class="level3">
+<h3 class="anchored" data-anchor-id="advantage-2">Advantage</h3>
+<p>Controlled access.</p>
+</section>
+<section id="limitation-2" class="level3">
+<h3 class="anchored" data-anchor-id="limitation-2">Limitation</h3>
+<p>The central controller can become a bottleneck or point of failure.</p>
+<hr>
+</section>
+</section>
+<section id="token-passing" class="level1">
+<h1>67. Token Passing</h1>
+<p>A special control frame called a token circulates among stations.</p>
+<p>Only the station holding the token can transmit.</p>
+<section id="advantage-3" class="level3">
+<h3 class="anchored" data-anchor-id="advantage-3">Advantage</h3>
+<p>Predictable and collision-free medium access.</p>
+<hr>
+</section>
+</section>
+<section id="fdma-tdma-and-cdma" class="level1">
+<h1>68. FDMA, TDMA and CDMA</h1>
+<section id="fdma" class="level2">
+<h2 class="anchored" data-anchor-id="fdma">FDMA</h2>
+<p><strong>Frequency Division Multiple Access</strong></p>
+<p>Users receive separate frequency bands.</p>
+</section>
+<section id="tdma" class="level2">
+<h2 class="anchored" data-anchor-id="tdma">TDMA</h2>
+<p><strong>Time Division Multiple Access</strong></p>
+<p>Users receive separate time slots.</p>
+</section>
+<section id="cdma" class="level2">
+<h2 class="anchored" data-anchor-id="cdma">CDMA</h2>
+<p><strong>Code Division Multiple Access</strong></p>
+<p>Users share frequency/time resources using different codes.</p>
+<section id="easy-memory" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory">Easy Memory</h3>
+<p><strong>FDMA → Frequency</strong></p>
+<p><strong>TDMA → Time</strong></p>
+<p><strong>CDMA → Code</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="network-devices" class="level1">
+<h1>69. Network Devices</h1>
+<section id="repeater" class="level2">
+<h2 class="anchored" data-anchor-id="repeater">Repeater</h2>
+<p>Regenerates or repeats signals.</p>
+</section>
+<section id="hub" class="level2">
+<h2 class="anchored" data-anchor-id="hub">Hub</h2>
+<p>A multiport repeater.</p>
+</section>
+<section id="bridge" class="level2">
+<h2 class="anchored" data-anchor-id="bridge">Bridge</h2>
+<p>Connects network segments at the Data Link layer.</p>
+</section>
+<section id="switch" class="level2">
+<h2 class="anchored" data-anchor-id="switch">Switch</h2>
+<p>Usually a multiport bridge that forwards frames using MAC addresses.</p>
+</section>
+<section id="router" class="level2">
+<h2 class="anchored" data-anchor-id="router">Router</h2>
+<p>Forwards packets between networks.</p>
+</section>
+<section id="gateway" class="level2">
+<h2 class="anchored" data-anchor-id="gateway">Gateway</h2>
+<p>Connects networks or systems and may translate between protocols.</p>
+</section>
+<section id="access-point" class="level2">
+<h2 class="anchored" data-anchor-id="access-point">Access Point</h2>
+<p>Provides wireless network connectivity to stations.</p>
+</section>
+<section id="modem" class="level2">
+<h2 class="anchored" data-anchor-id="modem">Modem</h2>
+<p>Performs modulation/demodulation functions for suitable communication links.</p>
+<hr>
+</section>
+</section>
+<section id="backbone-networks" class="level1">
+<h1>70. Backbone Networks</h1>
+<p>A backbone is a high-capacity network segment connecting smaller networks.</p>
+<p>Examples:</p>
+<ul>
+<li>Campus backbone</li>
+<li>Enterprise backbone</li>
+<li>Internet backbone</li>
+</ul>
+<hr>
+</section>
+<section id="virtual-lan" class="level1">
+<h1>71. Virtual LAN</h1>
+<p><strong>VLAN = Virtual Local Area Network</strong></p>
+<p>A VLAN logically divides a switched network into separate broadcast domains.</p>
+<p>Benefits:</p>
+<ul>
+<li>Segmentation</li>
+<li>Easier management</li>
+<li>Reduced broadcast scope</li>
+<li>Potential security improvement</li>
+</ul>
+<hr>
+</section>
+<section id="ipv4-structure" class="level1">
+<h1>72. IPv4 Structure</h1>
+<p>IPv4 uses:</p>
+<p><strong>32-bit addresses</strong></p>
+<p>Example:</p>
+<pre class="text"><code>192.168.1.10</code></pre>
+<p>IPv4 addresses are commonly written as four decimal octets.</p>
+<p>Each octet ranges from:</p>
+<p><strong>0 to 255</strong></p>
+<hr>
+</section>
+<section id="ipv4-address-space" class="level1">
+<h1>73. IPv4 Address Space</h1>
+<p>IPv4 has:</p>
+<p><strong>2^32</strong></p>
+<p>possible 32-bit address combinations.</p>
+<p>This is approximately:</p>
+<p><strong>4.29 billion</strong></p>
+<p>addresses, although many are reserved or unavailable for general host assignment.</p>
+<hr>
+</section>
+<section id="classful-addressing" class="level1">
+<h1>74. Classful Addressing</h1>
+<p>Traditional classful addressing used:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>First Octet</th>
+<th>Default Prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>1–126</td>
+<td>/8</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>128–191</td>
+<td>/16</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>192–223</td>
+<td>/24</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>224–239</td>
+<td>Multicast</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>240–255</td>
+<td>Experimental/reserved</td>
+</tr>
+</tbody>
+</table>
+<p>Special ranges such as 0.x.x.x and 127.x.x.x have special purposes.</p>
+<hr>
+</section>
+<section id="classless-addressing" class="level1">
+<h1>75. Classless Addressing</h1>
+<p><strong>CIDR = Classless Inter-Domain Routing</strong></p>
+<p>Example:</p>
+<pre class="text"><code>192.168.1.0/24</code></pre>
+<p>The <code>/24</code> means:</p>
+<p><strong>24 bits are the network prefix.</strong></p>
+<p>CIDR allows flexible address allocation and route aggregation.</p>
+<hr>
+</section>
+<section id="ipv4-datagram" class="level1">
+<h1>76. IPv4 Datagram</h1>
+<p>Important IPv4 header fields include:</p>
+<ul>
+<li>Version</li>
+<li>IHL</li>
+<li>Total Length</li>
+<li>Identification</li>
+<li>Flags</li>
+<li>Fragment Offset</li>
+<li>TTL</li>
+<li>Protocol</li>
+<li>Header Checksum</li>
+<li>Source Address</li>
+<li>Destination Address</li>
+</ul>
+<hr>
+</section>
+<section id="ipv4-fragmentation" class="level1">
+<h1>77. IPv4 Fragmentation</h1>
+<p>Fragmentation can occur when an IPv4 packet is larger than the MTU of the outgoing link.</p>
+<p>Important fields:</p>
+<ul>
+<li>Identification</li>
+<li>Flags</li>
+<li>Fragment Offset</li>
+</ul>
+<p>The destination can reassemble fragments.</p>
+<section id="important" class="level3">
+<h3 class="anchored" data-anchor-id="important">Important</h3>
+<p>IPv4 routers may fragment packets when allowed.</p>
+<p>IPv6 routers do not fragment transit packets; fragmentation is handled by the source using an extension header.</p>
+<hr>
+</section>
+</section>
+<section id="ipv4-checksum" class="level1">
+<h1>78. IPv4 Checksum</h1>
+<p>IPv4 has a checksum in its base header.</p>
+<p>It protects the IPv4 header.</p>
+<p>The checksum must be recalculated when relevant header fields change during forwarding.</p>
+<hr>
+</section>
+<section id="ipv6" class="level1">
+<h1>79. IPv6</h1>
+<p>IPv6 uses:</p>
+<p><strong>128-bit addresses</strong></p>
+<p>Example:</p>
+<pre class="text"><code>2001:db8::1</code></pre>
+<p>IPv6 provides a much larger address space.</p>
+<hr>
+</section>
+<section id="ipv6-packet-format" class="level1">
+<h1>80. IPv6 Packet Format</h1>
+<p>Important base-header fields:</p>
+<ul>
+<li>Version</li>
+<li>Traffic Class</li>
+<li>Flow Label</li>
+<li>Payload Length</li>
+<li>Next Header</li>
+<li>Hop Limit</li>
+<li>Source Address</li>
+<li>Destination Address</li>
+</ul>
+<p>IPv6 has:</p>
+<ul>
+<li>128-bit addresses</li>
+<li>Extension headers</li>
+<li>No checksum in the base header</li>
+</ul>
+<hr>
+</section>
+<section id="arp" class="level1">
+<h1>81. ARP</h1>
+<p><strong>ARP = Address Resolution Protocol</strong></p>
+<p>ARP maps an IPv4 address to a MAC address on a local network.</p>
+<p>Example:</p>
+<pre class="text"><code>IPv4 address → MAC address</code></pre>
+<p>A host can broadcast an ARP request asking which device owns a particular IPv4 address.</p>
+<section id="important-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-1">Important</h3>
+<p>ARP is used with IPv4.</p>
+<p>IPv6 uses <strong>Neighbor Discovery Protocol (NDP)</strong> instead of ARP.</p>
+<hr>
+</section>
+</section>
+<section id="direct-and-indirect-delivery" class="level1">
+<h1>82. Direct and Indirect Delivery</h1>
+<section id="direct-delivery" class="level2">
+<h2 class="anchored" data-anchor-id="direct-delivery">Direct Delivery</h2>
+<p>Source and destination are on the same local network.</p>
+</section>
+<section id="indirect-delivery" class="level2">
+<h2 class="anchored" data-anchor-id="indirect-delivery">Indirect Delivery</h2>
+<p>Source and destination are on different networks.</p>
+<p>The packet is sent to a router/default gateway for forwarding.</p>
+<hr>
+</section>
+</section>
+<section id="routing-algorithms" class="level1">
+<h1>83. Routing Algorithms</h1>
+<p>Routing determines appropriate paths through a network.</p>
+<p>Routing metrics may include:</p>
+<ul>
+<li>Hop count</li>
+<li>Delay</li>
+<li>Cost</li>
+<li>Bandwidth</li>
+<li>Reliability</li>
+</ul>
+<p>Important approaches:</p>
+<ul>
+<li>Distance vector</li>
+<li>Link state</li>
+<li>Path vector</li>
+</ul>
+<hr>
+</section>
+<section id="distance-vector-routing" class="level1">
+<h1>84. Distance Vector Routing</h1>
+<p>Routers exchange distance information with neighbors.</p>
+<p>A router maintains information about reachable destinations and their costs.</p>
+<p>Example:</p>
+<p><strong>RIP</strong></p>
+<hr>
+</section>
+<section id="link-state-routing" class="level1">
+<h1>85. Link State Routing</h1>
+<p>Routers build a view of network topology.</p>
+<p>Typical steps:</p>
+<ol type="1">
+<li>Discover neighbors.</li>
+<li>Determine link costs.</li>
+<li>Advertise link-state information.</li>
+<li>Build topology database.</li>
+<li>Calculate shortest paths.</li>
+</ol>
+<p>Example:</p>
+<p><strong>OSPF</strong></p>
+<hr>
+</section>
+<section id="path-vector-routing" class="level1">
+<h1>86. Path Vector Routing</h1>
+<p>Path-vector protocols advertise paths between networks.</p>
+<p>Example:</p>
+<p><strong>BGP</strong></p>
+<p>BGP is used for routing between autonomous systems on the Internet.</p>
+<hr>
+</section>
+<section id="tcp" class="level1">
+<h1>87. TCP</h1>
+<p><strong>TCP = Transmission Control Protocol</strong></p>
+<p>TCP is:</p>
+<ul>
+<li>Connection-oriented</li>
+<li>Reliable</li>
+<li>Byte-stream oriented</li>
+<li>Full-duplex</li>
+<li>Flow-controlled</li>
+<li>Congestion-controlled</li>
+</ul>
+<p>TCP uses:</p>
+<ul>
+<li>Sequence numbers</li>
+<li>Acknowledgements</li>
+<li>Retransmissions</li>
+<li>Sliding windows</li>
+</ul>
+<hr>
+</section>
+<section id="udp" class="level1">
+<h1>88. UDP</h1>
+<p><strong>UDP = User Datagram Protocol</strong></p>
+<p>UDP is:</p>
+<ul>
+<li>Connectionless</li>
+<li>Datagram-oriented</li>
+<li>Low overhead</li>
+<li>Best-effort</li>
+<li>Without TCP-style built-in reliable delivery</li>
+</ul>
+<p>Examples of applications that may use UDP include:</p>
+<ul>
+<li>DNS</li>
+<li>Real-time applications</li>
+<li>Streaming/control applications</li>
+</ul>
+<hr>
+</section>
+<section id="sctp" class="level1">
+<h1>89. SCTP</h1>
+<p><strong>SCTP = Stream Control Transmission Protocol</strong></p>
+<p>SCTP provides:</p>
+<ul>
+<li>Reliable delivery</li>
+<li>Message orientation</li>
+<li>Multi-streaming</li>
+<li>Multi-homing</li>
+<li>Congestion control</li>
+</ul>
+<section id="comparison-5" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-5">Comparison</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>TCP</th>
+<th>UDP</th>
+<th>SCTP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Reliable</td>
+<td>Best-effort</td>
+<td>Reliable</td>
+</tr>
+<tr class="even">
+<td>Byte stream</td>
+<td>Datagram</td>
+<td>Message-oriented</td>
+</tr>
+<tr class="odd">
+<td>Connection-oriented</td>
+<td>Connectionless</td>
+<td>Association-oriented</td>
+</tr>
+<tr class="even">
+<td>Flow/congestion control</td>
+<td>Minimal</td>
+<td>Flow/congestion control</td>
+</tr>
+<tr class="odd">
+<td>Single byte-stream abstraction</td>
+<td>No stream sequencing</td>
+<td>Multiple streams</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="tcp-flow-control" class="level1">
+<h1>90. TCP Flow Control</h1>
+<p>TCP uses a receive window to prevent the sender from overwhelming the receiver.</p>
+<p>The receiver advertises the amount of additional data it can accept.</p>
+<hr>
+</section>
+<section id="tcp-error-control" class="level1">
+<h1>91. TCP Error Control</h1>
+<p>TCP uses:</p>
+<ul>
+<li>Sequence numbers</li>
+<li>Acknowledgements</li>
+<li>Checksum</li>
+<li>Retransmission</li>
+<li>Timers</li>
+</ul>
+<p>These mechanisms support reliable delivery.</p>
+<hr>
+</section>
+<section id="tcp-congestion-control" class="level1">
+<h1>92. TCP Congestion Control</h1>
+<p>Congestion control attempts to prevent excessive network traffic.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Congestion window</li>
+<li>Slow start</li>
+<li>Congestion avoidance</li>
+<li>Fast retransmit</li>
+<li>Fast recovery</li>
+</ul>
+<hr>
+</section>
+<section id="sctp-flow-error-and-congestion-control" class="level1">
+<h1>93. SCTP Flow, Error and Congestion Control</h1>
+<p>SCTP also provides:</p>
+<ul>
+<li>Reliable transmission</li>
+<li>Acknowledgements</li>
+<li>Retransmission</li>
+<li>Flow control</li>
+<li>Congestion control</li>
+</ul>
+<p>SCTP supports multiple independent streams within an association.</p>
+<hr>
+</section>
+<section id="world-wide-web" class="level1">
+<h1>94. World Wide Web</h1>
+<p>The <strong>World Wide Web</strong> is a distributed system of linked resources accessed through the Internet.</p>
+<p>Important components:</p>
+<ul>
+<li>Web browser</li>
+<li>Web server</li>
+<li>URL</li>
+<li>HTTP/HTTPS</li>
+<li>DNS</li>
+<li>HTML</li>
+</ul>
+<section id="internet-vs-www" class="level3">
+<h3 class="anchored" data-anchor-id="internet-vs-www">Internet vs WWW</h3>
+<p><strong>Internet = global network infrastructure</strong></p>
+<p><strong>WWW = web service operating over the Internet</strong></p>
+<hr>
+</section>
+</section>
+<section id="url" class="level1">
+<h1>95. URL</h1>
+<p><strong>URL = Uniform Resource Locator</strong></p>
+<p>Example:</p>
+<pre class="text"><code>https://www.example.com/index.html</code></pre>
+<p>Parts may include:</p>
+<ul>
+<li>Scheme: <code>https</code></li>
+<li>Host: <code>www.example.com</code></li>
+<li>Path: <code>/index.html</code></li>
+</ul>
+<hr>
+</section>
+<section id="dns" class="level1">
+<h1>96. DNS</h1>
+<p><strong>DNS = Domain Name System</strong></p>
+<p>DNS provides name resolution.</p>
+<p>Example:</p>
+<pre class="text"><code>www.example.com
+       ↓
+IP address</code></pre>
+<p>DNS also supports reverse name resolution.</p>
+<hr>
+</section>
+<section id="dns-resolution" class="level1">
+<h1>97. DNS Resolution</h1>
+<p>A simplified process is:</p>
+<pre class="text"><code>Application
+    ↓
+Local DNS Resolver
+    ↓
+DNS hierarchy
+    ↓
+Authoritative server
+    ↓
+Answer</code></pre>
+<p>Forward lookup commonly maps:</p>
+<p><strong>Name → IP address</strong></p>
+<p>Reverse DNS can map:</p>
+<p><strong>IP address → Name</strong></p>
+<hr>
+</section>
+<section id="electronic-mail-architecture" class="level1">
+<h1>98. Electronic Mail Architecture</h1>
+<p>Important components include:</p>
+<ul>
+<li>Mail User Agent</li>
+<li>Mail Transfer Agent</li>
+<li>Mail Delivery Agent</li>
+<li>Mail server</li>
+</ul>
+<p>A simplified flow:</p>
+<pre class="text"><code>Sender
+  ↓
+SMTP
+  ↓
+Mail Server
+  ↓
+SMTP
+  ↓
+Receiver Mail Server
+  ↓
+POP/IMAP
+  ↓
+Receiver</code></pre>
+<hr>
+</section>
+<section id="smtp" class="level1">
+<h1>99. SMTP</h1>
+<p><strong>SMTP = Simple Mail Transfer Protocol</strong></p>
+<p>SMTP is mainly used for:</p>
+<ul>
+<li>Sending email from client to server</li>
+<li>Transferring email between mail servers</li>
+</ul>
+<hr>
+</section>
+<section id="pop" class="level1">
+<h1>100. POP</h1>
+<p><strong>POP = Post Office Protocol</strong></p>
+<p>POP3 is used to retrieve email.</p>
+<p>It is traditionally download-oriented.</p>
+<hr>
+</section>
+<section id="imap" class="level1">
+<h1>101. IMAP</h1>
+<p><strong>IMAP = Internet Message Access Protocol</strong></p>
+<p>IMAP allows clients to manage mailboxes stored on the server.</p>
+<p>It is useful when the same mailbox is accessed from multiple devices.</p>
+<section id="pop-vs-imap" class="level3">
+<h3 class="anchored" data-anchor-id="pop-vs-imap">POP vs IMAP</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>POP</th>
+<th>IMAP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Download-oriented</td>
+<td>Server-based mailbox management</td>
+</tr>
+<tr class="even">
+<td>Often simpler</td>
+<td>Better multi-device synchronization</td>
+</tr>
+<tr class="odd">
+<td>Local retrieval</td>
+<td>Remote mailbox access</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="telnet" class="level1">
+<h1>102. TELNET</h1>
+<p>Telnet provides remote terminal access.</p>
+<p>Traditional Telnet is insecure because it does not provide strong encryption.</p>
+<p>Modern secure remote access commonly uses:</p>
+<p><strong>SSH</strong></p>
+<hr>
+</section>
+<section id="ftp" class="level1">
+<h1>103. FTP</h1>
+<p><strong>FTP = File Transfer Protocol</strong></p>
+<p>FTP is used to transfer files.</p>
+<p>Traditional FTP uses separate control and data connections.</p>
+<p>FTP itself does not provide encryption.</p>
+<p>Secure alternatives include:</p>
+<ul>
+<li>SFTP</li>
+<li>FTPS</li>
+</ul>
+<hr>
+</section>
+<section id="network-security" class="level1">
+<h1>104. Network Security</h1>
+<p>Network security protects:</p>
+<ul>
+<li>Confidentiality</li>
+<li>Integrity</li>
+<li>Availability</li>
+<li>Authentication</li>
+</ul>
+<p>Threats include:</p>
+<ul>
+<li>Malware</li>
+<li>Eavesdropping</li>
+<li>Spoofing</li>
+<li>Phishing</li>
+<li>Denial-of-service</li>
+<li>Unauthorized access</li>
+</ul>
+<hr>
+</section>
+<section id="malware" class="level1">
+<h1>105. Malware</h1>
+<p><strong>Malware = Malicious Software</strong></p>
+<p>Examples:</p>
+<ul>
+<li>Virus</li>
+<li>Worm</li>
+<li>Trojan</li>
+<li>Ransomware</li>
+<li>Spyware</li>
+<li>Rootkit</li>
+</ul>
+<section id="virus" class="level3">
+<h3 class="anchored" data-anchor-id="virus">Virus</h3>
+<p>Usually depends on a host or user execution mechanism for propagation.</p>
+</section>
+<section id="worm" class="level3">
+<h3 class="anchored" data-anchor-id="worm">Worm</h3>
+<p>Can self-propagate through networks.</p>
+</section>
+<section id="trojan" class="level3">
+<h3 class="anchored" data-anchor-id="trojan">Trojan</h3>
+<p>Malicious software disguised as legitimate software.</p>
+</section>
+<section id="ransomware" class="level3">
+<h3 class="anchored" data-anchor-id="ransomware">Ransomware</h3>
+<p>Attempts to deny access to data or systems, often by encryption, and demands payment.</p>
+<hr>
+</section>
+</section>
+<section id="cryptography" class="level1">
+<h1>106. Cryptography</h1>
+<p>Cryptography uses mathematical techniques to protect information.</p>
+<p>Goals include:</p>
+<ul>
+<li>Confidentiality</li>
+<li>Integrity</li>
+<li>Authentication</li>
+<li>Non-repudiation</li>
+</ul>
+<p>Two major categories:</p>
+<ul>
+<li>Symmetric-key cryptography</li>
+<li>Public-key cryptography</li>
+</ul>
+<hr>
+</section>
+<section id="secret-key-algorithms" class="level1">
+<h1>107. Secret-Key Algorithms</h1>
+<p>In symmetric cryptography, a shared secret key is used for encryption and decryption.</p>
+<p>Examples:</p>
+<ul>
+<li>AES</li>
+<li>DES</li>
+<li>3DES</li>
+</ul>
+<section id="advantage-4" class="level3">
+<h3 class="anchored" data-anchor-id="advantage-4">Advantage</h3>
+<p>Fast.</p>
+</section>
+<section id="challenge" class="level3">
+<h3 class="anchored" data-anchor-id="challenge">Challenge</h3>
+<p>Secure key distribution.</p>
+<hr>
+</section>
+</section>
+<section id="public-key-algorithms" class="level1">
+<h1>108. Public-Key Algorithms</h1>
+<p>Public-key cryptography uses:</p>
+<ul>
+<li>Public key</li>
+<li>Private key</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>RSA</li>
+<li>ECC</li>
+</ul>
+<p>The public key can be shared; the private key must remain secret.</p>
+<hr>
+</section>
+<section id="digital-signature" class="level1">
+<h1>109. Digital Signature</h1>
+<p>A digital signature supports:</p>
+<ul>
+<li>Authentication</li>
+<li>Integrity</li>
+<li>Non-repudiation properties</li>
+</ul>
+<p>A simplified process:</p>
+<pre class="text"><code>Message
+   ↓
+Hash
+   ↓
+Private-key signing
+   ↓
+Signature</code></pre>
+<p>The receiver uses the corresponding public key to verify the signature.</p>
+<section id="important-2" class="level3">
+<h3 class="anchored" data-anchor-id="important-2">Important</h3>
+<p>Digital signatures are primarily for authenticity and integrity, not message secrecy.</p>
+<hr>
+</section>
+</section>
+<section id="steganography" class="level1">
+<h1>110. Steganography</h1>
+<p>Steganography hides the existence of information inside another medium.</p>
+<p>Examples:</p>
+<ul>
+<li>Image</li>
+<li>Audio</li>
+<li>Video</li>
+</ul>
+<section id="cryptography-vs-steganography" class="level3">
+<h3 class="anchored" data-anchor-id="cryptography-vs-steganography">Cryptography vs Steganography</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Cryptography</th>
+<th>Steganography</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hides meaning</td>
+<td>Hides existence</td>
+</tr>
+<tr class="even">
+<td>Produces ciphertext</td>
+<td>Embeds data</td>
+</tr>
+<tr class="odd">
+<td>Message is transformed</td>
+<td>Message may appear ordinary</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="virtual-private-network" class="level1">
+<h1>111. Virtual Private Network</h1>
+<p><strong>VPN = Virtual Private Network</strong></p>
+<p>A VPN creates a protected communication channel over another network.</p>
+<p>Uses:</p>
+<ul>
+<li>Secure remote access</li>
+<li>Encryption</li>
+<li>Authentication</li>
+<li>Private network connectivity</li>
+</ul>
+<hr>
+</section>
+<section id="firewalls" class="level1">
+<h1>112. Firewalls</h1>
+<p>A firewall controls network traffic according to security rules.</p>
+<p>Types:</p>
+<ul>
+<li>Packet filtering</li>
+<li>Stateful firewall</li>
+<li>Proxy/application firewall</li>
+<li>Next-generation firewall</li>
+</ul>
+<p>Functions:</p>
+<ul>
+<li>Allow</li>
+<li>Block</li>
+<li>Log</li>
+<li>Filter traffic</li>
+</ul>
+<hr>
+</section>
+<section id="mobile-technology" class="level1">
+<h1>113. Mobile Technology</h1>
+<p>Mobile communication allows users and devices to communicate while moving.</p>
+<p>Important topics:</p>
+<ul>
+<li>GSM</li>
+<li>CDMA</li>
+<li>Mobile computing</li>
+<li>Mobile IP</li>
+<li>GPRS</li>
+<li>SMS</li>
+<li>MANET</li>
+<li>Wireless LAN</li>
+<li>Cellular networks</li>
+</ul>
+<hr>
+</section>
+<section id="gsm" class="level1">
+<h1>114. GSM</h1>
+<p><strong>GSM = Global System for Mobile Communications</strong></p>
+<p>GSM is a cellular communication standard.</p>
+<p>A simplified GSM architecture includes:</p>
+<ul>
+<li>Mobile Station</li>
+<li>Base Station Subsystem</li>
+<li>Network and Switching Subsystem</li>
+<li>Operations and Support Subsystem</li>
+</ul>
+<hr>
+</section>
+<section id="gsm-services" class="level1">
+<h1>115. GSM Services</h1>
+<p>GSM supports:</p>
+<ul>
+<li>Voice</li>
+<li>SMS</li>
+<li>Data services</li>
+<li>Supplementary services</li>
+</ul>
+<hr>
+</section>
+<section id="cdma-1" class="level1">
+<h1>116. CDMA</h1>
+<p><strong>CDMA = Code Division Multiple Access</strong></p>
+<p>Users share the same frequency resources using different spreading codes.</p>
+<p>CDMA is an important multiple-access technique in cellular communication.</p>
+<hr>
+</section>
+<section id="mobile-computing" class="level1">
+<h1>117. Mobile Computing</h1>
+<p>Mobile computing combines:</p>
+<ul>
+<li>Mobile devices</li>
+<li>Wireless communication</li>
+<li>Mobile applications</li>
+<li>Distributed services</li>
+</ul>
+<p>Challenges:</p>
+<ul>
+<li>Limited battery</li>
+<li>Variable bandwidth</li>
+<li>Mobility</li>
+<li>Intermittent connectivity</li>
+<li>Security</li>
+<li>Device limitations</li>
+</ul>
+<hr>
+</section>
+<section id="middleware" class="level1">
+<h1>118. Middleware</h1>
+<p>Middleware provides services between applications and underlying systems.</p>
+<p>It can support:</p>
+<ul>
+<li>Communication</li>
+<li>Data management</li>
+<li>Security</li>
+<li>Service discovery</li>
+<li>Adaptation</li>
+</ul>
+<hr>
+</section>
+<section id="gateway-for-mobile-computing" class="level1">
+<h1>119. Gateway for Mobile Computing</h1>
+<p>A gateway connects different networks or protocols.</p>
+<p>It may connect:</p>
+<ul>
+<li>Mobile networks</li>
+<li>Internet</li>
+<li>Application services</li>
+<li>Different communication technologies</li>
+</ul>
+<hr>
+</section>
+<section id="mobile-ip" class="level1">
+<h1>120. Mobile IP</h1>
+<p>Mobile IP allows a mobile node to maintain a stable logical identity while changing its point of attachment.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Home network</li>
+<li>Home address</li>
+<li>Visited/foreign network</li>
+<li>Care-of address</li>
+<li>Home agent</li>
+</ul>
+<hr>
+</section>
+<section id="communication-satellites" class="level1">
+<h1>121. Communication Satellites</h1>
+<p>Communication satellites provide communication across large geographic areas.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Uplink</li>
+<li>Downlink</li>
+<li>Satellite transponder</li>
+<li>Earth station</li>
+</ul>
+<section id="advantages-3" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-3">Advantages</h3>
+<ul>
+<li>Wide coverage</li>
+<li>Useful for remote locations</li>
+</ul>
+</section>
+<section id="limitations-2" class="level3">
+<h3 class="anchored" data-anchor-id="limitations-2">Limitations</h3>
+<ul>
+<li>Propagation delay</li>
+<li>Cost</li>
+<li>Environmental effects at some frequencies</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="wireless-networks-and-topologies" class="level1">
+<h1>122. Wireless Networks and Topologies</h1>
+<p>Wireless networks may use:</p>
+<ul>
+<li>Infrastructure topology</li>
+<li>Ad hoc topology</li>
+<li>Mesh topology</li>
+<li>Cellular topology</li>
+</ul>
+<hr>
+</section>
+<section id="cellular-topology" class="level1">
+<h1>123. Cellular Topology</h1>
+<p>A geographical region is divided into cells.</p>
+<p>Each cell has a base station.</p>
+<p>Frequency reuse allows frequencies to be reused in sufficiently separated cells.</p>
+<hr>
+</section>
+<section id="mobile-ad-hoc-network" class="level1">
+<h1>124. Mobile Ad Hoc Network</h1>
+<p><strong>MANET = Mobile Ad Hoc Network</strong></p>
+<p>A MANET is a self-organizing wireless network without fixed infrastructure.</p>
+<p>Characteristics:</p>
+<ul>
+<li>Dynamic topology</li>
+<li>Multi-hop communication</li>
+<li>No fixed central infrastructure</li>
+<li>Limited resources</li>
+</ul>
+<p>Challenges:</p>
+<ul>
+<li>Routing</li>
+<li>Security</li>
+<li>Bandwidth</li>
+<li>Battery power</li>
+<li>Changing topology</li>
+</ul>
+<hr>
+</section>
+<section id="wireless-lan" class="level1">
+<h1>125. Wireless LAN</h1>
+<p>A Wireless LAN provides local-area connectivity using radio communication.</p>
+<p>The most common WLAN technology is:</p>
+<p><strong>Wi-Fi / IEEE 802.11</strong></p>
+<hr>
+</section>
+<section id="wireless-geolocation" class="level1">
+<h1>126. Wireless Geolocation</h1>
+<p>Wireless geolocation determines the location of a device.</p>
+<p>Methods include:</p>
+<ul>
+<li>GPS</li>
+<li>Cell tower information</li>
+<li>Wi-Fi positioning</li>
+<li>Signal strength</li>
+<li>Time-based measurements</li>
+</ul>
+<p>Applications:</p>
+<ul>
+<li>Navigation</li>
+<li>Emergency services</li>
+<li>Asset tracking</li>
+<li>Location-based services</li>
+</ul>
+<hr>
+</section>
+<section id="gprs" class="level1">
+<h1>127. GPRS</h1>
+<p><strong>GPRS = General Packet Radio Service</strong></p>
+<p>GPRS provides packet-oriented data services over GSM networks.</p>
+<p>It supported mobile Internet-style data communication.</p>
+<hr>
+</section>
+<section id="sms" class="level1">
+<h1>128. SMS</h1>
+<p><strong>SMS = Short Message Service</strong></p>
+<p>SMS is a mobile text messaging service.</p>
+<p>It is commonly described as a store-and-forward service.</p>
+<hr>
+</section>
+<section id="cloud-computing" class="level1">
+<h1>129. Cloud Computing</h1>
+<p>Cloud computing provides computing resources and services through a network.</p>
+<p>Resources may include:</p>
+<ul>
+<li>Computing</li>
+<li>Storage</li>
+<li>Databases</li>
+<li>Networking</li>
+<li>Applications</li>
+</ul>
+<p>Important characteristics:</p>
+<ul>
+<li>On-demand access</li>
+<li>Resource pooling</li>
+<li>Elasticity</li>
+<li>Measured service</li>
+<li>Broad network access</li>
+</ul>
+<hr>
+</section>
+<section id="saas" class="level1">
+<h1>130. SaaS</h1>
+<p><strong>SaaS = Software as a Service</strong></p>
+<p>The user consumes a software application as a service.</p>
+<p>Examples:</p>
+<ul>
+<li>Web email</li>
+<li>Online office software</li>
+<li>Cloud business applications</li>
+</ul>
+<hr>
+</section>
+<section id="paas" class="level1">
+<h1>131. PaaS</h1>
+<p><strong>PaaS = Platform as a Service</strong></p>
+<p>Provides an application development/deployment platform.</p>
+<p>Developers can focus on:</p>
+<ul>
+<li>Application code</li>
+<li>Data</li>
+<li>Configuration</li>
+</ul>
+<hr>
+</section>
+<section id="iaas" class="level1">
+<h1>132. IaaS</h1>
+<p><strong>IaaS = Infrastructure as a Service</strong></p>
+<p>Provides infrastructure resources such as:</p>
+<ul>
+<li>Virtual machines</li>
+<li>Storage</li>
+<li>Networks</li>
+</ul>
+<p>The customer commonly manages the operating system and applications.</p>
+<hr>
+</section>
+<section id="cloud-service-model-comparison" class="level1">
+<h1>133. Cloud Service Model Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Main Service</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SaaS</td>
+<td>Software</td>
+</tr>
+<tr class="even">
+<td>PaaS</td>
+<td>Platform</td>
+</tr>
+<tr class="odd">
+<td>IaaS</td>
+<td>Infrastructure</td>
+</tr>
+</tbody>
+</table>
+<section id="memory" class="level3">
+<h3 class="anchored" data-anchor-id="memory">Memory</h3>
+<p><strong>SaaS → Use software</strong></p>
+<p><strong>PaaS → Build/deploy software</strong></p>
+<p><strong>IaaS → Rent infrastructure</strong></p>
+<hr>
+</section>
+</section>
+<section id="public-and-private-cloud" class="level1">
+<h1>134. Public and Private Cloud</h1>
+<section id="public-cloud" class="level2">
+<h2 class="anchored" data-anchor-id="public-cloud">Public Cloud</h2>
+<p>Cloud services are offered to multiple customers by a provider.</p>
+</section>
+<section id="private-cloud" class="level2">
+<h2 class="anchored" data-anchor-id="private-cloud">Private Cloud</h2>
+<p>Cloud infrastructure is dedicated to a particular organization.</p>
+<section id="comparison-6" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-6">Comparison</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Public Cloud</th>
+<th>Private Cloud</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Provider-operated shared environment</td>
+<td>Dedicated organizational environment</td>
+</tr>
+<tr class="even">
+<td>High scalability</td>
+<td>Greater organizational control</td>
+</tr>
+<tr class="odd">
+<td>Pay-as-you-use common</td>
+<td>Organization manages dedicated resources</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+</section>
+<section id="virtualization" class="level1">
+<h1>135. Virtualization</h1>
+<p>Virtualization creates logical versions of computing resources.</p>
+<p>Examples:</p>
+<ul>
+<li>Virtual machines</li>
+<li>Virtual networks</li>
+<li>Virtual storage</li>
+</ul>
+<p>A <strong>hypervisor</strong> manages virtual machines.</p>
+<hr>
+</section>
+<section id="virtual-server" class="level1">
+<h1>136. Virtual Server</h1>
+<p>A virtual server is a software-defined server running on virtualized infrastructure.</p>
+<p>Multiple virtual servers can run on one physical machine.</p>
+<p>Benefits:</p>
+<ul>
+<li>Resource utilization</li>
+<li>Isolation</li>
+<li>Flexible deployment</li>
+<li>Easier provisioning</li>
+</ul>
+<hr>
+</section>
+<section id="cloud-storage" class="level1">
+<h1>137. Cloud Storage</h1>
+<p>Cloud storage provides network-accessible storage.</p>
+<p>Types include:</p>
+<ul>
+<li>Object storage</li>
+<li>Block storage</li>
+<li>File storage</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Scalability</li>
+<li>Remote access</li>
+<li>Backup</li>
+<li>Availability</li>
+</ul>
+<hr>
+</section>
+<section id="database-storage-in-cloud" class="level1">
+<h1>138. Database Storage in Cloud</h1>
+<p>Cloud database services can provide:</p>
+<ul>
+<li>Relational databases</li>
+<li>NoSQL databases</li>
+<li>Managed database services</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Scalability</li>
+<li>Managed backup</li>
+<li>High availability options</li>
+<li>Reduced infrastructure administration</li>
+</ul>
+<hr>
+</section>
+<section id="resource-management" class="level1">
+<h1>139. Resource Management</h1>
+<p>Cloud resource management allocates:</p>
+<ul>
+<li>CPU</li>
+<li>Memory</li>
+<li>Storage</li>
+<li>Network</li>
+<li>Virtual machines</li>
+</ul>
+<p>Goals:</p>
+<ul>
+<li>Efficient utilization</li>
+<li>Performance</li>
+<li>Availability</li>
+<li>Cost control</li>
+</ul>
+<hr>
+</section>
+<section id="service-level-agreement" class="level1">
+<h1>140. Service Level Agreement</h1>
+<p><strong>SLA = Service Level Agreement</strong></p>
+<p>An SLA defines agreed service expectations between provider and customer.</p>
+<p>It may specify:</p>
+<ul>
+<li>Availability</li>
+<li>Response time</li>
+<li>Performance</li>
+<li>Support</li>
+<li>Responsibilities</li>
+<li>Remedies for service-level violations</li>
+</ul>
+<hr>
+</section>
+<section id="internet-of-things" class="level1">
+<h1>141. Internet of Things</h1>
+<p><strong>IoT = Internet of Things</strong></p>
+<p>IoT connects physical objects to networks so that they can collect, exchange, process and act on data.</p>
+<p>Examples:</p>
+<ul>
+<li>Smart homes</li>
+<li>Smart agriculture</li>
+<li>Wearables</li>
+<li>Industrial sensors</li>
+<li>Smart cities</li>
+</ul>
+<hr>
+</section>
+<section id="basic-iot-architecture" class="level1">
+<h1>142. Basic IoT Architecture</h1>
+<p>A simplified architecture is:</p>
+<pre class="text"><code>Sensors / Devices
+       ↓
+Connectivity
+       ↓
+Gateway / Edge
+       ↓
+Cloud / Server
+       ↓
+Data Processing
+       ↓
+Application</code></pre>
+<p>Important components:</p>
+<ul>
+<li>Sensors</li>
+<li>Actuators</li>
+<li>Embedded processors</li>
+<li>Communication modules</li>
+<li>Gateways</li>
+<li>Cloud platforms</li>
+<li>Applications</li>
+</ul>
+<hr>
+</section>
+<section id="sensors-and-actuators" class="level1">
+<h1>143. Sensors and Actuators</h1>
+<section id="sensor" class="level2">
+<h2 class="anchored" data-anchor-id="sensor">Sensor</h2>
+<p>A sensor measures a physical condition.</p>
+<p>Examples:</p>
+<ul>
+<li>Temperature</li>
+<li>Humidity</li>
+<li>Motion</li>
+<li>Light</li>
+</ul>
+</section>
+<section id="actuator" class="level2">
+<h2 class="anchored" data-anchor-id="actuator">Actuator</h2>
+<p>An actuator performs an action.</p>
+<p>Examples:</p>
+<ul>
+<li>Motor</li>
+<li>Relay</li>
+<li>Smart lock</li>
+</ul>
+<section id="memory-1" class="level3">
+<h3 class="anchored" data-anchor-id="memory-1">Memory</h3>
+<p><strong>Sensor → Sense</strong></p>
+<p><strong>Actuator → Act</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="iot-communication-technologies" class="level1">
+<h1>144. IoT Communication Technologies</h1>
+<p>IoT devices may use:</p>
+<ul>
+<li>Wi-Fi</li>
+<li>Bluetooth</li>
+<li>Zigbee</li>
+<li>Cellular</li>
+<li>LPWAN</li>
+<li>Ethernet</li>
+</ul>
+<p>Selection depends on:</p>
+<ul>
+<li>Range</li>
+<li>Power consumption</li>
+<li>Data rate</li>
+<li>Cost</li>
+<li>Environment</li>
+</ul>
+<hr>
+</section>
+<section id="important-protocol-associations" class="level1">
+<h1>145. Important Protocol Associations</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Protocol/Technology</th>
+<th>Main Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HTTP/HTTPS</td>
+<td>Web communication</td>
+</tr>
+<tr class="even">
+<td>DNS</td>
+<td>Name resolution</td>
+</tr>
+<tr class="odd">
+<td>SMTP</td>
+<td>Email transfer</td>
+</tr>
+<tr class="even">
+<td>POP3</td>
+<td>Email retrieval</td>
+</tr>
+<tr class="odd">
+<td>IMAP</td>
+<td>Mailbox access</td>
+</tr>
+<tr class="even">
+<td>FTP</td>
+<td>File transfer</td>
+</tr>
+<tr class="odd">
+<td>Telnet</td>
+<td>Remote terminal</td>
+</tr>
+<tr class="even">
+<td>TCP</td>
+<td>Reliable transport</td>
+</tr>
+<tr class="odd">
+<td>UDP</td>
+<td>Connectionless datagrams</td>
+</tr>
+<tr class="even">
+<td>SCTP</td>
+<td>Reliable message-oriented transport</td>
+</tr>
+<tr class="odd">
+<td>IP</td>
+<td>Network-layer delivery</td>
+</tr>
+<tr class="even">
+<td>ARP</td>
+<td>IPv4-to-MAC mapping</td>
+</tr>
+<tr class="odd">
+<td>Ethernet</td>
+<td>LAN</td>
+</tr>
+<tr class="even">
+<td>Wi-Fi</td>
+<td>Wireless LAN</td>
+</tr>
+<tr class="odd">
+<td>GSM</td>
+<td>Cellular communication</td>
+</tr>
+<tr class="even">
+<td>GPRS</td>
+<td>Packet data over GSM</td>
+</tr>
+<tr class="odd">
+<td>SMS</td>
+<td>Mobile text messaging</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="common-port-numbers" class="level1">
+<h1>146. Common Port Numbers</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Service</th>
+<th style="text-align: right;">Common Port</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FTP control</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="even">
+<td>SSH</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td>Telnet</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td>SMTP</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td>DNS</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="even">
+<td>HTTP</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="odd">
+<td>POP3</td>
+<td style="text-align: right;">110</td>
+</tr>
+<tr class="even">
+<td>IMAP</td>
+<td style="text-align: right;">143</td>
+</tr>
+<tr class="odd">
+<td>HTTPS</td>
+<td style="text-align: right;">443</td>
+</tr>
+</tbody>
+</table>
+<p>These are common examination facts.</p>
+<hr>
+</section>
+<section id="important-comparisons" class="level1">
+<h1>147. Important Comparisons</h1>
+<section id="simplex-vs-half-duplex-vs-full-duplex" class="level2">
+<h2 class="anchored" data-anchor-id="simplex-vs-half-duplex-vs-full-duplex">Simplex vs Half-Duplex vs Full-Duplex</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Simplex</th>
+<th>Half-Duplex</th>
+<th>Full-Duplex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>One direction</td>
+<td>Both directions</td>
+<td>Both directions</td>
+</tr>
+<tr class="even">
+<td>No reverse communication</td>
+<td>One direction at a time</td>
+<td>Simultaneous</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="bandwidth-vs-throughput-vs-latency" class="level2">
+<h2 class="anchored" data-anchor-id="bandwidth-vs-throughput-vs-latency">Bandwidth vs Throughput vs Latency</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bandwidth</td>
+<td>Frequency range/capacity measure depending on context</td>
+</tr>
+<tr class="even">
+<td>Throughput</td>
+<td>Actual successful transfer rate</td>
+</tr>
+<tr class="odd">
+<td>Latency</td>
+<td>Delay</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tcp-vs-udp" class="level2">
+<h2 class="anchored" data-anchor-id="tcp-vs-udp">TCP vs UDP</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Connection-oriented</td>
+<td>Connectionless</td>
+</tr>
+<tr class="even">
+<td>Reliable</td>
+<td>Best-effort</td>
+</tr>
+<tr class="odd">
+<td>Ordered byte stream</td>
+<td>Datagram</td>
+</tr>
+<tr class="even">
+<td>More overhead</td>
+<td>Lower overhead</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ipv4-vs-ipv6" class="level2">
+<h2 class="anchored" data-anchor-id="ipv4-vs-ipv6">IPv4 vs IPv6</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>IPv4</th>
+<th>IPv6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>32-bit</td>
+<td>128-bit</td>
+</tr>
+<tr class="even">
+<td>Dotted decimal</td>
+<td>Hexadecimal</td>
+</tr>
+<tr class="odd">
+<td>Header checksum</td>
+<td>No base-header checksum</td>
+</tr>
+<tr class="even">
+<td>ARP</td>
+<td>NDP</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="important-numerical-formulas" class="level1">
+<h1>148. Important Numerical Formulas</h1>
+<section id="bandwidth-1" class="level2">
+<h2 class="anchored" data-anchor-id="bandwidth-1">Bandwidth</h2>
+<p><strong>Bandwidth = Highest frequency − Lowest frequency</strong></p>
+</section>
+<section id="frequency-1" class="level2">
+<h2 class="anchored" data-anchor-id="frequency-1">Frequency</h2>
+<p><strong>f = 1/T</strong></p>
+</section>
+<section id="wavelength-1" class="level2">
+<h2 class="anchored" data-anchor-id="wavelength-1">Wavelength</h2>
+<p><strong>λ = v/f</strong></p>
+</section>
+<section id="transmission-delay-1" class="level2">
+<h2 class="anchored" data-anchor-id="transmission-delay-1">Transmission Delay</h2>
+<p><strong>Transmission delay = Packet size ÷ Data rate</strong></p>
+</section>
+<section id="propagation-delay-1" class="level2">
+<h2 class="anchored" data-anchor-id="propagation-delay-1">Propagation Delay</h2>
+<p><strong>Propagation delay = Distance ÷ Propagation speed</strong></p>
+</section>
+<section id="nyquist" class="level2">
+<h2 class="anchored" data-anchor-id="nyquist">Nyquist</h2>
+<p><strong>Bit Rate = 2 × Bandwidth × log₂(L)</strong></p>
+</section>
+<section id="shannon" class="level2">
+<h2 class="anchored" data-anchor-id="shannon">Shannon</h2>
+<p><strong>Capacity = Bandwidth × log₂(1 + S/N)</strong></p>
+</section>
+<section id="snr" class="level2">
+<h2 class="anchored" data-anchor-id="snr">SNR</h2>
+<p><strong>SNR(dB) = 10 × log₁₀(S/N)</strong></p>
+</section>
+<section id="full-mesh" class="level2">
+<h2 class="anchored" data-anchor-id="full-mesh">Full Mesh</h2>
+<p><strong>Number of links = n(n − 1) ÷ 2</strong></p>
+</section>
+<section id="ipv4" class="level2">
+<h2 class="anchored" data-anchor-id="ipv4">IPv4</h2>
+<p><strong>Address combinations = 2^32</strong></p>
+</section>
+<section id="ipv6-1" class="level2">
+<h2 class="anchored" data-anchor-id="ipv6-1">IPv6</h2>
+<p><strong>Address combinations = 2^128</strong></p>
+<hr>
+</section>
+</section>
+<section id="ugc-net-high-priority-topics" class="level1">
+<h1>149. UGC NET High-Priority Topics</h1>
+<p>Focus strongly on:</p>
+<ol type="1">
+<li>Simplex, half-duplex and full-duplex</li>
+<li>Analog and digital signals</li>
+<li>Bandwidth</li>
+<li>Throughput</li>
+<li>Latency</li>
+<li>Nyquist theorem</li>
+<li>Shannon capacity</li>
+<li>Transmission and propagation delay</li>
+<li>Encoding</li>
+<li>ASK, FSK, PSK and QAM</li>
+<li>Baseband and broadband</li>
+<li>FDM, TDM, WDM and CDM</li>
+<li>Transmission media</li>
+<li>Transmission errors</li>
+<li>CRC</li>
+<li>Network topologies</li>
+<li>LAN, MAN and WAN</li>
+<li>OSI model</li>
+<li>TCP/IP</li>
+<li>Network addresses</li>
+<li>Circuit and packet switching</li>
+<li>Framing</li>
+<li>Flow and error control</li>
+<li>Sliding window</li>
+<li>HDLC</li>
+<li>CSMA/CD</li>
+<li>CSMA/CA</li>
+<li>FDMA, TDMA and CDMA</li>
+<li>Network devices</li>
+<li>VLAN</li>
+<li>IPv4</li>
+<li>Classful addressing</li>
+<li>CIDR</li>
+<li>IPv4 fragmentation</li>
+<li>IPv4 checksum</li>
+<li>IPv6</li>
+<li>ARP</li>
+<li>Routing</li>
+<li>TCP</li>
+<li>UDP</li>
+<li>SCTP</li>
+<li>TCP congestion control</li>
+<li>DNS</li>
+<li>SMTP, POP and IMAP</li>
+<li>FTP</li>
+<li>Telnet</li>
+<li>Cryptography</li>
+<li>Digital signature</li>
+<li>Steganography</li>
+<li>VPN</li>
+<li>Firewalls</li>
+<li>GSM</li>
+<li>CDMA</li>
+<li>Mobile IP</li>
+<li>MANET</li>
+<li>GPRS</li>
+<li>SMS</li>
+<li>SaaS</li>
+<li>PaaS</li>
+<li>IaaS</li>
+<li>Virtualization</li>
+<li>SLA</li>
+<li>IoT</li>
+</ol>
+<hr>
+</section>
+<section id="common-ugc-net-mistakes" class="level1">
+<h1>150. Common UGC NET Mistakes</h1>
+<section id="mistake-1-bandwidth-vs-throughput" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-1-bandwidth-vs-throughput">Mistake 1: Bandwidth vs Throughput</h3>
+<p><strong>Bandwidth/capacity ≠ actual throughput</strong></p>
+</section>
+<section id="mistake-2-transmission-vs-propagation-delay" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-2-transmission-vs-propagation-delay">Mistake 2: Transmission vs Propagation Delay</h3>
+<p><strong>Transmission delay = Packet size ÷ Data rate</strong></p>
+<p><strong>Propagation delay = Distance ÷ Propagation speed</strong></p>
+</section>
+<section id="mistake-3-nyquist-vs-shannon" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-3-nyquist-vs-shannon">Mistake 3: Nyquist vs Shannon</h3>
+<p><strong>Nyquist → noiseless</strong></p>
+<p><strong>Shannon → noisy</strong></p>
+</section>
+<section id="mistake-4-mac-vs-ip" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-4-mac-vs-ip">Mistake 4: MAC vs IP</h3>
+<p><strong>MAC → link-layer address</strong></p>
+<p><strong>IP → logical/network-layer address</strong></p>
+</section>
+<section id="mistake-5-arp-vs-dns" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-5-arp-vs-dns">Mistake 5: ARP vs DNS</h3>
+<p><strong>ARP → IPv4 address to MAC address</strong></p>
+<p><strong>DNS → domain name resolution</strong></p>
+</section>
+<section id="mistake-6-tcp-vs-udp" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-6-tcp-vs-udp">Mistake 6: TCP vs UDP</h3>
+<p><strong>TCP → reliable, connection-oriented</strong></p>
+<p><strong>UDP → connectionless, best-effort</strong></p>
+</section>
+<section id="mistake-7-csmacd-vs-csmaca" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-7-csmacd-vs-csmaca">Mistake 7: CSMA/CD vs CSMA/CA</h3>
+<p><strong>CSMA/CD → collision detection, shared Ethernet</strong></p>
+<p><strong>CSMA/CA → collision avoidance, Wi-Fi</strong></p>
+</section>
+<section id="mistake-8-fdm-vs-tdm-vs-cdm" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-8-fdm-vs-tdm-vs-cdm">Mistake 8: FDM vs TDM vs CDM</h3>
+<p><strong>FDM → Frequency</strong></p>
+<p><strong>TDM → Time</strong></p>
+<p><strong>CDM → Code</strong></p>
+</section>
+<section id="mistake-9-smtp-vs-pop-vs-imap" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-9-smtp-vs-pop-vs-imap">Mistake 9: SMTP vs POP vs IMAP</h3>
+<p><strong>SMTP → sending/transfer</strong></p>
+<p><strong>POP3 → retrieval</strong></p>
+<p><strong>IMAP → server-based mailbox access</strong></p>
+</section>
+<section id="mistake-10-saas-vs-paas-vs-iaas" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-10-saas-vs-paas-vs-iaas">Mistake 10: SaaS vs PaaS vs IaaS</h3>
+<p><strong>SaaS → Software</strong></p>
+<p><strong>PaaS → Platform</strong></p>
+<p><strong>IaaS → Infrastructure</strong></p>
+<hr>
+</section>
+</section>
+<section id="one-minute-revision" class="level1">
+<h1>151. One-Minute Revision</h1>
+<section id="data-communication" class="level2">
+<h2 class="anchored" data-anchor-id="data-communication">Data Communication</h2>
+<p><strong>Sender + Receiver + Message + Medium + Protocol</strong></p>
+<p><strong>Simplex → one-way</strong></p>
+<p><strong>Half-duplex → two-way, one at a time</strong></p>
+<p><strong>Full-duplex → two-way simultaneously</strong></p>
+</section>
+<section id="signals" class="level2">
+<h2 class="anchored" data-anchor-id="signals">Signals</h2>
+<p><strong>Analog → continuous</strong></p>
+<p><strong>Digital → discrete</strong></p>
+</section>
+<section id="channel" class="level2">
+<h2 class="anchored" data-anchor-id="channel">Channel</h2>
+<p><strong>Nyquist → noiseless</strong></p>
+<p><strong>Shannon → noisy</strong></p>
+</section>
+<section id="multiplexing-1" class="level2">
+<h2 class="anchored" data-anchor-id="multiplexing-1">Multiplexing</h2>
+<p><strong>FDM → Frequency</strong></p>
+<p><strong>TDM → Time</strong></p>
+<p><strong>WDM → Wavelength</strong></p>
+<p><strong>CDM → Code</strong></p>
+</section>
+<section id="osi" class="level2">
+<h2 class="anchored" data-anchor-id="osi">OSI</h2>
+<p><strong>Application</strong></p>
+<p><strong>Presentation</strong></p>
+<p><strong>Session</strong></p>
+<p><strong>Transport</strong></p>
+<p><strong>Network</strong></p>
+<p><strong>Data Link</strong></p>
+<p><strong>Physical</strong></p>
+</section>
+<section id="addressing" class="level2">
+<h2 class="anchored" data-anchor-id="addressing">Addressing</h2>
+<p><strong>MAC → Physical/link address</strong></p>
+<p><strong>IP → Logical address</strong></p>
+<p><strong>Port → Process/service</strong></p>
+<p><strong>URL/Email → Application-level identifier</strong></p>
+</section>
+<section id="transport" class="level2">
+<h2 class="anchored" data-anchor-id="transport">Transport</h2>
+<p><strong>TCP → Reliable</strong></p>
+<p><strong>UDP → Connectionless</strong></p>
+<p><strong>SCTP → Reliable message-oriented transport</strong></p>
+</section>
+<section id="network" class="level2">
+<h2 class="anchored" data-anchor-id="network">Network</h2>
+<p><strong>IPv4 → 32-bit</strong></p>
+<p><strong>IPv6 → 128-bit</strong></p>
+<p><strong>ARP → IPv4-to-MAC</strong></p>
+<p><strong>Routing → Path selection</strong></p>
+</section>
+<section id="internet-1" class="level2">
+<h2 class="anchored" data-anchor-id="internet-1">Internet</h2>
+<p><strong>DNS → Name resolution</strong></p>
+<p><strong>SMTP → Email transfer</strong></p>
+<p><strong>POP3 → Email retrieval</strong></p>
+<p><strong>IMAP → Mailbox access</strong></p>
+<p><strong>FTP → File transfer</strong></p>
+<p><strong>Telnet → Remote terminal</strong></p>
+</section>
+<section id="security" class="level2">
+<h2 class="anchored" data-anchor-id="security">Security</h2>
+<p><strong>Symmetric → Shared secret</strong></p>
+<p><strong>Public-key → Public/private pair</strong></p>
+<p><strong>Digital signature → Authentication/integrity</strong></p>
+<p><strong>Steganography → Hide existence</strong></p>
+<p><strong>VPN → Protected communication</strong></p>
+<p><strong>Firewall → Traffic control</strong></p>
+</section>
+<section id="cloud" class="level2">
+<h2 class="anchored" data-anchor-id="cloud">Cloud</h2>
+<p><strong>SaaS → Software</strong></p>
+<p><strong>PaaS → Platform</strong></p>
+<p><strong>IaaS → Infrastructure</strong></p>
+</section>
+<section id="iot" class="level2">
+<h2 class="anchored" data-anchor-id="iot">IoT</h2>
+<p><strong>Sensor → Sense</strong></p>
+<p><strong>Actuator → Act</strong></p>
+<hr>
+</section>
+</section>
+<section id="final-exam-strategy" class="level1">
+<h1>152. Final Exam Strategy</h1>
+<p>Study this unit in six blocks.</p>
+<section id="block-1-data-communication" class="level2">
+<h2 class="anchored" data-anchor-id="block-1-data-communication">Block 1: Data Communication</h2>
+<p>Practice:</p>
+<ul>
+<li>Signals</li>
+<li>Bandwidth</li>
+<li>Throughput</li>
+<li>Latency</li>
+<li>Nyquist</li>
+<li>Shannon</li>
+<li>Encoding</li>
+<li>Modulation</li>
+<li>Multiplexing</li>
+<li>Transmission media</li>
+<li>Error detection</li>
+</ul>
+</section>
+<section id="block-2-network-models" class="level2">
+<h2 class="anchored" data-anchor-id="block-2-network-models">Block 2: Network Models</h2>
+<p>Practice:</p>
+<ul>
+<li>OSI</li>
+<li>TCP/IP</li>
+<li>Protocol mapping</li>
+<li>Addressing</li>
+<li>Switching</li>
+<li>Network devices</li>
+</ul>
+</section>
+<section id="block-3-data-link" class="level2">
+<h2 class="anchored" data-anchor-id="block-3-data-link">Block 3: Data Link</h2>
+<p>Practice:</p>
+<ul>
+<li>Framing</li>
+<li>Flow control</li>
+<li>Error control</li>
+<li>Sliding window</li>
+<li>HDLC</li>
+<li>CSMA/CD</li>
+<li>CSMA/CA</li>
+<li>FDMA</li>
+<li>TDMA</li>
+<li>CDMA</li>
+</ul>
+</section>
+<section id="block-4-network-and-transport" class="level2">
+<h2 class="anchored" data-anchor-id="block-4-network-and-transport">Block 4: Network and Transport</h2>
+<p>Practice:</p>
+<ul>
+<li>IPv4</li>
+<li>Classful/classless addressing</li>
+<li>CIDR</li>
+<li>Fragmentation</li>
+<li>IPv6</li>
+<li>ARP</li>
+<li>Routing</li>
+<li>TCP</li>
+<li>UDP</li>
+<li>SCTP</li>
+<li>Congestion control</li>
+</ul>
+</section>
+<section id="block-5-internet-and-security" class="level2">
+<h2 class="anchored" data-anchor-id="block-5-internet-and-security">Block 5: Internet and Security</h2>
+<p>Practice:</p>
+<ul>
+<li>URL</li>
+<li>DNS</li>
+<li>SMTP</li>
+<li>POP</li>
+<li>IMAP</li>
+<li>FTP</li>
+<li>Telnet</li>
+<li>Malware</li>
+<li>Cryptography</li>
+<li>Digital signatures</li>
+<li>Steganography</li>
+<li>VPN</li>
+<li>Firewalls</li>
+</ul>
+</section>
+<section id="block-6-mobile-cloud-and-iot" class="level2">
+<h2 class="anchored" data-anchor-id="block-6-mobile-cloud-and-iot">Block 6: Mobile, Cloud and IoT</h2>
+<p>Practice:</p>
+<ul>
+<li>GSM</li>
+<li>CDMA</li>
+<li>Mobile IP</li>
+<li>MANET</li>
+<li>GPRS</li>
+<li>SMS</li>
+<li>SaaS</li>
+<li>PaaS</li>
+<li>IaaS</li>
+<li>Virtualization</li>
+<li>SLA</li>
+<li>IoT</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="final-summary" class="level1">
+<h1>153. Final Summary</h1>
+<p>Data Communication and Computer Networks explains how information moves between computing devices.</p>
+<p>Remember the overall flow:</p>
+<p><strong>Data → Signal → Medium → Network → Protocol → Application</strong></p>
+<p>Important relationships:</p>
+<p><strong>Simplex → One-way</strong></p>
+<p><strong>Half-duplex → Two-way, one at a time</strong></p>
+<p><strong>Full-duplex → Two-way simultaneously</strong></p>
+<p><strong>Nyquist → Noiseless channel</strong></p>
+<p><strong>Shannon → Noisy channel</strong></p>
+<p><strong>FDM → Frequency</strong></p>
+<p><strong>TDM → Time</strong></p>
+<p><strong>WDM → Wavelength</strong></p>
+<p><strong>CDM → Code</strong></p>
+<p><strong>OSI → 7 layers</strong></p>
+<p><strong>TCP/IP → Practical protocol suite</strong></p>
+<p><strong>MAC → Link-layer addressing</strong></p>
+<p><strong>IP → Logical addressing</strong></p>
+<p><strong>Port → Process/service</strong></p>
+<p><strong>TCP → Reliable transport</strong></p>
+<p><strong>UDP → Connectionless datagrams</strong></p>
+<p><strong>SCTP → Reliable message-oriented transport</strong></p>
+<p><strong>IPv4 → 32-bit</strong></p>
+<p><strong>IPv6 → 128-bit</strong></p>
+<p><strong>ARP → IPv4 address to MAC</strong></p>
+<p><strong>DNS → Name resolution</strong></p>
+<p><strong>SMTP → Mail transfer</strong></p>
+<p><strong>POP3 → Mail retrieval</strong></p>
+<p><strong>IMAP → Mailbox access</strong></p>
+<p><strong>SaaS → Software</strong></p>
+<p><strong>PaaS → Platform</strong></p>
+<p><strong>IaaS → Infrastructure</strong></p>
+<p><strong>IoT → Connected physical objects</strong></p>
+<p>For numerical UGC NET questions, especially practice:</p>
+<p><strong>Nyquist → Shannon → transmission delay → propagation delay → IPv4/CIDR calculations → sliding-window calculations.</strong></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

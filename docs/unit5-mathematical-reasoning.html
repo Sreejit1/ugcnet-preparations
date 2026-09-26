@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit V – Mathematical Reasoning and Aptitude – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper1.html" aria-current="page"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper2.html"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit5-mathematical-reasoning.html">Unit V – Mathematical Reasoning and Aptitude</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 1 Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-teaching-aptitude.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Teaching Aptitude</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-research-aptitude.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Research Aptitude</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-comprehension.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Comprehension</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Communication</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-mathematical-reasoning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit V – Mathematical Reasoning and Aptitude</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-logical-reasoning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Logical Reasoning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Interpretation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-information-and-communication-technology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Information and Communication Technology (ICT)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-people-development-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – People, Development and Environment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-higher-education-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Higher Education System</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#types-of-reasoning" id="toc-types-of-reasoning" class="nav-link" data-scroll-target="#types-of-reasoning">2. Types of Reasoning</a></li>
+  <li><a href="#deductive-reasoning" id="toc-deductive-reasoning" class="nav-link" data-scroll-target="#deductive-reasoning">3. Deductive Reasoning</a>
+  <ul class="collapse">
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#key-point" id="toc-key-point" class="nav-link" data-scroll-target="#key-point">Key Point</a></li>
+  </ul></li>
+  <li><a href="#inductive-reasoning" id="toc-inductive-reasoning" class="nav-link" data-scroll-target="#inductive-reasoning">4. Inductive Reasoning</a>
+  <ul class="collapse">
+  <li><a href="#structure-1" id="toc-structure-1" class="nav-link" data-scroll-target="#structure-1">Structure</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  <li><a href="#key-point-1" id="toc-key-point-1" class="nav-link" data-scroll-target="#key-point-1">Key Point</a></li>
+  </ul></li>
+  <li><a href="#analogical-reasoning" id="toc-analogical-reasoning" class="nav-link" data-scroll-target="#analogical-reasoning">5. Analogical Reasoning</a>
+  <ul class="collapse">
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  <li><a href="#key-point-2" id="toc-key-point-2" class="nav-link" data-scroll-target="#key-point-2">Key Point</a></li>
+  </ul></li>
+  <li><a href="#deductive-vs-inductive-reasoning" id="toc-deductive-vs-inductive-reasoning" class="nav-link" data-scroll-target="#deductive-vs-inductive-reasoning">6. Deductive vs Inductive Reasoning</a></li>
+  <li><a href="#number-series" id="toc-number-series" class="nav-link" data-scroll-target="#number-series">7. Number Series</a>
+  <ul class="collapse">
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
+  </ul></li>
+  <li><a href="#common-number-series-patterns" id="toc-common-number-series-patterns" class="nav-link" data-scroll-target="#common-number-series-patterns">8. Common Number Series Patterns</a></li>
+  <li><a href="#addition-series" id="toc-addition-series" class="nav-link" data-scroll-target="#addition-series">9. Addition Series</a></li>
+  <li><a href="#subtraction-series" id="toc-subtraction-series" class="nav-link" data-scroll-target="#subtraction-series">10. Subtraction Series</a></li>
+  <li><a href="#multiplication-series" id="toc-multiplication-series" class="nav-link" data-scroll-target="#multiplication-series">11. Multiplication Series</a></li>
+  <li><a href="#division-series" id="toc-division-series" class="nav-link" data-scroll-target="#division-series">12. Division Series</a></li>
+  <li><a href="#square-number-series" id="toc-square-number-series" class="nav-link" data-scroll-target="#square-number-series">13. Square Number Series</a></li>
+  <li><a href="#cube-number-series" id="toc-cube-number-series" class="nav-link" data-scroll-target="#cube-number-series">14. Cube Number Series</a></li>
+  <li><a href="#increasing-difference-series" id="toc-increasing-difference-series" class="nav-link" data-scroll-target="#increasing-difference-series">15. Increasing Difference Series</a></li>
+  <li><a href="#alternating-series" id="toc-alternating-series" class="nav-link" data-scroll-target="#alternating-series">16. Alternating Series</a></li>
+  <li><a href="#strategy-for-number-series" id="toc-strategy-for-number-series" class="nav-link" data-scroll-target="#strategy-for-number-series">17. Strategy for Number Series</a>
+  <ul class="collapse">
+  <li><a href="#step-1" id="toc-step-1" class="nav-link" data-scroll-target="#step-1">Step 1</a></li>
+  <li><a href="#step-2" id="toc-step-2" class="nav-link" data-scroll-target="#step-2">Step 2</a></li>
+  <li><a href="#step-3" id="toc-step-3" class="nav-link" data-scroll-target="#step-3">Step 3</a></li>
+  <li><a href="#step-4" id="toc-step-4" class="nav-link" data-scroll-target="#step-4">Step 4</a></li>
+  <li><a href="#step-5" id="toc-step-5" class="nav-link" data-scroll-target="#step-5">Step 5</a></li>
+  <li><a href="#step-6" id="toc-step-6" class="nav-link" data-scroll-target="#step-6">Step 6</a></li>
+  </ul></li>
+  <li><a href="#letter-series" id="toc-letter-series" class="nav-link" data-scroll-target="#letter-series">18. Letter Series</a></li>
+  <li><a href="#simple-letter-series" id="toc-simple-letter-series" class="nav-link" data-scroll-target="#simple-letter-series">19. Simple Letter Series</a></li>
+  <li><a href="#reverse-alphabet" id="toc-reverse-alphabet" class="nav-link" data-scroll-target="#reverse-alphabet">20. Reverse Alphabet</a></li>
+  <li><a href="#letter-series-with-skipping" id="toc-letter-series-with-skipping" class="nav-link" data-scroll-target="#letter-series-with-skipping">21. Letter Series with Skipping</a></li>
+  <li><a href="#codes" id="toc-codes" class="nav-link" data-scroll-target="#codes">22. Codes</a>
+  <ul class="collapse">
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
+  </ul></li>
+  <li><a href="#common-coding-patterns" id="toc-common-coding-patterns" class="nav-link" data-scroll-target="#common-coding-patterns">23. Common Coding Patterns</a></li>
+  <li><a href="#relationships" id="toc-relationships" class="nav-link" data-scroll-target="#relationships">24. Relationships</a></li>
+  <li><a href="#blood-relationship-problems" id="toc-blood-relationship-problems" class="nav-link" data-scroll-target="#blood-relationship-problems">25. Blood Relationship Problems</a>
+  <ul class="collapse">
+  <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
+  </ul></li>
+  <li><a href="#mathematical-aptitude" id="toc-mathematical-aptitude" class="nav-link" data-scroll-target="#mathematical-aptitude">26. Mathematical Aptitude</a></li>
+  <li><a href="#fractions" id="toc-fractions" class="nav-link" data-scroll-target="#fractions">27. Fractions</a>
+  <ul class="collapse">
+  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
+  </ul></li>
+  <li><a href="#types-of-fractions" id="toc-types-of-fractions" class="nav-link" data-scroll-target="#types-of-fractions">28. Types of Fractions</a>
+  <ul class="collapse">
+  <li><a href="#proper-fraction" id="toc-proper-fraction" class="nav-link" data-scroll-target="#proper-fraction">Proper Fraction</a></li>
+  <li><a href="#improper-fraction" id="toc-improper-fraction" class="nav-link" data-scroll-target="#improper-fraction">Improper Fraction</a></li>
+  <li><a href="#mixed-fraction" id="toc-mixed-fraction" class="nav-link" data-scroll-target="#mixed-fraction">Mixed Fraction</a></li>
+  </ul></li>
+  <li><a href="#addition-of-fractions" id="toc-addition-of-fractions" class="nav-link" data-scroll-target="#addition-of-fractions">29. Addition of Fractions</a></li>
+  <li><a href="#multiplication-of-fractions" id="toc-multiplication-of-fractions" class="nav-link" data-scroll-target="#multiplication-of-fractions">30. Multiplication of Fractions</a></li>
+  <li><a href="#time-and-distance" id="toc-time-and-distance" class="nav-link" data-scroll-target="#time-and-distance">31. Time and Distance</a>
+  <ul class="collapse">
+  <li><a href="#easy-triangle" id="toc-easy-triangle" class="nav-link" data-scroll-target="#easy-triangle">Easy Triangle</a></li>
+  </ul></li>
+  <li><a href="#example-speed" id="toc-example-speed" class="nav-link" data-scroll-target="#example-speed">32. Example – Speed</a></li>
+  <li><a href="#unit-conversion" id="toc-unit-conversion" class="nav-link" data-scroll-target="#unit-conversion">33. Unit Conversion</a></li>
+  <li><a href="#average-speed" id="toc-average-speed" class="nav-link" data-scroll-target="#average-speed">34. Average Speed</a>
+  <ul class="collapse">
+  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example</a></li>
+  </ul></li>
+  <li><a href="#ratio" id="toc-ratio" class="nav-link" data-scroll-target="#ratio">35. Ratio</a>
+  <ul class="collapse">
+  <li><a href="#example-7" id="toc-example-7" class="nav-link" data-scroll-target="#example-7">Example</a></li>
+  </ul></li>
+  <li><a href="#equivalent-ratios" id="toc-equivalent-ratios" class="nav-link" data-scroll-target="#equivalent-ratios">36. Equivalent Ratios</a></li>
+  <li><a href="#proportion" id="toc-proportion" class="nav-link" data-scroll-target="#proportion">37. Proportion</a></li>
+  <li><a href="#direct-proportion" id="toc-direct-proportion" class="nav-link" data-scroll-target="#direct-proportion">38. Direct Proportion</a></li>
+  <li><a href="#inverse-proportion" id="toc-inverse-proportion" class="nav-link" data-scroll-target="#inverse-proportion">39. Inverse Proportion</a></li>
+  <li><a href="#percentage" id="toc-percentage" class="nav-link" data-scroll-target="#percentage">40. Percentage</a>
+  <ul class="collapse">
+  <li><a href="#formula" id="toc-formula" class="nav-link" data-scroll-target="#formula">Formula</a></li>
+  </ul></li>
+  <li><a href="#example-percentage" id="toc-example-percentage" class="nav-link" data-scroll-target="#example-percentage">41. Example – Percentage</a></li>
+  <li><a href="#converting-percentage-to-fraction" id="toc-converting-percentage-to-fraction" class="nav-link" data-scroll-target="#converting-percentage-to-fraction">42. Converting Percentage to Fraction</a></li>
+  <li><a href="#percentage-increase" id="toc-percentage-increase" class="nav-link" data-scroll-target="#percentage-increase">43. Percentage Increase</a>
+  <ul class="collapse">
+  <li><a href="#example-8" id="toc-example-8" class="nav-link" data-scroll-target="#example-8">Example</a></li>
+  </ul></li>
+  <li><a href="#percentage-decrease" id="toc-percentage-decrease" class="nav-link" data-scroll-target="#percentage-decrease">44. Percentage Decrease</a>
+  <ul class="collapse">
+  <li><a href="#example-9" id="toc-example-9" class="nav-link" data-scroll-target="#example-9">Example</a></li>
+  </ul></li>
+  <li><a href="#profit-and-loss" id="toc-profit-and-loss" class="nav-link" data-scroll-target="#profit-and-loss">45. Profit and Loss</a>
+  <ul class="collapse">
+  <li><a href="#cost-price-cp" id="toc-cost-price-cp" class="nav-link" data-scroll-target="#cost-price-cp">Cost Price (CP)</a></li>
+  <li><a href="#selling-price-sp" id="toc-selling-price-sp" class="nav-link" data-scroll-target="#selling-price-sp">Selling Price (SP)</a></li>
+  <li><a href="#profit" id="toc-profit" class="nav-link" data-scroll-target="#profit">Profit</a></li>
+  <li><a href="#loss" id="toc-loss" class="nav-link" data-scroll-target="#loss">Loss</a></li>
+  </ul></li>
+  <li><a href="#profit-percentage" id="toc-profit-percentage" class="nav-link" data-scroll-target="#profit-percentage">46. Profit Percentage</a>
+  <ul class="collapse">
+  <li><a href="#example-10" id="toc-example-10" class="nav-link" data-scroll-target="#example-10">Example</a></li>
+  </ul></li>
+  <li><a href="#loss-percentage" id="toc-loss-percentage" class="nav-link" data-scroll-target="#loss-percentage">47. Loss Percentage</a>
+  <ul class="collapse">
+  <li><a href="#example-11" id="toc-example-11" class="nav-link" data-scroll-target="#example-11">Example</a></li>
+  </ul></li>
+  <li><a href="#discount" id="toc-discount" class="nav-link" data-scroll-target="#discount">48. Discount</a>
+  <ul class="collapse">
+  <li><a href="#important-terms" id="toc-important-terms" class="nav-link" data-scroll-target="#important-terms">Important Terms</a></li>
+  </ul></li>
+  <li><a href="#discount-percentage" id="toc-discount-percentage" class="nav-link" data-scroll-target="#discount-percentage">49. Discount Percentage</a>
+  <ul class="collapse">
+  <li><a href="#example-12" id="toc-example-12" class="nav-link" data-scroll-target="#example-12">Example</a></li>
+  </ul></li>
+  <li><a href="#simple-interest" id="toc-simple-interest" class="nav-link" data-scroll-target="#simple-interest">50. Simple Interest</a>
+  <ul class="collapse">
+  <li><a href="#example-13" id="toc-example-13" class="nav-link" data-scroll-target="#example-13">Example</a></li>
+  </ul></li>
+  <li><a href="#compound-interest" id="toc-compound-interest" class="nav-link" data-scroll-target="#compound-interest">51. Compound Interest</a>
+  <ul class="collapse">
+  <li><a href="#example-14" id="toc-example-14" class="nav-link" data-scroll-target="#example-14">Example</a></li>
+  </ul></li>
+  <li><a href="#simple-interest-vs-compound-interest" id="toc-simple-interest-vs-compound-interest" class="nav-link" data-scroll-target="#simple-interest-vs-compound-interest">52. Simple Interest vs Compound Interest</a></li>
+  <li><a href="#averages" id="toc-averages" class="nav-link" data-scroll-target="#averages">53. Averages</a></li>
+  <li><a href="#example-average" id="toc-example-average" class="nav-link" data-scroll-target="#example-average">54. Example – Average</a></li>
+  <li><a href="#finding-the-missing-value-using-average" id="toc-finding-the-missing-value-using-average" class="nav-link" data-scroll-target="#finding-the-missing-value-using-average">55. Finding the Missing Value Using Average</a></li>
+  <li><a href="#important-mathematical-formulas" id="toc-important-mathematical-formulas" class="nav-link" data-scroll-target="#important-mathematical-formulas">56. Important Mathematical Formulas</a></li>
+  <li><a href="#fast-calculation-strategy" id="toc-fast-calculation-strategy" class="nav-link" data-scroll-target="#fast-calculation-strategy">57. Fast Calculation Strategy</a>
+  <ul class="collapse">
+  <li><a href="#step-1-1" id="toc-step-1-1" class="nav-link" data-scroll-target="#step-1-1">Step 1</a></li>
+  <li><a href="#step-2-1" id="toc-step-2-1" class="nav-link" data-scroll-target="#step-2-1">Step 2</a></li>
+  <li><a href="#step-3-1" id="toc-step-3-1" class="nav-link" data-scroll-target="#step-3-1">Step 3</a></li>
+  <li><a href="#step-4-1" id="toc-step-4-1" class="nav-link" data-scroll-target="#step-4-1">Step 4</a></li>
+  <li><a href="#step-5-1" id="toc-step-5-1" class="nav-link" data-scroll-target="#step-5-1">Step 5</a></li>
+  <li><a href="#step-6-1" id="toc-step-6-1" class="nav-link" data-scroll-target="#step-6-1">Step 6</a></li>
+  <li><a href="#step-7" id="toc-step-7" class="nav-link" data-scroll-target="#step-7">Step 7</a></li>
+  </ul></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">58. Common Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#mistake-1-using-the-wrong-base-for-percentage" id="toc-mistake-1-using-the-wrong-base-for-percentage" class="nav-link" data-scroll-target="#mistake-1-using-the-wrong-base-for-percentage">Mistake 1 – Using the Wrong Base for Percentage</a></li>
+  <li><a href="#mistake-2-confusing-marked-price-and-cost-price" id="toc-mistake-2-confusing-marked-price-and-cost-price" class="nav-link" data-scroll-target="#mistake-2-confusing-marked-price-and-cost-price">Mistake 2 – Confusing Marked Price and Cost Price</a></li>
+  <li><a href="#mistake-3-confusing-distance-and-speed" id="toc-mistake-3-confusing-distance-and-speed" class="nav-link" data-scroll-target="#mistake-3-confusing-distance-and-speed">Mistake 3 – Confusing Distance and Speed</a></li>
+  <li><a href="#mistake-4-forgetting-unit-conversion" id="toc-mistake-4-forgetting-unit-conversion" class="nav-link" data-scroll-target="#mistake-4-forgetting-unit-conversion">Mistake 4 – Forgetting Unit Conversion</a></li>
+  <li><a href="#mistake-5-incorrect-average" id="toc-mistake-5-incorrect-average" class="nav-link" data-scroll-target="#mistake-5-incorrect-average">Mistake 5 – Incorrect Average</a></li>
+  </ul></li>
+  <li><a href="#ugc-net-focus-areas" id="toc-ugc-net-focus-areas" class="nav-link" data-scroll-target="#ugc-net-focus-areas">59. UGC NET Focus Areas</a></li>
+  <li><a href="#quick-revision" id="toc-quick-revision" class="nav-link" data-scroll-target="#quick-revision">60. Quick Revision</a>
+  <ul class="collapse">
+  <li><a href="#reasoning" id="toc-reasoning" class="nav-link" data-scroll-target="#reasoning">Reasoning</a></li>
+  <li><a href="#number-series-1" id="toc-number-series-1" class="nav-link" data-scroll-target="#number-series-1">Number Series</a></li>
+  <li><a href="#percentage-1" id="toc-percentage-1" class="nav-link" data-scroll-target="#percentage-1">Percentage</a></li>
+  <li><a href="#speed" id="toc-speed" class="nav-link" data-scroll-target="#speed">Speed</a></li>
+  <li><a href="#profit-1" id="toc-profit-1" class="nav-link" data-scroll-target="#profit-1">Profit</a></li>
+  <li><a href="#loss-1" id="toc-loss-1" class="nav-link" data-scroll-target="#loss-1">Loss</a></li>
+  <li><a href="#simple-interest-1" id="toc-simple-interest-1" class="nav-link" data-scroll-target="#simple-interest-1">Simple Interest</a></li>
+  <li><a href="#average" id="toc-average" class="nav-link" data-scroll-target="#average">Average</a></li>
+  </ul></li>
+  <li><a href="#one-minute-revision" id="toc-one-minute-revision" class="nav-link" data-scroll-target="#one-minute-revision">61. One-Minute Revision</a></li>
+  <li><a href="#final-exam-tip" id="toc-final-exam-tip" class="nav-link" data-scroll-target="#final-exam-tip">62. Final Exam Tip</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit V – Mathematical Reasoning and Aptitude</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>Mathematical Reasoning and Aptitude tests the ability to:</p>
+<ul>
+<li>Identify patterns</li>
+<li>Apply mathematical concepts</li>
+<li>Perform calculations</li>
+<li>Solve numerical problems</li>
+<li>Identify relationships</li>
+<li>Apply logical rules</li>
+<li>Interpret mathematical information</li>
+</ul>
+<p>The major areas in this unit are:</p>
+<ol type="1">
+<li>Types of reasoning</li>
+<li>Number series</li>
+<li>Letter series</li>
+<li>Codes</li>
+<li>Relationships</li>
+<li>Fractions</li>
+<li>Time and distance</li>
+<li>Ratio</li>
+<li>Proportion</li>
+<li>Percentage</li>
+<li>Profit and loss</li>
+<li>Interest</li>
+<li>Discounting</li>
+<li>Averages</li>
+</ol>
+<hr>
+</section>
+<section id="types-of-reasoning" class="level1">
+<h1>2. Types of Reasoning</h1>
+<p>Reasoning is the process of using information, facts, rules or relationships to arrive at a conclusion.</p>
+<p>Important types include:</p>
+<ul>
+<li>Deductive reasoning</li>
+<li>Inductive reasoning</li>
+<li>Analogical reasoning</li>
+</ul>
+<hr>
+</section>
+<section id="deductive-reasoning" class="level1">
+<h1>3. Deductive Reasoning</h1>
+<p>Deductive reasoning moves from a <strong>general statement or rule to a specific conclusion</strong>.</p>
+<section id="structure" class="level3">
+<h3 class="anchored" data-anchor-id="structure">Structure</h3>
+<pre class="text"><code>General Rule
+     ↓
+Specific Case
+     ↓
+Conclusion</code></pre>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>All teachers are professionals.</p>
+<p>Ravi is a teacher.</p>
+<p>Therefore:</p>
+<p>Ravi is a professional.</p>
+<p>The conclusion follows from the premises.</p>
+</section>
+<section id="key-point" class="level3">
+<h3 class="anchored" data-anchor-id="key-point">Key Point</h3>
+<blockquote class="blockquote">
+<p><strong>Deduction = General → Specific</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="inductive-reasoning" class="level1">
+<h1>4. Inductive Reasoning</h1>
+<p>Inductive reasoning moves from <strong>specific observations to a general conclusion</strong>.</p>
+<section id="structure-1" class="level3">
+<h3 class="anchored" data-anchor-id="structure-1">Structure</h3>
+<pre class="text"><code>Specific Observations
+        ↓
+     Pattern
+        ↓
+General Conclusion</code></pre>
+</section>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<p>A researcher observes that:</p>
+<ul>
+<li>Student A performs better after regular practice.</li>
+<li>Student B performs better after regular practice.</li>
+<li>Student C performs better after regular practice.</li>
+</ul>
+<p>The researcher may conclude:</p>
+<blockquote class="blockquote">
+<p>Regular practice may improve student performance.</p>
+</blockquote>
+<p>The conclusion is based on observations and is not necessarily certain.</p>
+</section>
+<section id="key-point-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-point-1">Key Point</h3>
+<blockquote class="blockquote">
+<p><strong>Induction = Specific → General</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="analogical-reasoning" class="level1">
+<h1>5. Analogical Reasoning</h1>
+<p>Analogical reasoning identifies a relationship between two things and applies a similar relationship to another pair.</p>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example</h3>
+<pre class="text"><code>Teacher : School :: Doctor : Hospital</code></pre>
+<p>The relationship is:</p>
+<blockquote class="blockquote">
+<p>A teacher works in a school.</p>
+</blockquote>
+<p>Therefore:</p>
+<blockquote class="blockquote">
+<p>A doctor works in a hospital.</p>
+</blockquote>
+</section>
+<section id="key-point-2" class="level3">
+<h3 class="anchored" data-anchor-id="key-point-2">Key Point</h3>
+<blockquote class="blockquote">
+<p><strong>Analogy = Relationship between two pairs</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="deductive-vs-inductive-reasoning" class="level1">
+<h1>6. Deductive vs Inductive Reasoning</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Deductive</th>
+<th>Inductive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>General → Specific</td>
+<td>Specific → General</td>
+</tr>
+<tr class="even">
+<td>Starts with a rule/principle</td>
+<td>Starts with observations</td>
+</tr>
+<tr class="odd">
+<td>Conclusion can follow necessarily from true premises</td>
+<td>Conclusion is usually probable</td>
+</tr>
+<tr class="even">
+<td>Example: All A are B; X is A; therefore X is B</td>
+<td>Several observed A are B; therefore A may generally be B</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="number-series" class="level1">
+<h1>7. Number Series</h1>
+<p>A number series is a sequence of numbers arranged according to a particular pattern.</p>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example</h3>
+<pre class="text"><code>2, 4, 6, 8, 10, ?</code></pre>
+<p>The difference between consecutive numbers is:</p>
+<pre class="text"><code>+2, +2, +2, +2</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Answer = 12</code></pre>
+<hr>
+</section>
+</section>
+<section id="common-number-series-patterns" class="level1">
+<h1>8. Common Number Series Patterns</h1>
+<p>When solving a number series, check for:</p>
+<ol type="1">
+<li>Addition</li>
+<li>Subtraction</li>
+<li>Multiplication</li>
+<li>Division</li>
+<li>Squares</li>
+<li>Cubes</li>
+<li>Alternating patterns</li>
+<li>Increasing differences</li>
+<li>Decreasing differences</li>
+<li>Combination of operations</li>
+</ol>
+<hr>
+</section>
+<section id="addition-series" class="level1">
+<h1>9. Addition Series</h1>
+<p>Example:</p>
+<pre class="text"><code>5, 10, 15, 20, ?</code></pre>
+<p>Pattern:</p>
+<pre class="text"><code>+5, +5, +5</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Answer = 25</code></pre>
+<hr>
+</section>
+<section id="subtraction-series" class="level1">
+<h1>10. Subtraction Series</h1>
+<p>Example:</p>
+<pre class="text"><code>50, 45, 40, 35, ?</code></pre>
+<p>Pattern:</p>
+<pre class="text"><code>-5, -5, -5</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Answer = 30</code></pre>
+<hr>
+</section>
+<section id="multiplication-series" class="level1">
+<h1>11. Multiplication Series</h1>
+<p>Example:</p>
+<pre class="text"><code>2, 4, 8, 16, ?</code></pre>
+<p>Pattern:</p>
+<pre class="text"><code>×2, ×2, ×2</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Answer = 32</code></pre>
+<hr>
+</section>
+<section id="division-series" class="level1">
+<h1>12. Division Series</h1>
+<p>Example:</p>
+<pre class="text"><code>64, 32, 16, 8, ?</code></pre>
+<p>Pattern:</p>
+<pre class="text"><code>÷2, ÷2, ÷2</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Answer = 4</code></pre>
+<hr>
+</section>
+<section id="square-number-series" class="level1">
+<h1>13. Square Number Series</h1>
+<p>Example:</p>
+<pre class="text"><code>1, 4, 9, 16, 25, ?</code></pre>
+<p>These are squares:</p>
+<pre class="text"><code>1² = 1
+2² = 4
+3² = 9
+4² = 16
+5² = 25</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>6² = 36</code></pre>
+<hr>
+</section>
+<section id="cube-number-series" class="level1">
+<h1>14. Cube Number Series</h1>
+<p>Example:</p>
+<pre class="text"><code>1, 8, 27, 64, ?</code></pre>
+<p>These are cubes:</p>
+<pre class="text"><code>1³ = 1
+2³ = 8
+3³ = 27
+4³ = 64</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>5³ = 125</code></pre>
+<hr>
+</section>
+<section id="increasing-difference-series" class="level1">
+<h1>15. Increasing Difference Series</h1>
+<p>Example:</p>
+<pre class="text"><code>2, 5, 10, 17, 26, ?</code></pre>
+<p>Find the differences:</p>
+<pre class="text"><code>+3, +5, +7, +9</code></pre>
+<p>The differences increase by 2.</p>
+<p>Next difference:</p>
+<pre class="text"><code>+11</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>26 + 11 = 37</code></pre>
+<hr>
+</section>
+<section id="alternating-series" class="level1">
+<h1>16. Alternating Series</h1>
+<p>Sometimes odd and even positions follow different patterns.</p>
+<p>Example:</p>
+<pre class="text"><code>2, 5, 4, 10, 6, 15, ?</code></pre>
+<p>Separate the positions:</p>
+<pre class="text"><code>Odd positions:
+2, 4, 6, ?
+
+Even positions:
+5, 10, 15</code></pre>
+<p>Odd positions increase by 2.</p>
+<p>Therefore:</p>
+<pre class="text"><code>Answer = 8</code></pre>
+<hr>
+</section>
+<section id="strategy-for-number-series" class="level1">
+<h1>17. Strategy for Number Series</h1>
+<p>When you see a number series:</p>
+<section id="step-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-1">Step 1</h3>
+<p>Check differences.</p>
+</section>
+<section id="step-2" class="level3">
+<h3 class="anchored" data-anchor-id="step-2">Step 2</h3>
+<p>Check multiplication or division.</p>
+</section>
+<section id="step-3" class="level3">
+<h3 class="anchored" data-anchor-id="step-3">Step 3</h3>
+<p>Check squares and cubes.</p>
+</section>
+<section id="step-4" class="level3">
+<h3 class="anchored" data-anchor-id="step-4">Step 4</h3>
+<p>Check increasing or decreasing differences.</p>
+</section>
+<section id="step-5" class="level3">
+<h3 class="anchored" data-anchor-id="step-5">Step 5</h3>
+<p>Check odd and even positions separately.</p>
+</section>
+<section id="step-6" class="level3">
+<h3 class="anchored" data-anchor-id="step-6">Step 6</h3>
+<p>Look for a combination of operations.</p>
+<hr>
+</section>
+</section>
+<section id="letter-series" class="level1">
+<h1>18. Letter Series</h1>
+<p>A letter series consists of letters arranged according to a particular pattern.</p>
+<p>To solve letter series questions, remember the alphabetical positions:</p>
+<pre class="text"><code>A = 1
+B = 2
+C = 3
+D = 4
+E = 5
+...
+Z = 26</code></pre>
+<hr>
+</section>
+<section id="simple-letter-series" class="level1">
+<h1>19. Simple Letter Series</h1>
+<p>Example:</p>
+<pre class="text"><code>A, C, E, G, ?</code></pre>
+<p>Positions:</p>
+<pre class="text"><code>1, 3, 5, 7, ?</code></pre>
+<p>The pattern is:</p>
+<pre class="text"><code>+2</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>I = 9</code></pre>
+<p>Answer:</p>
+<blockquote class="blockquote">
+<p><strong>I</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="reverse-alphabet" class="level1">
+<h1>20. Reverse Alphabet</h1>
+<p>Remember:</p>
+<pre class="text"><code>Z = 26
+Y = 25
+X = 24
+...
+A = 1</code></pre>
+<p>Example:</p>
+<pre class="text"><code>Z, X, V, T, ?</code></pre>
+<p>The positions are:</p>
+<pre class="text"><code>26, 24, 22, 20</code></pre>
+<p>Pattern:</p>
+<pre class="text"><code>-2</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>18 = R</code></pre>
+<p>Answer:</p>
+<blockquote class="blockquote">
+<p><strong>R</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="letter-series-with-skipping" class="level1">
+<h1>21. Letter Series with Skipping</h1>
+<p>Example:</p>
+<pre class="text"><code>A, D, G, J, ?</code></pre>
+<p>Positions:</p>
+<pre class="text"><code>1, 4, 7, 10</code></pre>
+<p>Pattern:</p>
+<pre class="text"><code>+3</code></pre>
+<p>Next position:</p>
+<pre class="text"><code>13 = M</code></pre>
+<p>Answer:</p>
+<blockquote class="blockquote">
+<p><strong>M</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="codes" class="level1">
+<h1>22. Codes</h1>
+<p>Coding-decoding questions involve replacing letters, numbers or words according to a specific rule.</p>
+<section id="example-4" class="level3">
+<h3 class="anchored" data-anchor-id="example-4">Example</h3>
+<p>If:</p>
+<pre class="text"><code>CAT → DBU</code></pre>
+<p>Each letter is shifted by +1:</p>
+<pre class="text"><code>C → D
+A → B
+T → U</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>DOG → EPH</code></pre>
+<hr>
+</section>
+</section>
+<section id="common-coding-patterns" class="level1">
+<h1>23. Common Coding Patterns</h1>
+<p>Look for:</p>
+<ul>
+<li>Alphabet position</li>
+<li>Forward shifting</li>
+<li>Backward shifting</li>
+<li>Reversal</li>
+<li>Substitution</li>
+<li>Numerical coding</li>
+<li>Symbol coding</li>
+<li>Combination of operations</li>
+</ul>
+<hr>
+</section>
+<section id="relationships" class="level1">
+<h1>24. Relationships</h1>
+<p>Relationship questions test the ability to identify relationships between people, objects or concepts.</p>
+<p>Examples include:</p>
+<ul>
+<li>Blood relationships</li>
+<li>Family relationships</li>
+<li>Direction relationships</li>
+<li>Logical relationships</li>
+</ul>
+<hr>
+</section>
+<section id="blood-relationship-problems" class="level1">
+<h1>25. Blood Relationship Problems</h1>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>A is the brother of B. B is the sister of C. How is A related to C?</p>
+</blockquote>
+<p>A is male and is the sibling of B.</p>
+<p>B is the sibling of C.</p>
+<p>Therefore:</p>
+<blockquote class="blockquote">
+<p>A is the <strong>brother of C</strong>.</p>
+</blockquote>
+<section id="strategy" class="level3">
+<h3 class="anchored" data-anchor-id="strategy">Strategy</h3>
+<p>Draw a small relationship diagram instead of trying to remember everything mentally.</p>
+<hr>
+</section>
+</section>
+<section id="mathematical-aptitude" class="level1">
+<h1>26. Mathematical Aptitude</h1>
+<p>Mathematical aptitude involves applying mathematical concepts to solve numerical problems.</p>
+<p>The syllabus includes:</p>
+<ul>
+<li>Fractions</li>
+<li>Time and distance</li>
+<li>Ratio</li>
+<li>Proportion</li>
+<li>Percentage</li>
+<li>Profit and loss</li>
+<li>Interest</li>
+<li>Discounting</li>
+<li>Averages</li>
+</ul>
+<hr>
+</section>
+<section id="fractions" class="level1">
+<h1>27. Fractions</h1>
+<p>A fraction represents a part of a whole.</p>
+<p>It is written as:</p>
+<pre class="text"><code>a ÷ b</code></pre>
+<p>where:</p>
+<ul>
+<li><code>a</code> = numerator</li>
+<li><code>b</code> = denominator</li>
+</ul>
+<p>and:</p>
+<pre class="text"><code>b ≠ 0</code></pre>
+<section id="example-5" class="level3">
+<h3 class="anchored" data-anchor-id="example-5">Example</h3>
+<pre class="text"><code>3/5</code></pre>
+<p>means 3 parts out of 5 equal parts.</p>
+<hr>
+</section>
+</section>
+<section id="types-of-fractions" class="level1">
+<h1>28. Types of Fractions</h1>
+<section id="proper-fraction" class="level3">
+<h3 class="anchored" data-anchor-id="proper-fraction">Proper Fraction</h3>
+<p>Numerator &lt; Denominator.</p>
+<p>Example:</p>
+<pre class="text"><code>3/5</code></pre>
+</section>
+<section id="improper-fraction" class="level3">
+<h3 class="anchored" data-anchor-id="improper-fraction">Improper Fraction</h3>
+<p>Numerator ≥ Denominator.</p>
+<p>Example:</p>
+<pre class="text"><code>7/5</code></pre>
+</section>
+<section id="mixed-fraction" class="level3">
+<h3 class="anchored" data-anchor-id="mixed-fraction">Mixed Fraction</h3>
+<p>Contains a whole number and a fraction.</p>
+<p>Example:</p>
+<pre class="text"><code>2 1/3</code></pre>
+<hr>
+</section>
+</section>
+<section id="addition-of-fractions" class="level1">
+<h1>29. Addition of Fractions</h1>
+<p>Example:</p>
+<pre class="text"><code>1/2 + 1/3</code></pre>
+<p>LCM of 2 and 3 = 6.</p>
+<p>Therefore:</p>
+<pre class="text"><code>1/2 = 3/6</code></pre>
+<p>and:</p>
+<pre class="text"><code>1/3 = 2/6</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>(3 ÷ 6)+(2 ÷ 6)
+=
+(5 ÷ 6)</code></pre>
+<hr>
+</section>
+<section id="multiplication-of-fractions" class="level1">
+<h1>30. Multiplication of Fractions</h1>
+<p>Example:</p>
+<pre class="text"><code>2/3 × 4/5</code></pre>
+<p>Multiply numerators:</p>
+<pre class="text"><code>2 × 4 = 8</code></pre>
+<p>Multiply denominators:</p>
+<pre class="text"><code>3 × 5 = 15</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>(2 ÷ 3) × (4 ÷ 5)
+=
+(8 ÷ 15)</code></pre>
+<hr>
+</section>
+<section id="time-and-distance" class="level1">
+<h1>31. Time and Distance</h1>
+<p>Important formula:</p>
+<pre class="text"><code>Speed = Distance ÷ Time</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Distance = Speed × Time</code></pre>
+<p>and:</p>
+<pre class="text"><code>Time = Distance ÷ Speed</code></pre>
+<section id="easy-triangle" class="level3">
+<h3 class="anchored" data-anchor-id="easy-triangle">Easy Triangle</h3>
+<pre class="text"><code>       Distance
+      ----------
+      Speed | Time</code></pre>
+<hr>
+</section>
+</section>
+<section id="example-speed" class="level1">
+<h1>32. Example – Speed</h1>
+<p>A car travels 120 km in 3 hours.</p>
+<p>Find its speed.</p>
+<pre class="text"><code>Speed = Distance ÷ Time</code></pre>
+<pre class="text"><code>=(120 ÷ 3)</code></pre>
+<pre class="text"><code>=40 km/h</code></pre>
+<p>Answer:</p>
+<blockquote class="blockquote">
+<p><strong>40 km/h</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="unit-conversion" class="level1">
+<h1>33. Unit Conversion</h1>
+<p>Important conversions:</p>
+<pre class="text"><code>1 km = 1000 m
+
+1 hour = 60 minutes
+
+1 minute = 60 seconds</code></pre>
+<p>For speed:</p>
+<pre class="text"><code>1 km/hour = 5/18 m/second
+
+1 m/second = 18/5 km/hour</code></pre>
+<hr>
+</section>
+<section id="average-speed" class="level1">
+<h1>34. Average Speed</h1>
+<p>Average speed is:</p>
+<pre class="text"><code>Average Speed=
+(Total Distance ÷ Total Time)</code></pre>
+<p>It is not always equal to the simple average of two speeds.</p>
+<section id="example-6" class="level3">
+<h3 class="anchored" data-anchor-id="example-6">Example</h3>
+<p>If a person travels:</p>
+<ul>
+<li>60 km in 2 hours</li>
+<li>40 km in 1 hour</li>
+</ul>
+<p>Total distance:</p>
+<pre class="text"><code>60+40=100 km</code></pre>
+<p>Total time:</p>
+<pre class="text"><code>2+1=3 hours</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Average Speed=(100 ÷ 3)</code></pre>
+<pre class="text"><code>=33.33 km/h</code></pre>
+<hr>
+</section>
+</section>
+<section id="ratio" class="level1">
+<h1>35. Ratio</h1>
+<p>A ratio compares two quantities of the same kind.</p>
+<p>It is written as:</p>
+<pre class="text"><code>a : b</code></pre>
+<section id="example-7" class="level3">
+<h3 class="anchored" data-anchor-id="example-7">Example</h3>
+<p>If a class has 20 boys and 30 girls:</p>
+<p>Ratio of boys to girls:</p>
+<pre class="text"><code>20:30</code></pre>
+<p>Divide by 10:</p>
+<pre class="text"><code>2:3</code></pre>
+<hr>
+</section>
+</section>
+<section id="equivalent-ratios" class="level1">
+<h1>36. Equivalent Ratios</h1>
+<p>Ratios can be multiplied or divided by the same non-zero number.</p>
+<p>Example:</p>
+<pre class="text"><code>2:3</code></pre>
+<p>Multiplying both terms by 4:</p>
+<pre class="text"><code>8:12</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>2 : 3 = 8 : 12</code></pre>
+<hr>
+</section>
+<section id="proportion" class="level1">
+<h1>37. Proportion</h1>
+<p>A proportion states that two ratios are equal.</p>
+<p>Example:</p>
+<pre class="text"><code>2/3 = 4/6</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>2 : 3 = 4 : 6</code></pre>
+<p>This is a proportion.</p>
+<hr>
+</section>
+<section id="direct-proportion" class="level1">
+<h1>38. Direct Proportion</h1>
+<p>In direct proportion, when one quantity increases, the other also increases in the same relationship.</p>
+<p>Example:</p>
+<p>If 1 book costs ₹100:</p>
+<pre class="text"><code>2 books = ₹200
+3 books = ₹300</code></pre>
+<p>More books → More cost.</p>
+<hr>
+</section>
+<section id="inverse-proportion" class="level1">
+<h1>39. Inverse Proportion</h1>
+<p>In inverse proportion, when one quantity increases, the other decreases.</p>
+<p>Example:</p>
+<p>If more workers are employed to complete the same task, the required time may decrease, assuming other conditions remain the same.</p>
+<pre class="text"><code>Workers ↑
+    ↓
+Time ↓</code></pre>
+<hr>
+</section>
+<section id="percentage" class="level1">
+<h1>40. Percentage</h1>
+<p>Percentage means “per hundred”.</p>
+<p>The symbol is:</p>
+<pre class="text"><code>%</code></pre>
+<section id="formula" class="level3">
+<h3 class="anchored" data-anchor-id="formula">Formula</h3>
+<pre class="text"><code>Percentage=
+(Part ÷ Whole) × 100</code></pre>
+<hr>
+</section>
+</section>
+<section id="example-percentage" class="level1">
+<h1>41. Example – Percentage</h1>
+<p>A student scores 72 marks out of 90.</p>
+<p>Percentage:</p>
+<pre class="text"><code>(72 ÷ 90) × 100</code></pre>
+<pre class="text"><code>=80%</code></pre>
+<p>Answer:</p>
+<blockquote class="blockquote">
+<p><strong>80%</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="converting-percentage-to-fraction" class="level1">
+<h1>42. Converting Percentage to Fraction</h1>
+<p>Example:</p>
+<pre class="text"><code>25%</code></pre>
+<p>means:</p>
+<pre class="text"><code>25/100</code></pre>
+<p>Simplify:</p>
+<pre class="text"><code>1/4</code></pre>
+<p>Therefore:</p>
+<blockquote class="blockquote">
+<p>25% = 1/4</p>
+</blockquote>
+<hr>
+</section>
+<section id="percentage-increase" class="level1">
+<h1>43. Percentage Increase</h1>
+<p>Formula:</p>
+<pre class="text"><code>Percentage Increase=
+(Increase ÷ Original Value) × 100</code></pre>
+<section id="example-8" class="level3">
+<h3 class="anchored" data-anchor-id="example-8">Example</h3>
+<p>A price increases from ₹500 to ₹600.</p>
+<p>Increase:</p>
+<pre class="text"><code>600-500=100</code></pre>
+<p>Percentage increase:</p>
+<pre class="text"><code>(100 ÷ 500) × 100 = 20%</code></pre>
+<hr>
+</section>
+</section>
+<section id="percentage-decrease" class="level1">
+<h1>44. Percentage Decrease</h1>
+<p>Formula:</p>
+<pre class="text"><code>Percentage Decrease=
+(Decrease ÷ Original Value) × 100</code></pre>
+<section id="example-9" class="level3">
+<h3 class="anchored" data-anchor-id="example-9">Example</h3>
+<p>A price decreases from ₹800 to ₹600.</p>
+<p>Decrease:</p>
+<pre class="text"><code>800-600=200</code></pre>
+<p>Percentage decrease:</p>
+<pre class="text"><code>(200 ÷ 800) × 100 = 25%</code></pre>
+<hr>
+</section>
+</section>
+<section id="profit-and-loss" class="level1">
+<h1>45. Profit and Loss</h1>
+<p>Important terms:</p>
+<section id="cost-price-cp" class="level3">
+<h3 class="anchored" data-anchor-id="cost-price-cp">Cost Price (CP)</h3>
+<p>The price at which an item is purchased.</p>
+</section>
+<section id="selling-price-sp" class="level3">
+<h3 class="anchored" data-anchor-id="selling-price-sp">Selling Price (SP)</h3>
+<p>The price at which an item is sold.</p>
+</section>
+<section id="profit" class="level3">
+<h3 class="anchored" data-anchor-id="profit">Profit</h3>
+<p>When:</p>
+<pre class="text"><code>SP &gt; CP</code></pre>
+<p>Profit:</p>
+<pre class="text"><code>Profit = SP − CP</code></pre>
+</section>
+<section id="loss" class="level3">
+<h3 class="anchored" data-anchor-id="loss">Loss</h3>
+<p>When:</p>
+<pre class="text"><code>CP &gt; SP</code></pre>
+<p>Loss:</p>
+<pre class="text"><code>Loss = CP − SP</code></pre>
+<hr>
+</section>
+</section>
+<section id="profit-percentage" class="level1">
+<h1>46. Profit Percentage</h1>
+<pre class="text"><code>Profit%=
+(Profit ÷ CP) × 100</code></pre>
+<section id="example-10" class="level3">
+<h3 class="anchored" data-anchor-id="example-10">Example</h3>
+<p>CP = ₹500</p>
+<p>SP = ₹600</p>
+<p>Profit:</p>
+<pre class="text"><code>600-500=100</code></pre>
+<p>Profit percentage:</p>
+<pre class="text"><code>(100 ÷ 500) × 100 = 20%</code></pre>
+<hr>
+</section>
+</section>
+<section id="loss-percentage" class="level1">
+<h1>47. Loss Percentage</h1>
+<pre class="text"><code>Loss%=
+(Loss ÷ CP) × 100</code></pre>
+<section id="example-11" class="level3">
+<h3 class="anchored" data-anchor-id="example-11">Example</h3>
+<p>CP = ₹800</p>
+<p>SP = ₹600</p>
+<p>Loss:</p>
+<pre class="text"><code>800-600=200</code></pre>
+<p>Loss percentage:</p>
+<pre class="text"><code>(200 ÷ 800) × 100 = 25%</code></pre>
+<hr>
+</section>
+</section>
+<section id="discount" class="level1">
+<h1>48. Discount</h1>
+<p>Discount is the reduction given on the marked price.</p>
+<section id="important-terms" class="level3">
+<h3 class="anchored" data-anchor-id="important-terms">Important Terms</h3>
+<p><strong>Marked Price (MP)</strong> = Price written on the product.</p>
+<p><strong>Discount</strong> = Reduction from marked price.</p>
+<p><strong>Selling Price (SP)</strong> = Price paid after discount.</p>
+<p>Formula:</p>
+<pre class="text"><code>Discount = MP − SP</code></pre>
+<hr>
+</section>
+</section>
+<section id="discount-percentage" class="level1">
+<h1>49. Discount Percentage</h1>
+<pre class="text"><code>Discount%=
+(Discount ÷ MP) × 100</code></pre>
+<section id="example-12" class="level3">
+<h3 class="anchored" data-anchor-id="example-12">Example</h3>
+<p>Marked price = ₹1000</p>
+<p>Discount = ₹200</p>
+<p>Therefore:</p>
+<pre class="text"><code>Discount%=
+(200 ÷ 1000) × 100</code></pre>
+<pre class="text"><code>=20%</code></pre>
+<p>Selling price:</p>
+<pre class="text"><code>1000-200=₹800</code></pre>
+<hr>
+</section>
+</section>
+<section id="simple-interest" class="level1">
+<h1>50. Simple Interest</h1>
+<p>Simple Interest is calculated only on the original principal.</p>
+<p>Formula:</p>
+<pre class="text"><code>Simple Interest = (P × R × T) ÷ 100</code></pre>
+<p>where:</p>
+<ul>
+<li><code>P</code> = Principal</li>
+<li><code>R</code> = Rate of interest</li>
+<li><code>T</code> = Time</li>
+</ul>
+<section id="example-13" class="level3">
+<h3 class="anchored" data-anchor-id="example-13">Example</h3>
+<p>Find the simple interest on ₹5,000 at 10% per year for 2 years.</p>
+<pre class="text"><code>SI=(5000 × 10 × 2 ÷ 100)</code></pre>
+<pre class="text"><code>=₹1000</code></pre>
+<p>Amount:</p>
+<pre class="text"><code>Amount = Principal + Interest</code></pre>
+<pre class="text"><code>=5000+1000</code></pre>
+<pre class="text"><code>=₹6000</code></pre>
+<hr>
+</section>
+</section>
+<section id="compound-interest" class="level1">
+<h1>51. Compound Interest</h1>
+<p>Compound interest is calculated on the principal plus accumulated interest.</p>
+<p>For annual compounding:</p>
+<pre class="text"><code>A = P × (1 + R/100)^T</code></pre>
+<p>Compound interest:</p>
+<pre class="text"><code>CI = A − P</code></pre>
+<p>where:</p>
+<ul>
+<li><code>A</code> = Amount</li>
+<li><code>P</code> = Principal</li>
+<li><code>R</code> = Rate</li>
+<li><code>T</code> = Time</li>
+</ul>
+<section id="example-14" class="level3">
+<h3 class="anchored" data-anchor-id="example-14">Example</h3>
+<p>For ₹1,000 at 10% per year for 2 years:</p>
+<pre class="text"><code>A = 1000 × (1.10)^2</code></pre>
+<pre class="text"><code>A=1210</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>CI = 1210 − 1000</code></pre>
+<pre class="text"><code>=₹210</code></pre>
+<hr>
+</section>
+</section>
+<section id="simple-interest-vs-compound-interest" class="level1">
+<h1>52. Simple Interest vs Compound Interest</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Simple Interest</th>
+<th>Compound Interest</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Calculated on original principal</td>
+<td>Calculated on accumulated amount</td>
+</tr>
+<tr class="even">
+<td>Interest remains based on principal</td>
+<td>Interest earns further interest</td>
+</tr>
+<tr class="odd">
+<td>Formula: PRT/100</td>
+<td>Uses compound growth formula</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="averages" class="level1">
+<h1>53. Averages</h1>
+<p>Average is a measure of central tendency.</p>
+<p>Formula:</p>
+<pre class="text"><code>Average=
+(Sum of observations ÷ Number of observations)</code></pre>
+<hr>
+</section>
+<section id="example-average" class="level1">
+<h1>54. Example – Average</h1>
+<p>Find the average of:</p>
+<pre class="text"><code>10, 20, 30, 40, 50</code></pre>
+<p>Sum:</p>
+<pre class="text"><code>10+20+30+40+50=150</code></pre>
+<p>Number of observations:</p>
+<pre class="text"><code>5</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Average = 150 ÷ 5 = 30</code></pre>
+<p>Answer:</p>
+<blockquote class="blockquote">
+<p><strong>30</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="finding-the-missing-value-using-average" class="level1">
+<h1>55. Finding the Missing Value Using Average</h1>
+<p>Suppose the average of five numbers is 20.</p>
+<p>Therefore:</p>
+<pre class="text"><code>Total = 20 × 5</code></pre>
+<pre class="text"><code>=100</code></pre>
+<p>If four numbers are:</p>
+<pre class="text"><code>10, 15, 20, 25</code></pre>
+<p>Their sum is:</p>
+<pre class="text"><code>70</code></pre>
+<p>Missing number:</p>
+<pre class="text"><code>100-70=30</code></pre>
+<p>Answer:</p>
+<blockquote class="blockquote">
+<p><strong>30</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="important-mathematical-formulas" class="level1">
+<h1>56. Important Mathematical Formulas</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Speed</td>
+<td>Distance / Time</td>
+</tr>
+<tr class="even">
+<td>Distance</td>
+<td>Speed × Time</td>
+</tr>
+<tr class="odd">
+<td>Time</td>
+<td>Distance / Speed</td>
+</tr>
+<tr class="even">
+<td>Percentage</td>
+<td>Part / Whole × 100</td>
+</tr>
+<tr class="odd">
+<td>Profit</td>
+<td>SP − CP</td>
+</tr>
+<tr class="even">
+<td>Loss</td>
+<td>CP − SP</td>
+</tr>
+<tr class="odd">
+<td>Profit %</td>
+<td>Profit / CP × 100</td>
+</tr>
+<tr class="even">
+<td>Loss %</td>
+<td>Loss / CP × 100</td>
+</tr>
+<tr class="odd">
+<td>Discount</td>
+<td>MP − SP</td>
+</tr>
+<tr class="even">
+<td>Discount %</td>
+<td>Discount / MP × 100</td>
+</tr>
+<tr class="odd">
+<td>Simple Interest</td>
+<td>PRT / 100</td>
+</tr>
+<tr class="even">
+<td>Amount</td>
+<td>Principal + Interest</td>
+</tr>
+<tr class="odd">
+<td>Average</td>
+<td>Sum / Number of observations</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="fast-calculation-strategy" class="level1">
+<h1>57. Fast Calculation Strategy</h1>
+<p>For UGC NET aptitude questions:</p>
+<section id="step-1-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-1">Step 1</h3>
+<p>Read the question carefully.</p>
+</section>
+<section id="step-2-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-1">Step 2</h3>
+<p>Identify what is given.</p>
+</section>
+<section id="step-3-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-1">Step 3</h3>
+<p>Identify what must be found.</p>
+</section>
+<section id="step-4-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-1">Step 4</h3>
+<p>Write the relevant formula.</p>
+</section>
+<section id="step-5-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-1">Step 5</h3>
+<p>Substitute the values.</p>
+</section>
+<section id="step-6-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-1">Step 6</h3>
+<p>Calculate carefully.</p>
+</section>
+<section id="step-7" class="level3">
+<h3 class="anchored" data-anchor-id="step-7">Step 7</h3>
+<p>Check whether the answer is reasonable.</p>
+<hr>
+</section>
+</section>
+<section id="common-mistakes" class="level1">
+<h1>58. Common Mistakes</h1>
+<section id="mistake-1-using-the-wrong-base-for-percentage" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-1-using-the-wrong-base-for-percentage">Mistake 1 – Using the Wrong Base for Percentage</h3>
+<p>Profit percentage is calculated using <strong>Cost Price</strong>, not Selling Price.</p>
+</section>
+<section id="mistake-2-confusing-marked-price-and-cost-price" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-2-confusing-marked-price-and-cost-price">Mistake 2 – Confusing Marked Price and Cost Price</h3>
+<p>Discount is calculated from the <strong>Marked Price</strong>.</p>
+</section>
+<section id="mistake-3-confusing-distance-and-speed" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-3-confusing-distance-and-speed">Mistake 3 – Confusing Distance and Speed</h3>
+<p>Remember:</p>
+<pre class="text"><code>Speed = Distance ÷ Time</code></pre>
+</section>
+<section id="mistake-4-forgetting-unit-conversion" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-4-forgetting-unit-conversion">Mistake 4 – Forgetting Unit Conversion</h3>
+<p>For example:</p>
+<pre class="text"><code>Hours → Minutes
+Kilometres → Metres</code></pre>
+</section>
+<section id="mistake-5-incorrect-average" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-5-incorrect-average">Mistake 5 – Incorrect Average</h3>
+<p>Average is:</p>
+<pre class="text"><code>(Total ÷ Number)</code></pre>
+<p>not simply the middle value.</p>
+<hr>
+</section>
+</section>
+<section id="ugc-net-focus-areas" class="level1">
+<h1>59. UGC NET Focus Areas</h1>
+<p>Pay particular attention to:</p>
+<ul>
+<li>Deductive reasoning</li>
+<li>Inductive reasoning</li>
+<li>Analogies</li>
+<li>Number series</li>
+<li>Letter series</li>
+<li>Coding-decoding</li>
+<li>Relationship problems</li>
+<li>Fractions</li>
+<li>Speed, distance and time</li>
+<li>Ratio</li>
+<li>Proportion</li>
+<li>Percentage</li>
+<li>Profit and loss</li>
+<li>Simple interest</li>
+<li>Compound interest</li>
+<li>Discount</li>
+<li>Average</li>
+</ul>
+<hr>
+</section>
+<section id="quick-revision" class="level1">
+<h1>60. Quick Revision</h1>
+<section id="reasoning" class="level3">
+<h3 class="anchored" data-anchor-id="reasoning">Reasoning</h3>
+<pre class="text"><code>Deductive → General → Specific
+
+Inductive → Specific → General
+
+Analogy → Relationship between pairs</code></pre>
+</section>
+<section id="number-series-1" class="level3">
+<h3 class="anchored" data-anchor-id="number-series-1">Number Series</h3>
+<p>Look for:</p>
+<pre class="text"><code>+
+-
+×
+÷
+Squares
+Cubes
+Alternating patterns
+Increasing differences</code></pre>
+</section>
+<section id="percentage-1" class="level3">
+<h3 class="anchored" data-anchor-id="percentage-1">Percentage</h3>
+<pre class="text"><code>Percentage = (Part ÷ Whole) × 100</code></pre>
+</section>
+<section id="speed" class="level3">
+<h3 class="anchored" data-anchor-id="speed">Speed</h3>
+<pre class="text"><code>Speed = Distance ÷ Time</code></pre>
+</section>
+<section id="profit-1" class="level3">
+<h3 class="anchored" data-anchor-id="profit-1">Profit</h3>
+<pre class="text"><code>Profit = SP − CP</code></pre>
+</section>
+<section id="loss-1" class="level3">
+<h3 class="anchored" data-anchor-id="loss-1">Loss</h3>
+<pre class="text"><code>Loss = CP − SP</code></pre>
+</section>
+<section id="simple-interest-1" class="level3">
+<h3 class="anchored" data-anchor-id="simple-interest-1">Simple Interest</h3>
+<pre class="text"><code>Simple Interest = (P × R × T) ÷ 100</code></pre>
+</section>
+<section id="average" class="level3">
+<h3 class="anchored" data-anchor-id="average">Average</h3>
+<pre class="text"><code>Average=(Sum ÷ Number)</code></pre>
+<hr>
+</section>
+</section>
+<section id="one-minute-revision" class="level1">
+<h1>61. One-Minute Revision</h1>
+<pre class="text"><code>MATHEMATICAL REASONING &amp; APTITUDE
+              ↓
+       ┌──────┴──────┐
+       ↓             ↓
+    Reasoning     Mathematics
+       ↓             ↓
+ Deductive       Fractions
+ Inductive       Time &amp; Distance
+ Analogy         Ratio
+                 Proportion
+ Number Series   Percentage
+ Letter Series   Profit &amp; Loss
+ Codes           Interest
+ Relationships   Discount
+                 Average</code></pre>
+<hr>
+</section>
+<section id="final-exam-tip" class="level1">
+<h1>62. Final Exam Tip</h1>
+<p>For numerical questions, do not immediately start calculating.</p>
+<p>First ask:</p>
+<blockquote class="blockquote">
+<p><strong>What type of problem is this?</strong></p>
+</blockquote>
+<p>For example:</p>
+<pre class="text"><code>Question about price reduction
+          ↓
+       Discount
+
+Question about buying and selling
+          ↓
+     Profit / Loss
+
+Question about movement
+          ↓
+    Speed / Distance / Time
+
+Question about comparison
+          ↓
+        Ratio
+
+Question about "per hundred"
+          ↓
+      Percentage
+
+Question about central value
+          ↓
+        Average</code></pre>
+<p>Correctly identifying the type of problem is often the first and most important step toward solving it.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

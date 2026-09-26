@@ -1,0 +1,3248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit X – Artificial Intelligence (AI) – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper1.html"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper2.html" aria-current="page"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit10-artificial-intelligence.html">Unit X – Artificial Intelligence (AI)</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 2 – Computer Science &amp; Applications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-discrete-structures-and-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Discrete Structures and Optimization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-computer-system-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Computer System Architecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-programming-languages-and-computer-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Programming Languages and Computer Graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-database-management-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Database Management Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-system-software-and-operating-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – System Software and Operating System</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-software-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Software Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-structures-and-algorithms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Structures and Algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-theory-of-computation-and-compilers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Theory of Computation and Compilers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-data-communication-and-computer-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – Data Communication and Computer Networks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-artificial-intelligence.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit X – Artificial Intelligence (AI)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#approaches-to-artificial-intelligence" id="toc-approaches-to-artificial-intelligence" class="nav-link" data-scroll-target="#approaches-to-artificial-intelligence">2. Approaches to Artificial Intelligence</a></li>
+  <li><a href="#turing-test" id="toc-turing-test" class="nav-link" data-scroll-target="#turing-test">3. Turing Test</a>
+  <ul class="collapse">
+  <li><a href="#important-point" id="toc-important-point" class="nav-link" data-scroll-target="#important-point">Important Point</a></li>
+  </ul></li>
+  <li><a href="#rational-agent-approach" id="toc-rational-agent-approach" class="nav-link" data-scroll-target="#rational-agent-approach">4. Rational Agent Approach</a>
+  <ul class="collapse">
+  <li><a href="#basic-model" id="toc-basic-model" class="nav-link" data-scroll-target="#basic-model">Basic Model</a></li>
+  </ul></li>
+  <li><a href="#rationality" id="toc-rationality" class="nav-link" data-scroll-target="#rationality">5. Rationality</a>
+  <ul class="collapse">
+  <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">Important</a></li>
+  </ul></li>
+  <li><a href="#agent-types" id="toc-agent-types" class="nav-link" data-scroll-target="#agent-types">6. Agent Types</a>
+  <ul class="collapse">
+  <li><a href="#simple-reflex-agent" id="toc-simple-reflex-agent" class="nav-link" data-scroll-target="#simple-reflex-agent">Simple Reflex Agent</a></li>
+  <li><a href="#model-based-agent" id="toc-model-based-agent" class="nav-link" data-scroll-target="#model-based-agent">Model-Based Agent</a></li>
+  <li><a href="#goal-based-agent" id="toc-goal-based-agent" class="nav-link" data-scroll-target="#goal-based-agent">Goal-Based Agent</a></li>
+  <li><a href="#utility-based-agent" id="toc-utility-based-agent" class="nav-link" data-scroll-target="#utility-based-agent">Utility-Based Agent</a></li>
+  <li><a href="#learning-agent" id="toc-learning-agent" class="nav-link" data-scroll-target="#learning-agent">Learning Agent</a></li>
+  </ul></li>
+  <li><a href="#state-space-representation" id="toc-state-space-representation" class="nav-link" data-scroll-target="#state-space-representation">7. State Space Representation</a></li>
+  <li><a href="#state" id="toc-state" class="nav-link" data-scroll-target="#state">8. State</a></li>
+  <li><a href="#initial-state" id="toc-initial-state" class="nav-link" data-scroll-target="#initial-state">9. Initial State</a></li>
+  <li><a href="#goal-state" id="toc-goal-state" class="nav-link" data-scroll-target="#goal-state">10. Goal State</a></li>
+  <li><a href="#operators" id="toc-operators" class="nav-link" data-scroll-target="#operators">11. Operators</a></li>
+  <li><a href="#state-space-graph" id="toc-state-space-graph" class="nav-link" data-scroll-target="#state-space-graph">12. State Space Graph</a></li>
+  <li><a href="#problem-formulation" id="toc-problem-formulation" class="nav-link" data-scroll-target="#problem-formulation">13. Problem Formulation</a>
+  <ul class="collapse">
+  <li><a href="#example-route-finding" id="toc-example-route-finding" class="nav-link" data-scroll-target="#example-route-finding">Example: Route Finding</a></li>
+  </ul></li>
+  <li><a href="#search" id="toc-search" class="nav-link" data-scroll-target="#search">14. Search</a>
+  <ul class="collapse">
+  <li><a href="#uninformed-search" id="toc-uninformed-search" class="nav-link" data-scroll-target="#uninformed-search">Uninformed Search</a></li>
+  <li><a href="#informed-search" id="toc-informed-search" class="nav-link" data-scroll-target="#informed-search">Informed Search</a></li>
+  </ul></li>
+  <li><a href="#breadth-first-search" id="toc-breadth-first-search" class="nav-link" data-scroll-target="#breadth-first-search">15. Breadth First Search</a>
+  <ul class="collapse">
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a></li>
+  </ul></li>
+  <li><a href="#depth-first-search" id="toc-depth-first-search" class="nav-link" data-scroll-target="#depth-first-search">16. Depth First Search</a>
+  <ul class="collapse">
+  <li><a href="#advantages" id="toc-advantages" class="nav-link" data-scroll-target="#advantages">Advantages</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  </ul></li>
+  <li><a href="#uniform-cost-search" id="toc-uniform-cost-search" class="nav-link" data-scroll-target="#uniform-cost-search">17. Uniform Cost Search</a>
+  <ul class="collapse">
+  <li><a href="#important-1" id="toc-important-1" class="nav-link" data-scroll-target="#important-1">Important</a></li>
+  </ul></li>
+  <li><a href="#heuristic-search" id="toc-heuristic-search" class="nav-link" data-scroll-target="#heuristic-search">18. Heuristic Search</a></li>
+  <li><a href="#greedy-best-first-search" id="toc-greedy-best-first-search" class="nav-link" data-scroll-target="#greedy-best-first-search">19. Greedy Best First Search</a>
+  <ul class="collapse">
+  <li><a href="#advantage" id="toc-advantage" class="nav-link" data-scroll-target="#advantage">Advantage</a></li>
+  <li><a href="#limitation" id="toc-limitation" class="nav-link" data-scroll-target="#limitation">Limitation</a></li>
+  </ul></li>
+  <li><a href="#a-search" id="toc-a-search" class="nav-link" data-scroll-target="#a-search">20. A* Search</a></li>
+  <li><a href="#admissible-heuristic" id="toc-admissible-heuristic" class="nav-link" data-scroll-target="#admissible-heuristic">21. Admissible Heuristic</a></li>
+  <li><a href="#consistent-heuristic" id="toc-consistent-heuristic" class="nav-link" data-scroll-target="#consistent-heuristic">22. Consistent Heuristic</a></li>
+  <li><a href="#search-comparison" id="toc-search-comparison" class="nav-link" data-scroll-target="#search-comparison">23. Search Comparison</a></li>
+  <li><a href="#game-playing" id="toc-game-playing" class="nav-link" data-scroll-target="#game-playing">24. Game Playing</a></li>
+  <li><a href="#game-tree" id="toc-game-tree" class="nav-link" data-scroll-target="#game-tree">25. Game Tree</a></li>
+  <li><a href="#min-max-search" id="toc-min-max-search" class="nav-link" data-scroll-target="#min-max-search">26. Min-Max Search</a></li>
+  <li><a href="#minimax-example" id="toc-minimax-example" class="nav-link" data-scroll-target="#minimax-example">27. Minimax Example</a></li>
+  <li><a href="#alpha-beta-cutoff" id="toc-alpha-beta-cutoff" class="nav-link" data-scroll-target="#alpha-beta-cutoff">28. Alpha-Beta Cutoff</a>
+  <ul class="collapse">
+  <li><a href="#alpha" id="toc-alpha" class="nav-link" data-scroll-target="#alpha">Alpha</a></li>
+  <li><a href="#beta" id="toc-beta" class="nav-link" data-scroll-target="#beta">Beta</a></li>
+  </ul></li>
+  <li><a href="#benefit-of-alpha-beta-pruning" id="toc-benefit-of-alpha-beta-pruning" class="nav-link" data-scroll-target="#benefit-of-alpha-beta-pruning">29. Benefit of Alpha-Beta Pruning</a></li>
+  <li><a href="#knowledge-representation" id="toc-knowledge-representation" class="nav-link" data-scroll-target="#knowledge-representation">30. Knowledge Representation</a></li>
+  <li><a href="#logic" id="toc-logic" class="nav-link" data-scroll-target="#logic">31. Logic</a></li>
+  <li><a href="#propositional-logic" id="toc-propositional-logic" class="nav-link" data-scroll-target="#propositional-logic">32. Propositional Logic</a></li>
+  <li><a href="#predicate-logic" id="toc-predicate-logic" class="nav-link" data-scroll-target="#predicate-logic">33. Predicate Logic</a></li>
+  <li><a href="#semantic-networks" id="toc-semantic-networks" class="nav-link" data-scroll-target="#semantic-networks">34. Semantic Networks</a></li>
+  <li><a href="#frames" id="toc-frames" class="nav-link" data-scroll-target="#frames">35. Frames</a></li>
+  <li><a href="#rules" id="toc-rules" class="nav-link" data-scroll-target="#rules">36. Rules</a></li>
+  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">37. Scripts</a></li>
+  <li><a href="#conceptual-dependency" id="toc-conceptual-dependency" class="nav-link" data-scroll-target="#conceptual-dependency">38. Conceptual Dependency</a></li>
+  <li><a href="#ontologies" id="toc-ontologies" class="nav-link" data-scroll-target="#ontologies">39. Ontologies</a></li>
+  <li><a href="#expert-systems" id="toc-expert-systems" class="nav-link" data-scroll-target="#expert-systems">40. Expert Systems</a></li>
+  <li><a href="#knowledge-base" id="toc-knowledge-base" class="nav-link" data-scroll-target="#knowledge-base">41. Knowledge Base</a></li>
+  <li><a href="#inference-engine" id="toc-inference-engine" class="nav-link" data-scroll-target="#inference-engine">42. Inference Engine</a></li>
+  <li><a href="#forward-chaining" id="toc-forward-chaining" class="nav-link" data-scroll-target="#forward-chaining">43. Forward Chaining</a></li>
+  <li><a href="#backward-chaining" id="toc-backward-chaining" class="nav-link" data-scroll-target="#backward-chaining">44. Backward Chaining</a>
+  <ul class="collapse">
+  <li><a href="#comparison" id="toc-comparison" class="nav-link" data-scroll-target="#comparison">Comparison</a></li>
+  </ul></li>
+  <li><a href="#handling-uncertainty" id="toc-handling-uncertainty" class="nav-link" data-scroll-target="#handling-uncertainty">45. Handling Uncertainty</a>
+  <ul class="collapse">
+  <li><a href="#important-2" id="toc-important-2" class="nav-link" data-scroll-target="#important-2">Important</a></li>
+  </ul></li>
+  <li><a href="#planning" id="toc-planning" class="nav-link" data-scroll-target="#planning">46. Planning</a></li>
+  <li><a href="#components-of-a-planning-system" id="toc-components-of-a-planning-system" class="nav-link" data-scroll-target="#components-of-a-planning-system">47. Components of a Planning System</a></li>
+  <li><a href="#linear-planning" id="toc-linear-planning" class="nav-link" data-scroll-target="#linear-planning">48. Linear Planning</a></li>
+  <li><a href="#non-linear-planning" id="toc-non-linear-planning" class="nav-link" data-scroll-target="#non-linear-planning">49. Non-Linear Planning</a></li>
+  <li><a href="#goal-stack-planning" id="toc-goal-stack-planning" class="nav-link" data-scroll-target="#goal-stack-planning">50. Goal Stack Planning</a></li>
+  <li><a href="#strips" id="toc-strips" class="nav-link" data-scroll-target="#strips">51. STRIPS</a></li>
+  <li><a href="#example-of-strips-action" id="toc-example-of-strips-action" class="nav-link" data-scroll-target="#example-of-strips-action">52. Example of STRIPS Action</a></li>
+  <li><a href="#hierarchical-planning" id="toc-hierarchical-planning" class="nav-link" data-scroll-target="#hierarchical-planning">53. Hierarchical Planning</a></li>
+  <li><a href="#partial-order-planning" id="toc-partial-order-planning" class="nav-link" data-scroll-target="#partial-order-planning">54. Partial Order Planning</a></li>
+  <li><a href="#natural-language-processing" id="toc-natural-language-processing" class="nav-link" data-scroll-target="#natural-language-processing">55. Natural Language Processing</a></li>
+  <li><a href="#grammar-and-language" id="toc-grammar-and-language" class="nav-link" data-scroll-target="#grammar-and-language">56. Grammar and Language</a></li>
+  <li><a href="#parsing" id="toc-parsing" class="nav-link" data-scroll-target="#parsing">57. Parsing</a></li>
+  <li><a href="#parsing-techniques" id="toc-parsing-techniques" class="nav-link" data-scroll-target="#parsing-techniques">58. Parsing Techniques</a></li>
+  <li><a href="#top-down-parsing" id="toc-top-down-parsing" class="nav-link" data-scroll-target="#top-down-parsing">59. Top-Down Parsing</a></li>
+  <li><a href="#bottom-up-parsing" id="toc-bottom-up-parsing" class="nav-link" data-scroll-target="#bottom-up-parsing">60. Bottom-Up Parsing</a></li>
+  <li><a href="#semantic-analysis" id="toc-semantic-analysis" class="nav-link" data-scroll-target="#semantic-analysis">61. Semantic Analysis</a></li>
+  <li><a href="#pragmatics" id="toc-pragmatics" class="nav-link" data-scroll-target="#pragmatics">62. Pragmatics</a>
+  <ul class="collapse">
+  <li><a href="#syntax-vs-semantics-vs-pragmatics" id="toc-syntax-vs-semantics-vs-pragmatics" class="nav-link" data-scroll-target="#syntax-vs-semantics-vs-pragmatics">Syntax vs Semantics vs Pragmatics</a></li>
+  </ul></li>
+  <li><a href="#multi-agent-systems" id="toc-multi-agent-systems" class="nav-link" data-scroll-target="#multi-agent-systems">63. Multi-Agent Systems</a></li>
+  <li><a href="#agents-and-objects" id="toc-agents-and-objects" class="nav-link" data-scroll-target="#agents-and-objects">64. Agents and Objects</a>
+  <ul class="collapse">
+  <li><a href="#comparison-1" id="toc-comparison-1" class="nav-link" data-scroll-target="#comparison-1">Comparison</a></li>
+  </ul></li>
+  <li><a href="#agents-and-expert-systems" id="toc-agents-and-expert-systems" class="nav-link" data-scroll-target="#agents-and-expert-systems">65. Agents and Expert Systems</a></li>
+  <li><a href="#generic-structure-of-a-multi-agent-system" id="toc-generic-structure-of-a-multi-agent-system" class="nav-link" data-scroll-target="#generic-structure-of-a-multi-agent-system">66. Generic Structure of a Multi-Agent System</a></li>
+  <li><a href="#agent-communication" id="toc-agent-communication" class="nav-link" data-scroll-target="#agent-communication">67. Agent Communication</a></li>
+  <li><a href="#knowledge-sharing-using-ontologies" id="toc-knowledge-sharing-using-ontologies" class="nav-link" data-scroll-target="#knowledge-sharing-using-ontologies">68. Knowledge Sharing Using Ontologies</a></li>
+  <li><a href="#semantic-web" id="toc-semantic-web" class="nav-link" data-scroll-target="#semantic-web">69. Semantic Web</a>
+  <ul class="collapse">
+  <li><a href="#important-3" id="toc-important-3" class="nav-link" data-scroll-target="#important-3">Important</a></li>
+  </ul></li>
+  <li><a href="#agent-development-tools" id="toc-agent-development-tools" class="nav-link" data-scroll-target="#agent-development-tools">70. Agent Development Tools</a></li>
+  <li><a href="#fuzzy-sets" id="toc-fuzzy-sets" class="nav-link" data-scroll-target="#fuzzy-sets">71. Fuzzy Sets</a></li>
+  <li><a href="#fuzziness" id="toc-fuzziness" class="nav-link" data-scroll-target="#fuzziness">72. Fuzziness</a></li>
+  <li><a href="#membership-function" id="toc-membership-function" class="nav-link" data-scroll-target="#membership-function">73. Membership Function</a></li>
+  <li><a href="#types-of-membership-functions" id="toc-types-of-membership-functions" class="nav-link" data-scroll-target="#types-of-membership-functions">74. Types of Membership Functions</a></li>
+  <li><a href="#triangular-membership-function" id="toc-triangular-membership-function" class="nav-link" data-scroll-target="#triangular-membership-function">75. Triangular Membership Function</a></li>
+  <li><a href="#fuzzification" id="toc-fuzzification" class="nav-link" data-scroll-target="#fuzzification">76. Fuzzification</a></li>
+  <li><a href="#defuzzification" id="toc-defuzzification" class="nav-link" data-scroll-target="#defuzzification">77. Defuzzification</a></li>
+  <li><a href="#operations-on-fuzzy-sets" id="toc-operations-on-fuzzy-sets" class="nav-link" data-scroll-target="#operations-on-fuzzy-sets">78. Operations on Fuzzy Sets</a>
+  <ul class="collapse">
+  <li><a href="#union" id="toc-union" class="nav-link" data-scroll-target="#union">Union</a></li>
+  <li><a href="#intersection" id="toc-intersection" class="nav-link" data-scroll-target="#intersection">Intersection</a></li>
+  <li><a href="#complement" id="toc-complement" class="nav-link" data-scroll-target="#complement">Complement</a></li>
+  </ul></li>
+  <li><a href="#linguistic-variables" id="toc-linguistic-variables" class="nav-link" data-scroll-target="#linguistic-variables">79. Linguistic Variables</a></li>
+  <li><a href="#fuzzy-functions" id="toc-fuzzy-functions" class="nav-link" data-scroll-target="#fuzzy-functions">80. Fuzzy Functions</a></li>
+  <li><a href="#fuzzy-relations" id="toc-fuzzy-relations" class="nav-link" data-scroll-target="#fuzzy-relations">81. Fuzzy Relations</a></li>
+  <li><a href="#fuzzy-rules" id="toc-fuzzy-rules" class="nav-link" data-scroll-target="#fuzzy-rules">82. Fuzzy Rules</a></li>
+  <li><a href="#fuzzy-inference" id="toc-fuzzy-inference" class="nav-link" data-scroll-target="#fuzzy-inference">83. Fuzzy Inference</a></li>
+  <li><a href="#fuzzy-control-system" id="toc-fuzzy-control-system" class="nav-link" data-scroll-target="#fuzzy-control-system">84. Fuzzy Control System</a></li>
+  <li><a href="#fuzzy-rule-based-system" id="toc-fuzzy-rule-based-system" class="nav-link" data-scroll-target="#fuzzy-rule-based-system">85. Fuzzy Rule-Based System</a></li>
+  <li><a href="#genetic-algorithms" id="toc-genetic-algorithms" class="nav-link" data-scroll-target="#genetic-algorithms">86. Genetic Algorithms</a></li>
+  <li><a href="#chromosome" id="toc-chromosome" class="nav-link" data-scroll-target="#chromosome">87. Chromosome</a></li>
+  <li><a href="#encoding-strategies" id="toc-encoding-strategies" class="nav-link" data-scroll-target="#encoding-strategies">88. Encoding Strategies</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul></li>
+  <li><a href="#fitness-function" id="toc-fitness-function" class="nav-link" data-scroll-target="#fitness-function">89. Fitness Function</a></li>
+  <li><a href="#selection" id="toc-selection" class="nav-link" data-scroll-target="#selection">90. Selection</a></li>
+  <li><a href="#crossover" id="toc-crossover" class="nav-link" data-scroll-target="#crossover">91. Crossover</a></li>
+  <li><a href="#mutation" id="toc-mutation" class="nav-link" data-scroll-target="#mutation">92. Mutation</a></li>
+  <li><a href="#ga-cycle" id="toc-ga-cycle" class="nav-link" data-scroll-target="#ga-cycle">93. GA Cycle</a></li>
+  <li><a href="#problem-solving-using-genetic-algorithms" id="toc-problem-solving-using-genetic-algorithms" class="nav-link" data-scroll-target="#problem-solving-using-genetic-algorithms">94. Problem Solving Using Genetic Algorithms</a></li>
+  <li><a href="#genetic-algorithm-example" id="toc-genetic-algorithm-example" class="nav-link" data-scroll-target="#genetic-algorithm-example">95. Genetic Algorithm Example</a></li>
+  <li><a href="#advantages-of-genetic-algorithms" id="toc-advantages-of-genetic-algorithms" class="nav-link" data-scroll-target="#advantages-of-genetic-algorithms">96. Advantages of Genetic Algorithms</a>
+  <ul class="collapse">
+  <li><a href="#limitations-1" id="toc-limitations-1" class="nav-link" data-scroll-target="#limitations-1">Limitations</a></li>
+  </ul></li>
+  <li><a href="#artificial-neural-networks" id="toc-artificial-neural-networks" class="nav-link" data-scroll-target="#artificial-neural-networks">97. Artificial Neural Networks</a></li>
+  <li><a href="#artificial-neuron" id="toc-artificial-neuron" class="nav-link" data-scroll-target="#artificial-neuron">98. Artificial Neuron</a></li>
+  <li><a href="#learning-in-ann" id="toc-learning-in-ann" class="nav-link" data-scroll-target="#learning-in-ann">99. Learning in ANN</a></li>
+  <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link" data-scroll-target="#supervised-learning">100. Supervised Learning</a></li>
+  <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning">101. Unsupervised Learning</a></li>
+  <li><a href="#reinforcement-learning" id="toc-reinforcement-learning" class="nav-link" data-scroll-target="#reinforcement-learning">102. Reinforcement Learning</a></li>
+  <li><a href="#single-perceptron" id="toc-single-perceptron" class="nav-link" data-scroll-target="#single-perceptron">103. Single Perceptron</a></li>
+  <li><a href="#perceptron-limitation" id="toc-perceptron-limitation" class="nav-link" data-scroll-target="#perceptron-limitation">104. Perceptron Limitation</a></li>
+  <li><a href="#multi-layer-perceptron" id="toc-multi-layer-perceptron" class="nav-link" data-scroll-target="#multi-layer-perceptron">105. Multi-Layer Perceptron</a></li>
+  <li><a href="#backpropagation" id="toc-backpropagation" class="nav-link" data-scroll-target="#backpropagation">106. Backpropagation</a></li>
+  <li><a href="#activation-functions" id="toc-activation-functions" class="nav-link" data-scroll-target="#activation-functions">107. Activation Functions</a>
+  <ul class="collapse">
+  <li><a href="#sigmoid" id="toc-sigmoid" class="nav-link" data-scroll-target="#sigmoid">Sigmoid</a></li>
+  <li><a href="#tanh" id="toc-tanh" class="nav-link" data-scroll-target="#tanh">Tanh</a></li>
+  <li><a href="#relu" id="toc-relu" class="nav-link" data-scroll-target="#relu">ReLU</a></li>
+  </ul></li>
+  <li><a href="#self-organizing-map" id="toc-self-organizing-map" class="nav-link" data-scroll-target="#self-organizing-map">108. Self-Organizing Map</a></li>
+  <li><a href="#som-learning" id="toc-som-learning" class="nav-link" data-scroll-target="#som-learning">109. SOM Learning</a></li>
+  <li><a href="#hopfield-network" id="toc-hopfield-network" class="nav-link" data-scroll-target="#hopfield-network">110. Hopfield Network</a></li>
+  <li><a href="#associative-memory" id="toc-associative-memory" class="nav-link" data-scroll-target="#associative-memory">111. Associative Memory</a></li>
+  <li><a href="#ann-comparison" id="toc-ann-comparison" class="nav-link" data-scroll-target="#ann-comparison">112. ANN Comparison</a></li>
+  <li><a href="#supervised-vs-unsupervised-vs-reinforcement" id="toc-supervised-vs-unsupervised-vs-reinforcement" class="nav-link" data-scroll-target="#supervised-vs-unsupervised-vs-reinforcement">113. Supervised vs Unsupervised vs Reinforcement</a></li>
+  <li><a href="#ai-topic-comparison" id="toc-ai-topic-comparison" class="nav-link" data-scroll-target="#ai-topic-comparison">114. AI Topic Comparison</a>
+  <ul class="collapse">
+  <li><a href="#turing-test-vs-rational-agent" id="toc-turing-test-vs-rational-agent" class="nav-link" data-scroll-target="#turing-test-vs-rational-agent">Turing Test vs Rational Agent</a></li>
+  <li><a href="#forward-vs-backward-chaining" id="toc-forward-vs-backward-chaining" class="nav-link" data-scroll-target="#forward-vs-backward-chaining">Forward vs Backward Chaining</a></li>
+  <li><a href="#linear-vs-non-linear-planning" id="toc-linear-vs-non-linear-planning" class="nav-link" data-scroll-target="#linear-vs-non-linear-planning">Linear vs Non-Linear Planning</a></li>
+  <li><a href="#crisp-vs-fuzzy-set" id="toc-crisp-vs-fuzzy-set" class="nav-link" data-scroll-target="#crisp-vs-fuzzy-set">Crisp vs Fuzzy Set</a></li>
+  <li><a href="#genetic-algorithm-vs-ann" id="toc-genetic-algorithm-vs-ann" class="nav-link" data-scroll-target="#genetic-algorithm-vs-ann">Genetic Algorithm vs ANN</a></li>
+  </ul></li>
+  <li><a href="#important-ai-terms" id="toc-important-ai-terms" class="nav-link" data-scroll-target="#important-ai-terms">115. Important AI Terms</a></li>
+  <li><a href="#important-formulas" id="toc-important-formulas" class="nav-link" data-scroll-target="#important-formulas">116. Important Formulas</a>
+  <ul class="collapse">
+  <li><a href="#a-search-1" id="toc-a-search-1" class="nav-link" data-scroll-target="#a-search-1">A* Search</a></li>
+  <li><a href="#admissibility" id="toc-admissibility" class="nav-link" data-scroll-target="#admissibility">Admissibility</a></li>
+  <li><a href="#fuzzy-union" id="toc-fuzzy-union" class="nav-link" data-scroll-target="#fuzzy-union">Fuzzy Union</a></li>
+  <li><a href="#fuzzy-intersection" id="toc-fuzzy-intersection" class="nav-link" data-scroll-target="#fuzzy-intersection">Fuzzy Intersection</a></li>
+  <li><a href="#fuzzy-complement" id="toc-fuzzy-complement" class="nav-link" data-scroll-target="#fuzzy-complement">Fuzzy Complement</a></li>
+  <li><a href="#artificial-neuron-1" id="toc-artificial-neuron-1" class="nav-link" data-scroll-target="#artificial-neuron-1">Artificial Neuron</a></li>
+  <li><a href="#relu-1" id="toc-relu-1" class="nav-link" data-scroll-target="#relu-1">ReLU</a></li>
+  <li><a href="#gradient-descent" id="toc-gradient-descent" class="nav-link" data-scroll-target="#gradient-descent">Gradient Descent</a></li>
+  </ul></li>
+  <li><a href="#ugc-net-high-priority-topics" id="toc-ugc-net-high-priority-topics" class="nav-link" data-scroll-target="#ugc-net-high-priority-topics">117. UGC NET High-Priority Topics</a></li>
+  <li><a href="#common-ugc-net-mistakes" id="toc-common-ugc-net-mistakes" class="nav-link" data-scroll-target="#common-ugc-net-mistakes">118. Common UGC NET Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#mistake-1-turing-test-vs-rational-agent" id="toc-mistake-1-turing-test-vs-rational-agent" class="nav-link" data-scroll-target="#mistake-1-turing-test-vs-rational-agent">Mistake 1: Turing Test vs Rational Agent</a></li>
+  <li><a href="#mistake-2-bfs-vs-dfs" id="toc-mistake-2-bfs-vs-dfs" class="nav-link" data-scroll-target="#mistake-2-bfs-vs-dfs">Mistake 2: BFS vs DFS</a></li>
+  <li><a href="#mistake-3-greedy-vs-a" id="toc-mistake-3-greedy-vs-a" class="nav-link" data-scroll-target="#mistake-3-greedy-vs-a">Mistake 3: Greedy vs A*</a></li>
+  <li><a href="#mistake-4-minimax-vs-alpha-beta" id="toc-mistake-4-minimax-vs-alpha-beta" class="nav-link" data-scroll-target="#mistake-4-minimax-vs-alpha-beta">Mistake 4: Minimax vs Alpha-Beta</a></li>
+  <li><a href="#mistake-5-forward-vs-backward-chaining" id="toc-mistake-5-forward-vs-backward-chaining" class="nav-link" data-scroll-target="#mistake-5-forward-vs-backward-chaining">Mistake 5: Forward vs Backward Chaining</a></li>
+  <li><a href="#mistake-6-fuzzification-vs-defuzzification" id="toc-mistake-6-fuzzification-vs-defuzzification" class="nav-link" data-scroll-target="#mistake-6-fuzzification-vs-defuzzification">Mistake 6: Fuzzification vs Defuzzification</a></li>
+  <li><a href="#mistake-7-probability-vs-fuzzy-membership" id="toc-mistake-7-probability-vs-fuzzy-membership" class="nav-link" data-scroll-target="#mistake-7-probability-vs-fuzzy-membership">Mistake 7: Probability vs Fuzzy Membership</a></li>
+  <li><a href="#mistake-8-ga-crossover-vs-mutation" id="toc-mistake-8-ga-crossover-vs-mutation" class="nav-link" data-scroll-target="#mistake-8-ga-crossover-vs-mutation">Mistake 8: GA Crossover vs Mutation</a></li>
+  <li><a href="#mistake-9-perceptron-vs-mlp" id="toc-mistake-9-perceptron-vs-mlp" class="nav-link" data-scroll-target="#mistake-9-perceptron-vs-mlp">Mistake 9: Perceptron vs MLP</a></li>
+  <li><a href="#mistake-10-som-vs-hopfield" id="toc-mistake-10-som-vs-hopfield" class="nav-link" data-scroll-target="#mistake-10-som-vs-hopfield">Mistake 10: SOM vs Hopfield</a></li>
+  </ul></li>
+  <li><a href="#one-minute-revision" id="toc-one-minute-revision" class="nav-link" data-scroll-target="#one-minute-revision">119. One-Minute Revision</a>
+  <ul class="collapse">
+  <li><a href="#ai-approaches" id="toc-ai-approaches" class="nav-link" data-scroll-target="#ai-approaches">AI Approaches</a></li>
+  <li><a href="#search-1" id="toc-search-1" class="nav-link" data-scroll-target="#search-1">Search</a></li>
+  <li><a href="#games" id="toc-games" class="nav-link" data-scroll-target="#games">Games</a></li>
+  <li><a href="#knowledge" id="toc-knowledge" class="nav-link" data-scroll-target="#knowledge">Knowledge</a></li>
+  <li><a href="#expert-systems-1" id="toc-expert-systems-1" class="nav-link" data-scroll-target="#expert-systems-1">Expert Systems</a></li>
+  <li><a href="#planning-1" id="toc-planning-1" class="nav-link" data-scroll-target="#planning-1">Planning</a></li>
+  <li><a href="#nlp" id="toc-nlp" class="nav-link" data-scroll-target="#nlp">NLP</a></li>
+  <li><a href="#multi-agent" id="toc-multi-agent" class="nav-link" data-scroll-target="#multi-agent">Multi-Agent</a></li>
+  <li><a href="#fuzzy-logic" id="toc-fuzzy-logic" class="nav-link" data-scroll-target="#fuzzy-logic">Fuzzy Logic</a></li>
+  <li><a href="#ga" id="toc-ga" class="nav-link" data-scroll-target="#ga">GA</a></li>
+  <li><a href="#ann" id="toc-ann" class="nav-link" data-scroll-target="#ann">ANN</a></li>
+  </ul></li>
+  <li><a href="#final-exam-strategy" id="toc-final-exam-strategy" class="nav-link" data-scroll-target="#final-exam-strategy">120. Final Exam Strategy</a>
+  <ul class="collapse">
+  <li><a href="#block-1-ai-and-search" id="toc-block-1-ai-and-search" class="nav-link" data-scroll-target="#block-1-ai-and-search">Block 1: AI and Search</a></li>
+  <li><a href="#block-2-game-playing" id="toc-block-2-game-playing" class="nav-link" data-scroll-target="#block-2-game-playing">Block 2: Game Playing</a></li>
+  <li><a href="#block-3-knowledge-representation" id="toc-block-3-knowledge-representation" class="nav-link" data-scroll-target="#block-3-knowledge-representation">Block 3: Knowledge Representation</a></li>
+  <li><a href="#block-4-planning-and-nlp" id="toc-block-4-planning-and-nlp" class="nav-link" data-scroll-target="#block-4-planning-and-nlp">Block 4: Planning and NLP</a></li>
+  <li><a href="#block-5-multi-agent-systems" id="toc-block-5-multi-agent-systems" class="nav-link" data-scroll-target="#block-5-multi-agent-systems">Block 5: Multi-Agent Systems</a></li>
+  <li><a href="#block-6-fuzzy-systems-and-ga" id="toc-block-6-fuzzy-systems-and-ga" class="nav-link" data-scroll-target="#block-6-fuzzy-systems-and-ga">Block 6: Fuzzy Systems and GA</a></li>
+  <li><a href="#block-7-ann" id="toc-block-7-ann" class="nav-link" data-scroll-target="#block-7-ann">Block 7: ANN</a></li>
+  </ul></li>
+  <li><a href="#final-summary" id="toc-final-summary" class="nav-link" data-scroll-target="#final-summary">121. Final Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit X – Artificial Intelligence (AI)</h1>
+<p class="subtitle lead">UGC NET Computer Science and Applications – Paper 2</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p><strong>Artificial Intelligence (AI)</strong> is the field of computer science concerned with building systems that can perform tasks requiring abilities such as:</p>
+<ul>
+<li>Reasoning</li>
+<li>Learning</li>
+<li>Problem solving</li>
+<li>Planning</li>
+<li>Perception</li>
+<li>Language understanding</li>
+<li>Decision making</li>
+</ul>
+<p>This unit covers:</p>
+<ol type="1">
+<li>Approaches to AI</li>
+<li>Problem solving and heuristic search</li>
+<li>Game playing</li>
+<li>Knowledge representation</li>
+<li>Expert systems and uncertainty</li>
+<li>Planning</li>
+<li>Natural Language Processing</li>
+<li>Multi-agent systems</li>
+<li>Fuzzy sets and fuzzy systems</li>
+<li>Genetic Algorithms</li>
+<li>Artificial Neural Networks</li>
+</ol>
+<hr>
+</section>
+<section id="approaches-to-artificial-intelligence" class="level1">
+<h1>2. Approaches to Artificial Intelligence</h1>
+<p>Different approaches to AI ask different questions about intelligent behaviour.</p>
+<p>Important approaches include:</p>
+<ol type="1">
+<li>Thinking humanly</li>
+<li>Acting humanly</li>
+<li>Thinking rationally</li>
+<li>Acting rationally</li>
+</ol>
+<p>The syllabus particularly emphasizes:</p>
+<ul>
+<li>Turing Test approach</li>
+<li>Rational Agent approach</li>
+</ul>
+<hr>
+</section>
+<section id="turing-test" class="level1">
+<h1>3. Turing Test</h1>
+<p>The <strong>Turing Test</strong> was proposed by <strong>Alan Turing</strong>.</p>
+<p>The basic idea is to determine whether a machine can exhibit behaviour that is sufficiently similar to human conversation that an evaluator cannot reliably distinguish it from a human.</p>
+<p>A simplified setup contains:</p>
+<pre class="text"><code>Human Judge
+    |
+    |--- communicates with Human
+    |
+    |--- communicates with Machine</code></pre>
+<p>The judge communicates without relying on physical appearance.</p>
+<section id="important-point" class="level3">
+<h3 class="anchored" data-anchor-id="important-point">Important Point</h3>
+<p>The Turing Test focuses on <strong>observable intelligent behaviour</strong>, particularly conversational behaviour.</p>
+<hr>
+</section>
+</section>
+<section id="rational-agent-approach" class="level1">
+<h1>4. Rational Agent Approach</h1>
+<p>An <strong>agent</strong> is an entity that:</p>
+<ul>
+<li>Perceives its environment</li>
+<li>Acts on the environment</li>
+</ul>
+<p>A <strong>rational agent</strong> chooses actions that maximize its expected performance according to its performance measure and available information.</p>
+<section id="basic-model" class="level3">
+<h3 class="anchored" data-anchor-id="basic-model">Basic Model</h3>
+<pre class="text"><code>Environment
+     ↓
+  Sensors
+     ↓
+   Agent
+     ↓
+  Actuators
+     ↓
+Environment</code></pre>
+<hr>
+</section>
+</section>
+<section id="rationality" class="level1">
+<h1>5. Rationality</h1>
+<p>Rationality does not mean that an agent always knows the perfect answer.</p>
+<p>A rational agent:</p>
+<ul>
+<li>Uses available information</li>
+<li>Considers possible actions</li>
+<li>Predicts consequences</li>
+<li>Selects an appropriate action according to its performance measure</li>
+</ul>
+<section id="important" class="level3">
+<h3 class="anchored" data-anchor-id="important">Important</h3>
+<p><strong>Rationality ≠ omniscience</strong></p>
+<p>A rational agent can make a wrong decision when information is incomplete or uncertain.</p>
+<hr>
+</section>
+</section>
+<section id="agent-types" class="level1">
+<h1>6. Agent Types</h1>
+<p>Common AI agent classifications include:</p>
+<ol type="1">
+<li>Simple reflex agent</li>
+<li>Model-based reflex agent</li>
+<li>Goal-based agent</li>
+<li>Utility-based agent</li>
+<li>Learning agent</li>
+</ol>
+<section id="simple-reflex-agent" class="level2">
+<h2 class="anchored" data-anchor-id="simple-reflex-agent">Simple Reflex Agent</h2>
+<p>Acts based on the current percept.</p>
+</section>
+<section id="model-based-agent" class="level2">
+<h2 class="anchored" data-anchor-id="model-based-agent">Model-Based Agent</h2>
+<p>Maintains an internal model of the world.</p>
+</section>
+<section id="goal-based-agent" class="level2">
+<h2 class="anchored" data-anchor-id="goal-based-agent">Goal-Based Agent</h2>
+<p>Chooses actions that help achieve goals.</p>
+</section>
+<section id="utility-based-agent" class="level2">
+<h2 class="anchored" data-anchor-id="utility-based-agent">Utility-Based Agent</h2>
+<p>Chooses actions according to a utility measure.</p>
+</section>
+<section id="learning-agent" class="level2">
+<h2 class="anchored" data-anchor-id="learning-agent">Learning Agent</h2>
+<p>Improves its behaviour using experience.</p>
+<hr>
+</section>
+</section>
+<section id="state-space-representation" class="level1">
+<h1>7. State Space Representation</h1>
+<p>Many AI problems can be represented as a <strong>state space</strong>.</p>
+<p>A state describes the current situation of a problem.</p>
+<p>A state-space problem generally contains:</p>
+<ul>
+<li>Initial state</li>
+<li>Goal state</li>
+<li>Operators/actions</li>
+<li>State transitions</li>
+<li>Path cost</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>Initial State
+     ↓
+  Action
+     ↓
+  State 1
+     ↓
+  Action
+     ↓
+  State 2
+     ↓
+ Goal State</code></pre>
+<hr>
+</section>
+<section id="state" class="level1">
+<h1>8. State</h1>
+<p>A <strong>state</strong> represents one possible configuration of a problem.</p>
+<p>Example: In the 8-puzzle, a state represents the current arrangement of tiles.</p>
+<hr>
+</section>
+<section id="initial-state" class="level1">
+<h1>9. Initial State</h1>
+<p>The initial state is where problem solving starts.</p>
+<p>Example:</p>
+<pre class="text"><code>Start
+ ↓
+Search
+ ↓
+Goal</code></pre>
+<hr>
+</section>
+<section id="goal-state" class="level1">
+<h1>10. Goal State</h1>
+<p>A goal state satisfies the required condition.</p>
+<p>Example:</p>
+<p>For route finding:</p>
+<p><strong>Initial state = Kochi</strong></p>
+<p><strong>Goal state = Bengaluru</strong></p>
+<p>The search tries to find a path connecting them.</p>
+<hr>
+</section>
+<section id="operators" class="level1">
+<h1>11. Operators</h1>
+<p>Operators describe actions that transform one state into another.</p>
+<p>Example:</p>
+<pre class="text"><code>State A --Move Right--&gt; State B</code></pre>
+<hr>
+</section>
+<section id="state-space-graph" class="level1">
+<h1>12. State Space Graph</h1>
+<p>A state space can be represented as a graph.</p>
+<ul>
+<li>Nodes → States</li>
+<li>Edges → Actions/transitions</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>      B
+     / \
+    A   D
+     \ /
+      C</code></pre>
+<hr>
+</section>
+<section id="problem-formulation" class="level1">
+<h1>13. Problem Formulation</h1>
+<p>A well-defined AI problem normally specifies:</p>
+<ol type="1">
+<li>Initial state</li>
+<li>Actions/operators</li>
+<li>Transition model</li>
+<li>Goal test</li>
+<li>Path cost</li>
+</ol>
+<section id="example-route-finding" class="level3">
+<h3 class="anchored" data-anchor-id="example-route-finding">Example: Route Finding</h3>
+<ul>
+<li>Initial state: Current city</li>
+<li>Actions: Travel to connected city</li>
+<li>Transition: Move to next city</li>
+<li>Goal: Destination city</li>
+<li>Cost: Distance/time</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="search" class="level1">
+<h1>14. Search</h1>
+<p>AI search explores possible states to find a solution.</p>
+<p>Search algorithms can be classified into:</p>
+<section id="uninformed-search" class="level3">
+<h3 class="anchored" data-anchor-id="uninformed-search">Uninformed Search</h3>
+<p>Uses no problem-specific heuristic information.</p>
+<p>Examples:</p>
+<ul>
+<li>Breadth First Search</li>
+<li>Depth First Search</li>
+<li>Uniform Cost Search</li>
+</ul>
+</section>
+<section id="informed-search" class="level3">
+<h3 class="anchored" data-anchor-id="informed-search">Informed Search</h3>
+<p>Uses heuristic information.</p>
+<p>Examples:</p>
+<ul>
+<li>Greedy Best First Search</li>
+<li>A* Search</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="breadth-first-search" class="level1">
+<h1>15. Breadth First Search</h1>
+<p><strong>BFS</strong> explores the shallowest nodes first.</p>
+<p>It uses a queue.</p>
+<pre class="text"><code>Level 0
+   A
+
+Level 1
+ B   C
+
+Level 2
+D E F G</code></pre>
+<section id="properties" class="level3">
+<h3 class="anchored" data-anchor-id="properties">Properties</h3>
+<p>For unit step costs:</p>
+<ul>
+<li>Complete: Yes, under standard finite-branching assumptions</li>
+<li>Optimal: Yes for equal step costs</li>
+<li>Memory: High</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="depth-first-search" class="level1">
+<h1>16. Depth First Search</h1>
+<p><strong>DFS</strong> explores one branch deeply before backtracking.</p>
+<p>It uses a stack or recursion.</p>
+<section id="advantages" class="level3">
+<h3 class="anchored" data-anchor-id="advantages">Advantages</h3>
+<ul>
+<li>Low memory compared with BFS in many cases</li>
+<li>Simple implementation</li>
+</ul>
+</section>
+<section id="limitations" class="level3">
+<h3 class="anchored" data-anchor-id="limitations">Limitations</h3>
+<ul>
+<li>May get stuck in deep/infinite paths without suitable controls</li>
+<li>Not generally optimal</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="uniform-cost-search" class="level1">
+<h1>17. Uniform Cost Search</h1>
+<p>Uniform Cost Search expands the node with the lowest path cost.</p>
+<p>It is appropriate when step costs are not necessarily equal.</p>
+<section id="important-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-1">Important</h3>
+<p>Uniform Cost Search is optimal when path costs are nonnegative under standard assumptions.</p>
+<hr>
+</section>
+</section>
+<section id="heuristic-search" class="level1">
+<h1>18. Heuristic Search</h1>
+<p>A <strong>heuristic</strong> is a problem-specific estimate that helps guide search.</p>
+<p>A heuristic function is written as:</p>
+<p><strong>h(n)</strong></p>
+<p>It estimates the cost from node n to a goal.</p>
+<p>Example:</p>
+<p>In route finding:</p>
+<p><strong>h(n) = estimated distance from current city to destination</strong></p>
+<hr>
+</section>
+<section id="greedy-best-first-search" class="level1">
+<h1>19. Greedy Best First Search</h1>
+<p>Greedy Best First Search chooses the node with the smallest:</p>
+<p><strong>h(n)</strong></p>
+<p>It focuses on estimated distance to the goal.</p>
+<section id="advantage" class="level3">
+<h3 class="anchored" data-anchor-id="advantage">Advantage</h3>
+<p>Can be fast in some problems.</p>
+</section>
+<section id="limitation" class="level3">
+<h3 class="anchored" data-anchor-id="limitation">Limitation</h3>
+<p>It is not generally optimal.</p>
+<hr>
+</section>
+</section>
+<section id="a-search" class="level1">
+<h1>20. A* Search</h1>
+<p>A* uses both actual path cost and estimated remaining cost.</p>
+<p>The evaluation function is:</p>
+<p><strong>f(n) = g(n) + h(n)</strong></p>
+<p>where:</p>
+<ul>
+<li>g(n) = cost from start to n</li>
+<li>h(n) = estimated cost from n to goal</li>
+<li>f(n) = estimated total solution cost through n</li>
+</ul>
+<hr>
+</section>
+<section id="admissible-heuristic" class="level1">
+<h1>21. Admissible Heuristic</h1>
+<p>A heuristic is <strong>admissible</strong> if it never overestimates the true remaining cost.</p>
+<p>Therefore:</p>
+<p><strong>h(n) ≤ actual cost from n to goal</strong></p>
+<p>For appropriate conditions, A* with an admissible heuristic is optimal.</p>
+<hr>
+</section>
+<section id="consistent-heuristic" class="level1">
+<h1>22. Consistent Heuristic</h1>
+<p>A heuristic is consistent if for every node n and successor n’:</p>
+<p><strong>h(n) ≤ c(n,n’) + h(n’)</strong></p>
+<p>where c(n,n’) is the step cost.</p>
+<p>Consistency implies admissibility under standard conditions.</p>
+<hr>
+</section>
+<section id="search-comparison" class="level1">
+<h1>23. Search Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Main Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BFS</td>
+<td>Shallowest first</td>
+</tr>
+<tr class="even">
+<td>DFS</td>
+<td>Deepest first</td>
+</tr>
+<tr class="odd">
+<td>Uniform Cost</td>
+<td>Lowest path cost</td>
+</tr>
+<tr class="even">
+<td>Greedy Best First</td>
+<td>Lowest h(n)</td>
+</tr>
+<tr class="odd">
+<td>A*</td>
+<td>Lowest g(n)+h(n)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="game-playing" class="level1">
+<h1>24. Game Playing</h1>
+<p>Game playing is a classical AI problem.</p>
+<p>A game can be represented using:</p>
+<ul>
+<li>Initial state</li>
+<li>Players</li>
+<li>Legal moves</li>
+<li>Result of each move</li>
+<li>Terminal states</li>
+<li>Utility/payoff</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Chess</li>
+<li>Tic-tac-toe</li>
+<li>Checkers</li>
+</ul>
+<hr>
+</section>
+<section id="game-tree" class="level1">
+<h1>25. Game Tree</h1>
+<p>A game tree represents possible moves.</p>
+<pre class="text"><code>              MAX
+           /   |   \
+          A    B    C
+        / \       / \
+       ... ...   ... ...</code></pre>
+<p>Each level can represent a player’s turn.</p>
+<hr>
+</section>
+<section id="min-max-search" class="level1">
+<h1>26. Min-Max Search</h1>
+<p><strong>Minimax</strong> is used for two-player, zero-sum, deterministic games with perfect information in its classical form.</p>
+<p>There are two roles:</p>
+<ul>
+<li>MAX tries to maximize utility.</li>
+<li>MIN tries to minimize utility.</li>
+</ul>
+<hr>
+</section>
+<section id="minimax-example" class="level1">
+<h1>27. Minimax Example</h1>
+<p>Suppose MAX has two possible moves:</p>
+<pre class="text"><code>          MAX
+         /   \
+        A     B
+       / \   / \
+      3   5 2   9</code></pre>
+<p>For A:</p>
+<p><strong>MIN chooses min(3,5) = 3</strong></p>
+<p>For B:</p>
+<p><strong>MIN chooses min(2,9) = 2</strong></p>
+<p>Therefore MAX chooses:</p>
+<p><strong>max(3,2) = 3</strong></p>
+<hr>
+</section>
+<section id="alpha-beta-cutoff" class="level1">
+<h1>28. Alpha-Beta Cutoff</h1>
+<p>Alpha-beta pruning improves minimax by eliminating branches that cannot affect the final decision.</p>
+<p>Two values are maintained:</p>
+<ul>
+<li>Alpha</li>
+<li>Beta</li>
+</ul>
+<section id="alpha" class="level2">
+<h2 class="anchored" data-anchor-id="alpha">Alpha</h2>
+<p>Best value that MAX can guarantee so far.</p>
+</section>
+<section id="beta" class="level2">
+<h2 class="anchored" data-anchor-id="beta">Beta</h2>
+<p>Best value that MIN can guarantee so far.</p>
+<p>A branch can be pruned when:</p>
+<p><strong>alpha ≥ beta</strong></p>
+<hr>
+</section>
+</section>
+<section id="benefit-of-alpha-beta-pruning" class="level1">
+<h1>29. Benefit of Alpha-Beta Pruning</h1>
+<p>Alpha-beta pruning:</p>
+<ul>
+<li>Does not change the final minimax answer</li>
+<li>Reduces the number of nodes evaluated</li>
+<li>Allows deeper game-tree search</li>
+</ul>
+<p>The effectiveness depends strongly on move ordering.</p>
+<hr>
+</section>
+<section id="knowledge-representation" class="level1">
+<h1>30. Knowledge Representation</h1>
+<p><strong>Knowledge Representation (KR)</strong> is the process of representing information about the world so that an AI system can reason with it.</p>
+<p>Important methods:</p>
+<ul>
+<li>Logic</li>
+<li>Semantic networks</li>
+<li>Frames</li>
+<li>Rules</li>
+<li>Scripts</li>
+<li>Conceptual dependency</li>
+<li>Ontologies</li>
+</ul>
+<hr>
+</section>
+<section id="logic" class="level1">
+<h1>31. Logic</h1>
+<p>Logic provides formal structures for representing facts and reasoning.</p>
+<p>Important forms:</p>
+<ul>
+<li>Propositional logic</li>
+<li>Predicate logic</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>Human(Socrates)
+Human(x) → Mortal(x)</code></pre>
+<p>From these, we can infer:</p>
+<pre class="text"><code>Mortal(Socrates)</code></pre>
+<hr>
+</section>
+<section id="propositional-logic" class="level1">
+<h1>32. Propositional Logic</h1>
+<p>A proposition is a statement that is either true or false.</p>
+<p>Examples:</p>
+<pre class="text"><code>P = It is raining.
+Q = The road is wet.</code></pre>
+<p>Operators include:</p>
+<ul>
+<li>NOT</li>
+<li>AND</li>
+<li>OR</li>
+<li>Implication</li>
+<li>Biconditional</li>
+</ul>
+<hr>
+</section>
+<section id="predicate-logic" class="level1">
+<h1>33. Predicate Logic</h1>
+<p>Predicate logic represents objects, properties and relationships.</p>
+<p>Example:</p>
+<pre class="text"><code>Student(Ravi)
+Likes(Ravi, AI)</code></pre>
+<p>Quantifiers:</p>
+<ul>
+<li>Universal: ∀</li>
+<li>Existential: ∃</li>
+</ul>
+<p>Example:</p>
+<p><strong>∀x Student(x) → Learner(x)</strong></p>
+<p>Meaning:</p>
+<p>All students are learners.</p>
+<hr>
+</section>
+<section id="semantic-networks" class="level1">
+<h1>34. Semantic Networks</h1>
+<p>A semantic network represents knowledge as a graph.</p>
+<ul>
+<li>Nodes → Concepts/entities</li>
+<li>Links → Relationships</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>Dog
+ |
+is-a
+ |
+Animal</code></pre>
+<p>Another example:</p>
+<pre class="text"><code>Bird
+ |
+has
+ |
+Wings</code></pre>
+<hr>
+</section>
+<section id="frames" class="level1">
+<h1>35. Frames</h1>
+<p>A <strong>frame</strong> represents knowledge about an object or concept using slots and values.</p>
+<p>Example:</p>
+<pre class="text"><code>FRAME: Student
+
+Name: Ravi
+Age: 20
+Course: AI
+Department: Computer Science</code></pre>
+<p>Frames are useful for structured knowledge.</p>
+<hr>
+</section>
+<section id="rules" class="level1">
+<h1>36. Rules</h1>
+<p>Rule-based knowledge is represented using:</p>
+<p><strong>IF condition THEN conclusion</strong></p>
+<p>Example:</p>
+<pre class="text"><code>IF temperature is high
+THEN fan is ON</code></pre>
+<p>Rules are common in expert systems.</p>
+<hr>
+</section>
+<section id="scripts" class="level1">
+<h1>37. Scripts</h1>
+<p>A script represents a typical sequence of events.</p>
+<p>Example: Restaurant script</p>
+<pre class="text"><code>Enter restaurant
+↓
+Get table
+↓
+Read menu
+↓
+Order food
+↓
+Eat
+↓
+Pay
+↓
+Leave</code></pre>
+<p>Scripts are useful for representing stereotypical event sequences.</p>
+<hr>
+</section>
+<section id="conceptual-dependency" class="level1">
+<h1>38. Conceptual Dependency</h1>
+<p>Conceptual Dependency is a representation approach intended to represent the underlying meaning of natural-language sentences.</p>
+<p>It attempts to represent actions using primitive conceptual structures.</p>
+<p>The goal is to reduce dependence on the exact wording of a sentence.</p>
+<hr>
+</section>
+<section id="ontologies" class="level1">
+<h1>39. Ontologies</h1>
+<p>An <strong>ontology</strong> defines concepts and relationships within a domain.</p>
+<p>It may describe:</p>
+<ul>
+<li>Classes</li>
+<li>Properties</li>
+<li>Relationships</li>
+<li>Constraints</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>Animal
+ ├── Mammal
+ │    └── Dog
+ └── Bird
+      └── Eagle</code></pre>
+<p>Ontologies are important in:</p>
+<ul>
+<li>Knowledge sharing</li>
+<li>Semantic Web</li>
+<li>Multi-agent systems</li>
+<li>Information integration</li>
+</ul>
+<hr>
+</section>
+<section id="expert-systems" class="level1">
+<h1>40. Expert Systems</h1>
+<p>An <strong>expert system</strong> attempts to solve problems in a specialized domain using encoded expert knowledge.</p>
+<p>Major components:</p>
+<ol type="1">
+<li>Knowledge base</li>
+<li>Inference engine</li>
+<li>User interface</li>
+<li>Explanation facility</li>
+<li>Knowledge acquisition component</li>
+</ol>
+<hr>
+</section>
+<section id="knowledge-base" class="level1">
+<h1>41. Knowledge Base</h1>
+<p>The knowledge base stores domain knowledge.</p>
+<p>It may contain:</p>
+<ul>
+<li>Facts</li>
+<li>Rules</li>
+<li>Relationships</li>
+<li>Heuristics</li>
+</ul>
+<hr>
+</section>
+<section id="inference-engine" class="level1">
+<h1>42. Inference Engine</h1>
+<p>The inference engine applies reasoning mechanisms to the knowledge base.</p>
+<p>It derives conclusions from available facts and rules.</p>
+<hr>
+</section>
+<section id="forward-chaining" class="level1">
+<h1>43. Forward Chaining</h1>
+<p>Forward chaining is <strong>data-driven</strong>.</p>
+<p>It starts with known facts and repeatedly applies rules.</p>
+<pre class="text"><code>Facts
+ ↓
+Rules
+ ↓
+New facts
+ ↓
+More rules
+ ↓
+Conclusion</code></pre>
+<hr>
+</section>
+<section id="backward-chaining" class="level1">
+<h1>44. Backward Chaining</h1>
+<p>Backward chaining is <strong>goal-driven</strong>.</p>
+<p>It starts with a goal and works backward to find supporting facts.</p>
+<pre class="text"><code>Goal
+ ↓
+Required conditions
+ ↓
+Facts</code></pre>
+<section id="comparison" class="level3">
+<h3 class="anchored" data-anchor-id="comparison">Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Forward Chaining</th>
+<th>Backward Chaining</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data-driven</td>
+<td>Goal-driven</td>
+</tr>
+<tr class="even">
+<td>Starts with facts</td>
+<td>Starts with goal</td>
+</tr>
+<tr class="odd">
+<td>Derives consequences</td>
+<td>Searches for supporting facts</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="handling-uncertainty" class="level1">
+<h1>45. Handling Uncertainty</h1>
+<p>Real-world knowledge is often incomplete or uncertain.</p>
+<p>AI can handle uncertainty using methods such as:</p>
+<ul>
+<li>Probability</li>
+<li>Bayesian reasoning</li>
+<li>Certainty factors</li>
+<li>Fuzzy logic</li>
+</ul>
+<section id="important-2" class="level3">
+<h3 class="anchored" data-anchor-id="important-2">Important</h3>
+<p><strong>Probability</strong> represents uncertainty about events.</p>
+<p><strong>Fuzzy logic</strong> represents degrees of membership or truth.</p>
+<p>These concepts are related but not identical.</p>
+<hr>
+</section>
+</section>
+<section id="planning" class="level1">
+<h1>46. Planning</h1>
+<p>Planning is the process of determining a sequence or structure of actions to achieve goals.</p>
+<p>A planning problem generally includes:</p>
+<ul>
+<li>Initial state</li>
+<li>Goal state</li>
+<li>Actions</li>
+<li>Preconditions</li>
+<li>Effects</li>
+</ul>
+<hr>
+</section>
+<section id="components-of-a-planning-system" class="level1">
+<h1>47. Components of a Planning System</h1>
+<p>Important components include:</p>
+<ol type="1">
+<li>Initial state</li>
+<li>Goal description</li>
+<li>Operators/actions</li>
+<li>Preconditions</li>
+<li>Effects</li>
+<li>Planner</li>
+<li>Plan</li>
+</ol>
+<p>Example:</p>
+<pre class="text"><code>Initial State
+     ↓
+Action 1
+     ↓
+Action 2
+     ↓
+Action 3
+     ↓
+Goal</code></pre>
+<hr>
+</section>
+<section id="linear-planning" class="level1">
+<h1>48. Linear Planning</h1>
+<p>In <strong>linear planning</strong>, actions are arranged in a sequence.</p>
+<p>Example:</p>
+<pre class="text"><code>A1 → A2 → A3 → Goal</code></pre>
+<p>Each action has a fixed position in the plan.</p>
+<hr>
+</section>
+<section id="non-linear-planning" class="level1">
+<h1>49. Non-Linear Planning</h1>
+<p>Non-linear planning allows actions to be partially ordered.</p>
+<p>Some actions may occur in different orders if their dependencies permit.</p>
+<p>Example:</p>
+<pre class="text"><code>      A
+     / \
+    B   C
+     \ /
+      D</code></pre>
+<p>B and C may be performed in either order when independent.</p>
+<hr>
+</section>
+<section id="goal-stack-planning" class="level1">
+<h1>50. Goal Stack Planning</h1>
+<p>Goal Stack Planning uses a stack to manage goals and subgoals.</p>
+<p>Basic idea:</p>
+<ol type="1">
+<li>Put the main goal on the stack.</li>
+<li>If it is not satisfied, select an action.</li>
+<li>Put required preconditions onto the stack.</li>
+<li>Satisfy them.</li>
+<li>Execute the action.</li>
+<li>Continue until the goal is achieved.</li>
+</ol>
+<hr>
+</section>
+<section id="strips" class="level1">
+<h1>51. STRIPS</h1>
+<p><strong>STRIPS = Stanford Research Institute Planning System</strong></p>
+<p>STRIPS represents actions using:</p>
+<ul>
+<li>Preconditions</li>
+<li>Add effects</li>
+<li>Delete effects</li>
+</ul>
+<p>An action can be represented as:</p>
+<pre class="text"><code>Action:
+Preconditions: P
+Add list: Q
+Delete list: R</code></pre>
+<hr>
+</section>
+<section id="example-of-strips-action" class="level1">
+<h1>52. Example of STRIPS Action</h1>
+<p>Consider:</p>
+<pre class="text"><code>Action: Move(A, B)
+
+Preconditions:
+At(A)
+Path(A,B)
+
+Add:
+At(B)
+
+Delete:
+At(A)</code></pre>
+<p>The action is possible only if the preconditions are satisfied.</p>
+<hr>
+</section>
+<section id="hierarchical-planning" class="level1">
+<h1>53. Hierarchical Planning</h1>
+<p>Hierarchical planning decomposes a high-level task into smaller tasks.</p>
+<p>Example:</p>
+<pre class="text"><code>Travel to college
+       ↓
+   ┌───┴────┐
+Book ticket  Travel
+              ↓
+          Reach college</code></pre>
+<p>This reduces complexity by planning at different levels of abstraction.</p>
+<hr>
+</section>
+<section id="partial-order-planning" class="level1">
+<h1>54. Partial Order Planning</h1>
+<p>Partial Order Planning does not require all actions to be placed in a single complete sequence immediately.</p>
+<p>Only necessary ordering constraints are specified.</p>
+<p>Example:</p>
+<pre class="text"><code>A before C
+B before D</code></pre>
+<p>A and B may otherwise be independent.</p>
+<hr>
+</section>
+<section id="natural-language-processing" class="level1">
+<h1>55. Natural Language Processing</h1>
+<p><strong>NLP = Natural Language Processing</strong></p>
+<p>NLP enables computers to process human language.</p>
+<p>Applications:</p>
+<ul>
+<li>Machine translation</li>
+<li>Chatbots</li>
+<li>Speech systems</li>
+<li>Sentiment analysis</li>
+<li>Information extraction</li>
+<li>Question answering</li>
+</ul>
+<hr>
+</section>
+<section id="grammar-and-language" class="level1">
+<h1>56. Grammar and Language</h1>
+<p>A grammar defines how valid sentences can be constructed.</p>
+<p>A formal grammar commonly contains:</p>
+<ul>
+<li>Terminals</li>
+<li>Non-terminals</li>
+<li>Production rules</li>
+<li>Start symbol</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>Sentence → NounPhrase VerbPhrase</code></pre>
+<hr>
+</section>
+<section id="parsing" class="level1">
+<h1>57. Parsing</h1>
+<p>Parsing determines the syntactic structure of a sentence according to a grammar.</p>
+<p>It may produce a parse tree.</p>
+<p>Example:</p>
+<pre class="text"><code>Sentence
+ ├── Noun Phrase
+ └── Verb Phrase</code></pre>
+<hr>
+</section>
+<section id="parsing-techniques" class="level1">
+<h1>58. Parsing Techniques</h1>
+<p>Important parsing approaches include:</p>
+<ul>
+<li>Top-down parsing</li>
+<li>Bottom-up parsing</li>
+<li>Recursive descent</li>
+<li>Chart parsing</li>
+<li>Shift-reduce parsing</li>
+</ul>
+<hr>
+</section>
+<section id="top-down-parsing" class="level1">
+<h1>59. Top-Down Parsing</h1>
+<p>Top-down parsing begins with the start symbol and attempts to derive the input.</p>
+<pre class="text"><code>Start Symbol
+     ↓
+Grammar rules
+     ↓
+Input sentence</code></pre>
+<hr>
+</section>
+<section id="bottom-up-parsing" class="level1">
+<h1>60. Bottom-Up Parsing</h1>
+<p>Bottom-up parsing begins with input symbols and combines them until the start symbol is obtained.</p>
+<pre class="text"><code>Input
+ ↓
+Reduce
+ ↓
+Non-terminals
+ ↓
+Start Symbol</code></pre>
+<hr>
+</section>
+<section id="semantic-analysis" class="level1">
+<h1>61. Semantic Analysis</h1>
+<p>Semantic analysis determines the meaning or interpretation of linguistic structures.</p>
+<p>It can address:</p>
+<ul>
+<li>Word meaning</li>
+<li>Sentence meaning</li>
+<li>Semantic relationships</li>
+<li>Ambiguity</li>
+<li>Consistency</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>The boy eats food.</code></pre>
+<p>The semantic analysis identifies relationships between the boy, eating and food.</p>
+<hr>
+</section>
+<section id="pragmatics" class="level1">
+<h1>62. Pragmatics</h1>
+<p><strong>Pragmatics</strong> studies how context affects meaning.</p>
+<p>Example:</p>
+<pre class="text"><code>Can you open the window?</code></pre>
+<p>Literally, it is a question about ability.</p>
+<p>In context, it is usually a request to open the window.</p>
+<section id="syntax-vs-semantics-vs-pragmatics" class="level3">
+<h3 class="anchored" data-anchor-id="syntax-vs-semantics-vs-pragmatics">Syntax vs Semantics vs Pragmatics</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Level</th>
+<th>Main Question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Syntax</td>
+<td>Is the structure grammatically valid?</td>
+</tr>
+<tr class="even">
+<td>Semantics</td>
+<td>What does it mean?</td>
+</tr>
+<tr class="odd">
+<td>Pragmatics</td>
+<td>What does it mean in context?</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="multi-agent-systems" class="level1">
+<h1>63. Multi-Agent Systems</h1>
+<p>A <strong>Multi-Agent System (MAS)</strong> contains multiple interacting agents.</p>
+<p>An agent can:</p>
+<ul>
+<li>Perceive</li>
+<li>Reason</li>
+<li>Communicate</li>
+<li>Act</li>
+<li>Cooperate</li>
+<li>Compete</li>
+</ul>
+<hr>
+</section>
+<section id="agents-and-objects" class="level1">
+<h1>64. Agents and Objects</h1>
+<p>An object generally responds to method calls according to its programmed interface.</p>
+<p>An agent is more autonomous.</p>
+<section id="comparison-1" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-1">Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Object</th>
+<th>Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Passive until invoked</td>
+<td>Autonomous</td>
+</tr>
+<tr class="even">
+<td>Responds to methods</td>
+<td>Acts proactively</td>
+</tr>
+<tr class="odd">
+<td>Usually controlled by calling code</td>
+<td>Can pursue goals</td>
+</tr>
+<tr class="even">
+<td>Object-oriented abstraction</td>
+<td>Intelligent/autonomous abstraction</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="agents-and-expert-systems" class="level1">
+<h1>65. Agents and Expert Systems</h1>
+<p>Both can use knowledge and reasoning.</p>
+<p>An expert system is usually designed to provide expert-level problem solving in a specific domain.</p>
+<p>An agent additionally:</p>
+<ul>
+<li>Interacts with environment</li>
+<li>Perceives</li>
+<li>Acts</li>
+<li>May communicate with other agents</li>
+<li>May operate autonomously</li>
+</ul>
+<hr>
+</section>
+<section id="generic-structure-of-a-multi-agent-system" class="level1">
+<h1>66. Generic Structure of a Multi-Agent System</h1>
+<p>A simplified MAS is:</p>
+<pre class="text"><code>Agent A ←→ Agent B
+   ↕          ↕
+Environment ←→ Agent C</code></pre>
+<p>Components may include:</p>
+<ul>
+<li>Agents</li>
+<li>Environment</li>
+<li>Communication mechanism</li>
+<li>Knowledge</li>
+<li>Goals</li>
+<li>Coordination mechanisms</li>
+</ul>
+<hr>
+</section>
+<section id="agent-communication" class="level1">
+<h1>67. Agent Communication</h1>
+<p>Agents communicate information, requests or proposals.</p>
+<p>Communication may support:</p>
+<ul>
+<li>Cooperation</li>
+<li>Negotiation</li>
+<li>Coordination</li>
+<li>Knowledge sharing</li>
+</ul>
+<hr>
+</section>
+<section id="knowledge-sharing-using-ontologies" class="level1">
+<h1>68. Knowledge Sharing Using Ontologies</h1>
+<p>Ontologies provide a shared vocabulary.</p>
+<p>Example:</p>
+<p>If two agents use the term:</p>
+<p><strong>Student</strong></p>
+<p>the ontology can define what Student means and how it relates to:</p>
+<ul>
+<li>Person</li>
+<li>Course</li>
+<li>Department</li>
+<li>Enrollment</li>
+</ul>
+<p>This reduces ambiguity between agents.</p>
+<hr>
+</section>
+<section id="semantic-web" class="level1">
+<h1>69. Semantic Web</h1>
+<p>The <strong>Semantic Web</strong> aims to make web information more machine-understandable by representing meaning and relationships.</p>
+<p>Important concepts include:</p>
+<ul>
+<li>Ontologies</li>
+<li>RDF</li>
+<li>OWL</li>
+<li>Linked data</li>
+</ul>
+<section id="important-3" class="level3">
+<h3 class="anchored" data-anchor-id="important-3">Important</h3>
+<p>The Semantic Web is not simply a visually different Web.</p>
+<p>It adds machine-readable semantics and relationships to information.</p>
+<hr>
+</section>
+</section>
+<section id="agent-development-tools" class="level1">
+<h1>70. Agent Development Tools</h1>
+<p>Agent development platforms/tools support building multi-agent systems.</p>
+<p>Examples commonly discussed in AI education include:</p>
+<ul>
+<li>JADE</li>
+<li>Jason</li>
+<li>SPADE</li>
+<li>Agent-oriented frameworks</li>
+</ul>
+<p>The exact tool depends on the programming language and application requirements.</p>
+<hr>
+</section>
+<section id="fuzzy-sets" class="level1">
+<h1>71. Fuzzy Sets</h1>
+<p>Classical sets use crisp membership.</p>
+<p>An object either belongs or does not belong.</p>
+<p>Example:</p>
+<pre class="text"><code>Tall = Yes or No</code></pre>
+<p>Fuzzy sets allow partial membership.</p>
+<p>Example:</p>
+<pre class="text"><code>Tall = 0.7</code></pre>
+<p>This represents the degree of membership.</p>
+<hr>
+</section>
+<section id="fuzziness" class="level1">
+<h1>72. Fuzziness</h1>
+<p><strong>Fuzziness</strong> represents gradual or vague concepts.</p>
+<p>Examples:</p>
+<ul>
+<li>Hot</li>
+<li>Cold</li>
+<li>Tall</li>
+<li>Short</li>
+<li>Fast</li>
+<li>Slow</li>
+</ul>
+<p>The boundary is not necessarily sharp.</p>
+<hr>
+</section>
+<section id="membership-function" class="level1">
+<h1>73. Membership Function</h1>
+<p>A membership function maps an input to a membership value.</p>
+<p>Usually:</p>
+<p><strong>μA(x) ∈ [0,1]</strong></p>
+<p>where:</p>
+<ul>
+<li>0 = no membership</li>
+<li>1 = full membership</li>
+<li>Between 0 and 1 = partial membership</li>
+</ul>
+<hr>
+</section>
+<section id="types-of-membership-functions" class="level1">
+<h1>74. Types of Membership Functions</h1>
+<p>Common membership functions include:</p>
+<ul>
+<li>Triangular</li>
+<li>Trapezoidal</li>
+<li>Gaussian</li>
+<li>Bell-shaped</li>
+<li>Sigmoid</li>
+</ul>
+<hr>
+</section>
+<section id="triangular-membership-function" class="level1">
+<h1>75. Triangular Membership Function</h1>
+<p>A triangular membership function has:</p>
+<ul>
+<li>Left endpoint</li>
+<li>Peak</li>
+<li>Right endpoint</li>
+</ul>
+<p>Conceptually:</p>
+<pre class="text"><code>Membership
+   1       /\
+          /  \
+         /    \
+        /      \
+   0 ___/________\___
+        Input</code></pre>
+<hr>
+</section>
+<section id="fuzzification" class="level1">
+<h1>76. Fuzzification</h1>
+<p><strong>Fuzzification</strong> converts a crisp input into fuzzy membership values.</p>
+<p>Example:</p>
+<p>Input:</p>
+<p><strong>Temperature = 30°C</strong></p>
+<p>Fuzzification may produce:</p>
+<pre class="text"><code>Warm = 0.6
+Hot  = 0.4</code></pre>
+<p>The exact values depend on the membership functions.</p>
+<hr>
+</section>
+<section id="defuzzification" class="level1">
+<h1>77. Defuzzification</h1>
+<p><strong>Defuzzification</strong> converts fuzzy output into a crisp value.</p>
+<p>Example:</p>
+<pre class="text"><code>Fuzzy output
+     ↓
+Defuzzification
+     ↓
+Fan speed = 75%</code></pre>
+<p>Common method:</p>
+<p><strong>Centroid / Center of Area</strong></p>
+<hr>
+</section>
+<section id="operations-on-fuzzy-sets" class="level1">
+<h1>78. Operations on Fuzzy Sets</h1>
+<p>For standard fuzzy sets:</p>
+<section id="union" class="level2">
+<h2 class="anchored" data-anchor-id="union">Union</h2>
+<p>Often defined as:</p>
+<p><strong>μA∪B(x) = max(μA(x), μB(x))</strong></p>
+</section>
+<section id="intersection" class="level2">
+<h2 class="anchored" data-anchor-id="intersection">Intersection</h2>
+<p>Often defined as:</p>
+<p><strong>μA∩B(x) = min(μA(x), μB(x))</strong></p>
+</section>
+<section id="complement" class="level2">
+<h2 class="anchored" data-anchor-id="complement">Complement</h2>
+<p>Often defined as:</p>
+<p><strong>μA̅(x) = 1 − μA(x)</strong></p>
+<p>These are standard operations; other fuzzy operators can also be defined.</p>
+<hr>
+</section>
+</section>
+<section id="linguistic-variables" class="level1">
+<h1>79. Linguistic Variables</h1>
+<p>A linguistic variable takes linguistic values rather than only numerical values.</p>
+<p>Example:</p>
+<pre class="text"><code>Temperature:
+{Cold, Warm, Hot}</code></pre>
+<p>Each linguistic value has a membership function.</p>
+<hr>
+</section>
+<section id="fuzzy-functions" class="level1">
+<h1>80. Fuzzy Functions</h1>
+<p>A fuzzy function maps inputs using fuzzy relationships or membership structures.</p>
+<p>Fuzzy functions are useful when precise mathematical relationships are difficult to specify.</p>
+<hr>
+</section>
+<section id="fuzzy-relations" class="level1">
+<h1>81. Fuzzy Relations</h1>
+<p>A fuzzy relation represents the degree of relationship between elements.</p>
+<p>A relation may have membership values between:</p>
+<p><strong>0 and 1</strong></p>
+<p>Example:</p>
+<pre class="text"><code>Similarity(A,B) = 0.8</code></pre>
+<hr>
+</section>
+<section id="fuzzy-rules" class="level1">
+<h1>82. Fuzzy Rules</h1>
+<p>Fuzzy systems commonly use rules of the form:</p>
+<pre class="text"><code>IF temperature is HIGH
+AND humidity is HIGH
+THEN fan speed is FAST</code></pre>
+<p>Rules use linguistic variables.</p>
+<hr>
+</section>
+<section id="fuzzy-inference" class="level1">
+<h1>83. Fuzzy Inference</h1>
+<p>Fuzzy inference applies fuzzy rules to fuzzy inputs.</p>
+<p>A simplified process:</p>
+<pre class="text"><code>Crisp Input
+     ↓
+Fuzzification
+     ↓
+Rule Evaluation
+     ↓
+Aggregation
+     ↓
+Defuzzification
+     ↓
+Crisp Output</code></pre>
+<hr>
+</section>
+<section id="fuzzy-control-system" class="level1">
+<h1>84. Fuzzy Control System</h1>
+<p>A fuzzy controller uses fuzzy rules to control a system.</p>
+<p>Example:</p>
+<pre class="text"><code>Temperature
+     ↓
+Fuzzy Controller
+     ↓
+Fan Speed</code></pre>
+<p>Possible rules:</p>
+<pre class="text"><code>IF temperature is LOW
+THEN fan speed is SLOW
+
+IF temperature is HIGH
+THEN fan speed is FAST</code></pre>
+<hr>
+</section>
+<section id="fuzzy-rule-based-system" class="level1">
+<h1>85. Fuzzy Rule-Based System</h1>
+<p>A fuzzy rule-based system contains:</p>
+<ul>
+<li>Fuzzy variables</li>
+<li>Membership functions</li>
+<li>Rule base</li>
+<li>Inference mechanism</li>
+<li>Defuzzification mechanism</li>
+</ul>
+<p>Applications:</p>
+<ul>
+<li>Washing machines</li>
+<li>Air conditioners</li>
+<li>Vehicle control</li>
+<li>Industrial control</li>
+</ul>
+<hr>
+</section>
+<section id="genetic-algorithms" class="level1">
+<h1>86. Genetic Algorithms</h1>
+<p>A <strong>Genetic Algorithm (GA)</strong> is a population-based optimization/search technique inspired by biological evolution.</p>
+<p>Basic concepts:</p>
+<ul>
+<li>Population</li>
+<li>Chromosome</li>
+<li>Gene</li>
+<li>Fitness</li>
+<li>Selection</li>
+<li>Crossover</li>
+<li>Mutation</li>
+<li>Replacement</li>
+</ul>
+<hr>
+</section>
+<section id="chromosome" class="level1">
+<h1>87. Chromosome</h1>
+<p>A chromosome represents a candidate solution.</p>
+<p>Example:</p>
+<pre class="text"><code>10110101</code></pre>
+<p>Each position can represent a gene.</p>
+<hr>
+</section>
+<section id="encoding-strategies" class="level1">
+<h1>88. Encoding Strategies</h1>
+<p>A problem must be represented using an appropriate encoding.</p>
+<p>Common approaches:</p>
+<ul>
+<li>Binary encoding</li>
+<li>Integer encoding</li>
+<li>Real-valued encoding</li>
+<li>Permutation encoding</li>
+</ul>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<p>Binary:</p>
+<pre class="text"><code>101010</code></pre>
+<p>Permutation:</p>
+<pre class="text"><code>3 1 4 2 5</code></pre>
+<p>Permutation encoding is useful for ordering problems such as routing.</p>
+<hr>
+</section>
+</section>
+<section id="fitness-function" class="level1">
+<h1>89. Fitness Function</h1>
+<p>The fitness function measures how good a candidate solution is.</p>
+<p>Example:</p>
+<p>If the objective is to maximize profit:</p>
+<p><strong>Fitness = Profit</strong></p>
+<p>For minimization problems, the fitness function may need to transform or rank the objective appropriately.</p>
+<hr>
+</section>
+<section id="selection" class="level1">
+<h1>90. Selection</h1>
+<p>Selection chooses individuals for reproduction.</p>
+<p>Common methods:</p>
+<ul>
+<li>Roulette wheel selection</li>
+<li>Tournament selection</li>
+<li>Rank selection</li>
+</ul>
+<p>The objective is usually to give better solutions a greater chance of contributing to the next generation.</p>
+<hr>
+</section>
+<section id="crossover" class="level1">
+<h1>91. Crossover</h1>
+<p>Crossover combines genetic material from parent solutions.</p>
+<p>Example:</p>
+<pre class="text"><code>Parent 1: 11110000
+Parent 2: 00001111
+
+Child:    11111111</code></pre>
+<p>The exact result depends on the crossover point/operator.</p>
+<hr>
+</section>
+<section id="mutation" class="level1">
+<h1>92. Mutation</h1>
+<p>Mutation randomly changes part of a chromosome.</p>
+<p>Example:</p>
+<pre class="text"><code>Before: 101101
+After:  101001</code></pre>
+<p>Mutation helps maintain diversity and can help avoid premature convergence.</p>
+<hr>
+</section>
+<section id="ga-cycle" class="level1">
+<h1>93. GA Cycle</h1>
+<p>A basic Genetic Algorithm cycle is:</p>
+<pre class="text"><code>Initialize Population
+        ↓
+Evaluate Fitness
+        ↓
+Select Parents
+        ↓
+Crossover
+        ↓
+Mutation
+        ↓
+Create New Population
+        ↓
+Stopping Test
+        ↓
+Repeat if necessary</code></pre>
+<hr>
+</section>
+<section id="problem-solving-using-genetic-algorithms" class="level1">
+<h1>94. Problem Solving Using Genetic Algorithms</h1>
+<p>A typical procedure:</p>
+<ol type="1">
+<li>Define the problem.</li>
+<li>Select representation.</li>
+<li>Generate initial population.</li>
+<li>Define fitness function.</li>
+<li>Evaluate population.</li>
+<li>Select parents.</li>
+<li>Apply crossover.</li>
+<li>Apply mutation.</li>
+<li>Create next generation.</li>
+<li>Check stopping condition.</li>
+<li>Return the best candidate.</li>
+</ol>
+<hr>
+</section>
+<section id="genetic-algorithm-example" class="level1">
+<h1>95. Genetic Algorithm Example</h1>
+<p>Suppose the problem is:</p>
+<p><strong>Maximize f(x)</strong></p>
+<p>A binary chromosome represents x.</p>
+<p>Example population:</p>
+<pre class="text"><code>1010
+1100
+0111
+1001</code></pre>
+<p>Each chromosome is decoded into a candidate x value.</p>
+<p>The fitness function evaluates each candidate.</p>
+<p>The best individuals are more likely to participate in reproduction.</p>
+<hr>
+</section>
+<section id="advantages-of-genetic-algorithms" class="level1">
+<h1>96. Advantages of Genetic Algorithms</h1>
+<ul>
+<li>Useful for large search spaces</li>
+<li>Does not always require derivatives</li>
+<li>Can search complex solution spaces</li>
+<li>Population-based</li>
+<li>Useful for optimization</li>
+</ul>
+<section id="limitations-1" class="level3">
+<h3 class="anchored" data-anchor-id="limitations-1">Limitations</h3>
+<ul>
+<li>Computationally expensive in some problems</li>
+<li>Parameter selection matters</li>
+<li>No guarantee of global optimum in general</li>
+<li>Can converge prematurely</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="artificial-neural-networks" class="level1">
+<h1>97. Artificial Neural Networks</h1>
+<p>An <strong>Artificial Neural Network (ANN)</strong> is a computational model inspired by interconnected biological neurons.</p>
+<p>A basic artificial neuron receives inputs, applies weights and bias, and produces an output.</p>
+<hr>
+</section>
+<section id="artificial-neuron" class="level1">
+<h1>98. Artificial Neuron</h1>
+<p>A simple neuron computes:</p>
+<p><strong>z = w1x1 + w2x2 + … + wnxn + b</strong></p>
+<p>Then an activation function is applied:</p>
+<p><strong>y = f(z)</strong></p>
+<p>where:</p>
+<ul>
+<li>x = inputs</li>
+<li>w = weights</li>
+<li>b = bias</li>
+<li>f = activation function</li>
+<li>y = output</li>
+</ul>
+<hr>
+</section>
+<section id="learning-in-ann" class="level1">
+<h1>99. Learning in ANN</h1>
+<p>ANNs learn by adjusting parameters such as weights.</p>
+<p>Three broad learning categories are:</p>
+<ol type="1">
+<li>Supervised learning</li>
+<li>Unsupervised learning</li>
+<li>Reinforcement learning</li>
+</ol>
+<hr>
+</section>
+<section id="supervised-learning" class="level1">
+<h1>100. Supervised Learning</h1>
+<p>The training data contains input-output examples.</p>
+<pre class="text"><code>Input → Model → Predicted Output
+                 ↓
+              Compare
+                 ↓
+             True Output</code></pre>
+<p>The model learns from errors.</p>
+<p>Examples:</p>
+<ul>
+<li>Classification</li>
+<li>Regression</li>
+</ul>
+<hr>
+</section>
+<section id="unsupervised-learning" class="level1">
+<h1>101. Unsupervised Learning</h1>
+<p>Training data does not contain explicit target labels.</p>
+<p>The model discovers patterns or structures.</p>
+<p>Examples:</p>
+<ul>
+<li>Clustering</li>
+<li>Dimensionality reduction</li>
+<li>Representation learning</li>
+</ul>
+<hr>
+</section>
+<section id="reinforcement-learning" class="level1">
+<h1>102. Reinforcement Learning</h1>
+<p>An agent learns through interaction with an environment.</p>
+<p>It receives:</p>
+<ul>
+<li>States</li>
+<li>Actions</li>
+<li>Rewards</li>
+</ul>
+<p>Basic cycle:</p>
+<pre class="text"><code>State
+  ↓
+Action
+  ↓
+Environment
+  ↓
+Reward
+  ↓
+New State</code></pre>
+<p>The objective is to learn behaviour that maximizes expected cumulative reward.</p>
+<hr>
+</section>
+<section id="single-perceptron" class="level1">
+<h1>103. Single Perceptron</h1>
+<p>The perceptron is a simple neural classifier.</p>
+<p>It computes:</p>
+<p><strong>y = activation(w·x + b)</strong></p>
+<p>The classical perceptron uses a threshold-like activation.</p>
+<p>It can learn linearly separable binary classification problems.</p>
+<hr>
+</section>
+<section id="perceptron-limitation" class="level1">
+<h1>104. Perceptron Limitation</h1>
+<p>A single perceptron cannot represent all Boolean functions.</p>
+<p>A classic example is:</p>
+<p><strong>XOR</strong></p>
+<p>XOR is not linearly separable.</p>
+<p>Therefore, a single-layer perceptron cannot solve XOR.</p>
+<hr>
+</section>
+<section id="multi-layer-perceptron" class="level1">
+<h1>105. Multi-Layer Perceptron</h1>
+<p><strong>MLP = Multi-Layer Perceptron</strong></p>
+<p>An MLP contains:</p>
+<ul>
+<li>Input layer</li>
+<li>One or more hidden layers</li>
+<li>Output layer</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>Input
+  ↓
+Hidden Layer
+  ↓
+Hidden Layer
+  ↓
+Output</code></pre>
+<p>With suitable nonlinear activation functions, MLPs can represent complex nonlinear relationships.</p>
+<hr>
+</section>
+<section id="backpropagation" class="level1">
+<h1>106. Backpropagation</h1>
+<p>Backpropagation is a common algorithm for training multilayer neural networks.</p>
+<p>Basic steps:</p>
+<ol type="1">
+<li>Forward pass</li>
+<li>Calculate error/loss</li>
+<li>Propagate error backward</li>
+<li>Calculate gradients</li>
+<li>Update weights</li>
+</ol>
+<p>A generic gradient-descent update is:</p>
+<p><strong>w_new = w_old − η × gradient</strong></p>
+<p>where η is the learning rate.</p>
+<hr>
+</section>
+<section id="activation-functions" class="level1">
+<h1>107. Activation Functions</h1>
+<p>Common activation functions include:</p>
+<ul>
+<li>Step</li>
+<li>Sigmoid</li>
+<li>Tanh</li>
+<li>ReLU</li>
+<li>Softmax</li>
+</ul>
+<section id="sigmoid" class="level2">
+<h2 class="anchored" data-anchor-id="sigmoid">Sigmoid</h2>
+<p>Output is between:</p>
+<p><strong>0 and 1</strong></p>
+</section>
+<section id="tanh" class="level2">
+<h2 class="anchored" data-anchor-id="tanh">Tanh</h2>
+<p>Output is between:</p>
+<p><strong>−1 and +1</strong></p>
+</section>
+<section id="relu" class="level2">
+<h2 class="anchored" data-anchor-id="relu">ReLU</h2>
+<p><strong>ReLU(x) = max(0,x)</strong></p>
+<hr>
+</section>
+</section>
+<section id="self-organizing-map" class="level1">
+<h1>108. Self-Organizing Map</h1>
+<p><strong>SOM = Self-Organizing Map</strong></p>
+<p>A SOM is an unsupervised neural network used for:</p>
+<ul>
+<li>Clustering</li>
+<li>Visualization</li>
+<li>Dimensionality reduction</li>
+</ul>
+<p>It maps high-dimensional input data onto a usually low-dimensional grid.</p>
+<hr>
+</section>
+<section id="som-learning" class="level1">
+<h1>109. SOM Learning</h1>
+<p>A simplified SOM process:</p>
+<ol type="1">
+<li>Present input.</li>
+<li>Find the Best Matching Unit (BMU).</li>
+<li>Update the BMU and nearby neurons.</li>
+<li>Reduce learning rate/neighborhood over time.</li>
+<li>Repeat.</li>
+</ol>
+<hr>
+</section>
+<section id="hopfield-network" class="level1">
+<h1>110. Hopfield Network</h1>
+<p>A <strong>Hopfield network</strong> is a recurrent neural network associated with associative memory.</p>
+<p>Characteristics:</p>
+<ul>
+<li>Recurrent connections</li>
+<li>Usually symmetric weights in the classical form</li>
+<li>Stores patterns</li>
+<li>Can retrieve patterns from incomplete/noisy input</li>
+</ul>
+<hr>
+</section>
+<section id="associative-memory" class="level1">
+<h1>111. Associative Memory</h1>
+<p>Hopfield networks can store patterns as stable states.</p>
+<p>If a noisy version of a stored pattern is presented, the network can converge toward the stored pattern under appropriate conditions.</p>
+<hr>
+</section>
+<section id="ann-comparison" class="level1">
+<h1>112. ANN Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Learning/Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Perceptron</td>
+<td>Supervised linear classification</td>
+</tr>
+<tr class="even">
+<td>MLP</td>
+<td>Supervised nonlinear learning</td>
+</tr>
+<tr class="odd">
+<td>SOM</td>
+<td>Unsupervised clustering/visualization</td>
+</tr>
+<tr class="even">
+<td>Hopfield</td>
+<td>Associative/recurrent memory</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="supervised-vs-unsupervised-vs-reinforcement" class="level1">
+<h1>113. Supervised vs Unsupervised vs Reinforcement</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Supervised</th>
+<th>Unsupervised</th>
+<th>Reinforcement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Uses labeled examples</td>
+<td>No target labels</td>
+<td>Uses rewards</td>
+</tr>
+<tr class="even">
+<td>Learns input-output mapping</td>
+<td>Finds structure</td>
+<td>Learns actions</td>
+</tr>
+<tr class="odd">
+<td>Classification/regression</td>
+<td>Clustering</td>
+<td>Sequential decision making</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="ai-topic-comparison" class="level1">
+<h1>114. AI Topic Comparison</h1>
+<section id="turing-test-vs-rational-agent" class="level2">
+<h2 class="anchored" data-anchor-id="turing-test-vs-rational-agent">Turing Test vs Rational Agent</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Turing Test</th>
+<th>Rational Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Focuses on observable human-like behaviour</td>
+<td>Focuses on rational action</td>
+</tr>
+<tr class="even">
+<td>Associated with Alan Turing</td>
+<td>Agent-based approach</td>
+</tr>
+<tr class="odd">
+<td>Often emphasizes conversation</td>
+<td>Emphasizes performance and decision making</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="forward-vs-backward-chaining" class="level2">
+<h2 class="anchored" data-anchor-id="forward-vs-backward-chaining">Forward vs Backward Chaining</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Forward</th>
+<th>Backward</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data-driven</td>
+<td>Goal-driven</td>
+</tr>
+<tr class="even">
+<td>Starts with facts</td>
+<td>Starts with goal</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="linear-vs-non-linear-planning" class="level2">
+<h2 class="anchored" data-anchor-id="linear-vs-non-linear-planning">Linear vs Non-Linear Planning</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Linear</th>
+<th>Non-linear</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fixed sequence</td>
+<td>Partial ordering</td>
+</tr>
+<tr class="even">
+<td>One action sequence</td>
+<td>Independent actions may be reordered</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="crisp-vs-fuzzy-set" class="level2">
+<h2 class="anchored" data-anchor-id="crisp-vs-fuzzy-set">Crisp vs Fuzzy Set</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Crisp</th>
+<th>Fuzzy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Membership is 0 or 1</td>
+<td>Membership can be 0 to 1</td>
+</tr>
+<tr class="even">
+<td>Sharp boundary</td>
+<td>Gradual boundary</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="genetic-algorithm-vs-ann" class="level2">
+<h2 class="anchored" data-anchor-id="genetic-algorithm-vs-ann">Genetic Algorithm vs ANN</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>GA</th>
+<th>ANN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Evolution-inspired optimization</td>
+<td>Neural computation</td>
+</tr>
+<tr class="even">
+<td>Population of solutions</td>
+<td>Network of neurons</td>
+</tr>
+<tr class="odd">
+<td>Selection/crossover/mutation</td>
+<td>Weights/activations/learning</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="important-ai-terms" class="level1">
+<h1>115. Important AI Terms</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Agent</td>
+<td>Entity that perceives and acts</td>
+</tr>
+<tr class="even">
+<td>Rational agent</td>
+<td>Chooses actions according to performance objective</td>
+</tr>
+<tr class="odd">
+<td>State space</td>
+<td>Set of possible states</td>
+</tr>
+<tr class="even">
+<td>Heuristic</td>
+<td>Estimate used to guide search</td>
+</tr>
+<tr class="odd">
+<td>h(n)</td>
+<td>Estimated remaining cost</td>
+</tr>
+<tr class="even">
+<td>g(n)</td>
+<td>Cost from start to n</td>
+</tr>
+<tr class="odd">
+<td>A*</td>
+<td>Uses g(n)+h(n)</td>
+</tr>
+<tr class="even">
+<td>Minimax</td>
+<td>Adversarial game search</td>
+</tr>
+<tr class="odd">
+<td>Alpha-beta</td>
+<td>Prunes minimax branches</td>
+</tr>
+<tr class="even">
+<td>Knowledge base</td>
+<td>Stored facts/rules</td>
+</tr>
+<tr class="odd">
+<td>Inference engine</td>
+<td>Applies reasoning</td>
+</tr>
+<tr class="even">
+<td>Ontology</td>
+<td>Formal domain concepts and relationships</td>
+</tr>
+<tr class="odd">
+<td>Planning</td>
+<td>Finding actions to achieve goals</td>
+</tr>
+<tr class="even">
+<td>Parsing</td>
+<td>Finding syntactic structure</td>
+</tr>
+<tr class="odd">
+<td>Pragmatics</td>
+<td>Meaning in context</td>
+</tr>
+<tr class="even">
+<td>Fuzzification</td>
+<td>Crisp input → fuzzy values</td>
+</tr>
+<tr class="odd">
+<td>Defuzzification</td>
+<td>Fuzzy output → crisp value</td>
+</tr>
+<tr class="even">
+<td>Fitness</td>
+<td>Quality of GA candidate</td>
+</tr>
+<tr class="odd">
+<td>Perceptron</td>
+<td>Basic neural classifier</td>
+</tr>
+<tr class="even">
+<td>SOM</td>
+<td>Unsupervised mapping/clustering</td>
+</tr>
+<tr class="odd">
+<td>Hopfield</td>
+<td>Associative memory</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-formulas" class="level1">
+<h1>116. Important Formulas</h1>
+<section id="a-search-1" class="level2">
+<h2 class="anchored" data-anchor-id="a-search-1">A* Search</h2>
+<p><strong>f(n) = g(n) + h(n)</strong></p>
+</section>
+<section id="admissibility" class="level2">
+<h2 class="anchored" data-anchor-id="admissibility">Admissibility</h2>
+<p><strong>h(n) ≤ true remaining cost</strong></p>
+</section>
+<section id="fuzzy-union" class="level2">
+<h2 class="anchored" data-anchor-id="fuzzy-union">Fuzzy Union</h2>
+<p><strong>μA∪B(x) = max(μA(x), μB(x))</strong></p>
+</section>
+<section id="fuzzy-intersection" class="level2">
+<h2 class="anchored" data-anchor-id="fuzzy-intersection">Fuzzy Intersection</h2>
+<p><strong>μA∩B(x) = min(μA(x), μB(x))</strong></p>
+</section>
+<section id="fuzzy-complement" class="level2">
+<h2 class="anchored" data-anchor-id="fuzzy-complement">Fuzzy Complement</h2>
+<p><strong>μA̅(x) = 1 − μA(x)</strong></p>
+</section>
+<section id="artificial-neuron-1" class="level2">
+<h2 class="anchored" data-anchor-id="artificial-neuron-1">Artificial Neuron</h2>
+<p><strong>z = Σ(wixi) + b</strong></p>
+<p><strong>y = f(z)</strong></p>
+</section>
+<section id="relu-1" class="level2">
+<h2 class="anchored" data-anchor-id="relu-1">ReLU</h2>
+<p><strong>ReLU(x) = max(0,x)</strong></p>
+</section>
+<section id="gradient-descent" class="level2">
+<h2 class="anchored" data-anchor-id="gradient-descent">Gradient Descent</h2>
+<p><strong>w_new = w_old − η × gradient</strong></p>
+<hr>
+</section>
+</section>
+<section id="ugc-net-high-priority-topics" class="level1">
+<h1>117. UGC NET High-Priority Topics</h1>
+<p>Focus strongly on:</p>
+<ol type="1">
+<li>Turing Test</li>
+<li>Rational agents</li>
+<li>Agent types</li>
+<li>State-space representation</li>
+<li>Problem formulation</li>
+<li>BFS</li>
+<li>DFS</li>
+<li>Uniform Cost Search</li>
+<li>Heuristic search</li>
+<li>Greedy Best First Search</li>
+<li>A*</li>
+<li>Admissible heuristic</li>
+<li>Minimax</li>
+<li>Alpha-beta pruning</li>
+<li>Knowledge representation</li>
+<li>Propositional logic</li>
+<li>Predicate logic</li>
+<li>Semantic networks</li>
+<li>Frames</li>
+<li>Rules</li>
+<li>Scripts</li>
+<li>Conceptual dependency</li>
+<li>Ontologies</li>
+<li>Expert systems</li>
+<li>Forward chaining</li>
+<li>Backward chaining</li>
+<li>Uncertainty handling</li>
+<li>Planning</li>
+<li>Goal Stack Planning</li>
+<li>STRIPS</li>
+<li>Hierarchical planning</li>
+<li>Partial Order Planning</li>
+<li>NLP grammar</li>
+<li>Parsing</li>
+<li>Semantic analysis</li>
+<li>Pragmatics</li>
+<li>Multi-agent systems</li>
+<li>Semantic Web</li>
+<li>Agent communication</li>
+<li>Ontology-based knowledge sharing</li>
+<li>Fuzzy sets</li>
+<li>Membership functions</li>
+<li>Fuzzification</li>
+<li>Defuzzification</li>
+<li>Fuzzy operations</li>
+<li>Linguistic variables</li>
+<li>Fuzzy relations</li>
+<li>Fuzzy inference</li>
+<li>Fuzzy control</li>
+<li>Genetic Algorithms</li>
+<li>Encoding</li>
+<li>Fitness function</li>
+<li>Selection</li>
+<li>Crossover</li>
+<li>Mutation</li>
+<li>GA cycle</li>
+<li>ANN learning types</li>
+<li>Perceptron</li>
+<li>MLP</li>
+<li>SOM</li>
+<li>Hopfield network</li>
+</ol>
+<hr>
+</section>
+<section id="common-ugc-net-mistakes" class="level1">
+<h1>118. Common UGC NET Mistakes</h1>
+<section id="mistake-1-turing-test-vs-rational-agent" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-1-turing-test-vs-rational-agent">Mistake 1: Turing Test vs Rational Agent</h3>
+<p>The Turing Test is associated with evaluating human-like observable behaviour.</p>
+<p>The rational-agent approach focuses on selecting actions that maximize expected performance.</p>
+</section>
+<section id="mistake-2-bfs-vs-dfs" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-2-bfs-vs-dfs">Mistake 2: BFS vs DFS</h3>
+<p><strong>BFS → shallowest first</strong></p>
+<p><strong>DFS → deepest first</strong></p>
+</section>
+<section id="mistake-3-greedy-vs-a" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-3-greedy-vs-a">Mistake 3: Greedy vs A*</h3>
+<p><strong>Greedy → h(n)</strong></p>
+<p><strong>A* → g(n) + h(n)</strong></p>
+</section>
+<section id="mistake-4-minimax-vs-alpha-beta" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-4-minimax-vs-alpha-beta">Mistake 4: Minimax vs Alpha-Beta</h3>
+<p>Alpha-beta pruning is an optimization of minimax.</p>
+<p>It does <strong>not</strong> change the final minimax decision.</p>
+</section>
+<section id="mistake-5-forward-vs-backward-chaining" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-5-forward-vs-backward-chaining">Mistake 5: Forward vs Backward Chaining</h3>
+<p><strong>Forward → facts to conclusion</strong></p>
+<p><strong>Backward → goal to supporting facts</strong></p>
+</section>
+<section id="mistake-6-fuzzification-vs-defuzzification" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-6-fuzzification-vs-defuzzification">Mistake 6: Fuzzification vs Defuzzification</h3>
+<p><strong>Fuzzification → crisp input to fuzzy values</strong></p>
+<p><strong>Defuzzification → fuzzy output to crisp value</strong></p>
+</section>
+<section id="mistake-7-probability-vs-fuzzy-membership" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-7-probability-vs-fuzzy-membership">Mistake 7: Probability vs Fuzzy Membership</h3>
+<p>Probability describes uncertainty about an event.</p>
+<p>Fuzzy membership describes degree of membership in a fuzzy concept.</p>
+</section>
+<section id="mistake-8-ga-crossover-vs-mutation" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-8-ga-crossover-vs-mutation">Mistake 8: GA Crossover vs Mutation</h3>
+<p><strong>Crossover → combines parents</strong></p>
+<p><strong>Mutation → randomly changes genetic material</strong></p>
+</section>
+<section id="mistake-9-perceptron-vs-mlp" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-9-perceptron-vs-mlp">Mistake 9: Perceptron vs MLP</h3>
+<p>A single perceptron represents a linear decision boundary.</p>
+<p>An MLP with nonlinear hidden layers can represent nonlinear relationships.</p>
+</section>
+<section id="mistake-10-som-vs-hopfield" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-10-som-vs-hopfield">Mistake 10: SOM vs Hopfield</h3>
+<p><strong>SOM → unsupervised mapping/clustering</strong></p>
+<p><strong>Hopfield → associative memory</strong></p>
+<hr>
+</section>
+</section>
+<section id="one-minute-revision" class="level1">
+<h1>119. One-Minute Revision</h1>
+<section id="ai-approaches" class="level2">
+<h2 class="anchored" data-anchor-id="ai-approaches">AI Approaches</h2>
+<p><strong>Turing Test → Human-like observable behaviour</strong></p>
+<p><strong>Rational Agent → Rational action</strong></p>
+</section>
+<section id="search-1" class="level2">
+<h2 class="anchored" data-anchor-id="search-1">Search</h2>
+<p><strong>BFS → Queue → Shallowest</strong></p>
+<p><strong>DFS → Stack → Deepest</strong></p>
+<p><strong>Uniform Cost → Lowest g(n)</strong></p>
+<p><strong>Greedy → Lowest h(n)</strong></p>
+<p><strong>A* → Lowest g(n)+h(n)</strong></p>
+</section>
+<section id="games" class="level2">
+<h2 class="anchored" data-anchor-id="games">Games</h2>
+<p><strong>Minimax → MAX vs MIN</strong></p>
+<p><strong>Alpha-beta → Pruning</strong></p>
+</section>
+<section id="knowledge" class="level2">
+<h2 class="anchored" data-anchor-id="knowledge">Knowledge</h2>
+<p><strong>Logic → Formal reasoning</strong></p>
+<p><strong>Semantic Network → Graph</strong></p>
+<p><strong>Frame → Slots and values</strong></p>
+<p><strong>Rule → IF-THEN</strong></p>
+<p><strong>Script → Event sequence</strong></p>
+<p><strong>Ontology → Concepts + relationships</strong></p>
+</section>
+<section id="expert-systems-1" class="level2">
+<h2 class="anchored" data-anchor-id="expert-systems-1">Expert Systems</h2>
+<p><strong>Knowledge Base + Inference Engine</strong></p>
+<p><strong>Forward → Data-driven</strong></p>
+<p><strong>Backward → Goal-driven</strong></p>
+</section>
+<section id="planning-1" class="level2">
+<h2 class="anchored" data-anchor-id="planning-1">Planning</h2>
+<p><strong>STRIPS → Preconditions + Add + Delete</strong></p>
+<p><strong>Goal Stack → Stack of goals/subgoals</strong></p>
+<p><strong>Hierarchical → High-level task → Subtasks</strong></p>
+<p><strong>Partial Order → Necessary ordering only</strong></p>
+</section>
+<section id="nlp" class="level2">
+<h2 class="anchored" data-anchor-id="nlp">NLP</h2>
+<p><strong>Syntax → Structure</strong></p>
+<p><strong>Semantics → Meaning</strong></p>
+<p><strong>Pragmatics → Context</strong></p>
+<p><strong>Parsing → Syntactic structure</strong></p>
+</section>
+<section id="multi-agent" class="level2">
+<h2 class="anchored" data-anchor-id="multi-agent">Multi-Agent</h2>
+<p><strong>Agent → Perceive + Act</strong></p>
+<p><strong>MAS → Multiple interacting agents</strong></p>
+<p><strong>Ontology → Shared vocabulary/knowledge</strong></p>
+<p><strong>Semantic Web → Machine-readable meaning</strong></p>
+</section>
+<section id="fuzzy-logic" class="level2">
+<h2 class="anchored" data-anchor-id="fuzzy-logic">Fuzzy Logic</h2>
+<p><strong>Membership → 0 to 1</strong></p>
+<p><strong>Fuzzification → Crisp → Fuzzy</strong></p>
+<p><strong>Inference → Rules</strong></p>
+<p><strong>Defuzzification → Fuzzy → Crisp</strong></p>
+</section>
+<section id="ga" class="level2">
+<h2 class="anchored" data-anchor-id="ga">GA</h2>
+<p><strong>Population → Fitness → Selection → Crossover → Mutation</strong></p>
+</section>
+<section id="ann" class="level2">
+<h2 class="anchored" data-anchor-id="ann">ANN</h2>
+<p><strong>Perceptron → Linear classifier</strong></p>
+<p><strong>MLP → Nonlinear learning</strong></p>
+<p><strong>SOM → Unsupervised mapping</strong></p>
+<p><strong>Hopfield → Associative memory</strong></p>
+<hr>
+</section>
+</section>
+<section id="final-exam-strategy" class="level1">
+<h1>120. Final Exam Strategy</h1>
+<p>Divide Unit X into seven study blocks.</p>
+<section id="block-1-ai-and-search" class="level2">
+<h2 class="anchored" data-anchor-id="block-1-ai-and-search">Block 1: AI and Search</h2>
+<p>Study:</p>
+<ul>
+<li>Turing Test</li>
+<li>Rational agents</li>
+<li>State-space representation</li>
+<li>BFS</li>
+<li>DFS</li>
+<li>Uniform Cost</li>
+<li>Heuristics</li>
+<li>Greedy search</li>
+<li>A*</li>
+</ul>
+</section>
+<section id="block-2-game-playing" class="level2">
+<h2 class="anchored" data-anchor-id="block-2-game-playing">Block 2: Game Playing</h2>
+<p>Study:</p>
+<ul>
+<li>Game trees</li>
+<li>Minimax</li>
+<li>Alpha-beta pruning</li>
+<li>MAX and MIN</li>
+<li>Alpha and beta</li>
+</ul>
+</section>
+<section id="block-3-knowledge-representation" class="level2">
+<h2 class="anchored" data-anchor-id="block-3-knowledge-representation">Block 3: Knowledge Representation</h2>
+<p>Study:</p>
+<ul>
+<li>Logic</li>
+<li>Semantic networks</li>
+<li>Frames</li>
+<li>Rules</li>
+<li>Scripts</li>
+<li>Conceptual dependency</li>
+<li>Ontologies</li>
+<li>Expert systems</li>
+<li>Forward/backward chaining</li>
+<li>Uncertainty</li>
+</ul>
+</section>
+<section id="block-4-planning-and-nlp" class="level2">
+<h2 class="anchored" data-anchor-id="block-4-planning-and-nlp">Block 4: Planning and NLP</h2>
+<p>Study:</p>
+<ul>
+<li>Planning components</li>
+<li>Linear/non-linear planning</li>
+<li>Goal Stack Planning</li>
+<li>STRIPS</li>
+<li>Hierarchical planning</li>
+<li>Partial Order Planning</li>
+<li>Grammar</li>
+<li>Parsing</li>
+<li>Semantics</li>
+<li>Pragmatics</li>
+</ul>
+</section>
+<section id="block-5-multi-agent-systems" class="level2">
+<h2 class="anchored" data-anchor-id="block-5-multi-agent-systems">Block 5: Multi-Agent Systems</h2>
+<p>Study:</p>
+<ul>
+<li>Agents</li>
+<li>Objects</li>
+<li>Expert systems</li>
+<li>MAS structure</li>
+<li>Semantic Web</li>
+<li>Agent communication</li>
+<li>Ontologies</li>
+<li>Agent development tools</li>
+</ul>
+</section>
+<section id="block-6-fuzzy-systems-and-ga" class="level2">
+<h2 class="anchored" data-anchor-id="block-6-fuzzy-systems-and-ga">Block 6: Fuzzy Systems and GA</h2>
+<p>Study:</p>
+<ul>
+<li>Fuzzy sets</li>
+<li>Membership functions</li>
+<li>Fuzzification</li>
+<li>Defuzzification</li>
+<li>Fuzzy operations</li>
+<li>Fuzzy rules</li>
+<li>Fuzzy inference</li>
+<li>Fuzzy control</li>
+<li>GA encoding</li>
+<li>Fitness</li>
+<li>Selection</li>
+<li>Crossover</li>
+<li>Mutation</li>
+<li>GA cycle</li>
+</ul>
+</section>
+<section id="block-7-ann" class="level2">
+<h2 class="anchored" data-anchor-id="block-7-ann">Block 7: ANN</h2>
+<p>Study:</p>
+<ul>
+<li>Supervised learning</li>
+<li>Unsupervised learning</li>
+<li>Reinforcement learning</li>
+<li>Perceptron</li>
+<li>MLP</li>
+<li>Backpropagation</li>
+<li>SOM</li>
+<li>Hopfield network</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="final-summary" class="level1">
+<h1>121. Final Summary</h1>
+<p>Artificial Intelligence can be remembered as a sequence:</p>
+<p><strong>Perceive → Represent → Reason → Search → Plan → Learn → Act</strong></p>
+<p>Important relationships:</p>
+<p><strong>Turing Test → Human-like behaviour</strong></p>
+<p><strong>Rational Agent → Rational action</strong></p>
+<p><strong>State Space → States + Actions + Goal</strong></p>
+<p><strong>BFS → Shallowest first</strong></p>
+<p><strong>DFS → Deepest first</strong></p>
+<p><strong>A* → g(n) + h(n)</strong></p>
+<p><strong>Minimax → Adversarial game search</strong></p>
+<p><strong>Alpha-Beta → Minimax pruning</strong></p>
+<p><strong>Logic → Formal knowledge</strong></p>
+<p><strong>Semantic Network → Graph representation</strong></p>
+<p><strong>Frame → Slots and values</strong></p>
+<p><strong>Rule → IF-THEN</strong></p>
+<p><strong>Script → Event sequence</strong></p>
+<p><strong>Ontology → Concepts and relationships</strong></p>
+<p><strong>Expert System → Knowledge Base + Inference Engine</strong></p>
+<p><strong>Forward Chaining → Data-driven</strong></p>
+<p><strong>Backward Chaining → Goal-driven</strong></p>
+<p><strong>STRIPS → Preconditions + Add + Delete</strong></p>
+<p><strong>Parsing → Syntax</strong></p>
+<p><strong>Semantic Analysis → Meaning</strong></p>
+<p><strong>Pragmatics → Context</strong></p>
+<p><strong>MAS → Multiple interacting agents</strong></p>
+<p><strong>Fuzzy Membership → 0 to 1</strong></p>
+<p><strong>Fuzzification → Crisp to fuzzy</strong></p>
+<p><strong>Defuzzification → Fuzzy to crisp</strong></p>
+<p><strong>GA → Selection + Crossover + Mutation</strong></p>
+<p><strong>Perceptron → Linear classification</strong></p>
+<p><strong>MLP → Nonlinear neural learning</strong></p>
+<p><strong>SOM → Unsupervised mapping</strong></p>
+<p><strong>Hopfield → Associative memory</strong></p>
+<p>For UGC NET preparation, pay special attention to <strong>A* search, admissible heuristics, minimax/alpha-beta, knowledge representation, expert-system inference, STRIPS, parsing, fuzzy operations, GA operators and ANN architectures</strong>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

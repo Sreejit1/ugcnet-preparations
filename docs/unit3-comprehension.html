@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit III – Comprehension – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper1.html" aria-current="page"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper2.html"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit3-comprehension.html">Unit III – Comprehension</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 1 Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-teaching-aptitude.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Teaching Aptitude</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-research-aptitude.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Research Aptitude</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-comprehension.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit III – Comprehension</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Communication</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-mathematical-reasoning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – Mathematical Reasoning and Aptitude</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-logical-reasoning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Logical Reasoning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Interpretation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-information-and-communication-technology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Information and Communication Technology (ICT)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-people-development-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – People, Development and Environment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-higher-education-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Higher Education System</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#what-is-comprehension" id="toc-what-is-comprehension" class="nav-link" data-scroll-target="#what-is-comprehension">2. What is Comprehension?</a>
+  <ul class="collapse">
+  <li><a href="#simple-example" id="toc-simple-example" class="nav-link" data-scroll-target="#simple-example">Simple Example</a></li>
+  </ul></li>
+  <li><a href="#purpose-of-comprehension-questions" id="toc-purpose-of-comprehension-questions" class="nav-link" data-scroll-target="#purpose-of-comprehension-questions">3. Purpose of Comprehension Questions</a></li>
+  <li><a href="#how-to-read-a-passage" id="toc-how-to-read-a-passage" class="nav-link" data-scroll-target="#how-to-read-a-passage">4. How to Read a Passage</a>
+  <ul class="collapse">
+  <li><a href="#step-1-read-the-passage-carefully" id="toc-step-1-read-the-passage-carefully" class="nav-link" data-scroll-target="#step-1-read-the-passage-carefully">Step 1 – Read the Passage Carefully</a></li>
+  <li><a href="#step-2-identify-the-topic" id="toc-step-2-identify-the-topic" class="nav-link" data-scroll-target="#step-2-identify-the-topic">Step 2 – Identify the Topic</a></li>
+  <li><a href="#step-3-identify-the-main-idea" id="toc-step-3-identify-the-main-idea" class="nav-link" data-scroll-target="#step-3-identify-the-main-idea">Step 3 – Identify the Main Idea</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#topic-vs-main-idea" id="toc-topic-vs-main-idea" class="nav-link" data-scroll-target="#topic-vs-main-idea">5. Topic vs Main Idea</a>
+  <ul class="collapse">
+  <li><a href="#easy-trick" id="toc-easy-trick" class="nav-link" data-scroll-target="#easy-trick">Easy Trick</a></li>
+  </ul></li>
+  <li><a href="#supporting-details" id="toc-supporting-details" class="nav-link" data-scroll-target="#supporting-details">6. Supporting Details</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  </ul></li>
+  <li><a href="#explicit-information" id="toc-explicit-information" class="nav-link" data-scroll-target="#explicit-information">7. Explicit Information</a>
+  <ul class="collapse">
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  <li><a href="#important-rule" id="toc-important-rule" class="nav-link" data-scroll-target="#important-rule">Important Rule</a></li>
+  </ul></li>
+  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference">8. Inference</a>
+  <ul class="collapse">
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
+  <li><a href="#important-rule-1" id="toc-important-rule-1" class="nav-link" data-scroll-target="#important-rule-1">Important Rule</a></li>
+  </ul></li>
+  <li><a href="#main-idea-questions" id="toc-main-idea-questions" class="nav-link" data-scroll-target="#main-idea-questions">9. Main Idea Questions</a>
+  <ul class="collapse">
+  <li><a href="#typical-questions" id="toc-typical-questions" class="nav-link" data-scroll-target="#typical-questions">Typical Questions</a></li>
+  <li><a href="#how-to-answer" id="toc-how-to-answer" class="nav-link" data-scroll-target="#how-to-answer">How to Answer</a></li>
+  </ul></li>
+  <li><a href="#detail-based-questions" id="toc-detail-based-questions" class="nav-link" data-scroll-target="#detail-based-questions">10. Detail-Based Questions</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
+  </ul></li>
+  <li><a href="#vocabulary-in-context" id="toc-vocabulary-in-context" class="nav-link" data-scroll-target="#vocabulary-in-context">11. Vocabulary in Context</a>
+  <ul class="collapse">
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
+  <li><a href="#strategy-1" id="toc-strategy-1" class="nav-link" data-scroll-target="#strategy-1">Strategy</a></li>
+  </ul></li>
+  <li><a href="#authors-purpose" id="toc-authors-purpose" class="nav-link" data-scroll-target="#authors-purpose">12. Author’s Purpose</a>
+  <ul class="collapse">
+  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
+  </ul></li>
+  <li><a href="#tone-of-the-passage" id="toc-tone-of-the-passage" class="nav-link" data-scroll-target="#tone-of-the-passage">13. Tone of the Passage</a>
+  <ul class="collapse">
+  <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">Important</a></li>
+  </ul></li>
+  <li><a href="#fact-and-opinion" id="toc-fact-and-opinion" class="nav-link" data-scroll-target="#fact-and-opinion">14. Fact and Opinion</a>
+  <ul class="collapse">
+  <li><a href="#fact" id="toc-fact" class="nav-link" data-scroll-target="#fact">Fact</a></li>
+  <li><a href="#opinion" id="toc-opinion" class="nav-link" data-scroll-target="#opinion">Opinion</a></li>
+  </ul></li>
+  <li><a href="#cause-and-effect" id="toc-cause-and-effect" class="nav-link" data-scroll-target="#cause-and-effect">15. Cause and Effect</a>
+  <ul class="collapse">
+  <li><a href="#cause" id="toc-cause" class="nav-link" data-scroll-target="#cause">Cause</a></li>
+  <li><a href="#effect" id="toc-effect" class="nav-link" data-scroll-target="#effect">Effect</a></li>
+  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example</a></li>
+  </ul></li>
+  <li><a href="#comparison" id="toc-comparison" class="nav-link" data-scroll-target="#comparison">16. Comparison</a>
+  <ul class="collapse">
+  <li><a href="#example-7" id="toc-example-7" class="nav-link" data-scroll-target="#example-7">Example</a></li>
+  </ul></li>
+  <li><a href="#signal-words" id="toc-signal-words" class="nav-link" data-scroll-target="#signal-words">17. Signal Words</a>
+  <ul class="collapse">
+  <li><a href="#addition" id="toc-addition" class="nav-link" data-scroll-target="#addition">Addition</a></li>
+  <li><a href="#contrast" id="toc-contrast" class="nav-link" data-scroll-target="#contrast">Contrast</a></li>
+  <li><a href="#cause-1" id="toc-cause-1" class="nav-link" data-scroll-target="#cause-1">Cause</a></li>
+  <li><a href="#effect-1" id="toc-effect-1" class="nav-link" data-scroll-target="#effect-1">Effect</a></li>
+  <li><a href="#example-8" id="toc-example-8" class="nav-link" data-scroll-target="#example-8">Example</a></li>
+  </ul></li>
+  <li><a href="#understanding-pronoun-references" id="toc-understanding-pronoun-references" class="nav-link" data-scroll-target="#understanding-pronoun-references">18. Understanding Pronoun References</a>
+  <ul class="collapse">
+  <li><a href="#example-9" id="toc-example-9" class="nav-link" data-scroll-target="#example-9">Example</a></li>
+  <li><a href="#strategy-2" id="toc-strategy-2" class="nav-link" data-scroll-target="#strategy-2">Strategy</a></li>
+  </ul></li>
+  <li><a href="#understanding-statements" id="toc-understanding-statements" class="nav-link" data-scroll-target="#understanding-statements">19. Understanding Statements</a>
+  <ul class="collapse">
+  <li><a href="#important-1" id="toc-important-1" class="nav-link" data-scroll-target="#important-1">Important</a></li>
+  </ul></li>
+  <li><a href="#true-false-and-not-given" id="toc-true-false-and-not-given" class="nav-link" data-scroll-target="#true-false-and-not-given">20. True, False and Not Given</a>
+  <ul class="collapse">
+  <li><a href="#true" id="toc-true" class="nav-link" data-scroll-target="#true">True</a></li>
+  <li><a href="#false" id="toc-false" class="nav-link" data-scroll-target="#false">False</a></li>
+  <li><a href="#not-given" id="toc-not-given" class="nav-link" data-scroll-target="#not-given">Not Given</a></li>
+  <li><a href="#example-10" id="toc-example-10" class="nav-link" data-scroll-target="#example-10">Example</a></li>
+  </ul></li>
+  <li><a href="#drawing-conclusions" id="toc-drawing-conclusions" class="nav-link" data-scroll-target="#drawing-conclusions">21. Drawing Conclusions</a>
+  <ul class="collapse">
+  <li><a href="#example-11" id="toc-example-11" class="nav-link" data-scroll-target="#example-11">Example</a></li>
+  </ul></li>
+  <li><a href="#avoiding-personal-opinion" id="toc-avoiding-personal-opinion" class="nav-link" data-scroll-target="#avoiding-personal-opinion">22. Avoiding Personal Opinion</a>
+  <ul class="collapse">
+  <li><a href="#rule" id="toc-rule" class="nav-link" data-scroll-target="#rule">Rule</a></li>
+  </ul></li>
+  <li><a href="#eliminating-wrong-options" id="toc-eliminating-wrong-options" class="nav-link" data-scroll-target="#eliminating-wrong-options">23. Eliminating Wrong Options</a>
+  <ul class="collapse">
+  <li><a href="#completely-unrelated-option" id="toc-completely-unrelated-option" class="nav-link" data-scroll-target="#completely-unrelated-option">23.1 Completely Unrelated Option</a></li>
+  <li><a href="#too-extreme" id="toc-too-extreme" class="nav-link" data-scroll-target="#too-extreme">23.2 Too Extreme</a></li>
+  <li><a href="#partially-correct-option" id="toc-partially-correct-option" class="nav-link" data-scroll-target="#partially-correct-option">23.3 Partially Correct Option</a></li>
+  <li><a href="#personal-opinion" id="toc-personal-opinion" class="nav-link" data-scroll-target="#personal-opinion">23.4 Personal Opinion</a></li>
+  </ul></li>
+  <li><a href="#a-practical-method-for-ugc-net" id="toc-a-practical-method-for-ugc-net" class="nav-link" data-scroll-target="#a-practical-method-for-ugc-net">24. A Practical Method for UGC NET</a></li>
+  <li><a href="#time-management" id="toc-time-management" class="nav-link" data-scroll-target="#time-management">25. Time Management</a>
+  <ul class="collapse">
+  <li><a href="#recommended-strategy" id="toc-recommended-strategy" class="nav-link" data-scroll-target="#recommended-strategy">Recommended Strategy</a></li>
+  <li><a href="#important-2" id="toc-important-2" class="nav-link" data-scroll-target="#important-2">Important</a></li>
+  </ul></li>
+  <li><a href="#mini-practice-passage" id="toc-mini-practice-passage" class="nav-link" data-scroll-target="#mini-practice-passage">26. Mini Practice Passage</a>
+  <ul class="collapse">
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a>
+  <ul class="collapse">
+  <li><a href="#answer" id="toc-answer" class="nav-link" data-scroll-target="#answer">Answer</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a></li>
+  </ul></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a>
+  <ul class="collapse">
+  <li><a href="#answer-1" id="toc-answer-1" class="nav-link" data-scroll-target="#answer-1">Answer</a></li>
+  </ul></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a>
+  <ul class="collapse">
+  <li><a href="#answer-2" id="toc-answer-2" class="nav-link" data-scroll-target="#answer-2">Answer</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">27. Common Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#mistake-1-reading-too-quickly" id="toc-mistake-1-reading-too-quickly" class="nav-link" data-scroll-target="#mistake-1-reading-too-quickly">Mistake 1 – Reading Too Quickly</a></li>
+  <li><a href="#mistake-2-using-outside-knowledge" id="toc-mistake-2-using-outside-knowledge" class="nav-link" data-scroll-target="#mistake-2-using-outside-knowledge">Mistake 2 – Using Outside Knowledge</a></li>
+  <li><a href="#mistake-3-choosing-the-longest-option" id="toc-mistake-3-choosing-the-longest-option" class="nav-link" data-scroll-target="#mistake-3-choosing-the-longest-option">Mistake 3 – Choosing the Longest Option</a></li>
+  <li><a href="#mistake-4-ignoring-qualifying-words" id="toc-mistake-4-ignoring-qualifying-words" class="nav-link" data-scroll-target="#mistake-4-ignoring-qualifying-words">Mistake 4 – Ignoring Qualifying Words</a></li>
+  <li><a href="#mistake-5-choosing-an-extreme-answer" id="toc-mistake-5-choosing-an-extreme-answer" class="nav-link" data-scroll-target="#mistake-5-choosing-an-extreme-answer">Mistake 5 – Choosing an Extreme Answer</a></li>
+  <li><a href="#mistake-6-not-reading-the-question-carefully" id="toc-mistake-6-not-reading-the-question-carefully" class="nav-link" data-scroll-target="#mistake-6-not-reading-the-question-carefully">Mistake 6 – Not Reading the Question Carefully</a></li>
+  </ul></li>
+  <li><a href="#important-words-in-questions" id="toc-important-words-in-questions" class="nav-link" data-scroll-target="#important-words-in-questions">28. Important Words in Questions</a></li>
+  <li><a href="#quick-revision" id="toc-quick-revision" class="nav-link" data-scroll-target="#quick-revision">29. Quick Revision</a></li>
+  <li><a href="#ugc-net-exam-strategy" id="toc-ugc-net-exam-strategy" class="nav-link" data-scroll-target="#ugc-net-exam-strategy">30. UGC NET Exam Strategy</a>
+  <ul class="collapse">
+  <li><a href="#rule-1" id="toc-rule-1" class="nav-link" data-scroll-target="#rule-1">Rule 1</a></li>
+  <li><a href="#rule-2" id="toc-rule-2" class="nav-link" data-scroll-target="#rule-2">Rule 2</a></li>
+  <li><a href="#rule-3" id="toc-rule-3" class="nav-link" data-scroll-target="#rule-3">Rule 3</a></li>
+  <li><a href="#rule-4" id="toc-rule-4" class="nav-link" data-scroll-target="#rule-4">Rule 4</a></li>
+  <li><a href="#rule-5" id="toc-rule-5" class="nav-link" data-scroll-target="#rule-5">Rule 5</a></li>
+  </ul></li>
+  <li><a href="#one-minute-revision" id="toc-one-minute-revision" class="nav-link" data-scroll-target="#one-minute-revision">31. One-Minute Revision</a></li>
+  <li><a href="#final-exam-tip" id="toc-final-exam-tip" class="nav-link" data-scroll-target="#final-exam-tip">32. Final Exam Tip</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit III – Comprehension</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>The UGC NET Paper 1 syllabus for Unit III states:</p>
+<blockquote class="blockquote">
+<p><strong>A passage of text be given. Questions be asked from the passage to be answered.</strong></p>
+</blockquote>
+<p>Therefore, this unit primarily tests the ability of a candidate to <strong>read, understand, interpret and answer questions based on a given passage</strong>.</p>
+<p>Comprehension is not simply reading the passage. It involves understanding:</p>
+<ul>
+<li>The main idea</li>
+<li>Important details</li>
+<li>Meaning of statements</li>
+<li>Relationships between ideas</li>
+<li>Author’s purpose</li>
+<li>Conclusions that can be drawn from the passage</li>
+<li>Information explicitly stated in the passage</li>
+</ul>
+<hr>
+</section>
+<section id="what-is-comprehension" class="level1">
+<h1>2. What is Comprehension?</h1>
+<p>Comprehension is the ability to <strong>understand and interpret written information</strong>.</p>
+<p>When we read a passage, we should be able to answer:</p>
+<ol type="1">
+<li>What is the passage about?</li>
+<li>What is the main idea?</li>
+<li>What are the important points?</li>
+<li>What does the author mean?</li>
+<li>What conclusion can be drawn?</li>
+<li>Which statements are supported by the passage?</li>
+</ol>
+<section id="simple-example" class="level3">
+<h3 class="anchored" data-anchor-id="simple-example">Simple Example</h3>
+<p>Consider:</p>
+<blockquote class="blockquote">
+<p>Online education provides learners with access to educational resources from different locations. It can also provide flexibility for learners who cannot attend traditional classrooms. However, successful online learning requires appropriate technology, self-discipline and active participation.</p>
+</blockquote>
+<p>The central idea is:</p>
+<blockquote class="blockquote">
+<p><strong>Online education provides flexibility and access, but successful learning requires certain conditions.</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="purpose-of-comprehension-questions" class="level1">
+<h1>3. Purpose of Comprehension Questions</h1>
+<p>Comprehension questions may test different reading abilities.</p>
+<p>Important abilities include:</p>
+<ul>
+<li>Identifying information</li>
+<li>Understanding meaning</li>
+<li>Finding the main idea</li>
+<li>Identifying supporting details</li>
+<li>Understanding relationships</li>
+<li>Interpreting statements</li>
+<li>Drawing conclusions</li>
+<li>Identifying the author’s purpose</li>
+</ul>
+<hr>
+</section>
+<section id="how-to-read-a-passage" class="level1">
+<h1>4. How to Read a Passage</h1>
+<p>A good approach is to read the passage actively rather than reading every sentence mechanically.</p>
+<section id="step-1-read-the-passage-carefully" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-read-the-passage-carefully">Step 1 – Read the Passage Carefully</h3>
+<p>Read the complete passage once.</p>
+<p>Try to understand the overall topic.</p>
+<p>Do not immediately try to memorize every sentence.</p>
+<hr>
+</section>
+<section id="step-2-identify-the-topic" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-identify-the-topic">Step 2 – Identify the Topic</h3>
+<p>Ask:</p>
+<blockquote class="blockquote">
+<p>“What is this passage mainly about?”</p>
+</blockquote>
+<p>The topic may be:</p>
+<ul>
+<li>Education</li>
+<li>Technology</li>
+<li>Environment</li>
+<li>Science</li>
+<li>Society</li>
+<li>Research</li>
+<li>Communication</li>
+<li>Development</li>
+</ul>
+<p>The topic is usually broader than the main argument.</p>
+<hr>
+</section>
+<section id="step-3-identify-the-main-idea" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-identify-the-main-idea">Step 3 – Identify the Main Idea</h3>
+<p>The main idea is the central point the author wants to communicate.</p>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>If a passage discusses:</p>
+<ul>
+<li>Benefits of renewable energy</li>
+<li>Reduction of pollution</li>
+<li>Energy security</li>
+<li>Sustainable development</li>
+</ul>
+<p>the main idea may be:</p>
+<blockquote class="blockquote">
+<p>Renewable energy can contribute to sustainable development and reduce dependence on conventional energy sources.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="topic-vs-main-idea" class="level1">
+<h1>5. Topic vs Main Idea</h1>
+<p>These two concepts are important.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Main Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>General subject</td>
+<td>Central message</td>
+</tr>
+<tr class="even">
+<td>Usually short</td>
+<td>Usually a complete statement</td>
+</tr>
+<tr class="odd">
+<td>Example: Online education</td>
+<td>Online education provides flexibility but requires effective learner participation</td>
+</tr>
+</tbody>
+</table>
+<section id="easy-trick" class="level3">
+<h3 class="anchored" data-anchor-id="easy-trick">Easy Trick</h3>
+<p>Ask:</p>
+<blockquote class="blockquote">
+<p><strong>Topic = What is it about?</strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Main idea = What is the author saying about it?</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="supporting-details" class="level1">
+<h1>6. Supporting Details</h1>
+<p>Supporting details are pieces of information that explain, demonstrate or support the main idea.</p>
+<p>They may include:</p>
+<ul>
+<li>Examples</li>
+<li>Facts</li>
+<li>Reasons</li>
+<li>Explanations</li>
+<li>Statistics</li>
+<li>Comparisons</li>
+<li>Arguments</li>
+</ul>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<p>Main idea:</p>
+<blockquote class="blockquote">
+<p>Online learning provides flexibility.</p>
+</blockquote>
+<p>Supporting details may include:</p>
+<ul>
+<li>Students can access materials remotely.</li>
+<li>Recorded lectures can be viewed later.</li>
+<li>Learners can study at different times.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="explicit-information" class="level1">
+<h1>7. Explicit Information</h1>
+<p>Explicit information is information that is <strong>directly stated in the passage</strong>.</p>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example</h3>
+<p>Passage:</p>
+<blockquote class="blockquote">
+<p>“The university introduced online examinations in 2024.”</p>
+</blockquote>
+<p>Question:</p>
+<blockquote class="blockquote">
+<p>When did the university introduce online examinations?</p>
+</blockquote>
+<p>Answer:</p>
+<blockquote class="blockquote">
+<p><strong>2024</strong></p>
+</blockquote>
+<p>The answer is directly available in the passage.</p>
+</section>
+<section id="important-rule" class="level3">
+<h3 class="anchored" data-anchor-id="important-rule">Important Rule</h3>
+<p>For comprehension questions, always prefer information supported directly by the passage.</p>
+<hr>
+</section>
+</section>
+<section id="inference" class="level1">
+<h1>8. Inference</h1>
+<p>An inference is a conclusion that can reasonably be drawn from information provided in the passage.</p>
+<p>The answer may not be directly stated.</p>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example</h3>
+<p>Passage:</p>
+<blockquote class="blockquote">
+<p>Many students use recorded lectures because they can watch them after completing their regular classes.</p>
+</blockquote>
+<p>Possible inference:</p>
+<blockquote class="blockquote">
+<p>Students value the flexibility provided by recorded lectures.</p>
+</blockquote>
+<p>The exact statement may not appear in the passage, but it can reasonably be inferred.</p>
+</section>
+<section id="important-rule-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-rule-1">Important Rule</h3>
+<p>An inference must be <strong>supported by the passage</strong>.</p>
+<p>Do not use your personal opinion.</p>
+<hr>
+</section>
+</section>
+<section id="main-idea-questions" class="level1">
+<h1>9. Main Idea Questions</h1>
+<p>A common type of comprehension question asks about the main idea.</p>
+<section id="typical-questions" class="level3">
+<h3 class="anchored" data-anchor-id="typical-questions">Typical Questions</h3>
+<ul>
+<li>What is the passage mainly about?</li>
+<li>What is the central idea of the passage?</li>
+<li>What is the primary concern of the author?</li>
+<li>Which statement best summarizes the passage?</li>
+</ul>
+</section>
+<section id="how-to-answer" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-answer">How to Answer</h3>
+<ol type="1">
+<li>Read the entire passage.</li>
+<li>Identify the repeated or central theme.</li>
+<li>Examine the introduction and conclusion.</li>
+<li>Eliminate options that discuss only one small detail.</li>
+<li>Select the option that covers the passage as a whole.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="detail-based-questions" class="level1">
+<h1>10. Detail-Based Questions</h1>
+<p>These questions ask for information specifically mentioned in the passage.</p>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<ul>
+<li>According to the passage, what is…?</li>
+<li>Which of the following is mentioned?</li>
+<li>What reason does the author give?</li>
+<li>According to the passage, which statement is true?</li>
+</ul>
+</section>
+<section id="strategy" class="level3">
+<h3 class="anchored" data-anchor-id="strategy">Strategy</h3>
+<p>Return to the relevant part of the passage and verify the answer.</p>
+<p>Do not depend only on memory.</p>
+<hr>
+</section>
+</section>
+<section id="vocabulary-in-context" class="level1">
+<h1>11. Vocabulary in Context</h1>
+<p>Sometimes the meaning of a word must be understood from its context.</p>
+<section id="example-4" class="level3">
+<h3 class="anchored" data-anchor-id="example-4">Example</h3>
+<blockquote class="blockquote">
+<p>“The researcher adopted a novel approach to the problem.”</p>
+</blockquote>
+<p>Here, <strong>novel</strong> means:</p>
+<blockquote class="blockquote">
+<p><strong>New or innovative</strong></p>
+</blockquote>
+<p>The word should be interpreted according to the sentence rather than automatically using a familiar meaning.</p>
+</section>
+<section id="strategy-1" class="level3">
+<h3 class="anchored" data-anchor-id="strategy-1">Strategy</h3>
+<p>Read:</p>
+<ul>
+<li>The sentence containing the word.</li>
+<li>The previous sentence.</li>
+<li>The following sentence.</li>
+</ul>
+<p>The surrounding context often gives clues.</p>
+<hr>
+</section>
+</section>
+<section id="authors-purpose" class="level1">
+<h1>12. Author’s Purpose</h1>
+<p>A question may ask why the author wrote the passage.</p>
+<p>Possible purposes include:</p>
+<ul>
+<li>To explain</li>
+<li>To describe</li>
+<li>To inform</li>
+<li>To compare</li>
+<li>To criticize</li>
+<li>To argue</li>
+<li>To persuade</li>
+<li>To discuss a problem</li>
+<li>To present information</li>
+</ul>
+<section id="example-5" class="level3">
+<h3 class="anchored" data-anchor-id="example-5">Example</h3>
+<p>If a passage explains how a technology works, the author’s purpose may be:</p>
+<blockquote class="blockquote">
+<p><strong>To explain the technology.</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="tone-of-the-passage" class="level1">
+<h1>13. Tone of the Passage</h1>
+<p>Tone refers to the attitude expressed by the author.</p>
+<p>Possible tones include:</p>
+<ul>
+<li>Positive</li>
+<li>Negative</li>
+<li>Neutral</li>
+<li>Critical</li>
+<li>Supportive</li>
+<li>Concerned</li>
+<li>Analytical</li>
+<li>Informative</li>
+<li>Optimistic</li>
+<li>Cautious</li>
+</ul>
+<section id="important" class="level3">
+<h3 class="anchored" data-anchor-id="important">Important</h3>
+<p>Do not identify the tone based on one word alone.</p>
+<p>Consider the passage as a whole.</p>
+<hr>
+</section>
+</section>
+<section id="fact-and-opinion" class="level1">
+<h1>14. Fact and Opinion</h1>
+<section id="fact" class="level3">
+<h3 class="anchored" data-anchor-id="fact">Fact</h3>
+<p>A statement that can be verified.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>India has a large higher education system.</p>
+</blockquote>
+</section>
+<section id="opinion" class="level3">
+<h3 class="anchored" data-anchor-id="opinion">Opinion</h3>
+<p>A statement expressing a belief, judgment or personal view.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Online education is the best form of education.</p>
+</blockquote>
+<p>When answering comprehension questions, determine whether the passage presents something as a fact, opinion or argument.</p>
+<hr>
+</section>
+</section>
+<section id="cause-and-effect" class="level1">
+<h1>15. Cause and Effect</h1>
+<p>A passage may explain relationships between causes and effects.</p>
+<section id="cause" class="level3">
+<h3 class="anchored" data-anchor-id="cause">Cause</h3>
+<p>The reason something happens.</p>
+</section>
+<section id="effect" class="level3">
+<h3 class="anchored" data-anchor-id="effect">Effect</h3>
+<p>The result of something happening.</p>
+</section>
+<section id="example-6" class="level3">
+<h3 class="anchored" data-anchor-id="example-6">Example</h3>
+<blockquote class="blockquote">
+<p>Excessive use of fossil fuels increases greenhouse gas emissions, which contributes to climate change.</p>
+</blockquote>
+<pre class="text"><code>Excessive fossil fuel use
+          ↓
+Increased emissions
+          ↓
+Climate change</code></pre>
+<p>Questions may ask:</p>
+<blockquote class="blockquote">
+<p>What is identified as a cause of the problem?</p>
+</blockquote>
+<p>or:</p>
+<blockquote class="blockquote">
+<p>What is the consequence described in the passage?</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="comparison" class="level1">
+<h1>16. Comparison</h1>
+<p>Authors may compare two or more ideas.</p>
+<p>Look for words such as:</p>
+<ul>
+<li>Similarly</li>
+<li>Likewise</li>
+<li>Unlike</li>
+<li>In contrast</li>
+<li>However</li>
+<li>Whereas</li>
+<li>While</li>
+<li>On the other hand</li>
+</ul>
+<section id="example-7" class="level3">
+<h3 class="anchored" data-anchor-id="example-7">Example</h3>
+<blockquote class="blockquote">
+<p>Traditional classrooms require physical presence, whereas online learning can be accessed remotely.</p>
+</blockquote>
+<p>The passage compares:</p>
+<blockquote class="blockquote">
+<p><strong>Traditional learning and online learning</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="signal-words" class="level1">
+<h1>17. Signal Words</h1>
+<p>Certain words help identify relationships between ideas.</p>
+<section id="addition" class="level3">
+<h3 class="anchored" data-anchor-id="addition">Addition</h3>
+<ul>
+<li>Also</li>
+<li>Furthermore</li>
+<li>Moreover</li>
+<li>In addition</li>
+</ul>
+</section>
+<section id="contrast" class="level3">
+<h3 class="anchored" data-anchor-id="contrast">Contrast</h3>
+<ul>
+<li>However</li>
+<li>But</li>
+<li>Although</li>
+<li>Nevertheless</li>
+<li>In contrast</li>
+</ul>
+</section>
+<section id="cause-1" class="level3">
+<h3 class="anchored" data-anchor-id="cause-1">Cause</h3>
+<ul>
+<li>Because</li>
+<li>Since</li>
+<li>Due to</li>
+<li>As a result of</li>
+</ul>
+</section>
+<section id="effect-1" class="level3">
+<h3 class="anchored" data-anchor-id="effect-1">Effect</h3>
+<ul>
+<li>Therefore</li>
+<li>Thus</li>
+<li>Consequently</li>
+<li>Hence</li>
+</ul>
+</section>
+<section id="example-8" class="level3">
+<h3 class="anchored" data-anchor-id="example-8">Example</h3>
+<blockquote class="blockquote">
+<p>Online education is flexible. <strong>However</strong>, it requires self-discipline.</p>
+</blockquote>
+<p>The word <strong>however</strong> indicates contrast.</p>
+<hr>
+</section>
+</section>
+<section id="understanding-pronoun-references" class="level1">
+<h1>18. Understanding Pronoun References</h1>
+<p>Questions may ask what a word such as:</p>
+<ul>
+<li>It</li>
+<li>They</li>
+<li>This</li>
+<li>These</li>
+<li>That</li>
+<li>Such</li>
+</ul>
+<p>refers to.</p>
+<section id="example-9" class="level3">
+<h3 class="anchored" data-anchor-id="example-9">Example</h3>
+<blockquote class="blockquote">
+<p>Online education provides flexibility. <strong>This</strong> allows learners to study according to their schedules.</p>
+</blockquote>
+<p>Here, <strong>This</strong> refers to:</p>
+<blockquote class="blockquote">
+<p><strong>The flexibility provided by online education.</strong></p>
+</blockquote>
+</section>
+<section id="strategy-2" class="level3">
+<h3 class="anchored" data-anchor-id="strategy-2">Strategy</h3>
+<p>Look at the preceding sentence and identify the noun or idea that logically fits.</p>
+<hr>
+</section>
+</section>
+<section id="understanding-statements" class="level1">
+<h1>19. Understanding Statements</h1>
+<p>Sometimes a question asks:</p>
+<blockquote class="blockquote">
+<p>Which of the following statements is correct according to the passage?</p>
+</blockquote>
+<p>The candidate should compare each option with the passage.</p>
+<section id="important-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-1">Important</h3>
+<p>Do not select an option merely because it is generally true.</p>
+<p>It must be supported by the passage.</p>
+<hr>
+</section>
+</section>
+<section id="true-false-and-not-given" class="level1">
+<h1>20. True, False and Not Given</h1>
+<p>Some comprehension questions may effectively require distinguishing between:</p>
+<section id="true" class="level3">
+<h3 class="anchored" data-anchor-id="true">True</h3>
+<p>The passage supports the statement.</p>
+</section>
+<section id="false" class="level3">
+<h3 class="anchored" data-anchor-id="false">False</h3>
+<p>The passage contradicts the statement.</p>
+</section>
+<section id="not-given" class="level3">
+<h3 class="anchored" data-anchor-id="not-given">Not Given</h3>
+<p>The passage does not provide enough information.</p>
+</section>
+<section id="example-10" class="level3">
+<h3 class="anchored" data-anchor-id="example-10">Example</h3>
+<p>Passage:</p>
+<blockquote class="blockquote">
+<p>“Online courses provide learners with access to recorded lectures.”</p>
+</blockquote>
+<p>Statement:</p>
+<blockquote class="blockquote">
+<p>“All online courses provide recorded lectures.”</p>
+</blockquote>
+<p>The statement is not necessarily supported because the passage says online courses provide access to recorded lectures but does not establish that <strong>all</strong> online courses do so.</p>
+<hr>
+</section>
+</section>
+<section id="drawing-conclusions" class="level1">
+<h1>21. Drawing Conclusions</h1>
+<p>A conclusion is a reasonable result that follows from the information presented.</p>
+<section id="example-11" class="level3">
+<h3 class="anchored" data-anchor-id="example-11">Example</h3>
+<p>Passage:</p>
+<blockquote class="blockquote">
+<p>Students who receive regular feedback are able to identify their mistakes and improve their performance.</p>
+</blockquote>
+<p>Possible conclusion:</p>
+<blockquote class="blockquote">
+<p>Regular feedback can support learning improvement.</p>
+</blockquote>
+<p>The conclusion is based on the information given.</p>
+<hr>
+</section>
+</section>
+<section id="avoiding-personal-opinion" class="level1">
+<h1>22. Avoiding Personal Opinion</h1>
+<p>This is one of the most important rules.</p>
+<p>Suppose the passage discusses online education.</p>
+<p>You may personally believe:</p>
+<blockquote class="blockquote">
+<p>“Online education is better than classroom education.”</p>
+</blockquote>
+<p>But if the passage does not say this, you should not select an answer based on your personal belief.</p>
+<section id="rule" class="level3">
+<h3 class="anchored" data-anchor-id="rule">Rule</h3>
+<blockquote class="blockquote">
+<p><strong>Answer from the passage, not from your personal knowledge or opinion.</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="eliminating-wrong-options" class="level1">
+<h1>23. Eliminating Wrong Options</h1>
+<p>When you are unsure, eliminate clearly incorrect options.</p>
+<p>Common wrong options include:</p>
+<section id="completely-unrelated-option" class="level3">
+<h3 class="anchored" data-anchor-id="completely-unrelated-option">23.1 Completely Unrelated Option</h3>
+<p>The option discusses something not mentioned in the passage.</p>
+</section>
+<section id="too-extreme" class="level3">
+<h3 class="anchored" data-anchor-id="too-extreme">23.2 Too Extreme</h3>
+<p>Words such as:</p>
+<ul>
+<li>Always</li>
+<li>Never</li>
+<li>All</li>
+<li>None</li>
+<li>Completely</li>
+<li>Only</li>
+</ul>
+<p>can make an option too broad when the passage does not support such a claim.</p>
+</section>
+<section id="partially-correct-option" class="level3">
+<h3 class="anchored" data-anchor-id="partially-correct-option">23.3 Partially Correct Option</h3>
+<p>The option may contain information from the passage but does not answer the question completely.</p>
+</section>
+<section id="personal-opinion" class="level3">
+<h3 class="anchored" data-anchor-id="personal-opinion">23.4 Personal Opinion</h3>
+<p>The option may sound reasonable but is not supported by the passage.</p>
+<hr>
+</section>
+</section>
+<section id="a-practical-method-for-ugc-net" class="level1">
+<h1>24. A Practical Method for UGC NET</h1>
+<p>Use the following sequence:</p>
+<pre class="text"><code>Read Passage
+     ↓
+Identify Topic
+     ↓
+Identify Main Idea
+     ↓
+Notice Important Details
+     ↓
+Read Question
+     ↓
+Locate Relevant Information
+     ↓
+Compare Options
+     ↓
+Eliminate Wrong Options
+     ↓
+Select the Answer Supported by Passage</code></pre>
+<hr>
+</section>
+<section id="time-management" class="level1">
+<h1>25. Time Management</h1>
+<p>Comprehension questions should be approached efficiently.</p>
+<section id="recommended-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-strategy">Recommended Strategy</h3>
+<ol type="1">
+<li>Read the passage carefully.</li>
+<li>Do not spend too much time memorizing every sentence.</li>
+<li>Read the questions carefully.</li>
+<li>Return to the relevant section when necessary.</li>
+<li>Eliminate clearly incorrect options.</li>
+<li>Select the answer supported by the passage.</li>
+</ol>
+</section>
+<section id="important-2" class="level3">
+<h3 class="anchored" data-anchor-id="important-2">Important</h3>
+<p>Do not spend excessive time on one difficult question.</p>
+<hr>
+</section>
+</section>
+<section id="mini-practice-passage" class="level1">
+<h1>26. Mini Practice Passage</h1>
+<p>Read the following passage:</p>
+<blockquote class="blockquote">
+<p>Digital technology has changed the way students access educational resources. Online platforms allow learners to access lectures, books and other learning materials from different locations. However, access to technology alone does not guarantee effective learning. Students also need motivation, appropriate learning strategies and the ability to use digital resources effectively.</p>
+</blockquote>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>What is the main idea of the passage?</p>
+<p><strong>A.</strong> Digital technology has completely replaced traditional education.</p>
+<p><strong>B.</strong> Digital technology provides educational access, but effective learning also depends on other factors.</p>
+<p><strong>C.</strong> Students should only use online learning platforms.</p>
+<p><strong>D.</strong> Traditional education is no longer useful.</p>
+<section id="answer" class="level3">
+<h3 class="anchored" data-anchor-id="answer">Answer</h3>
+<p><strong>B</strong></p>
+</section>
+<section id="explanation" class="level3">
+<h3 class="anchored" data-anchor-id="explanation">Explanation</h3>
+<p>The passage explains both:</p>
+<ul>
+<li>The benefits of digital technology.</li>
+<li>The additional factors required for effective learning.</li>
+</ul>
+<p>Therefore, option B represents the main idea.</p>
+<hr>
+</section>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>According to the passage, what can online platforms provide?</p>
+<p><strong>A.</strong> Only examinations</p>
+<p><strong>B.</strong> Only classroom teaching</p>
+<p><strong>C.</strong> Access to lectures, books and learning materials</p>
+<p><strong>D.</strong> Guaranteed academic success</p>
+<section id="answer-1" class="level3">
+<h3 class="anchored" data-anchor-id="answer-1">Answer</h3>
+<p><strong>C</strong></p>
+<p>The answer is directly stated in the passage.</p>
+<hr>
+</section>
+</section>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p>Which factor is NOT sufficient by itself to guarantee effective learning?</p>
+<p><strong>A.</strong> Access to technology</p>
+<p><strong>B.</strong> Motivation</p>
+<p><strong>C.</strong> Learning strategies</p>
+<p><strong>D.</strong> Ability to use digital resources</p>
+<section id="answer-2" class="level3">
+<h3 class="anchored" data-anchor-id="answer-2">Answer</h3>
+<p><strong>A</strong></p>
+<p>The passage specifically states that access to technology alone does not guarantee effective learning.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="common-mistakes" class="level1">
+<h1>27. Common Mistakes</h1>
+<section id="mistake-1-reading-too-quickly" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-1-reading-too-quickly">Mistake 1 – Reading Too Quickly</h3>
+<p>Reading quickly without understanding the structure can lead to incorrect answers.</p>
+</section>
+<section id="mistake-2-using-outside-knowledge" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-2-using-outside-knowledge">Mistake 2 – Using Outside Knowledge</h3>
+<p>The question is generally based on the passage.</p>
+</section>
+<section id="mistake-3-choosing-the-longest-option" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-3-choosing-the-longest-option">Mistake 3 – Choosing the Longest Option</h3>
+<p>A longer option is not automatically correct.</p>
+</section>
+<section id="mistake-4-ignoring-qualifying-words" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-4-ignoring-qualifying-words">Mistake 4 – Ignoring Qualifying Words</h3>
+<p>Words such as:</p>
+<ul>
+<li>Some</li>
+<li>Many</li>
+<li>Often</li>
+<li>Usually</li>
+<li>May</li>
+<li>Can</li>
+</ul>
+<p>can change the meaning of a statement.</p>
+</section>
+<section id="mistake-5-choosing-an-extreme-answer" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-5-choosing-an-extreme-answer">Mistake 5 – Choosing an Extreme Answer</h3>
+<p>An answer containing “always” or “never” may not be supported by the passage.</p>
+</section>
+<section id="mistake-6-not-reading-the-question-carefully" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-6-not-reading-the-question-carefully">Mistake 6 – Not Reading the Question Carefully</h3>
+<p>Words such as <strong>NOT</strong>, <strong>EXCEPT</strong>, <strong>incorrect</strong>, and <strong>least</strong> are important.</p>
+<hr>
+</section>
+</section>
+<section id="important-words-in-questions" class="level1">
+<h1>28. Important Words in Questions</h1>
+<p>Pay special attention to:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Word</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Main</td>
+<td>Central</td>
+</tr>
+<tr class="even">
+<td>Primarily</td>
+<td>Mainly</td>
+</tr>
+<tr class="odd">
+<td>According to</td>
+<td>Based on the passage</td>
+</tr>
+<tr class="even">
+<td>Infer</td>
+<td>Draw a conclusion</td>
+</tr>
+<tr class="odd">
+<td>Implies</td>
+<td>Suggests indirectly</td>
+</tr>
+<tr class="even">
+<td>Except</td>
+<td>Find the different/incorrect option</td>
+</tr>
+<tr class="odd">
+<td>NOT</td>
+<td>Find the option that does not apply</td>
+</tr>
+<tr class="even">
+<td>Purpose</td>
+<td>Reason for writing</td>
+</tr>
+<tr class="odd">
+<td>Tone</td>
+<td>Author’s attitude</td>
+</tr>
+<tr class="even">
+<td>Summarize</td>
+<td>Give the main points briefly</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="quick-revision" class="level1">
+<h1>29. Quick Revision</h1>
+<ol type="1">
+<li>Comprehension tests the ability to understand written information.</li>
+<li>The topic tells us what the passage is about.</li>
+<li>The main idea tells us what the author is saying about the topic.</li>
+<li>Supporting details explain or support the main idea.</li>
+<li>Explicit information is directly stated.</li>
+<li>An inference is a reasonable conclusion based on the passage.</li>
+<li>Vocabulary should be understood in context.</li>
+<li>Author’s purpose explains why the passage was written.</li>
+<li>Tone represents the author’s attitude.</li>
+<li>Cause explains why something happens.</li>
+<li>Effect explains the result.</li>
+<li>Signal words help identify relationships between ideas.</li>
+<li>Answers should be based on the passage.</li>
+<li>Personal opinions should not replace evidence from the passage.</li>
+<li>Elimination can help when options are confusing.</li>
+<li>Pay special attention to words such as <strong>NOT, EXCEPT, INCORRECT, MOST and LEAST</strong>.</li>
+</ol>
+<hr>
+</section>
+<section id="ugc-net-exam-strategy" class="level1">
+<h1>30. UGC NET Exam Strategy</h1>
+<p>Remember these five rules:</p>
+<section id="rule-1" class="level3">
+<h3 class="anchored" data-anchor-id="rule-1">Rule 1</h3>
+<blockquote class="blockquote">
+<p><strong>Read for meaning, not memorization.</strong></p>
+</blockquote>
+</section>
+<section id="rule-2" class="level3">
+<h3 class="anchored" data-anchor-id="rule-2">Rule 2</h3>
+<blockquote class="blockquote">
+<p><strong>Identify the main idea before answering.</strong></p>
+</blockquote>
+</section>
+<section id="rule-3" class="level3">
+<h3 class="anchored" data-anchor-id="rule-3">Rule 3</h3>
+<blockquote class="blockquote">
+<p><strong>Use evidence from the passage.</strong></p>
+</blockquote>
+</section>
+<section id="rule-4" class="level3">
+<h3 class="anchored" data-anchor-id="rule-4">Rule 4</h3>
+<blockquote class="blockquote">
+<p><strong>Do not bring your personal opinion into the answer.</strong></p>
+</blockquote>
+</section>
+<section id="rule-5" class="level3">
+<h3 class="anchored" data-anchor-id="rule-5">Rule 5</h3>
+<blockquote class="blockquote">
+<p><strong>Read every option carefully before selecting the answer.</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="one-minute-revision" class="level1">
+<h1>31. One-Minute Revision</h1>
+<pre class="text"><code>COMPREHENSION
+      ↓
+Read
+      ↓
+Understand
+      ↓
+Find Topic
+      ↓
+Find Main Idea
+      ↓
+Identify Details
+      ↓
+Understand Context
+      ↓
+Infer Carefully
+      ↓
+Eliminate Wrong Options
+      ↓
+Answer from the Passage</code></pre>
+<hr>
+</section>
+<section id="final-exam-tip" class="level1">
+<h1>32. Final Exam Tip</h1>
+<p>The most important principle for comprehension questions is:</p>
+<blockquote class="blockquote">
+<p><strong>The passage is the evidence.</strong></p>
+</blockquote>
+<p>Even if you know something about the topic from your own knowledge, use that knowledge only to understand the passage. The answer should be supported by what the passage actually says or reasonably implies.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

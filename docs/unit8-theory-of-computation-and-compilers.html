@@ -1,0 +1,3232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit VIII – Theory of Computation and Compilers – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper1.html"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper2.html" aria-current="page"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit8-theory-of-computation-and-compilers.html">Unit VIII – Theory of Computation and Compilers</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 2 – Computer Science &amp; Applications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-discrete-structures-and-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Discrete Structures and Optimization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-computer-system-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Computer System Architecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-programming-languages-and-computer-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Programming Languages and Computer Graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-database-management-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Database Management Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-system-software-and-operating-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – System Software and Operating System</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-software-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Software Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-structures-and-algorithms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Structures and Algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-theory-of-computation-and-compilers.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit VIII – Theory of Computation and Compilers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-data-communication-and-computer-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – Data Communication and Computer Networks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-artificial-intelligence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Artificial Intelligence (AI)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#formal-language" id="toc-formal-language" class="nav-link" data-scroll-target="#formal-language">2. Formal Language</a>
+  <ul class="collapse">
+  <li><a href="#alphabet" id="toc-alphabet" class="nav-link" data-scroll-target="#alphabet">2.1 Alphabet</a></li>
+  <li><a href="#string" id="toc-string" class="nav-link" data-scroll-target="#string">2.2 String</a></li>
+  <li><a href="#empty-string" id="toc-empty-string" class="nav-link" data-scroll-target="#empty-string">2.3 Empty String</a></li>
+  <li><a href="#language" id="toc-language" class="nav-link" data-scroll-target="#language">2.4 Language</a></li>
+  </ul></li>
+  <li><a href="#non-computational-problems" id="toc-non-computational-problems" class="nav-link" data-scroll-target="#non-computational-problems">3. Non-Computational Problems</a></li>
+  <li><a href="#diagonal-argument" id="toc-diagonal-argument" class="nav-link" data-scroll-target="#diagonal-argument">4. Diagonal Argument</a></li>
+  <li><a href="#russells-paradox" id="toc-russells-paradox" class="nav-link" data-scroll-target="#russells-paradox">5. Russell’s Paradox</a>
+  <ul class="collapse">
+  <li><a href="#importance" id="toc-importance" class="nav-link" data-scroll-target="#importance">Importance</a></li>
+  </ul></li>
+  <li><a href="#regular-language-models" id="toc-regular-language-models" class="nav-link" data-scroll-target="#regular-language-models">6. Regular Language Models</a></li>
+  <li><a href="#deterministic-finite-automaton" id="toc-deterministic-finite-automaton" class="nav-link" data-scroll-target="#deterministic-finite-automaton">7. Deterministic Finite Automaton</a></li>
+  <li><a href="#example-of-dfa" id="toc-example-of-dfa" class="nav-link" data-scroll-target="#example-of-dfa">8. Example of DFA</a></li>
+  <li><a href="#nondeterministic-finite-automaton" id="toc-nondeterministic-finite-automaton" class="nav-link" data-scroll-target="#nondeterministic-finite-automaton">9. Nondeterministic Finite Automaton</a></li>
+  <li><a href="#dfa-vs-nfa" id="toc-dfa-vs-nfa" class="nav-link" data-scroll-target="#dfa-vs-nfa">10. DFA vs NFA</a>
+  <ul class="collapse">
+  <li><a href="#important-ugc-net-point" id="toc-important-ugc-net-point" class="nav-link" data-scroll-target="#important-ugc-net-point">Important UGC NET Point</a></li>
+  </ul></li>
+  <li><a href="#equivalence-of-dfa-and-nfa" id="toc-equivalence-of-dfa-and-nfa" class="nav-link" data-scroll-target="#equivalence-of-dfa-and-nfa">11. Equivalence of DFA and NFA</a></li>
+  <li><a href="#regular-languages" id="toc-regular-languages" class="nav-link" data-scroll-target="#regular-languages">12. Regular Languages</a></li>
+  <li><a href="#regular-grammar" id="toc-regular-grammar" class="nav-link" data-scroll-target="#regular-grammar">13. Regular Grammar</a></li>
+  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">14. Regular Expressions</a>
+  <ul class="collapse">
+  <li><a href="#union" id="toc-union" class="nav-link" data-scroll-target="#union">Union</a></li>
+  <li><a href="#concatenation" id="toc-concatenation" class="nav-link" data-scroll-target="#concatenation">Concatenation</a></li>
+  <li><a href="#kleene-star" id="toc-kleene-star" class="nav-link" data-scroll-target="#kleene-star">Kleene Star</a></li>
+  </ul></li>
+  <li><a href="#properties-of-regular-languages" id="toc-properties-of-regular-languages" class="nav-link" data-scroll-target="#properties-of-regular-languages">15. Properties of Regular Languages</a>
+  <ul class="collapse">
+  <li><a href="#important-point" id="toc-important-point" class="nav-link" data-scroll-target="#important-point">Important Point</a></li>
+  </ul></li>
+  <li><a href="#pumping-lemma-for-regular-languages" id="toc-pumping-lemma-for-regular-languages" class="nav-link" data-scroll-target="#pumping-lemma-for-regular-languages">16. Pumping Lemma for Regular Languages</a></li>
+  <li><a href="#using-the-pumping-lemma" id="toc-using-the-pumping-lemma" class="nav-link" data-scroll-target="#using-the-pumping-lemma">17. Using the Pumping Lemma</a>
+  <ul class="collapse">
+  <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">Important</a></li>
+  </ul></li>
+  <li><a href="#non-regular-languages" id="toc-non-regular-languages" class="nav-link" data-scroll-target="#non-regular-languages">18. Non-Regular Languages</a></li>
+  <li><a href="#lexical-analysis" id="toc-lexical-analysis" class="nav-link" data-scroll-target="#lexical-analysis">19. Lexical Analysis</a>
+  <ul class="collapse">
+  <li><a href="#lexer" id="toc-lexer" class="nav-link" data-scroll-target="#lexer">19.1 Lexer</a></li>
+  <li><a href="#regular-languages-and-lexical-analysis" id="toc-regular-languages-and-lexical-analysis" class="nav-link" data-scroll-target="#regular-languages-and-lexical-analysis">19.2 Regular Languages and Lexical Analysis</a></li>
+  </ul></li>
+  <li><a href="#context-free-language" id="toc-context-free-language" class="nav-link" data-scroll-target="#context-free-language">20. Context-Free Language</a></li>
+  <li><a href="#context-free-grammar" id="toc-context-free-grammar" class="nav-link" data-scroll-target="#context-free-grammar">21. Context-Free Grammar</a></li>
+  <li><a href="#example-of-context-free-grammar" id="toc-example-of-context-free-grammar" class="nav-link" data-scroll-target="#example-of-context-free-grammar">22. Example of Context-Free Grammar</a></li>
+  <li><a href="#pushdown-automaton" id="toc-pushdown-automaton" class="nav-link" data-scroll-target="#pushdown-automaton">23. Pushdown Automaton</a>
+  <ul class="collapse">
+  <li><a href="#main-components" id="toc-main-components" class="nav-link" data-scroll-target="#main-components">Main Components</a></li>
+  </ul></li>
+  <li><a href="#nondeterministic-pda" id="toc-nondeterministic-pda" class="nav-link" data-scroll-target="#nondeterministic-pda">24. Nondeterministic PDA</a></li>
+  <li><a href="#pda-vs-finite-automaton" id="toc-pda-vs-finite-automaton" class="nav-link" data-scroll-target="#pda-vs-finite-automaton">25. PDA vs Finite Automaton</a></li>
+  <li><a href="#parse-tree" id="toc-parse-tree" class="nav-link" data-scroll-target="#parse-tree">26. Parse Tree</a></li>
+  <li><a href="#derivation" id="toc-derivation" class="nav-link" data-scroll-target="#derivation">27. Derivation</a>
+  <ul class="collapse">
+  <li><a href="#leftmost-derivation" id="toc-leftmost-derivation" class="nav-link" data-scroll-target="#leftmost-derivation">Leftmost Derivation</a></li>
+  <li><a href="#rightmost-derivation" id="toc-rightmost-derivation" class="nav-link" data-scroll-target="#rightmost-derivation">Rightmost Derivation</a></li>
+  </ul></li>
+  <li><a href="#ambiguous-grammar" id="toc-ambiguous-grammar" class="nav-link" data-scroll-target="#ambiguous-grammar">28. Ambiguous Grammar</a>
+  <ul class="collapse">
+  <li><a href="#important-1" id="toc-important-1" class="nav-link" data-scroll-target="#important-1">Important</a></li>
+  </ul></li>
+  <li><a href="#chomsky-normal-form" id="toc-chomsky-normal-form" class="nav-link" data-scroll-target="#chomsky-normal-form">29. Chomsky Normal Form</a></li>
+  <li><a href="#greibach-normal-form" id="toc-greibach-normal-form" class="nav-link" data-scroll-target="#greibach-normal-form">30. Greibach Normal Form</a></li>
+  <li><a href="#equivalence-of-pda-and-cfg" id="toc-equivalence-of-pda-and-cfg" class="nav-link" data-scroll-target="#equivalence-of-pda-and-cfg">31. Equivalence of PDA and CFG</a></li>
+  <li><a href="#properties-of-context-free-languages" id="toc-properties-of-context-free-languages" class="nav-link" data-scroll-target="#properties-of-context-free-languages">32. Properties of Context-Free Languages</a>
+  <ul class="collapse">
+  <li><a href="#important-ugc-net-point-1" id="toc-important-ugc-net-point-1" class="nav-link" data-scroll-target="#important-ugc-net-point-1">Important UGC NET Point</a></li>
+  </ul></li>
+  <li><a href="#turing-machine" id="toc-turing-machine" class="nav-link" data-scroll-target="#turing-machine">33. Turing Machine</a></li>
+  <li><a href="#turing-machine-tape" id="toc-turing-machine-tape" class="nav-link" data-scroll-target="#turing-machine-tape">34. Turing Machine Tape</a></li>
+  <li><a href="#variations-of-turing-machines" id="toc-variations-of-turing-machines" class="nav-link" data-scroll-target="#variations-of-turing-machines">35. Variations of Turing Machines</a></li>
+  <li><a href="#universal-turing-machine" id="toc-universal-turing-machine" class="nav-link" data-scroll-target="#universal-turing-machine">36. Universal Turing Machine</a></li>
+  <li><a href="#models-of-computation" id="toc-models-of-computation" class="nav-link" data-scroll-target="#models-of-computation">37. Models of Computation</a></li>
+  <li><a href="#church-turing-thesis" id="toc-church-turing-thesis" class="nav-link" data-scroll-target="#church-turing-thesis">38. Church-Turing Thesis</a>
+  <ul class="collapse">
+  <li><a href="#important-2" id="toc-important-2" class="nav-link" data-scroll-target="#important-2">Important</a></li>
+  </ul></li>
+  <li><a href="#recursive-languages" id="toc-recursive-languages" class="nav-link" data-scroll-target="#recursive-languages">39. Recursive Languages</a></li>
+  <li><a href="#recursively-enumerable-languages" id="toc-recursively-enumerable-languages" class="nav-link" data-scroll-target="#recursively-enumerable-languages">40. Recursively Enumerable Languages</a></li>
+  <li><a href="#context-sensitive-languages" id="toc-context-sensitive-languages" class="nav-link" data-scroll-target="#context-sensitive-languages">41. Context-Sensitive Languages</a></li>
+  <li><a href="#unrestricted-grammars" id="toc-unrestricted-grammars" class="nav-link" data-scroll-target="#unrestricted-grammars">42. Unrestricted Grammars</a></li>
+  <li><a href="#chomsky-hierarchy" id="toc-chomsky-hierarchy" class="nav-link" data-scroll-target="#chomsky-hierarchy">43. Chomsky Hierarchy</a></li>
+  <li><a href="#constructing-a-turing-machine" id="toc-constructing-a-turing-machine" class="nav-link" data-scroll-target="#constructing-a-turing-machine">44. Constructing a Turing Machine</a></li>
+  <li><a href="#unsolvable-problems" id="toc-unsolvable-problems" class="nav-link" data-scroll-target="#unsolvable-problems">45. Unsolvable Problems</a></li>
+  <li><a href="#halting-problem" id="toc-halting-problem" class="nav-link" data-scroll-target="#halting-problem">46. Halting Problem</a></li>
+  <li><a href="#post-correspondence-problem" id="toc-post-correspondence-problem" class="nav-link" data-scroll-target="#post-correspondence-problem">47. Post Correspondence Problem</a></li>
+  <li><a href="#unsolvable-problems-for-context-free-languages" id="toc-unsolvable-problems-for-context-free-languages" class="nav-link" data-scroll-target="#unsolvable-problems-for-context-free-languages">48. Unsolvable Problems for Context-Free Languages</a></li>
+  <li><a href="#complexity" id="toc-complexity" class="nav-link" data-scroll-target="#complexity">49. Complexity</a></li>
+  <li><a href="#tractable-and-intractable-problems" id="toc-tractable-and-intractable-problems" class="nav-link" data-scroll-target="#tractable-and-intractable-problems">50. Tractable and Intractable Problems</a></li>
+  <li><a href="#syntax-analysis" id="toc-syntax-analysis" class="nav-link" data-scroll-target="#syntax-analysis">51. Syntax Analysis</a></li>
+  <li><a href="#associativity" id="toc-associativity" class="nav-link" data-scroll-target="#associativity">52. Associativity</a></li>
+  <li><a href="#operator-precedence" id="toc-operator-precedence" class="nav-link" data-scroll-target="#operator-precedence">53. Operator Precedence</a></li>
+  <li><a href="#grammar-transformations" id="toc-grammar-transformations" class="nav-link" data-scroll-target="#grammar-transformations">54. Grammar Transformations</a></li>
+  <li><a href="#left-recursion" id="toc-left-recursion" class="nav-link" data-scroll-target="#left-recursion">55. Left Recursion</a></li>
+  <li><a href="#left-factoring" id="toc-left-factoring" class="nav-link" data-scroll-target="#left-factoring">56. Left Factoring</a></li>
+  <li><a href="#top-down-parsing" id="toc-top-down-parsing" class="nav-link" data-scroll-target="#top-down-parsing">57. Top-Down Parsing</a></li>
+  <li><a href="#recursive-descent-parsing" id="toc-recursive-descent-parsing" class="nav-link" data-scroll-target="#recursive-descent-parsing">58. Recursive Descent Parsing</a>
+  <ul class="collapse">
+  <li><a href="#problem" id="toc-problem" class="nav-link" data-scroll-target="#problem">Problem</a></li>
+  </ul></li>
+  <li><a href="#predictive-parsing" id="toc-predictive-parsing" class="nav-link" data-scroll-target="#predictive-parsing">59. Predictive Parsing</a></li>
+  <li><a href="#ll1-parsing" id="toc-ll1-parsing" class="nav-link" data-scroll-target="#ll1-parsing">60. LL(1) Parsing</a></li>
+  <li><a href="#first-and-follow" id="toc-first-and-follow" class="nav-link" data-scroll-target="#first-and-follow">61. FIRST and FOLLOW</a>
+  <ul class="collapse">
+  <li><a href="#first" id="toc-first" class="nav-link" data-scroll-target="#first">FIRST</a></li>
+  <li><a href="#follow" id="toc-follow" class="nav-link" data-scroll-target="#follow">FOLLOW</a></li>
+  </ul></li>
+  <li><a href="#ll1-parsing-table" id="toc-ll1-parsing-table" class="nav-link" data-scroll-target="#ll1-parsing-table">62. LL(1) Parsing Table</a></li>
+  <li><a href="#bottom-up-parsing" id="toc-bottom-up-parsing" class="nav-link" data-scroll-target="#bottom-up-parsing">63. Bottom-Up Parsing</a></li>
+  <li><a href="#shift-reduce-parsing" id="toc-shift-reduce-parsing" class="nav-link" data-scroll-target="#shift-reduce-parsing">64. Shift-Reduce Parsing</a>
+  <ul class="collapse">
+  <li><a href="#shift" id="toc-shift" class="nav-link" data-scroll-target="#shift">Shift</a></li>
+  <li><a href="#reduce" id="toc-reduce" class="nav-link" data-scroll-target="#reduce">Reduce</a></li>
+  </ul></li>
+  <li><a href="#lr-parser" id="toc-lr-parser" class="nav-link" data-scroll-target="#lr-parser">65. LR Parser</a></li>
+  <li><a href="#slr-lr1-and-lalr" id="toc-slr-lr1-and-lalr" class="nav-link" data-scroll-target="#slr-lr1-and-lalr">66. SLR, LR(1), and LALR</a>
+  <ul class="collapse">
+  <li><a href="#slr1" id="toc-slr1" class="nav-link" data-scroll-target="#slr1">SLR(1)</a></li>
+  <li><a href="#canonical-lr1" id="toc-canonical-lr1" class="nav-link" data-scroll-target="#canonical-lr1">Canonical LR(1)</a></li>
+  <li><a href="#lalr1" id="toc-lalr1" class="nav-link" data-scroll-target="#lalr1">LALR(1)</a></li>
+  </ul></li>
+  <li><a href="#top-down-vs-bottom-up-parsing" id="toc-top-down-vs-bottom-up-parsing" class="nav-link" data-scroll-target="#top-down-vs-bottom-up-parsing">67. Top-Down vs Bottom-Up Parsing</a></li>
+  <li><a href="#semantic-analysis" id="toc-semantic-analysis" class="nav-link" data-scroll-target="#semantic-analysis">68. Semantic Analysis</a></li>
+  <li><a href="#attribute-grammar" id="toc-attribute-grammar" class="nav-link" data-scroll-target="#attribute-grammar">69. Attribute Grammar</a></li>
+  <li><a href="#synthesized-attributes" id="toc-synthesized-attributes" class="nav-link" data-scroll-target="#synthesized-attributes">70. Synthesized Attributes</a></li>
+  <li><a href="#inherited-attributes" id="toc-inherited-attributes" class="nav-link" data-scroll-target="#inherited-attributes">71. Inherited Attributes</a></li>
+  <li><a href="#syntax-directed-definition" id="toc-syntax-directed-definition" class="nav-link" data-scroll-target="#syntax-directed-definition">72. Syntax-Directed Definition</a></li>
+  <li><a href="#dependency-graph" id="toc-dependency-graph" class="nav-link" data-scroll-target="#dependency-graph">73. Dependency Graph</a></li>
+  <li><a href="#evaluation-order" id="toc-evaluation-order" class="nav-link" data-scroll-target="#evaluation-order">74. Evaluation Order</a></li>
+  <li><a href="#s-attributed-definition" id="toc-s-attributed-definition" class="nav-link" data-scroll-target="#s-attributed-definition">75. S-Attributed Definition</a>
+  <ul class="collapse">
+  <li><a href="#easy-memory" id="toc-easy-memory" class="nav-link" data-scroll-target="#easy-memory">Easy Memory</a></li>
+  </ul></li>
+  <li><a href="#l-attributed-definition" id="toc-l-attributed-definition" class="nav-link" data-scroll-target="#l-attributed-definition">76. L-Attributed Definition</a>
+  <ul class="collapse">
+  <li><a href="#easy-memory-1" id="toc-easy-memory-1" class="nav-link" data-scroll-target="#easy-memory-1">Easy Memory</a></li>
+  </ul></li>
+  <li><a href="#type-checking" id="toc-type-checking" class="nav-link" data-scroll-target="#type-checking">77. Type Checking</a>
+  <ul class="collapse">
+  <li><a href="#static" id="toc-static" class="nav-link" data-scroll-target="#static">Static</a></li>
+  <li><a href="#dynamic" id="toc-dynamic" class="nav-link" data-scroll-target="#dynamic">Dynamic</a></li>
+  </ul></li>
+  <li><a href="#run-time-system" id="toc-run-time-system" class="nav-link" data-scroll-target="#run-time-system">78. Run-Time System</a></li>
+  <li><a href="#storage-organization" id="toc-storage-organization" class="nav-link" data-scroll-target="#storage-organization">79. Storage Organization</a></li>
+  <li><a href="#activation-tree" id="toc-activation-tree" class="nav-link" data-scroll-target="#activation-tree">80. Activation Tree</a></li>
+  <li><a href="#activation-record" id="toc-activation-record" class="nav-link" data-scroll-target="#activation-record">81. Activation Record</a></li>
+  <li><a href="#stack-allocation-of-activation-records" id="toc-stack-allocation-of-activation-records" class="nav-link" data-scroll-target="#stack-allocation-of-activation-records">82. Stack Allocation of Activation Records</a></li>
+  <li><a href="#parameter-passing-mechanisms" id="toc-parameter-passing-mechanisms" class="nav-link" data-scroll-target="#parameter-passing-mechanisms">83. Parameter Passing Mechanisms</a>
+  <ul class="collapse">
+  <li><a href="#call-by-value" id="toc-call-by-value" class="nav-link" data-scroll-target="#call-by-value">Call by Value</a></li>
+  <li><a href="#call-by-reference" id="toc-call-by-reference" class="nav-link" data-scroll-target="#call-by-reference">Call by Reference</a></li>
+  <li><a href="#call-by-result" id="toc-call-by-result" class="nav-link" data-scroll-target="#call-by-result">Call by Result</a></li>
+  <li><a href="#call-by-value-result" id="toc-call-by-value-result" class="nav-link" data-scroll-target="#call-by-value-result">Call by Value-Result</a></li>
+  <li><a href="#call-by-name" id="toc-call-by-name" class="nav-link" data-scroll-target="#call-by-name">Call by Name</a></li>
+  </ul></li>
+  <li><a href="#symbol-table" id="toc-symbol-table" class="nav-link" data-scroll-target="#symbol-table">84. Symbol Table</a></li>
+  <li><a href="#intermediate-code-generation" id="toc-intermediate-code-generation" class="nav-link" data-scroll-target="#intermediate-code-generation">85. Intermediate Code Generation</a></li>
+  <li><a href="#intermediate-representations" id="toc-intermediate-representations" class="nav-link" data-scroll-target="#intermediate-representations">86. Intermediate Representations</a></li>
+  <li><a href="#three-address-code" id="toc-three-address-code" class="nav-link" data-scroll-target="#three-address-code">87. Three-Address Code</a></li>
+  <li><a href="#quadruples" id="toc-quadruples" class="nav-link" data-scroll-target="#quadruples">88. Quadruples</a></li>
+  <li><a href="#triples" id="toc-triples" class="nav-link" data-scroll-target="#triples">89. Triples</a></li>
+  <li><a href="#translation-of-declarations" id="toc-translation-of-declarations" class="nav-link" data-scroll-target="#translation-of-declarations">90. Translation of Declarations</a></li>
+  <li><a href="#translation-of-assignments" id="toc-translation-of-assignments" class="nav-link" data-scroll-target="#translation-of-assignments">91. Translation of Assignments</a></li>
+  <li><a href="#translation-of-control-flow" id="toc-translation-of-control-flow" class="nav-link" data-scroll-target="#translation-of-control-flow">92. Translation of Control Flow</a></li>
+  <li><a href="#boolean-expressions" id="toc-boolean-expressions" class="nav-link" data-scroll-target="#boolean-expressions">93. Boolean Expressions</a></li>
+  <li><a href="#procedure-calls" id="toc-procedure-calls" class="nav-link" data-scroll-target="#procedure-calls">94. Procedure Calls</a></li>
+  <li><a href="#code-generation" id="toc-code-generation" class="nav-link" data-scroll-target="#code-generation">95. Code Generation</a></li>
+  <li><a href="#control-flow" id="toc-control-flow" class="nav-link" data-scroll-target="#control-flow">96. Control Flow</a></li>
+  <li><a href="#data-flow-analysis" id="toc-data-flow-analysis" class="nav-link" data-scroll-target="#data-flow-analysis">97. Data-Flow Analysis</a></li>
+  <li><a href="#local-optimization" id="toc-local-optimization" class="nav-link" data-scroll-target="#local-optimization">98. Local Optimization</a>
+  <ul class="collapse">
+  <li><a href="#constant-folding" id="toc-constant-folding" class="nav-link" data-scroll-target="#constant-folding">Constant Folding</a></li>
+  <li><a href="#algebraic-simplification" id="toc-algebraic-simplification" class="nav-link" data-scroll-target="#algebraic-simplification">Algebraic Simplification</a></li>
+  <li><a href="#common-subexpression-elimination" id="toc-common-subexpression-elimination" class="nav-link" data-scroll-target="#common-subexpression-elimination">Common Subexpression Elimination</a></li>
+  </ul></li>
+  <li><a href="#global-optimization" id="toc-global-optimization" class="nav-link" data-scroll-target="#global-optimization">99. Global Optimization</a></li>
+  <li><a href="#loop-optimization" id="toc-loop-optimization" class="nav-link" data-scroll-target="#loop-optimization">100. Loop Optimization</a></li>
+  <li><a href="#loop-invariant-code-motion" id="toc-loop-invariant-code-motion" class="nav-link" data-scroll-target="#loop-invariant-code-motion">101. Loop Invariant Code Motion</a></li>
+  <li><a href="#strength-reduction" id="toc-strength-reduction" class="nav-link" data-scroll-target="#strength-reduction">102. Strength Reduction</a></li>
+  <li><a href="#loop-unrolling" id="toc-loop-unrolling" class="nav-link" data-scroll-target="#loop-unrolling">103. Loop Unrolling</a></li>
+  <li><a href="#peephole-optimization" id="toc-peephole-optimization" class="nav-link" data-scroll-target="#peephole-optimization">104. Peephole Optimization</a></li>
+  <li><a href="#instruction-scheduling" id="toc-instruction-scheduling" class="nav-link" data-scroll-target="#instruction-scheduling">105. Instruction Scheduling</a></li>
+  <li><a href="#compiler-phases" id="toc-compiler-phases" class="nav-link" data-scroll-target="#compiler-phases">106. Compiler Phases</a></li>
+  <li><a href="#front-end-and-back-end" id="toc-front-end-and-back-end" class="nav-link" data-scroll-target="#front-end-and-back-end">107. Front End and Back End</a>
+  <ul class="collapse">
+  <li><a href="#front-end" id="toc-front-end" class="nav-link" data-scroll-target="#front-end">Front End</a></li>
+  <li><a href="#back-end" id="toc-back-end" class="nav-link" data-scroll-target="#back-end">Back End</a></li>
+  </ul></li>
+  <li><a href="#important-comparisons" id="toc-important-comparisons" class="nav-link" data-scroll-target="#important-comparisons">108. Important Comparisons</a>
+  <ul class="collapse">
+  <li><a href="#dfa-vs-nfa-1" id="toc-dfa-vs-nfa-1" class="nav-link" data-scroll-target="#dfa-vs-nfa-1">DFA vs NFA</a></li>
+  <li><a href="#regular-language-vs-context-free-language" id="toc-regular-language-vs-context-free-language" class="nav-link" data-scroll-target="#regular-language-vs-context-free-language">Regular Language vs Context-Free Language</a></li>
+  <li><a href="#dfa-vs-pda-vs-tm" id="toc-dfa-vs-pda-vs-tm" class="nav-link" data-scroll-target="#dfa-vs-pda-vs-tm">DFA vs PDA vs TM</a></li>
+  <li><a href="#recursive-vs-recursively-enumerable" id="toc-recursive-vs-recursively-enumerable" class="nav-link" data-scroll-target="#recursive-vs-recursively-enumerable">Recursive vs Recursively Enumerable</a></li>
+  </ul></li>
+  <li><a href="#important-parsing-comparison" id="toc-important-parsing-comparison" class="nav-link" data-scroll-target="#important-parsing-comparison">109. Important Parsing Comparison</a></li>
+  <li><a href="#important-attribute-comparison" id="toc-important-attribute-comparison" class="nav-link" data-scroll-target="#important-attribute-comparison">110. Important Attribute Comparison</a></li>
+  <li><a href="#important-compiler-phase-comparison" id="toc-important-compiler-phase-comparison" class="nav-link" data-scroll-target="#important-compiler-phase-comparison">111. Important Compiler Phase Comparison</a></li>
+  <li><a href="#common-ugc-net-mistakes" id="toc-common-ugc-net-mistakes" class="nav-link" data-scroll-target="#common-ugc-net-mistakes">112. Common UGC NET Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#mistake-1" id="toc-mistake-1" class="nav-link" data-scroll-target="#mistake-1">Mistake 1</a></li>
+  <li><a href="#mistake-2" id="toc-mistake-2" class="nav-link" data-scroll-target="#mistake-2">Mistake 2</a></li>
+  <li><a href="#mistake-3" id="toc-mistake-3" class="nav-link" data-scroll-target="#mistake-3">Mistake 3</a></li>
+  <li><a href="#mistake-4" id="toc-mistake-4" class="nav-link" data-scroll-target="#mistake-4">Mistake 4</a></li>
+  <li><a href="#mistake-5" id="toc-mistake-5" class="nav-link" data-scroll-target="#mistake-5">Mistake 5</a></li>
+  <li><a href="#mistake-6" id="toc-mistake-6" class="nav-link" data-scroll-target="#mistake-6">Mistake 6</a></li>
+  <li><a href="#mistake-7" id="toc-mistake-7" class="nav-link" data-scroll-target="#mistake-7">Mistake 7</a></li>
+  <li><a href="#mistake-8" id="toc-mistake-8" class="nav-link" data-scroll-target="#mistake-8">Mistake 8</a></li>
+  <li><a href="#mistake-9" id="toc-mistake-9" class="nav-link" data-scroll-target="#mistake-9">Mistake 9</a></li>
+  <li><a href="#mistake-10" id="toc-mistake-10" class="nav-link" data-scroll-target="#mistake-10">Mistake 10</a></li>
+  </ul></li>
+  <li><a href="#ugc-net-high-priority-topics" id="toc-ugc-net-high-priority-topics" class="nav-link" data-scroll-target="#ugc-net-high-priority-topics">113. UGC NET High-Priority Topics</a></li>
+  <li><a href="#quick-revision-theory-of-computation" id="toc-quick-revision-theory-of-computation" class="nav-link" data-scroll-target="#quick-revision-theory-of-computation">114. Quick Revision: Theory of Computation</a></li>
+  <li><a href="#quick-revision-compiler-design" id="toc-quick-revision-compiler-design" class="nav-link" data-scroll-target="#quick-revision-compiler-design">115. Quick Revision: Compiler Design</a></li>
+  <li><a href="#important-facts-to-memorize" id="toc-important-facts-to-memorize" class="nav-link" data-scroll-target="#important-facts-to-memorize">116. Important Facts to Memorize</a></li>
+  <li><a href="#final-exam-strategy" id="toc-final-exam-strategy" class="nav-link" data-scroll-target="#final-exam-strategy">117. Final Exam Strategy</a>
+  <ul class="collapse">
+  <li><a href="#block-1-automata" id="toc-block-1-automata" class="nav-link" data-scroll-target="#block-1-automata">Block 1: Automata</a></li>
+  <li><a href="#block-2-context-free-languages" id="toc-block-2-context-free-languages" class="nav-link" data-scroll-target="#block-2-context-free-languages">Block 2: Context-Free Languages</a></li>
+  <li><a href="#block-3-turing-machines-and-computability" id="toc-block-3-turing-machines-and-computability" class="nav-link" data-scroll-target="#block-3-turing-machines-and-computability">Block 3: Turing Machines and Computability</a></li>
+  <li><a href="#block-4-compiler-design" id="toc-block-4-compiler-design" class="nav-link" data-scroll-target="#block-4-compiler-design">Block 4: Compiler Design</a></li>
+  </ul></li>
+  <li><a href="#final-summary" id="toc-final-summary" class="nav-link" data-scroll-target="#final-summary">118. Final Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit VIII – Theory of Computation and Compilers</h1>
+<p class="subtitle lead">UGC NET Computer Science and Applications – Paper 2</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>This unit combines two major areas of Computer Science:</p>
+<ol type="1">
+<li><strong>Theory of Computation</strong></li>
+<li><strong>Compiler Design</strong></li>
+</ol>
+<p>Theory of Computation studies what can be computed, what cannot be computed, and how computational problems can be represented using mathematical models.</p>
+<p>Compiler Design studies how a program written in a high-level programming language is translated into a form that a computer can execute.</p>
+<p>A useful overall picture is:</p>
+<pre class="text"><code>Theory of Computation
+        ↓
+Formal Languages
+        ↓
+Automata
+        ↓
+Grammars
+        ↓
+Turing Machines
+        ↓
+Computability and Complexity
+
+Compiler
+        ↓
+Lexical Analysis
+        ↓
+Syntax Analysis
+        ↓
+Semantic Analysis
+        ↓
+Intermediate Code
+        ↓
+Optimization
+        ↓
+Code Generation</code></pre>
+<hr>
+</section>
+<section id="formal-language" class="level1">
+<h1>2. Formal Language</h1>
+<p>A <strong>formal language</strong> is a set of strings formed according to precisely defined rules over an alphabet.</p>
+<section id="alphabet" class="level2">
+<h2 class="anchored" data-anchor-id="alphabet">2.1 Alphabet</h2>
+<p>An alphabet is a finite, non-empty set of symbols.</p>
+<p>It is usually represented by:</p>
+<p><strong>Σ</strong></p>
+<p>Example:</p>
+<pre class="text"><code>Σ = {0, 1}</code></pre>
+<p>Another example:</p>
+<pre class="text"><code>Σ = {a, b, c}</code></pre>
+</section>
+<section id="string" class="level2">
+<h2 class="anchored" data-anchor-id="string">2.2 String</h2>
+<p>A string is a finite sequence of symbols from an alphabet.</p>
+<p>For:</p>
+<pre class="text"><code>Σ = {0, 1}</code></pre>
+<p>Examples:</p>
+<pre class="text"><code>0
+1
+01
+101
+1100</code></pre>
+</section>
+<section id="empty-string" class="level2">
+<h2 class="anchored" data-anchor-id="empty-string">2.3 Empty String</h2>
+<p>The empty string contains no symbols.</p>
+<p>It is represented by:</p>
+<p><strong>ε</strong></p>
+<p>Its length is:</p>
+<p><strong>|ε| = 0</strong></p>
+</section>
+<section id="language" class="level2">
+<h2 class="anchored" data-anchor-id="language">2.4 Language</h2>
+<p>A language is a set of strings over an alphabet.</p>
+<p>Example:</p>
+<pre class="text"><code>L = {0, 1, 00, 11, 010, 101}</code></pre>
+<p>A language can be finite or infinite.</p>
+<hr>
+</section>
+</section>
+<section id="non-computational-problems" class="level1">
+<h1>3. Non-Computational Problems</h1>
+<p>A computational problem is one for which we ask whether an algorithm can solve it.</p>
+<p>Some problems are not solvable by any algorithm under a particular formal model.</p>
+<p>Such problems are called <strong>non-computable</strong> or <strong>undecidable</strong> problems.</p>
+<p>Examples include:</p>
+<ul>
+<li>Halting Problem</li>
+<li>Certain instances related to Post Correspondence Problem</li>
+</ul>
+<p>The study of such problems is part of computability theory.</p>
+<hr>
+</section>
+<section id="diagonal-argument" class="level1">
+<h1>4. Diagonal Argument</h1>
+<p>The <strong>diagonal argument</strong> is a mathematical technique used to show that some collections cannot be listed or that certain computational tasks cannot be performed by an algorithm.</p>
+<p>It is strongly associated with Cantor’s work and later computability arguments.</p>
+<p>The basic idea is:</p>
+<ol type="1">
+<li>Assume all objects can be listed.</li>
+<li>Construct a new object that differs from each listed object at a selected diagonal position.</li>
+<li>The new object is not on the list.</li>
+<li>Therefore, the original assumption is false.</li>
+</ol>
+<p>Diagonalization is important in understanding:</p>
+<ul>
+<li>Uncountability</li>
+<li>Limits of computation</li>
+<li>Undecidability</li>
+</ul>
+<hr>
+</section>
+<section id="russells-paradox" class="level1">
+<h1>5. Russell’s Paradox</h1>
+<p>Russell’s Paradox arises from considering the set of all sets that do not contain themselves.</p>
+<p>Suppose:</p>
+<p><strong>R = {x | x is a set and x is not a member of x}</strong></p>
+<p>Now ask:</p>
+<p><strong>Is R a member of itself?</strong></p>
+<p>If R belongs to R, then by definition R should not belong to R.</p>
+<p>If R does not belong to R, then by definition R should belong to R.</p>
+<p>This creates a contradiction.</p>
+<section id="importance" class="level3">
+<h3 class="anchored" data-anchor-id="importance">Importance</h3>
+<p>Russell’s Paradox demonstrates problems that can arise from unrestricted set formation and influenced the development of more rigorous foundations of mathematics.</p>
+<hr>
+</section>
+</section>
+<section id="regular-language-models" class="level1">
+<h1>6. Regular Language Models</h1>
+<p>Regular languages can be represented using several equivalent models:</p>
+<ul>
+<li>DFA</li>
+<li>NFA</li>
+<li>Regular expressions</li>
+<li>Regular grammars</li>
+</ul>
+<p>These models have the same expressive power.</p>
+<hr>
+</section>
+<section id="deterministic-finite-automaton" class="level1">
+<h1>7. Deterministic Finite Automaton</h1>
+<p>A <strong>DFA</strong> is a finite automaton in which, for every state and input symbol, exactly one next state is specified.</p>
+<p>A DFA can be represented as:</p>
+<p><strong>M = (Q, Σ, δ, q₀, F)</strong></p>
+<p>where:</p>
+<ul>
+<li>Q = finite set of states</li>
+<li>Σ = input alphabet</li>
+<li>δ = transition function</li>
+<li>q₀ = initial state</li>
+<li>F = set of final/accepting states</li>
+</ul>
+<p>For a DFA:</p>
+<p><strong>δ: Q × Σ → Q</strong></p>
+<hr>
+</section>
+<section id="example-of-dfa" class="level1">
+<h1>8. Example of DFA</h1>
+<p>Consider a DFA that accepts binary strings ending in <code>1</code>.</p>
+<p>We can use:</p>
+<pre class="text"><code>q0 --0--&gt; q0
+q0 --1--&gt; q1
+q1 --0--&gt; q0
+q1 --1--&gt; q1</code></pre>
+<p>Here:</p>
+<ul>
+<li>q0 = start state</li>
+<li>q1 = accepting state</li>
+</ul>
+<p>Examples accepted:</p>
+<pre class="text"><code>1
+01
+101
+111</code></pre>
+<p>Examples rejected:</p>
+<pre class="text"><code>0
+10
+100</code></pre>
+<hr>
+</section>
+<section id="nondeterministic-finite-automaton" class="level1">
+<h1>9. Nondeterministic Finite Automaton</h1>
+<p>A <strong>NFA</strong> or <strong>NDFA</strong> is a finite automaton in which a state and input symbol may have:</p>
+<ul>
+<li>zero transitions</li>
+<li>one transition</li>
+<li>multiple transitions</li>
+</ul>
+<p>The transition function is generally:</p>
+<p><strong>δ: Q × Σ → 2^Q</strong></p>
+<p>For ε-NFA, transitions may also occur without consuming an input symbol.</p>
+<hr>
+</section>
+<section id="dfa-vs-nfa" class="level1">
+<h1>10. DFA vs NFA</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>DFA</th>
+<th>NFA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exactly one transition for each state-symbol pair</td>
+<td>Zero, one, or multiple transitions</td>
+</tr>
+<tr class="even">
+<td>No choice of next state</td>
+<td>Multiple possible paths</td>
+</tr>
+<tr class="odd">
+<td>No ε-transitions in standard DFA</td>
+<td>ε-transitions may be allowed in ε-NFA</td>
+</tr>
+<tr class="even">
+<td>Easier direct execution</td>
+<td>Often easier to construct</td>
+</tr>
+<tr class="odd">
+<td>Same expressive power as NFA</td>
+<td>Same expressive power as DFA</td>
+</tr>
+</tbody>
+</table>
+<section id="important-ugc-net-point" class="level3">
+<h3 class="anchored" data-anchor-id="important-ugc-net-point">Important UGC NET Point</h3>
+<p><strong>DFA and NFA recognize exactly the regular languages.</strong></p>
+<hr>
+</section>
+</section>
+<section id="equivalence-of-dfa-and-nfa" class="level1">
+<h1>11. Equivalence of DFA and NFA</h1>
+<p>Every NFA has an equivalent DFA.</p>
+<p>The usual construction is called <strong>subset construction</strong>.</p>
+<p>A DFA state represents a set of NFA states.</p>
+<p>Therefore:</p>
+<p><strong>NFA → DFA</strong></p>
+<p>is always possible.</p>
+<p>The equivalent DFA may have up to:</p>
+<p><strong>2^n</strong></p>
+<p>states for an NFA with n states, although the actual number can be smaller.</p>
+<hr>
+</section>
+<section id="regular-languages" class="level1">
+<h1>12. Regular Languages</h1>
+<p>A language is regular if it can be recognized by a finite automaton.</p>
+<p>Equivalent descriptions include:</p>
+<pre class="text"><code>Regular Language
+    ↕
+DFA
+    ↕
+NFA
+    ↕
+Regular Expression
+    ↕
+Regular Grammar</code></pre>
+<p>This equivalence is fundamental in automata theory.</p>
+<hr>
+</section>
+<section id="regular-grammar" class="level1">
+<h1>13. Regular Grammar</h1>
+<p>A regular grammar is a grammar that generates a regular language.</p>
+<p>A right-linear grammar may contain productions such as:</p>
+<p><strong>A → aB</strong></p>
+<p>or:</p>
+<p><strong>A → a</strong></p>
+<p>A left-linear grammar may contain productions such as:</p>
+<p><strong>A → Ba</strong></p>
+<p>Regular grammars cannot generally express arbitrary nested structures such as balanced parentheses.</p>
+<hr>
+</section>
+<section id="regular-expressions" class="level1">
+<h1>14. Regular Expressions</h1>
+<p>A <strong>regular expression</strong> is a notation used to describe regular languages.</p>
+<p>Basic operators include:</p>
+<section id="union" class="level3">
+<h3 class="anchored" data-anchor-id="union">Union</h3>
+<pre class="text"><code>R + S</code></pre>
+<p>means either R or S.</p>
+</section>
+<section id="concatenation" class="level3">
+<h3 class="anchored" data-anchor-id="concatenation">Concatenation</h3>
+<pre class="text"><code>RS</code></pre>
+<p>means R followed by S.</p>
+</section>
+<section id="kleene-star" class="level3">
+<h3 class="anchored" data-anchor-id="kleene-star">Kleene Star</h3>
+<pre class="text"><code>R*</code></pre>
+<p>means zero or more repetitions of R.</p>
+<p>Example:</p>
+<pre class="text"><code>(0 + 1)*</code></pre>
+<p>represents all binary strings.</p>
+<hr>
+</section>
+</section>
+<section id="properties-of-regular-languages" class="level1">
+<h1>15. Properties of Regular Languages</h1>
+<p>Regular languages are closed under many operations.</p>
+<p>Important closure properties include:</p>
+<ul>
+<li>Union</li>
+<li>Intersection</li>
+<li>Complement</li>
+<li>Difference</li>
+<li>Concatenation</li>
+<li>Kleene star</li>
+<li>Reversal</li>
+<li>Homomorphism</li>
+<li>Inverse homomorphism</li>
+</ul>
+<section id="important-point" class="level3">
+<h3 class="anchored" data-anchor-id="important-point">Important Point</h3>
+<p>If L1 and L2 are regular, then:</p>
+<p><strong>L1 ∪ L2</strong></p>
+<p>is also regular.</p>
+<p>Similarly:</p>
+<p><strong>L1 ∩ L2</strong></p>
+<p>is regular.</p>
+<hr>
+</section>
+</section>
+<section id="pumping-lemma-for-regular-languages" class="level1">
+<h1>16. Pumping Lemma for Regular Languages</h1>
+<p>The pumping lemma is used mainly to prove that certain languages are <strong>not regular</strong>.</p>
+<p>If L is regular, there exists a pumping length p such that every sufficiently long string <code>w</code> in L can be written as:</p>
+<p><strong>w = xyz</strong></p>
+<p>with conditions such as:</p>
+<ol type="1">
+<li><strong>|xy| ≤ p</strong></li>
+<li><strong>|y| &gt; 0</strong></li>
+<li><strong>xy^i z ∈ L for every i ≥ 0</strong></li>
+</ol>
+<p>The notation:</p>
+<p><strong>y^i</strong></p>
+<p>means repeating y i times.</p>
+<hr>
+</section>
+<section id="using-the-pumping-lemma" class="level1">
+<h1>17. Using the Pumping Lemma</h1>
+<p>Consider:</p>
+<p><strong>L = {0^n 1^n | n ≥ 0}</strong></p>
+<p>This language requires equal numbers of 0s and 1s.</p>
+<p>Assume L is regular.</p>
+<p>Choose:</p>
+<p><strong>w = 0^p 1^p</strong></p>
+<p>The pumping lemma says:</p>
+<p><strong>w = xyz</strong></p>
+<p>where:</p>
+<p><strong>|xy| ≤ p</strong></p>
+<p>Therefore x and y contain only 0s.</p>
+<p>Since:</p>
+<p><strong>|y| &gt; 0</strong></p>
+<p>y contains one or more 0s.</p>
+<p>Pump y out by taking:</p>
+<p><strong>i = 0</strong></p>
+<p>The resulting string has fewer 0s but the same number of 1s.</p>
+<p>Therefore the resulting string is not in L.</p>
+<p>This is a contradiction.</p>
+<p>Hence:</p>
+<p><strong>L is not regular.</strong></p>
+<section id="important" class="level3">
+<h3 class="anchored" data-anchor-id="important">Important</h3>
+<p>The pumping lemma can prove non-regularity, but failure to find a pumping-lemma contradiction does not prove regularity.</p>
+<hr>
+</section>
+</section>
+<section id="non-regular-languages" class="level1">
+<h1>18. Non-Regular Languages</h1>
+<p>Examples include:</p>
+<p><strong>L = {0<sup>n1</sup>n | n ≥ 0}</strong></p>
+<p>**L = {ww | w ∈ {0,1}*}**</p>
+<p>Balanced-parentheses languages are also generally non-regular.</p>
+<p>These languages require more memory than a finite automaton provides.</p>
+<hr>
+</section>
+<section id="lexical-analysis" class="level1">
+<h1>19. Lexical Analysis</h1>
+<p>Lexical analysis is the first major phase of a compiler.</p>
+<p>It converts the input character stream into tokens.</p>
+<p>Example:</p>
+<pre class="text"><code>int total = a + 10;</code></pre>
+<p>Possible tokens:</p>
+<pre class="text"><code>int
+total
+=
+a
++
+10
+;</code></pre>
+<section id="lexer" class="level2">
+<h2 class="anchored" data-anchor-id="lexer">19.1 Lexer</h2>
+<p>The lexical analyzer is also called a:</p>
+<p><strong>Lexer</strong></p>
+<p>It identifies:</p>
+<ul>
+<li>Keywords</li>
+<li>Identifiers</li>
+<li>Operators</li>
+<li>Constants</li>
+<li>Delimiters</li>
+<li>Literals</li>
+</ul>
+</section>
+<section id="regular-languages-and-lexical-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="regular-languages-and-lexical-analysis">19.2 Regular Languages and Lexical Analysis</h2>
+<p>Regular expressions and finite automata are commonly used to describe and recognize lexical patterns.</p>
+<hr>
+</section>
+</section>
+<section id="context-free-language" class="level1">
+<h1>20. Context-Free Language</h1>
+<p>A <strong>context-free language (CFL)</strong> is a language generated by a context-free grammar.</p>
+<p>CFLs are more powerful than regular languages.</p>
+<p>They can describe structures such as:</p>
+<ul>
+<li>Balanced parentheses</li>
+<li>Nested blocks</li>
+<li>Arithmetic expression syntax</li>
+</ul>
+<hr>
+</section>
+<section id="context-free-grammar" class="level1">
+<h1>21. Context-Free Grammar</h1>
+<p>A Context-Free Grammar is represented as:</p>
+<p><strong>G = (V, Σ, P, S)</strong></p>
+<p>where:</p>
+<ul>
+<li>V = variables/non-terminals</li>
+<li>Σ = terminals</li>
+<li>P = productions</li>
+<li>S = start symbol</li>
+</ul>
+<p>A production has the form:</p>
+<p><strong>A → α</strong></p>
+<p>where A is a single non-terminal and α is a string of terminals and non-terminals.</p>
+<hr>
+</section>
+<section id="example-of-context-free-grammar" class="level1">
+<h1>22. Example of Context-Free Grammar</h1>
+<p>Consider:</p>
+<pre class="text"><code>S → 0S1
+S → ε</code></pre>
+<p>This grammar generates:</p>
+<pre class="text"><code>ε
+01
+0011
+000111
+...</code></pre>
+<p>Therefore it generates:</p>
+<p><strong>{0<sup>n1</sup>n | n ≥ 0}</strong></p>
+<p>This language is context-free but not regular.</p>
+<hr>
+</section>
+<section id="pushdown-automaton" class="level1">
+<h1>23. Pushdown Automaton</h1>
+<p>A <strong>Pushdown Automaton (PDA)</strong> is a finite automaton equipped with a stack.</p>
+<p>The stack provides additional memory.</p>
+<p>This allows a PDA to recognize context-free languages.</p>
+<section id="main-components" class="level3">
+<h3 class="anchored" data-anchor-id="main-components">Main Components</h3>
+<ul>
+<li>Input</li>
+<li>Finite control</li>
+<li>Stack</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="nondeterministic-pda" class="level1">
+<h1>24. Nondeterministic PDA</h1>
+<p>An <strong>NPDA</strong> can have multiple possible transitions for the same situation.</p>
+<p>A fundamental result is:</p>
+<p><strong>Context-Free Languages = Languages accepted by NPDAs</strong></p>
+<p>Thus:</p>
+<p><strong>CFG ↔︎ NPDA</strong></p>
+<hr>
+</section>
+<section id="pda-vs-finite-automaton" class="level1">
+<h1>25. PDA vs Finite Automaton</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Finite Automaton</th>
+<th>PDA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Finite control only</td>
+<td>Finite control + stack</td>
+</tr>
+<tr class="even">
+<td>Recognizes regular languages</td>
+<td>Recognizes CFLs</td>
+</tr>
+<tr class="odd">
+<td>Cannot generally count arbitrary nested structures</td>
+<td>Can handle nesting</td>
+</tr>
+<tr class="even">
+<td>DFA/NFA</td>
+<td>PDA/NPDA</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="parse-tree" class="level1">
+<h1>26. Parse Tree</h1>
+<p>A parse tree represents how a string is derived from a grammar.</p>
+<p>Example grammar:</p>
+<pre class="text"><code>S → 0S1
+S → ε</code></pre>
+<p>For <code>0011</code>:</p>
+<pre class="text"><code>       S
+      /|\
+     0 S 1
+       /|\
+      0 S 1
+        |
+        ε</code></pre>
+<p>A parse tree shows the hierarchical structure of the derivation.</p>
+<hr>
+</section>
+<section id="derivation" class="level1">
+<h1>27. Derivation</h1>
+<p>A derivation starts from the start symbol and repeatedly applies grammar productions.</p>
+<p>Two important forms:</p>
+<section id="leftmost-derivation" class="level3">
+<h3 class="anchored" data-anchor-id="leftmost-derivation">Leftmost Derivation</h3>
+<p>Always replace the leftmost non-terminal first.</p>
+</section>
+<section id="rightmost-derivation" class="level3">
+<h3 class="anchored" data-anchor-id="rightmost-derivation">Rightmost Derivation</h3>
+<p>Always replace the rightmost non-terminal first.</p>
+<hr>
+</section>
+</section>
+<section id="ambiguous-grammar" class="level1">
+<h1>28. Ambiguous Grammar</h1>
+<p>A grammar is <strong>ambiguous</strong> if there exists at least one string having more than one distinct parse tree or, equivalently, more than one leftmost/rightmost derivation.</p>
+<p>Example:</p>
+<pre class="text"><code>E → E + E
+E → E * E
+E → id</code></pre>
+<p>For:</p>
+<pre class="text"><code>id + id * id</code></pre>
+<p>different parse structures may result unless precedence and associativity are specified.</p>
+<section id="important-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-1">Important</h3>
+<p>Ambiguity is a property of a grammar.</p>
+<hr>
+</section>
+</section>
+<section id="chomsky-normal-form" class="level1">
+<h1>29. Chomsky Normal Form</h1>
+<p>A context-free grammar is in <strong>Chomsky Normal Form (CNF)</strong> when productions are generally of the form:</p>
+<p><strong>A → BC</strong></p>
+<p>or:</p>
+<p><strong>A → a</strong></p>
+<p>where:</p>
+<ul>
+<li>A, B, C are variables</li>
+<li>a is a terminal</li>
+</ul>
+<p>Some formulations allow a special exception:</p>
+<p><strong>S → ε</strong></p>
+<p>when the language contains the empty string.</p>
+<p>CNF is important in algorithms such as CYK parsing.</p>
+<hr>
+</section>
+<section id="greibach-normal-form" class="level1">
+<h1>30. Greibach Normal Form</h1>
+<p>A context-free grammar is in <strong>Greibach Normal Form (GNF)</strong> when productions generally have the form:</p>
+<p><strong>A → aα</strong></p>
+<p>where:</p>
+<ul>
+<li>a is a terminal</li>
+<li>α is a string of zero or more variables</li>
+</ul>
+<p>Thus each production begins with a terminal.</p>
+<hr>
+</section>
+<section id="equivalence-of-pda-and-cfg" class="level1">
+<h1>31. Equivalence of PDA and CFG</h1>
+<p>A fundamental result is:</p>
+<p><strong>A language is context-free if and only if some NPDA accepts it.</strong></p>
+<p>Therefore:</p>
+<p><strong>CFG ↔︎ NPDA</strong></p>
+<p>This equivalence is one of the most important facts in automata theory.</p>
+<hr>
+</section>
+<section id="properties-of-context-free-languages" class="level1">
+<h1>32. Properties of Context-Free Languages</h1>
+<p>CFLs are closed under:</p>
+<ul>
+<li>Union</li>
+<li>Concatenation</li>
+<li>Kleene star</li>
+</ul>
+<p>CFLs are <strong>not closed under intersection</strong> in general.</p>
+<p>They are also <strong>not closed under complement</strong> in general.</p>
+<p>However, CFLs are closed under intersection with a regular language.</p>
+<section id="important-ugc-net-point-1" class="level3">
+<h3 class="anchored" data-anchor-id="important-ugc-net-point-1">Important UGC NET Point</h3>
+<p>Do not confuse regular-language closure properties with CFL closure properties.</p>
+<hr>
+</section>
+</section>
+<section id="turing-machine" class="level1">
+<h1>33. Turing Machine</h1>
+<p>A <strong>Turing Machine (TM)</strong> is a mathematical model of computation.</p>
+<p>A standard TM contains:</p>
+<ul>
+<li>Finite set of states</li>
+<li>Input alphabet</li>
+<li>Tape alphabet</li>
+<li>Transition function</li>
+<li>Initial state</li>
+<li>Blank symbol</li>
+<li>Accepting/rejecting states</li>
+</ul>
+<p>A common representation is:</p>
+<p><strong>M = (Q, Σ, Γ, δ, q₀, B, F)</strong></p>
+<p>where:</p>
+<ul>
+<li>Q = states</li>
+<li>Σ = input alphabet</li>
+<li>Γ = tape alphabet</li>
+<li>δ = transition function</li>
+<li>q₀ = initial state</li>
+<li>B = blank symbol</li>
+<li>F = accepting states</li>
+</ul>
+<hr>
+</section>
+<section id="turing-machine-tape" class="level1">
+<h1>34. Turing Machine Tape</h1>
+<p>The tape acts as an unbounded memory model in the standard theoretical formulation.</p>
+<p>A TM head can:</p>
+<ul>
+<li>Read a symbol</li>
+<li>Write a symbol</li>
+<li>Move Left</li>
+<li>Move Right</li>
+</ul>
+<p>This makes Turing Machines much more powerful than finite automata and ordinary pushdown automata.</p>
+<hr>
+</section>
+<section id="variations-of-turing-machines" class="level1">
+<h1>35. Variations of Turing Machines</h1>
+<p>Common variations include:</p>
+<ul>
+<li>Multi-tape Turing machine</li>
+<li>Multi-track Turing machine</li>
+<li>Nondeterministic Turing machine</li>
+<li>Two-way infinite tape machine</li>
+</ul>
+<p>Many standard variations have the same computational power as the ordinary single-tape deterministic TM, although they may differ in efficiency.</p>
+<hr>
+</section>
+<section id="universal-turing-machine" class="level1">
+<h1>36. Universal Turing Machine</h1>
+<p>A <strong>Universal Turing Machine (UTM)</strong> can simulate another Turing machine when given an encoding of that machine and its input.</p>
+<p>Conceptually:</p>
+<pre class="text"><code>Description of TM + Input
+            ↓
+Universal TM
+            ↓
+Simulation</code></pre>
+<p>This idea is important for understanding general-purpose computation.</p>
+<hr>
+</section>
+<section id="models-of-computation" class="level1">
+<h1>37. Models of Computation</h1>
+<p>Models of computation provide formal descriptions of computational processes.</p>
+<p>Examples:</p>
+<ul>
+<li>Finite automata</li>
+<li>Pushdown automata</li>
+<li>Turing machines</li>
+<li>Lambda calculus</li>
+<li>Recursive functions</li>
+</ul>
+<p>These models help define the limits and capabilities of computation.</p>
+<hr>
+</section>
+<section id="church-turing-thesis" class="level1">
+<h1>38. Church-Turing Thesis</h1>
+<p>The <strong>Church-Turing Thesis</strong> informally states that any function that is effectively computable can be computed by a Turing machine.</p>
+<p>It connects the intuitive concept of an algorithm with a formal computational model.</p>
+<section id="important-2" class="level3">
+<h3 class="anchored" data-anchor-id="important-2">Important</h3>
+<p>The Church-Turing Thesis is a thesis, not a theorem proved from a universally accepted formal definition of “effective computation.”</p>
+<hr>
+</section>
+</section>
+<section id="recursive-languages" class="level1">
+<h1>39. Recursive Languages</h1>
+<p>A language is <strong>recursive</strong> or <strong>decidable</strong> if there exists a Turing machine that:</p>
+<ul>
+<li>Accepts every string in the language.</li>
+<li>Rejects every string not in the language.</li>
+<li>Halts on every input.</li>
+</ul>
+<p>Therefore:</p>
+<p><strong>Recursive language = decidable language</strong></p>
+<hr>
+</section>
+<section id="recursively-enumerable-languages" class="level1">
+<h1>40. Recursively Enumerable Languages</h1>
+<p>A language is <strong>recursively enumerable (RE)</strong> if there exists a Turing machine that:</p>
+<ul>
+<li>Accepts every string in the language.</li>
+<li>May not halt when the input is not in the language.</li>
+</ul>
+<p>Thus:</p>
+<p><strong>Recursive ⊆ Recursively Enumerable</strong></p>
+<p>Every recursive language is RE, but not every RE language is recursive.</p>
+<hr>
+</section>
+<section id="context-sensitive-languages" class="level1">
+<h1>41. Context-Sensitive Languages</h1>
+<p>Context-sensitive languages are associated with <strong>linear bounded automata (LBA)</strong>.</p>
+<p>They are more powerful than context-free languages.</p>
+<p>They are generated by context-sensitive grammars under standard definitions.</p>
+<hr>
+</section>
+<section id="unrestricted-grammars" class="level1">
+<h1>42. Unrestricted Grammars</h1>
+<p>An unrestricted grammar has productions with very few restrictions compared with regular and context-free grammars.</p>
+<p>They generate the class of recursively enumerable languages.</p>
+<p>Relationship:</p>
+<p><strong>Unrestricted Grammar ↔︎ Turing Machine ↔︎ Recursively Enumerable Language</strong></p>
+<hr>
+</section>
+<section id="chomsky-hierarchy" class="level1">
+<h1>43. Chomsky Hierarchy</h1>
+<p>The Chomsky hierarchy classifies formal languages.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Language</th>
+<th>Grammar</th>
+<th>Machine</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Type 3</td>
+<td>Regular</td>
+<td>Regular Grammar</td>
+<td>Finite Automaton</td>
+</tr>
+<tr class="even">
+<td>Type 2</td>
+<td>Context-Free</td>
+<td>CFG</td>
+<td>PDA</td>
+</tr>
+<tr class="odd">
+<td>Type 1</td>
+<td>Context-Sensitive</td>
+<td>CSG</td>
+<td>LBA</td>
+</tr>
+<tr class="even">
+<td>Type 0</td>
+<td>Recursively Enumerable</td>
+<td>Unrestricted Grammar</td>
+<td>Turing Machine</td>
+</tr>
+</tbody>
+</table>
+<p>The containment relationship is:</p>
+<p><strong>Regular ⊂ Context-Free ⊂ Context-Sensitive ⊂ Recursively Enumerable</strong></p>
+<hr>
+</section>
+<section id="constructing-a-turing-machine" class="level1">
+<h1>44. Constructing a Turing Machine</h1>
+<p>A Turing Machine can be constructed for simple problems such as:</p>
+<ul>
+<li>Checking whether a string contains a particular symbol</li>
+<li>Adding unary numbers</li>
+<li>Recognizing <code>0^n1^n</code></li>
+<li>Checking simple patterns</li>
+<li>Incrementing a binary number</li>
+</ul>
+<p>A common design strategy is:</p>
+<ol type="1">
+<li>Define states.</li>
+<li>Define tape symbols.</li>
+<li>Decide what each state means.</li>
+<li>Define transitions.</li>
+<li>Define accepting and rejecting conditions.</li>
+<li>Test the machine on sample inputs.</li>
+</ol>
+<hr>
+</section>
+<section id="unsolvable-problems" class="level1">
+<h1>45. Unsolvable Problems</h1>
+<p>An <strong>undecidable problem</strong> is a problem for which no algorithm can correctly produce the required answer for every valid input.</p>
+<p>Important examples:</p>
+<ul>
+<li>Halting Problem</li>
+<li>Post Correspondence Problem</li>
+<li>Certain questions about context-free languages</li>
+</ul>
+<hr>
+</section>
+<section id="halting-problem" class="level1">
+<h1>46. Halting Problem</h1>
+<p>The Halting Problem asks:</p>
+<blockquote class="blockquote">
+<p>Given a program/machine M and input w, will M eventually halt on w?</p>
+</blockquote>
+<p>There is no general algorithm that correctly answers this question for every possible program and input.</p>
+<p>Therefore:</p>
+<p><strong>Halting Problem is undecidable.</strong></p>
+<hr>
+</section>
+<section id="post-correspondence-problem" class="level1">
+<h1>47. Post Correspondence Problem</h1>
+<p>The <strong>Post Correspondence Problem (PCP)</strong> asks whether, given two lists of strings, there exists a sequence of corresponding tiles whose top and bottom concatenations are equal.</p>
+<p>A typical tile looks like:</p>
+<pre class="text"><code>Top:    ab
+Bottom: a</code></pre>
+<p>The question is whether some sequence of tiles produces equal strings on both sides.</p>
+<p>PCP is undecidable.</p>
+<hr>
+</section>
+<section id="unsolvable-problems-for-context-free-languages" class="level1">
+<h1>48. Unsolvable Problems for Context-Free Languages</h1>
+<p>Some properties of context-free languages are undecidable.</p>
+<p>Examples include general questions about:</p>
+<ul>
+<li>Whether a CFG generates all possible strings</li>
+<li>Whether two CFGs generate exactly the same language</li>
+<li>Whether a CFG generates a particular universal language</li>
+</ul>
+<p>However, several important CFG problems are decidable.</p>
+<p>For example:</p>
+<p><strong>Membership of a string in a CFL is decidable.</strong></p>
+<hr>
+</section>
+<section id="complexity" class="level1">
+<h1>49. Complexity</h1>
+<p>Computability asks:</p>
+<p><strong>Can a problem be solved at all?</strong></p>
+<p>Complexity asks:</p>
+<p><strong>How many resources are required to solve it?</strong></p>
+<p>Important resources:</p>
+<ul>
+<li>Time</li>
+<li>Space</li>
+</ul>
+<hr>
+</section>
+<section id="tractable-and-intractable-problems" class="level1">
+<h1>50. Tractable and Intractable Problems</h1>
+<p>A problem is generally called <strong>tractable</strong> when it can be solved efficiently, often meaning in polynomial time.</p>
+<p>Examples:</p>
+<ul>
+<li>Sorting</li>
+<li>Shortest paths</li>
+<li>Minimum spanning tree</li>
+</ul>
+<p>Problems that require exponential time under known algorithms are often described as <strong>intractable</strong>, especially for large inputs.</p>
+<p>Many NP-complete problems are believed not to have polynomial-time algorithms, although the P vs NP question remains unresolved.</p>
+<hr>
+</section>
+<section id="syntax-analysis" class="level1">
+<h1>51. Syntax Analysis</h1>
+<p>Syntax analysis is the compiler phase that checks whether the token sequence follows the grammar of the programming language.</p>
+<p>It is also called:</p>
+<p><strong>Parsing</strong></p>
+<p>Input:</p>
+<p><strong>Tokens</strong></p>
+<p>Output:</p>
+<p><strong>Parse tree / syntax tree</strong></p>
+<hr>
+</section>
+<section id="associativity" class="level1">
+<h1>52. Associativity</h1>
+<p>Associativity determines the order in which operators of the same precedence are evaluated.</p>
+<p>Example:</p>
+<pre class="text"><code>a - b - c</code></pre>
+<p>If <code>-</code> is left-associative:</p>
+<pre class="text"><code>(a - b) - c</code></pre>
+<p>Assignment operators are commonly right-associative in many programming languages:</p>
+<pre class="text"><code>a = b = c</code></pre>
+<p>may be interpreted as:</p>
+<pre class="text"><code>a = (b = c)</code></pre>
+<hr>
+</section>
+<section id="operator-precedence" class="level1">
+<h1>53. Operator Precedence</h1>
+<p>Precedence determines which operator is evaluated first.</p>
+<p>Example:</p>
+<pre class="text"><code>a + b * c</code></pre>
+<p>If multiplication has higher precedence:</p>
+<pre class="text"><code>a + (b * c)</code></pre>
+<p>rather than:</p>
+<pre class="text"><code>(a + b) * c</code></pre>
+<p>Precedence and associativity help remove ambiguity from expression parsing.</p>
+<hr>
+</section>
+<section id="grammar-transformations" class="level1">
+<h1>54. Grammar Transformations</h1>
+<p>Grammar transformations may be used to make a grammar suitable for parsing.</p>
+<p>Important transformations include:</p>
+<ul>
+<li>Removing left recursion</li>
+<li>Left factoring</li>
+<li>Eliminating unnecessary productions</li>
+<li>Simplifying grammar</li>
+</ul>
+<hr>
+</section>
+<section id="left-recursion" class="level1">
+<h1>55. Left Recursion</h1>
+<p>A grammar has immediate left recursion if a production has the form:</p>
+<p><strong>A → Aα | β</strong></p>
+<p>This can cause problems for top-down parsers such as recursive descent.</p>
+<p>It can be transformed into:</p>
+<p><strong>A → βA’</strong></p>
+<p><strong>A’ → αA’ | ε</strong></p>
+<hr>
+</section>
+<section id="left-factoring" class="level1">
+<h1>56. Left Factoring</h1>
+<p>Left factoring is used when two productions begin with the same sequence.</p>
+<p>Example:</p>
+<pre class="text"><code>A → αβ1 | αβ2</code></pre>
+<p>Can be transformed into:</p>
+<pre class="text"><code>A → αA'
+A' → β1 | β2</code></pre>
+<p>This helps predictive parsers choose the appropriate production.</p>
+<hr>
+</section>
+<section id="top-down-parsing" class="level1">
+<h1>57. Top-Down Parsing</h1>
+<p>Top-down parsing starts with the start symbol and attempts to derive the input string.</p>
+<p>It constructs the parse tree from:</p>
+<p><strong>Root → Leaves</strong></p>
+<p>Examples:</p>
+<ul>
+<li>Recursive descent</li>
+<li>Predictive parsing</li>
+<li>LL(1)</li>
+</ul>
+<hr>
+</section>
+<section id="recursive-descent-parsing" class="level1">
+<h1>58. Recursive Descent Parsing</h1>
+<p>Recursive descent is a top-down parsing technique in which procedures are associated with grammar non-terminals.</p>
+<p>Example:</p>
+<pre class="text"><code>parseExpression()
+parseTerm()
+parseFactor()</code></pre>
+<p>Each procedure recognizes a part of the grammar.</p>
+<section id="problem" class="level3">
+<h3 class="anchored" data-anchor-id="problem">Problem</h3>
+<p>Left-recursive grammars are unsuitable for straightforward recursive descent because they can cause infinite recursion.</p>
+<hr>
+</section>
+</section>
+<section id="predictive-parsing" class="level1">
+<h1>59. Predictive Parsing</h1>
+<p>A predictive parser chooses a production without backtracking using available input information.</p>
+<p>An LL(1) parser is a predictive parser that uses:</p>
+<ul>
+<li>Left-to-right input scanning</li>
+<li>Leftmost derivation</li>
+<li>One lookahead symbol</li>
+</ul>
+<hr>
+</section>
+<section id="ll1-parsing" class="level1">
+<h1>60. LL(1) Parsing</h1>
+<p><strong>LL(1)</strong> means:</p>
+<ul>
+<li>First L → scan input from Left to right</li>
+<li>Second L → produce a Leftmost derivation</li>
+<li>1 → use one lookahead symbol</li>
+</ul>
+<p>An LL(1) grammar should generally be free from problematic ambiguity and left recursion.</p>
+<hr>
+</section>
+<section id="first-and-follow" class="level1">
+<h1>61. FIRST and FOLLOW</h1>
+<p>FIRST and FOLLOW sets are important in LL(1) parsing.</p>
+<section id="first" class="level2">
+<h2 class="anchored" data-anchor-id="first">FIRST</h2>
+<p>FIRST(X) contains terminals that can begin strings derived from X.</p>
+</section>
+<section id="follow" class="level2">
+<h2 class="anchored" data-anchor-id="follow">FOLLOW</h2>
+<p>FOLLOW(A) contains terminals that can appear immediately to the right of A in some sentential form.</p>
+<p>The end-of-input marker <code>$</code> is included in FOLLOW(S) for the start symbol S.</p>
+<hr>
+</section>
+</section>
+<section id="ll1-parsing-table" class="level1">
+<h1>62. LL(1) Parsing Table</h1>
+<p>A predictive parsing table is constructed using FIRST and FOLLOW sets.</p>
+<p>For a production:</p>
+<p><strong>A → α</strong></p>
+<p>If a terminal <code>a</code> is in FIRST(α), place the production in:</p>
+<p><strong>M[A, a]</strong></p>
+<p>If α can derive ε, use FOLLOW(A) for the relevant entries.</p>
+<p>A grammar is LL(1) when the table can be constructed without conflicting entries.</p>
+<hr>
+</section>
+<section id="bottom-up-parsing" class="level1">
+<h1>63. Bottom-Up Parsing</h1>
+<p>Bottom-up parsing starts from the input and attempts to construct the start symbol.</p>
+<p>It effectively performs:</p>
+<p><strong>Leaves → Root</strong></p>
+<p>It is associated with:</p>
+<p><strong>Rightmost derivation in reverse</strong></p>
+<p>Important bottom-up parsers:</p>
+<ul>
+<li>Shift-reduce parser</li>
+<li>LR parser</li>
+<li>SLR parser</li>
+<li>Canonical LR</li>
+<li>LALR parser</li>
+</ul>
+<hr>
+</section>
+<section id="shift-reduce-parsing" class="level1">
+<h1>64. Shift-Reduce Parsing</h1>
+<p>A shift-reduce parser uses a stack and performs actions such as:</p>
+<ul>
+<li>Shift</li>
+<li>Reduce</li>
+<li>Accept</li>
+<li>Error</li>
+</ul>
+<section id="shift" class="level3">
+<h3 class="anchored" data-anchor-id="shift">Shift</h3>
+<p>Move input symbol onto the stack.</p>
+</section>
+<section id="reduce" class="level3">
+<h3 class="anchored" data-anchor-id="reduce">Reduce</h3>
+<p>Replace a handle by the corresponding non-terminal.</p>
+<hr>
+</section>
+</section>
+<section id="lr-parser" class="level1">
+<h1>65. LR Parser</h1>
+<p>LR parsing is a powerful bottom-up parsing technique.</p>
+<p><strong>L</strong> means scan input from Left to right.</p>
+<p><strong>R</strong> means construct a Rightmost derivation in reverse.</p>
+<p>LR parsers can handle a large class of grammars.</p>
+<hr>
+</section>
+<section id="slr-lr1-and-lalr" class="level1">
+<h1>66. SLR, LR(1), and LALR</h1>
+<section id="slr1" class="level3">
+<h3 class="anchored" data-anchor-id="slr1">SLR(1)</h3>
+<p>Simple LR parser.</p>
+</section>
+<section id="canonical-lr1" class="level3">
+<h3 class="anchored" data-anchor-id="canonical-lr1">Canonical LR(1)</h3>
+<p>Uses LR(1) items with explicit lookahead information.</p>
+<p>It is powerful but may require a large parsing table.</p>
+</section>
+<section id="lalr1" class="level3">
+<h3 class="anchored" data-anchor-id="lalr1">LALR(1)</h3>
+<p><strong>Look-Ahead LR</strong></p>
+<p>It merges compatible LR(1) states to reduce the parsing table size.</p>
+<p>LALR(1) provides a practical compromise between parsing power and table size.</p>
+<hr>
+</section>
+</section>
+<section id="top-down-vs-bottom-up-parsing" class="level1">
+<h1>67. Top-Down vs Bottom-Up Parsing</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Top-Down</th>
+<th>Bottom-Up</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Start symbol toward input</td>
+<td>Input toward start symbol</td>
+</tr>
+<tr class="even">
+<td>Leftmost derivation</td>
+<td>Rightmost derivation in reverse</td>
+</tr>
+<tr class="odd">
+<td>Recursive descent, LL</td>
+<td>LR, LALR</td>
+</tr>
+<tr class="even">
+<td>Easier for simple grammars</td>
+<td>Handles broader grammar classes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="semantic-analysis" class="level1">
+<h1>68. Semantic Analysis</h1>
+<p>Semantic analysis checks whether a syntactically correct program has a meaningful interpretation according to the language rules.</p>
+<p>Examples:</p>
+<pre class="text"><code>int x;
+x = "hello";</code></pre>
+<p>The syntax may be valid, but assigning a string to an integer variable is a type error in a statically typed language.</p>
+<p>Semantic analysis may check:</p>
+<ul>
+<li>Types</li>
+<li>Declarations</li>
+<li>Scope</li>
+<li>Compatibility</li>
+<li>Function arguments</li>
+<li>Return types</li>
+</ul>
+<hr>
+</section>
+<section id="attribute-grammar" class="level1">
+<h1>69. Attribute Grammar</h1>
+<p>An <strong>attribute grammar</strong> extends a context-free grammar with attributes and semantic rules.</p>
+<p>Attributes carry information associated with grammar symbols.</p>
+<p>Two important types:</p>
+<ul>
+<li>Synthesized attributes</li>
+<li>Inherited attributes</li>
+</ul>
+<hr>
+</section>
+<section id="synthesized-attributes" class="level1">
+<h1>70. Synthesized Attributes</h1>
+<p>A synthesized attribute is calculated from the attributes of child nodes.</p>
+<p>Information generally flows:</p>
+<p><strong>Children → Parent</strong></p>
+<p>Example:</p>
+<p>The value of an arithmetic expression can be synthesized from the values of its subexpressions.</p>
+<hr>
+</section>
+<section id="inherited-attributes" class="level1">
+<h1>71. Inherited Attributes</h1>
+<p>An inherited attribute is obtained from:</p>
+<ul>
+<li>Parent</li>
+<li>Siblings</li>
+</ul>
+<p>Information generally flows:</p>
+<p><strong>Parent/Siblings → Child</strong></p>
+<p>Inherited attributes are useful for passing contextual information.</p>
+<hr>
+</section>
+<section id="syntax-directed-definition" class="level1">
+<h1>72. Syntax-Directed Definition</h1>
+<p>A <strong>Syntax-Directed Definition (SDD)</strong> associates semantic rules with grammar productions.</p>
+<p>Example:</p>
+<pre class="text"><code>E → E1 + T</code></pre>
+<p>A semantic rule may be:</p>
+<pre class="text"><code>E.val = E1.val + T.val</code></pre>
+<p>This computes the value of the expression.</p>
+<hr>
+</section>
+<section id="dependency-graph" class="level1">
+<h1>73. Dependency Graph</h1>
+<p>A dependency graph represents dependencies between attributes.</p>
+<p>If the value of attribute A is needed to calculate attribute B, the graph contains:</p>
+<p><strong>A → B</strong></p>
+<p>A valid evaluation order is a topological ordering of the dependency graph when the graph is acyclic.</p>
+<hr>
+</section>
+<section id="evaluation-order" class="level1">
+<h1>74. Evaluation Order</h1>
+<p>Attributes must be evaluated in an order that respects dependencies.</p>
+<p>For an acyclic dependency graph, a topological order can be used.</p>
+<p>If the dependency graph contains a cycle, the attribute evaluation may not have a valid simple ordering.</p>
+<hr>
+</section>
+<section id="s-attributed-definition" class="level1">
+<h1>75. S-Attributed Definition</h1>
+<p>An S-attributed definition uses only:</p>
+<p><strong>Synthesized attributes</strong></p>
+<p>It is particularly suitable for bottom-up parsing.</p>
+<section id="easy-memory" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory">Easy Memory</h3>
+<p><strong>S-attributed → Synthesized only</strong></p>
+<hr>
+</section>
+</section>
+<section id="l-attributed-definition" class="level1">
+<h1>76. L-Attributed Definition</h1>
+<p>An L-attributed definition permits inherited attributes subject to restrictions that allow evaluation in a left-to-right traversal.</p>
+<p>It is useful with top-down parsing.</p>
+<section id="easy-memory-1" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory-1">Easy Memory</h3>
+<p><strong>L-attributed → Limited inherited attributes + synthesized attributes</strong></p>
+<hr>
+</section>
+</section>
+<section id="type-checking" class="level1">
+<h1>77. Type Checking</h1>
+<p>Type checking ensures that operations are applied to compatible data types.</p>
+<p>Example:</p>
+<pre class="text"><code>int x;
+float y;
+
+x = y;</code></pre>
+<p>Depending on the language, this may require:</p>
+<ul>
+<li>Conversion</li>
+<li>Warning</li>
+<li>Error</li>
+</ul>
+<p>Type checking can be:</p>
+<section id="static" class="level3">
+<h3 class="anchored" data-anchor-id="static">Static</h3>
+<p>Performed at compile time.</p>
+</section>
+<section id="dynamic" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic">Dynamic</h3>
+<p>Performed during program execution.</p>
+<hr>
+</section>
+</section>
+<section id="run-time-system" class="level1">
+<h1>78. Run-Time System</h1>
+<p>The run-time system provides support required while a program executes.</p>
+<p>It manages:</p>
+<ul>
+<li>Memory</li>
+<li>Procedure calls</li>
+<li>Parameters</li>
+<li>Local variables</li>
+<li>Return addresses</li>
+<li>Dynamic data</li>
+<li>Runtime information</li>
+</ul>
+<hr>
+</section>
+<section id="storage-organization" class="level1">
+<h1>79. Storage Organization</h1>
+<p>A typical run-time memory organization contains:</p>
+<pre class="text"><code>High Address
++------------------+
+| Stack            |
++------------------+
+|                  |
+| Free space       |
+|                  |
++------------------+
+| Heap             |
++------------------+
+| Static/Data      |
++------------------+
+| Code/Text        |
++------------------+
+Low Address</code></pre>
+<p>The exact arrangement can depend on the implementation and platform.</p>
+<hr>
+</section>
+<section id="activation-tree" class="level1">
+<h1>80. Activation Tree</h1>
+<p>An <strong>activation tree</strong> represents procedure/function calls during execution.</p>
+<p>Suppose:</p>
+<pre class="text"><code>main()
+  ↓
+A()
+  ↓
+B()</code></pre>
+<p>The call structure can be represented as:</p>
+<pre class="text"><code>main
+ └── A
+      └── B</code></pre>
+<p>Each node represents an activation of a procedure.</p>
+<hr>
+</section>
+<section id="activation-record" class="level1">
+<h1>81. Activation Record</h1>
+<p>An <strong>activation record</strong>, also called a stack frame, stores information required for a procedure call.</p>
+<p>It may contain:</p>
+<ul>
+<li>Parameters</li>
+<li>Return address</li>
+<li>Local variables</li>
+<li>Temporaries</li>
+<li>Saved registers</li>
+<li>Control link</li>
+<li>Access link</li>
+<li>Return value</li>
+</ul>
+<p>The exact organization varies by compiler and machine architecture.</p>
+<hr>
+</section>
+<section id="stack-allocation-of-activation-records" class="level1">
+<h1>82. Stack Allocation of Activation Records</h1>
+<p>For procedures whose activation records have suitable lifetimes, stack allocation can be used.</p>
+<p>Typical behavior:</p>
+<pre class="text"><code>Call function
+     ↓
+Create activation record
+     ↓
+Execute function
+     ↓
+Return
+     ↓
+Remove activation record</code></pre>
+<p>Recursion naturally creates multiple activation records.</p>
+<hr>
+</section>
+<section id="parameter-passing-mechanisms" class="level1">
+<h1>83. Parameter Passing Mechanisms</h1>
+<p>Common parameter passing mechanisms include:</p>
+<ul>
+<li>Call by value</li>
+<li>Call by reference</li>
+<li>Call by result</li>
+<li>Call by value-result</li>
+<li>Call by name</li>
+</ul>
+<section id="call-by-value" class="level2">
+<h2 class="anchored" data-anchor-id="call-by-value">Call by Value</h2>
+<p>A copy of the actual value is passed.</p>
+<p>Changes to the parameter do not normally change the caller’s variable.</p>
+</section>
+<section id="call-by-reference" class="level2">
+<h2 class="anchored" data-anchor-id="call-by-reference">Call by Reference</h2>
+<p>A reference/address to the actual variable is passed.</p>
+<p>Changes can affect the caller’s variable.</p>
+</section>
+<section id="call-by-result" class="level2">
+<h2 class="anchored" data-anchor-id="call-by-result">Call by Result</h2>
+<p>The formal parameter receives a result that is copied back to the actual parameter when the procedure returns.</p>
+</section>
+<section id="call-by-value-result" class="level2">
+<h2 class="anchored" data-anchor-id="call-by-value-result">Call by Value-Result</h2>
+<p>The parameter is copied in at the beginning and copied out at the end.</p>
+</section>
+<section id="call-by-name" class="level2">
+<h2 class="anchored" data-anchor-id="call-by-name">Call by Name</h2>
+<p>The argument is conceptually substituted/evaluated according to the calling mechanism when used; this is mainly of historical/theoretical importance.</p>
+<hr>
+</section>
+</section>
+<section id="symbol-table" class="level1">
+<h1>84. Symbol Table</h1>
+<p>A <strong>symbol table</strong> stores information about identifiers used in a program.</p>
+<p>It may contain:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Identifier</th>
+<th>Type</th>
+<th>Scope</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>x</td>
+<td>int</td>
+<td>local</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>total</td>
+<td>float</td>
+<td>global</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>The compiler uses the symbol table during:</p>
+<ul>
+<li>Lexical analysis</li>
+<li>Syntax/semantic analysis</li>
+<li>Type checking</li>
+<li>Code generation</li>
+</ul>
+<hr>
+</section>
+<section id="intermediate-code-generation" class="level1">
+<h1>85. Intermediate Code Generation</h1>
+<p>After semantic analysis, the compiler may generate an intermediate representation (IR).</p>
+<p>IR is positioned between:</p>
+<p><strong>Source Program → IR → Target Code</strong></p>
+<p>Benefits:</p>
+<ul>
+<li>Machine independence</li>
+<li>Easier optimization</li>
+<li>Easier retargeting</li>
+<li>Separation of front end and back end</li>
+</ul>
+<hr>
+</section>
+<section id="intermediate-representations" class="level1">
+<h1>86. Intermediate Representations</h1>
+<p>Common IR forms include:</p>
+<ul>
+<li>Syntax trees</li>
+<li>Abstract syntax trees</li>
+<li>Postfix notation</li>
+<li>Three-address code</li>
+</ul>
+<hr>
+</section>
+<section id="three-address-code" class="level1">
+<h1>87. Three-Address Code</h1>
+<p>Three-address code uses statements with at most three addresses/operands.</p>
+<p>Example:</p>
+<pre class="text"><code>a = b + c * d</code></pre>
+<p>Can be represented as:</p>
+<pre class="text"><code>t1 = c * d
+t2 = b + t1
+a = t2</code></pre>
+<p>Temporary variables such as <code>t1</code> and <code>t2</code> are used.</p>
+<hr>
+</section>
+<section id="quadruples" class="level1">
+<h1>88. Quadruples</h1>
+<p>A quadruple can represent an instruction using:</p>
+<pre class="text"><code>(operator, arg1, arg2, result)</code></pre>
+<p>For:</p>
+<pre class="text"><code>t1 = c * d</code></pre>
+<p>quadruple:</p>
+<pre class="text"><code>(*, c, d, t1)</code></pre>
+<hr>
+</section>
+<section id="triples" class="level1">
+<h1>89. Triples</h1>
+<p>Triples store:</p>
+<pre class="text"><code>(operator, arg1, arg2)</code></pre>
+<p>The result is identified by the position of the triple.</p>
+<hr>
+</section>
+<section id="translation-of-declarations" class="level1">
+<h1>90. Translation of Declarations</h1>
+<p>Consider:</p>
+<pre class="text"><code>int x;
+float y;</code></pre>
+<p>The compiler records:</p>
+<ul>
+<li>Names</li>
+<li>Types</li>
+<li>Scope</li>
+<li>Storage requirements</li>
+</ul>
+<p>The symbol table is updated during declaration processing.</p>
+<hr>
+</section>
+<section id="translation-of-assignments" class="level1">
+<h1>91. Translation of Assignments</h1>
+<p>For:</p>
+<pre class="text"><code>x = a + b * c</code></pre>
+<p>Intermediate code can be:</p>
+<pre class="text"><code>t1 = b * c
+t2 = a + t1
+x = t2</code></pre>
+<p>The compiler respects operator precedence while generating the intermediate representation.</p>
+<hr>
+</section>
+<section id="translation-of-control-flow" class="level1">
+<h1>92. Translation of Control Flow</h1>
+<p>Statements such as:</p>
+<pre class="text"><code>if
+while
+for
+switch</code></pre>
+<p>are translated using:</p>
+<ul>
+<li>Labels</li>
+<li>Conditional jumps</li>
+<li>Unconditional jumps</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>if (a &lt; b)
+    x = 1;
+else
+    x = 2;</code></pre>
+<p>Possible intermediate form:</p>
+<pre class="text"><code>if a &lt; b goto L1
+goto L2
+
+L1:
+x = 1
+goto L3
+
+L2:
+x = 2
+
+L3:</code></pre>
+<hr>
+</section>
+<section id="boolean-expressions" class="level1">
+<h1>93. Boolean Expressions</h1>
+<p>Boolean expressions can be represented using:</p>
+<ul>
+<li>Boolean values</li>
+<li>Conditional jumps</li>
+<li>Short-circuit evaluation</li>
+</ul>
+<p>For:</p>
+<pre class="text"><code>A &amp;&amp; B</code></pre>
+<p>B does not need to be evaluated if A is false.</p>
+<p>For:</p>
+<pre class="text"><code>A || B</code></pre>
+<p>B does not need to be evaluated if A is true.</p>
+<hr>
+</section>
+<section id="procedure-calls" class="level1">
+<h1>94. Procedure Calls</h1>
+<p>Intermediate code for procedure calls may represent:</p>
+<ul>
+<li>Parameter passing</li>
+<li>Call</li>
+<li>Return value</li>
+<li>Return</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>param x
+param y
+call sum, 2</code></pre>
+<p>The exact representation depends on the compiler’s IR.</p>
+<hr>
+</section>
+<section id="code-generation" class="level1">
+<h1>95. Code Generation</h1>
+<p>Code generation converts an intermediate representation into target-machine code.</p>
+<p>Typical tasks include:</p>
+<ul>
+<li>Instruction selection</li>
+<li>Register allocation</li>
+<li>Address calculation</li>
+<li>Instruction ordering</li>
+<li>Target code emission</li>
+</ul>
+<hr>
+</section>
+<section id="control-flow" class="level1">
+<h1>96. Control Flow</h1>
+<p>A <strong>control-flow graph (CFG)</strong> represents possible execution flow through a program.</p>
+<p>Nodes commonly represent:</p>
+<ul>
+<li>Basic blocks</li>
+</ul>
+<p>Edges represent:</p>
+<ul>
+<li>Possible control transfers</li>
+</ul>
+<p>A <strong>basic block</strong> is a sequence of instructions with:</p>
+<ul>
+<li>One entry point</li>
+<li>One exit point</li>
+<li>No internal branching except at the end</li>
+</ul>
+<hr>
+</section>
+<section id="data-flow-analysis" class="level1">
+<h1>97. Data-Flow Analysis</h1>
+<p>Data-flow analysis gathers information about how values and variables move through a program.</p>
+<p>Examples:</p>
+<ul>
+<li>Reaching definitions</li>
+<li>Live variable analysis</li>
+<li>Available expressions</li>
+<li>Very busy expressions</li>
+</ul>
+<p>These analyses support optimization.</p>
+<hr>
+</section>
+<section id="local-optimization" class="level1">
+<h1>98. Local Optimization</h1>
+<p>Local optimization operates within a single basic block.</p>
+<p>Examples:</p>
+<section id="constant-folding" class="level3">
+<h3 class="anchored" data-anchor-id="constant-folding">Constant Folding</h3>
+<pre class="text"><code>x = 5 * 4</code></pre>
+<p>becomes:</p>
+<pre class="text"><code>x = 20</code></pre>
+</section>
+<section id="algebraic-simplification" class="level3">
+<h3 class="anchored" data-anchor-id="algebraic-simplification">Algebraic Simplification</h3>
+<pre class="text"><code>x = y + 0</code></pre>
+<p>becomes:</p>
+<pre class="text"><code>x = y</code></pre>
+</section>
+<section id="common-subexpression-elimination" class="level3">
+<h3 class="anchored" data-anchor-id="common-subexpression-elimination">Common Subexpression Elimination</h3>
+<p>If the same expression is computed repeatedly and remains valid, the compiler may reuse the previous result.</p>
+<hr>
+</section>
+</section>
+<section id="global-optimization" class="level1">
+<h1>99. Global Optimization</h1>
+<p>Global optimization considers code across multiple basic blocks or a larger control-flow region.</p>
+<p>Examples:</p>
+<ul>
+<li>Global common subexpression elimination</li>
+<li>Code motion</li>
+<li>Global data-flow optimizations</li>
+<li>Dead-code elimination</li>
+</ul>
+<hr>
+</section>
+<section id="loop-optimization" class="level1">
+<h1>100. Loop Optimization</h1>
+<p>Loops are important because a small improvement inside a frequently executed loop can produce a large performance improvement.</p>
+<p>Important techniques include:</p>
+<ul>
+<li>Loop invariant code motion</li>
+<li>Strength reduction</li>
+<li>Induction-variable optimization</li>
+<li>Loop unrolling</li>
+</ul>
+<hr>
+</section>
+<section id="loop-invariant-code-motion" class="level1">
+<h1>101. Loop Invariant Code Motion</h1>
+<p>If an expression produces the same result on every iteration, it can sometimes be moved outside the loop.</p>
+<p>Example:</p>
+<pre class="text"><code>for i = 1 to n
+    x = a * b
+    use(x)</code></pre>
+<p>If <code>a</code> and <code>b</code> do not change, compute:</p>
+<pre class="text"><code>x = a * b
+
+for i = 1 to n
+    use(x)</code></pre>
+<p>This reduces repeated computation.</p>
+<hr>
+</section>
+<section id="strength-reduction" class="level1">
+<h1>102. Strength Reduction</h1>
+<p>Strength reduction replaces an expensive operation with a cheaper equivalent operation.</p>
+<p>Example:</p>
+<p>Instead of repeatedly calculating:</p>
+<pre class="text"><code>i * 2</code></pre>
+<p>a compiler may maintain a value using addition in suitable circumstances.</p>
+<hr>
+</section>
+<section id="loop-unrolling" class="level1">
+<h1>103. Loop Unrolling</h1>
+<p>Loop unrolling reduces loop-control overhead by performing multiple iterations in one loop body.</p>
+<p>Original:</p>
+<pre class="text"><code>for i = 1 to 4
+    A[i] = A[i] + 1</code></pre>
+<p>Conceptually unrolled:</p>
+<pre class="text"><code>A[1] = A[1] + 1
+A[2] = A[2] + 1
+A[3] = A[3] + 1
+A[4] = A[4] + 1</code></pre>
+<p>The actual transformation must consider code size and target architecture.</p>
+<hr>
+</section>
+<section id="peephole-optimization" class="level1">
+<h1>104. Peephole Optimization</h1>
+<p>Peephole optimization examines a small sequence of target instructions and replaces it with a better sequence.</p>
+<p>Possible goals:</p>
+<ul>
+<li>Remove redundant instructions</li>
+<li>Reduce instruction count</li>
+<li>Simplify operations</li>
+<li>Improve execution speed</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>LOAD R1, x
+STORE x, R1</code></pre>
+<p>If redundant under the target machine’s semantics, such sequences may be eliminated.</p>
+<hr>
+</section>
+<section id="instruction-scheduling" class="level1">
+<h1>105. Instruction Scheduling</h1>
+<p>Instruction scheduling rearranges instructions to improve processor performance while preserving program behavior.</p>
+<p>It can be important for:</p>
+<ul>
+<li>Pipelines</li>
+<li>Superscalar processors</li>
+<li>Instruction-level parallelism</li>
+</ul>
+<p>The compiler tries to reduce:</p>
+<ul>
+<li>Pipeline stalls</li>
+<li>Data hazards</li>
+<li>Resource conflicts</li>
+</ul>
+<hr>
+</section>
+<section id="compiler-phases" class="level1">
+<h1>106. Compiler Phases</h1>
+<p>A simplified compiler pipeline is:</p>
+<pre class="text"><code>Source Program
+      ↓
+Lexical Analysis
+      ↓
+Syntax Analysis
+      ↓
+Semantic Analysis
+      ↓
+Intermediate Code Generation
+      ↓
+Code Optimization
+      ↓
+Code Generation
+      ↓
+Target Program</code></pre>
+<p>Supporting structures include:</p>
+<ul>
+<li>Symbol table</li>
+<li>Error handler</li>
+</ul>
+<hr>
+</section>
+<section id="front-end-and-back-end" class="level1">
+<h1>107. Front End and Back End</h1>
+<section id="front-end" class="level2">
+<h2 class="anchored" data-anchor-id="front-end">Front End</h2>
+<p>The front end generally handles source-language dependent tasks:</p>
+<ul>
+<li>Lexical analysis</li>
+<li>Syntax analysis</li>
+<li>Semantic analysis</li>
+<li>Intermediate representation</li>
+</ul>
+</section>
+<section id="back-end" class="level2">
+<h2 class="anchored" data-anchor-id="back-end">Back End</h2>
+<p>The back end generally handles:</p>
+<ul>
+<li>Optimization</li>
+<li>Instruction selection</li>
+<li>Register allocation</li>
+<li>Target code generation</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="important-comparisons" class="level1">
+<h1>108. Important Comparisons</h1>
+<section id="dfa-vs-nfa-1" class="level2">
+<h2 class="anchored" data-anchor-id="dfa-vs-nfa-1">DFA vs NFA</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>DFA</th>
+<th>NFA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>One transition per state/input</td>
+<td>Multiple or zero possible transitions</td>
+</tr>
+<tr class="even">
+<td>No ε-transition</td>
+<td>ε-transition possible in ε-NFA</td>
+</tr>
+<tr class="odd">
+<td>Regular languages</td>
+<td>Regular languages</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="regular-language-vs-context-free-language" class="level2">
+<h2 class="anchored" data-anchor-id="regular-language-vs-context-free-language">Regular Language vs Context-Free Language</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Regular</th>
+<th>Context-Free</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DFA/NFA</td>
+<td>PDA</td>
+</tr>
+<tr class="even">
+<td>Regular grammar</td>
+<td>CFG</td>
+</tr>
+<tr class="odd">
+<td>Less expressive</td>
+<td>More expressive</td>
+</tr>
+<tr class="even">
+<td>Cannot generally represent arbitrary nesting</td>
+<td>Can represent nesting</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dfa-vs-pda-vs-tm" class="level2">
+<h2 class="anchored" data-anchor-id="dfa-vs-pda-vs-tm">DFA vs PDA vs TM</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Memory</th>
+<th>Language Class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DFA/NFA</td>
+<td>Finite control</td>
+<td>Regular</td>
+</tr>
+<tr class="even">
+<td>PDA</td>
+<td>Stack</td>
+<td>Context-Free</td>
+</tr>
+<tr class="odd">
+<td>TM</td>
+<td>Unbounded tape model</td>
+<td>Recursively Enumerable</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="recursive-vs-recursively-enumerable" class="level2">
+<h2 class="anchored" data-anchor-id="recursive-vs-recursively-enumerable">Recursive vs Recursively Enumerable</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recursive</th>
+<th>RE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Machine halts on every input</td>
+<td>May not halt on non-members</td>
+</tr>
+<tr class="even">
+<td>Decidable</td>
+<td>Semi-decidable/recognizable</td>
+</tr>
+<tr class="odd">
+<td>Every recursive language is RE</td>
+<td>Not every RE language is recursive</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="important-parsing-comparison" class="level1">
+<h1>109. Important Parsing Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parser</th>
+<th>Direction</th>
+<th>Important Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Recursive Descent</td>
+<td>Top-down</td>
+<td>Procedure per non-terminal</td>
+</tr>
+<tr class="even">
+<td>LL(1)</td>
+<td>Top-down</td>
+<td>One-symbol lookahead</td>
+</tr>
+<tr class="odd">
+<td>Shift-Reduce</td>
+<td>Bottom-up</td>
+<td>Shift/reduce actions</td>
+</tr>
+<tr class="even">
+<td>LR</td>
+<td>Bottom-up</td>
+<td>Powerful general parsing family</td>
+</tr>
+<tr class="odd">
+<td>LALR(1)</td>
+<td>Bottom-up</td>
+<td>Smaller practical tables than canonical LR(1)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-attribute-comparison" class="level1">
+<h1>110. Important Attribute Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Information Flow</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Synthesized</td>
+<td>Child → Parent</td>
+</tr>
+<tr class="even">
+<td>Inherited</td>
+<td>Parent/Sibling → Child</td>
+</tr>
+<tr class="odd">
+<td>S-attributed</td>
+<td>Synthesized only</td>
+</tr>
+<tr class="even">
+<td>L-attributed</td>
+<td>Restricted inherited + synthesized</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-compiler-phase-comparison" class="level1">
+<h1>111. Important Compiler Phase Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Phase</th>
+<th>Main Work</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lexical</td>
+<td>Characters → Tokens</td>
+</tr>
+<tr class="even">
+<td>Syntax</td>
+<td>Tokens → Parse structure</td>
+</tr>
+<tr class="odd">
+<td>Semantic</td>
+<td>Meaning/type checking</td>
+</tr>
+<tr class="even">
+<td>IR Generation</td>
+<td>Source meaning → IR</td>
+</tr>
+<tr class="odd">
+<td>Optimization</td>
+<td>Improve IR/code</td>
+</tr>
+<tr class="even">
+<td>Code Generation</td>
+<td>IR → Target code</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="common-ugc-net-mistakes" class="level1">
+<h1>112. Common UGC NET Mistakes</h1>
+<section id="mistake-1" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-1">Mistake 1</h3>
+<p>Thinking NFA is more powerful than DFA.</p>
+<p><strong>Correction:</strong> DFA and NFA have the same expressive power.</p>
+</section>
+<section id="mistake-2" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-2">Mistake 2</h3>
+<p>Thinking every CFG is regular.</p>
+<p><strong>Correction:</strong> Every regular language is context-free, but not every CFL is regular.</p>
+</section>
+<section id="mistake-3" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-3">Mistake 3</h3>
+<p>Thinking the pumping lemma proves regularity.</p>
+<p><strong>Correction:</strong> It is primarily used to prove that a language is not regular.</p>
+</section>
+<section id="mistake-4" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-4">Mistake 4</h3>
+<p>Confusing CFG and PDA.</p>
+<p><strong>Correction:</strong></p>
+<p><strong>CFG ↔︎ NPDA</strong></p>
+</section>
+<section id="mistake-5" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-5">Mistake 5</h3>
+<p>Thinking recursive and recursively enumerable are the same.</p>
+<p><strong>Correction:</strong></p>
+<p><strong>Recursive ⊂ RE</strong></p>
+</section>
+<section id="mistake-6" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-6">Mistake 6</h3>
+<p>Thinking NP means “not polynomial.”</p>
+<p><strong>Correction:</strong> NP concerns polynomial-time verification of certificates for decision problems.</p>
+</section>
+<section id="mistake-7" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-7">Mistake 7</h3>
+<p>Confusing top-down and bottom-up parsing.</p>
+<p><strong>Top-down → start symbol toward input</strong></p>
+<p><strong>Bottom-up → input toward start symbol</strong></p>
+</section>
+<section id="mistake-8" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-8">Mistake 8</h3>
+<p>Forgetting that left recursion causes problems for ordinary recursive-descent parsing.</p>
+</section>
+<section id="mistake-9" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-9">Mistake 9</h3>
+<p>Confusing synthesized and inherited attributes.</p>
+<p><strong>Synthesized → upward</strong></p>
+<p><strong>Inherited → downward/across from context</strong></p>
+</section>
+<section id="mistake-10" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-10">Mistake 10</h3>
+<p>Confusing lexical and syntax analysis.</p>
+<p><strong>Lexical analysis → tokens</strong></p>
+<p><strong>Syntax analysis → grammar structure</strong></p>
+<hr>
+</section>
+</section>
+<section id="ugc-net-high-priority-topics" class="level1">
+<h1>113. UGC NET High-Priority Topics</h1>
+<p>Focus especially on:</p>
+<ol type="1">
+<li>Alphabet, strings and languages</li>
+<li>DFA</li>
+<li>NFA</li>
+<li>DFA-NFA equivalence</li>
+<li>Regular expressions</li>
+<li>Regular grammars</li>
+<li>Closure properties</li>
+<li>Pumping lemma</li>
+<li>Proving non-regularity</li>
+<li>Lexical analysis</li>
+<li>CFG</li>
+<li>PDA</li>
+<li>NPDA</li>
+<li>Parse trees</li>
+<li>Ambiguity</li>
+<li>CNF</li>
+<li>GNF</li>
+<li>CFG-PDA equivalence</li>
+<li>CFL properties</li>
+<li>Turing Machines</li>
+<li>Universal Turing Machine</li>
+<li>Church-Turing Thesis</li>
+<li>Recursive and RE languages</li>
+<li>Context-sensitive languages</li>
+<li>Chomsky hierarchy</li>
+<li>Halting Problem</li>
+<li>PCP</li>
+<li>P and NP concepts</li>
+<li>Top-down parsing</li>
+<li>LL(1)</li>
+<li>FIRST and FOLLOW</li>
+<li>Bottom-up parsing</li>
+<li>LR and LALR</li>
+<li>Attribute grammars</li>
+<li>S-attributed and L-attributed definitions</li>
+<li>Type checking</li>
+<li>Activation records</li>
+<li>Parameter passing</li>
+<li>Symbol tables</li>
+<li>Three-address code</li>
+<li>Control-flow graphs</li>
+<li>Data-flow analysis</li>
+<li>Local/global/loop optimization</li>
+<li>Peephole optimization</li>
+<li>Instruction scheduling</li>
+</ol>
+<hr>
+</section>
+<section id="quick-revision-theory-of-computation" class="level1">
+<h1>114. Quick Revision: Theory of Computation</h1>
+<p>Remember:</p>
+<p><strong>DFA = deterministic finite automaton</strong></p>
+<p><strong>NFA = nondeterministic finite automaton</strong></p>
+<p><strong>DFA ≡ NFA in expressive power</strong></p>
+<p><strong>DFA/NFA → Regular languages</strong></p>
+<p><strong>PDA → Context-free languages</strong></p>
+<p><strong>NPDA ↔︎ CFG</strong></p>
+<p><strong>TM → General model of computation</strong></p>
+<p><strong>Recursive → Decidable</strong></p>
+<p><strong>RE → Recognizable</strong></p>
+<p><strong>Regular ⊂ CFL ⊂ CSL ⊂ RE</strong></p>
+<p><strong>Halting Problem → Undecidable</strong></p>
+<p><strong>PCP → Undecidable</strong></p>
+<hr>
+</section>
+<section id="quick-revision-compiler-design" class="level1">
+<h1>115. Quick Revision: Compiler Design</h1>
+<p>Remember:</p>
+<p><strong>Characters → Tokens → Parse Tree → Meaning → IR → Optimized Code → Target Code</strong></p>
+<p>Or:</p>
+<p><strong>Lexical → Syntax → Semantic → IR → Optimization → Code Generation</strong></p>
+<p>Important associations:</p>
+<pre class="text"><code>Lexical Analysis → Regular Expressions + Finite Automata
+
+Syntax Analysis → CFG + Parsing
+
+Semantic Analysis → Attributes + Type Checking
+
+Runtime System → Activation Records + Symbol Table
+
+IR Generation → Three-Address Code
+
+Optimization → Data Flow + Loops + Peephole
+
+Code Generation → Target Instructions</code></pre>
+<hr>
+</section>
+<section id="important-facts-to-memorize" class="level1">
+<h1>116. Important Facts to Memorize</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Key Fact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DFA</td>
+<td>Exactly one transition for each state/input symbol</td>
+</tr>
+<tr class="even">
+<td>NFA</td>
+<td>May have multiple possible transitions</td>
+</tr>
+<tr class="odd">
+<td>DFA/NFA</td>
+<td>Same expressive power</td>
+</tr>
+<tr class="even">
+<td>Regular language</td>
+<td>Recognized by finite automaton</td>
+</tr>
+<tr class="odd">
+<td>Pumping lemma</td>
+<td>Used to prove non-regularity</td>
+</tr>
+<tr class="even">
+<td>CFG</td>
+<td>Generates context-free languages</td>
+</tr>
+<tr class="odd">
+<td>PDA</td>
+<td>Recognizes CFLs with nondeterminism</td>
+</tr>
+<tr class="even">
+<td>CNF</td>
+<td>A → BC or A → a, with standard ε exception</td>
+</tr>
+<tr class="odd">
+<td>GNF</td>
+<td>Production begins with terminal</td>
+</tr>
+<tr class="even">
+<td>Ambiguity</td>
+<td>More than one parse tree for some string</td>
+</tr>
+<tr class="odd">
+<td>TM</td>
+<td>General model of computation</td>
+</tr>
+<tr class="even">
+<td>UTM</td>
+<td>Simulates encoded Turing machines</td>
+</tr>
+<tr class="odd">
+<td>Recursive language</td>
+<td>Decidable</td>
+</tr>
+<tr class="even">
+<td>RE language</td>
+<td>Recognizable</td>
+</tr>
+<tr class="odd">
+<td>Halting problem</td>
+<td>Undecidable</td>
+</tr>
+<tr class="even">
+<td>Type 3</td>
+<td>Regular</td>
+</tr>
+<tr class="odd">
+<td>Type 2</td>
+<td>Context-free</td>
+</tr>
+<tr class="even">
+<td>Type 1</td>
+<td>Context-sensitive</td>
+</tr>
+<tr class="odd">
+<td>Type 0</td>
+<td>Recursively enumerable</td>
+</tr>
+<tr class="even">
+<td>LL(1)</td>
+<td>Left-to-right, leftmost derivation, one lookahead</td>
+</tr>
+<tr class="odd">
+<td>LR</td>
+<td>Left-to-right, rightmost derivation in reverse</td>
+</tr>
+<tr class="even">
+<td>S-attributed</td>
+<td>Synthesized attributes only</td>
+</tr>
+<tr class="odd">
+<td>L-attributed</td>
+<td>Restricted inherited + synthesized</td>
+</tr>
+<tr class="even">
+<td>Lexer</td>
+<td>Produces tokens</td>
+</tr>
+<tr class="odd">
+<td>Parser</td>
+<td>Checks syntax</td>
+</tr>
+<tr class="even">
+<td>Symbol table</td>
+<td>Stores identifier information</td>
+</tr>
+<tr class="odd">
+<td>IR</td>
+<td>Intermediate representation</td>
+</tr>
+<tr class="even">
+<td>Peephole</td>
+<td>Local target-code optimization</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="final-exam-strategy" class="level1">
+<h1>117. Final Exam Strategy</h1>
+<p>For this unit, prepare in four blocks.</p>
+<section id="block-1-automata" class="level2">
+<h2 class="anchored" data-anchor-id="block-1-automata">Block 1: Automata</h2>
+<p>Practice:</p>
+<ul>
+<li>DFA construction</li>
+<li>NFA construction</li>
+<li>NFA to DFA</li>
+<li>Regular expressions</li>
+<li>Regular grammars</li>
+<li>Pumping lemma</li>
+</ul>
+</section>
+<section id="block-2-context-free-languages" class="level2">
+<h2 class="anchored" data-anchor-id="block-2-context-free-languages">Block 2: Context-Free Languages</h2>
+<p>Practice:</p>
+<ul>
+<li>CFG construction</li>
+<li>Derivations</li>
+<li>Parse trees</li>
+<li>Ambiguity</li>
+<li>PDA</li>
+<li>CNF</li>
+<li>GNF</li>
+<li>Closure properties</li>
+</ul>
+</section>
+<section id="block-3-turing-machines-and-computability" class="level2">
+<h2 class="anchored" data-anchor-id="block-3-turing-machines-and-computability">Block 3: Turing Machines and Computability</h2>
+<p>Practice:</p>
+<ul>
+<li>TM construction</li>
+<li>TM variants</li>
+<li>UTM</li>
+<li>Church-Turing Thesis</li>
+<li>Recursive vs RE</li>
+<li>Chomsky hierarchy</li>
+<li>Halting Problem</li>
+<li>PCP</li>
+<li>Undecidability</li>
+</ul>
+</section>
+<section id="block-4-compiler-design" class="level2">
+<h2 class="anchored" data-anchor-id="block-4-compiler-design">Block 4: Compiler Design</h2>
+<p>Practice:</p>
+<ul>
+<li>FIRST and FOLLOW</li>
+<li>LL(1) parsing</li>
+<li>Recursive descent</li>
+<li>LR/LALR</li>
+<li>Attribute grammars</li>
+<li>Type checking</li>
+<li>Activation records</li>
+<li>Parameter passing</li>
+<li>Symbol tables</li>
+<li>Three-address code</li>
+<li>Control-flow graphs</li>
+<li>Data-flow analysis</li>
+<li>Code optimization</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="final-summary" class="level1">
+<h1>118. Final Summary</h1>
+<p>Theory of Computation studies the mathematical limits and models of computation.</p>
+<p>The major progression is:</p>
+<p><strong>Finite Automata → Pushdown Automata → Turing Machines</strong></p>
+<p>Corresponding language classes are:</p>
+<p><strong>Regular → Context-Free → Context-Sensitive → Recursively Enumerable</strong></p>
+<p>Compiler design uses many of these ideas:</p>
+<p><strong>Regular expressions and finite automata → lexical analysis</strong></p>
+<p><strong>Context-free grammars → syntax analysis</strong></p>
+<p><strong>Attribute grammars → semantic analysis</strong></p>
+<p>The compiler pipeline can be remembered as:</p>
+<p><strong>Source Code</strong></p>
+<p>↓</p>
+<p><strong>Lexical Analysis</strong></p>
+<p>↓</p>
+<p><strong>Syntax Analysis</strong></p>
+<p>↓</p>
+<p><strong>Semantic Analysis</strong></p>
+<p>↓</p>
+<p><strong>Intermediate Code Generation</strong></p>
+<p>↓</p>
+<p><strong>Code Optimization</strong></p>
+<p>↓</p>
+<p><strong>Code Generation</strong></p>
+<p>For UGC NET, the highest-value relationships to remember are:</p>
+<p><strong>DFA ≡ NFA</strong></p>
+<p><strong>Regular languages ↔︎ finite automata</strong></p>
+<p><strong>CFG ↔︎ NPDA</strong></p>
+<p><strong>Regular ⊂ CFL ⊂ CSL ⊂ RE</strong></p>
+<p><strong>Recursive ⊂ RE</strong></p>
+<p><strong>Halting Problem → Undecidable</strong></p>
+<p><strong>LL(1) → Top-down</strong></p>
+<p><strong>LR/LALR → Bottom-up</strong></p>
+<p><strong>S-attributed → Synthesized attributes</strong></p>
+<p><strong>L-attributed → Restricted inherited attributes</strong></p>
+<p><strong>Lexical analysis → Tokens</strong></p>
+<p><strong>Syntax analysis → Grammar</strong></p>
+<p><strong>Semantic analysis → Meaning and types</strong></p>
+<p><strong>IR → Intermediate representation</strong></p>
+<p><strong>Optimization → Improve code without changing its meaning</strong></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

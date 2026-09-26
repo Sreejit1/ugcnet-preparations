@@ -1,0 +1,3172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit I – Discrete Structures and Optimization – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper1.html"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper2.html" aria-current="page"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit1-discrete-structures-and-optimization.html">Unit I – Discrete Structures and Optimization</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 2 – Computer Science &amp; Applications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-discrete-structures-and-optimization.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit I – Discrete Structures and Optimization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-computer-system-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Computer System Architecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-programming-languages-and-computer-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Programming Languages and Computer Graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-database-management-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Database Management Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-system-software-and-operating-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – System Software and Operating System</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-software-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Software Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-structures-and-algorithms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Structures and Algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-theory-of-computation-and-compilers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Theory of Computation and Compilers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-data-communication-and-computer-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – Data Communication and Computer Networks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-artificial-intelligence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Artificial Intelligence (AI)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#mathematical-logic" id="toc-mathematical-logic" class="nav-link" data-scroll-target="#mathematical-logic">2. Mathematical Logic</a>
+  <ul class="collapse">
+  <li><a href="#what-is-logic" id="toc-what-is-logic" class="nav-link" data-scroll-target="#what-is-logic">2.1 What is Logic?</a></li>
+  <li><a href="#proposition" id="toc-proposition" class="nav-link" data-scroll-target="#proposition">2.2 Proposition</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#not-propositions" id="toc-not-propositions" class="nav-link" data-scroll-target="#not-propositions">Not propositions</a></li>
+  </ul></li>
+  <li><a href="#simple-and-compound-propositions" id="toc-simple-and-compound-propositions" class="nav-link" data-scroll-target="#simple-and-compound-propositions">2.3 Simple and Compound Propositions</a></li>
+  </ul></li>
+  <li><a href="#logical-connectives" id="toc-logical-connectives" class="nav-link" data-scroll-target="#logical-connectives">3. Logical Connectives</a>
+  <ul class="collapse">
+  <li><a href="#not" id="toc-not" class="nav-link" data-scroll-target="#not">3.1 NOT</a></li>
+  <li><a href="#and" id="toc-and" class="nav-link" data-scroll-target="#and">3.2 AND</a></li>
+  <li><a href="#or" id="toc-or" class="nav-link" data-scroll-target="#or">3.3 OR</a></li>
+  <li><a href="#implication" id="toc-implication" class="nav-link" data-scroll-target="#implication">3.4 Implication</a></li>
+  <li><a href="#biconditional" id="toc-biconditional" class="nav-link" data-scroll-target="#biconditional">3.5 Biconditional</a></li>
+  </ul></li>
+  <li><a href="#truth-tables" id="toc-truth-tables" class="nav-link" data-scroll-target="#truth-tables">4. Truth Tables</a></li>
+  <li><a href="#tautology-contradiction-and-contingency" id="toc-tautology-contradiction-and-contingency" class="nav-link" data-scroll-target="#tautology-contradiction-and-contingency">5. Tautology, Contradiction and Contingency</a>
+  <ul class="collapse">
+  <li><a href="#tautology" id="toc-tautology" class="nav-link" data-scroll-target="#tautology">Tautology</a></li>
+  <li><a href="#contradiction" id="toc-contradiction" class="nav-link" data-scroll-target="#contradiction">Contradiction</a></li>
+  <li><a href="#contingency" id="toc-contingency" class="nav-link" data-scroll-target="#contingency">Contingency</a></li>
+  </ul></li>
+  <li><a href="#propositional-equivalences" id="toc-propositional-equivalences" class="nav-link" data-scroll-target="#propositional-equivalences">6. Propositional Equivalences</a>
+  <ul class="collapse">
+  <li><a href="#important-laws" id="toc-important-laws" class="nav-link" data-scroll-target="#important-laws">Important laws</a>
+  <ul class="collapse">
+  <li><a href="#double-negation" id="toc-double-negation" class="nav-link" data-scroll-target="#double-negation">Double Negation</a></li>
+  <li><a href="#identity" id="toc-identity" class="nav-link" data-scroll-target="#identity">Identity</a></li>
+  <li><a href="#domination" id="toc-domination" class="nav-link" data-scroll-target="#domination">Domination</a></li>
+  <li><a href="#idempotent" id="toc-idempotent" class="nav-link" data-scroll-target="#idempotent">Idempotent</a></li>
+  <li><a href="#complement" id="toc-complement" class="nav-link" data-scroll-target="#complement">Complement</a></li>
+  <li><a href="#commutative" id="toc-commutative" class="nav-link" data-scroll-target="#commutative">Commutative</a></li>
+  <li><a href="#associative" id="toc-associative" class="nav-link" data-scroll-target="#associative">Associative</a></li>
+  <li><a href="#distributive" id="toc-distributive" class="nav-link" data-scroll-target="#distributive">Distributive</a></li>
+  <li><a href="#absorption" id="toc-absorption" class="nav-link" data-scroll-target="#absorption">Absorption</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#de-morgans-laws" id="toc-de-morgans-laws" class="nav-link" data-scroll-target="#de-morgans-laws">7. De Morgan’s Laws</a>
+  <ul class="collapse">
+  <li><a href="#easy-memory" id="toc-easy-memory" class="nav-link" data-scroll-target="#easy-memory">Easy memory</a></li>
+  </ul></li>
+  <li><a href="#normal-forms" id="toc-normal-forms" class="nav-link" data-scroll-target="#normal-forms">8. Normal Forms</a>
+  <ul class="collapse">
+  <li><a href="#literal" id="toc-literal" class="nav-link" data-scroll-target="#literal">8.1 Literal</a></li>
+  <li><a href="#dnf" id="toc-dnf" class="nav-link" data-scroll-target="#dnf">8.2 DNF</a></li>
+  <li><a href="#cnf" id="toc-cnf" class="nav-link" data-scroll-target="#cnf">8.3 CNF</a>
+  <ul class="collapse">
+  <li><a href="#memory" id="toc-memory" class="nav-link" data-scroll-target="#memory">Memory</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#predicates-and-quantifiers" id="toc-predicates-and-quantifiers" class="nav-link" data-scroll-target="#predicates-and-quantifiers">9. Predicates and Quantifiers</a>
+  <ul class="collapse">
+  <li><a href="#predicate" id="toc-predicate" class="nav-link" data-scroll-target="#predicate">9.1 Predicate</a></li>
+  <li><a href="#universal-quantifier" id="toc-universal-quantifier" class="nav-link" data-scroll-target="#universal-quantifier">9.2 Universal Quantifier</a></li>
+  <li><a href="#existential-quantifier" id="toc-existential-quantifier" class="nav-link" data-scroll-target="#existential-quantifier">9.3 Existential Quantifier</a></li>
+  </ul></li>
+  <li><a href="#negation-of-quantifiers" id="toc-negation-of-quantifiers" class="nav-link" data-scroll-target="#negation-of-quantifiers">10. Negation of Quantifiers</a>
+  <ul class="collapse">
+  <li><a href="#memory-1" id="toc-memory-1" class="nav-link" data-scroll-target="#memory-1">Memory</a></li>
+  </ul></li>
+  <li><a href="#nested-quantifiers" id="toc-nested-quantifiers" class="nav-link" data-scroll-target="#nested-quantifiers">11. Nested Quantifiers</a>
+  <ul class="collapse">
+  <li><a href="#ugc-net-point" id="toc-ugc-net-point" class="nav-link" data-scroll-target="#ugc-net-point">UGC NET Point</a></li>
+  </ul></li>
+  <li><a href="#rules-of-inference" id="toc-rules-of-inference" class="nav-link" data-scroll-target="#rules-of-inference">12. Rules of Inference</a>
+  <ul class="collapse">
+  <li><a href="#modus-ponens" id="toc-modus-ponens" class="nav-link" data-scroll-target="#modus-ponens">Modus Ponens</a></li>
+  <li><a href="#modus-tollens" id="toc-modus-tollens" class="nav-link" data-scroll-target="#modus-tollens">Modus Tollens</a></li>
+  <li><a href="#hypothetical-syllogism" id="toc-hypothetical-syllogism" class="nav-link" data-scroll-target="#hypothetical-syllogism">Hypothetical Syllogism</a></li>
+  <li><a href="#disjunctive-syllogism" id="toc-disjunctive-syllogism" class="nav-link" data-scroll-target="#disjunctive-syllogism">Disjunctive Syllogism</a></li>
+  </ul></li>
+  <li><a href="#sets" id="toc-sets" class="nav-link" data-scroll-target="#sets">13. Sets</a></li>
+  <li><a href="#representation-of-sets" id="toc-representation-of-sets" class="nav-link" data-scroll-target="#representation-of-sets">14. Representation of Sets</a>
+  <ul class="collapse">
+  <li><a href="#roster-form" id="toc-roster-form" class="nav-link" data-scroll-target="#roster-form">Roster Form</a></li>
+  <li><a href="#set-builder-form" id="toc-set-builder-form" class="nav-link" data-scroll-target="#set-builder-form">Set-builder Form</a></li>
+  </ul></li>
+  <li><a href="#types-of-sets" id="toc-types-of-sets" class="nav-link" data-scroll-target="#types-of-sets">15. Types of Sets</a>
+  <ul class="collapse">
+  <li><a href="#empty-set" id="toc-empty-set" class="nav-link" data-scroll-target="#empty-set">Empty Set</a></li>
+  <li><a href="#singleton-set" id="toc-singleton-set" class="nav-link" data-scroll-target="#singleton-set">Singleton Set</a></li>
+  <li><a href="#finite-set" id="toc-finite-set" class="nav-link" data-scroll-target="#finite-set">Finite Set</a></li>
+  <li><a href="#infinite-set" id="toc-infinite-set" class="nav-link" data-scroll-target="#infinite-set">Infinite Set</a></li>
+  <li><a href="#universal-set" id="toc-universal-set" class="nav-link" data-scroll-target="#universal-set">Universal Set</a></li>
+  </ul></li>
+  <li><a href="#subsets" id="toc-subsets" class="nav-link" data-scroll-target="#subsets">16. Subsets</a></li>
+  <li><a href="#power-set" id="toc-power-set" class="nav-link" data-scroll-target="#power-set">17. Power Set</a></li>
+  <li><a href="#set-operations" id="toc-set-operations" class="nav-link" data-scroll-target="#set-operations">18. Set Operations</a>
+  <ul class="collapse">
+  <li><a href="#union" id="toc-union" class="nav-link" data-scroll-target="#union">Union</a></li>
+  <li><a href="#intersection" id="toc-intersection" class="nav-link" data-scroll-target="#intersection">Intersection</a></li>
+  <li><a href="#difference" id="toc-difference" class="nav-link" data-scroll-target="#difference">Difference</a></li>
+  <li><a href="#complement-1" id="toc-complement-1" class="nav-link" data-scroll-target="#complement-1">Complement</a></li>
+  </ul></li>
+  <li><a href="#inclusion-exclusion-for-two-sets" id="toc-inclusion-exclusion-for-two-sets" class="nav-link" data-scroll-target="#inclusion-exclusion-for-two-sets">19. Inclusion-Exclusion for Two Sets</a></li>
+  <li><a href="#relations" id="toc-relations" class="nav-link" data-scroll-target="#relations">20. Relations</a></li>
+  <li><a href="#properties-of-relations" id="toc-properties-of-relations" class="nav-link" data-scroll-target="#properties-of-relations">21. Properties of Relations</a>
+  <ul class="collapse">
+  <li><a href="#reflexive" id="toc-reflexive" class="nav-link" data-scroll-target="#reflexive">Reflexive</a></li>
+  <li><a href="#symmetric" id="toc-symmetric" class="nav-link" data-scroll-target="#symmetric">Symmetric</a></li>
+  <li><a href="#antisymmetric" id="toc-antisymmetric" class="nav-link" data-scroll-target="#antisymmetric">Antisymmetric</a></li>
+  <li><a href="#transitive" id="toc-transitive" class="nav-link" data-scroll-target="#transitive">Transitive</a></li>
+  </ul></li>
+  <li><a href="#equivalence-relations" id="toc-equivalence-relations" class="nav-link" data-scroll-target="#equivalence-relations">22. Equivalence Relations</a></li>
+  <li><a href="#partial-ordering" id="toc-partial-ordering" class="nav-link" data-scroll-target="#partial-ordering">23. Partial Ordering</a></li>
+  <li><a href="#counting" id="toc-counting" class="nav-link" data-scroll-target="#counting">24. Counting</a>
+  <ul class="collapse">
+  <li><a href="#addition-principle" id="toc-addition-principle" class="nav-link" data-scroll-target="#addition-principle">Addition Principle</a></li>
+  <li><a href="#multiplication-principle" id="toc-multiplication-principle" class="nav-link" data-scroll-target="#multiplication-principle">Multiplication Principle</a></li>
+  </ul></li>
+  <li><a href="#pigeonhole-principle" id="toc-pigeonhole-principle" class="nav-link" data-scroll-target="#pigeonhole-principle">25. Pigeonhole Principle</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#generalized-pigeonhole-principle" id="toc-generalized-pigeonhole-principle" class="nav-link" data-scroll-target="#generalized-pigeonhole-principle">26. Generalized Pigeonhole Principle</a></li>
+  <li><a href="#factorial" id="toc-factorial" class="nav-link" data-scroll-target="#factorial">27. Factorial</a></li>
+  <li><a href="#permutations" id="toc-permutations" class="nav-link" data-scroll-target="#permutations">28. Permutations</a>
+  <ul class="collapse">
+  <li><a href="#memory-2" id="toc-memory-2" class="nav-link" data-scroll-target="#memory-2">Memory</a></li>
+  </ul></li>
+  <li><a href="#combinations" id="toc-combinations" class="nav-link" data-scroll-target="#combinations">29. Combinations</a>
+  <ul class="collapse">
+  <li><a href="#memory-3" id="toc-memory-3" class="nav-link" data-scroll-target="#memory-3">Memory</a></li>
+  </ul></li>
+  <li><a href="#inclusion-exclusion-principle" id="toc-inclusion-exclusion-principle" class="nav-link" data-scroll-target="#inclusion-exclusion-principle">30. Inclusion-Exclusion Principle</a></li>
+  <li><a href="#mathematical-induction" id="toc-mathematical-induction" class="nav-link" data-scroll-target="#mathematical-induction">31. Mathematical Induction</a>
+  <ul class="collapse">
+  <li><a href="#step-1-base-case" id="toc-step-1-base-case" class="nav-link" data-scroll-target="#step-1-base-case">Step 1: Base Case</a></li>
+  <li><a href="#step-2-induction-hypothesis" id="toc-step-2-induction-hypothesis" class="nav-link" data-scroll-target="#step-2-induction-hypothesis">Step 2: Induction Hypothesis</a></li>
+  <li><a href="#step-3-inductive-step" id="toc-step-3-inductive-step" class="nav-link" data-scroll-target="#step-3-inductive-step">Step 3: Inductive Step</a></li>
+  </ul></li>
+  <li><a href="#strong-induction" id="toc-strong-induction" class="nav-link" data-scroll-target="#strong-induction">32. Strong Induction</a></li>
+  <li><a href="#discrete-probability" id="toc-discrete-probability" class="nav-link" data-scroll-target="#discrete-probability">33. Discrete Probability</a></li>
+  <li><a href="#probability-rules" id="toc-probability-rules" class="nav-link" data-scroll-target="#probability-rules">34. Probability Rules</a>
+  <ul class="collapse">
+  <li><a href="#complement-2" id="toc-complement-2" class="nav-link" data-scroll-target="#complement-2">Complement</a></li>
+  <li><a href="#addition" id="toc-addition" class="nav-link" data-scroll-target="#addition">Addition</a></li>
+  <li><a href="#conditional-probability" id="toc-conditional-probability" class="nav-link" data-scroll-target="#conditional-probability">Conditional Probability</a></li>
+  </ul></li>
+  <li><a href="#independent-events" id="toc-independent-events" class="nav-link" data-scroll-target="#independent-events">35. Independent Events</a></li>
+  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">36. Bayes’ Theorem</a></li>
+  <li><a href="#group-theory" id="toc-group-theory" class="nav-link" data-scroll-target="#group-theory">37. Group Theory</a></li>
+  <li><a href="#binary-operation" id="toc-binary-operation" class="nav-link" data-scroll-target="#binary-operation">38. Binary Operation</a></li>
+  <li><a href="#group" id="toc-group" class="nav-link" data-scroll-target="#group">39. Group</a>
+  <ul class="collapse">
+  <li><a href="#closure" id="toc-closure" class="nav-link" data-scroll-target="#closure">Closure</a></li>
+  <li><a href="#associativity" id="toc-associativity" class="nav-link" data-scroll-target="#associativity">Associativity</a></li>
+  <li><a href="#identity-1" id="toc-identity-1" class="nav-link" data-scroll-target="#identity-1">Identity</a></li>
+  <li><a href="#inverse" id="toc-inverse" class="nav-link" data-scroll-target="#inverse">Inverse</a></li>
+  </ul></li>
+  <li><a href="#abelian-group" id="toc-abelian-group" class="nav-link" data-scroll-target="#abelian-group">40. Abelian Group</a></li>
+  <li><a href="#subgroup" id="toc-subgroup" class="nav-link" data-scroll-target="#subgroup">41. Subgroup</a></li>
+  <li><a href="#semigroup-and-monoid" id="toc-semigroup-and-monoid" class="nav-link" data-scroll-target="#semigroup-and-monoid">42. Semigroup and Monoid</a></li>
+  <li><a href="#homomorphism" id="toc-homomorphism" class="nav-link" data-scroll-target="#homomorphism">43. Homomorphism</a></li>
+  <li><a href="#isomorphism" id="toc-isomorphism" class="nav-link" data-scroll-target="#isomorphism">44. Isomorphism</a></li>
+  <li><a href="#automorphism" id="toc-automorphism" class="nav-link" data-scroll-target="#automorphism">45. Automorphism</a></li>
+  <li><a href="#product-and-quotient-structures" id="toc-product-and-quotient-structures" class="nav-link" data-scroll-target="#product-and-quotient-structures">46. Product and Quotient Structures</a></li>
+  <li><a href="#rings" id="toc-rings" class="nav-link" data-scroll-target="#rings">47. Rings</a></li>
+  <li><a href="#integral-domain" id="toc-integral-domain" class="nav-link" data-scroll-target="#integral-domain">48. Integral Domain</a></li>
+  <li><a href="#field" id="toc-field" class="nav-link" data-scroll-target="#field">49. Field</a></li>
+  <li><a href="#graph-theory" id="toc-graph-theory" class="nav-link" data-scroll-target="#graph-theory">50. Graph Theory</a></li>
+  <li><a href="#simple-graph" id="toc-simple-graph" class="nav-link" data-scroll-target="#simple-graph">51. Simple Graph</a></li>
+  <li><a href="#multigraph" id="toc-multigraph" class="nav-link" data-scroll-target="#multigraph">52. Multigraph</a></li>
+  <li><a href="#weighted-graph" id="toc-weighted-graph" class="nav-link" data-scroll-target="#weighted-graph">53. Weighted Graph</a></li>
+  <li><a href="#degree-and-handshaking-theorem" id="toc-degree-and-handshaking-theorem" class="nav-link" data-scroll-target="#degree-and-handshaking-theorem">54. Degree and Handshaking Theorem</a></li>
+  <li><a href="#paths-and-circuits" id="toc-paths-and-circuits" class="nav-link" data-scroll-target="#paths-and-circuits">55. Paths and Circuits</a></li>
+  <li><a href="#eulerian-paths-and-circuits" id="toc-eulerian-paths-and-circuits" class="nav-link" data-scroll-target="#eulerian-paths-and-circuits">56. Eulerian Paths and Circuits</a>
+  <ul class="collapse">
+  <li><a href="#eulerian-circuit" id="toc-eulerian-circuit" class="nav-link" data-scroll-target="#eulerian-circuit">Eulerian circuit</a></li>
+  <li><a href="#eulerian-path-but-not-circuit" id="toc-eulerian-path-but-not-circuit" class="nav-link" data-scroll-target="#eulerian-path-but-not-circuit">Eulerian path but not circuit</a></li>
+  <li><a href="#memory-4" id="toc-memory-4" class="nav-link" data-scroll-target="#memory-4">Memory</a></li>
+  </ul></li>
+  <li><a href="#hamiltonian-paths-and-circuits" id="toc-hamiltonian-paths-and-circuits" class="nav-link" data-scroll-target="#hamiltonian-paths-and-circuits">57. Hamiltonian Paths and Circuits</a>
+  <ul class="collapse">
+  <li><a href="#memory-5" id="toc-memory-5" class="nav-link" data-scroll-target="#memory-5">Memory</a></li>
+  </ul></li>
+  <li><a href="#shortest-path-algorithms" id="toc-shortest-path-algorithms" class="nav-link" data-scroll-target="#shortest-path-algorithms">58. Shortest Path Algorithms</a>
+  <ul class="collapse">
+  <li><a href="#dijkstra" id="toc-dijkstra" class="nav-link" data-scroll-target="#dijkstra">Dijkstra</a></li>
+  <li><a href="#bellman-ford" id="toc-bellman-ford" class="nav-link" data-scroll-target="#bellman-ford">Bellman-Ford</a></li>
+  <li><a href="#floyd-warshall" id="toc-floyd-warshall" class="nav-link" data-scroll-target="#floyd-warshall">Floyd-Warshall</a></li>
+  </ul></li>
+  <li><a href="#planar-graphs" id="toc-planar-graphs" class="nav-link" data-scroll-target="#planar-graphs">59. Planar Graphs</a></li>
+  <li><a href="#graph-coloring" id="toc-graph-coloring" class="nav-link" data-scroll-target="#graph-coloring">60. Graph Coloring</a></li>
+  <li><a href="#bipartite-graphs" id="toc-bipartite-graphs" class="nav-link" data-scroll-target="#bipartite-graphs">61. Bipartite Graphs</a></li>
+  <li><a href="#trees" id="toc-trees" class="nav-link" data-scroll-target="#trees">62. Trees</a></li>
+  <li><a href="#rooted-trees" id="toc-rooted-trees" class="nav-link" data-scroll-target="#rooted-trees">63. Rooted Trees</a></li>
+  <li><a href="#tree-traversals" id="toc-tree-traversals" class="nav-link" data-scroll-target="#tree-traversals">64. Tree Traversals</a>
+  <ul class="collapse">
+  <li><a href="#preorder" id="toc-preorder" class="nav-link" data-scroll-target="#preorder">Preorder</a></li>
+  <li><a href="#inorder" id="toc-inorder" class="nav-link" data-scroll-target="#inorder">Inorder</a></li>
+  <li><a href="#postorder" id="toc-postorder" class="nav-link" data-scroll-target="#postorder">Postorder</a></li>
+  </ul></li>
+  <li><a href="#prefix-codes" id="toc-prefix-codes" class="nav-link" data-scroll-target="#prefix-codes">65. Prefix Codes</a></li>
+  <li><a href="#spanning-trees" id="toc-spanning-trees" class="nav-link" data-scroll-target="#spanning-trees">66. Spanning Trees</a></li>
+  <li><a href="#minimum-spanning-tree" id="toc-minimum-spanning-tree" class="nav-link" data-scroll-target="#minimum-spanning-tree">67. Minimum Spanning Tree</a>
+  <ul class="collapse">
+  <li><a href="#kruskal" id="toc-kruskal" class="nav-link" data-scroll-target="#kruskal">Kruskal</a></li>
+  <li><a href="#prim" id="toc-prim" class="nav-link" data-scroll-target="#prim">Prim</a></li>
+  </ul></li>
+  <li><a href="#cut-sets" id="toc-cut-sets" class="nav-link" data-scroll-target="#cut-sets">68. Cut-Sets</a></li>
+  <li><a href="#boolean-algebra" id="toc-boolean-algebra" class="nav-link" data-scroll-target="#boolean-algebra">69. Boolean Algebra</a></li>
+  <li><a href="#boolean-operations" id="toc-boolean-operations" class="nav-link" data-scroll-target="#boolean-operations">70. Boolean Operations</a>
+  <ul class="collapse">
+  <li><a href="#and-1" id="toc-and-1" class="nav-link" data-scroll-target="#and-1">AND</a></li>
+  <li><a href="#or-1" id="toc-or-1" class="nav-link" data-scroll-target="#or-1">OR</a></li>
+  <li><a href="#not-1" id="toc-not-1" class="nav-link" data-scroll-target="#not-1">NOT</a></li>
+  </ul></li>
+  <li><a href="#boolean-laws" id="toc-boolean-laws" class="nav-link" data-scroll-target="#boolean-laws">71. Boolean Laws</a>
+  <ul class="collapse">
+  <li><a href="#identity-2" id="toc-identity-2" class="nav-link" data-scroll-target="#identity-2">Identity</a></li>
+  <li><a href="#null" id="toc-null" class="nav-link" data-scroll-target="#null">Null</a></li>
+  <li><a href="#idempotent-1" id="toc-idempotent-1" class="nav-link" data-scroll-target="#idempotent-1">Idempotent</a></li>
+  <li><a href="#complement-3" id="toc-complement-3" class="nav-link" data-scroll-target="#complement-3">Complement</a></li>
+  <li><a href="#involution" id="toc-involution" class="nav-link" data-scroll-target="#involution">Involution</a></li>
+  <li><a href="#absorption-1" id="toc-absorption-1" class="nav-link" data-scroll-target="#absorption-1">Absorption</a></li>
+  <li><a href="#de-morgan" id="toc-de-morgan" class="nav-link" data-scroll-target="#de-morgan">De Morgan</a></li>
+  </ul></li>
+  <li><a href="#boolean-functions" id="toc-boolean-functions" class="nav-link" data-scroll-target="#boolean-functions">72. Boolean Functions</a></li>
+  <li><a href="#sop-and-pos" id="toc-sop-and-pos" class="nav-link" data-scroll-target="#sop-and-pos">73. SOP and POS</a>
+  <ul class="collapse">
+  <li><a href="#sum-of-products-sop" id="toc-sum-of-products-sop" class="nav-link" data-scroll-target="#sum-of-products-sop">Sum of Products (SOP)</a></li>
+  <li><a href="#product-of-sums-pos" id="toc-product-of-sums-pos" class="nav-link" data-scroll-target="#product-of-sums-pos">Product of Sums (POS)</a></li>
+  </ul></li>
+  <li><a href="#simplification-of-boolean-functions" id="toc-simplification-of-boolean-functions" class="nav-link" data-scroll-target="#simplification-of-boolean-functions">74. Simplification of Boolean Functions</a></li>
+  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">75. Optimization</a></li>
+  <li><a href="#linear-programming" id="toc-linear-programming" class="nav-link" data-scroll-target="#linear-programming">76. Linear Programming</a></li>
+  <li><a href="#graphical-solution-of-lpp" id="toc-graphical-solution-of-lpp" class="nav-link" data-scroll-target="#graphical-solution-of-lpp">77. Graphical Solution of LPP</a></li>
+  <li><a href="#feasible-and-optimal-solutions" id="toc-feasible-and-optimal-solutions" class="nav-link" data-scroll-target="#feasible-and-optimal-solutions">78. Feasible and Optimal Solutions</a></li>
+  <li><a href="#simplex-method" id="toc-simplex-method" class="nav-link" data-scroll-target="#simplex-method">79. Simplex Method</a></li>
+  <li><a href="#slack-surplus-and-artificial-variables" id="toc-slack-surplus-and-artificial-variables" class="nav-link" data-scroll-target="#slack-surplus-and-artificial-variables">80. Slack, Surplus and Artificial Variables</a></li>
+  <li><a href="#duality" id="toc-duality" class="nav-link" data-scroll-target="#duality">81. Duality</a></li>
+  <li><a href="#dual-simplex-method" id="toc-dual-simplex-method" class="nav-link" data-scroll-target="#dual-simplex-method">82. Dual Simplex Method</a></li>
+  <li><a href="#sensitivity-analysis" id="toc-sensitivity-analysis" class="nav-link" data-scroll-target="#sensitivity-analysis">83. Sensitivity Analysis</a>
+  <ul class="collapse">
+  <li><a href="#shadow-price" id="toc-shadow-price" class="nav-link" data-scroll-target="#shadow-price">Shadow price</a></li>
+  </ul></li>
+  <li><a href="#integer-programming" id="toc-integer-programming" class="nav-link" data-scroll-target="#integer-programming">84. Integer Programming</a></li>
+  <li><a href="#transportation-problem" id="toc-transportation-problem" class="nav-link" data-scroll-target="#transportation-problem">85. Transportation Problem</a></li>
+  <li><a href="#balanced-transportation-problem" id="toc-balanced-transportation-problem" class="nav-link" data-scroll-target="#balanced-transportation-problem">86. Balanced Transportation Problem</a></li>
+  <li><a href="#assignment-problem" id="toc-assignment-problem" class="nav-link" data-scroll-target="#assignment-problem">87. Assignment Problem</a>
+  <ul class="collapse">
+  <li><a href="#difference-1" id="toc-difference-1" class="nav-link" data-scroll-target="#difference-1">Difference</a></li>
+  </ul></li>
+  <li><a href="#pert" id="toc-pert" class="nav-link" data-scroll-target="#pert">88. PERT</a></li>
+  <li><a href="#cpm" id="toc-cpm" class="nav-link" data-scroll-target="#cpm">89. CPM</a></li>
+  <li><a href="#pert-vs-cpm" id="toc-pert-vs-cpm" class="nav-link" data-scroll-target="#pert-vs-cpm">90. PERT vs CPM</a></li>
+  <li><a href="#critical-path" id="toc-critical-path" class="nav-link" data-scroll-target="#critical-path">91. Critical Path</a></li>
+  <li><a href="#cpm-calculations" id="toc-cpm-calculations" class="nav-link" data-scroll-target="#cpm-calculations">92. CPM Calculations</a>
+  <ul class="collapse">
+  <li><a href="#earliest-start" id="toc-earliest-start" class="nav-link" data-scroll-target="#earliest-start">Earliest Start</a></li>
+  <li><a href="#earliest-finish" id="toc-earliest-finish" class="nav-link" data-scroll-target="#earliest-finish">Earliest Finish</a></li>
+  <li><a href="#latest-finish" id="toc-latest-finish" class="nav-link" data-scroll-target="#latest-finish">Latest Finish</a></li>
+  <li><a href="#latest-start" id="toc-latest-start" class="nav-link" data-scroll-target="#latest-start">Latest Start</a></li>
+  <li><a href="#total-float" id="toc-total-float" class="nav-link" data-scroll-target="#total-float">Total Float</a></li>
+  </ul></li>
+  <li><a href="#resource-levelling" id="toc-resource-levelling" class="nav-link" data-scroll-target="#resource-levelling">93. Resource Levelling</a></li>
+  <li><a href="#project-cost-and-scheduling" id="toc-project-cost-and-scheduling" class="nav-link" data-scroll-target="#project-cost-and-scheduling">94. Project Cost and Scheduling</a>
+  <ul class="collapse">
+  <li><a href="#crashing" id="toc-crashing" class="nav-link" data-scroll-target="#crashing">Crashing</a></li>
+  </ul></li>
+  <li><a href="#normal-and-crash-time" id="toc-normal-and-crash-time" class="nav-link" data-scroll-target="#normal-and-crash-time">95. Normal and Crash Time</a>
+  <ul class="collapse">
+  <li><a href="#normal-time" id="toc-normal-time" class="nav-link" data-scroll-target="#normal-time">Normal time</a></li>
+  <li><a href="#crash-time" id="toc-crash-time" class="nav-link" data-scroll-target="#crash-time">Crash time</a></li>
+  <li><a href="#normal-cost" id="toc-normal-cost" class="nav-link" data-scroll-target="#normal-cost">Normal cost</a></li>
+  <li><a href="#crash-cost" id="toc-crash-cost" class="nav-link" data-scroll-target="#crash-cost">Crash cost</a></li>
+  <li><a href="#cost-slope" id="toc-cost-slope" class="nav-link" data-scroll-target="#cost-slope">Cost slope</a></li>
+  </ul></li>
+  <li><a href="#important-comparison-tables" id="toc-important-comparison-tables" class="nav-link" data-scroll-target="#important-comparison-tables">96. Important Comparison Tables</a>
+  <ul class="collapse">
+  <li><a href="#logic" id="toc-logic" class="nav-link" data-scroll-target="#logic">Logic</a></li>
+  <li><a href="#relations-1" id="toc-relations-1" class="nav-link" data-scroll-target="#relations-1">Relations</a></li>
+  <li><a href="#counting-1" id="toc-counting-1" class="nav-link" data-scroll-target="#counting-1">Counting</a></li>
+  <li><a href="#algebraic-structures" id="toc-algebraic-structures" class="nav-link" data-scroll-target="#algebraic-structures">Algebraic Structures</a></li>
+  <li><a href="#graph-theory-1" id="toc-graph-theory-1" class="nav-link" data-scroll-target="#graph-theory-1">Graph Theory</a></li>
+  </ul></li>
+  <li><a href="#important-formula-sheet" id="toc-important-formula-sheet" class="nav-link" data-scroll-target="#important-formula-sheet">97. Important Formula Sheet</a>
+  <ul class="collapse">
+  <li><a href="#logic-1" id="toc-logic-1" class="nav-link" data-scroll-target="#logic-1">Logic</a></li>
+  <li><a href="#sets-1" id="toc-sets-1" class="nav-link" data-scroll-target="#sets-1">Sets</a></li>
+  <li><a href="#inclusion-exclusion" id="toc-inclusion-exclusion" class="nav-link" data-scroll-target="#inclusion-exclusion">Inclusion-exclusion</a></li>
+  <li><a href="#permutation" id="toc-permutation" class="nav-link" data-scroll-target="#permutation">Permutation</a></li>
+  <li><a href="#combination" id="toc-combination" class="nav-link" data-scroll-target="#combination">Combination</a></li>
+  <li><a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability">Probability</a></li>
+  <li><a href="#conditional-probability-1" id="toc-conditional-probability-1" class="nav-link" data-scroll-target="#conditional-probability-1">Conditional probability</a></li>
+  <li><a href="#bayes" id="toc-bayes" class="nav-link" data-scroll-target="#bayes">Bayes</a></li>
+  <li><a href="#tree" id="toc-tree" class="nav-link" data-scroll-target="#tree">Tree</a></li>
+  <li><a href="#planar-graph" id="toc-planar-graph" class="nav-link" data-scroll-target="#planar-graph">Planar graph</a></li>
+  <li><a href="#pert-1" id="toc-pert-1" class="nav-link" data-scroll-target="#pert-1">PERT</a></li>
+  <li><a href="#cpm-1" id="toc-cpm-1" class="nav-link" data-scroll-target="#cpm-1">CPM</a></li>
+  <li><a href="#crashing-1" id="toc-crashing-1" class="nav-link" data-scroll-target="#crashing-1">Crashing</a></li>
+  </ul></li>
+  <li><a href="#common-ugc-net-mistakes" id="toc-common-ugc-net-mistakes" class="nav-link" data-scroll-target="#common-ugc-net-mistakes">98. Common UGC NET Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#mistake-1-implication" id="toc-mistake-1-implication" class="nav-link" data-scroll-target="#mistake-1-implication">Mistake 1: Implication</a></li>
+  <li><a href="#mistake-2-permutation-vs-combination" id="toc-mistake-2-permutation-vs-combination" class="nav-link" data-scroll-target="#mistake-2-permutation-vs-combination">Mistake 2: Permutation vs Combination</a></li>
+  <li><a href="#mistake-3-equivalence-vs-partial-order" id="toc-mistake-3-equivalence-vs-partial-order" class="nav-link" data-scroll-target="#mistake-3-equivalence-vs-partial-order">Mistake 3: Equivalence vs Partial Order</a></li>
+  <li><a href="#mistake-4-euler-vs-hamiltonian" id="toc-mistake-4-euler-vs-hamiltonian" class="nav-link" data-scroll-target="#mistake-4-euler-vs-hamiltonian">Mistake 4: Euler vs Hamiltonian</a></li>
+  <li><a href="#mistake-5-tree" id="toc-mistake-5-tree" class="nav-link" data-scroll-target="#mistake-5-tree">Mistake 5: Tree</a></li>
+  <li><a href="#mistake-6-homomorphism-vs-isomorphism" id="toc-mistake-6-homomorphism-vs-isomorphism" class="nav-link" data-scroll-target="#mistake-6-homomorphism-vs-isomorphism">Mistake 6: Homomorphism vs Isomorphism</a></li>
+  <li><a href="#mistake-7-pert-vs-cpm" id="toc-mistake-7-pert-vs-cpm" class="nav-link" data-scroll-target="#mistake-7-pert-vs-cpm">Mistake 7: PERT vs CPM</a></li>
+  <li><a href="#mistake-8-transportation-vs-assignment" id="toc-mistake-8-transportation-vs-assignment" class="nav-link" data-scroll-target="#mistake-8-transportation-vs-assignment">Mistake 8: Transportation vs Assignment</a></li>
+  </ul></li>
+  <li><a href="#ugc-net-high-priority-topics" id="toc-ugc-net-high-priority-topics" class="nav-link" data-scroll-target="#ugc-net-high-priority-topics">99. UGC NET High-Priority Topics</a>
+  <ul class="collapse">
+  <li><a href="#mathematical-logic-1" id="toc-mathematical-logic-1" class="nav-link" data-scroll-target="#mathematical-logic-1">Mathematical Logic</a></li>
+  <li><a href="#sets-and-relations" id="toc-sets-and-relations" class="nav-link" data-scroll-target="#sets-and-relations">Sets and Relations</a></li>
+  <li><a href="#counting-and-probability" id="toc-counting-and-probability" class="nav-link" data-scroll-target="#counting-and-probability">Counting and Probability</a></li>
+  <li><a href="#group-theory-1" id="toc-group-theory-1" class="nav-link" data-scroll-target="#group-theory-1">Group Theory</a></li>
+  <li><a href="#graph-theory-2" id="toc-graph-theory-2" class="nav-link" data-scroll-target="#graph-theory-2">Graph Theory</a></li>
+  <li><a href="#boolean-algebra-1" id="toc-boolean-algebra-1" class="nav-link" data-scroll-target="#boolean-algebra-1">Boolean Algebra</a></li>
+  <li><a href="#optimization-1" id="toc-optimization-1" class="nav-link" data-scroll-target="#optimization-1">Optimization</a></li>
+  </ul></li>
+  <li><a href="#final-revision-map" id="toc-final-revision-map" class="nav-link" data-scroll-target="#final-revision-map">100. Final Revision Map</a>
+  <ul class="collapse">
+  <li><a href="#mathematical-logic-2" id="toc-mathematical-logic-2" class="nav-link" data-scroll-target="#mathematical-logic-2">Mathematical Logic</a></li>
+  <li><a href="#sets-and-relations-1" id="toc-sets-and-relations-1" class="nav-link" data-scroll-target="#sets-and-relations-1">Sets and Relations</a></li>
+  <li><a href="#counting-and-probability-1" id="toc-counting-and-probability-1" class="nav-link" data-scroll-target="#counting-and-probability-1">Counting and Probability</a></li>
+  <li><a href="#group-theory-2" id="toc-group-theory-2" class="nav-link" data-scroll-target="#group-theory-2">Group Theory</a></li>
+  <li><a href="#graph-theory-3" id="toc-graph-theory-3" class="nav-link" data-scroll-target="#graph-theory-3">Graph Theory</a></li>
+  <li><a href="#boolean-algebra-2" id="toc-boolean-algebra-2" class="nav-link" data-scroll-target="#boolean-algebra-2">Boolean Algebra</a></li>
+  <li><a href="#optimization-2" id="toc-optimization-2" class="nav-link" data-scroll-target="#optimization-2">Optimization</a></li>
+  </ul></li>
+  <li><a href="#final-exam-strategy" id="toc-final-exam-strategy" class="nav-link" data-scroll-target="#final-exam-strategy">101. Final Exam Strategy</a>
+  <ul class="collapse">
+  <li><a href="#level-1-understand" id="toc-level-1-understand" class="nav-link" data-scroll-target="#level-1-understand">Level 1 – Understand</a></li>
+  <li><a href="#level-2-memorize" id="toc-level-2-memorize" class="nav-link" data-scroll-target="#level-2-memorize">Level 2 – Memorize</a></li>
+  <li><a href="#level-3-practice" id="toc-level-3-practice" class="nav-link" data-scroll-target="#level-3-practice">Level 3 – Practice</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit I – Discrete Structures and Optimization</h1>
+<p class="subtitle lead">UGC NET Computer Science and Applications – Paper 2</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>Discrete Structures is a mathematical foundation of Computer Science. It deals mainly with objects that are separate, countable, and finite or countably infinite.</p>
+<p>The major areas in this unit are:</p>
+<ul>
+<li>Mathematical Logic</li>
+<li>Sets and Relations</li>
+<li>Counting</li>
+<li>Mathematical Induction</li>
+<li>Discrete Probability</li>
+<li>Group Theory</li>
+<li>Graph Theory</li>
+<li>Boolean Algebra</li>
+<li>Optimization</li>
+</ul>
+<p>These concepts are used in algorithms, data structures, databases, computer networks, artificial intelligence, cryptography, digital circuits, and operations research.</p>
+<hr>
+</section>
+<section id="mathematical-logic" class="level1">
+<h1>2. Mathematical Logic</h1>
+<section id="what-is-logic" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-logic">2.1 What is Logic?</h2>
+<p>Logic is the systematic study of valid reasoning.</p>
+<p>In Computer Science, logic is used in:</p>
+<ul>
+<li>Program verification</li>
+<li>Artificial intelligence</li>
+<li>Database queries</li>
+<li>Digital circuits</li>
+<li>Automated reasoning</li>
+<li>Knowledge representation</li>
+</ul>
+<hr>
+</section>
+<section id="proposition" class="level2">
+<h2 class="anchored" data-anchor-id="proposition">2.2 Proposition</h2>
+<p>A proposition is a declarative sentence that is either <strong>True (T)</strong> or <strong>False (F)</strong>, but not both.</p>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<ul>
+<li>“5 is greater than 3.” → True</li>
+<li>“10 is an odd number.” → False</li>
+<li>“India is in Asia.” → True</li>
+</ul>
+</section>
+<section id="not-propositions" class="level3">
+<h3 class="anchored" data-anchor-id="not-propositions">Not propositions</h3>
+<ul>
+<li>“Close the door.” → Command</li>
+<li>“What is your name?” → Question</li>
+<li>“x + 2 = 5” → Depends on x</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="simple-and-compound-propositions" class="level2">
+<h2 class="anchored" data-anchor-id="simple-and-compound-propositions">2.3 Simple and Compound Propositions</h2>
+<p>A <strong>simple proposition</strong> cannot be divided into smaller propositions.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>p: It is raining.</p>
+</blockquote>
+<p>A <strong>compound proposition</strong> is formed by combining propositions.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>p: It is raining.<br>
+q: The road is wet.</p>
+</blockquote>
+<p>Then:</p>
+<p><strong>p ∧ q</strong></p>
+<p>means:</p>
+<blockquote class="blockquote">
+<p>It is raining AND the road is wet.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="logical-connectives" class="level1">
+<h1>3. Logical Connectives</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>¬p</td>
+<td>NOT</td>
+<td>Negation</td>
+</tr>
+<tr class="even">
+<td>p ∧ q</td>
+<td>AND</td>
+<td>Both are true</td>
+</tr>
+<tr class="odd">
+<td>p ∨ q</td>
+<td>OR</td>
+<td>At least one is true</td>
+</tr>
+<tr class="even">
+<td>p → q</td>
+<td>Implication</td>
+<td>If p, then q</td>
+</tr>
+<tr class="odd">
+<td>p ↔︎ q</td>
+<td>Biconditional</td>
+<td>p if and only if q</td>
+</tr>
+</tbody>
+</table>
+<section id="not" class="level2">
+<h2 class="anchored" data-anchor-id="not">3.1 NOT</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>p</th>
+<th>¬p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="and" class="level2">
+<h2 class="anchored" data-anchor-id="and">3.2 AND</h2>
+<p>p ∧ q is true only when both are true.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>p</th>
+<th>q</th>
+<th>p ∧ q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Memory:</strong> AND means <strong>both</strong>.</p>
+<hr>
+</section>
+<section id="or" class="level2">
+<h2 class="anchored" data-anchor-id="or">3.3 OR</h2>
+<p>p ∨ q is false only when both are false.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>p</th>
+<th>q</th>
+<th>p ∨ q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Memory:</strong> OR means <strong>at least one</strong>.</p>
+<hr>
+</section>
+<section id="implication" class="level2">
+<h2 class="anchored" data-anchor-id="implication">3.4 Implication</h2>
+<p>p → q means “If p, then q.”</p>
+<p>It is false only when p is true and q is false.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>p</th>
+<th>q</th>
+<th>p → q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>Important equivalence:</p>
+<p><strong>p → q ≡ ¬p ∨ q</strong></p>
+<hr>
+</section>
+<section id="biconditional" class="level2">
+<h2 class="anchored" data-anchor-id="biconditional">3.5 Biconditional</h2>
+<p>p ↔︎ q means “p if and only if q.”</p>
+<p>It is true when p and q have the same truth value.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>p</th>
+<th>q</th>
+<th>p ↔︎ q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="truth-tables" class="level1">
+<h1>4. Truth Tables</h1>
+<p>A truth table lists all possible truth-value combinations.</p>
+<p>For n propositions:</p>
+<p><strong>Number of rows = 2^n</strong></p>
+<p>Examples:</p>
+<ul>
+<li>1 proposition → 2 rows</li>
+<li>2 propositions → 4 rows</li>
+<li>3 propositions → 8 rows</li>
+<li>4 propositions → 16 rows</li>
+</ul>
+<hr>
+</section>
+<section id="tautology-contradiction-and-contingency" class="level1">
+<h1>5. Tautology, Contradiction and Contingency</h1>
+<section id="tautology" class="level2">
+<h2 class="anchored" data-anchor-id="tautology">Tautology</h2>
+<p>A proposition that is always true.</p>
+<p>Example:</p>
+<p><strong>p ∨ ¬p</strong></p>
+</section>
+<section id="contradiction" class="level2">
+<h2 class="anchored" data-anchor-id="contradiction">Contradiction</h2>
+<p>A proposition that is always false.</p>
+<p>Example:</p>
+<p><strong>p ∧ ¬p</strong></p>
+</section>
+<section id="contingency" class="level2">
+<h2 class="anchored" data-anchor-id="contingency">Contingency</h2>
+<p>A proposition that is sometimes true and sometimes false.</p>
+<p>Example:</p>
+<p><strong>p ∧ q</strong></p>
+<hr>
+</section>
+</section>
+<section id="propositional-equivalences" class="level1">
+<h1>6. Propositional Equivalences</h1>
+<p>Two propositions are logically equivalent if they have the same truth value for every possible assignment.</p>
+<p>Notation:</p>
+<p><strong>p ≡ q</strong></p>
+<section id="important-laws" class="level2">
+<h2 class="anchored" data-anchor-id="important-laws">Important laws</h2>
+<section id="double-negation" class="level3">
+<h3 class="anchored" data-anchor-id="double-negation">Double Negation</h3>
+<p><strong>¬(¬p) ≡ p</strong></p>
+</section>
+<section id="identity" class="level3">
+<h3 class="anchored" data-anchor-id="identity">Identity</h3>
+<p><strong>p ∧ T ≡ p</strong></p>
+<p><strong>p ∨ F ≡ p</strong></p>
+</section>
+<section id="domination" class="level3">
+<h3 class="anchored" data-anchor-id="domination">Domination</h3>
+<p><strong>p ∨ T ≡ T</strong></p>
+<p><strong>p ∧ F ≡ F</strong></p>
+</section>
+<section id="idempotent" class="level3">
+<h3 class="anchored" data-anchor-id="idempotent">Idempotent</h3>
+<p><strong>p ∨ p ≡ p</strong></p>
+<p><strong>p ∧ p ≡ p</strong></p>
+</section>
+<section id="complement" class="level3">
+<h3 class="anchored" data-anchor-id="complement">Complement</h3>
+<p><strong>p ∨ ¬p ≡ T</strong></p>
+<p><strong>p ∧ ¬p ≡ F</strong></p>
+</section>
+<section id="commutative" class="level3">
+<h3 class="anchored" data-anchor-id="commutative">Commutative</h3>
+<p><strong>p ∨ q ≡ q ∨ p</strong></p>
+<p><strong>p ∧ q ≡ q ∧ p</strong></p>
+</section>
+<section id="associative" class="level3">
+<h3 class="anchored" data-anchor-id="associative">Associative</h3>
+<p><strong>(p ∨ q) ∨ r ≡ p ∨ (q ∨ r)</strong></p>
+<p><strong>(p ∧ q) ∧ r ≡ p ∧ (q ∧ r)</strong></p>
+</section>
+<section id="distributive" class="level3">
+<h3 class="anchored" data-anchor-id="distributive">Distributive</h3>
+<p><strong>p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)</strong></p>
+<p><strong>p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)</strong></p>
+</section>
+<section id="absorption" class="level3">
+<h3 class="anchored" data-anchor-id="absorption">Absorption</h3>
+<p><strong>p ∨ (p ∧ q) ≡ p</strong></p>
+<p><strong>p ∧ (p ∨ q) ≡ p</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="de-morgans-laws" class="level1">
+<h1>7. De Morgan’s Laws</h1>
+<p>The two important laws are:</p>
+<p><strong>¬(p ∧ q) ≡ ¬p ∨ ¬q</strong></p>
+<p><strong>¬(p ∨ q) ≡ ¬p ∧ ¬q</strong></p>
+<section id="easy-memory" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory">Easy memory</h3>
+<p>When NOT enters brackets:</p>
+<ul>
+<li>AND becomes OR</li>
+<li>OR becomes AND</li>
+<li>Every proposition is negated</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="normal-forms" class="level1">
+<h1>8. Normal Forms</h1>
+<p>Normal forms provide standard representations of logical expressions.</p>
+<p>Important forms:</p>
+<ul>
+<li>DNF</li>
+<li>CNF</li>
+<li>Principal DNF</li>
+<li>Principal CNF</li>
+</ul>
+<section id="literal" class="level2">
+<h2 class="anchored" data-anchor-id="literal">8.1 Literal</h2>
+<p>A literal is a variable or its complement.</p>
+<p>Examples:</p>
+<ul>
+<li>p</li>
+<li>¬p</li>
+<li>q</li>
+<li>¬q</li>
+</ul>
+</section>
+<section id="dnf" class="level2">
+<h2 class="anchored" data-anchor-id="dnf">8.2 DNF</h2>
+<p>DNF = <strong>Disjunctive Normal Form</strong></p>
+<p>It is an OR of AND terms.</p>
+<p>Example:</p>
+<p><strong>(p ∧ q) ∨ (¬p ∧ r)</strong></p>
+</section>
+<section id="cnf" class="level2">
+<h2 class="anchored" data-anchor-id="cnf">8.3 CNF</h2>
+<p>CNF = <strong>Conjunctive Normal Form</strong></p>
+<p>It is an AND of OR terms.</p>
+<p>Example:</p>
+<p><strong>(p ∨ q) ∧ (¬p ∨ r)</strong></p>
+<section id="memory" class="level3">
+<h3 class="anchored" data-anchor-id="memory">Memory</h3>
+<p><strong>DNF → OR of ANDs</strong></p>
+<p><strong>CNF → AND of ORs</strong></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="predicates-and-quantifiers" class="level1">
+<h1>9. Predicates and Quantifiers</h1>
+<section id="predicate" class="level2">
+<h2 class="anchored" data-anchor-id="predicate">9.1 Predicate</h2>
+<p>A predicate contains variables and becomes a proposition when values are assigned.</p>
+<p>Example:</p>
+<p><strong>P(x): x &gt; 5</strong></p>
+<p>If x = 7, P(7) is true.</p>
+<p>If x = 3, P(3) is false.</p>
+<hr>
+</section>
+<section id="universal-quantifier" class="level2">
+<h2 class="anchored" data-anchor-id="universal-quantifier">9.2 Universal Quantifier</h2>
+<p>Symbol:</p>
+<p><strong>∀</strong></p>
+<p>Meaning:</p>
+<p><strong>For all</strong></p>
+<p>Example:</p>
+<p><strong>∀x P(x)</strong></p>
+<p>means P(x) is true for every x in the domain.</p>
+<hr>
+</section>
+<section id="existential-quantifier" class="level2">
+<h2 class="anchored" data-anchor-id="existential-quantifier">9.3 Existential Quantifier</h2>
+<p>Symbol:</p>
+<p><strong>∃</strong></p>
+<p>Meaning:</p>
+<p><strong>There exists</strong></p>
+<p>Example:</p>
+<p><strong>∃x P(x)</strong></p>
+<p>means there is at least one x for which P(x) is true.</p>
+<hr>
+</section>
+</section>
+<section id="negation-of-quantifiers" class="level1">
+<h1>10. Negation of Quantifiers</h1>
+<p>Important rules:</p>
+<p><strong>¬(∀x P(x)) ≡ ∃x ¬P(x)</strong></p>
+<p><strong>¬(∃x P(x)) ≡ ∀x ¬P(x)</strong></p>
+<section id="memory-1" class="level3">
+<h3 class="anchored" data-anchor-id="memory-1">Memory</h3>
+<p>When NOT crosses a quantifier:</p>
+<p><strong>∀ changes to ∃</strong></p>
+<p><strong>∃ changes to ∀</strong></p>
+<p>and the predicate is negated.</p>
+<hr>
+</section>
+</section>
+<section id="nested-quantifiers" class="level1">
+<h1>11. Nested Quantifiers</h1>
+<p>A statement containing more than one quantifier has nested quantifiers.</p>
+<p>Compare:</p>
+<p><strong>∀x ∃y P(x,y)</strong></p>
+<p>with:</p>
+<p><strong>∃y ∀x P(x,y)</strong></p>
+<p>The first means:</p>
+<blockquote class="blockquote">
+<p>For every x, there can be a suitable y.</p>
+</blockquote>
+<p>The second means:</p>
+<blockquote class="blockquote">
+<p>There is one particular y that works for every x.</p>
+</blockquote>
+<p>They are generally not equivalent.</p>
+<section id="ugc-net-point" class="level3">
+<h3 class="anchored" data-anchor-id="ugc-net-point">UGC NET Point</h3>
+<p><strong>The order of quantifiers matters.</strong></p>
+<hr>
+</section>
+</section>
+<section id="rules-of-inference" class="level1">
+<h1>12. Rules of Inference</h1>
+<p>Rules of inference are valid patterns of reasoning.</p>
+<section id="modus-ponens" class="level2">
+<h2 class="anchored" data-anchor-id="modus-ponens">Modus Ponens</h2>
+<p>p → q</p>
+<p>p</p>
+<p>Therefore:</p>
+<p>q</p>
+</section>
+<section id="modus-tollens" class="level2">
+<h2 class="anchored" data-anchor-id="modus-tollens">Modus Tollens</h2>
+<p>p → q</p>
+<p>¬q</p>
+<p>Therefore:</p>
+<p>¬p</p>
+</section>
+<section id="hypothetical-syllogism" class="level2">
+<h2 class="anchored" data-anchor-id="hypothetical-syllogism">Hypothetical Syllogism</h2>
+<p>p → q</p>
+<p>q → r</p>
+<p>Therefore:</p>
+<p>p → r</p>
+</section>
+<section id="disjunctive-syllogism" class="level2">
+<h2 class="anchored" data-anchor-id="disjunctive-syllogism">Disjunctive Syllogism</h2>
+<p>p ∨ q</p>
+<p>¬p</p>
+<p>Therefore:</p>
+<p>q</p>
+<hr>
+</section>
+</section>
+<section id="sets" class="level1">
+<h1>13. Sets</h1>
+<p>A set is a well-defined collection of distinct objects.</p>
+<p>Example:</p>
+<p><strong>A = {1, 2, 3, 4}</strong></p>
+<p>The objects are called elements.</p>
+<hr>
+</section>
+<section id="representation-of-sets" class="level1">
+<h1>14. Representation of Sets</h1>
+<section id="roster-form" class="level2">
+<h2 class="anchored" data-anchor-id="roster-form">Roster Form</h2>
+<p>Elements are explicitly listed.</p>
+<p><strong>A = {2, 4, 6, 8}</strong></p>
+</section>
+<section id="set-builder-form" class="level2">
+<h2 class="anchored" data-anchor-id="set-builder-form">Set-builder Form</h2>
+<p>A property is specified.</p>
+<p><strong>A = {x | x is an even positive integer less than 10}</strong></p>
+<hr>
+</section>
+</section>
+<section id="types-of-sets" class="level1">
+<h1>15. Types of Sets</h1>
+<section id="empty-set" class="level3">
+<h3 class="anchored" data-anchor-id="empty-set">Empty Set</h3>
+<p>Contains no elements.</p>
+<p><strong>∅</strong></p>
+</section>
+<section id="singleton-set" class="level3">
+<h3 class="anchored" data-anchor-id="singleton-set">Singleton Set</h3>
+<p>Contains exactly one element.</p>
+<p>Example:</p>
+<p><strong>{5}</strong></p>
+</section>
+<section id="finite-set" class="level3">
+<h3 class="anchored" data-anchor-id="finite-set">Finite Set</h3>
+<p>Contains a finite number of elements.</p>
+</section>
+<section id="infinite-set" class="level3">
+<h3 class="anchored" data-anchor-id="infinite-set">Infinite Set</h3>
+<p>Contains infinitely many elements.</p>
+</section>
+<section id="universal-set" class="level3">
+<h3 class="anchored" data-anchor-id="universal-set">Universal Set</h3>
+<p>Contains all objects under consideration.</p>
+<hr>
+</section>
+</section>
+<section id="subsets" class="level1">
+<h1>16. Subsets</h1>
+<p>A is a subset of B if every element of A is also an element of B.</p>
+<p>Notation:</p>
+<p><strong>A ⊆ B</strong></p>
+<p>Example:</p>
+<p>A = {1,2}</p>
+<p>B = {1,2,3}</p>
+<p>Therefore:</p>
+<p><strong>A ⊆ B</strong></p>
+<hr>
+</section>
+<section id="power-set" class="level1">
+<h1>17. Power Set</h1>
+<p>The power set is the set of all subsets.</p>
+<p>If:</p>
+<p><strong>A = {a,b}</strong></p>
+<p>then:</p>
+<p><strong>P(A) = {∅, {a}, {b}, {a,b}}</strong></p>
+<p>For a set containing n elements:</p>
+<p><strong>Number of subsets = 2^n</strong></p>
+<hr>
+</section>
+<section id="set-operations" class="level1">
+<h1>18. Set Operations</h1>
+<section id="union" class="level2">
+<h2 class="anchored" data-anchor-id="union">Union</h2>
+<p><strong>A ∪ B</strong></p>
+<p>Elements in A or B or both.</p>
+</section>
+<section id="intersection" class="level2">
+<h2 class="anchored" data-anchor-id="intersection">Intersection</h2>
+<p><strong>A ∩ B</strong></p>
+<p>Elements common to A and B.</p>
+</section>
+<section id="difference" class="level2">
+<h2 class="anchored" data-anchor-id="difference">Difference</h2>
+<p><strong>A − B</strong></p>
+<p>Elements in A but not B.</p>
+</section>
+<section id="complement-1" class="level2">
+<h2 class="anchored" data-anchor-id="complement-1">Complement</h2>
+<p><strong>A’</strong></p>
+<p>Elements in the universal set but not in A.</p>
+<hr>
+</section>
+</section>
+<section id="inclusion-exclusion-for-two-sets" class="level1">
+<h1>19. Inclusion-Exclusion for Two Sets</h1>
+<p><strong>|A ∪ B| = |A| + |B| − |A ∩ B|</strong></p>
+<p>The intersection is subtracted because it was counted twice.</p>
+<hr>
+</section>
+<section id="relations" class="level1">
+<h1>20. Relations</h1>
+<p>A relation R from A to B is a subset of the Cartesian product:</p>
+<p><strong>A × B</strong></p>
+<p>The Cartesian product contains ordered pairs.</p>
+<p>If:</p>
+<p>A = {1,2}</p>
+<p>B = {a,b}</p>
+<p>then:</p>
+<p><strong>A × B = {(1,a),(1,b),(2,a),(2,b)}</strong></p>
+<hr>
+</section>
+<section id="properties-of-relations" class="level1">
+<h1>21. Properties of Relations</h1>
+<section id="reflexive" class="level2">
+<h2 class="anchored" data-anchor-id="reflexive">Reflexive</h2>
+<p>For every a:</p>
+<p><strong>aRa</strong></p>
+</section>
+<section id="symmetric" class="level2">
+<h2 class="anchored" data-anchor-id="symmetric">Symmetric</h2>
+<p>If:</p>
+<p><strong>aRb</strong></p>
+<p>then:</p>
+<p><strong>bRa</strong></p>
+</section>
+<section id="antisymmetric" class="level2">
+<h2 class="anchored" data-anchor-id="antisymmetric">Antisymmetric</h2>
+<p>If:</p>
+<p><strong>aRb and bRa</strong></p>
+<p>then:</p>
+<p><strong>a = b</strong></p>
+</section>
+<section id="transitive" class="level2">
+<h2 class="anchored" data-anchor-id="transitive">Transitive</h2>
+<p>If:</p>
+<p><strong>aRb and bRc</strong></p>
+<p>then:</p>
+<p><strong>aRc</strong></p>
+<hr>
+</section>
+</section>
+<section id="equivalence-relations" class="level1">
+<h1>22. Equivalence Relations</h1>
+<p>A relation is an equivalence relation if it is:</p>
+<ol type="1">
+<li>Reflexive</li>
+<li>Symmetric</li>
+<li>Transitive</li>
+</ol>
+<p><strong>Memory: RST</strong></p>
+<p>Equivalence relations divide a set into equivalence classes.</p>
+<hr>
+</section>
+<section id="partial-ordering" class="level1">
+<h1>23. Partial Ordering</h1>
+<p>A partial order is:</p>
+<ol type="1">
+<li>Reflexive</li>
+<li>Antisymmetric</li>
+<li>Transitive</li>
+</ol>
+<p><strong>Memory: RAT</strong></p>
+<p>A set together with a partial order is called a:</p>
+<p><strong>Partially Ordered Set (Poset)</strong></p>
+<hr>
+</section>
+<section id="counting" class="level1">
+<h1>24. Counting</h1>
+<p>Counting is fundamental to discrete mathematics.</p>
+<section id="addition-principle" class="level2">
+<h2 class="anchored" data-anchor-id="addition-principle">Addition Principle</h2>
+<p>If one choice can be made in m ways and another mutually exclusive choice in n ways:</p>
+<p><strong>Total = m + n</strong></p>
+</section>
+<section id="multiplication-principle" class="level2">
+<h2 class="anchored" data-anchor-id="multiplication-principle">Multiplication Principle</h2>
+<p>If one step can be performed in m ways and the next in n ways:</p>
+<p><strong>Total = m × n</strong></p>
+<hr>
+</section>
+</section>
+<section id="pigeonhole-principle" class="level1">
+<h1>25. Pigeonhole Principle</h1>
+<p>If more than n objects are placed into n boxes, at least one box contains at least two objects.</p>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>13 people and 12 months:</p>
+<p>At least two people have birthdays in the same month.</p>
+<hr>
+</section>
+</section>
+<section id="generalized-pigeonhole-principle" class="level1">
+<h1>26. Generalized Pigeonhole Principle</h1>
+<p>If N objects are placed into k boxes, at least one box contains at least:</p>
+<p><strong>ceil(N/k)</strong></p>
+<p>objects.</p>
+<p>Example:</p>
+<p>100 objects in 9 boxes:</p>
+<p><strong>ceil(100/9) = 12</strong></p>
+<p>So at least one box contains 12 objects.</p>
+<hr>
+</section>
+<section id="factorial" class="level1">
+<h1>27. Factorial</h1>
+<p><strong>n! = n × (n−1) × … × 2 × 1</strong></p>
+<p>Also:</p>
+<p><strong>0! = 1</strong></p>
+<p>Example:</p>
+<p><strong>5! = 120</strong></p>
+<hr>
+</section>
+<section id="permutations" class="level1">
+<h1>28. Permutations</h1>
+<p>Permutation means arrangement where order matters.</p>
+<p>Formula:</p>
+<p><strong>nPr = n! / (n−r)!</strong></p>
+<p>Example:</p>
+<p>Arrange 3 students from 5:</p>
+<p><strong>5P3 = 5! / 2! = 60</strong></p>
+<section id="memory-2" class="level3">
+<h3 class="anchored" data-anchor-id="memory-2">Memory</h3>
+<p><strong>Permutation → Position matters</strong></p>
+<hr>
+</section>
+</section>
+<section id="combinations" class="level1">
+<h1>29. Combinations</h1>
+<p>Combination means selection where order does not matter.</p>
+<p>Formula:</p>
+<p><strong>nCr = n! / [r!(n−r)!]</strong></p>
+<p>Example:</p>
+<p>Select 3 students from 5:</p>
+<p><strong>5C3 = 10</strong></p>
+<section id="memory-3" class="level3">
+<h3 class="anchored" data-anchor-id="memory-3">Memory</h3>
+<p><strong>Combination → Choose</strong></p>
+<hr>
+</section>
+</section>
+<section id="inclusion-exclusion-principle" class="level1">
+<h1>30. Inclusion-Exclusion Principle</h1>
+<p>For three sets:</p>
+<p><strong>|A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |B∩C| − |A∩C| + |A∩B∩C|</strong></p>
+<p>Pattern:</p>
+<p><strong>Add singles → subtract pairs → add triple</strong></p>
+<hr>
+</section>
+<section id="mathematical-induction" class="level1">
+<h1>31. Mathematical Induction</h1>
+<p>Mathematical induction proves statements for positive integers.</p>
+<section id="step-1-base-case" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-base-case">Step 1: Base Case</h2>
+<p>Prove P(1).</p>
+</section>
+<section id="step-2-induction-hypothesis" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-induction-hypothesis">Step 2: Induction Hypothesis</h2>
+<p>Assume P(k) is true.</p>
+</section>
+<section id="step-3-inductive-step" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-inductive-step">Step 3: Inductive Step</h2>
+<p>Use P(k) to prove P(k+1).</p>
+<p>Therefore P(n) is true for all relevant positive integers.</p>
+<hr>
+</section>
+</section>
+<section id="strong-induction" class="level1">
+<h1>32. Strong Induction</h1>
+<p>Strong induction assumes:</p>
+<p><strong>P(1), P(2), …, P(k)</strong></p>
+<p>and then proves:</p>
+<p><strong>P(k+1)</strong></p>
+<p>Ordinary induction normally assumes only P(k).</p>
+<hr>
+</section>
+<section id="discrete-probability" class="level1">
+<h1>33. Discrete Probability</h1>
+<p>For equally likely outcomes:</p>
+<p><strong>P(A) = Favorable outcomes / Total outcomes</strong></p>
+<p>Probability is between:</p>
+<p><strong>0 and 1</strong></p>
+<hr>
+</section>
+<section id="probability-rules" class="level1">
+<h1>34. Probability Rules</h1>
+<section id="complement-2" class="level2">
+<h2 class="anchored" data-anchor-id="complement-2">Complement</h2>
+<p><strong>P(A’) = 1 − P(A)</strong></p>
+</section>
+<section id="addition" class="level2">
+<h2 class="anchored" data-anchor-id="addition">Addition</h2>
+<p><strong>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</strong></p>
+<p>For mutually exclusive events:</p>
+<p><strong>P(A ∪ B) = P(A) + P(B)</strong></p>
+</section>
+<section id="conditional-probability" class="level2">
+<h2 class="anchored" data-anchor-id="conditional-probability">Conditional Probability</h2>
+<p><strong>P(A|B) = P(A ∩ B) / P(B)</strong></p>
+<hr>
+</section>
+</section>
+<section id="independent-events" class="level1">
+<h1>35. Independent Events</h1>
+<p>A and B are independent when:</p>
+<p><strong>P(A ∩ B) = P(A)P(B)</strong></p>
+<p>Equivalently, when defined:</p>
+<p><strong>P(A|B) = P(A)</strong></p>
+<p>Do not confuse independence with mutual exclusivity.</p>
+<hr>
+</section>
+<section id="bayes-theorem" class="level1">
+<h1>36. Bayes’ Theorem</h1>
+<p>Bayes’ theorem updates the probability of a hypothesis after evidence is observed.</p>
+<p><strong>P(A|B) = P(B|A)P(A) / P(B)</strong></p>
+<p>Terms:</p>
+<ul>
+<li>P(A) = Prior</li>
+<li>P(B|A) = Likelihood</li>
+<li>P(A|B) = Posterior</li>
+<li>P(B) = Evidence</li>
+</ul>
+<hr>
+</section>
+<section id="group-theory" class="level1">
+<h1>37. Group Theory</h1>
+<p>Group theory studies algebraic structures.</p>
+<p>Applications include:</p>
+<ul>
+<li>Cryptography</li>
+<li>Coding theory</li>
+<li>Symmetry</li>
+<li>Error correction</li>
+<li>Computer graphics</li>
+<li>Algebraic algorithms</li>
+</ul>
+<hr>
+</section>
+<section id="binary-operation" class="level1">
+<h1>38. Binary Operation</h1>
+<p>A binary operation combines two elements of a set and produces an element of the same set.</p>
+<p>This gives the property of closure.</p>
+<p>Example:</p>
+<p>Integers are closed under addition.</p>
+<hr>
+</section>
+<section id="group" class="level1">
+<h1>39. Group</h1>
+<p>A set G with operation * is a group if it satisfies:</p>
+<ol type="1">
+<li>Closure</li>
+<li>Associativity</li>
+<li>Identity</li>
+<li>Inverse</li>
+</ol>
+<section id="closure" class="level3">
+<h3 class="anchored" data-anchor-id="closure">Closure</h3>
+<p>**a*b ∈ G**</p>
+</section>
+<section id="associativity" class="level3">
+<h3 class="anchored" data-anchor-id="associativity">Associativity</h3>
+<p><strong>(a<em>b)</em>c = a<em>(b</em>c)</strong></p>
+</section>
+<section id="identity-1" class="level3">
+<h3 class="anchored" data-anchor-id="identity-1">Identity</h3>
+<p>There exists e such that:</p>
+<p><strong>a<em>e = e</em>a = a</strong></p>
+</section>
+<section id="inverse" class="level3">
+<h3 class="anchored" data-anchor-id="inverse">Inverse</h3>
+<p>For each a, there exists a⁻¹ such that:</p>
+<p><strong>a<em>a⁻¹ = a⁻¹</em>a = e</strong></p>
+<hr>
+</section>
+</section>
+<section id="abelian-group" class="level1">
+<h1>40. Abelian Group</h1>
+<p>A group is Abelian if:</p>
+<p><strong>a<em>b = b</em>a</strong></p>
+<p>So:</p>
+<p><strong>Group + Commutativity = Abelian Group</strong></p>
+<hr>
+</section>
+<section id="subgroup" class="level1">
+<h1>41. Subgroup</h1>
+<p>A subset H of G is a subgroup if H forms a group under the same operation.</p>
+<p>Notation:</p>
+<p><strong>H ≤ G</strong></p>
+<hr>
+</section>
+<section id="semigroup-and-monoid" class="level1">
+<h1>42. Semigroup and Monoid</h1>
+<p>A semigroup has:</p>
+<p><strong>Closure + Associativity</strong></p>
+<p>A monoid has:</p>
+<p><strong>Closure + Associativity + Identity</strong></p>
+<p>A group has:</p>
+<p><strong>Closure + Associativity + Identity + Inverse</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Structure</th>
+<th>Closure</th>
+<th>Associative</th>
+<th>Identity</th>
+<th>Inverse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Semigroup</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Not required</td>
+<td>Not required</td>
+</tr>
+<tr class="even">
+<td>Monoid</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Not required</td>
+</tr>
+<tr class="odd">
+<td>Group</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="homomorphism" class="level1">
+<h1>43. Homomorphism</h1>
+<p>A homomorphism preserves the operation.</p>
+<p>For groups:</p>
+<p><strong>f(a<em>b) = f(a)</em>f(b)</strong></p>
+<p>It need not be one-to-one or onto.</p>
+<hr>
+</section>
+<section id="isomorphism" class="level1">
+<h1>44. Isomorphism</h1>
+<p>An isomorphism is a bijective homomorphism.</p>
+<p>It preserves the complete algebraic structure.</p>
+<p><strong>Isomorphism = Bijective + Homomorphism</strong></p>
+<hr>
+</section>
+<section id="automorphism" class="level1">
+<h1>45. Automorphism</h1>
+<p>An automorphism is an isomorphism from a structure to itself.</p>
+<p><strong>G → G</strong></p>
+<hr>
+</section>
+<section id="product-and-quotient-structures" class="level1">
+<h1>46. Product and Quotient Structures</h1>
+<p>The product of structures can be represented using ordered pairs.</p>
+<p>Example:</p>
+<p><strong>A × B</strong></p>
+<p>A quotient structure groups elements using an appropriate equivalence relation.</p>
+<p>For groups, a quotient group can be written:</p>
+<p><strong>G/N</strong></p>
+<p>where N is a normal subgroup.</p>
+<hr>
+</section>
+<section id="rings" class="level1">
+<h1>47. Rings</h1>
+<p>A ring has two operations, usually addition and multiplication.</p>
+<p>Typical properties include:</p>
+<ul>
+<li>Addition forms an Abelian group</li>
+<li>Multiplication is associative</li>
+<li>Distributive laws hold</li>
+</ul>
+<p>Integers under ordinary addition and multiplication form a ring.</p>
+<hr>
+</section>
+<section id="integral-domain" class="level1">
+<h1>48. Integral Domain</h1>
+<p>An integral domain is a commutative ring with identity and no zero divisors.</p>
+<p>A zero divisor is a non-zero element that multiplies with another non-zero element to give zero.</p>
+<hr>
+</section>
+<section id="field" class="level1">
+<h1>49. Field</h1>
+<p>A field is a commutative ring with identity where every non-zero element has a multiplicative inverse.</p>
+<p>Examples:</p>
+<ul>
+<li>Rational numbers</li>
+<li>Real numbers</li>
+<li>Complex numbers</li>
+<li>Integers modulo p when p is prime</li>
+</ul>
+<p>Important relationship:</p>
+<p><strong>Field → Integral Domain</strong></p>
+<p>The reverse is not generally true.</p>
+<hr>
+</section>
+<section id="graph-theory" class="level1">
+<h1>50. Graph Theory</h1>
+<p>A graph is represented as:</p>
+<p><strong>G = (V,E)</strong></p>
+<p>where:</p>
+<ul>
+<li>V = vertices</li>
+<li>E = edges</li>
+</ul>
+<p>Applications:</p>
+<ul>
+<li>Networks</li>
+<li>Routing</li>
+<li>Social networks</li>
+<li>Scheduling</li>
+<li>Maps</li>
+<li>Web pages</li>
+</ul>
+<hr>
+</section>
+<section id="simple-graph" class="level1">
+<h1>51. Simple Graph</h1>
+<p>A simple graph has:</p>
+<ul>
+<li>No loops</li>
+<li>No multiple edges between the same pair of vertices</li>
+</ul>
+<hr>
+</section>
+<section id="multigraph" class="level1">
+<h1>52. Multigraph</h1>
+<p>A multigraph may contain multiple edges between the same pair of vertices.</p>
+<hr>
+</section>
+<section id="weighted-graph" class="level1">
+<h1>53. Weighted Graph</h1>
+<p>A weighted graph assigns values to edges.</p>
+<p>Weights can represent:</p>
+<ul>
+<li>Distance</li>
+<li>Cost</li>
+<li>Time</li>
+<li>Capacity</li>
+</ul>
+<hr>
+</section>
+<section id="degree-and-handshaking-theorem" class="level1">
+<h1>54. Degree and Handshaking Theorem</h1>
+<p>The degree of a vertex is the number of incident edges.</p>
+<p>For an undirected graph:</p>
+<p><strong>Sum of degrees = 2 × number of edges</strong></p>
+<p>Therefore, the number of odd-degree vertices is always even.</p>
+<hr>
+</section>
+<section id="paths-and-circuits" class="level1">
+<h1>55. Paths and Circuits</h1>
+<p>A path is a sequence of connected vertices.</p>
+<p>Example:</p>
+<p><strong>A → B → C → D</strong></p>
+<p>A circuit is a closed path that starts and ends at the same vertex.</p>
+<hr>
+</section>
+<section id="eulerian-paths-and-circuits" class="level1">
+<h1>56. Eulerian Paths and Circuits</h1>
+<p>An Eulerian path uses every edge exactly once.</p>
+<p>An Eulerian circuit uses every edge exactly once and returns to the starting vertex.</p>
+<p>For a connected undirected graph:</p>
+<section id="eulerian-circuit" class="level3">
+<h3 class="anchored" data-anchor-id="eulerian-circuit">Eulerian circuit</h3>
+<p>Every vertex has even degree.</p>
+</section>
+<section id="eulerian-path-but-not-circuit" class="level3">
+<h3 class="anchored" data-anchor-id="eulerian-path-but-not-circuit">Eulerian path but not circuit</h3>
+<p>Exactly two vertices have odd degree.</p>
+</section>
+<section id="memory-4" class="level3">
+<h3 class="anchored" data-anchor-id="memory-4">Memory</h3>
+<p><strong>Euler → Edges</strong></p>
+<hr>
+</section>
+</section>
+<section id="hamiltonian-paths-and-circuits" class="level1">
+<h1>57. Hamiltonian Paths and Circuits</h1>
+<p>A Hamiltonian path visits every vertex exactly once.</p>
+<p>A Hamiltonian circuit visits every vertex exactly once and returns to the starting vertex.</p>
+<section id="memory-5" class="level3">
+<h3 class="anchored" data-anchor-id="memory-5">Memory</h3>
+<p><strong>Hamiltonian → Vertices</strong></p>
+<hr>
+</section>
+</section>
+<section id="shortest-path-algorithms" class="level1">
+<h1>58. Shortest Path Algorithms</h1>
+<section id="dijkstra" class="level2">
+<h2 class="anchored" data-anchor-id="dijkstra">Dijkstra</h2>
+<p>Used for shortest paths from one source when edge weights are non-negative.</p>
+</section>
+<section id="bellman-ford" class="level2">
+<h2 class="anchored" data-anchor-id="bellman-ford">Bellman-Ford</h2>
+<p>Can handle negative edge weights and can detect reachable negative-weight cycles.</p>
+</section>
+<section id="floyd-warshall" class="level2">
+<h2 class="anchored" data-anchor-id="floyd-warshall">Floyd-Warshall</h2>
+<p>Computes shortest paths between all pairs of vertices.</p>
+<hr>
+</section>
+</section>
+<section id="planar-graphs" class="level1">
+<h1>59. Planar Graphs</h1>
+<p>A graph is planar if it can be drawn in a plane without edge crossings except at vertices.</p>
+<p>For a connected planar graph:</p>
+<p><strong>V − E + F = 2</strong></p>
+<p>where:</p>
+<ul>
+<li>V = vertices</li>
+<li>E = edges</li>
+<li>F = faces</li>
+</ul>
+<hr>
+</section>
+<section id="graph-coloring" class="level1">
+<h1>60. Graph Coloring</h1>
+<p>Graph coloring assigns colors to vertices so adjacent vertices have different colors.</p>
+<p>The minimum number of colors required is the:</p>
+<p><strong>Chromatic number</strong></p>
+<p>Applications:</p>
+<ul>
+<li>Timetabling</li>
+<li>Frequency assignment</li>
+<li>Register allocation</li>
+<li>Map coloring</li>
+</ul>
+<hr>
+</section>
+<section id="bipartite-graphs" class="level1">
+<h1>61. Bipartite Graphs</h1>
+<p>A bipartite graph can be divided into two sets such that every edge joins a vertex in one set to a vertex in the other.</p>
+<p>Important theorem:</p>
+<blockquote class="blockquote">
+<p>A graph is bipartite if and only if it has no odd cycle.</p>
+</blockquote>
+<hr>
+</section>
+<section id="trees" class="level1">
+<h1>62. Trees</h1>
+<p>A tree is a connected undirected graph with no cycles.</p>
+<p>For a tree with n vertices:</p>
+<p><strong>Edges = n − 1</strong></p>
+<p>Important properties:</p>
+<ul>
+<li>Connected</li>
+<li>Acyclic</li>
+<li>Exactly one simple path between every pair of vertices</li>
+</ul>
+<hr>
+</section>
+<section id="rooted-trees" class="level1">
+<h1>63. Rooted Trees</h1>
+<p>A rooted tree has one designated vertex called the root.</p>
+<p>Terms:</p>
+<ul>
+<li>Root</li>
+<li>Parent</li>
+<li>Child</li>
+<li>Sibling</li>
+<li>Leaf</li>
+<li>Internal node</li>
+<li>Ancestor</li>
+<li>Descendant</li>
+<li>Level</li>
+<li>Height</li>
+</ul>
+<hr>
+</section>
+<section id="tree-traversals" class="level1">
+<h1>64. Tree Traversals</h1>
+<section id="preorder" class="level2">
+<h2 class="anchored" data-anchor-id="preorder">Preorder</h2>
+<p><strong>Root → Left → Right</strong></p>
+</section>
+<section id="inorder" class="level2">
+<h2 class="anchored" data-anchor-id="inorder">Inorder</h2>
+<p><strong>Left → Root → Right</strong></p>
+</section>
+<section id="postorder" class="level2">
+<h2 class="anchored" data-anchor-id="postorder">Postorder</h2>
+<p><strong>Left → Right → Root</strong></p>
+<p>Memory:</p>
+<ul>
+<li>Pre = root first</li>
+<li>In = root middle</li>
+<li>Post = root last</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="prefix-codes" class="level1">
+<h1>65. Prefix Codes</h1>
+<p>A prefix code is a code in which no complete codeword is the prefix of another codeword.</p>
+<p>Example:</p>
+<p>A = 0</p>
+<p>B = 10</p>
+<p>C = 11</p>
+<p>No codeword is the prefix of another.</p>
+<p>Prefix codes support unambiguous decoding.</p>
+<p>Huffman coding is a well-known application.</p>
+<hr>
+</section>
+<section id="spanning-trees" class="level1">
+<h1>66. Spanning Trees</h1>
+<p>A spanning tree:</p>
+<ul>
+<li>Contains all vertices</li>
+<li>Is connected</li>
+<li>Contains no cycle</li>
+</ul>
+<p>For n vertices:</p>
+<p><strong>Edges = n − 1</strong></p>
+<hr>
+</section>
+<section id="minimum-spanning-tree" class="level1">
+<h1>67. Minimum Spanning Tree</h1>
+<p>A minimum spanning tree has the minimum possible total edge weight.</p>
+<p>Important algorithms:</p>
+<section id="kruskal" class="level3">
+<h3 class="anchored" data-anchor-id="kruskal">Kruskal</h3>
+<ul>
+<li>Sort edges by increasing weight.</li>
+<li>Select an edge if it does not create a cycle.</li>
+<li>Continue until the tree has n−1 edges.</li>
+</ul>
+</section>
+<section id="prim" class="level3">
+<h3 class="anchored" data-anchor-id="prim">Prim</h3>
+<ul>
+<li>Start from a vertex.</li>
+<li>Repeatedly add the minimum-weight edge connecting the current tree to a new vertex.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="cut-sets" class="level1">
+<h1>68. Cut-Sets</h1>
+<p>A cut separates a graph into parts.</p>
+<p>A cut-set is a set of edges whose removal disconnects a connected graph under the relevant definition.</p>
+<p>Applications:</p>
+<ul>
+<li>Network reliability</li>
+<li>Network design</li>
+<li>Spanning trees</li>
+</ul>
+<hr>
+</section>
+<section id="boolean-algebra" class="level1">
+<h1>69. Boolean Algebra</h1>
+<p>Boolean algebra uses variables with two values:</p>
+<p><strong>0 and 1</strong></p>
+<p>It is fundamental in digital electronics and computer architecture.</p>
+<hr>
+</section>
+<section id="boolean-operations" class="level1">
+<h1>70. Boolean Operations</h1>
+<section id="and-1" class="level3">
+<h3 class="anchored" data-anchor-id="and-1">AND</h3>
+<p><strong>A · B</strong></p>
+</section>
+<section id="or-1" class="level3">
+<h3 class="anchored" data-anchor-id="or-1">OR</h3>
+<p><strong>A + B</strong></p>
+</section>
+<section id="not-1" class="level3">
+<h3 class="anchored" data-anchor-id="not-1">NOT</h3>
+<p><strong>A’</strong></p>
+<hr>
+</section>
+</section>
+<section id="boolean-laws" class="level1">
+<h1>71. Boolean Laws</h1>
+<section id="identity-2" class="level2">
+<h2 class="anchored" data-anchor-id="identity-2">Identity</h2>
+<p><strong>A + 0 = A</strong></p>
+<p><strong>A · 1 = A</strong></p>
+</section>
+<section id="null" class="level2">
+<h2 class="anchored" data-anchor-id="null">Null</h2>
+<p><strong>A + 1 = 1</strong></p>
+<p><strong>A · 0 = 0</strong></p>
+</section>
+<section id="idempotent-1" class="level2">
+<h2 class="anchored" data-anchor-id="idempotent-1">Idempotent</h2>
+<p><strong>A + A = A</strong></p>
+<p><strong>A · A = A</strong></p>
+</section>
+<section id="complement-3" class="level2">
+<h2 class="anchored" data-anchor-id="complement-3">Complement</h2>
+<p><strong>A + A’ = 1</strong></p>
+<p><strong>A · A’ = 0</strong></p>
+</section>
+<section id="involution" class="level2">
+<h2 class="anchored" data-anchor-id="involution">Involution</h2>
+<p><strong>(A’)’ = A</strong></p>
+</section>
+<section id="absorption-1" class="level2">
+<h2 class="anchored" data-anchor-id="absorption-1">Absorption</h2>
+<p><strong>A + A·B = A</strong></p>
+<p><strong>A(A+B) = A</strong></p>
+</section>
+<section id="de-morgan" class="level2">
+<h2 class="anchored" data-anchor-id="de-morgan">De Morgan</h2>
+<p><strong>(A+B)’ = A’·B’</strong></p>
+<p><strong>(A·B)’ = A’+B’</strong></p>
+<hr>
+</section>
+</section>
+<section id="boolean-functions" class="level1">
+<h1>72. Boolean Functions</h1>
+<p>A Boolean function maps Boolean inputs to a Boolean output.</p>
+<p>Example:</p>
+<p><strong>F(A,B) = A + B</strong></p>
+<p>A Boolean function can be represented using:</p>
+<ul>
+<li>Truth table</li>
+<li>Boolean expression</li>
+<li>Logic circuit</li>
+<li>Minterms</li>
+<li>Maxterms</li>
+<li>Karnaugh map</li>
+</ul>
+<hr>
+</section>
+<section id="sop-and-pos" class="level1">
+<h1>73. SOP and POS</h1>
+<section id="sum-of-products-sop" class="level2">
+<h2 class="anchored" data-anchor-id="sum-of-products-sop">Sum of Products (SOP)</h2>
+<p>OR of AND terms.</p>
+<p>Example:</p>
+<p><strong>AB + A’C</strong></p>
+</section>
+<section id="product-of-sums-pos" class="level2">
+<h2 class="anchored" data-anchor-id="product-of-sums-pos">Product of Sums (POS)</h2>
+<p>AND of OR terms.</p>
+<p>Example:</p>
+<p><strong>(A+B)(A’+C)</strong></p>
+<hr>
+</section>
+</section>
+<section id="simplification-of-boolean-functions" class="level1">
+<h1>74. Simplification of Boolean Functions</h1>
+<p>Boolean expressions can be simplified using:</p>
+<ul>
+<li>Boolean identities</li>
+<li>Algebraic manipulation</li>
+<li>Truth tables</li>
+<li>Karnaugh maps</li>
+</ul>
+<p>Simplification can reduce:</p>
+<ul>
+<li>Number of gates</li>
+<li>Circuit cost</li>
+<li>Propagation delay</li>
+<li>Hardware complexity</li>
+</ul>
+<hr>
+</section>
+<section id="optimization" class="level1">
+<h1>75. Optimization</h1>
+<p>Optimization means finding the best solution according to an objective.</p>
+<p>Examples:</p>
+<ul>
+<li>Maximum profit</li>
+<li>Minimum cost</li>
+<li>Minimum time</li>
+<li>Minimum resource usage</li>
+</ul>
+<hr>
+</section>
+<section id="linear-programming" class="level1">
+<h1>76. Linear Programming</h1>
+<p>Linear programming optimizes a linear objective function subject to linear constraints.</p>
+<p>General form:</p>
+<p><strong>Maximize or Minimize Z = c1x1 + c2x2 + … + cnxn</strong></p>
+<p>subject to linear constraints.</p>
+<p>Components:</p>
+<ol type="1">
+<li>Decision variables</li>
+<li>Objective function</li>
+<li>Constraints</li>
+<li>Non-negativity restrictions</li>
+</ol>
+<hr>
+</section>
+<section id="graphical-solution-of-lpp" class="level1">
+<h1>77. Graphical Solution of LPP</h1>
+<p>The graphical method is mainly used when there are two decision variables.</p>
+<p>Steps:</p>
+<ol type="1">
+<li>Define variables.</li>
+<li>Form objective function.</li>
+<li>Write constraints.</li>
+<li>Convert constraints into boundary lines.</li>
+<li>Plot the lines.</li>
+<li>Identify feasible region.</li>
+<li>Find corner points.</li>
+<li>Evaluate the objective function.</li>
+<li>Select the optimum point.</li>
+</ol>
+<hr>
+</section>
+<section id="feasible-and-optimal-solutions" class="level1">
+<h1>78. Feasible and Optimal Solutions</h1>
+<p>A <strong>feasible solution</strong> satisfies all constraints.</p>
+<p>The <strong>feasible region</strong> contains all feasible solutions.</p>
+<p>An <strong>optimal solution</strong> is a feasible solution giving the best objective value.</p>
+<p>For a bounded LP, an optimum occurs at an extreme point under the standard assumptions.</p>
+<hr>
+</section>
+<section id="simplex-method" class="level1">
+<h1>79. Simplex Method</h1>
+<p>The simplex method is an iterative method for solving linear programming problems.</p>
+<p>Important terms:</p>
+<ul>
+<li>Basic variable</li>
+<li>Non-basic variable</li>
+<li>Basic feasible solution</li>
+<li>Pivot</li>
+<li>Entering variable</li>
+<li>Leaving variable</li>
+<li>Slack variable</li>
+</ul>
+<p>It moves from one basic feasible solution to another while improving the objective value until an optimum is reached, when one exists.</p>
+<hr>
+</section>
+<section id="slack-surplus-and-artificial-variables" class="level1">
+<h1>80. Slack, Surplus and Artificial Variables</h1>
+<p>For:</p>
+<p><strong>x + y ≤ 10</strong></p>
+<p>add slack:</p>
+<p><strong>x + y + s = 10</strong></p>
+<p>For:</p>
+<p><strong>x + y ≥ 10</strong></p>
+<p>subtract surplus:</p>
+<p><strong>x + y − s = 10</strong></p>
+<p>Artificial variables may be required to obtain an initial basic feasible solution in certain LP forms.</p>
+<p>They are used in:</p>
+<ul>
+<li>Big-M method</li>
+<li>Two-phase method</li>
+</ul>
+<hr>
+</section>
+<section id="duality" class="level1">
+<h1>81. Duality</h1>
+<p>An LP problem has an associated dual problem.</p>
+<p>The original is called the:</p>
+<p><strong>Primal</strong></p>
+<p>and the associated problem is the:</p>
+<p><strong>Dual</strong></p>
+<p>Important relationship:</p>
+<p><strong>Primal ↔︎ Dual</strong></p>
+<p>Duality can provide useful information about optimal values and resource valuation.</p>
+<hr>
+</section>
+<section id="dual-simplex-method" class="level1">
+<h1>82. Dual Simplex Method</h1>
+<p>The dual simplex method is an LP procedure that maintains dual feasibility while moving toward primal feasibility and optimality.</p>
+<p>It is useful for particular tableau conditions and re-optimization situations.</p>
+<hr>
+</section>
+<section id="sensitivity-analysis" class="level1">
+<h1>83. Sensitivity Analysis</h1>
+<p>Sensitivity analysis studies how changes in model parameters affect the optimal solution.</p>
+<p>Parameters include:</p>
+<ul>
+<li>Objective coefficients</li>
+<li>Resource availability</li>
+<li>Constraint coefficients</li>
+</ul>
+<section id="shadow-price" class="level3">
+<h3 class="anchored" data-anchor-id="shadow-price">Shadow price</h3>
+<p>The shadow price indicates the marginal value of relaxing a resource constraint within its applicable allowable range.</p>
+<hr>
+</section>
+</section>
+<section id="integer-programming" class="level1">
+<h1>84. Integer Programming</h1>
+<p>Integer programming requires some or all decision variables to be integers.</p>
+<p>Example:</p>
+<p><strong>x, y ∈ {0,1,2,…}</strong></p>
+<p>Applications:</p>
+<ul>
+<li>Scheduling</li>
+<li>Facility location</li>
+<li>Selection</li>
+<li>Assignment</li>
+<li>Production planning</li>
+</ul>
+<hr>
+</section>
+<section id="transportation-problem" class="level1">
+<h1>85. Transportation Problem</h1>
+<p>The transportation problem determines how to ship goods from sources to destinations at minimum cost while satisfying supply and demand.</p>
+<p>Components:</p>
+<ul>
+<li>Sources</li>
+<li>Destinations</li>
+<li>Supply</li>
+<li>Demand</li>
+<li>Unit transportation costs</li>
+</ul>
+<p>Initial solutions may be found using:</p>
+<ul>
+<li>North-West Corner</li>
+<li>Least Cost Method</li>
+<li>Vogel’s Approximation Method</li>
+</ul>
+<p>Optimality can be tested using:</p>
+<ul>
+<li>MODI</li>
+<li>Stepping-stone method</li>
+</ul>
+<hr>
+</section>
+<section id="balanced-transportation-problem" class="level1">
+<h1>86. Balanced Transportation Problem</h1>
+<p>A transportation problem is balanced when:</p>
+<p><strong>Total supply = Total demand</strong></p>
+<p>If not balanced, a dummy source or destination may be added as appropriate.</p>
+<hr>
+</section>
+<section id="assignment-problem" class="level1">
+<h1>87. Assignment Problem</h1>
+<p>The assignment problem is a special allocation problem in which jobs are assigned to persons, machines, etc., generally on a one-to-one basis.</p>
+<p>Examples:</p>
+<ul>
+<li>Worker → Job</li>
+<li>Machine → Task</li>
+<li>Teacher → Subject</li>
+</ul>
+<p>A common solution method is:</p>
+<p><strong>Hungarian Method</strong></p>
+<section id="difference-1" class="level3">
+<h3 class="anchored" data-anchor-id="difference-1">Difference</h3>
+<p>Transportation:</p>
+<p><strong>Quantity can be distributed.</strong></p>
+<p>Assignment:</p>
+<p><strong>One-to-one allocation.</strong></p>
+<hr>
+</section>
+</section>
+<section id="pert" class="level1">
+<h1>88. PERT</h1>
+<p>PERT means:</p>
+<p><strong>Program Evaluation and Review Technique</strong></p>
+<p>It is useful when activity durations are uncertain.</p>
+<p>Three estimates:</p>
+<ul>
+<li>Optimistic time = a</li>
+<li>Most likely time = m</li>
+<li>Pessimistic time = b</li>
+</ul>
+<p>Expected time:</p>
+<p><strong>te = (a + 4m + b) / 6</strong></p>
+<p>Variance:</p>
+<p><strong>Variance = [(b − a) / 6]^2</strong></p>
+<hr>
+</section>
+<section id="cpm" class="level1">
+<h1>89. CPM</h1>
+<p>CPM means:</p>
+<p><strong>Critical Path Method</strong></p>
+<p>It is generally used when activity durations are treated as deterministic.</p>
+<p>CPM helps determine:</p>
+<ul>
+<li>Project duration</li>
+<li>Critical activities</li>
+<li>Float</li>
+<li>Scheduling</li>
+<li>Time-cost trade-offs</li>
+</ul>
+<hr>
+</section>
+<section id="pert-vs-cpm" class="level1">
+<h1>90. PERT vs CPM</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>PERT</th>
+<th>CPM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Probabilistic</td>
+<td>Generally deterministic</td>
+</tr>
+<tr class="even">
+<td>Three time estimates</td>
+<td>Usually one time estimate</td>
+</tr>
+<tr class="odd">
+<td>Emphasizes uncertainty</td>
+<td>Emphasizes scheduling and time-cost trade-off</td>
+</tr>
+<tr class="even">
+<td>Useful for uncertain/new projects</td>
+<td>Useful where activity times are relatively known</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="critical-path" class="level1">
+<h1>91. Critical Path</h1>
+<p>The critical path is the longest-duration path through the project network in terms of total activity duration and determines project completion time.</p>
+<p>Critical activities generally have:</p>
+<p><strong>Zero total float</strong></p>
+<p>Delay in a critical activity can delay the project unless corrective action is taken.</p>
+<hr>
+</section>
+<section id="cpm-calculations" class="level1">
+<h1>92. CPM Calculations</h1>
+<section id="earliest-start" class="level2">
+<h2 class="anchored" data-anchor-id="earliest-start">Earliest Start</h2>
+<p>ES = earliest time an activity can start.</p>
+</section>
+<section id="earliest-finish" class="level2">
+<h2 class="anchored" data-anchor-id="earliest-finish">Earliest Finish</h2>
+<p><strong>EF = ES + Duration</strong></p>
+</section>
+<section id="latest-finish" class="level2">
+<h2 class="anchored" data-anchor-id="latest-finish">Latest Finish</h2>
+<p>LF = latest time an activity can finish without delaying the project.</p>
+</section>
+<section id="latest-start" class="level2">
+<h2 class="anchored" data-anchor-id="latest-start">Latest Start</h2>
+<p><strong>LS = LF − Duration</strong></p>
+</section>
+<section id="total-float" class="level2">
+<h2 class="anchored" data-anchor-id="total-float">Total Float</h2>
+<p><strong>Float = LS − ES</strong></p>
+<p>or:</p>
+<p><strong>Float = LF − EF</strong></p>
+<p>Critical activity:</p>
+<p><strong>Float = 0</strong></p>
+<hr>
+</section>
+</section>
+<section id="resource-levelling" class="level1">
+<h1>93. Resource Levelling</h1>
+<p>Resource levelling adjusts the schedule to deal with limited or unevenly used resources.</p>
+<p>Resources may include:</p>
+<ul>
+<li>Labour</li>
+<li>Machines</li>
+<li>Equipment</li>
+<li>Materials</li>
+<li>Money</li>
+</ul>
+<p>Objectives:</p>
+<ul>
+<li>Avoid resource overload</li>
+<li>Reduce fluctuations</li>
+<li>Use resources efficiently</li>
+</ul>
+<hr>
+</section>
+<section id="project-cost-and-scheduling" class="level1">
+<h1>94. Project Cost and Scheduling</h1>
+<p>Project scheduling involves trade-offs among:</p>
+<ul>
+<li>Time</li>
+<li>Direct cost</li>
+<li>Indirect cost</li>
+</ul>
+<section id="crashing" class="level2">
+<h2 class="anchored" data-anchor-id="crashing">Crashing</h2>
+<p>Crashing reduces project duration by spending additional resources.</p>
+<p>Usually:</p>
+<p><strong>Shorter time → Higher direct cost</strong></p>
+<hr>
+</section>
+</section>
+<section id="normal-and-crash-time" class="level1">
+<h1>95. Normal and Crash Time</h1>
+<section id="normal-time" class="level3">
+<h3 class="anchored" data-anchor-id="normal-time">Normal time</h3>
+<p>Usual completion time.</p>
+</section>
+<section id="crash-time" class="level3">
+<h3 class="anchored" data-anchor-id="crash-time">Crash time</h3>
+<p>Shortest practical completion time.</p>
+</section>
+<section id="normal-cost" class="level3">
+<h3 class="anchored" data-anchor-id="normal-cost">Normal cost</h3>
+<p>Cost at normal duration.</p>
+</section>
+<section id="crash-cost" class="level3">
+<h3 class="anchored" data-anchor-id="crash-cost">Crash cost</h3>
+<p>Cost at crash duration.</p>
+</section>
+<section id="cost-slope" class="level2">
+<h2 class="anchored" data-anchor-id="cost-slope">Cost slope</h2>
+<p><strong>Cost slope = (Crash Cost − Normal Cost) / (Normal Time − Crash Time)</strong></p>
+<p>It represents additional cost per unit reduction in activity time.</p>
+<hr>
+</section>
+</section>
+<section id="important-comparison-tables" class="level1">
+<h1>96. Important Comparison Tables</h1>
+<section id="logic" class="level2">
+<h2 class="anchored" data-anchor-id="logic">Logic</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Proposition</td>
+<td>True or false statement</td>
+</tr>
+<tr class="even">
+<td>Tautology</td>
+<td>Always true</td>
+</tr>
+<tr class="odd">
+<td>Contradiction</td>
+<td>Always false</td>
+</tr>
+<tr class="even">
+<td>Contingency</td>
+<td>Sometimes true</td>
+</tr>
+<tr class="odd">
+<td>Predicate</td>
+<td>Statement involving variables</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="relations-1" class="level2">
+<h2 class="anchored" data-anchor-id="relations-1">Relations</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Relation</th>
+<th>Required properties</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Equivalence</td>
+<td>Reflexive + Symmetric + Transitive</td>
+</tr>
+<tr class="even">
+<td>Partial order</td>
+<td>Reflexive + Antisymmetric + Transitive</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="counting-1" class="level2">
+<h2 class="anchored" data-anchor-id="counting-1">Counting</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Key idea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Permutation</td>
+<td>Order matters</td>
+</tr>
+<tr class="even">
+<td>Combination</td>
+<td>Order does not matter</td>
+</tr>
+<tr class="odd">
+<td>Pigeonhole</td>
+<td>More objects than boxes</td>
+</tr>
+<tr class="even">
+<td>Inclusion-exclusion</td>
+<td>Correct overlapping counts</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="algebraic-structures" class="level2">
+<h2 class="anchored" data-anchor-id="algebraic-structures">Algebraic Structures</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Structure</th>
+<th>Main properties</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Semigroup</td>
+<td>Closure + Associativity</td>
+</tr>
+<tr class="even">
+<td>Monoid</td>
+<td>Semigroup + Identity</td>
+</tr>
+<tr class="odd">
+<td>Group</td>
+<td>Monoid + Inverses</td>
+</tr>
+<tr class="even">
+<td>Abelian Group</td>
+<td>Group + Commutativity</td>
+</tr>
+<tr class="odd">
+<td>Ring</td>
+<td>Two operations with ring properties</td>
+</tr>
+<tr class="even">
+<td>Integral Domain</td>
+<td>Commutative ring with identity + no zero divisors</td>
+</tr>
+<tr class="odd">
+<td>Field</td>
+<td>Every non-zero element has multiplicative inverse</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="graph-theory-1" class="level2">
+<h2 class="anchored" data-anchor-id="graph-theory-1">Graph Theory</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Euler</td>
+<td>Edges</td>
+</tr>
+<tr class="even">
+<td>Hamiltonian</td>
+<td>Vertices</td>
+</tr>
+<tr class="odd">
+<td>Tree</td>
+<td>Connected + Acyclic</td>
+</tr>
+<tr class="even">
+<td>Tree with n vertices</td>
+<td>n−1 edges</td>
+</tr>
+<tr class="odd">
+<td>Bipartite</td>
+<td>No odd cycle</td>
+</tr>
+<tr class="even">
+<td>Planar</td>
+<td>Can be drawn without crossings</td>
+</tr>
+<tr class="odd">
+<td>MST</td>
+<td>Minimum total spanning weight</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="important-formula-sheet" class="level1">
+<h1>97. Important Formula Sheet</h1>
+<section id="logic-1" class="level2">
+<h2 class="anchored" data-anchor-id="logic-1">Logic</h2>
+<p><strong>Truth-table rows = 2^n</strong></p>
+</section>
+<section id="sets-1" class="level2">
+<h2 class="anchored" data-anchor-id="sets-1">Sets</h2>
+<p><strong>Subsets of n-element set = 2^n</strong></p>
+</section>
+<section id="inclusion-exclusion" class="level2">
+<h2 class="anchored" data-anchor-id="inclusion-exclusion">Inclusion-exclusion</h2>
+<p><strong>|A ∪ B| = |A| + |B| − |A ∩ B|</strong></p>
+</section>
+<section id="permutation" class="level2">
+<h2 class="anchored" data-anchor-id="permutation">Permutation</h2>
+<p><strong>nPr = n! / (n−r)!</strong></p>
+</section>
+<section id="combination" class="level2">
+<h2 class="anchored" data-anchor-id="combination">Combination</h2>
+<p><strong>nCr = n! / [r!(n−r)!]</strong></p>
+</section>
+<section id="probability" class="level2">
+<h2 class="anchored" data-anchor-id="probability">Probability</h2>
+<p><strong>P(A) = Favorable outcomes / Total outcomes</strong></p>
+</section>
+<section id="conditional-probability-1" class="level2">
+<h2 class="anchored" data-anchor-id="conditional-probability-1">Conditional probability</h2>
+<p><strong>P(A|B) = P(A ∩ B) / P(B)</strong></p>
+</section>
+<section id="bayes" class="level2">
+<h2 class="anchored" data-anchor-id="bayes">Bayes</h2>
+<p><strong>P(A|B) = P(B|A)P(A) / P(B)</strong></p>
+</section>
+<section id="tree" class="level2">
+<h2 class="anchored" data-anchor-id="tree">Tree</h2>
+<p><strong>Edges = Vertices − 1</strong></p>
+</section>
+<section id="planar-graph" class="level2">
+<h2 class="anchored" data-anchor-id="planar-graph">Planar graph</h2>
+<p><strong>V − E + F = 2</strong></p>
+</section>
+<section id="pert-1" class="level2">
+<h2 class="anchored" data-anchor-id="pert-1">PERT</h2>
+<p><strong>te = (a + 4m + b) / 6</strong></p>
+<p><strong>Variance = [(b − a) / 6]^2</strong></p>
+</section>
+<section id="cpm-1" class="level2">
+<h2 class="anchored" data-anchor-id="cpm-1">CPM</h2>
+<p><strong>EF = ES + Duration</strong></p>
+<p><strong>LS = LF − Duration</strong></p>
+<p><strong>Float = LS − ES</strong></p>
+</section>
+<section id="crashing-1" class="level2">
+<h2 class="anchored" data-anchor-id="crashing-1">Crashing</h2>
+<p><strong>Cost slope = (Crash Cost − Normal Cost) / (Normal Time − Crash Time)</strong></p>
+<hr>
+</section>
+</section>
+<section id="common-ugc-net-mistakes" class="level1">
+<h1>98. Common UGC NET Mistakes</h1>
+<section id="mistake-1-implication" class="level2">
+<h2 class="anchored" data-anchor-id="mistake-1-implication">Mistake 1: Implication</h2>
+<p>Do not assume p → q is false whenever p is false.</p>
+<p>It is false only for:</p>
+<p><strong>p = T, q = F</strong></p>
+</section>
+<section id="mistake-2-permutation-vs-combination" class="level2">
+<h2 class="anchored" data-anchor-id="mistake-2-permutation-vs-combination">Mistake 2: Permutation vs Combination</h2>
+<p><strong>Arrangement → Permutation</strong></p>
+<p><strong>Selection → Combination</strong></p>
+</section>
+<section id="mistake-3-equivalence-vs-partial-order" class="level2">
+<h2 class="anchored" data-anchor-id="mistake-3-equivalence-vs-partial-order">Mistake 3: Equivalence vs Partial Order</h2>
+<p><strong>Equivalence → RST</strong></p>
+<p><strong>Partial order → RAT</strong></p>
+</section>
+<section id="mistake-4-euler-vs-hamiltonian" class="level2">
+<h2 class="anchored" data-anchor-id="mistake-4-euler-vs-hamiltonian">Mistake 4: Euler vs Hamiltonian</h2>
+<p><strong>Euler → Edges</strong></p>
+<p><strong>Hamiltonian → Vertices</strong></p>
+</section>
+<section id="mistake-5-tree" class="level2">
+<h2 class="anchored" data-anchor-id="mistake-5-tree">Mistake 5: Tree</h2>
+<p>A connected graph is not automatically a tree.</p>
+<p>A tree must be:</p>
+<p><strong>Connected + Acyclic</strong></p>
+</section>
+<section id="mistake-6-homomorphism-vs-isomorphism" class="level2">
+<h2 class="anchored" data-anchor-id="mistake-6-homomorphism-vs-isomorphism">Mistake 6: Homomorphism vs Isomorphism</h2>
+<p>Homomorphism preserves structure.</p>
+<p>Isomorphism is a bijective structure-preserving mapping.</p>
+</section>
+<section id="mistake-7-pert-vs-cpm" class="level2">
+<h2 class="anchored" data-anchor-id="mistake-7-pert-vs-cpm">Mistake 7: PERT vs CPM</h2>
+<p><strong>PERT → Three estimates</strong></p>
+<p><strong>CPM → Generally deterministic times</strong></p>
+</section>
+<section id="mistake-8-transportation-vs-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="mistake-8-transportation-vs-assignment">Mistake 8: Transportation vs Assignment</h2>
+<p><strong>Transportation → Distribution</strong></p>
+<p><strong>Assignment → One-to-one allocation</strong></p>
+<hr>
+</section>
+</section>
+<section id="ugc-net-high-priority-topics" class="level1">
+<h1>99. UGC NET High-Priority Topics</h1>
+<section id="mathematical-logic-1" class="level3">
+<h3 class="anchored" data-anchor-id="mathematical-logic-1">Mathematical Logic</h3>
+<ul>
+<li>Truth tables</li>
+<li>Logical equivalence</li>
+<li>Implication</li>
+<li>De Morgan’s laws</li>
+<li>CNF and DNF</li>
+<li>Quantifiers</li>
+<li>Nested quantifiers</li>
+<li>Rules of inference</li>
+</ul>
+</section>
+<section id="sets-and-relations" class="level3">
+<h3 class="anchored" data-anchor-id="sets-and-relations">Sets and Relations</h3>
+<ul>
+<li>Set operations</li>
+<li>Power sets</li>
+<li>Cartesian products</li>
+<li>Relation properties</li>
+<li>Equivalence relations</li>
+<li>Partial orders</li>
+</ul>
+</section>
+<section id="counting-and-probability" class="level3">
+<h3 class="anchored" data-anchor-id="counting-and-probability">Counting and Probability</h3>
+<ul>
+<li>Pigeonhole principle</li>
+<li>Permutations</li>
+<li>Combinations</li>
+<li>Inclusion-exclusion</li>
+<li>Mathematical induction</li>
+<li>Conditional probability</li>
+<li>Bayes theorem</li>
+</ul>
+</section>
+<section id="group-theory-1" class="level3">
+<h3 class="anchored" data-anchor-id="group-theory-1">Group Theory</h3>
+<ul>
+<li>Group axioms</li>
+<li>Subgroups</li>
+<li>Semigroups</li>
+<li>Homomorphism</li>
+<li>Isomorphism</li>
+<li>Automorphism</li>
+<li>Rings</li>
+<li>Integral domains</li>
+<li>Fields</li>
+</ul>
+</section>
+<section id="graph-theory-2" class="level3">
+<h3 class="anchored" data-anchor-id="graph-theory-2">Graph Theory</h3>
+<ul>
+<li>Degree</li>
+<li>Euler</li>
+<li>Hamiltonian</li>
+<li>Shortest path</li>
+<li>Planarity</li>
+<li>Coloring</li>
+<li>Bipartite graphs</li>
+<li>Trees</li>
+<li>Traversals</li>
+<li>Spanning trees</li>
+<li>Minimum spanning trees</li>
+</ul>
+</section>
+<section id="boolean-algebra-1" class="level3">
+<h3 class="anchored" data-anchor-id="boolean-algebra-1">Boolean Algebra</h3>
+<ul>
+<li>Boolean laws</li>
+<li>De Morgan’s laws</li>
+<li>SOP</li>
+<li>POS</li>
+<li>Minterms</li>
+<li>Maxterms</li>
+<li>Simplification</li>
+</ul>
+</section>
+<section id="optimization-1" class="level3">
+<h3 class="anchored" data-anchor-id="optimization-1">Optimization</h3>
+<ul>
+<li>LPP formulation</li>
+<li>Graphical method</li>
+<li>Simplex</li>
+<li>Duality</li>
+<li>Sensitivity analysis</li>
+<li>Integer programming</li>
+<li>Transportation</li>
+<li>Assignment</li>
+<li>PERT</li>
+<li>CPM</li>
+<li>Critical path</li>
+<li>Resource levelling</li>
+<li>Crashing</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="final-revision-map" class="level1">
+<h1>100. Final Revision Map</h1>
+<section id="mathematical-logic-2" class="level2">
+<h2 class="anchored" data-anchor-id="mathematical-logic-2">Mathematical Logic</h2>
+<p><strong>Proposition → Connectives → Truth Tables → Equivalence → Normal Forms → Quantifiers → Inference</strong></p>
+</section>
+<section id="sets-and-relations-1" class="level2">
+<h2 class="anchored" data-anchor-id="sets-and-relations-1">Sets and Relations</h2>
+<p><strong>Sets → Operations → Relations → Properties → Equivalence → Partial Order</strong></p>
+</section>
+<section id="counting-and-probability-1" class="level2">
+<h2 class="anchored" data-anchor-id="counting-and-probability-1">Counting and Probability</h2>
+<p><strong>Counting → Pigeonhole → Permutation → Combination → Inclusion-Exclusion → Induction → Probability → Bayes</strong></p>
+</section>
+<section id="group-theory-2" class="level2">
+<h2 class="anchored" data-anchor-id="group-theory-2">Group Theory</h2>
+<p><strong>Binary Operation → Semigroup → Monoid → Group → Abelian Group → Subgroup → Homomorphism → Isomorphism → Automorphism → Ring → Integral Domain → Field</strong></p>
+</section>
+<section id="graph-theory-3" class="level2">
+<h2 class="anchored" data-anchor-id="graph-theory-3">Graph Theory</h2>
+<p><strong>Graph → Path → Circuit → Euler → Hamiltonian → Planar → Coloring → Bipartite → Tree → Traversal → Spanning Tree → MST</strong></p>
+</section>
+<section id="boolean-algebra-2" class="level2">
+<h2 class="anchored" data-anchor-id="boolean-algebra-2">Boolean Algebra</h2>
+<p><strong>Boolean Variables → Operations → Laws → Functions → SOP/POS → Simplification</strong></p>
+</section>
+<section id="optimization-2" class="level2">
+<h2 class="anchored" data-anchor-id="optimization-2">Optimization</h2>
+<p><strong>LPP → Graphical → Simplex → Duality → Sensitivity → Integer Programming → Transportation → Assignment → PERT → CPM → Resources → Cost</strong></p>
+<hr>
+</section>
+</section>
+<section id="final-exam-strategy" class="level1">
+<h1>101. Final Exam Strategy</h1>
+<p>Do not study this unit only by memorizing definitions.</p>
+<p>Use three levels:</p>
+<section id="level-1-understand" class="level3">
+<h3 class="anchored" data-anchor-id="level-1-understand">Level 1 – Understand</h3>
+<p>Know what each concept means.</p>
+</section>
+<section id="level-2-memorize" class="level3">
+<h3 class="anchored" data-anchor-id="level-2-memorize">Level 2 – Memorize</h3>
+<p>Learn:</p>
+<ul>
+<li>Formulas</li>
+<li>Conditions</li>
+<li>Properties</li>
+<li>Algorithms</li>
+<li>Differences</li>
+</ul>
+</section>
+<section id="level-3-practice" class="level3">
+<h3 class="anchored" data-anchor-id="level-3-practice">Level 3 – Practice</h3>
+<p>Solve:</p>
+<ul>
+<li>Truth-table problems</li>
+<li>Quantifier problems</li>
+<li>Counting problems</li>
+<li>Probability problems</li>
+<li>Group-theory questions</li>
+<li>Graph problems</li>
+<li>Boolean simplification</li>
+<li>LPP problems</li>
+<li>Transportation and assignment problems</li>
+<li>PERT/CPM problems</li>
+</ul>
+<p>The best sequence is:</p>
+<p><strong>Understand → Memorize → Solve → Revise</strong></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

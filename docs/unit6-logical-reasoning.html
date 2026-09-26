@@ -1,0 +1,2838 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit VI – Logical Reasoning – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper1.html" aria-current="page"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper2.html"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit6-logical-reasoning.html">Unit VI – Logical Reasoning</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 1 Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-teaching-aptitude.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Teaching Aptitude</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-research-aptitude.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Research Aptitude</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-comprehension.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Comprehension</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Communication</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-mathematical-reasoning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – Mathematical Reasoning and Aptitude</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-logical-reasoning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit VI – Logical Reasoning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Interpretation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-information-and-communication-technology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Information and Communication Technology (ICT)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-people-development-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – People, Development and Environment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-higher-education-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Higher Education System</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#what-is-logic" id="toc-what-is-logic" class="nav-link" data-scroll-target="#what-is-logic">2. What is Logic?</a>
+  <ul class="collapse">
+  <li><a href="#simple-meaning" id="toc-simple-meaning" class="nav-link" data-scroll-target="#simple-meaning">Simple meaning</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#argument" id="toc-argument" class="nav-link" data-scroll-target="#argument">3. Argument</a>
+  <ul class="collapse">
+  <li><a href="#premise" id="toc-premise" class="nav-link" data-scroll-target="#premise">Premise</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  </ul></li>
+  <li><a href="#how-to-identify-the-conclusion" id="toc-how-to-identify-the-conclusion" class="nav-link" data-scroll-target="#how-to-identify-the-conclusion">4. How to Identify the Conclusion</a>
+  <ul class="collapse">
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  </ul></li>
+  <li><a href="#how-to-identify-premises" id="toc-how-to-identify-premises" class="nav-link" data-scroll-target="#how-to-identify-premises">5. How to Identify Premises</a>
+  <ul class="collapse">
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
+  </ul></li>
+  <li><a href="#structure-of-an-argument" id="toc-structure-of-an-argument" class="nav-link" data-scroll-target="#structure-of-an-argument">6. Structure of an Argument</a>
+  <ul class="collapse">
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
+  </ul></li>
+  <li><a href="#argument-forms" id="toc-argument-forms" class="nav-link" data-scroll-target="#argument-forms">7. Argument Forms</a>
+  <ul class="collapse">
+  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
+  </ul></li>
+  <li><a href="#modus-ponens" id="toc-modus-ponens" class="nav-link" data-scroll-target="#modus-ponens">8. Modus Ponens</a>
+  <ul class="collapse">
+  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example</a></li>
+  <li><a href="#key-point" id="toc-key-point" class="nav-link" data-scroll-target="#key-point">Key Point</a></li>
+  </ul></li>
+  <li><a href="#modus-tollens" id="toc-modus-tollens" class="nav-link" data-scroll-target="#modus-tollens">9. Modus Tollens</a>
+  <ul class="collapse">
+  <li><a href="#example-7" id="toc-example-7" class="nav-link" data-scroll-target="#example-7">Example</a></li>
+  <li><a href="#key-point-1" id="toc-key-point-1" class="nav-link" data-scroll-target="#key-point-1">Key Point</a></li>
+  </ul></li>
+  <li><a href="#categorical-proposition" id="toc-categorical-proposition" class="nav-link" data-scroll-target="#categorical-proposition">10. Categorical Proposition</a>
+  <ul class="collapse">
+  <li><a href="#example-8" id="toc-example-8" class="nav-link" data-scroll-target="#example-8">Example</a></li>
+  </ul></li>
+  <li><a href="#four-types-of-categorical-propositions" id="toc-four-types-of-categorical-propositions" class="nav-link" data-scroll-target="#four-types-of-categorical-propositions">11. Four Types of Categorical Propositions</a></li>
+  <li><a href="#a-proposition-universal-affirmative" id="toc-a-proposition-universal-affirmative" class="nav-link" data-scroll-target="#a-proposition-universal-affirmative">12. A Proposition – Universal Affirmative</a>
+  <ul class="collapse">
+  <li><a href="#symbolic-form" id="toc-symbolic-form" class="nav-link" data-scroll-target="#symbolic-form">Symbolic form</a></li>
+  </ul></li>
+  <li><a href="#e-proposition-universal-negative" id="toc-e-proposition-universal-negative" class="nav-link" data-scroll-target="#e-proposition-universal-negative">13. E Proposition – Universal Negative</a></li>
+  <li><a href="#i-proposition-particular-affirmative" id="toc-i-proposition-particular-affirmative" class="nav-link" data-scroll-target="#i-proposition-particular-affirmative">14. I Proposition – Particular Affirmative</a></li>
+  <li><a href="#o-proposition-particular-negative" id="toc-o-proposition-particular-negative" class="nav-link" data-scroll-target="#o-proposition-particular-negative">15. O Proposition – Particular Negative</a></li>
+  <li><a href="#easy-way-to-remember-a-e-i-and-o" id="toc-easy-way-to-remember-a-e-i-and-o" class="nav-link" data-scroll-target="#easy-way-to-remember-a-e-i-and-o">16. Easy Way to Remember A, E, I and O</a>
+  <ul class="collapse">
+  <li><a href="#memory-trick" id="toc-memory-trick" class="nav-link" data-scroll-target="#memory-trick">Memory Trick</a></li>
+  </ul></li>
+  <li><a href="#subject-and-predicate" id="toc-subject-and-predicate" class="nav-link" data-scroll-target="#subject-and-predicate">17. Subject and Predicate</a></li>
+  <li><a href="#distribution-of-terms" id="toc-distribution-of-terms" class="nav-link" data-scroll-target="#distribution-of-terms">18. Distribution of Terms</a>
+  <ul class="collapse">
+  <li><a href="#easy-memory" id="toc-easy-memory" class="nav-link" data-scroll-target="#easy-memory">Easy memory</a></li>
+  </ul></li>
+  <li><a href="#mood-of-a-categorical-syllogism" id="toc-mood-of-a-categorical-syllogism" class="nav-link" data-scroll-target="#mood-of-a-categorical-syllogism">19. Mood of a Categorical Syllogism</a>
+  <ul class="collapse">
+  <li><a href="#example-9" id="toc-example-9" class="nav-link" data-scroll-target="#example-9">Example</a></li>
+  </ul></li>
+  <li><a href="#figure-of-a-categorical-syllogism" id="toc-figure-of-a-categorical-syllogism" class="nav-link" data-scroll-target="#figure-of-a-categorical-syllogism">20. Figure of a Categorical Syllogism</a>
+  <ul class="collapse">
+  <li><a href="#figure-1" id="toc-figure-1" class="nav-link" data-scroll-target="#figure-1">Figure 1</a></li>
+  <li><a href="#figure-2" id="toc-figure-2" class="nav-link" data-scroll-target="#figure-2">Figure 2</a></li>
+  <li><a href="#figure-3" id="toc-figure-3" class="nav-link" data-scroll-target="#figure-3">Figure 3</a></li>
+  <li><a href="#figure-4" id="toc-figure-4" class="nav-link" data-scroll-target="#figure-4">Figure 4</a></li>
+  <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">Important</a></li>
+  </ul></li>
+  <li><a href="#mood-and-figure" id="toc-mood-and-figure" class="nav-link" data-scroll-target="#mood-and-figure">21. Mood and Figure</a></li>
+  <li><a href="#deductive-reasoning" id="toc-deductive-reasoning" class="nav-link" data-scroll-target="#deductive-reasoning">22. Deductive Reasoning</a></li>
+  <li><a href="#inductive-reasoning" id="toc-inductive-reasoning" class="nav-link" data-scroll-target="#inductive-reasoning">23. Inductive Reasoning</a></li>
+  <li><a href="#deductive-vs-inductive-reasoning" id="toc-deductive-vs-inductive-reasoning" class="nav-link" data-scroll-target="#deductive-vs-inductive-reasoning">24. Deductive vs Inductive Reasoning</a></li>
+  <li><a href="#formal-fallacy" id="toc-formal-fallacy" class="nav-link" data-scroll-target="#formal-fallacy">25. Formal Fallacy</a>
+  <ul class="collapse">
+  <li><a href="#example-10" id="toc-example-10" class="nav-link" data-scroll-target="#example-10">Example</a></li>
+  </ul></li>
+  <li><a href="#informal-fallacy" id="toc-informal-fallacy" class="nav-link" data-scroll-target="#informal-fallacy">26. Informal Fallacy</a></li>
+  <li><a href="#ad-hominem" id="toc-ad-hominem" class="nav-link" data-scroll-target="#ad-hominem">27. Ad Hominem</a>
+  <ul class="collapse">
+  <li><a href="#example-11" id="toc-example-11" class="nav-link" data-scroll-target="#example-11">Example</a></li>
+  <li><a href="#key-point-2" id="toc-key-point-2" class="nav-link" data-scroll-target="#key-point-2">Key Point</a></li>
+  </ul></li>
+  <li><a href="#hasty-generalization" id="toc-hasty-generalization" class="nav-link" data-scroll-target="#hasty-generalization">28. Hasty Generalization</a>
+  <ul class="collapse">
+  <li><a href="#example-12" id="toc-example-12" class="nav-link" data-scroll-target="#example-12">Example</a></li>
+  </ul></li>
+  <li><a href="#appeal-to-authority" id="toc-appeal-to-authority" class="nav-link" data-scroll-target="#appeal-to-authority">29. Appeal to Authority</a>
+  <ul class="collapse">
+  <li><a href="#example-13" id="toc-example-13" class="nav-link" data-scroll-target="#example-13">Example</a></li>
+  </ul></li>
+  <li><a href="#straw-man-fallacy" id="toc-straw-man-fallacy" class="nav-link" data-scroll-target="#straw-man-fallacy">30. Straw Man Fallacy</a>
+  <ul class="collapse">
+  <li><a href="#example-14" id="toc-example-14" class="nav-link" data-scroll-target="#example-14">Example</a></li>
+  </ul></li>
+  <li><a href="#false-cause" id="toc-false-cause" class="nav-link" data-scroll-target="#false-cause">31. False Cause</a>
+  <ul class="collapse">
+  <li><a href="#example-15" id="toc-example-15" class="nav-link" data-scroll-target="#example-15">Example</a></li>
+  </ul></li>
+  <li><a href="#uses-of-language" id="toc-uses-of-language" class="nav-link" data-scroll-target="#uses-of-language">32. Uses of Language</a>
+  <ul class="collapse">
+  <li><a href="#informative" id="toc-informative" class="nav-link" data-scroll-target="#informative">1. Informative</a></li>
+  <li><a href="#expressive" id="toc-expressive" class="nav-link" data-scroll-target="#expressive">2. Expressive</a></li>
+  <li><a href="#directive" id="toc-directive" class="nav-link" data-scroll-target="#directive">3. Directive</a></li>
+  <li><a href="#performative" id="toc-performative" class="nav-link" data-scroll-target="#performative">4. Performative</a></li>
+  </ul></li>
+  <li><a href="#denotation" id="toc-denotation" class="nav-link" data-scroll-target="#denotation">33. Denotation</a></li>
+  <li><a href="#connotation" id="toc-connotation" class="nav-link" data-scroll-target="#connotation">34. Connotation</a>
+  <ul class="collapse">
+  <li><a href="#easy-difference" id="toc-easy-difference" class="nav-link" data-scroll-target="#easy-difference">Easy difference</a></li>
+  </ul></li>
+  <li><a href="#denotation-vs-connotation" id="toc-denotation-vs-connotation" class="nav-link" data-scroll-target="#denotation-vs-connotation">35. Denotation vs Connotation</a></li>
+  <li><a href="#classical-square-of-opposition" id="toc-classical-square-of-opposition" class="nav-link" data-scroll-target="#classical-square-of-opposition">36. Classical Square of Opposition</a></li>
+  <li><a href="#contradictory-propositions" id="toc-contradictory-propositions" class="nav-link" data-scroll-target="#contradictory-propositions">37. Contradictory Propositions</a></li>
+  <li><a href="#contrary-propositions" id="toc-contrary-propositions" class="nav-link" data-scroll-target="#contrary-propositions">38. Contrary Propositions</a></li>
+  <li><a href="#subcontrary-propositions" id="toc-subcontrary-propositions" class="nav-link" data-scroll-target="#subcontrary-propositions">39. Subcontrary Propositions</a></li>
+  <li><a href="#subalternation" id="toc-subalternation" class="nav-link" data-scroll-target="#subalternation">40. Subalternation</a>
+  <ul class="collapse">
+  <li><a href="#traditional-rule" id="toc-traditional-rule" class="nav-link" data-scroll-target="#traditional-rule">Traditional rule</a></li>
+  </ul></li>
+  <li><a href="#square-of-opposition-quick-revision" id="toc-square-of-opposition-quick-revision" class="nav-link" data-scroll-target="#square-of-opposition-quick-revision">41. Square of Opposition – Quick Revision</a>
+  <ul class="collapse">
+  <li><a href="#memory-trick-1" id="toc-memory-trick-1" class="nav-link" data-scroll-target="#memory-trick-1">Memory Trick</a></li>
+  </ul></li>
+  <li><a href="#analogical-reasoning" id="toc-analogical-reasoning" class="nav-link" data-scroll-target="#analogical-reasoning">42. Analogical Reasoning</a></li>
+  <li><a href="#how-to-solve-analogy-questions" id="toc-how-to-solve-analogy-questions" class="nav-link" data-scroll-target="#how-to-solve-analogy-questions">43. How to Solve Analogy Questions</a>
+  <ul class="collapse">
+  <li><a href="#step-1" id="toc-step-1" class="nav-link" data-scroll-target="#step-1">Step 1</a></li>
+  <li><a href="#step-2" id="toc-step-2" class="nav-link" data-scroll-target="#step-2">Step 2</a></li>
+  <li><a href="#step-3" id="toc-step-3" class="nav-link" data-scroll-target="#step-3">Step 3</a></li>
+  <li><a href="#example-16" id="toc-example-16" class="nav-link" data-scroll-target="#example-16">Example</a></li>
+  </ul></li>
+  <li><a href="#venn-diagrams" id="toc-venn-diagrams" class="nav-link" data-scroll-target="#venn-diagrams">44. Venn Diagrams</a></li>
+  <li><a href="#venn-diagram-all-s-are-p" id="toc-venn-diagram-all-s-are-p" class="nav-link" data-scroll-target="#venn-diagram-all-s-are-p">45. Venn Diagram – All S are P</a></li>
+  <li><a href="#venn-diagram-no-s-are-p" id="toc-venn-diagram-no-s-are-p" class="nav-link" data-scroll-target="#venn-diagram-no-s-are-p">46. Venn Diagram – No S are P</a></li>
+  <li><a href="#venn-diagram-some-s-are-p" id="toc-venn-diagram-some-s-are-p" class="nav-link" data-scroll-target="#venn-diagram-some-s-are-p">47. Venn Diagram – Some S are P</a></li>
+  <li><a href="#venn-diagram-some-s-are-not-p" id="toc-venn-diagram-some-s-are-not-p" class="nav-link" data-scroll-target="#venn-diagram-some-s-are-not-p">48. Venn Diagram – Some S are Not P</a></li>
+  <li><a href="#using-venn-diagrams-to-test-arguments" id="toc-using-venn-diagrams-to-test-arguments" class="nav-link" data-scroll-target="#using-venn-diagrams-to-test-arguments">49. Using Venn Diagrams to Test Arguments</a></li>
+  <li><a href="#simple-and-multiple-venn-diagrams" id="toc-simple-and-multiple-venn-diagrams" class="nav-link" data-scroll-target="#simple-and-multiple-venn-diagrams">50. Simple and Multiple Venn Diagrams</a>
+  <ul class="collapse">
+  <li><a href="#simple-venn-diagram" id="toc-simple-venn-diagram" class="nav-link" data-scroll-target="#simple-venn-diagram">Simple Venn Diagram</a></li>
+  <li><a href="#multiple-venn-diagram" id="toc-multiple-venn-diagram" class="nav-link" data-scroll-target="#multiple-venn-diagram">Multiple Venn Diagram</a></li>
+  </ul></li>
+  <li><a href="#indian-logic" id="toc-indian-logic" class="nav-link" data-scroll-target="#indian-logic">51. Indian Logic</a></li>
+  <li><a href="#meaning-of-pramana" id="toc-meaning-of-pramana" class="nav-link" data-scroll-target="#meaning-of-pramana">52. Meaning of Pramana</a></li>
+  <li><a href="#six-pramanas" id="toc-six-pramanas" class="nav-link" data-scroll-target="#six-pramanas">53. Six Pramanas</a></li>
+  <li><a href="#pratyaksha-perception" id="toc-pratyaksha-perception" class="nav-link" data-scroll-target="#pratyaksha-perception">54. Pratyaksha – Perception</a>
+  <ul class="collapse">
+  <li><a href="#example-17" id="toc-example-17" class="nav-link" data-scroll-target="#example-17">Example</a></li>
+  </ul></li>
+  <li><a href="#anumana-inference" id="toc-anumana-inference" class="nav-link" data-scroll-target="#anumana-inference">55. Anumana – Inference</a>
+  <ul class="collapse">
+  <li><a href="#famous-example" id="toc-famous-example" class="nav-link" data-scroll-target="#famous-example">Famous example</a></li>
+  </ul></li>
+  <li><a href="#upamana-comparison" id="toc-upamana-comparison" class="nav-link" data-scroll-target="#upamana-comparison">56. Upamana – Comparison</a>
+  <ul class="collapse">
+  <li><a href="#example-18" id="toc-example-18" class="nav-link" data-scroll-target="#example-18">Example</a></li>
+  <li><a href="#key-point-3" id="toc-key-point-3" class="nav-link" data-scroll-target="#key-point-3">Key Point</a></li>
+  </ul></li>
+  <li><a href="#shabda-verbal-testimony" id="toc-shabda-verbal-testimony" class="nav-link" data-scroll-target="#shabda-verbal-testimony">57. Shabda – Verbal Testimony</a>
+  <ul class="collapse">
+  <li><a href="#example-19" id="toc-example-19" class="nav-link" data-scroll-target="#example-19">Example</a></li>
+  <li><a href="#key-point-4" id="toc-key-point-4" class="nav-link" data-scroll-target="#key-point-4">Key Point</a></li>
+  </ul></li>
+  <li><a href="#arthapatti-implication-postulation" id="toc-arthapatti-implication-postulation" class="nav-link" data-scroll-target="#arthapatti-implication-postulation">58. Arthapatti – Implication / Postulation</a>
+  <ul class="collapse">
+  <li><a href="#simple-example" id="toc-simple-example" class="nav-link" data-scroll-target="#simple-example">Simple example</a></li>
+  <li><a href="#key-point-5" id="toc-key-point-5" class="nav-link" data-scroll-target="#key-point-5">Key Point</a></li>
+  </ul></li>
+  <li><a href="#anupalabdhi-non-apprehension" id="toc-anupalabdhi-non-apprehension" class="nav-link" data-scroll-target="#anupalabdhi-non-apprehension">59. Anupalabdhi – Non-Apprehension</a>
+  <ul class="collapse">
+  <li><a href="#example-20" id="toc-example-20" class="nav-link" data-scroll-target="#example-20">Example</a></li>
+  <li><a href="#key-point-6" id="toc-key-point-6" class="nav-link" data-scroll-target="#key-point-6">Key Point</a></li>
+  </ul></li>
+  <li><a href="#six-pramanas-easy-memory" id="toc-six-pramanas-easy-memory" class="nav-link" data-scroll-target="#six-pramanas-easy-memory">60. Six Pramanas – Easy Memory</a></li>
+  <li><a href="#structure-of-anumana" id="toc-structure-of-anumana" class="nav-link" data-scroll-target="#structure-of-anumana">61. Structure of Anumana</a></li>
+  <li><a href="#pratijna" id="toc-pratijna" class="nav-link" data-scroll-target="#pratijna">62. Pratijna</a></li>
+  <li><a href="#hetu" id="toc-hetu" class="nav-link" data-scroll-target="#hetu">63. Hetu</a></li>
+  <li><a href="#udaharana" id="toc-udaharana" class="nav-link" data-scroll-target="#udaharana">64. Udaharana</a></li>
+  <li><a href="#upanaya" id="toc-upanaya" class="nav-link" data-scroll-target="#upanaya">65. Upanaya</a></li>
+  <li><a href="#nigamana" id="toc-nigamana" class="nav-link" data-scroll-target="#nigamana">66. Nigamana</a></li>
+  <li><a href="#five-members-of-anumana" id="toc-five-members-of-anumana" class="nav-link" data-scroll-target="#five-members-of-anumana">67. Five Members of Anumana</a>
+  <ul class="collapse">
+  <li><a href="#memory" id="toc-memory" class="nav-link" data-scroll-target="#memory">Memory</a></li>
+  </ul></li>
+  <li><a href="#important-terms-in-anumana" id="toc-important-terms-in-anumana" class="nav-link" data-scroll-target="#important-terms-in-anumana">68. Important Terms in Anumana</a></li>
+  <li><a href="#paksha" id="toc-paksha" class="nav-link" data-scroll-target="#paksha">69. Paksha</a></li>
+  <li><a href="#sadhya" id="toc-sadhya" class="nav-link" data-scroll-target="#sadhya">70. Sadhya</a></li>
+  <li><a href="#hetu-1" id="toc-hetu-1" class="nav-link" data-scroll-target="#hetu-1">71. Hetu</a></li>
+  <li><a href="#vyapti" id="toc-vyapti" class="nav-link" data-scroll-target="#vyapti">72. Vyapti</a>
+  <ul class="collapse">
+  <li><a href="#easy-meaning" id="toc-easy-meaning" class="nav-link" data-scroll-target="#easy-meaning">Easy meaning</a></li>
+  </ul></li>
+  <li><a href="#sapaksha" id="toc-sapaksha" class="nav-link" data-scroll-target="#sapaksha">73. Sapaksha</a></li>
+  <li><a href="#vipaksha" id="toc-vipaksha" class="nav-link" data-scroll-target="#vipaksha">74. Vipaksha</a></li>
+  <li><a href="#types-of-anumana" id="toc-types-of-anumana" class="nav-link" data-scroll-target="#types-of-anumana">75. Types of Anumana</a>
+  <ul class="collapse">
+  <li><a href="#svarthanumana" id="toc-svarthanumana" class="nav-link" data-scroll-target="#svarthanumana">1. Svarthanumana</a></li>
+  <li><a href="#pararthanumana" id="toc-pararthanumana" class="nav-link" data-scroll-target="#pararthanumana">2. Pararthanumana</a></li>
+  </ul></li>
+  <li><a href="#svarthanumana-1" id="toc-svarthanumana-1" class="nav-link" data-scroll-target="#svarthanumana-1">76. Svarthanumana</a></li>
+  <li><a href="#pararthanumana-1" id="toc-pararthanumana-1" class="nav-link" data-scroll-target="#pararthanumana-1">77. Pararthanumana</a></li>
+  <li><a href="#hetvabhasa" id="toc-hetvabhasa" class="nav-link" data-scroll-target="#hetvabhasa">78. Hetvabhasa</a></li>
+  <li><a href="#common-hetvabhasas" id="toc-common-hetvabhasas" class="nav-link" data-scroll-target="#common-hetvabhasas">79. Common Hetvabhasas</a></li>
+  <li><a href="#savyabhichara" id="toc-savyabhichara" class="nav-link" data-scroll-target="#savyabhichara">80. Savyabhichara</a>
+  <ul class="collapse">
+  <li><a href="#simple-idea" id="toc-simple-idea" class="nav-link" data-scroll-target="#simple-idea">Simple idea</a></li>
+  </ul></li>
+  <li><a href="#viruddha" id="toc-viruddha" class="nav-link" data-scroll-target="#viruddha">81. Viruddha</a>
+  <ul class="collapse">
+  <li><a href="#simple-idea-1" id="toc-simple-idea-1" class="nav-link" data-scroll-target="#simple-idea-1">Simple idea</a></li>
+  </ul></li>
+  <li><a href="#satpratipaksha" id="toc-satpratipaksha" class="nav-link" data-scroll-target="#satpratipaksha">82. Satpratipaksha</a>
+  <ul class="collapse">
+  <li><a href="#simple-idea-2" id="toc-simple-idea-2" class="nav-link" data-scroll-target="#simple-idea-2">Simple idea</a></li>
+  </ul></li>
+  <li><a href="#asiddha" id="toc-asiddha" class="nav-link" data-scroll-target="#asiddha">83. Asiddha</a>
+  <ul class="collapse">
+  <li><a href="#simple-idea-3" id="toc-simple-idea-3" class="nav-link" data-scroll-target="#simple-idea-3">Simple idea</a></li>
+  </ul></li>
+  <li><a href="#badhita" id="toc-badhita" class="nav-link" data-scroll-target="#badhita">84. Badhita</a>
+  <ul class="collapse">
+  <li><a href="#simple-idea-4" id="toc-simple-idea-4" class="nav-link" data-scroll-target="#simple-idea-4">Simple idea</a></li>
+  </ul></li>
+  <li><a href="#hetvabhasa-quick-revision" id="toc-hetvabhasa-quick-revision" class="nav-link" data-scroll-target="#hetvabhasa-quick-revision">85. Hetvabhasa – Quick Revision</a></li>
+  <li><a href="#important-comparison-western-and-indian-logic" id="toc-important-comparison-western-and-indian-logic" class="nav-link" data-scroll-target="#important-comparison-western-and-indian-logic">86. Important Comparison: Western and Indian Logic</a></li>
+  <li><a href="#important-terms-quick-revision" id="toc-important-terms-quick-revision" class="nav-link" data-scroll-target="#important-terms-quick-revision">87. Important Terms – Quick Revision</a></li>
+  <li><a href="#classical-square-one-minute-revision" id="toc-classical-square-one-minute-revision" class="nav-link" data-scroll-target="#classical-square-one-minute-revision">88. Classical Square – One-Minute Revision</a></li>
+  <li><a href="#six-pramanas-one-minute-revision" id="toc-six-pramanas-one-minute-revision" class="nav-link" data-scroll-target="#six-pramanas-one-minute-revision">89. Six Pramanas – One-Minute Revision</a></li>
+  <li><a href="#anumana-one-minute-revision" id="toc-anumana-one-minute-revision" class="nav-link" data-scroll-target="#anumana-one-minute-revision">90. Anumana – One-Minute Revision</a></li>
+  <li><a href="#hetvabhasa-one-minute-revision" id="toc-hetvabhasa-one-minute-revision" class="nav-link" data-scroll-target="#hetvabhasa-one-minute-revision">91. Hetvabhasa – One-Minute Revision</a></li>
+  <li><a href="#ugc-net-focus-areas" id="toc-ugc-net-focus-areas" class="nav-link" data-scroll-target="#ugc-net-focus-areas">92. UGC NET Focus Areas</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">93. Common Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#mistake-1-confusing-deduction-and-induction" id="toc-mistake-1-confusing-deduction-and-induction" class="nav-link" data-scroll-target="#mistake-1-confusing-deduction-and-induction">Mistake 1 – Confusing Deduction and Induction</a></li>
+  <li><a href="#mistake-2-confusing-a-and-e" id="toc-mistake-2-confusing-a-and-e" class="nav-link" data-scroll-target="#mistake-2-confusing-a-and-e">Mistake 2 – Confusing A and E</a></li>
+  <li><a href="#mistake-3-confusing-i-and-o" id="toc-mistake-3-confusing-i-and-o" class="nav-link" data-scroll-target="#mistake-3-confusing-i-and-o">Mistake 3 – Confusing I and O</a></li>
+  <li><a href="#mistake-4-confusing-connotation-and-denotation" id="toc-mistake-4-confusing-connotation-and-denotation" class="nav-link" data-scroll-target="#mistake-4-confusing-connotation-and-denotation">Mistake 4 – Confusing Connotation and Denotation</a></li>
+  <li><a href="#mistake-5-confusing-hetu-and-sadhya" id="toc-mistake-5-confusing-hetu-and-sadhya" class="nav-link" data-scroll-target="#mistake-5-confusing-hetu-and-sadhya">Mistake 5 – Confusing Hetu and Sadhya</a></li>
+  <li><a href="#mistake-6-confusing-vyapti-and-hetu" id="toc-mistake-6-confusing-vyapti-and-hetu" class="nav-link" data-scroll-target="#mistake-6-confusing-vyapti-and-hetu">Mistake 6 – Confusing Vyapti and Hetu</a></li>
+  </ul></li>
+  <li><a href="#final-revision-chart" id="toc-final-revision-chart" class="nav-link" data-scroll-target="#final-revision-chart">94. Final Revision Chart</a></li>
+  <li><a href="#final-exam-tip" id="toc-final-exam-tip" class="nav-link" data-scroll-target="#final-exam-tip">95. Final Exam Tip</a></li>
+  <li><a href="#final-quick-revision" id="toc-final-quick-revision" class="nav-link" data-scroll-target="#final-quick-revision">96. Final Quick Revision</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit VI – Logical Reasoning</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>Logical Reasoning is the study of how we use statements, arguments, evidence and rules to reach conclusions.</p>
+<p>In UGC NET, this unit mainly tests your ability to:</p>
+<ul>
+<li>Understand arguments</li>
+<li>Identify premises and conclusions</li>
+<li>Understand categorical propositions</li>
+<li>Identify Mood and Figure</li>
+<li>Distinguish deductive and inductive reasoning</li>
+<li>Identify formal and informal fallacies</li>
+<li>Understand the use of language</li>
+<li>Understand connotation and denotation</li>
+<li>Use the Classical Square of Opposition</li>
+<li>Solve analogy questions</li>
+<li>Use Venn diagrams to test arguments</li>
+<li>Understand Indian Logic</li>
+<li>Understand the six Pramanas</li>
+<li>Understand Anumana or inference</li>
+<li>Understand Vyapti</li>
+<li>Identify Hetvabhasas or fallacies of inference</li>
+</ul>
+<hr>
+</section>
+<section id="what-is-logic" class="level1">
+<h1>2. What is Logic?</h1>
+<p>Logic is the systematic study of correct reasoning.</p>
+<section id="simple-meaning" class="level3">
+<h3 class="anchored" data-anchor-id="simple-meaning">Simple meaning</h3>
+<p>Logic helps us answer:</p>
+<blockquote class="blockquote">
+<p>“Does the conclusion really follow from the information given?”</p>
+</blockquote>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>All humans are mortal.</p>
+<p>Ravi is a human.</p>
+<p>Therefore, Ravi is mortal.</p>
+<p>Here:</p>
+<ul>
+<li>“All humans are mortal” → Premise</li>
+<li>“Ravi is a human” → Premise</li>
+<li>“Ravi is mortal” → Conclusion</li>
+</ul>
+<p>The conclusion follows logically from the premises.</p>
+<hr>
+</section>
+</section>
+<section id="argument" class="level1">
+<h1>3. Argument</h1>
+<p>An argument is a group of statements in which one or more statements provide support for another statement.</p>
+<p>An argument normally contains:</p>
+<ol type="1">
+<li>Premises</li>
+<li>Conclusion</li>
+</ol>
+<section id="premise" class="level3">
+<h3 class="anchored" data-anchor-id="premise">Premise</h3>
+<p>A premise is a statement that provides evidence or support.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>A conclusion is the statement that the argument tries to establish.</p>
+</section>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<p>All teachers are educated.</p>
+<p>Anita is a teacher.</p>
+<p>Therefore, Anita is educated.</p>
+<p>Here:</p>
+<pre class="text"><code>Premise 1 → All teachers are educated.
+
+Premise 2 → Anita is a teacher.
+
+Conclusion → Anita is educated.</code></pre>
+<hr>
+</section>
+</section>
+<section id="how-to-identify-the-conclusion" class="level1">
+<h1>4. How to Identify the Conclusion</h1>
+<p>Look for conclusion indicators such as:</p>
+<ul>
+<li>Therefore</li>
+<li>Hence</li>
+<li>Thus</li>
+<li>So</li>
+<li>Consequently</li>
+<li>It follows that</li>
+<li>Hence we can conclude</li>
+</ul>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example</h3>
+<p>Ravi studies regularly. Therefore, Ravi is likely to perform well.</p>
+<p>The conclusion is:</p>
+<blockquote class="blockquote">
+<p>Ravi is likely to perform well.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="how-to-identify-premises" class="level1">
+<h1>5. How to Identify Premises</h1>
+<p>Common premise indicators include:</p>
+<ul>
+<li>Because</li>
+<li>Since</li>
+<li>As</li>
+<li>Given that</li>
+<li>For</li>
+<li>Due to the fact that</li>
+</ul>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example</h3>
+<p>Ravi may perform well because he studies regularly.</p>
+<p>Premise:</p>
+<blockquote class="blockquote">
+<p>Ravi studies regularly.</p>
+</blockquote>
+<p>Conclusion:</p>
+<blockquote class="blockquote">
+<p>Ravi may perform well.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="structure-of-an-argument" class="level1">
+<h1>6. Structure of an Argument</h1>
+<p>An argument can be represented as:</p>
+<pre class="text"><code>Premise 1
+Premise 2
+Premise 3
+   ↓
+Conclusion</code></pre>
+<section id="example-4" class="level3">
+<h3 class="anchored" data-anchor-id="example-4">Example</h3>
+<pre class="text"><code>All researchers use evidence.
+
+Dr. Arun is a researcher.
+
+Therefore:
+
+Dr. Arun uses evidence.</code></pre>
+<hr>
+</section>
+</section>
+<section id="argument-forms" class="level1">
+<h1>7. Argument Forms</h1>
+<p>An argument form describes the logical structure of an argument.</p>
+<p>Consider:</p>
+<pre class="text"><code>If P, then Q.
+
+P.
+
+Therefore Q.</code></pre>
+<p>This is a valid argument form called:</p>
+<blockquote class="blockquote">
+<p>Modus Ponens</p>
+</blockquote>
+<section id="example-5" class="level3">
+<h3 class="anchored" data-anchor-id="example-5">Example</h3>
+<p>If it rains, the ground becomes wet.</p>
+<p>It is raining.</p>
+<p>Therefore, the ground is wet.</p>
+<hr>
+</section>
+</section>
+<section id="modus-ponens" class="level1">
+<h1>8. Modus Ponens</h1>
+<p>Structure:</p>
+<pre class="text"><code>If P → Q
+P
+Therefore Q</code></pre>
+<section id="example-6" class="level3">
+<h3 class="anchored" data-anchor-id="example-6">Example</h3>
+<p>If a student studies, the student may improve.</p>
+<p>Ravi studies.</p>
+<p>Therefore, Ravi may improve.</p>
+</section>
+<section id="key-point" class="level3">
+<h3 class="anchored" data-anchor-id="key-point">Key Point</h3>
+<pre class="text"><code>P → Q
+P
+Therefore Q</code></pre>
+<hr>
+</section>
+</section>
+<section id="modus-tollens" class="level1">
+<h1>9. Modus Tollens</h1>
+<p>Structure:</p>
+<pre class="text"><code>If P → Q
+Not Q
+Therefore Not P</code></pre>
+<section id="example-7" class="level3">
+<h3 class="anchored" data-anchor-id="example-7">Example</h3>
+<p>If the computer is connected to the internet, the browser can access online content.</p>
+<p>The browser cannot access online content.</p>
+<p>Therefore, the computer may not be connected to the internet.</p>
+</section>
+<section id="key-point-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-point-1">Key Point</h3>
+<pre class="text"><code>P → Q
+Not Q
+Therefore Not P</code></pre>
+<hr>
+</section>
+</section>
+<section id="categorical-proposition" class="level1">
+<h1>10. Categorical Proposition</h1>
+<p>A categorical proposition is a proposition that relates two classes or categories.</p>
+<section id="example-8" class="level3">
+<h3 class="anchored" data-anchor-id="example-8">Example</h3>
+<blockquote class="blockquote">
+<p>All students are learners.</p>
+</blockquote>
+<p>It relates:</p>
+<ul>
+<li>Students</li>
+<li>Learners</li>
+</ul>
+<p>A categorical proposition generally contains:</p>
+<pre class="text"><code>Quantifier + Subject + Copula + Predicate</code></pre>
+<p>Example:</p>
+<pre class="text"><code>All + students + are + learners</code></pre>
+<hr>
+</section>
+</section>
+<section id="four-types-of-categorical-propositions" class="level1">
+<h1>11. Four Types of Categorical Propositions</h1>
+<p>The four standard categorical propositions are:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Form</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>All S are P</td>
+<td>Universal Affirmative</td>
+</tr>
+<tr class="even">
+<td>E</td>
+<td>No S are P</td>
+<td>Universal Negative</td>
+</tr>
+<tr class="odd">
+<td>I</td>
+<td>Some S are P</td>
+<td>Particular Affirmative</td>
+</tr>
+<tr class="even">
+<td>O</td>
+<td>Some S are not P</td>
+<td>Particular Negative</td>
+</tr>
+</tbody>
+</table>
+<p>Remember:</p>
+<pre class="text"><code>A → Universal Affirmative
+E → Universal Negative
+I → Particular Affirmative
+O → Particular Negative</code></pre>
+<hr>
+</section>
+<section id="a-proposition-universal-affirmative" class="level1">
+<h1>12. A Proposition – Universal Affirmative</h1>
+<p>Form:</p>
+<blockquote class="blockquote">
+<p>All S are P.</p>
+</blockquote>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>All teachers are professionals.</p>
+</blockquote>
+<p>Meaning:</p>
+<p>Every member of the subject class belongs to the predicate class.</p>
+<section id="symbolic-form" class="level3">
+<h3 class="anchored" data-anchor-id="symbolic-form">Symbolic form</h3>
+<pre class="text"><code>All S are P</code></pre>
+<hr>
+</section>
+</section>
+<section id="e-proposition-universal-negative" class="level1">
+<h1>13. E Proposition – Universal Negative</h1>
+<p>Form:</p>
+<blockquote class="blockquote">
+<p>No S are P.</p>
+</blockquote>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>No birds are mammals.</p>
+</blockquote>
+<p>Meaning:</p>
+<p>The two classes do not overlap.</p>
+<pre class="text"><code>No S are P</code></pre>
+<hr>
+</section>
+<section id="i-proposition-particular-affirmative" class="level1">
+<h1>14. I Proposition – Particular Affirmative</h1>
+<p>Form:</p>
+<blockquote class="blockquote">
+<p>Some S are P.</p>
+</blockquote>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Some students are researchers.</p>
+</blockquote>
+<p>Meaning:</p>
+<p>At least one member of S belongs to P.</p>
+<pre class="text"><code>Some S are P</code></pre>
+<hr>
+</section>
+<section id="o-proposition-particular-negative" class="level1">
+<h1>15. O Proposition – Particular Negative</h1>
+<p>Form:</p>
+<blockquote class="blockquote">
+<p>Some S are not P.</p>
+</blockquote>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Some students are not researchers.</p>
+</blockquote>
+<p>Meaning:</p>
+<p>At least one member of S does not belong to P.</p>
+<pre class="text"><code>Some S are not P</code></pre>
+<hr>
+</section>
+<section id="easy-way-to-remember-a-e-i-and-o" class="level1">
+<h1>16. Easy Way to Remember A, E, I and O</h1>
+<pre class="text"><code>A → All S are P
+
+E → No S are P
+
+I → Some S are P
+
+O → Some S are not P</code></pre>
+<section id="memory-trick" class="level3">
+<h3 class="anchored" data-anchor-id="memory-trick">Memory Trick</h3>
+<pre class="text"><code>A → All
+E → No
+I → Some + positive
+O → Some + negative</code></pre>
+<hr>
+</section>
+</section>
+<section id="subject-and-predicate" class="level1">
+<h1>17. Subject and Predicate</h1>
+<p>Consider:</p>
+<blockquote class="blockquote">
+<p>All teachers are professionals.</p>
+</blockquote>
+<p>Subject:</p>
+<blockquote class="blockquote">
+<p>Teachers</p>
+</blockquote>
+<p>Predicate:</p>
+<blockquote class="blockquote">
+<p>Professionals</p>
+</blockquote>
+<p>The proposition tells us something about the relationship between these two classes.</p>
+<hr>
+</section>
+<section id="distribution-of-terms" class="level1">
+<h1>18. Distribution of Terms</h1>
+<p>Distribution tells us whether a proposition refers to all members of a class or only some members.</p>
+<p>For UGC NET, remember this table:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Proposition</th>
+<th>Subject</th>
+<th>Predicate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A – All S are P</td>
+<td>Distributed</td>
+<td>Undistributed</td>
+</tr>
+<tr class="even">
+<td>E – No S are P</td>
+<td>Distributed</td>
+<td>Distributed</td>
+</tr>
+<tr class="odd">
+<td>I – Some S are P</td>
+<td>Undistributed</td>
+<td>Undistributed</td>
+</tr>
+<tr class="even">
+<td>O – Some S are not P</td>
+<td>Undistributed</td>
+<td>Distributed</td>
+</tr>
+</tbody>
+</table>
+<section id="easy-memory" class="level3">
+<h3 class="anchored" data-anchor-id="easy-memory">Easy memory</h3>
+<pre class="text"><code>A → S distributed
+E → Both distributed
+I → Neither distributed
+O → P distributed</code></pre>
+<hr>
+</section>
+</section>
+<section id="mood-of-a-categorical-syllogism" class="level1">
+<h1>19. Mood of a Categorical Syllogism</h1>
+<p>Mood refers to the combination of the types of the three propositions in a categorical syllogism.</p>
+<p>The three propositions are:</p>
+<ol type="1">
+<li>Major premise</li>
+<li>Minor premise</li>
+<li>Conclusion</li>
+</ol>
+<section id="example-9" class="level3">
+<h3 class="anchored" data-anchor-id="example-9">Example</h3>
+<pre class="text"><code>All M are P       → A
+All S are M       → A
+Therefore,
+All S are P       → A</code></pre>
+<p>The mood is:</p>
+<blockquote class="blockquote">
+<p>AAA</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="figure-of-a-categorical-syllogism" class="level1">
+<h1>20. Figure of a Categorical Syllogism</h1>
+<p>Figure depends on the position of the middle term in the premises.</p>
+<p>There are four figures.</p>
+<section id="figure-1" class="level3">
+<h3 class="anchored" data-anchor-id="figure-1">Figure 1</h3>
+<pre class="text"><code>M – P
+S – M
+-----
+S – P</code></pre>
+</section>
+<section id="figure-2" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2">Figure 2</h3>
+<pre class="text"><code>P – M
+S – M
+-----
+S – P</code></pre>
+</section>
+<section id="figure-3" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3">Figure 3</h3>
+<pre class="text"><code>M – P
+M – S
+-----
+S – P</code></pre>
+</section>
+<section id="figure-4" class="level3">
+<h3 class="anchored" data-anchor-id="figure-4">Figure 4</h3>
+<pre class="text"><code>P – M
+M – S
+-----
+S – P</code></pre>
+</section>
+<section id="important" class="level3">
+<h3 class="anchored" data-anchor-id="important">Important</h3>
+<p>There are:</p>
+<pre class="text"><code>4 Figures</code></pre>
+<hr>
+</section>
+</section>
+<section id="mood-and-figure" class="level1">
+<h1>21. Mood and Figure</h1>
+<p>Mood and Figure together identify the form of a categorical syllogism.</p>
+<p>Example:</p>
+<pre class="text"><code>AAA – Figure 1</code></pre>
+<p>The mood tells us:</p>
+<blockquote class="blockquote">
+<p>What type of propositions are used?</p>
+</blockquote>
+<p>The figure tells us:</p>
+<blockquote class="blockquote">
+<p>Where is the middle term located?</p>
+</blockquote>
+<hr>
+</section>
+<section id="deductive-reasoning" class="level1">
+<h1>22. Deductive Reasoning</h1>
+<p>Deductive reasoning moves from a general statement to a specific conclusion.</p>
+<pre class="text"><code>General
+   ↓
+Specific</code></pre>
+<p>Example:</p>
+<pre class="text"><code>All humans are mortal.
+
+Ravi is a human.
+
+Therefore Ravi is mortal.</code></pre>
+<p>If the premises are true and the argument is valid, the conclusion follows necessarily.</p>
+<hr>
+</section>
+<section id="inductive-reasoning" class="level1">
+<h1>23. Inductive Reasoning</h1>
+<p>Inductive reasoning moves from specific observations to a general conclusion.</p>
+<pre class="text"><code>Specific observations
+        ↓
+General conclusion</code></pre>
+<p>Example:</p>
+<pre class="text"><code>Student A improved after practice.
+
+Student B improved after practice.
+
+Student C improved after practice.
+
+Therefore, regular practice may improve performance.</code></pre>
+<p>The conclusion is probable rather than necessarily certain.</p>
+<hr>
+</section>
+<section id="deductive-vs-inductive-reasoning" class="level1">
+<h1>24. Deductive vs Inductive Reasoning</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Deductive</th>
+<th>Inductive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>General → Specific</td>
+<td>Specific → General</td>
+</tr>
+<tr class="even">
+<td>Based on rules or premises</td>
+<td>Based on observations</td>
+</tr>
+<tr class="odd">
+<td>Conclusion can be necessary</td>
+<td>Conclusion is usually probable</td>
+</tr>
+<tr class="even">
+<td>Validity is important</td>
+<td>Strength is important</td>
+</tr>
+<tr class="odd">
+<td>Example: syllogism</td>
+<td>Example: generalization</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="formal-fallacy" class="level1">
+<h1>25. Formal Fallacy</h1>
+<p>A formal fallacy is an error in the logical structure or form of an argument.</p>
+<section id="example-10" class="level3">
+<h3 class="anchored" data-anchor-id="example-10">Example</h3>
+<pre class="text"><code>If P → Q
+
+Q
+
+Therefore P</code></pre>
+<p>This is not a valid form.</p>
+<p>This error is called:</p>
+<blockquote class="blockquote">
+<p>Affirming the consequent.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="informal-fallacy" class="level1">
+<h1>26. Informal Fallacy</h1>
+<p>An informal fallacy is an error caused by the content, language, assumptions or context of an argument rather than simply its logical structure.</p>
+<p>Examples include:</p>
+<ul>
+<li>Ad hominem</li>
+<li>Appeal to authority</li>
+<li>Appeal to emotion</li>
+<li>Straw man</li>
+<li>Hasty generalization</li>
+<li>False cause</li>
+<li>Appeal to ignorance</li>
+</ul>
+<hr>
+</section>
+<section id="ad-hominem" class="level1">
+<h1>27. Ad Hominem</h1>
+<p>Ad hominem means attacking the person instead of addressing the argument.</p>
+<section id="example-11" class="level3">
+<h3 class="anchored" data-anchor-id="example-11">Example</h3>
+<blockquote class="blockquote">
+<p>Ravi’s argument about education is wrong because Ravi is inexperienced.</p>
+</blockquote>
+<p>The person’s characteristics are attacked instead of the argument.</p>
+</section>
+<section id="key-point-2" class="level3">
+<h3 class="anchored" data-anchor-id="key-point-2">Key Point</h3>
+<pre class="text"><code>Attack the person
+instead of
+Answering the argument</code></pre>
+<hr>
+</section>
+</section>
+<section id="hasty-generalization" class="level1">
+<h1>28. Hasty Generalization</h1>
+<p>A conclusion is made about a whole group based on insufficient examples.</p>
+<section id="example-12" class="level3">
+<h3 class="anchored" data-anchor-id="example-12">Example</h3>
+<p>A student meets two rude tourists from a particular city and concludes:</p>
+<blockquote class="blockquote">
+<p>Everyone from that city is rude.</p>
+</blockquote>
+<p>This is a hasty generalization.</p>
+<hr>
+</section>
+</section>
+<section id="appeal-to-authority" class="level1">
+<h1>29. Appeal to Authority</h1>
+<p>An argument claims something is true simply because an authority or famous person says it.</p>
+<section id="example-13" class="level3">
+<h3 class="anchored" data-anchor-id="example-13">Example</h3>
+<blockquote class="blockquote">
+<p>A famous actor says this medicine works, so it must work.</p>
+</blockquote>
+<p>The statement requires appropriate evidence, not merely celebrity endorsement.</p>
+<hr>
+</section>
+</section>
+<section id="straw-man-fallacy" class="level1">
+<h1>30. Straw Man Fallacy</h1>
+<p>A person’s argument is changed into a weaker or exaggerated version and then attacked.</p>
+<section id="example-14" class="level3">
+<h3 class="anchored" data-anchor-id="example-14">Example</h3>
+<p>Person A:</p>
+<blockquote class="blockquote">
+<p>We should reduce unnecessary use of plastic.</p>
+</blockquote>
+<p>Person B:</p>
+<blockquote class="blockquote">
+<p>Person A wants to completely ban every plastic product.</p>
+</blockquote>
+<p>Person B has changed the original argument.</p>
+<p>This is a straw man.</p>
+<hr>
+</section>
+</section>
+<section id="false-cause" class="level1">
+<h1>31. False Cause</h1>
+<p>False cause occurs when one event is assumed to have caused another without sufficient evidence.</p>
+<section id="example-15" class="level3">
+<h3 class="anchored" data-anchor-id="example-15">Example</h3>
+<blockquote class="blockquote">
+<p>I wore a particular shirt and passed the examination. Therefore, the shirt caused my success.</p>
+</blockquote>
+<p>The conclusion does not establish causation.</p>
+<hr>
+</section>
+</section>
+<section id="uses-of-language" class="level1">
+<h1>32. Uses of Language</h1>
+<p>Language can be used for different purposes.</p>
+<p>Important uses include:</p>
+<section id="informative" class="level3">
+<h3 class="anchored" data-anchor-id="informative">1. Informative</h3>
+<p>Provides information.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>The examination begins at 10 AM.</p>
+</blockquote>
+</section>
+<section id="expressive" class="level3">
+<h3 class="anchored" data-anchor-id="expressive">2. Expressive</h3>
+<p>Expresses feelings or emotions.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>I am extremely happy today.</p>
+</blockquote>
+</section>
+<section id="directive" class="level3">
+<h3 class="anchored" data-anchor-id="directive">3. Directive</h3>
+<p>Attempts to influence behaviour.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Please close the door.</p>
+</blockquote>
+</section>
+<section id="performative" class="level3">
+<h3 class="anchored" data-anchor-id="performative">4. Performative</h3>
+<p>An utterance performs an action in an appropriate context.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>I apologize.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="denotation" class="level1">
+<h1>33. Denotation</h1>
+<p>Denotation refers to the direct or literal meaning of a term.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>“Rose” denotes a particular type of flowering plant.</p>
+</blockquote>
+<p>It refers to the object or class represented by the word.</p>
+<hr>
+</section>
+<section id="connotation" class="level1">
+<h1>34. Connotation</h1>
+<p>Connotation refers to the associated, implied or emotional meaning of a term.</p>
+<p>For example, the word:</p>
+<blockquote class="blockquote">
+<p>“Home”</p>
+</blockquote>
+<p>may connote:</p>
+<ul>
+<li>Comfort</li>
+<li>Security</li>
+<li>Family</li>
+<li>Belonging</li>
+</ul>
+<section id="easy-difference" class="level3">
+<h3 class="anchored" data-anchor-id="easy-difference">Easy difference</h3>
+<pre class="text"><code>Denotation → Direct meaning
+
+Connotation → Associated meaning</code></pre>
+<hr>
+</section>
+</section>
+<section id="denotation-vs-connotation" class="level1">
+<h1>35. Denotation vs Connotation</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Denotation</th>
+<th>Connotation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Literal meaning</td>
+<td>Associated meaning</td>
+</tr>
+<tr class="even">
+<td>Direct reference</td>
+<td>Implied/emotional association</td>
+</tr>
+<tr class="odd">
+<td>More objective</td>
+<td>Can vary with context</td>
+</tr>
+<tr class="even">
+<td>Example: snake = reptile</td>
+<td>Snake may connote danger or fear</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="classical-square-of-opposition" class="level1">
+<h1>36. Classical Square of Opposition</h1>
+<p>The Classical Square of Opposition shows relationships among the four categorical propositions:</p>
+<pre class="text"><code>A – All S are P
+E – No S are P
+I – Some S are P
+O – Some S are not P</code></pre>
+<p>The basic structure is:</p>
+<pre class="text"><code>        A
+       / \
+      /   \
+     E     I
+      \   /
+       \ /
+        O</code></pre>
+<p>More precisely, the traditional square contains four important relationships:</p>
+<ol type="1">
+<li>Contradictory</li>
+<li>Contrary</li>
+<li>Subcontrary</li>
+<li>Subalternation</li>
+</ol>
+<hr>
+</section>
+<section id="contradictory-propositions" class="level1">
+<h1>37. Contradictory Propositions</h1>
+<p>Contradictory propositions cannot both be true and cannot both be false.</p>
+<p>Pairs:</p>
+<pre class="text"><code>A ↔ O
+
+E ↔ I</code></pre>
+<p>Examples:</p>
+<p>A:</p>
+<blockquote class="blockquote">
+<p>All students are punctual.</p>
+</blockquote>
+<p>O:</p>
+<blockquote class="blockquote">
+<p>Some students are not punctual.</p>
+</blockquote>
+<p>If A is true, O must be false.</p>
+<p>If O is true, A must be false.</p>
+<hr>
+</section>
+<section id="contrary-propositions" class="level1">
+<h1>38. Contrary Propositions</h1>
+<p>Contrary propositions cannot both be true, but they can both be false.</p>
+<p>Pair:</p>
+<pre class="text"><code>A ↔ E</code></pre>
+<p>Example:</p>
+<p>A:</p>
+<blockquote class="blockquote">
+<p>All students are punctual.</p>
+</blockquote>
+<p>E:</p>
+<blockquote class="blockquote">
+<p>No students are punctual.</p>
+</blockquote>
+<p>Both cannot be true simultaneously.</p>
+<p>But both can be false if:</p>
+<blockquote class="blockquote">
+<p>Some students are punctual and some are not.</p>
+</blockquote>
+<hr>
+</section>
+<section id="subcontrary-propositions" class="level1">
+<h1>39. Subcontrary Propositions</h1>
+<p>Subcontrary propositions can both be true, but traditionally cannot both be false.</p>
+<p>Pair:</p>
+<pre class="text"><code>I ↔ O</code></pre>
+<p>Example:</p>
+<p>I:</p>
+<blockquote class="blockquote">
+<p>Some students are punctual.</p>
+</blockquote>
+<p>O:</p>
+<blockquote class="blockquote">
+<p>Some students are not punctual.</p>
+</blockquote>
+<p>Both can be true.</p>
+<hr>
+</section>
+<section id="subalternation" class="level1">
+<h1>40. Subalternation</h1>
+<p>Subalternation is the relationship between:</p>
+<pre class="text"><code>A → I
+
+E → O</code></pre>
+<p>A is the universal affirmative and I is the particular affirmative.</p>
+<p>E is the universal negative and O is the particular negative.</p>
+<section id="traditional-rule" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-rule">Traditional rule</h3>
+<p>If the universal proposition is true, the corresponding particular proposition is true.</p>
+<hr>
+</section>
+</section>
+<section id="square-of-opposition-quick-revision" class="level1">
+<h1>41. Square of Opposition – Quick Revision</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Relationship</th>
+<th>Pair</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Contradictory</td>
+<td>A – O</td>
+</tr>
+<tr class="even">
+<td>Contradictory</td>
+<td>E – I</td>
+</tr>
+<tr class="odd">
+<td>Contrary</td>
+<td>A – E</td>
+</tr>
+<tr class="even">
+<td>Subcontrary</td>
+<td>I – O</td>
+</tr>
+<tr class="odd">
+<td>Subalternation</td>
+<td>A – I</td>
+</tr>
+<tr class="even">
+<td>Subalternation</td>
+<td>E – O</td>
+</tr>
+</tbody>
+</table>
+<section id="memory-trick-1" class="level3">
+<h3 class="anchored" data-anchor-id="memory-trick-1">Memory Trick</h3>
+<pre class="text"><code>Contradictory:
+A ↔ O
+E ↔ I
+
+Contrary:
+A ↔ E
+
+Subcontrary:
+I ↔ O
+
+Subaltern:
+A → I
+E → O</code></pre>
+<hr>
+</section>
+</section>
+<section id="analogical-reasoning" class="level1">
+<h1>42. Analogical Reasoning</h1>
+<p>Analogy is based on similarity or relationship.</p>
+<p>Example:</p>
+<pre class="text"><code>Teacher : School :: Doctor : Hospital</code></pre>
+<p>Relationship:</p>
+<pre class="text"><code>Teacher works in School.
+
+Doctor works in Hospital.</code></pre>
+<p>Therefore, the relationship is preserved.</p>
+<hr>
+</section>
+<section id="how-to-solve-analogy-questions" class="level1">
+<h1>43. How to Solve Analogy Questions</h1>
+<p>Follow these steps:</p>
+<section id="step-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-1">Step 1</h3>
+<p>Identify the relationship between the first pair.</p>
+</section>
+<section id="step-2" class="level3">
+<h3 class="anchored" data-anchor-id="step-2">Step 2</h3>
+<p>Apply the same relationship to the second pair.</p>
+</section>
+<section id="step-3" class="level3">
+<h3 class="anchored" data-anchor-id="step-3">Step 3</h3>
+<p>Select the option that maintains the same relationship.</p>
+</section>
+<section id="example-16" class="level3">
+<h3 class="anchored" data-anchor-id="example-16">Example</h3>
+<pre class="text"><code>Bird : Nest :: Bee : ?</code></pre>
+<p>Answer:</p>
+<blockquote class="blockquote">
+<p>Hive</p>
+</blockquote>
+<p>Because:</p>
+<pre class="text"><code>Bird → Nest
+
+Bee → Hive</code></pre>
+<hr>
+</section>
+</section>
+<section id="venn-diagrams" class="level1">
+<h1>44. Venn Diagrams</h1>
+<p>A Venn diagram uses circles to represent relationships between classes or sets.</p>
+<p>It is useful for:</p>
+<ul>
+<li>Understanding categorical propositions</li>
+<li>Testing arguments</li>
+<li>Showing inclusion</li>
+<li>Showing exclusion</li>
+<li>Showing overlap</li>
+</ul>
+<hr>
+</section>
+<section id="venn-diagram-all-s-are-p" class="level1">
+<h1>45. Venn Diagram – All S are P</h1>
+<p>Statement:</p>
+<blockquote class="blockquote">
+<p>All S are P.</p>
+</blockquote>
+<p>The S circle is completely inside the P circle.</p>
+<pre class="text"><code>      _____________
+     /             \
+    /      P        \
+   |     ______      |
+   |    /  S   \     |
+   |    \______ /    |
+    \             /
+     \___________/</code></pre>
+<p>Meaning:</p>
+<p>Every S belongs to P.</p>
+<hr>
+</section>
+<section id="venn-diagram-no-s-are-p" class="level1">
+<h1>46. Venn Diagram – No S are P</h1>
+<p>Statement:</p>
+<blockquote class="blockquote">
+<p>No S are P.</p>
+</blockquote>
+<p>The two circles do not overlap.</p>
+<pre class="text"><code>    _______       _______
+   /       \     /       \
+  /    S    \   /    P    \
+  \         /   \         /
+   \_______/     \_______/</code></pre>
+<p>Meaning:</p>
+<p>There is no common member.</p>
+<hr>
+</section>
+<section id="venn-diagram-some-s-are-p" class="level1">
+<h1>47. Venn Diagram – Some S are P</h1>
+<p>Statement:</p>
+<blockquote class="blockquote">
+<p>Some S are P.</p>
+</blockquote>
+<p>The two circles overlap.</p>
+<pre class="text"><code>       _______
+      /       \
+     /   S   __\____
+     \      /  P    \
+      \____/         /
+           \________/</code></pre>
+<p>The overlapping region represents members that belong to both S and P.</p>
+<hr>
+</section>
+<section id="venn-diagram-some-s-are-not-p" class="level1">
+<h1>48. Venn Diagram – Some S are Not P</h1>
+<p>Statement:</p>
+<blockquote class="blockquote">
+<p>Some S are not P.</p>
+</blockquote>
+<p>There must be at least one member in the S region outside P.</p>
+<p>The important idea is:</p>
+<pre class="text"><code>S
+┌───────────────┐
+│   x           │
+│       ┌───────┼──────┐
+│       │   P   │      │
+└───────┴───────┴──────┘</code></pre>
+<p>The <code>x</code> represents existence of at least one S that is not P.</p>
+<hr>
+</section>
+<section id="using-venn-diagrams-to-test-arguments" class="level1">
+<h1>49. Using Venn Diagrams to Test Arguments</h1>
+<p>Consider:</p>
+<pre class="text"><code>All humans are mortal.
+
+Socrates is a human.
+
+Therefore, Socrates is mortal.</code></pre>
+<p>The relationship can be represented as:</p>
+<pre class="text"><code>Humans ⊂ Mortals
+
+Socrates ∈ Humans</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Socrates ∈ Mortals</code></pre>
+<p>The conclusion follows.</p>
+<hr>
+</section>
+<section id="simple-and-multiple-venn-diagrams" class="level1">
+<h1>50. Simple and Multiple Venn Diagrams</h1>
+<section id="simple-venn-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="simple-venn-diagram">Simple Venn Diagram</h3>
+<p>Usually involves two or three classes.</p>
+<p>Example:</p>
+<pre class="text"><code>Students
+Teachers
+Researchers</code></pre>
+</section>
+<section id="multiple-venn-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-venn-diagram">Multiple Venn Diagram</h3>
+<p>Used when several classes and relationships must be represented simultaneously.</p>
+<p>The main purpose is to determine whether the conclusion follows from the premises.</p>
+<hr>
+</section>
+</section>
+<section id="indian-logic" class="level1">
+<h1>51. Indian Logic</h1>
+<p>Indian Logic is an important part of the UGC NET Logical Reasoning syllabus.</p>
+<p>Indian philosophical traditions developed systematic methods of acquiring knowledge and establishing valid cognition.</p>
+<p>One important concept is:</p>
+<blockquote class="blockquote">
+<p>Pramana</p>
+</blockquote>
+<hr>
+</section>
+<section id="meaning-of-pramana" class="level1">
+<h1>52. Meaning of Pramana</h1>
+<p>Pramana means a means or source of valid knowledge.</p>
+<p>Different Indian philosophical schools recognize different numbers and types of Pramanas.</p>
+<p>The syllabus specifically includes six:</p>
+<ol type="1">
+<li>Pratyaksha</li>
+<li>Anumana</li>
+<li>Upamana</li>
+<li>Shabda</li>
+<li>Arthapatti</li>
+<li>Anupalabdhi</li>
+</ol>
+<hr>
+</section>
+<section id="six-pramanas" class="level1">
+<h1>53. Six Pramanas</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Pramana</th>
+<th>Simple meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pratyaksha</td>
+<td>Perception</td>
+</tr>
+<tr class="even">
+<td>Anumana</td>
+<td>Inference</td>
+</tr>
+<tr class="odd">
+<td>Upamana</td>
+<td>Comparison</td>
+</tr>
+<tr class="even">
+<td>Shabda</td>
+<td>Verbal testimony</td>
+</tr>
+<tr class="odd">
+<td>Arthapatti</td>
+<td>Implication / Postulation</td>
+</tr>
+<tr class="even">
+<td>Anupalabdhi</td>
+<td>Non-apprehension</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="pratyaksha-perception" class="level1">
+<h1>54. Pratyaksha – Perception</h1>
+<p>Pratyaksha means knowledge obtained through perception.</p>
+<p>In simple terms:</p>
+<blockquote class="blockquote">
+<p>Knowledge gained through direct observation or experience.</p>
+</blockquote>
+<section id="example-17" class="level3">
+<h3 class="anchored" data-anchor-id="example-17">Example</h3>
+<p>You see smoke.</p>
+<p>The visual perception of smoke is an example of perceptual knowledge.</p>
+<p>Another simple example:</p>
+<blockquote class="blockquote">
+<p>You see a tree in front of you.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="anumana-inference" class="level1">
+<h1>55. Anumana – Inference</h1>
+<p>Anumana means inference.</p>
+<p>It is knowledge obtained by reasoning from something observed to something not directly observed.</p>
+<section id="famous-example" class="level3">
+<h3 class="anchored" data-anchor-id="famous-example">Famous example</h3>
+<pre class="text"><code>There is fire on the hill.
+
+Why?
+
+Because there is smoke.</code></pre>
+<p>The reasoning is:</p>
+<pre class="text"><code>Smoke → Fire</code></pre>
+<p>More carefully:</p>
+<blockquote class="blockquote">
+<p>Wherever there is smoke, there is fire.</p>
+</blockquote>
+<p>There is smoke on the hill.</p>
+<p>Therefore:</p>
+<blockquote class="blockquote">
+<p>There is fire on the hill.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="upamana-comparison" class="level1">
+<h1>56. Upamana – Comparison</h1>
+<p>Upamana means comparison or analogy.</p>
+<p>Knowledge is obtained by comparing something with something already known.</p>
+<section id="example-18" class="level3">
+<h3 class="anchored" data-anchor-id="example-18">Example</h3>
+<p>Suppose someone tells you:</p>
+<blockquote class="blockquote">
+<p>A gavaya is an animal similar to a cow.</p>
+</blockquote>
+<p>Later you see an unfamiliar animal that resembles a cow and recognize it as a gavaya.</p>
+<p>The knowledge is based on comparison.</p>
+</section>
+<section id="key-point-3" class="level3">
+<h3 class="anchored" data-anchor-id="key-point-3">Key Point</h3>
+<pre class="text"><code>Upamana = Comparison</code></pre>
+<hr>
+</section>
+</section>
+<section id="shabda-verbal-testimony" class="level1">
+<h1>57. Shabda – Verbal Testimony</h1>
+<p>Shabda means verbal testimony or reliable verbal instruction.</p>
+<p>Knowledge is obtained from a reliable source.</p>
+<section id="example-19" class="level3">
+<h3 class="anchored" data-anchor-id="example-19">Example</h3>
+<p>A qualified teacher tells a student:</p>
+<blockquote class="blockquote">
+<p>The Earth revolves around the Sun.</p>
+</blockquote>
+<p>The student obtains knowledge through verbal testimony.</p>
+</section>
+<section id="key-point-4" class="level3">
+<h3 class="anchored" data-anchor-id="key-point-4">Key Point</h3>
+<pre class="text"><code>Shabda = Verbal testimony</code></pre>
+<hr>
+</section>
+</section>
+<section id="arthapatti-implication-postulation" class="level1">
+<h1>58. Arthapatti – Implication / Postulation</h1>
+<p>Arthapatti refers to postulation or implication used to explain facts that otherwise cannot be adequately explained.</p>
+<section id="simple-example" class="level3">
+<h3 class="anchored" data-anchor-id="simple-example">Simple example</h3>
+<p>Suppose:</p>
+<blockquote class="blockquote">
+<p>Ravi is usually seen fasting during the day.</p>
+</blockquote>
+<p>But:</p>
+<blockquote class="blockquote">
+<p>Ravi is gaining weight.</p>
+</blockquote>
+<p>A possible postulation is:</p>
+<blockquote class="blockquote">
+<p>Ravi must be eating at night.</p>
+</blockquote>
+<p>The second fact is used to explain the first set of observations.</p>
+</section>
+<section id="key-point-5" class="level3">
+<h3 class="anchored" data-anchor-id="key-point-5">Key Point</h3>
+<pre class="text"><code>Arthapatti = Postulation / Implication</code></pre>
+<hr>
+</section>
+</section>
+<section id="anupalabdhi-non-apprehension" class="level1">
+<h1>59. Anupalabdhi – Non-Apprehension</h1>
+<p>Anupalabdhi means knowledge of the absence of something through non-perception.</p>
+<section id="example-20" class="level3">
+<h3 class="anchored" data-anchor-id="example-20">Example</h3>
+<p>You look at a table and do not see a book on it.</p>
+<p>Under the relevant conditions, you know:</p>
+<blockquote class="blockquote">
+<p>There is no book on the table.</p>
+</blockquote>
+</section>
+<section id="key-point-6" class="level3">
+<h3 class="anchored" data-anchor-id="key-point-6">Key Point</h3>
+<pre class="text"><code>Anupalabdhi = Knowledge of absence through non-apprehension</code></pre>
+<hr>
+</section>
+</section>
+<section id="six-pramanas-easy-memory" class="level1">
+<h1>60. Six Pramanas – Easy Memory</h1>
+<p>Remember:</p>
+<pre class="text"><code>P A U S A A
+
+Pratyaksha
+Anumana
+Upamana
+Shabda
+Arthapatti
+Anupalabdhi</code></pre>
+<p>Or remember their meanings:</p>
+<pre class="text"><code>See
+Infer
+Compare
+Hear
+Postulate
+Know absence</code></pre>
+<hr>
+</section>
+<section id="structure-of-anumana" class="level1">
+<h1>61. Structure of Anumana</h1>
+<p>Anumana is inference.</p>
+<p>A classical Nyaya inference is commonly presented using five members:</p>
+<ol type="1">
+<li>Pratijna</li>
+<li>Hetu</li>
+<li>Udaharana</li>
+<li>Upanaya</li>
+<li>Nigamana</li>
+</ol>
+<hr>
+</section>
+<section id="pratijna" class="level1">
+<h1>62. Pratijna</h1>
+<p>Pratijna is the proposition or statement to be established.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>The hill has fire.</p>
+</blockquote>
+<p>This is the claim.</p>
+<hr>
+</section>
+<section id="hetu" class="level1">
+<h1>63. Hetu</h1>
+<p>Hetu is the reason or middle term.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Because there is smoke on the hill.</p>
+</blockquote>
+<p>Here:</p>
+<blockquote class="blockquote">
+<p>Smoke = Hetu</p>
+</blockquote>
+<hr>
+</section>
+<section id="udaharana" class="level1">
+<h1>64. Udaharana</h1>
+<p>Udaharana provides an example illustrating the universal relationship.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Wherever there is smoke, there is fire, as in a kitchen.</p>
+</blockquote>
+<p>This establishes the relationship between smoke and fire.</p>
+<hr>
+</section>
+<section id="upanaya" class="level1">
+<h1>65. Upanaya</h1>
+<p>Upanaya applies the general relationship to the particular case.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>The hill has smoke of that kind.</p>
+</blockquote>
+<hr>
+</section>
+<section id="nigamana" class="level1">
+<h1>66. Nigamana</h1>
+<p>Nigamana is the final conclusion.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Therefore, the hill has fire.</p>
+</blockquote>
+<hr>
+</section>
+<section id="five-members-of-anumana" class="level1">
+<h1>67. Five Members of Anumana</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Member</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pratijna</td>
+<td>Proposition</td>
+<td>Hill has fire</td>
+</tr>
+<tr class="even">
+<td>Hetu</td>
+<td>Reason</td>
+<td>Because of smoke</td>
+</tr>
+<tr class="odd">
+<td>Udaharana</td>
+<td>Example</td>
+<td>Smoke and fire in kitchen</td>
+</tr>
+<tr class="even">
+<td>Upanaya</td>
+<td>Application</td>
+<td>Hill has such smoke</td>
+</tr>
+<tr class="odd">
+<td>Nigamana</td>
+<td>Conclusion</td>
+<td>Therefore hill has fire</td>
+</tr>
+</tbody>
+</table>
+<section id="memory" class="level3">
+<h3 class="anchored" data-anchor-id="memory">Memory</h3>
+<pre class="text"><code>P → H → U → U → N
+
+Pratijna
+Hetu
+Udaharana
+Upanaya
+Nigamana</code></pre>
+<hr>
+</section>
+</section>
+<section id="important-terms-in-anumana" class="level1">
+<h1>68. Important Terms in Anumana</h1>
+<p>Some important terms are:</p>
+<ul>
+<li>Paksha</li>
+<li>Sadhya</li>
+<li>Hetu</li>
+<li>Vyapti</li>
+<li>Sapaksha</li>
+<li>Vipaksha</li>
+</ul>
+<hr>
+</section>
+<section id="paksha" class="level1">
+<h1>69. Paksha</h1>
+<p>Paksha is the subject or locus about which the inference is made.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Hill</p>
+</blockquote>
+<p>In:</p>
+<blockquote class="blockquote">
+<p>The hill has fire because it has smoke.</p>
+</blockquote>
+<p>The hill is the Paksha.</p>
+<hr>
+</section>
+<section id="sadhya" class="level1">
+<h1>70. Sadhya</h1>
+<p>Sadhya is what is to be established.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Fire</p>
+</blockquote>
+<p>The inference tries to establish that fire exists on the hill.</p>
+<p>Therefore:</p>
+<pre class="text"><code>Sadhya = Fire</code></pre>
+<hr>
+</section>
+<section id="hetu-1" class="level1">
+<h1>71. Hetu</h1>
+<p>Hetu is the reason used to establish the Sadhya.</p>
+<p>Example:</p>
+<pre class="text"><code>Smoke</code></pre>
+<p>Therefore:</p>
+<pre class="text"><code>Hetu = Smoke</code></pre>
+<hr>
+</section>
+<section id="vyapti" class="level1">
+<h1>72. Vyapti</h1>
+<p>Vyapti means an invariable or universal relation between the Hetu and Sadhya.</p>
+<p>In the famous example:</p>
+<pre class="text"><code>Smoke → Fire</code></pre>
+<p>The required relationship is:</p>
+<blockquote class="blockquote">
+<p>Wherever there is smoke, there is fire.</p>
+</blockquote>
+<p>This relationship is called Vyapti.</p>
+<section id="easy-meaning" class="level3">
+<h3 class="anchored" data-anchor-id="easy-meaning">Easy meaning</h3>
+<pre class="text"><code>Vyapti = Invariable relation</code></pre>
+<hr>
+</section>
+</section>
+<section id="sapaksha" class="level1">
+<h1>73. Sapaksha</h1>
+<p>Sapaksha refers to cases where the Sadhya is present.</p>
+<p>Example:</p>
+<p>If fire is the Sadhya, places where fire is present can serve as Sapaksha examples.</p>
+<p>A kitchen with fire and smoke can be an example.</p>
+<hr>
+</section>
+<section id="vipaksha" class="level1">
+<h1>74. Vipaksha</h1>
+<p>Vipaksha refers to cases where the Sadhya is absent.</p>
+<p>If fire is the Sadhya, a place where there is no fire can be considered a Vipaksha case.</p>
+<p>The purpose is to examine whether the Hetu is absent where the Sadhya is absent.</p>
+<hr>
+</section>
+<section id="types-of-anumana" class="level1">
+<h1>75. Types of Anumana</h1>
+<p>Inference can be classified in different ways in Indian logic.</p>
+<p>Important classifications include:</p>
+<section id="svarthanumana" class="level3">
+<h3 class="anchored" data-anchor-id="svarthanumana">1. Svarthanumana</h3>
+<p>Inference for oneself.</p>
+</section>
+<section id="pararthanumana" class="level3">
+<h3 class="anchored" data-anchor-id="pararthanumana">2. Pararthanumana</h3>
+<p>Inference presented for the understanding of another person.</p>
+<hr>
+</section>
+</section>
+<section id="svarthanumana-1" class="level1">
+<h1>76. Svarthanumana</h1>
+<p>Svarthanumana means inference for oneself.</p>
+<p>The person internally reasons from the evidence to the conclusion.</p>
+<p>Example:</p>
+<p>You see smoke coming from a distant hill and infer:</p>
+<blockquote class="blockquote">
+<p>There is fire on the hill.</p>
+</blockquote>
+<hr>
+</section>
+<section id="pararthanumana-1" class="level1">
+<h1>77. Pararthanumana</h1>
+<p>Pararthanumana means inference presented to establish a conclusion for another person.</p>
+<p>It is commonly expressed through the five-member structure:</p>
+<pre class="text"><code>Pratijna
+↓
+Hetu
+↓
+Udaharana
+↓
+Upanaya
+↓
+Nigamana</code></pre>
+<hr>
+</section>
+<section id="hetvabhasa" class="level1">
+<h1>78. Hetvabhasa</h1>
+<p>Hetvabhasa means a fallacy of inference.</p>
+<p>The word can be understood as:</p>
+<pre class="text"><code>Hetu = reason
+Abhasa = appearance</code></pre>
+<p>So Hetvabhasa refers to a reason that appears to be valid but is actually defective.</p>
+<hr>
+</section>
+<section id="common-hetvabhasas" class="level1">
+<h1>79. Common Hetvabhasas</h1>
+<p>Important Hetvabhasas include:</p>
+<ol type="1">
+<li>Savyabhichara</li>
+<li>Viruddha</li>
+<li>Satpratipaksha</li>
+<li>Asiddha</li>
+<li>Badhita</li>
+</ol>
+<hr>
+</section>
+<section id="savyabhichara" class="level1">
+<h1>80. Savyabhichara</h1>
+<p>Savyabhichara is an irregular or inconclusive reason.</p>
+<p>The Hetu does not maintain the required invariable relationship with the Sadhya.</p>
+<section id="simple-idea" class="level3">
+<h3 class="anchored" data-anchor-id="simple-idea">Simple idea</h3>
+<pre class="text"><code>Reason is not consistently connected with conclusion.</code></pre>
+<hr>
+</section>
+</section>
+<section id="viruddha" class="level1">
+<h1>81. Viruddha</h1>
+<p>Viruddha means contradictory reason.</p>
+<p>The stated reason actually establishes the opposite of what the argument intends to establish.</p>
+<section id="simple-idea-1" class="level3">
+<h3 class="anchored" data-anchor-id="simple-idea-1">Simple idea</h3>
+<pre class="text"><code>The reason supports the opposite conclusion.</code></pre>
+<hr>
+</section>
+</section>
+<section id="satpratipaksha" class="level1">
+<h1>82. Satpratipaksha</h1>
+<p>Satpratipaksha occurs when another valid reason establishes a conclusion that contradicts the original conclusion.</p>
+<section id="simple-idea-2" class="level3">
+<h3 class="anchored" data-anchor-id="simple-idea-2">Simple idea</h3>
+<pre class="text"><code>One reason supports conclusion A.
+
+Another valid reason supports conclusion not-A.</code></pre>
+<p>The original inference is therefore challenged.</p>
+<hr>
+</section>
+</section>
+<section id="asiddha" class="level1">
+<h1>83. Asiddha</h1>
+<p>Asiddha means an unestablished reason.</p>
+<p>The Hetu itself is not properly established.</p>
+<section id="simple-idea-3" class="level3">
+<h3 class="anchored" data-anchor-id="simple-idea-3">Simple idea</h3>
+<pre class="text"><code>The reason being used has not been established.</code></pre>
+<hr>
+</section>
+</section>
+<section id="badhita" class="level1">
+<h1>84. Badhita</h1>
+<p>Badhita occurs when the proposed conclusion is contradicted by stronger or more direct evidence.</p>
+<section id="simple-idea-4" class="level3">
+<h3 class="anchored" data-anchor-id="simple-idea-4">Simple idea</h3>
+<pre class="text"><code>The conclusion is contradicted by stronger evidence.</code></pre>
+<hr>
+</section>
+</section>
+<section id="hetvabhasa-quick-revision" class="level1">
+<h1>85. Hetvabhasa – Quick Revision</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Hetvabhasa</th>
+<th>Simple meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Savyabhichara</td>
+<td>Irregular / inconclusive reason</td>
+</tr>
+<tr class="even">
+<td>Viruddha</td>
+<td>Contradictory reason</td>
+</tr>
+<tr class="odd">
+<td>Satpratipaksha</td>
+<td>Counter-reason</td>
+</tr>
+<tr class="even">
+<td>Asiddha</td>
+<td>Unestablished reason</td>
+</tr>
+<tr class="odd">
+<td>Badhita</td>
+<td>Contradicted by stronger evidence</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-comparison-western-and-indian-logic" class="level1">
+<h1>86. Important Comparison: Western and Indian Logic</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Western Logic</th>
+<th>Indian Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Arguments and propositions</td>
+<td>Pramanas and inference</td>
+</tr>
+<tr class="even">
+<td>Categorical propositions</td>
+<td>Anumana</td>
+</tr>
+<tr class="odd">
+<td>Syllogism</td>
+<td>Five-member inference</td>
+</tr>
+<tr class="even">
+<td>Premise and conclusion</td>
+<td>Pratijna and Nigamana</td>
+</tr>
+<tr class="odd">
+<td>Logical validity</td>
+<td>Vyapti and reasoning</td>
+</tr>
+<tr class="even">
+<td>Fallacies</td>
+<td>Hetvabhasas</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="important-terms-quick-revision" class="level1">
+<h1>87. Important Terms – Quick Revision</h1>
+<pre class="text"><code>Logic
+→ Study of correct reasoning
+
+Argument
+→ Premises + Conclusion
+
+Deduction
+→ General → Specific
+
+Induction
+→ Specific → General
+
+Analogy
+→ Relationship between pairs
+
+A
+→ All S are P
+
+E
+→ No S are P
+
+I
+→ Some S are P
+
+O
+→ Some S are not P
+
+Vyapti
+→ Invariable relation
+
+Hetu
+→ Reason
+
+Sadhya
+→ What is to be established
+
+Paksha
+→ Subject of inference</code></pre>
+<hr>
+</section>
+<section id="classical-square-one-minute-revision" class="level1">
+<h1>88. Classical Square – One-Minute Revision</h1>
+<pre class="text"><code>A = All S are P
+E = No S are P
+I = Some S are P
+O = Some S are not P</code></pre>
+<p>Relationships:</p>
+<pre class="text"><code>A ↔ O = Contradictory
+
+E ↔ I = Contradictory
+
+A ↔ E = Contrary
+
+I ↔ O = Subcontrary
+
+A → I = Subalternation
+
+E → O = Subalternation</code></pre>
+<hr>
+</section>
+<section id="six-pramanas-one-minute-revision" class="level1">
+<h1>89. Six Pramanas – One-Minute Revision</h1>
+<pre class="text"><code>Pratyaksha
+→ Perception
+
+Anumana
+→ Inference
+
+Upamana
+→ Comparison
+
+Shabda
+→ Verbal testimony
+
+Arthapatti
+→ Postulation / Implication
+
+Anupalabdhi
+→ Non-apprehension</code></pre>
+<hr>
+</section>
+<section id="anumana-one-minute-revision" class="level1">
+<h1>90. Anumana – One-Minute Revision</h1>
+<pre class="text"><code>Pratijna
+→ Proposition
+
+Hetu
+→ Reason
+
+Udaharana
+→ Example
+
+Upanaya
+→ Application
+
+Nigamana
+→ Conclusion</code></pre>
+<hr>
+</section>
+<section id="hetvabhasa-one-minute-revision" class="level1">
+<h1>91. Hetvabhasa – One-Minute Revision</h1>
+<pre class="text"><code>Savyabhichara
+→ Irregular reason
+
+Viruddha
+→ Contradictory reason
+
+Satpratipaksha
+→ Counter-reason
+
+Asiddha
+→ Unestablished reason
+
+Badhita
+→ Contradicted by stronger evidence</code></pre>
+<hr>
+</section>
+<section id="ugc-net-focus-areas" class="level1">
+<h1>92. UGC NET Focus Areas</h1>
+<p>Pay particular attention to:</p>
+<ul>
+<li>Premise and conclusion</li>
+<li>Argument forms</li>
+<li>Modus Ponens</li>
+<li>Modus Tollens</li>
+<li>Categorical propositions</li>
+<li>A, E, I and O propositions</li>
+<li>Distribution of terms</li>
+<li>Mood</li>
+<li>Figure</li>
+<li>Deductive reasoning</li>
+<li>Inductive reasoning</li>
+<li>Formal fallacies</li>
+<li>Informal fallacies</li>
+<li>Connotation</li>
+<li>Denotation</li>
+<li>Classical Square of Opposition</li>
+<li>Contradictory</li>
+<li>Contrary</li>
+<li>Subcontrary</li>
+<li>Subalternation</li>
+<li>Analogies</li>
+<li>Venn diagrams</li>
+<li>Indian Logic</li>
+<li>Pramana</li>
+<li>Six Pramanas</li>
+<li>Anumana</li>
+<li>Five members of Anumana</li>
+<li>Vyapti</li>
+<li>Hetvabhasas</li>
+</ul>
+<hr>
+</section>
+<section id="common-mistakes" class="level1">
+<h1>93. Common Mistakes</h1>
+<section id="mistake-1-confusing-deduction-and-induction" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-1-confusing-deduction-and-induction">Mistake 1 – Confusing Deduction and Induction</h3>
+<p>Remember:</p>
+<pre class="text"><code>Deduction → General to Specific
+
+Induction → Specific to General</code></pre>
+</section>
+<section id="mistake-2-confusing-a-and-e" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-2-confusing-a-and-e">Mistake 2 – Confusing A and E</h3>
+<pre class="text"><code>A → All S are P
+
+E → No S are P</code></pre>
+</section>
+<section id="mistake-3-confusing-i-and-o" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-3-confusing-i-and-o">Mistake 3 – Confusing I and O</h3>
+<pre class="text"><code>I → Some S are P
+
+O → Some S are not P</code></pre>
+</section>
+<section id="mistake-4-confusing-connotation-and-denotation" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-4-confusing-connotation-and-denotation">Mistake 4 – Confusing Connotation and Denotation</h3>
+<pre class="text"><code>Denotation → Direct/literal meaning
+
+Connotation → Associated meaning</code></pre>
+</section>
+<section id="mistake-5-confusing-hetu-and-sadhya" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-5-confusing-hetu-and-sadhya">Mistake 5 – Confusing Hetu and Sadhya</h3>
+<pre class="text"><code>Hetu → Reason
+
+Sadhya → What we want to establish</code></pre>
+</section>
+<section id="mistake-6-confusing-vyapti-and-hetu" class="level3">
+<h3 class="anchored" data-anchor-id="mistake-6-confusing-vyapti-and-hetu">Mistake 6 – Confusing Vyapti and Hetu</h3>
+<pre class="text"><code>Hetu → Particular reason
+
+Vyapti → Invariable relationship</code></pre>
+<hr>
+</section>
+</section>
+<section id="final-revision-chart" class="level1">
+<h1>94. Final Revision Chart</h1>
+<pre class="text"><code>                    LOGICAL REASONING
+                           │
+          ┌────────────────┴────────────────┐
+          │                                 │
+       ARGUMENTS                         INDIAN LOGIC
+          │                                 │
+   ┌──────┼──────┐                    Pramanas
+   │      │      │                        │
+Deduction Induction Analogy          ┌─────┴─────┐
+   │      │      │                   │           │
+Argument Categorical              Anumana     Other
+Forms     Propositions               │        Pramanas
+   │         │                       │
+Fallacies   A E I O             Five Members
+   │         │                       │
+Formal/     Square                Vyapti
+Informal    Opposition               │
+                                  Hetvabhasa</code></pre>
+<hr>
+</section>
+<section id="final-exam-tip" class="level1">
+<h1>95. Final Exam Tip</h1>
+<p>When solving a Logical Reasoning question, do not immediately choose an answer.</p>
+<p>First identify:</p>
+<pre class="text"><code>What is the question asking?
+        ↓
+Argument?
+        ↓
+Categorical proposition?
+        ↓
+Fallacy?
+        ↓
+Deduction or induction?
+        ↓
+Analogy?
+        ↓
+Venn diagram?
+        ↓
+Indian Logic?
+        ↓
+Pramana?
+        ↓
+Anumana?
+        ↓
+Hetvabhasa?</code></pre>
+<p>The most important skill in Logical Reasoning is <strong>identifying the type of problem first</strong>.</p>
+<p>Once you identify the type, apply the appropriate rule.</p>
+<hr>
+</section>
+<section id="final-quick-revision" class="level1">
+<h1>96. Final Quick Revision</h1>
+<pre class="text"><code>ARGUMENT
+Premises → Conclusion
+
+DEDUCTION
+General → Specific
+
+INDUCTION
+Specific → General
+
+ANALOGY
+Relationship between pairs
+
+CATEGORICAL PROPOSITIONS
+A → All S are P
+E → No S are P
+I → Some S are P
+O → Some S are not P
+
+SQUARE OF OPPOSITION
+A-O → Contradictory
+E-I → Contradictory
+A-E → Contrary
+I-O → Subcontrary
+A-I → Subalternation
+E-O → Subalternation
+
+INDIAN LOGIC
+Pratyaksha → Perception
+Anumana → Inference
+Upamana → Comparison
+Shabda → Verbal testimony
+Arthapatti → Postulation
+Anupalabdhi → Non-apprehension
+
+ANUMANA
+Pratijna → Proposition
+Hetu → Reason
+Udaharana → Example
+Upanaya → Application
+Nigamana → Conclusion
+
+IMPORTANT TERMS
+Paksha → Subject
+Sadhya → What is to be established
+Hetu → Reason
+Vyapti → Invariable relation
+
+HETVABHASA
+Savyabhichara → Irregular reason
+Viruddha → Contradictory reason
+Satpratipaksha → Counter-reason
+Asiddha → Unestablished reason
+Badhita → Contradicted by stronger evidence</code></pre>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

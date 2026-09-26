@@ -1,0 +1,3883 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit IV – Database Management Systems – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper1.html"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper2.html" aria-current="page"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit4-database-management-systems.html">Unit IV – Database Management Systems</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 2 – Computer Science &amp; Applications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-discrete-structures-and-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Discrete Structures and Optimization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-computer-system-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Computer System Architecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-programming-languages-and-computer-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Programming Languages and Computer Graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-database-management-systems.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit IV – Database Management Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-system-software-and-operating-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit V – System Software and Operating System</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-software-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Software Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-structures-and-algorithms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Structures and Algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-theory-of-computation-and-compilers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Theory of Computation and Compilers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-data-communication-and-computer-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – Data Communication and Computer Networks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-artificial-intelligence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Artificial Intelligence (AI)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-a-database-system-concepts-and-architecture" id="toc-part-a-database-system-concepts-and-architecture" class="nav-link active" data-scroll-target="#part-a-database-system-concepts-and-architecture">Part A – Database System Concepts and Architecture</a>
+  <ul class="collapse">
+  <li><a href="#database-and-dbms" id="toc-database-and-dbms" class="nav-link" data-scroll-target="#database-and-dbms">1. Database and DBMS</a></li>
+  <li><a href="#advantages-of-dbms" id="toc-advantages-of-dbms" class="nav-link" data-scroll-target="#advantages-of-dbms">2. Advantages of DBMS</a></li>
+  <li><a href="#data-models" id="toc-data-models" class="nav-link" data-scroll-target="#data-models">3. Data Models</a>
+  <ul class="collapse">
+  <li><a href="#hierarchical-model" id="toc-hierarchical-model" class="nav-link" data-scroll-target="#hierarchical-model">Hierarchical Model</a></li>
+  <li><a href="#network-model" id="toc-network-model" class="nav-link" data-scroll-target="#network-model">Network Model</a></li>
+  <li><a href="#relational-model" id="toc-relational-model" class="nav-link" data-scroll-target="#relational-model">Relational Model</a></li>
+  </ul></li>
+  <li><a href="#schema-and-instance" id="toc-schema-and-instance" class="nav-link" data-scroll-target="#schema-and-instance">4. Schema and Instance</a>
+  <ul class="collapse">
+  <li><a href="#schema" id="toc-schema" class="nav-link" data-scroll-target="#schema">Schema</a></li>
+  <li><a href="#instance" id="toc-instance" class="nav-link" data-scroll-target="#instance">Instance</a></li>
+  <li><a href="#schema-vs-instance" id="toc-schema-vs-instance" class="nav-link" data-scroll-target="#schema-vs-instance">Schema vs Instance</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#three-schema-architecture" id="toc-three-schema-architecture" class="nav-link" data-scroll-target="#three-schema-architecture">5. Three-Schema Architecture</a>
+  <ul class="collapse">
+  <li><a href="#external-level" id="toc-external-level" class="nav-link" data-scroll-target="#external-level">5.1 External Level</a></li>
+  <li><a href="#conceptual-level" id="toc-conceptual-level" class="nav-link" data-scroll-target="#conceptual-level">5.2 Conceptual Level</a></li>
+  <li><a href="#internal-level" id="toc-internal-level" class="nav-link" data-scroll-target="#internal-level">5.3 Internal Level</a></li>
+  </ul></li>
+  <li><a href="#data-independence" id="toc-data-independence" class="nav-link" data-scroll-target="#data-independence">6. Data Independence</a>
+  <ul class="collapse">
+  <li><a href="#physical-data-independence" id="toc-physical-data-independence" class="nav-link" data-scroll-target="#physical-data-independence">Physical Data Independence</a></li>
+  <li><a href="#logical-data-independence" id="toc-logical-data-independence" class="nav-link" data-scroll-target="#logical-data-independence">Logical Data Independence</a>
+  <ul class="collapse">
+  <li><a href="#important-point" id="toc-important-point" class="nav-link" data-scroll-target="#important-point">Important Point</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#database-languages" id="toc-database-languages" class="nav-link" data-scroll-target="#database-languages">7. Database Languages</a>
+  <ul class="collapse">
+  <li><a href="#ddl" id="toc-ddl" class="nav-link" data-scroll-target="#ddl">DDL</a></li>
+  <li><a href="#dml" id="toc-dml" class="nav-link" data-scroll-target="#dml">DML</a></li>
+  <li><a href="#dcl" id="toc-dcl" class="nav-link" data-scroll-target="#dcl">DCL</a></li>
+  <li><a href="#tcl" id="toc-tcl" class="nav-link" data-scroll-target="#tcl">TCL</a></li>
+  <li><a href="#comparison" id="toc-comparison" class="nav-link" data-scroll-target="#comparison">Comparison</a></li>
+  </ul></li>
+  <li><a href="#database-interfaces" id="toc-database-interfaces" class="nav-link" data-scroll-target="#database-interfaces">8. Database Interfaces</a></li>
+  <li><a href="#centralized-dbms" id="toc-centralized-dbms" class="nav-link" data-scroll-target="#centralized-dbms">9. Centralized DBMS</a></li>
+  <li><a href="#clientserver-architecture" id="toc-clientserver-architecture" class="nav-link" data-scroll-target="#clientserver-architecture">10. Client/Server Architecture</a></li>
+  <li><a href="#part-b-data-modeling" id="toc-part-b-data-modeling" class="nav-link" data-scroll-target="#part-b-data-modeling">Part B – Data Modeling</a></li>
+  <li><a href="#entity-relationship-model" id="toc-entity-relationship-model" class="nav-link" data-scroll-target="#entity-relationship-model">11. Entity-Relationship Model</a>
+  <ul class="collapse">
+  <li><a href="#entity" id="toc-entity" class="nav-link" data-scroll-target="#entity">Entity</a></li>
+  <li><a href="#attribute" id="toc-attribute" class="nav-link" data-scroll-target="#attribute">Attribute</a></li>
+  <li><a href="#relationship" id="toc-relationship" class="nav-link" data-scroll-target="#relationship">Relationship</a></li>
+  </ul></li>
+  <li><a href="#types-of-attributes" id="toc-types-of-attributes" class="nav-link" data-scroll-target="#types-of-attributes">12. Types of Attributes</a>
+  <ul class="collapse">
+  <li><a href="#simple-attribute" id="toc-simple-attribute" class="nav-link" data-scroll-target="#simple-attribute">Simple Attribute</a></li>
+  <li><a href="#composite-attribute" id="toc-composite-attribute" class="nav-link" data-scroll-target="#composite-attribute">Composite Attribute</a></li>
+  <li><a href="#multivalued-attribute" id="toc-multivalued-attribute" class="nav-link" data-scroll-target="#multivalued-attribute">Multivalued Attribute</a></li>
+  <li><a href="#derived-attribute" id="toc-derived-attribute" class="nav-link" data-scroll-target="#derived-attribute">Derived Attribute</a></li>
+  </ul></li>
+  <li><a href="#cardinality" id="toc-cardinality" class="nav-link" data-scroll-target="#cardinality">13. Cardinality</a></li>
+  <li><a href="#relational-model-1" id="toc-relational-model-1" class="nav-link" data-scroll-target="#relational-model-1">14. Relational Model</a></li>
+  <li><a href="#relational-constraints" id="toc-relational-constraints" class="nav-link" data-scroll-target="#relational-constraints">15. Relational Constraints</a>
+  <ul class="collapse">
+  <li><a href="#domain-constraint" id="toc-domain-constraint" class="nav-link" data-scroll-target="#domain-constraint">Domain Constraint</a></li>
+  <li><a href="#key-constraint" id="toc-key-constraint" class="nav-link" data-scroll-target="#key-constraint">Key Constraint</a></li>
+  <li><a href="#entity-integrity" id="toc-entity-integrity" class="nav-link" data-scroll-target="#entity-integrity">Entity Integrity</a></li>
+  <li><a href="#referential-integrity" id="toc-referential-integrity" class="nav-link" data-scroll-target="#referential-integrity">Referential Integrity</a></li>
+  </ul></li>
+  <li><a href="#relational-database-schema" id="toc-relational-database-schema" class="nav-link" data-scroll-target="#relational-database-schema">16. Relational Database Schema</a></li>
+  <li><a href="#update-operations" id="toc-update-operations" class="nav-link" data-scroll-target="#update-operations">17. Update Operations</a>
+  <ul class="collapse">
+  <li><a href="#insert" id="toc-insert" class="nav-link" data-scroll-target="#insert">Insert</a></li>
+  <li><a href="#delete" id="toc-delete" class="nav-link" data-scroll-target="#delete">Delete</a></li>
+  <li><a href="#update" id="toc-update" class="nav-link" data-scroll-target="#update">Update</a></li>
+  </ul></li>
+  <li><a href="#part-c-relational-algebra-and-relational-calculus" id="toc-part-c-relational-algebra-and-relational-calculus" class="nav-link" data-scroll-target="#part-c-relational-algebra-and-relational-calculus">Part C – Relational Algebra and Relational Calculus</a></li>
+  <li><a href="#relational-algebra" id="toc-relational-algebra" class="nav-link" data-scroll-target="#relational-algebra">18. Relational Algebra</a>
+  <ul class="collapse">
+  <li><a href="#selection" id="toc-selection" class="nav-link" data-scroll-target="#selection">Selection</a></li>
+  <li><a href="#projection" id="toc-projection" class="nav-link" data-scroll-target="#projection">Projection</a></li>
+  <li><a href="#union" id="toc-union" class="nav-link" data-scroll-target="#union">Union</a></li>
+  <li><a href="#set-difference" id="toc-set-difference" class="nav-link" data-scroll-target="#set-difference">Set Difference</a></li>
+  <li><a href="#cartesian-product" id="toc-cartesian-product" class="nav-link" data-scroll-target="#cartesian-product">Cartesian Product</a></li>
+  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename">Rename</a></li>
+  <li><a href="#join" id="toc-join" class="nav-link" data-scroll-target="#join">Join</a></li>
+  </ul></li>
+  <li><a href="#relational-calculus" id="toc-relational-calculus" class="nav-link" data-scroll-target="#relational-calculus">19. Relational Calculus</a>
+  <ul class="collapse">
+  <li><a href="#relational-algebra-vs-relational-calculus" id="toc-relational-algebra-vs-relational-calculus" class="nav-link" data-scroll-target="#relational-algebra-vs-relational-calculus">Relational Algebra vs Relational Calculus</a></li>
+  </ul></li>
+  <li><a href="#codds-rules" id="toc-codds-rules" class="nav-link" data-scroll-target="#codds-rules">20. Codd’s Rules</a>
+  <ul class="collapse">
+  <li><a href="#rule-0" id="toc-rule-0" class="nav-link" data-scroll-target="#rule-0">Rule 0</a></li>
+  <li><a href="#rule-1-information-rule" id="toc-rule-1-information-rule" class="nav-link" data-scroll-target="#rule-1-information-rule">Rule 1 – Information Rule</a></li>
+  <li><a href="#rule-2-guaranteed-access" id="toc-rule-2-guaranteed-access" class="nav-link" data-scroll-target="#rule-2-guaranteed-access">Rule 2 – Guaranteed Access</a></li>
+  <li><a href="#rule-3-systematic-treatment-of-null" id="toc-rule-3-systematic-treatment-of-null" class="nav-link" data-scroll-target="#rule-3-systematic-treatment-of-null">Rule 3 – Systematic Treatment of NULL</a></li>
+  <li><a href="#rule-4-dynamic-online-catalog" id="toc-rule-4-dynamic-online-catalog" class="nav-link" data-scroll-target="#rule-4-dynamic-online-catalog">Rule 4 – Dynamic Online Catalog</a></li>
+  <li><a href="#rule-5-comprehensive-data-sublanguage" id="toc-rule-5-comprehensive-data-sublanguage" class="nav-link" data-scroll-target="#rule-5-comprehensive-data-sublanguage">Rule 5 – Comprehensive Data Sublanguage</a></li>
+  <li><a href="#rule-6-view-updating" id="toc-rule-6-view-updating" class="nav-link" data-scroll-target="#rule-6-view-updating">Rule 6 – View Updating</a></li>
+  <li><a href="#rule-7-high-level-insert-update-delete" id="toc-rule-7-high-level-insert-update-delete" class="nav-link" data-scroll-target="#rule-7-high-level-insert-update-delete">Rule 7 – High-Level Insert, Update, Delete</a></li>
+  <li><a href="#rule-8-physical-data-independence" id="toc-rule-8-physical-data-independence" class="nav-link" data-scroll-target="#rule-8-physical-data-independence">Rule 8 – Physical Data Independence</a></li>
+  <li><a href="#rule-9-logical-data-independence" id="toc-rule-9-logical-data-independence" class="nav-link" data-scroll-target="#rule-9-logical-data-independence">Rule 9 – Logical Data Independence</a></li>
+  <li><a href="#rule-10-integrity-independence" id="toc-rule-10-integrity-independence" class="nav-link" data-scroll-target="#rule-10-integrity-independence">Rule 10 – Integrity Independence</a></li>
+  <li><a href="#rule-11-distribution-independence" id="toc-rule-11-distribution-independence" class="nav-link" data-scroll-target="#rule-11-distribution-independence">Rule 11 – Distribution Independence</a></li>
+  <li><a href="#rule-12-nonsubversion" id="toc-rule-12-nonsubversion" class="nav-link" data-scroll-target="#rule-12-nonsubversion">Rule 12 – Nonsubversion</a></li>
+  </ul></li>
+  <li><a href="#part-d-sql" id="toc-part-d-sql" class="nav-link" data-scroll-target="#part-d-sql">Part D – SQL</a></li>
+  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">21. SQL</a></li>
+  <li><a href="#create" id="toc-create" class="nav-link" data-scroll-target="#create">22. CREATE</a></li>
+  <li><a href="#sql-data-types" id="toc-sql-data-types" class="nav-link" data-scroll-target="#sql-data-types">23. SQL Data Types</a></li>
+  <li><a href="#sql-constraints" id="toc-sql-constraints" class="nav-link" data-scroll-target="#sql-constraints">24. SQL Constraints</a></li>
+  <li><a href="#insert-1" id="toc-insert-1" class="nav-link" data-scroll-target="#insert-1">25. INSERT</a></li>
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select">26. SELECT</a></li>
+  <li><a href="#where" id="toc-where" class="nav-link" data-scroll-target="#where">27. WHERE</a></li>
+  <li><a href="#order-by" id="toc-order-by" class="nav-link" data-scroll-target="#order-by">28. ORDER BY</a></li>
+  <li><a href="#group-by" id="toc-group-by" class="nav-link" data-scroll-target="#group-by">29. GROUP BY</a></li>
+  <li><a href="#having" id="toc-having" class="nav-link" data-scroll-target="#having">30. HAVING</a>
+  <ul class="collapse">
+  <li><a href="#where-vs-having" id="toc-where-vs-having" class="nav-link" data-scroll-target="#where-vs-having">WHERE vs HAVING</a></li>
+  </ul></li>
+  <li><a href="#update-1" id="toc-update-1" class="nav-link" data-scroll-target="#update-1">31. UPDATE</a></li>
+  <li><a href="#delete-1" id="toc-delete-1" class="nav-link" data-scroll-target="#delete-1">32. DELETE</a></li>
+  <li><a href="#sql-joins" id="toc-sql-joins" class="nav-link" data-scroll-target="#sql-joins">33. SQL Joins</a>
+  <ul class="collapse">
+  <li><a href="#inner-join" id="toc-inner-join" class="nav-link" data-scroll-target="#inner-join">Inner Join</a></li>
+  <li><a href="#left-join" id="toc-left-join" class="nav-link" data-scroll-target="#left-join">Left Join</a></li>
+  <li><a href="#right-join" id="toc-right-join" class="nav-link" data-scroll-target="#right-join">Right Join</a></li>
+  <li><a href="#full-outer-join" id="toc-full-outer-join" class="nav-link" data-scroll-target="#full-outer-join">Full Outer Join</a></li>
+  </ul></li>
+  <li><a href="#views" id="toc-views" class="nav-link" data-scroll-target="#views">34. Views</a></li>
+  <li><a href="#stored-procedures" id="toc-stored-procedures" class="nav-link" data-scroll-target="#stored-procedures">35. Stored Procedures</a></li>
+  <li><a href="#stored-functions" id="toc-stored-functions" class="nav-link" data-scroll-target="#stored-functions">36. Stored Functions</a></li>
+  <li><a href="#database-triggers" id="toc-database-triggers" class="nav-link" data-scroll-target="#database-triggers">37. Database Triggers</a></li>
+  <li><a href="#sql-injection" id="toc-sql-injection" class="nav-link" data-scroll-target="#sql-injection">38. SQL Injection</a></li>
+  <li><a href="#part-e-normalization" id="toc-part-e-normalization" class="nav-link" data-scroll-target="#part-e-normalization">Part E – Normalization</a></li>
+  <li><a href="#functional-dependency" id="toc-functional-dependency" class="nav-link" data-scroll-target="#functional-dependency">39. Functional Dependency</a></li>
+  <li><a href="#types-of-functional-dependency" id="toc-types-of-functional-dependency" class="nav-link" data-scroll-target="#types-of-functional-dependency">40. Types of Functional Dependency</a>
+  <ul class="collapse">
+  <li><a href="#trivial-functional-dependency" id="toc-trivial-functional-dependency" class="nav-link" data-scroll-target="#trivial-functional-dependency">Trivial Functional Dependency</a></li>
+  <li><a href="#partial-dependency" id="toc-partial-dependency" class="nav-link" data-scroll-target="#partial-dependency">Partial Dependency</a></li>
+  <li><a href="#transitive-dependency" id="toc-transitive-dependency" class="nav-link" data-scroll-target="#transitive-dependency">Transitive Dependency</a></li>
+  </ul></li>
+  <li><a href="#normalization" id="toc-normalization" class="nav-link" data-scroll-target="#normalization">41. Normalization</a></li>
+  <li><a href="#first-normal-form-1nf" id="toc-first-normal-form-1nf" class="nav-link" data-scroll-target="#first-normal-form-1nf">42. First Normal Form – 1NF</a></li>
+  <li><a href="#second-normal-form-2nf" id="toc-second-normal-form-2nf" class="nav-link" data-scroll-target="#second-normal-form-2nf">43. Second Normal Form – 2NF</a></li>
+  <li><a href="#third-normal-form-3nf" id="toc-third-normal-form-3nf" class="nav-link" data-scroll-target="#third-normal-form-3nf">44. Third Normal Form – 3NF</a></li>
+  <li><a href="#bcnf" id="toc-bcnf" class="nav-link" data-scroll-target="#bcnf">45. BCNF</a></li>
+  <li><a href="#nf" id="toc-nf" class="nav-link" data-scroll-target="#nf">46. 4NF</a></li>
+  <li><a href="#nf-1" id="toc-nf-1" class="nav-link" data-scroll-target="#nf-1">47. 5NF</a></li>
+  <li><a href="#normalization-summary" id="toc-normalization-summary" class="nav-link" data-scroll-target="#normalization-summary">48. Normalization Summary</a></li>
+  <li><a href="#part-f-query-processing-and-optimization" id="toc-part-f-query-processing-and-optimization" class="nav-link" data-scroll-target="#part-f-query-processing-and-optimization">Part F – Query Processing and Optimization</a></li>
+  <li><a href="#query-processing" id="toc-query-processing" class="nav-link" data-scroll-target="#query-processing">49. Query Processing</a></li>
+  <li><a href="#query-optimization" id="toc-query-optimization" class="nav-link" data-scroll-target="#query-optimization">50. Query Optimization</a>
+  <ul class="collapse">
+  <li><a href="#selection-pushdown" id="toc-selection-pushdown" class="nav-link" data-scroll-target="#selection-pushdown">Selection Pushdown</a></li>
+  </ul></li>
+  <li><a href="#part-g-transaction-processing" id="toc-part-g-transaction-processing" class="nav-link" data-scroll-target="#part-g-transaction-processing">Part G – Transaction Processing</a></li>
+  <li><a href="#transaction" id="toc-transaction" class="nav-link" data-scroll-target="#transaction">51. Transaction</a></li>
+  <li><a href="#acid-properties" id="toc-acid-properties" class="nav-link" data-scroll-target="#acid-properties">52. ACID Properties</a>
+  <ul class="collapse">
+  <li><a href="#atomicity" id="toc-atomicity" class="nav-link" data-scroll-target="#atomicity">Atomicity</a></li>
+  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency">Consistency</a></li>
+  <li><a href="#isolation" id="toc-isolation" class="nav-link" data-scroll-target="#isolation">Isolation</a></li>
+  <li><a href="#durability" id="toc-durability" class="nav-link" data-scroll-target="#durability">Durability</a></li>
+  </ul></li>
+  <li><a href="#transaction-states" id="toc-transaction-states" class="nav-link" data-scroll-target="#transaction-states">53. Transaction States</a></li>
+  <li><a href="#concurrency-control" id="toc-concurrency-control" class="nav-link" data-scroll-target="#concurrency-control">54. Concurrency Control</a></li>
+  <li><a href="#locking" id="toc-locking" class="nav-link" data-scroll-target="#locking">55. Locking</a>
+  <ul class="collapse">
+  <li><a href="#shared-lock" id="toc-shared-lock" class="nav-link" data-scroll-target="#shared-lock">Shared Lock</a></li>
+  <li><a href="#exclusive-lock" id="toc-exclusive-lock" class="nav-link" data-scroll-target="#exclusive-lock">Exclusive Lock</a></li>
+  </ul></li>
+  <li><a href="#two-phase-locking" id="toc-two-phase-locking" class="nav-link" data-scroll-target="#two-phase-locking">56. Two-Phase Locking</a>
+  <ul class="collapse">
+  <li><a href="#growing-phase" id="toc-growing-phase" class="nav-link" data-scroll-target="#growing-phase">Growing Phase</a></li>
+  <li><a href="#shrinking-phase" id="toc-shrinking-phase" class="nav-link" data-scroll-target="#shrinking-phase">Shrinking Phase</a></li>
+  </ul></li>
+  <li><a href="#timestamp-ordering" id="toc-timestamp-ordering" class="nav-link" data-scroll-target="#timestamp-ordering">57. Timestamp Ordering</a></li>
+  <li><a href="#deadlock" id="toc-deadlock" class="nav-link" data-scroll-target="#deadlock">58. Deadlock</a></li>
+  <li><a href="#part-h-database-recovery" id="toc-part-h-database-recovery" class="nav-link" data-scroll-target="#part-h-database-recovery">Part H – Database Recovery</a></li>
+  <li><a href="#database-recovery" id="toc-database-recovery" class="nav-link" data-scroll-target="#database-recovery">59. Database Recovery</a></li>
+  <li><a href="#log-based-recovery" id="toc-log-based-recovery" class="nav-link" data-scroll-target="#log-based-recovery">60. Log-Based Recovery</a>
+  <ul class="collapse">
+  <li><a href="#undo" id="toc-undo" class="nav-link" data-scroll-target="#undo">UNDO</a></li>
+  <li><a href="#redo" id="toc-redo" class="nav-link" data-scroll-target="#redo">REDO</a></li>
+  </ul></li>
+  <li><a href="#checkpoint" id="toc-checkpoint" class="nav-link" data-scroll-target="#checkpoint">61. Checkpoint</a></li>
+  <li><a href="#shadow-paging" id="toc-shadow-paging" class="nav-link" data-scroll-target="#shadow-paging">62. Shadow Paging</a></li>
+  <li><a href="#part-i-object-and-object-relational-databases" id="toc-part-i-object-and-object-relational-databases" class="nav-link" data-scroll-target="#part-i-object-and-object-relational-databases">Part I – Object and Object-Relational Databases</a></li>
+  <li><a href="#object-database" id="toc-object-database" class="nav-link" data-scroll-target="#object-database">63. Object Database</a></li>
+  <li><a href="#object-relational-database" id="toc-object-relational-database" class="nav-link" data-scroll-target="#object-relational-database">64. Object-Relational Database</a></li>
+  <li><a href="#part-j-database-security-and-authorization" id="toc-part-j-database-security-and-authorization" class="nav-link" data-scroll-target="#part-j-database-security-and-authorization">Part J – Database Security and Authorization</a></li>
+  <li><a href="#database-security" id="toc-database-security" class="nav-link" data-scroll-target="#database-security">65. Database Security</a></li>
+  <li><a href="#authentication-vs-authorization" id="toc-authentication-vs-authorization" class="nav-link" data-scroll-target="#authentication-vs-authorization">66. Authentication vs Authorization</a></li>
+  <li><a href="#grant" id="toc-grant" class="nav-link" data-scroll-target="#grant">67. GRANT</a></li>
+  <li><a href="#revoke" id="toc-revoke" class="nav-link" data-scroll-target="#revoke">68. REVOKE</a></li>
+  <li><a href="#roles" id="toc-roles" class="nav-link" data-scroll-target="#roles">69. Roles</a></li>
+  <li><a href="#part-k-enhanced-data-models" id="toc-part-k-enhanced-data-models" class="nav-link" data-scroll-target="#part-k-enhanced-data-models">Part K – Enhanced Data Models</a></li>
+  <li><a href="#temporal-databases" id="toc-temporal-databases" class="nav-link" data-scroll-target="#temporal-databases">70. Temporal Databases</a>
+  <ul class="collapse">
+  <li><a href="#valid-time" id="toc-valid-time" class="nav-link" data-scroll-target="#valid-time">Valid Time</a></li>
+  <li><a href="#transaction-time" id="toc-transaction-time" class="nav-link" data-scroll-target="#transaction-time">Transaction Time</a></li>
+  </ul></li>
+  <li><a href="#multimedia-databases" id="toc-multimedia-databases" class="nav-link" data-scroll-target="#multimedia-databases">71. Multimedia Databases</a></li>
+  <li><a href="#deductive-databases" id="toc-deductive-databases" class="nav-link" data-scroll-target="#deductive-databases">72. Deductive Databases</a></li>
+  <li><a href="#xml-databases" id="toc-xml-databases" class="nav-link" data-scroll-target="#xml-databases">73. XML Databases</a></li>
+  <li><a href="#internet-databases" id="toc-internet-databases" class="nav-link" data-scroll-target="#internet-databases">74. Internet Databases</a></li>
+  <li><a href="#mobile-databases" id="toc-mobile-databases" class="nav-link" data-scroll-target="#mobile-databases">75. Mobile Databases</a></li>
+  <li><a href="#geographic-information-systems" id="toc-geographic-information-systems" class="nav-link" data-scroll-target="#geographic-information-systems">76. Geographic Information Systems</a></li>
+  <li><a href="#genome-data-management" id="toc-genome-data-management" class="nav-link" data-scroll-target="#genome-data-management">77. Genome Data Management</a></li>
+  <li><a href="#distributed-databases" id="toc-distributed-databases" class="nav-link" data-scroll-target="#distributed-databases">78. Distributed Databases</a></li>
+  <li><a href="#part-l-data-warehousing" id="toc-part-l-data-warehousing" class="nav-link" data-scroll-target="#part-l-data-warehousing">Part L – Data Warehousing</a></li>
+  <li><a href="#data-warehouse" id="toc-data-warehouse" class="nav-link" data-scroll-target="#data-warehouse">79. Data Warehouse</a></li>
+  <li><a href="#oltp" id="toc-oltp" class="nav-link" data-scroll-target="#oltp">80. OLTP</a></li>
+  <li><a href="#olap" id="toc-olap" class="nav-link" data-scroll-target="#olap">81. OLAP</a>
+  <ul class="collapse">
+  <li><a href="#oltp-vs-olap" id="toc-oltp-vs-olap" class="nav-link" data-scroll-target="#oltp-vs-olap">OLTP vs OLAP</a></li>
+  </ul></li>
+  <li><a href="#data-warehouse-modeling" id="toc-data-warehouse-modeling" class="nav-link" data-scroll-target="#data-warehouse-modeling">82. Data Warehouse Modeling</a>
+  <ul class="collapse">
+  <li><a href="#star-schema" id="toc-star-schema" class="nav-link" data-scroll-target="#star-schema">Star Schema</a></li>
+  <li><a href="#fact-table" id="toc-fact-table" class="nav-link" data-scroll-target="#fact-table">Fact Table</a></li>
+  <li><a href="#dimension-table" id="toc-dimension-table" class="nav-link" data-scroll-target="#dimension-table">Dimension Table</a></li>
+  </ul></li>
+  <li><a href="#concept-hierarchy" id="toc-concept-hierarchy" class="nav-link" data-scroll-target="#concept-hierarchy">83. Concept Hierarchy</a></li>
+  <li><a href="#part-m-data-mining" id="toc-part-m-data-mining" class="nav-link" data-scroll-target="#part-m-data-mining">Part M – Data Mining</a></li>
+  <li><a href="#data-mining" id="toc-data-mining" class="nav-link" data-scroll-target="#data-mining">84. Data Mining</a></li>
+  <li><a href="#association-rules" id="toc-association-rules" class="nav-link" data-scroll-target="#association-rules">85. Association Rules</a>
+  <ul class="collapse">
+  <li><a href="#support" id="toc-support" class="nav-link" data-scroll-target="#support">Support</a></li>
+  <li><a href="#confidence" id="toc-confidence" class="nav-link" data-scroll-target="#confidence">Confidence</a></li>
+  <li><a href="#lift" id="toc-lift" class="nav-link" data-scroll-target="#lift">Lift</a></li>
+  </ul></li>
+  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">86. Classification</a></li>
+  <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering">87. Clustering</a></li>
+  <li><a href="#regression" id="toc-regression" class="nav-link" data-scroll-target="#regression">88. Regression</a></li>
+  <li><a href="#support-vector-machine" id="toc-support-vector-machine" class="nav-link" data-scroll-target="#support-vector-machine">89. Support Vector Machine</a></li>
+  <li><a href="#k-nearest-neighbour" id="toc-k-nearest-neighbour" class="nav-link" data-scroll-target="#k-nearest-neighbour">90. K-Nearest Neighbour</a></li>
+  <li><a href="#hidden-markov-model" id="toc-hidden-markov-model" class="nav-link" data-scroll-target="#hidden-markov-model">91. Hidden Markov Model</a></li>
+  <li><a href="#summarization" id="toc-summarization" class="nav-link" data-scroll-target="#summarization">92. Summarization</a></li>
+  <li><a href="#dependency-modeling" id="toc-dependency-modeling" class="nav-link" data-scroll-target="#dependency-modeling">93. Dependency Modeling</a></li>
+  <li><a href="#link-analysis" id="toc-link-analysis" class="nav-link" data-scroll-target="#link-analysis">94. Link Analysis</a></li>
+  <li><a href="#sequencing-analysis" id="toc-sequencing-analysis" class="nav-link" data-scroll-target="#sequencing-analysis">95. Sequencing Analysis</a></li>
+  <li><a href="#social-network-analysis" id="toc-social-network-analysis" class="nav-link" data-scroll-target="#social-network-analysis">96. Social Network Analysis</a></li>
+  <li><a href="#part-n-big-data-systems" id="toc-part-n-big-data-systems" class="nav-link" data-scroll-target="#part-n-big-data-systems">Part N – Big Data Systems</a></li>
+  <li><a href="#big-data" id="toc-big-data" class="nav-link" data-scroll-target="#big-data">97. Big Data</a></li>
+  <li><a href="#characteristics-of-big-data" id="toc-characteristics-of-big-data" class="nav-link" data-scroll-target="#characteristics-of-big-data">98. Characteristics of Big Data</a>
+  <ul class="collapse">
+  <li><a href="#volume" id="toc-volume" class="nav-link" data-scroll-target="#volume">Volume</a></li>
+  <li><a href="#velocity" id="toc-velocity" class="nav-link" data-scroll-target="#velocity">Velocity</a></li>
+  <li><a href="#variety" id="toc-variety" class="nav-link" data-scroll-target="#variety">Variety</a></li>
+  <li><a href="#veracity" id="toc-veracity" class="nav-link" data-scroll-target="#veracity">Veracity</a></li>
+  <li><a href="#value" id="toc-value" class="nav-link" data-scroll-target="#value">Value</a></li>
+  </ul></li>
+  <li><a href="#types-of-big-data" id="toc-types-of-big-data" class="nav-link" data-scroll-target="#types-of-big-data">99. Types of Big Data</a>
+  <ul class="collapse">
+  <li><a href="#structured-data" id="toc-structured-data" class="nav-link" data-scroll-target="#structured-data">Structured Data</a></li>
+  <li><a href="#semi-structured-data" id="toc-semi-structured-data" class="nav-link" data-scroll-target="#semi-structured-data">Semi-Structured Data</a></li>
+  <li><a href="#unstructured-data" id="toc-unstructured-data" class="nav-link" data-scroll-target="#unstructured-data">Unstructured Data</a></li>
+  </ul></li>
+  <li><a href="#big-data-architecture" id="toc-big-data-architecture" class="nav-link" data-scroll-target="#big-data-architecture">100. Big Data Architecture</a></li>
+  <li><a href="#mapreduce" id="toc-mapreduce" class="nav-link" data-scroll-target="#mapreduce">101. MapReduce</a>
+  <ul class="collapse">
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map">Map</a></li>
+  <li><a href="#shuffle-and-sort" id="toc-shuffle-and-sort" class="nav-link" data-scroll-target="#shuffle-and-sort">Shuffle and Sort</a></li>
+  <li><a href="#reduce" id="toc-reduce" class="nav-link" data-scroll-target="#reduce">Reduce</a></li>
+  </ul></li>
+  <li><a href="#example-of-mapreduce" id="toc-example-of-mapreduce" class="nav-link" data-scroll-target="#example-of-mapreduce">102. Example of MapReduce</a></li>
+  <li><a href="#hadoop" id="toc-hadoop" class="nav-link" data-scroll-target="#hadoop">103. Hadoop</a></li>
+  <li><a href="#hdfs" id="toc-hdfs" class="nav-link" data-scroll-target="#hdfs">104. HDFS</a>
+  <ul class="collapse">
+  <li><a href="#namenode" id="toc-namenode" class="nav-link" data-scroll-target="#namenode">NameNode</a></li>
+  <li><a href="#datanode" id="toc-datanode" class="nav-link" data-scroll-target="#datanode">DataNode</a></li>
+  </ul></li>
+  <li><a href="#hdfs-blocks" id="toc-hdfs-blocks" class="nav-link" data-scroll-target="#hdfs-blocks">105. HDFS Blocks</a></li>
+  <li><a href="#part-o-nosql" id="toc-part-o-nosql" class="nav-link" data-scroll-target="#part-o-nosql">Part O – NoSQL</a></li>
+  <li><a href="#nosql" id="toc-nosql" class="nav-link" data-scroll-target="#nosql">106. NoSQL</a></li>
+  <li><a href="#types-of-nosql-databases" id="toc-types-of-nosql-databases" class="nav-link" data-scroll-target="#types-of-nosql-databases">107. Types of NoSQL Databases</a>
+  <ul class="collapse">
+  <li><a href="#key-value" id="toc-key-value" class="nav-link" data-scroll-target="#key-value">Key-Value</a></li>
+  <li><a href="#document-database" id="toc-document-database" class="nav-link" data-scroll-target="#document-database">Document Database</a></li>
+  <li><a href="#column-family-database" id="toc-column-family-database" class="nav-link" data-scroll-target="#column-family-database">Column-Family Database</a></li>
+  <li><a href="#graph-database" id="toc-graph-database" class="nav-link" data-scroll-target="#graph-database">Graph Database</a></li>
+  </ul></li>
+  <li><a href="#nosql-products" id="toc-nosql-products" class="nav-link" data-scroll-target="#nosql-products">108. NoSQL Products</a></li>
+  <li><a href="#nosql-querying-and-management" id="toc-nosql-querying-and-management" class="nav-link" data-scroll-target="#nosql-querying-and-management">109. NoSQL Querying and Management</a></li>
+  <li><a href="#query-optimization-in-nosql" id="toc-query-optimization-in-nosql" class="nav-link" data-scroll-target="#query-optimization-in-nosql">110. Query Optimization in NoSQL</a></li>
+  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing">111. Indexing</a></li>
+  <li><a href="#ordering-data-sets" id="toc-ordering-data-sets" class="nav-link" data-scroll-target="#ordering-data-sets">112. Ordering Data Sets</a></li>
+  <li><a href="#nosql-in-cloud" id="toc-nosql-in-cloud" class="nav-link" data-scroll-target="#nosql-in-cloud">113. NoSQL in Cloud</a></li>
+  <li><a href="#relational-vs-nosql" id="toc-relational-vs-nosql" class="nav-link" data-scroll-target="#relational-vs-nosql">114. Relational vs NoSQL</a></li>
+  <li><a href="#sql-vs-nosql" id="toc-sql-vs-nosql" class="nav-link" data-scroll-target="#sql-vs-nosql">115. SQL vs NoSQL</a></li>
+  <li><a href="#important-dbms-comparison-table" id="toc-important-dbms-comparison-table" class="nav-link" data-scroll-target="#important-dbms-comparison-table">116. Important DBMS Comparison Table</a></li>
+  <li><a href="#important-normalization-revision" id="toc-important-normalization-revision" class="nav-link" data-scroll-target="#important-normalization-revision">117. Important Normalization Revision</a></li>
+  <li><a href="#important-transaction-revision" id="toc-important-transaction-revision" class="nav-link" data-scroll-target="#important-transaction-revision">118. Important Transaction Revision</a></li>
+  <li><a href="#important-data-mining-revision" id="toc-important-data-mining-revision" class="nav-link" data-scroll-target="#important-data-mining-revision">119. Important Data Mining Revision</a></li>
+  <li><a href="#important-big-data-revision" id="toc-important-big-data-revision" class="nav-link" data-scroll-target="#important-big-data-revision">120. Important Big Data Revision</a></li>
+  <li><a href="#important-nosql-revision" id="toc-important-nosql-revision" class="nav-link" data-scroll-target="#important-nosql-revision">121. Important NoSQL Revision</a></li>
+  <li><a href="#ugc-net-high-priority-areas" id="toc-ugc-net-high-priority-areas" class="nav-link" data-scroll-target="#ugc-net-high-priority-areas">122. UGC NET High-Priority Areas</a>
+  <ul class="collapse">
+  <li><a href="#dbms-fundamentals" id="toc-dbms-fundamentals" class="nav-link" data-scroll-target="#dbms-fundamentals">DBMS Fundamentals</a></li>
+  <li><a href="#er-and-relational-model" id="toc-er-and-relational-model" class="nav-link" data-scroll-target="#er-and-relational-model">ER and Relational Model</a></li>
+  <li><a href="#sql-1" id="toc-sql-1" class="nav-link" data-scroll-target="#sql-1">SQL</a></li>
+  <li><a href="#normalization-1" id="toc-normalization-1" class="nav-link" data-scroll-target="#normalization-1">Normalization</a></li>
+  <li><a href="#transactions" id="toc-transactions" class="nav-link" data-scroll-target="#transactions">Transactions</a></li>
+  <li><a href="#data-warehousing-and-mining" id="toc-data-warehousing-and-mining" class="nav-link" data-scroll-target="#data-warehousing-and-mining">Data Warehousing and Mining</a></li>
+  <li><a href="#big-data-1" id="toc-big-data-1" class="nav-link" data-scroll-target="#big-data-1">Big Data</a></li>
+  <li><a href="#nosql-1" id="toc-nosql-1" class="nav-link" data-scroll-target="#nosql-1">NoSQL</a></li>
+  </ul></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">123. Common Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#schema-vs-instance-1" id="toc-schema-vs-instance-1" class="nav-link" data-scroll-target="#schema-vs-instance-1">Schema vs Instance</a></li>
+  <li><a href="#primary-key-vs-foreign-key" id="toc-primary-key-vs-foreign-key" class="nav-link" data-scroll-target="#primary-key-vs-foreign-key">Primary Key vs Foreign Key</a></li>
+  <li><a href="#where-vs-having-1" id="toc-where-vs-having-1" class="nav-link" data-scroll-target="#where-vs-having-1">WHERE vs HAVING</a></li>
+  <li><a href="#delete-vs-drop" id="toc-delete-vs-drop" class="nav-link" data-scroll-target="#delete-vs-drop">DELETE vs DROP</a></li>
+  <li><a href="#nf-vs-3nf" id="toc-nf-vs-3nf" class="nav-link" data-scroll-target="#nf-vs-3nf">2NF vs 3NF</a></li>
+  <li><a href="#oltp-vs-olap-1" id="toc-oltp-vs-olap-1" class="nav-link" data-scroll-target="#oltp-vs-olap-1">OLTP vs OLAP</a></li>
+  <li><a href="#classification-vs-clustering" id="toc-classification-vs-clustering" class="nav-link" data-scroll-target="#classification-vs-clustering">Classification vs Clustering</a></li>
+  <li><a href="#namenode-vs-datanode" id="toc-namenode-vs-datanode" class="nav-link" data-scroll-target="#namenode-vs-datanode">NameNode vs DataNode</a></li>
+  <li><a href="#map-vs-reduce" id="toc-map-vs-reduce" class="nav-link" data-scroll-target="#map-vs-reduce">Map vs Reduce</a></li>
+  </ul></li>
+  <li><a href="#one-minute-revision" id="toc-one-minute-revision" class="nav-link" data-scroll-target="#one-minute-revision">124. One-Minute Revision</a></li>
+  <li><a href="#final-exam-strategy" id="toc-final-exam-strategy" class="nav-link" data-scroll-target="#final-exam-strategy">125. Final Exam Strategy</a></li>
+  <li><a href="#final-summary" id="toc-final-summary" class="nav-link" data-scroll-target="#final-summary">126. Final Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit IV – Database Management Systems</h1>
+<p class="subtitle lead">UGC NET Computer Science and Applications – Paper II</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This unit covers database concepts, architecture, data modeling, SQL, normalization, transactions, database security, advanced databases, data warehousing, data mining, Big Data, Hadoop, HDFS, and NoSQL.</p>
+<section id="part-a-database-system-concepts-and-architecture" class="level1">
+<h1>Part A – Database System Concepts and Architecture</h1>
+<section id="database-and-dbms" class="level2">
+<h2 class="anchored" data-anchor-id="database-and-dbms">1. Database and DBMS</h2>
+<p>A <strong>database</strong> is an organized collection of related data.</p>
+<p>A <strong>Database Management System (DBMS)</strong> is software used to:</p>
+<ul>
+<li>Create databases</li>
+<li>Store data</li>
+<li>Retrieve data</li>
+<li>Update data</li>
+<li>Delete data</li>
+<li>Control access</li>
+<li>Maintain consistency</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>Oracle Database</li>
+<li>Microsoft SQL Server</li>
+<li>SQLite</li>
+</ul>
+</section>
+<section id="advantages-of-dbms" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-of-dbms">2. Advantages of DBMS</h2>
+<p>Important advantages:</p>
+<ul>
+<li>Reduced data redundancy</li>
+<li>Better data consistency</li>
+<li>Data sharing</li>
+<li>Security</li>
+<li>Backup and recovery</li>
+<li>Integrity enforcement</li>
+<li>Concurrent access</li>
+<li>Data independence</li>
+</ul>
+</section>
+<section id="data-models" class="level2">
+<h2 class="anchored" data-anchor-id="data-models">3. Data Models</h2>
+<p>A <strong>data model</strong> describes how data is represented and related.</p>
+<p>Important data models:</p>
+<ul>
+<li>Hierarchical model</li>
+<li>Network model</li>
+<li>Relational model</li>
+<li>Object-oriented model</li>
+<li>Object-relational model</li>
+<li>NoSQL models</li>
+</ul>
+<section id="hierarchical-model" class="level3">
+<h3 class="anchored" data-anchor-id="hierarchical-model">Hierarchical Model</h3>
+<p>Data is organized as a tree.</p>
+<pre class="text"><code>          Root
+           |
+      ------------
+      |          |
+    Node        Node
+    /  \
+ Node  Node</code></pre>
+<p>It mainly represents one-to-many relationships.</p>
+</section>
+<section id="network-model" class="level3">
+<h3 class="anchored" data-anchor-id="network-model">Network Model</h3>
+<p>Data is represented using records connected by links.</p>
+<p>It can represent many-to-many relationships.</p>
+</section>
+<section id="relational-model" class="level3">
+<h3 class="anchored" data-anchor-id="relational-model">Relational Model</h3>
+<p>Data is represented using tables.</p>
+<p>Example:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Student_ID</th>
+<th>Name</th>
+<th>Department</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>101</td>
+<td>Arun</td>
+<td>BCA</td>
+</tr>
+<tr class="even">
+<td>102</td>
+<td>Anu</td>
+<td>BBA</td>
+</tr>
+</tbody>
+</table>
+<p>The relational model is based on relations, tuples, and attributes.</p>
+</section>
+</section>
+<section id="schema-and-instance" class="level2">
+<h2 class="anchored" data-anchor-id="schema-and-instance">4. Schema and Instance</h2>
+<section id="schema" class="level3">
+<h3 class="anchored" data-anchor-id="schema">Schema</h3>
+<p>A <strong>schema</strong> is the structure or design of a database.</p>
+<p>Example:</p>
+<pre class="text"><code>STUDENT(Student_ID, Name, Department, Mark)</code></pre>
+</section>
+<section id="instance" class="level3">
+<h3 class="anchored" data-anchor-id="instance">Instance</h3>
+<p>An <strong>instance</strong> is the actual data stored in the database at a particular time.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Student_ID</th>
+<th>Name</th>
+<th>Department</th>
+<th style="text-align: right;">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>101</td>
+<td>Arun</td>
+<td>BCA</td>
+<td style="text-align: right;">85</td>
+</tr>
+<tr class="even">
+<td>102</td>
+<td>Anu</td>
+<td>BBA</td>
+<td style="text-align: right;">90</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="schema-vs-instance" class="level3">
+<h3 class="anchored" data-anchor-id="schema-vs-instance">Schema vs Instance</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Schema</th>
+<th>Instance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Database structure</td>
+<td>Actual data</td>
+</tr>
+<tr class="even">
+<td>Changes relatively rarely</td>
+<td>Changes frequently</td>
+</tr>
+<tr class="odd">
+<td>Describes design</td>
+<td>Represents current state</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="three-schema-architecture" class="level1">
+<h1>5. Three-Schema Architecture</h1>
+<p>The three-schema architecture separates the database into three levels.</p>
+<pre class="text"><code>External Level
+      |
+      v
+Conceptual Level
+      |
+      v
+Internal Level
+      |
+      v
+Physical Storage</code></pre>
+<section id="external-level" class="level2">
+<h2 class="anchored" data-anchor-id="external-level">5.1 External Level</h2>
+<p>Also called the <strong>view level</strong>.</p>
+<p>It describes how individual users see the database.</p>
+<p>Example:</p>
+<p>A student may see only:</p>
+<pre class="text"><code>Name
+Roll Number
+Marks</code></pre>
+</section>
+<section id="conceptual-level" class="level2">
+<h2 class="anchored" data-anchor-id="conceptual-level">5.2 Conceptual Level</h2>
+<p>Describes the complete logical structure of the database.</p>
+<p>It contains:</p>
+<ul>
+<li>Entities</li>
+<li>Relationships</li>
+<li>Constraints</li>
+<li>Attributes</li>
+</ul>
+</section>
+<section id="internal-level" class="level2">
+<h2 class="anchored" data-anchor-id="internal-level">5.3 Internal Level</h2>
+<p>Describes how data is physically stored.</p>
+<p>It deals with:</p>
+<ul>
+<li>Files</li>
+<li>Indexes</li>
+<li>Storage blocks</li>
+<li>Physical organization</li>
+</ul>
+</section>
+</section>
+<section id="data-independence" class="level1">
+<h1>6. Data Independence</h1>
+<p>Data independence means changing one level without requiring unnecessary changes at higher levels.</p>
+<p>Two types:</p>
+<ol type="1">
+<li>Physical data independence</li>
+<li>Logical data independence</li>
+</ol>
+<section id="physical-data-independence" class="level2">
+<h2 class="anchored" data-anchor-id="physical-data-independence">Physical Data Independence</h2>
+<p>Changes in the internal/physical level do not require changes to the conceptual level.</p>
+<p>Example:</p>
+<p>Changing the storage method or adding an index.</p>
+</section>
+<section id="logical-data-independence" class="level2">
+<h2 class="anchored" data-anchor-id="logical-data-independence">Logical Data Independence</h2>
+<p>Changes in the conceptual schema do not require changes to external views.</p>
+<p>Example:</p>
+<p>Adding a new attribute while preserving existing user views.</p>
+<section id="important-point" class="level3">
+<h3 class="anchored" data-anchor-id="important-point">Important Point</h3>
+<pre class="text"><code>Physical data independence
+→ Internal level changes
+→ Conceptual level remains unaffected</code></pre>
+<pre class="text"><code>Logical data independence
+→ Conceptual level changes
+→ External views remain unaffected as far as possible</code></pre>
+</section>
+</section>
+</section>
+<section id="database-languages" class="level1">
+<h1>7. Database Languages</h1>
+<p>Important database languages include:</p>
+<section id="ddl" class="level3">
+<h3 class="anchored" data-anchor-id="ddl">DDL</h3>
+<p><strong>Data Definition Language</strong></p>
+<p>Used to define database structures.</p>
+<p>Examples:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">TRUNCATE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="dml" class="level3">
+<h3 class="anchored" data-anchor-id="dml">DML</h3>
+<p><strong>Data Manipulation Language</strong></p>
+<p>Used to retrieve and modify data.</p>
+<p>Examples:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="dcl" class="level3">
+<h3 class="anchored" data-anchor-id="dcl">DCL</h3>
+<p><strong>Data Control Language</strong></p>
+<p>Used for authorization and access control.</p>
+<p>Examples:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">GRANT</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">REVOKE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="tcl" class="level3">
+<h3 class="anchored" data-anchor-id="tcl">TCL</h3>
+<p><strong>Transaction Control Language</strong></p>
+<p>Examples:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">COMMIT</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ROLLBACK</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SAVEPOINT</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="comparison" class="level3">
+<h3 class="anchored" data-anchor-id="comparison">Comparison</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Language</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DDL</td>
+<td>Define database structure</td>
+</tr>
+<tr class="even">
+<td>DML</td>
+<td>Manipulate data</td>
+</tr>
+<tr class="odd">
+<td>DCL</td>
+<td>Control permissions</td>
+</tr>
+<tr class="even">
+<td>TCL</td>
+<td>Control transactions</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="database-interfaces" class="level1">
+<h1>8. Database Interfaces</h1>
+<p>Users can interact with a DBMS through:</p>
+<ul>
+<li>Command-line interfaces</li>
+<li>Graphical interfaces</li>
+<li>Forms</li>
+<li>Web applications</li>
+<li>Application programming interfaces</li>
+<li>Administrative tools</li>
+</ul>
+</section>
+<section id="centralized-dbms" class="level1">
+<h1>9. Centralized DBMS</h1>
+<p>In a centralized database system, the database and major processing are concentrated at a central location.</p>
+<pre class="text"><code>Users
+  |
+  v
+Central DBMS
+  |
+  v
+Central Database</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>Centralized control</li>
+<li>Easier administration</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>Single major point of failure</li>
+<li>Network dependency for remote users</li>
+</ul>
+</section>
+<section id="clientserver-architecture" class="level1">
+<h1>10. Client/Server Architecture</h1>
+<p>In client/server architecture:</p>
+<pre class="text"><code>Client
+   |
+   | Request
+   v
+Database Server
+   |
+   v
+Database</code></pre>
+<p>The client requests services and the server provides database services.</p>
+<p>Advantages:</p>
+<ul>
+<li>Resource sharing</li>
+<li>Centralized database management</li>
+<li>Multiple clients can access the database</li>
+</ul>
+</section>
+<section id="part-b-data-modeling" class="level1">
+<h1>Part B – Data Modeling</h1>
+</section>
+<section id="entity-relationship-model" class="level1">
+<h1>11. Entity-Relationship Model</h1>
+<p>The <strong>Entity-Relationship (ER) model</strong> represents entities, attributes, and relationships.</p>
+<section id="entity" class="level2">
+<h2 class="anchored" data-anchor-id="entity">Entity</h2>
+<p>An entity is a real-world object.</p>
+<p>Examples:</p>
+<ul>
+<li>Student</li>
+<li>Teacher</li>
+<li>Course</li>
+<li>Department</li>
+</ul>
+</section>
+<section id="attribute" class="level2">
+<h2 class="anchored" data-anchor-id="attribute">Attribute</h2>
+<p>An attribute describes an entity.</p>
+<p>For Student:</p>
+<pre class="text"><code>Student_ID
+Name
+Age
+Department</code></pre>
+</section>
+<section id="relationship" class="level2">
+<h2 class="anchored" data-anchor-id="relationship">Relationship</h2>
+<p>A relationship represents an association between entities.</p>
+<p>Example:</p>
+<pre class="text"><code>Student ---- enrolls in ---- Course</code></pre>
+</section>
+</section>
+<section id="types-of-attributes" class="level1">
+<h1>12. Types of Attributes</h1>
+<p>Important types:</p>
+<ul>
+<li>Simple</li>
+<li>Composite</li>
+<li>Single-valued</li>
+<li>Multi-valued</li>
+<li>Derived</li>
+<li>Key attribute</li>
+</ul>
+<section id="simple-attribute" class="level3">
+<h3 class="anchored" data-anchor-id="simple-attribute">Simple Attribute</h3>
+<p>Cannot normally be divided further.</p>
+<p>Example:</p>
+<pre class="text"><code>Age</code></pre>
+</section>
+<section id="composite-attribute" class="level3">
+<h3 class="anchored" data-anchor-id="composite-attribute">Composite Attribute</h3>
+<p>Can be divided into smaller components.</p>
+<p>Example:</p>
+<pre class="text"><code>Name
+  |
+  +-- First Name
+  +-- Last Name</code></pre>
+</section>
+<section id="multivalued-attribute" class="level3">
+<h3 class="anchored" data-anchor-id="multivalued-attribute">Multivalued Attribute</h3>
+<p>Can have multiple values.</p>
+<p>Example:</p>
+<pre class="text"><code>Phone Numbers</code></pre>
+</section>
+<section id="derived-attribute" class="level3">
+<h3 class="anchored" data-anchor-id="derived-attribute">Derived Attribute</h3>
+<p>Calculated from another attribute.</p>
+<p>Example:</p>
+<pre class="text"><code>Age</code></pre>
+<p>can be derived from:</p>
+<pre class="text"><code>Date of Birth</code></pre>
+</section>
+</section>
+<section id="cardinality" class="level1">
+<h1>13. Cardinality</h1>
+<p>Cardinality describes how many entities participate in a relationship.</p>
+<p>Common types:</p>
+<ul>
+<li>One-to-one</li>
+<li>One-to-many</li>
+<li>Many-to-one</li>
+<li>Many-to-many</li>
+</ul>
+<p>Examples:</p>
+<pre class="text"><code>Person ---- has ---- Passport
+1                 1</code></pre>
+<pre class="text"><code>Department ---- employs ---- Employee
+1                         N</code></pre>
+<pre class="text"><code>Student ---- enrolls ---- Course
+N                       M</code></pre>
+</section>
+<section id="relational-model-1" class="level1">
+<h1>14. Relational Model</h1>
+<p>The relational model represents data using relations or tables.</p>
+<p>Important terms:</p>
+<pre class="text"><code>Relation → Table
+Tuple → Row
+Attribute → Column
+Domain → Set of allowed values</code></pre>
+<p>Example:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Roll</th>
+<th>Name</th>
+<th style="text-align: right;">Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Arun</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Anu</td>
+<td style="text-align: right;">90</td>
+</tr>
+</tbody>
+</table>
+<p>Here:</p>
+<ul>
+<li>Relation = Student</li>
+<li>Tuples = rows</li>
+<li>Attributes = Roll, Name, Mark</li>
+</ul>
+</section>
+<section id="relational-constraints" class="level1">
+<h1>15. Relational Constraints</h1>
+<p>Important constraints:</p>
+<ol type="1">
+<li>Domain constraint</li>
+<li>Key constraint</li>
+<li>Entity integrity</li>
+<li>Referential integrity</li>
+</ol>
+<section id="domain-constraint" class="level2">
+<h2 class="anchored" data-anchor-id="domain-constraint">Domain Constraint</h2>
+<p>An attribute must contain values from its valid domain.</p>
+<p>Example:</p>
+<pre class="text"><code>Age should be numeric.</code></pre>
+</section>
+<section id="key-constraint" class="level2">
+<h2 class="anchored" data-anchor-id="key-constraint">Key Constraint</h2>
+<p>A key identifies tuples uniquely.</p>
+</section>
+<section id="entity-integrity" class="level2">
+<h2 class="anchored" data-anchor-id="entity-integrity">Entity Integrity</h2>
+<p>A primary key cannot contain NULL.</p>
+</section>
+<section id="referential-integrity" class="level2">
+<h2 class="anchored" data-anchor-id="referential-integrity">Referential Integrity</h2>
+<p>A foreign key must refer to a valid referenced key value, or be NULL where permitted.</p>
+<p>Example:</p>
+<pre class="text"><code>DEPARTMENT
+Department_ID
+
+STUDENT
+Student_ID
+Department_ID</code></pre>
+<p>The student’s <code>Department_ID</code> should correspond to an existing department.</p>
+</section>
+</section>
+<section id="relational-database-schema" class="level1">
+<h1>16. Relational Database Schema</h1>
+<p>A relational schema describes the structure of relations.</p>
+<p>Example:</p>
+<pre class="text"><code>STUDENT(Student_ID, Name, Department_ID, Mark)
+
+DEPARTMENT(Department_ID, Department_Name)</code></pre>
+<p>Primary keys can be represented as:</p>
+<pre class="text"><code>STUDENT(Student_ID, Name, Department_ID, Mark)
+         ^ primary key</code></pre>
+</section>
+<section id="update-operations" class="level1">
+<h1>17. Update Operations</h1>
+<p>Main relational database operations:</p>
+<ol type="1">
+<li>Insert</li>
+<li>Delete</li>
+<li>Update</li>
+</ol>
+<section id="insert" class="level2">
+<h2 class="anchored" data-anchor-id="insert">Insert</h2>
+<p>Adds a new tuple.</p>
+</section>
+<section id="delete" class="level2">
+<h2 class="anchored" data-anchor-id="delete">Delete</h2>
+<p>Removes a tuple.</p>
+</section>
+<section id="update" class="level2">
+<h2 class="anchored" data-anchor-id="update">Update</h2>
+<p>Changes existing values.</p>
+<p>Constraint violations can occur when an operation breaks:</p>
+<ul>
+<li>Domain constraints</li>
+<li>Key constraints</li>
+<li>Entity integrity</li>
+<li>Referential integrity</li>
+</ul>
+</section>
+</section>
+<section id="part-c-relational-algebra-and-relational-calculus" class="level1">
+<h1>Part C – Relational Algebra and Relational Calculus</h1>
+</section>
+<section id="relational-algebra" class="level1">
+<h1>18. Relational Algebra</h1>
+<p>Relational algebra is a procedural query language.</p>
+<p>Important operations:</p>
+<ul>
+<li>Selection</li>
+<li>Projection</li>
+<li>Union</li>
+<li>Set difference</li>
+<li>Cartesian product</li>
+<li>Rename</li>
+<li>Join</li>
+<li>Intersection</li>
+</ul>
+<section id="selection" class="level2">
+<h2 class="anchored" data-anchor-id="selection">Selection</h2>
+<p>Selects rows satisfying a condition.</p>
+<p>Notation:</p>
+<pre class="text"><code>σ condition (R)</code></pre>
+<p>Example:</p>
+<pre class="text"><code>σ Mark &gt; 80 (STUDENT)</code></pre>
+<p>means select students whose mark is greater than 80.</p>
+</section>
+<section id="projection" class="level2">
+<h2 class="anchored" data-anchor-id="projection">Projection</h2>
+<p>Selects columns.</p>
+<p>Notation:</p>
+<pre class="text"><code>π attributes (R)</code></pre>
+<p>Example:</p>
+<pre class="text"><code>π Name, Mark (STUDENT)</code></pre>
+</section>
+<section id="union" class="level2">
+<h2 class="anchored" data-anchor-id="union">Union</h2>
+<p>Combines tuples from two union-compatible relations.</p>
+<pre class="text"><code>R ∪ S</code></pre>
+</section>
+<section id="set-difference" class="level2">
+<h2 class="anchored" data-anchor-id="set-difference">Set Difference</h2>
+<pre class="text"><code>R - S</code></pre>
+<p>Returns tuples in R but not in S.</p>
+</section>
+<section id="cartesian-product" class="level2">
+<h2 class="anchored" data-anchor-id="cartesian-product">Cartesian Product</h2>
+<pre class="text"><code>R × S</code></pre>
+<p>Combines every tuple of R with every tuple of S.</p>
+</section>
+<section id="rename" class="level2">
+<h2 class="anchored" data-anchor-id="rename">Rename</h2>
+<p>Rename operation is represented using:</p>
+<pre class="text"><code>ρ</code></pre>
+</section>
+<section id="join" class="level2">
+<h2 class="anchored" data-anchor-id="join">Join</h2>
+<p>Join combines related tuples.</p>
+<p>Common joins:</p>
+<ul>
+<li>Theta join</li>
+<li>Equi-join</li>
+<li>Natural join</li>
+<li>Outer join</li>
+</ul>
+</section>
+</section>
+<section id="relational-calculus" class="level1">
+<h1>19. Relational Calculus</h1>
+<p>Relational calculus is a <strong>non-procedural</strong> query language.</p>
+<p>It describes <strong>what data is required</strong>, rather than how to obtain it.</p>
+<p>Two forms:</p>
+<ol type="1">
+<li>Tuple relational calculus</li>
+<li>Domain relational calculus</li>
+</ol>
+<section id="relational-algebra-vs-relational-calculus" class="level3">
+<h3 class="anchored" data-anchor-id="relational-algebra-vs-relational-calculus">Relational Algebra vs Relational Calculus</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Relational Algebra</th>
+<th>Relational Calculus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Procedural</td>
+<td>Non-procedural/declarative</td>
+</tr>
+<tr class="even">
+<td>Specifies operations</td>
+<td>Specifies desired result</td>
+</tr>
+<tr class="odd">
+<td>Describes how</td>
+<td>Describes what</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="codds-rules" class="level1">
+<h1>20. Codd’s Rules</h1>
+<p>E. F. Codd proposed rules for relational database systems.</p>
+<p>Frequently examined rules include:</p>
+<section id="rule-0" class="level3">
+<h3 class="anchored" data-anchor-id="rule-0">Rule 0</h3>
+<p>The system must manage the database entirely through relational capabilities.</p>
+</section>
+<section id="rule-1-information-rule" class="level3">
+<h3 class="anchored" data-anchor-id="rule-1-information-rule">Rule 1 – Information Rule</h3>
+<p>All information is represented as values in tables.</p>
+</section>
+<section id="rule-2-guaranteed-access" class="level3">
+<h3 class="anchored" data-anchor-id="rule-2-guaranteed-access">Rule 2 – Guaranteed Access</h3>
+<p>Every atomic value should be accessible through table name, primary key, and attribute name.</p>
+</section>
+<section id="rule-3-systematic-treatment-of-null" class="level3">
+<h3 class="anchored" data-anchor-id="rule-3-systematic-treatment-of-null">Rule 3 – Systematic Treatment of NULL</h3>
+<p>NULL values must be supported systematically.</p>
+</section>
+<section id="rule-4-dynamic-online-catalog" class="level3">
+<h3 class="anchored" data-anchor-id="rule-4-dynamic-online-catalog">Rule 4 – Dynamic Online Catalog</h3>
+<p>The database description should be represented relationally and accessible using the same language.</p>
+</section>
+<section id="rule-5-comprehensive-data-sublanguage" class="level3">
+<h3 class="anchored" data-anchor-id="rule-5-comprehensive-data-sublanguage">Rule 5 – Comprehensive Data Sublanguage</h3>
+<p>At least one relational language should support data definition, manipulation, integrity, and transaction control.</p>
+</section>
+<section id="rule-6-view-updating" class="level3">
+<h3 class="anchored" data-anchor-id="rule-6-view-updating">Rule 6 – View Updating</h3>
+<p>Updatable views should be updatable where theoretically possible.</p>
+</section>
+<section id="rule-7-high-level-insert-update-delete" class="level3">
+<h3 class="anchored" data-anchor-id="rule-7-high-level-insert-update-delete">Rule 7 – High-Level Insert, Update, Delete</h3>
+<p>Set-level operations should be supported.</p>
+</section>
+<section id="rule-8-physical-data-independence" class="level3">
+<h3 class="anchored" data-anchor-id="rule-8-physical-data-independence">Rule 8 – Physical Data Independence</h3>
+<p>Changes in physical storage should not affect applications.</p>
+</section>
+<section id="rule-9-logical-data-independence" class="level3">
+<h3 class="anchored" data-anchor-id="rule-9-logical-data-independence">Rule 9 – Logical Data Independence</h3>
+<p>Changes in logical schema should not unnecessarily affect applications.</p>
+</section>
+<section id="rule-10-integrity-independence" class="level3">
+<h3 class="anchored" data-anchor-id="rule-10-integrity-independence">Rule 10 – Integrity Independence</h3>
+<p>Integrity constraints should be definable independently of applications.</p>
+</section>
+<section id="rule-11-distribution-independence" class="level3">
+<h3 class="anchored" data-anchor-id="rule-11-distribution-independence">Rule 11 – Distribution Independence</h3>
+<p>Users should not need to know where data is physically located.</p>
+</section>
+<section id="rule-12-nonsubversion" class="level3">
+<h3 class="anchored" data-anchor-id="rule-12-nonsubversion">Rule 12 – Nonsubversion</h3>
+<p>Lower-level access should not bypass relational integrity rules.</p>
+</section>
+</section>
+<section id="part-d-sql" class="level1">
+<h1>Part D – SQL</h1>
+</section>
+<section id="sql" class="level1">
+<h1>21. SQL</h1>
+<p>SQL means <strong>Structured Query Language</strong>.</p>
+<p>It is widely used for relational database management.</p>
+</section>
+<section id="create" class="level1">
+<h1>22. CREATE</h1>
+<p>Create a table:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Student</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    Student_ID <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    Name <span class="dt">VARCHAR</span>(<span class="dv">50</span>),</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    Mark <span class="dt">INT</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sql-data-types" class="level1">
+<h1>23. SQL Data Types</h1>
+<p>Common data types:</p>
+<pre class="text"><code>INT
+CHAR
+VARCHAR
+DATE
+TIME
+DECIMAL
+FLOAT
+BOOLEAN</code></pre>
+<p>Exact types vary between DBMS products.</p>
+</section>
+<section id="sql-constraints" class="level1">
+<h1>24. SQL Constraints</h1>
+<p>Common constraints:</p>
+<pre class="text"><code>PRIMARY KEY
+FOREIGN KEY
+UNIQUE
+NOT NULL
+CHECK
+DEFAULT</code></pre>
+<p>Example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Student</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    Student_ID <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    Name <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    Email <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">UNIQUE</span>,</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    Mark <span class="dt">INT</span> <span class="kw">CHECK</span> (Mark <span class="op">&gt;=</span> <span class="dv">0</span>),</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    Department_ID <span class="dt">INT</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="insert-1" class="level1">
+<h1>25. INSERT</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Student</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">101</span>, <span class="st">'Arun'</span>, <span class="dv">85</span>);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It can also specify columns:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Student(Student_ID, Name, Mark)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">101</span>, <span class="st">'Arun'</span>, <span class="dv">85</span>);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="select" class="level1">
+<h1>26. SELECT</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> Student;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Specific columns:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Name, Mark</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Student;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="where" class="level1">
+<h1>27. WHERE</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Student</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Mark <span class="op">&gt;=</span> <span class="dv">80</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="order-by" class="level1">
+<h1>28. ORDER BY</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Student</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Mark <span class="kw">DESC</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="group-by" class="level1">
+<h1>29. GROUP BY</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Department_ID, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Student</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Department_ID;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="having" class="level1">
+<h1>30. HAVING</h1>
+<p>HAVING filters groups.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Department_ID, <span class="fu">AVG</span>(Mark)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Student</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Department_ID</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(Mark) <span class="op">&gt;</span> <span class="dv">70</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="where-vs-having" class="level3">
+<h3 class="anchored" data-anchor-id="where-vs-having">WHERE vs HAVING</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>WHERE</th>
+<th>HAVING</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Filters rows</td>
+<td>Filters groups</td>
+</tr>
+<tr class="even">
+<td>Applied before grouping</td>
+<td>Applied after grouping</td>
+</tr>
+<tr class="odd">
+<td>Often used without GROUP BY</td>
+<td>Commonly used with GROUP BY</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="update-1" class="level1">
+<h1>31. UPDATE</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Student</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> Mark <span class="op">=</span> <span class="dv">90</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Student_ID <span class="op">=</span> <span class="dv">101</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="delete-1" class="level1">
+<h1>32. DELETE</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> Student</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Student_ID <span class="op">=</span> <span class="dv">101</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Important:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> Student;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>can delete all rows if no WHERE clause is supplied.</p>
+</section>
+<section id="sql-joins" class="level1">
+<h1>33. SQL Joins</h1>
+<section id="inner-join" class="level2">
+<h2 class="anchored" data-anchor-id="inner-join">Inner Join</h2>
+<p>Returns matching rows.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Student.Name, Department.Department_Name</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Student</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> Department</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> Student.Department_ID <span class="op">=</span> Department.Department_ID;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="left-join" class="level2">
+<h2 class="anchored" data-anchor-id="left-join">Left Join</h2>
+<p>Returns all rows from the left table and matching rows from the right.</p>
+</section>
+<section id="right-join" class="level2">
+<h2 class="anchored" data-anchor-id="right-join">Right Join</h2>
+<p>Returns all rows from the right table and matching rows from the left.</p>
+</section>
+<section id="full-outer-join" class="level2">
+<h2 class="anchored" data-anchor-id="full-outer-join">Full Outer Join</h2>
+<p>Returns matching rows plus nonmatching rows from both sides, where supported.</p>
+</section>
+</section>
+<section id="views" class="level1">
+<h1>34. Views</h1>
+<p>A view is a virtual table based on a query.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> HighMarks <span class="kw">AS</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Student_ID, Name, Mark</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Student</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Mark <span class="op">&gt;=</span> <span class="dv">80</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Advantages:</p>
+<ul>
+<li>Security</li>
+<li>Simpler queries</li>
+<li>Abstraction</li>
+<li>Reusable queries</li>
+</ul>
+</section>
+<section id="stored-procedures" class="level1">
+<h1>35. Stored Procedures</h1>
+<p>A stored procedure is a stored program executed by the DBMS.</p>
+<p>It can contain:</p>
+<ul>
+<li>SQL statements</li>
+<li>Variables</li>
+<li>Conditions</li>
+<li>Loops</li>
+<li>Parameters</li>
+</ul>
+<p>Syntax varies among DBMS products.</p>
+</section>
+<section id="stored-functions" class="level1">
+<h1>36. Stored Functions</h1>
+<p>A stored function normally returns a value.</p>
+<p>Procedures and functions differ in syntax and capabilities depending on the DBMS.</p>
+</section>
+<section id="database-triggers" class="level1">
+<h1>37. Database Triggers</h1>
+<p>A trigger is automatically executed when a specified database event occurs.</p>
+<p>Typical events:</p>
+<pre class="text"><code>INSERT
+UPDATE
+DELETE</code></pre>
+<p>Example use:</p>
+<pre class="text"><code>When an employee salary changes
+        |
+        v
+Trigger executes
+        |
+        v
+Record change in audit table</code></pre>
+</section>
+<section id="sql-injection" class="level1">
+<h1>38. SQL Injection</h1>
+<p>SQL injection is a security attack in which malicious input changes the intended SQL statement.</p>
+<p>Unsafe pattern:</p>
+<pre class="text"><code>Application input
+      |
+      v
+String concatenation
+      |
+      v
+SQL query</code></pre>
+<p>Safer approach:</p>
+<ul>
+<li>Prepared statements</li>
+<li>Parameterized queries</li>
+<li>Input validation</li>
+<li>Least-privilege database accounts</li>
+</ul>
+</section>
+<section id="part-e-normalization" class="level1">
+<h1>Part E – Normalization</h1>
+</section>
+<section id="functional-dependency" class="level1">
+<h1>39. Functional Dependency</h1>
+<p>A functional dependency describes a relationship between attributes.</p>
+<p>Written as:</p>
+<pre class="text"><code>X → Y</code></pre>
+<p>It means:</p>
+<p>If two rows have the same value of X, they must have the same value of Y.</p>
+<p>Example:</p>
+<pre class="text"><code>Student_ID → Student_Name</code></pre>
+<p>because a Student_ID identifies one student.</p>
+</section>
+<section id="types-of-functional-dependency" class="level1">
+<h1>40. Types of Functional Dependency</h1>
+<p>Important concepts:</p>
+<ul>
+<li>Trivial dependency</li>
+<li>Non-trivial dependency</li>
+<li>Full functional dependency</li>
+<li>Partial dependency</li>
+<li>Transitive dependency</li>
+</ul>
+<section id="trivial-functional-dependency" class="level2">
+<h2 class="anchored" data-anchor-id="trivial-functional-dependency">Trivial Functional Dependency</h2>
+<p>If:</p>
+<pre class="text"><code>Y is a subset of X</code></pre>
+<p>then:</p>
+<pre class="text"><code>X → Y</code></pre>
+<p>is trivial.</p>
+</section>
+<section id="partial-dependency" class="level2">
+<h2 class="anchored" data-anchor-id="partial-dependency">Partial Dependency</h2>
+<p>A non-key attribute depends on only part of a composite key.</p>
+</section>
+<section id="transitive-dependency" class="level2">
+<h2 class="anchored" data-anchor-id="transitive-dependency">Transitive Dependency</h2>
+<p>If:</p>
+<pre class="text"><code>A → B
+B → C</code></pre>
+<p>then:</p>
+<pre class="text"><code>A → C</code></pre>
+<p>may represent a transitive dependency.</p>
+</section>
+</section>
+<section id="normalization" class="level1">
+<h1>41. Normalization</h1>
+<p>Normalization organizes tables to reduce redundancy and update anomalies.</p>
+<p>Main normal forms:</p>
+<ul>
+<li>1NF</li>
+<li>2NF</li>
+<li>3NF</li>
+<li>BCNF</li>
+<li>4NF</li>
+<li>5NF</li>
+</ul>
+</section>
+<section id="first-normal-form-1nf" class="level1">
+<h1>42. First Normal Form – 1NF</h1>
+<p>A relation is in 1NF when attributes contain atomic values and repeating groups are removed.</p>
+<p>Bad:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Student</th>
+<th>Phone</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Arun</td>
+<td>9876, 8765</td>
+</tr>
+</tbody>
+</table>
+<p>Better:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Student</th>
+<th>Phone</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Arun</td>
+<td>9876</td>
+</tr>
+<tr class="even">
+<td>Arun</td>
+<td>8765</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="second-normal-form-2nf" class="level1">
+<h1>43. Second Normal Form – 2NF</h1>
+<p>A relation must:</p>
+<ol type="1">
+<li>Be in 1NF.</li>
+<li>Have no partial dependency of a non-key attribute on part of a candidate key.</li>
+</ol>
+<p>2NF is especially important when the key is composite.</p>
+</section>
+<section id="third-normal-form-3nf" class="level1">
+<h1>44. Third Normal Form – 3NF</h1>
+<p>A relation must:</p>
+<ol type="1">
+<li>Be in 2NF.</li>
+<li>Have no problematic transitive dependency of non-key attributes on a candidate key.</li>
+</ol>
+<p>A common simplified rule:</p>
+<pre class="text"><code>Non-key attributes should depend on the key,
+the whole key,
+and nothing but the key.</code></pre>
+</section>
+<section id="bcnf" class="level1">
+<h1>45. BCNF</h1>
+<p>A relation is in BCNF if every determinant is a candidate key.</p>
+<p>BCNF is generally stronger than 3NF.</p>
+</section>
+<section id="nf" class="level1">
+<h1>46. 4NF</h1>
+<p>4NF deals mainly with <strong>multivalued dependencies</strong>.</p>
+</section>
+<section id="nf-1" class="level1">
+<h1>47. 5NF</h1>
+<p>5NF deals with <strong>join dependencies</strong> and decomposition that cannot be further improved without introducing problems.</p>
+</section>
+<section id="normalization-summary" class="level1">
+<h1>48. Normalization Summary</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Normal Form</th>
+<th>Main idea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1NF</td>
+<td>Atomic values</td>
+</tr>
+<tr class="even">
+<td>2NF</td>
+<td>Remove partial dependency</td>
+</tr>
+<tr class="odd">
+<td>3NF</td>
+<td>Remove transitive dependency</td>
+</tr>
+<tr class="even">
+<td>BCNF</td>
+<td>Every determinant is a candidate key</td>
+</tr>
+<tr class="odd">
+<td>4NF</td>
+<td>Remove problematic multivalued dependencies</td>
+</tr>
+<tr class="even">
+<td>5NF</td>
+<td>Deal with join dependencies</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="part-f-query-processing-and-optimization" class="level1">
+<h1>Part F – Query Processing and Optimization</h1>
+</section>
+<section id="query-processing" class="level1">
+<h1>49. Query Processing</h1>
+<p>Query processing converts a user query into an efficient execution plan.</p>
+<p>General process:</p>
+<pre class="text"><code>SQL Query
+   |
+   v
+Parsing
+   |
+   v
+Translation
+   |
+   v
+Optimization
+   |
+   v
+Execution Plan
+   |
+   v
+Execution</code></pre>
+</section>
+<section id="query-optimization" class="level1">
+<h1>50. Query Optimization</h1>
+<p>Query optimization attempts to find an efficient way to execute a query.</p>
+<p>Possible techniques:</p>
+<ul>
+<li>Selection pushdown</li>
+<li>Projection pushdown</li>
+<li>Join ordering</li>
+<li>Index usage</li>
+<li>Cost estimation</li>
+<li>Choosing efficient access paths</li>
+</ul>
+<section id="selection-pushdown" class="level2">
+<h2 class="anchored" data-anchor-id="selection-pushdown">Selection Pushdown</h2>
+<p>Apply filters as early as possible to reduce intermediate data.</p>
+<p>Example:</p>
+<p>Instead of joining all rows and then filtering:</p>
+<pre class="text"><code>Join → Filter</code></pre>
+<p>try:</p>
+<pre class="text"><code>Filter → Join</code></pre>
+<p>when logically valid.</p>
+</section>
+</section>
+<section id="part-g-transaction-processing" class="level1">
+<h1>Part G – Transaction Processing</h1>
+</section>
+<section id="transaction" class="level1">
+<h1>51. Transaction</h1>
+<p>A transaction is a logical unit of database work.</p>
+<p>Example:</p>
+<p>Bank transfer:</p>
+<pre class="text"><code>Debit Account A
+       +
+Credit Account B</code></pre>
+<p>Both operations should be treated as one logical transaction.</p>
+</section>
+<section id="acid-properties" class="level1">
+<h1>52. ACID Properties</h1>
+<p>A transaction should satisfy:</p>
+<pre class="text"><code>A → Atomicity
+C → Consistency
+I → Isolation
+D → Durability</code></pre>
+<section id="atomicity" class="level2">
+<h2 class="anchored" data-anchor-id="atomicity">Atomicity</h2>
+<p>All operations occur or none occur.</p>
+</section>
+<section id="consistency" class="level2">
+<h2 class="anchored" data-anchor-id="consistency">Consistency</h2>
+<p>A transaction takes the database from one valid state to another valid state.</p>
+</section>
+<section id="isolation" class="level2">
+<h2 class="anchored" data-anchor-id="isolation">Isolation</h2>
+<p>Concurrent transactions should not improperly interfere with each other.</p>
+</section>
+<section id="durability" class="level2">
+<h2 class="anchored" data-anchor-id="durability">Durability</h2>
+<p>Committed changes should survive failures.</p>
+</section>
+</section>
+<section id="transaction-states" class="level1">
+<h1>53. Transaction States</h1>
+<p>Common states:</p>
+<pre class="text"><code>Active
+  |
+  v
+Partially Committed
+  |
+  v
+Committed</code></pre>
+<p>A transaction can also enter:</p>
+<pre class="text"><code>Failed
+  |
+  v
+Aborted</code></pre>
+</section>
+<section id="concurrency-control" class="level1">
+<h1>54. Concurrency Control</h1>
+<p>Concurrency control manages simultaneous transactions.</p>
+<p>Problems without proper control include:</p>
+<ul>
+<li>Lost update</li>
+<li>Dirty read</li>
+<li>Non-repeatable read</li>
+<li>Incorrect summary</li>
+<li>Phantom read</li>
+</ul>
+</section>
+<section id="locking" class="level1">
+<h1>55. Locking</h1>
+<p>A common technique is lock-based concurrency control.</p>
+<p>Two basic locks:</p>
+<section id="shared-lock" class="level3">
+<h3 class="anchored" data-anchor-id="shared-lock">Shared Lock</h3>
+<p>Used for reading.</p>
+<pre class="text"><code>S-lock</code></pre>
+</section>
+<section id="exclusive-lock" class="level3">
+<h3 class="anchored" data-anchor-id="exclusive-lock">Exclusive Lock</h3>
+<p>Used for writing.</p>
+<pre class="text"><code>X-lock</code></pre>
+<p>Compatibility:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Existing / Requested</th>
+<th style="text-align: right;">S</th>
+<th style="text-align: right;">X</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">No</td>
+</tr>
+<tr class="even">
+<td>X</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">No</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="two-phase-locking" class="level1">
+<h1>56. Two-Phase Locking</h1>
+<p>Two-phase locking (2PL) has two phases:</p>
+<ol type="1">
+<li>Growing phase</li>
+<li>Shrinking phase</li>
+</ol>
+<section id="growing-phase" class="level3">
+<h3 class="anchored" data-anchor-id="growing-phase">Growing Phase</h3>
+<p>Locks can be acquired.</p>
+</section>
+<section id="shrinking-phase" class="level3">
+<h3 class="anchored" data-anchor-id="shrinking-phase">Shrinking Phase</h3>
+<p>Locks can be released.</p>
+<p>Basic idea:</p>
+<pre class="text"><code>Growing
+Acquire locks
+     |
+     v
+Shrinking
+Release locks</code></pre>
+</section>
+</section>
+<section id="timestamp-ordering" class="level1">
+<h1>57. Timestamp Ordering</h1>
+<p>Transactions are assigned timestamps.</p>
+<p>Operations are ordered according to timestamps to maintain serializability.</p>
+</section>
+<section id="deadlock" class="level1">
+<h1>58. Deadlock</h1>
+<p>Deadlock occurs when transactions wait for each other indefinitely.</p>
+<p>Example:</p>
+<pre class="text"><code>T1 holds A → waits for B
+T2 holds B → waits for A</code></pre>
+<p>This creates a cycle.</p>
+<p>Solutions include:</p>
+<ul>
+<li>Deadlock prevention</li>
+<li>Deadlock avoidance</li>
+<li>Deadlock detection</li>
+<li>Recovery</li>
+</ul>
+</section>
+<section id="part-h-database-recovery" class="level1">
+<h1>Part H – Database Recovery</h1>
+</section>
+<section id="database-recovery" class="level1">
+<h1>59. Database Recovery</h1>
+<p>Recovery restores the database to a consistent state after failure.</p>
+<p>Failure types:</p>
+<ul>
+<li>Transaction failure</li>
+<li>System crash</li>
+<li>Disk failure</li>
+</ul>
+</section>
+<section id="log-based-recovery" class="level1">
+<h1>60. Log-Based Recovery</h1>
+<p>A log records database operations.</p>
+<p>Typical information includes:</p>
+<pre class="text"><code>Transaction
+Old value
+New value
+Operation</code></pre>
+<p>Two important concepts:</p>
+<ul>
+<li>UNDO</li>
+<li>REDO</li>
+</ul>
+<section id="undo" class="level2">
+<h2 class="anchored" data-anchor-id="undo">UNDO</h2>
+<p>Reverse changes made by incomplete transactions.</p>
+</section>
+<section id="redo" class="level2">
+<h2 class="anchored" data-anchor-id="redo">REDO</h2>
+<p>Reapply changes made by committed transactions when required.</p>
+</section>
+</section>
+<section id="checkpoint" class="level1">
+<h1>61. Checkpoint</h1>
+<p>A checkpoint periodically records a known recovery point.</p>
+<p>It reduces the amount of log processing needed during recovery.</p>
+</section>
+<section id="shadow-paging" class="level1">
+<h1>62. Shadow Paging</h1>
+<p>Shadow paging maintains alternative page tables so recovery can avoid some forms of log-based processing.</p>
+</section>
+<section id="part-i-object-and-object-relational-databases" class="level1">
+<h1>Part I – Object and Object-Relational Databases</h1>
+</section>
+<section id="object-database" class="level1">
+<h1>63. Object Database</h1>
+<p>An object-oriented database stores data as objects.</p>
+<p>It supports concepts such as:</p>
+<ul>
+<li>Objects</li>
+<li>Classes</li>
+<li>Inheritance</li>
+<li>Encapsulation</li>
+<li>Methods</li>
+</ul>
+</section>
+<section id="object-relational-database" class="level1">
+<h1>64. Object-Relational Database</h1>
+<p>An object-relational DBMS combines relational database features with object-oriented features.</p>
+<p>Possible features:</p>
+<ul>
+<li>User-defined types</li>
+<li>Complex data</li>
+<li>Object-like structures</li>
+<li>Methods</li>
+</ul>
+</section>
+<section id="part-j-database-security-and-authorization" class="level1">
+<h1>Part J – Database Security and Authorization</h1>
+</section>
+<section id="database-security" class="level1">
+<h1>65. Database Security</h1>
+<p>Database security protects data from:</p>
+<ul>
+<li>Unauthorized access</li>
+<li>Modification</li>
+<li>Disclosure</li>
+<li>Destruction</li>
+</ul>
+<p>Security mechanisms include:</p>
+<ul>
+<li>Authentication</li>
+<li>Authorization</li>
+<li>Encryption</li>
+<li>Auditing</li>
+<li>Backup</li>
+</ul>
+</section>
+<section id="authentication-vs-authorization" class="level1">
+<h1>66. Authentication vs Authorization</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Authentication</th>
+<th>Authorization</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Who are you?</td>
+<td>What are you allowed to do?</td>
+</tr>
+<tr class="even">
+<td>Verifies identity</td>
+<td>Determines permissions</td>
+</tr>
+<tr class="odd">
+<td>Login/password</td>
+<td>Privileges/roles</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="grant" class="level1">
+<h1>67. GRANT</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb75"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="kw">GRANT</span> <span class="kw">SELECT</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> Student</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a><span class="kw">TO</span> user1;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="revoke" class="level1">
+<h1>68. REVOKE</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb76"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="kw">REVOKE</span> <span class="kw">SELECT</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> Student</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> user1;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="roles" class="level1">
+<h1>69. Roles</h1>
+<p>A role is a collection of privileges.</p>
+<p>Example:</p>
+<pre class="text"><code>Teacher
+   |
+   +-- SELECT
+   +-- UPDATE</code></pre>
+</section>
+<section id="part-k-enhanced-data-models" class="level1">
+<h1>Part K – Enhanced Data Models</h1>
+</section>
+<section id="temporal-databases" class="level1">
+<h1>70. Temporal Databases</h1>
+<p>A temporal database stores information associated with time.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Valid time</li>
+<li>Transaction time</li>
+</ul>
+<section id="valid-time" class="level2">
+<h2 class="anchored" data-anchor-id="valid-time">Valid Time</h2>
+<p>When a fact is true in the real world.</p>
+</section>
+<section id="transaction-time" class="level2">
+<h2 class="anchored" data-anchor-id="transaction-time">Transaction Time</h2>
+<p>When the database records the fact.</p>
+</section>
+</section>
+<section id="multimedia-databases" class="level1">
+<h1>71. Multimedia Databases</h1>
+<p>Store multimedia information such as:</p>
+<ul>
+<li>Images</li>
+<li>Audio</li>
+<li>Video</li>
+<li>Animation</li>
+<li>Text</li>
+</ul>
+<p>Challenges:</p>
+<ul>
+<li>Large storage</li>
+<li>Complex retrieval</li>
+<li>Multimedia indexing</li>
+<li>Quality of service</li>
+</ul>
+</section>
+<section id="deductive-databases" class="level1">
+<h1>72. Deductive Databases</h1>
+<p>A deductive database combines stored facts with rules to derive additional information.</p>
+<p>Example:</p>
+<pre class="text"><code>Fact:
+Student(A)
+
+Rule:
+If Student(x), then Person(x)
+
+Derived:
+Person(A)</code></pre>
+</section>
+<section id="xml-databases" class="level1">
+<h1>73. XML Databases</h1>
+<p>XML databases store and retrieve XML data.</p>
+<p>XML is useful for:</p>
+<ul>
+<li>Semi-structured data</li>
+<li>Data exchange</li>
+<li>Web applications</li>
+</ul>
+</section>
+<section id="internet-databases" class="level1">
+<h1>74. Internet Databases</h1>
+<p>Internet databases allow database services to be accessed through web technologies.</p>
+<p>Typical architecture:</p>
+<pre class="text"><code>Browser
+   |
+   v
+Web Server
+   |
+   v
+Application Server
+   |
+   v
+Database Server</code></pre>
+</section>
+<section id="mobile-databases" class="level1">
+<h1>75. Mobile Databases</h1>
+<p>Mobile databases support data access from mobile devices.</p>
+<p>Challenges:</p>
+<ul>
+<li>Limited bandwidth</li>
+<li>Intermittent connectivity</li>
+<li>Limited battery</li>
+<li>Limited storage</li>
+<li>Synchronization</li>
+</ul>
+</section>
+<section id="geographic-information-systems" class="level1">
+<h1>76. Geographic Information Systems</h1>
+<p>GIS means <strong>Geographic Information System</strong>.</p>
+<p>It stores and analyzes geographically referenced data.</p>
+<p>Examples:</p>
+<ul>
+<li>Maps</li>
+<li>Roads</li>
+<li>Locations</li>
+<li>Land use</li>
+<li>Population distribution</li>
+</ul>
+<p>GIS data can include:</p>
+<pre class="text"><code>Spatial data
++
+Attribute data</code></pre>
+</section>
+<section id="genome-data-management" class="level1">
+<h1>77. Genome Data Management</h1>
+<p>Genome databases manage biological and genetic information.</p>
+<p>Examples of data:</p>
+<ul>
+<li>DNA sequences</li>
+<li>RNA sequences</li>
+<li>Gene information</li>
+<li>Protein information</li>
+</ul>
+<p>Challenges:</p>
+<ul>
+<li>Huge data volume</li>
+<li>Complex relationships</li>
+<li>High-speed analysis</li>
+<li>Data integration</li>
+</ul>
+</section>
+<section id="distributed-databases" class="level1">
+<h1>78. Distributed Databases</h1>
+<p>A distributed database stores data across multiple networked sites.</p>
+<pre class="text"><code>             Network
+          /     |      \
+         /      |       \
+      Site A  Site B   Site C</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>Local availability</li>
+<li>Scalability</li>
+<li>Resource sharing</li>
+</ul>
+<p>Challenges:</p>
+<ul>
+<li>Network failures</li>
+<li>Distributed transactions</li>
+<li>Synchronization</li>
+<li>Security</li>
+<li>Data consistency</li>
+</ul>
+</section>
+<section id="part-l-data-warehousing" class="level1">
+<h1>Part L – Data Warehousing</h1>
+</section>
+<section id="data-warehouse" class="level1">
+<h1>79. Data Warehouse</h1>
+<p>A data warehouse is a repository designed mainly for analysis and decision support.</p>
+<p>Characteristics commonly associated with data warehouses:</p>
+<ul>
+<li>Subject-oriented</li>
+<li>Integrated</li>
+<li>Time-variant</li>
+<li>Non-volatile</li>
+</ul>
+</section>
+<section id="oltp" class="level1">
+<h1>80. OLTP</h1>
+<p>OLTP means <strong>Online Transaction Processing</strong>.</p>
+<p>Used for day-to-day transactions.</p>
+<p>Examples:</p>
+<ul>
+<li>ATM transactions</li>
+<li>Order processing</li>
+<li>Student registration</li>
+</ul>
+<p>Characteristics:</p>
+<ul>
+<li>Many short transactions</li>
+<li>Current operational data</li>
+<li>Frequent insert/update/delete</li>
+</ul>
+</section>
+<section id="olap" class="level1">
+<h1>81. OLAP</h1>
+<p>OLAP means <strong>Online Analytical Processing</strong>.</p>
+<p>Used for analysis and decision support.</p>
+<p>Examples:</p>
+<ul>
+<li>Sales analysis</li>
+<li>Trend analysis</li>
+<li>Business reports</li>
+</ul>
+<p>Characteristics:</p>
+<ul>
+<li>Complex queries</li>
+<li>Aggregation</li>
+<li>Historical data</li>
+<li>Multidimensional analysis</li>
+</ul>
+<section id="oltp-vs-olap" class="level3">
+<h3 class="anchored" data-anchor-id="oltp-vs-olap">OLTP vs OLAP</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>OLTP</th>
+<th>OLAP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Transaction processing</td>
+<td>Analytical processing</td>
+</tr>
+<tr class="even">
+<td>Current data</td>
+<td>Historical/analytical data</td>
+</tr>
+<tr class="odd">
+<td>Many short transactions</td>
+<td>Complex analytical queries</td>
+</tr>
+<tr class="even">
+<td>Frequent updates</td>
+<td>Mainly read/analysis</td>
+</tr>
+<tr class="odd">
+<td>Operational systems</td>
+<td>Data warehouses</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="data-warehouse-modeling" class="level1">
+<h1>82. Data Warehouse Modeling</h1>
+<p>Common approaches:</p>
+<ul>
+<li>Star schema</li>
+<li>Snowflake schema</li>
+<li>Fact constellation</li>
+</ul>
+<section id="star-schema" class="level2">
+<h2 class="anchored" data-anchor-id="star-schema">Star Schema</h2>
+<p>A central fact table is connected to dimension tables.</p>
+<pre class="text"><code>        Dimension
+            |
+Dimension -- Fact -- Dimension
+            |
+        Dimension</code></pre>
+</section>
+<section id="fact-table" class="level2">
+<h2 class="anchored" data-anchor-id="fact-table">Fact Table</h2>
+<p>Contains measurable facts.</p>
+<p>Examples:</p>
+<pre class="text"><code>Sales Amount
+Quantity
+Profit</code></pre>
+</section>
+<section id="dimension-table" class="level2">
+<h2 class="anchored" data-anchor-id="dimension-table">Dimension Table</h2>
+<p>Contains descriptive information.</p>
+<p>Examples:</p>
+<pre class="text"><code>Time
+Product
+Customer
+Location</code></pre>
+</section>
+</section>
+<section id="concept-hierarchy" class="level1">
+<h1>83. Concept Hierarchy</h1>
+<p>A concept hierarchy organizes data at different levels.</p>
+<p>Example:</p>
+<pre class="text"><code>Country
+   |
+State
+   |
+District
+   |
+City</code></pre>
+<p>Another example:</p>
+<pre class="text"><code>Year
+ |
+Month
+ |
+Day</code></pre>
+<p>Concept hierarchies support OLAP operations.</p>
+</section>
+<section id="part-m-data-mining" class="level1">
+<h1>Part M – Data Mining</h1>
+</section>
+<section id="data-mining" class="level1">
+<h1>84. Data Mining</h1>
+<p>Data mining is the process of discovering useful patterns from large datasets.</p>
+<p>Common tasks:</p>
+<ul>
+<li>Association</li>
+<li>Classification</li>
+<li>Clustering</li>
+<li>Regression</li>
+<li>Summarization</li>
+<li>Link analysis</li>
+<li>Sequence analysis</li>
+</ul>
+</section>
+<section id="association-rules" class="level1">
+<h1>85. Association Rules</h1>
+<p>Association mining finds relationships between items.</p>
+<p>Example:</p>
+<pre class="text"><code>Bread → Butter</code></pre>
+<p>Important measures:</p>
+<section id="support" class="level3">
+<h3 class="anchored" data-anchor-id="support">Support</h3>
+<p>Support measures how frequently an itemset occurs.</p>
+<pre class="text"><code>Support(X) =
+Number of transactions containing X
+------------------------------------
+Total number of transactions</code></pre>
+</section>
+<section id="confidence" class="level3">
+<h3 class="anchored" data-anchor-id="confidence">Confidence</h3>
+<pre class="text"><code>Confidence(X → Y) =
+Support(X ∪ Y)
+----------------
+Support(X)</code></pre>
+</section>
+<section id="lift" class="level3">
+<h3 class="anchored" data-anchor-id="lift">Lift</h3>
+<pre class="text"><code>Lift(X → Y) =
+Confidence(X → Y)
+------------------
+Support(Y)</code></pre>
+<p>Interpretation:</p>
+<pre class="text"><code>Lift &gt; 1 → positive association
+Lift = 1 → approximately independent
+Lift &lt; 1 → negative association</code></pre>
+</section>
+</section>
+<section id="classification" class="level1">
+<h1>86. Classification</h1>
+<p>Classification predicts a class label.</p>
+<p>Example:</p>
+<pre class="text"><code>Email → Spam / Not Spam</code></pre>
+<p>Training data contains known class labels.</p>
+<p>Examples of classification algorithms:</p>
+<ul>
+<li>Decision Tree</li>
+<li>Naive Bayes</li>
+<li>KNN</li>
+<li>SVM</li>
+</ul>
+</section>
+<section id="clustering" class="level1">
+<h1>87. Clustering</h1>
+<p>Clustering groups similar objects without predefined class labels.</p>
+<p>Example:</p>
+<pre class="text"><code>Customers
+   |
+   +-- Group 1
+   +-- Group 2
+   +-- Group 3</code></pre>
+<p>K-means is a common clustering algorithm.</p>
+</section>
+<section id="regression" class="level1">
+<h1>88. Regression</h1>
+<p>Regression predicts a numerical value.</p>
+<p>Example:</p>
+<pre class="text"><code>House features → House price</code></pre>
+<p>A simple linear model:</p>
+<pre class="text"><code>y = b0 + b1x</code></pre>
+<p>where:</p>
+<pre class="text"><code>y  = predicted value
+b0 = intercept
+b1 = coefficient
+x  = input</code></pre>
+</section>
+<section id="support-vector-machine" class="level1">
+<h1>89. Support Vector Machine</h1>
+<p>SVM means <strong>Support Vector Machine</strong>.</p>
+<p>It attempts to find a decision boundary that separates classes.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Hyperplane</li>
+<li>Margin</li>
+<li>Support vectors</li>
+<li>Kernel</li>
+</ul>
+<p>Support vectors are training observations that strongly influence the separating boundary.</p>
+</section>
+<section id="k-nearest-neighbour" class="level1">
+<h1>90. K-Nearest Neighbour</h1>
+<p>KNN classifies a new observation based on nearby training observations.</p>
+<p>Basic process:</p>
+<ol type="1">
+<li>Select K.</li>
+<li>Calculate distance.</li>
+<li>Find K nearest points.</li>
+<li>Determine the majority class.</li>
+<li>Assign the class.</li>
+</ol>
+<p>Important point:</p>
+<p>The choice of K affects the result.</p>
+</section>
+<section id="hidden-markov-model" class="level1">
+<h1>91. Hidden Markov Model</h1>
+<p>HMM means <strong>Hidden Markov Model</strong>.</p>
+<p>It represents systems where:</p>
+<ul>
+<li>The true state is hidden.</li>
+<li>Observations are visible.</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>Hidden weather state
+       |
+       v
+Observed activity</code></pre>
+<p>Important concepts:</p>
+<ul>
+<li>Hidden states</li>
+<li>Observations</li>
+<li>Initial probabilities</li>
+<li>Transition probabilities</li>
+<li>Emission probabilities</li>
+</ul>
+</section>
+<section id="summarization" class="level1">
+<h1>92. Summarization</h1>
+<p>Summarization produces a compact representation of data.</p>
+<p>Examples:</p>
+<ul>
+<li>Mean</li>
+<li>Median</li>
+<li>Count</li>
+<li>Minimum</li>
+<li>Maximum</li>
+<li>Aggregated reports</li>
+</ul>
+</section>
+<section id="dependency-modeling" class="level1">
+<h1>93. Dependency Modeling</h1>
+<p>Dependency modeling identifies relationships or dependencies among variables or events.</p>
+<p>It can be used to discover:</p>
+<ul>
+<li>Conditional relationships</li>
+<li>Probabilistic dependencies</li>
+<li>Causal structures in appropriate models</li>
+</ul>
+</section>
+<section id="link-analysis" class="level1">
+<h1>94. Link Analysis</h1>
+<p>Link analysis studies relationships between connected objects.</p>
+<p>Examples:</p>
+<ul>
+<li>Web pages</li>
+<li>Social networks</li>
+<li>Citation networks</li>
+</ul>
+<p>A graph can represent:</p>
+<pre class="text"><code>Nodes → entities
+Edges → relationships</code></pre>
+</section>
+<section id="sequencing-analysis" class="level1">
+<h1>95. Sequencing Analysis</h1>
+<p>Sequence analysis studies ordered events.</p>
+<p>Examples:</p>
+<pre class="text"><code>Customer actions:
+Search → Product View → Cart → Purchase</code></pre>
+<p>Applications:</p>
+<ul>
+<li>Web usage analysis</li>
+<li>DNA sequence analysis</li>
+<li>Customer behavior analysis</li>
+</ul>
+</section>
+<section id="social-network-analysis" class="level1">
+<h1>96. Social Network Analysis</h1>
+<p>Social Network Analysis studies relationships among people or organizations.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Nodes</li>
+<li>Edges</li>
+<li>Degree</li>
+<li>Centrality</li>
+<li>Communities</li>
+<li>Paths</li>
+</ul>
+</section>
+<section id="part-n-big-data-systems" class="level1">
+<h1>Part N – Big Data Systems</h1>
+</section>
+<section id="big-data" class="level1">
+<h1>97. Big Data</h1>
+<p>Big Data refers to datasets whose size, speed, complexity, or diversity creates challenges for traditional processing systems.</p>
+</section>
+<section id="characteristics-of-big-data" class="level1">
+<h1>98. Characteristics of Big Data</h1>
+<p>The commonly discussed 5 Vs are:</p>
+<pre class="text"><code>Volume
+Velocity
+Variety
+Veracity
+Value</code></pre>
+<section id="volume" class="level2">
+<h2 class="anchored" data-anchor-id="volume">Volume</h2>
+<p>Huge quantity of data.</p>
+</section>
+<section id="velocity" class="level2">
+<h2 class="anchored" data-anchor-id="velocity">Velocity</h2>
+<p>High speed of data generation and processing.</p>
+</section>
+<section id="variety" class="level2">
+<h2 class="anchored" data-anchor-id="variety">Variety</h2>
+<p>Different data formats.</p>
+<p>Examples:</p>
+<ul>
+<li>Text</li>
+<li>Images</li>
+<li>Video</li>
+<li>Sensor data</li>
+<li>Logs</li>
+</ul>
+</section>
+<section id="veracity" class="level2">
+<h2 class="anchored" data-anchor-id="veracity">Veracity</h2>
+<p>Reliability and quality of data.</p>
+</section>
+<section id="value" class="level2">
+<h2 class="anchored" data-anchor-id="value">Value</h2>
+<p>Useful information that can be obtained from data.</p>
+</section>
+</section>
+<section id="types-of-big-data" class="level1">
+<h1>99. Types of Big Data</h1>
+<section id="structured-data" class="level3">
+<h3 class="anchored" data-anchor-id="structured-data">Structured Data</h3>
+<p>Organized in fixed schemas.</p>
+<p>Example:</p>
+<pre class="text"><code>Relational table</code></pre>
+</section>
+<section id="semi-structured-data" class="level3">
+<h3 class="anchored" data-anchor-id="semi-structured-data">Semi-Structured Data</h3>
+<p>Has some organization but not a rigid relational schema.</p>
+<p>Examples:</p>
+<pre class="text"><code>XML
+JSON</code></pre>
+</section>
+<section id="unstructured-data" class="level3">
+<h3 class="anchored" data-anchor-id="unstructured-data">Unstructured Data</h3>
+<p>Does not follow a fixed tabular structure.</p>
+<p>Examples:</p>
+<ul>
+<li>Video</li>
+<li>Audio</li>
+<li>Images</li>
+<li>Free text</li>
+</ul>
+</section>
+</section>
+<section id="big-data-architecture" class="level1">
+<h1>100. Big Data Architecture</h1>
+<p>A simplified architecture:</p>
+<pre class="text"><code>Data Sources
+     |
+     v
+Data Ingestion
+     |
+     v
+Distributed Storage
+     |
+     v
+Processing
+     |
+     v
+Analytics
+     |
+     v
+Visualization / Applications</code></pre>
+</section>
+<section id="mapreduce" class="level1">
+<h1>101. MapReduce</h1>
+<p>MapReduce is a distributed processing model.</p>
+<p>It has two main conceptual stages:</p>
+<pre class="text"><code>Input
+  |
+  v
+Map
+  |
+  v
+Shuffle / Sort
+  |
+  v
+Reduce
+  |
+  v
+Output</code></pre>
+<section id="map" class="level2">
+<h2 class="anchored" data-anchor-id="map">Map</h2>
+<p>Processes input records and produces intermediate key-value pairs.</p>
+</section>
+<section id="shuffle-and-sort" class="level2">
+<h2 class="anchored" data-anchor-id="shuffle-and-sort">Shuffle and Sort</h2>
+<p>Groups intermediate values by key.</p>
+</section>
+<section id="reduce" class="level2">
+<h2 class="anchored" data-anchor-id="reduce">Reduce</h2>
+<p>Processes values belonging to each key and produces final results.</p>
+</section>
+</section>
+<section id="example-of-mapreduce" class="level1">
+<h1>102. Example of MapReduce</h1>
+<p>Suppose we want to count words.</p>
+<p>Input:</p>
+<pre class="text"><code>cat dog cat</code></pre>
+<p>Map:</p>
+<pre class="text"><code>(cat, 1)
+(dog, 1)
+(cat, 1)</code></pre>
+<p>Shuffle:</p>
+<pre class="text"><code>cat → [1, 1]
+dog → [1]</code></pre>
+<p>Reduce:</p>
+<pre class="text"><code>cat → 2
+dog → 1</code></pre>
+</section>
+<section id="hadoop" class="level1">
+<h1>103. Hadoop</h1>
+<p>Hadoop is an ecosystem/framework associated with distributed storage and processing of large datasets.</p>
+<p>Major components historically include:</p>
+<ul>
+<li>HDFS</li>
+<li>MapReduce</li>
+<li>YARN</li>
+<li>Hadoop Common</li>
+</ul>
+</section>
+<section id="hdfs" class="level1">
+<h1>104. HDFS</h1>
+<p>HDFS means <strong>Hadoop Distributed File System</strong>.</p>
+<p>It stores large files across multiple machines.</p>
+<p>Important components:</p>
+<pre class="text"><code>NameNode
+DataNodes</code></pre>
+<section id="namenode" class="level2">
+<h2 class="anchored" data-anchor-id="namenode">NameNode</h2>
+<p>Maintains filesystem metadata.</p>
+<p>Examples of metadata:</p>
+<ul>
+<li>File names</li>
+<li>Directory structure</li>
+<li>Block information</li>
+<li>Locations of blocks</li>
+</ul>
+</section>
+<section id="datanode" class="level2">
+<h2 class="anchored" data-anchor-id="datanode">DataNode</h2>
+<p>Stores actual data blocks.</p>
+<pre class="text"><code>             NameNode
+                |
+        ----------------
+        |       |      |
+        v       v      v
+    DataNode DataNode DataNode</code></pre>
+</section>
+</section>
+<section id="hdfs-blocks" class="level1">
+<h1>105. HDFS Blocks</h1>
+<p>Large files are divided into blocks.</p>
+<p>Blocks are distributed across DataNodes.</p>
+<p>Replication provides fault tolerance.</p>
+<p>Important idea:</p>
+<pre class="text"><code>Large File
+   |
+   +-- Block 1
+   +-- Block 2
+   +-- Block 3
+   |
+   v
+Distributed Storage</code></pre>
+</section>
+<section id="part-o-nosql" class="level1">
+<h1>Part O – NoSQL</h1>
+</section>
+<section id="nosql" class="level1">
+<h1>106. NoSQL</h1>
+<p>NoSQL means databases designed for data models and workloads that do not rely solely on the traditional relational model.</p>
+<p>NoSQL systems are often associated with:</p>
+<ul>
+<li>Flexible schemas</li>
+<li>Horizontal scaling</li>
+<li>Distributed storage</li>
+<li>Large-scale data processing</li>
+</ul>
+<p>NoSQL does not simply mean “no SQL”; it is commonly interpreted as “Not Only SQL.”</p>
+</section>
+<section id="types-of-nosql-databases" class="level1">
+<h1>107. Types of NoSQL Databases</h1>
+<p>Four common categories:</p>
+<ol type="1">
+<li>Key-value</li>
+<li>Document</li>
+<li>Column-family</li>
+<li>Graph</li>
+</ol>
+<section id="key-value" class="level2">
+<h2 class="anchored" data-anchor-id="key-value">Key-Value</h2>
+<p>Stores:</p>
+<pre class="text"><code>Key → Value</code></pre>
+<p>Example:</p>
+<pre class="text"><code>101 → "Arun"</code></pre>
+</section>
+<section id="document-database" class="level2">
+<h2 class="anchored" data-anchor-id="document-database">Document Database</h2>
+<p>Stores documents, often in JSON-like formats.</p>
+<p>Example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb114"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Arun"</span><span class="fu">,</span></span>
+<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"mark"</span><span class="fu">:</span> <span class="dv">85</span></span>
+<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="column-family-database" class="level2">
+<h2 class="anchored" data-anchor-id="column-family-database">Column-Family Database</h2>
+<p>Stores data in column families.</p>
+<p>Useful for large distributed datasets.</p>
+</section>
+<section id="graph-database" class="level2">
+<h2 class="anchored" data-anchor-id="graph-database">Graph Database</h2>
+<p>Represents:</p>
+<pre class="text"><code>Nodes + Edges + Properties</code></pre>
+<p>Useful for:</p>
+<ul>
+<li>Social networks</li>
+<li>Recommendation systems</li>
+<li>Relationship analysis</li>
+</ul>
+</section>
+</section>
+<section id="nosql-products" class="level1">
+<h1>108. NoSQL Products</h1>
+<p>Examples include:</p>
+<ul>
+<li>MongoDB</li>
+<li>Apache Cassandra</li>
+<li>Redis</li>
+<li>Neo4j</li>
+<li>CouchDB</li>
+</ul>
+<p>Different products use different data models and query languages.</p>
+</section>
+<section id="nosql-querying-and-management" class="level1">
+<h1>109. NoSQL Querying and Management</h1>
+<p>NoSQL querying depends on the product.</p>
+<p>Examples:</p>
+<ul>
+<li>Document queries</li>
+<li>Key-value operations</li>
+<li>Graph queries</li>
+<li>Column-family queries</li>
+</ul>
+<p>Common management operations include:</p>
+<ul>
+<li>Insert</li>
+<li>Read</li>
+<li>Update</li>
+<li>Delete</li>
+<li>Indexing</li>
+<li>Replication</li>
+<li>Backup</li>
+</ul>
+</section>
+<section id="query-optimization-in-nosql" class="level1">
+<h1>110. Query Optimization in NoSQL</h1>
+<p>Important techniques:</p>
+<ul>
+<li>Proper indexing</li>
+<li>Choosing appropriate data models</li>
+<li>Limiting unnecessary fields</li>
+<li>Filtering early</li>
+<li>Avoiding unnecessary network transfers</li>
+<li>Choosing suitable partition keys</li>
+</ul>
+</section>
+<section id="indexing" class="level1">
+<h1>111. Indexing</h1>
+<p>An index improves data retrieval by providing an additional access structure.</p>
+<p>Example:</p>
+<pre class="text"><code>Student_ID → Index</code></pre>
+<p>Instead of scanning every row, the DBMS can use the index to locate matching data.</p>
+<p>Indexes can improve reads but may increase:</p>
+<ul>
+<li>Storage requirements</li>
+<li>Insert cost</li>
+<li>Update cost</li>
+<li>Delete cost</li>
+</ul>
+</section>
+<section id="ordering-data-sets" class="level1">
+<h1>112. Ordering Data Sets</h1>
+<p>Ordering means arranging data according to one or more fields.</p>
+<p>Example:</p>
+<pre class="text"><code>Mark ascending
+Mark descending
+Name alphabetical</code></pre>
+<p>Efficient ordering depends on:</p>
+<ul>
+<li>Indexes</li>
+<li>Query design</li>
+<li>Data distribution</li>
+<li>Database engine</li>
+</ul>
+</section>
+<section id="nosql-in-cloud" class="level1">
+<h1>113. NoSQL in Cloud</h1>
+<p>NoSQL databases are widely used in cloud environments because cloud systems can provide:</p>
+<ul>
+<li>Horizontal scaling</li>
+<li>Distributed storage</li>
+<li>High availability</li>
+<li>Replication</li>
+<li>Elastic resources</li>
+</ul>
+<p>Challenges include:</p>
+<ul>
+<li>Security</li>
+<li>Cost</li>
+<li>Data consistency</li>
+<li>Vendor dependence</li>
+<li>Network latency</li>
+</ul>
+</section>
+<section id="relational-vs-nosql" class="level1">
+<h1>114. Relational vs NoSQL</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Relational DBMS</th>
+<th>NoSQL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tables</td>
+<td>Multiple possible data models</td>
+</tr>
+<tr class="even">
+<td>Fixed/structured schema is common</td>
+<td>Flexible schema is common</td>
+</tr>
+<tr class="odd">
+<td>SQL</td>
+<td>Product-specific APIs/query languages</td>
+</tr>
+<tr class="even">
+<td>Strong relational constraints</td>
+<td>Varies by product</td>
+</tr>
+<tr class="odd">
+<td>Vertical and horizontal scaling possible</td>
+<td>Often emphasizes horizontal scaling</td>
+</tr>
+<tr class="even">
+<td>Joins commonly supported</td>
+<td>Often avoids expensive joins through data modeling</td>
+</tr>
+<tr class="odd">
+<td>Examples: MySQL, PostgreSQL</td>
+<td>MongoDB, Cassandra, Redis</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sql-vs-nosql" class="level1">
+<h1>115. SQL vs NoSQL</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>SQL</th>
+<th>NoSQL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structured relational data</td>
+<td>Flexible/semi-structured or other models</td>
+</tr>
+<tr class="even">
+<td>Tables</td>
+<td>Documents, key-value, graphs, columns</td>
+</tr>
+<tr class="odd">
+<td>Standardized SQL</td>
+<td>Product-specific query mechanisms</td>
+</tr>
+<tr class="even">
+<td>Strong relational model</td>
+<td>Various models</td>
+</tr>
+<tr class="odd">
+<td>Often ACID-oriented</td>
+<td>Consistency models vary by product</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="important-dbms-comparison-table" class="level1">
+<h1>116. Important DBMS Comparison Table</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Database</td>
+<td>Organized collection of data</td>
+</tr>
+<tr class="even">
+<td>DBMS</td>
+<td>Software that manages databases</td>
+</tr>
+<tr class="odd">
+<td>Schema</td>
+<td>Database structure</td>
+</tr>
+<tr class="even">
+<td>Instance</td>
+<td>Current database contents</td>
+</tr>
+<tr class="odd">
+<td>Entity</td>
+<td>Real-world object</td>
+</tr>
+<tr class="even">
+<td>Attribute</td>
+<td>Property of an entity</td>
+</tr>
+<tr class="odd">
+<td>Tuple</td>
+<td>Row</td>
+</tr>
+<tr class="even">
+<td>Relation</td>
+<td>Table</td>
+</tr>
+<tr class="odd">
+<td>Attribute</td>
+<td>Column</td>
+</tr>
+<tr class="even">
+<td>Primary key</td>
+<td>Unique identifier</td>
+</tr>
+<tr class="odd">
+<td>Foreign key</td>
+<td>Reference to another relation</td>
+</tr>
+<tr class="even">
+<td>DDL</td>
+<td>Defines structures</td>
+</tr>
+<tr class="odd">
+<td>DML</td>
+<td>Manipulates data</td>
+</tr>
+<tr class="even">
+<td>DCL</td>
+<td>Controls permissions</td>
+</tr>
+<tr class="odd">
+<td>TCL</td>
+<td>Controls transactions</td>
+</tr>
+<tr class="even">
+<td>View</td>
+<td>Virtual table</td>
+</tr>
+<tr class="odd">
+<td>Trigger</td>
+<td>Automatically executed database action</td>
+</tr>
+<tr class="even">
+<td>Normalization</td>
+<td>Reduces redundancy/anomalies</td>
+</tr>
+<tr class="odd">
+<td>Transaction</td>
+<td>Logical unit of work</td>
+</tr>
+<tr class="even">
+<td>ACID</td>
+<td>Transaction properties</td>
+</tr>
+<tr class="odd">
+<td>OLTP</td>
+<td>Transaction processing</td>
+</tr>
+<tr class="even">
+<td>OLAP</td>
+<td>Analytical processing</td>
+</tr>
+<tr class="odd">
+<td>Data warehouse</td>
+<td>Analytical data repository</td>
+</tr>
+<tr class="even">
+<td>Data mining</td>
+<td>Pattern discovery</td>
+</tr>
+<tr class="odd">
+<td>HDFS</td>
+<td>Distributed file system</td>
+</tr>
+<tr class="even">
+<td>MapReduce</td>
+<td>Distributed processing model</td>
+</tr>
+<tr class="odd">
+<td>NoSQL</td>
+<td>Non-relational/multiple scalable data models</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="important-normalization-revision" class="level1">
+<h1>117. Important Normalization Revision</h1>
+<pre class="text"><code>1NF
+ ↓
+Atomic values
+
+2NF
+ ↓
+1NF + No partial dependency
+
+3NF
+ ↓
+2NF + No transitive dependency
+
+BCNF
+ ↓
+Every determinant is a candidate key
+
+4NF
+ ↓
+Multivalued dependencies
+
+5NF
+ ↓
+Join dependencies</code></pre>
+</section>
+<section id="important-transaction-revision" class="level1">
+<h1>118. Important Transaction Revision</h1>
+<pre class="text"><code>Transaction
+    |
+    +-- Atomicity
+    +-- Consistency
+    +-- Isolation
+    +-- Durability</code></pre>
+<p>Remember:</p>
+<pre class="text"><code>A → All or nothing
+C → Valid state
+I → Transactions do not improperly interfere
+D → Committed data survives failure</code></pre>
+</section>
+<section id="important-data-mining-revision" class="level1">
+<h1>119. Important Data Mining Revision</h1>
+<pre class="text"><code>Association   → Relationships among items
+Classification → Predict class
+Clustering    → Group similar data
+Regression     → Predict numerical value
+SVM            → Maximum-margin classification
+KNN            → Nearest observations
+HMM            → Hidden states + observations
+Summarization  → Compact representation
+Link analysis  → Connected entities
+Sequence       → Ordered events
+Social network → Relationships among entities</code></pre>
+</section>
+<section id="important-big-data-revision" class="level1">
+<h1>120. Important Big Data Revision</h1>
+<pre class="text"><code>5 Vs
+
+Volume
+Velocity
+Variety
+Veracity
+Value</code></pre>
+<p>MapReduce:</p>
+<pre class="text"><code>Input
+  ↓
+Map
+  ↓
+Shuffle / Sort
+  ↓
+Reduce
+  ↓
+Output</code></pre>
+<p>HDFS:</p>
+<pre class="text"><code>NameNode → Metadata
+DataNode → Data blocks</code></pre>
+</section>
+<section id="important-nosql-revision" class="level1">
+<h1>121. Important NoSQL Revision</h1>
+<pre class="text"><code>Key-Value
+Document
+Column-Family
+Graph</code></pre>
+<p>Remember:</p>
+<pre class="text"><code>MongoDB    → Document
+Redis      → Key-Value
+Cassandra  → Column-family
+Neo4j      → Graph</code></pre>
+</section>
+<section id="ugc-net-high-priority-areas" class="level1">
+<h1>122. UGC NET High-Priority Areas</h1>
+<p>Focus strongly on:</p>
+<section id="dbms-fundamentals" class="level2">
+<h2 class="anchored" data-anchor-id="dbms-fundamentals">DBMS Fundamentals</h2>
+<ul>
+<li>Data models</li>
+<li>Schema vs instance</li>
+<li>Three-schema architecture</li>
+<li>Data independence</li>
+<li>DBMS languages</li>
+<li>Client/server architecture</li>
+</ul>
+</section>
+<section id="er-and-relational-model" class="level2">
+<h2 class="anchored" data-anchor-id="er-and-relational-model">ER and Relational Model</h2>
+<ul>
+<li>Entities</li>
+<li>Attributes</li>
+<li>Relationships</li>
+<li>Cardinality</li>
+<li>Keys</li>
+<li>Integrity constraints</li>
+<li>Referential integrity</li>
+<li>Relational algebra</li>
+<li>Relational calculus</li>
+<li>Codd’s rules</li>
+</ul>
+</section>
+<section id="sql-1" class="level2">
+<h2 class="anchored" data-anchor-id="sql-1">SQL</h2>
+<ul>
+<li>DDL</li>
+<li>DML</li>
+<li>DCL</li>
+<li>TCL</li>
+<li>CREATE</li>
+<li>SELECT</li>
+<li>INSERT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+<li>GROUP BY</li>
+<li>HAVING</li>
+<li>JOIN</li>
+<li>Views</li>
+<li>Procedures</li>
+<li>Functions</li>
+<li>Triggers</li>
+<li>SQL injection</li>
+</ul>
+</section>
+<section id="normalization-1" class="level2">
+<h2 class="anchored" data-anchor-id="normalization-1">Normalization</h2>
+<ul>
+<li>Functional dependencies</li>
+<li>Candidate keys</li>
+<li>Partial dependency</li>
+<li>Transitive dependency</li>
+<li>1NF</li>
+<li>2NF</li>
+<li>3NF</li>
+<li>BCNF</li>
+<li>4NF</li>
+<li>5NF</li>
+</ul>
+</section>
+<section id="transactions" class="level2">
+<h2 class="anchored" data-anchor-id="transactions">Transactions</h2>
+<ul>
+<li>ACID</li>
+<li>Transaction states</li>
+<li>Serializability</li>
+<li>Locks</li>
+<li>Two-phase locking</li>
+<li>Timestamp ordering</li>
+<li>Deadlocks</li>
+<li>Recovery</li>
+<li>Logs</li>
+<li>Checkpoints</li>
+</ul>
+</section>
+<section id="data-warehousing-and-mining" class="level2">
+<h2 class="anchored" data-anchor-id="data-warehousing-and-mining">Data Warehousing and Mining</h2>
+<ul>
+<li>OLTP vs OLAP</li>
+<li>Star schema</li>
+<li>Snowflake schema</li>
+<li>Fact and dimension tables</li>
+<li>Concept hierarchy</li>
+<li>Association rules</li>
+<li>Support</li>
+<li>Confidence</li>
+<li>Lift</li>
+<li>Classification</li>
+<li>Clustering</li>
+<li>Regression</li>
+<li>SVM</li>
+<li>KNN</li>
+<li>HMM</li>
+<li>Link analysis</li>
+<li>Social networks</li>
+</ul>
+</section>
+<section id="big-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="big-data-1">Big Data</h2>
+<ul>
+<li>5 Vs</li>
+<li>Structured/semi-structured/unstructured data</li>
+<li>Big Data architecture</li>
+<li>MapReduce</li>
+<li>Hadoop</li>
+<li>HDFS</li>
+<li>NameNode</li>
+<li>DataNode</li>
+<li>Replication</li>
+</ul>
+</section>
+<section id="nosql-1" class="level2">
+<h2 class="anchored" data-anchor-id="nosql-1">NoSQL</h2>
+<ul>
+<li>Key-value</li>
+<li>Document</li>
+<li>Column-family</li>
+<li>Graph</li>
+<li>Products</li>
+<li>Indexing</li>
+<li>Query optimization</li>
+<li>Cloud NoSQL</li>
+</ul>
+</section>
+</section>
+<section id="common-mistakes" class="level1">
+<h1>123. Common Mistakes</h1>
+<section id="schema-vs-instance-1" class="level3">
+<h3 class="anchored" data-anchor-id="schema-vs-instance-1">Schema vs Instance</h3>
+<pre class="text"><code>Schema   → Structure
+Instance → Current data</code></pre>
+</section>
+<section id="primary-key-vs-foreign-key" class="level3">
+<h3 class="anchored" data-anchor-id="primary-key-vs-foreign-key">Primary Key vs Foreign Key</h3>
+<pre class="text"><code>Primary key → Identifies a row
+Foreign key → References another table</code></pre>
+</section>
+<section id="where-vs-having-1" class="level3">
+<h3 class="anchored" data-anchor-id="where-vs-having-1">WHERE vs HAVING</h3>
+<pre class="text"><code>WHERE  → Rows
+HAVING → Groups</code></pre>
+</section>
+<section id="delete-vs-drop" class="level3">
+<h3 class="anchored" data-anchor-id="delete-vs-drop">DELETE vs DROP</h3>
+<pre class="text"><code>DELETE → Removes rows
+DROP   → Removes database object such as a table</code></pre>
+</section>
+<section id="nf-vs-3nf" class="level3">
+<h3 class="anchored" data-anchor-id="nf-vs-3nf">2NF vs 3NF</h3>
+<pre class="text"><code>2NF → Partial dependency
+3NF → Transitive dependency</code></pre>
+</section>
+<section id="oltp-vs-olap-1" class="level3">
+<h3 class="anchored" data-anchor-id="oltp-vs-olap-1">OLTP vs OLAP</h3>
+<pre class="text"><code>OLTP → Daily transactions
+OLAP → Analysis</code></pre>
+</section>
+<section id="classification-vs-clustering" class="level3">
+<h3 class="anchored" data-anchor-id="classification-vs-clustering">Classification vs Clustering</h3>
+<pre class="text"><code>Classification → Known classes
+Clustering     → Classes/groups discovered from data</code></pre>
+</section>
+<section id="namenode-vs-datanode" class="level3">
+<h3 class="anchored" data-anchor-id="namenode-vs-datanode">NameNode vs DataNode</h3>
+<pre class="text"><code>NameNode → Metadata
+DataNode → Actual blocks</code></pre>
+</section>
+<section id="map-vs-reduce" class="level3">
+<h3 class="anchored" data-anchor-id="map-vs-reduce">Map vs Reduce</h3>
+<pre class="text"><code>Map    → Intermediate key-value pairs
+Reduce → Aggregates/processes grouped values</code></pre>
+</section>
+</section>
+<section id="one-minute-revision" class="level1">
+<h1>124. One-Minute Revision</h1>
+<pre class="text"><code>DBMS
+ |
+ +-- Architecture
+ |     +-- Three-schema
+ |     +-- Data independence
+ |
+ +-- Data Modeling
+ |     +-- ER
+ |     +-- Relational model
+ |
+ +-- Relational Operations
+ |     +-- Algebra
+ |     +-- Calculus
+ |
+ +-- SQL
+ |     +-- DDL
+ |     +-- DML
+ |     +-- DCL
+ |     +-- TCL
+ |
+ +-- Normalization
+ |     +-- 1NF
+ |     +-- 2NF
+ |     +-- 3NF
+ |     +-- BCNF
+ |
+ +-- Transactions
+ |     +-- ACID
+ |     +-- Concurrency
+ |     +-- Recovery
+ |
+ +-- Security
+ |
+ +-- Data Warehouse
+ |     +-- OLTP
+ |     +-- OLAP
+ |
+ +-- Data Mining
+ |
+ +-- Big Data
+ |     +-- Hadoop
+ |     +-- HDFS
+ |     +-- MapReduce
+ |
+ +-- NoSQL</code></pre>
+</section>
+<section id="final-exam-strategy" class="level1">
+<h1>125. Final Exam Strategy</h1>
+<p>Study this unit in the following order:</p>
+<ol type="1">
+<li>DBMS concepts</li>
+<li>Three-schema architecture</li>
+<li>Data independence</li>
+<li>ER model</li>
+<li>Relational model</li>
+<li>Relational algebra</li>
+<li>Relational calculus</li>
+<li>SQL</li>
+<li>Functional dependencies</li>
+<li>Normalization</li>
+<li>Query processing</li>
+<li>Transactions and concurrency</li>
+<li>Recovery</li>
+<li>Security</li>
+<li>Data warehouses</li>
+<li>Data mining</li>
+<li>Big Data and Hadoop</li>
+<li>HDFS and MapReduce</li>
+<li>NoSQL</li>
+</ol>
+<p>For numerical/problem-based questions, practice:</p>
+<ul>
+<li>Relational algebra</li>
+<li>Functional dependencies</li>
+<li>Candidate keys</li>
+<li>Normalization</li>
+<li>SQL queries</li>
+<li>Transaction schedules</li>
+<li>Lock compatibility</li>
+<li>Serializability</li>
+<li>Association-rule measures</li>
+<li>MapReduce word-count problems</li>
+</ul>
+<p>For theory questions, revise:</p>
+<ul>
+<li>Three-schema architecture</li>
+<li>Data independence</li>
+<li>Codd’s rules</li>
+<li>SQL commands</li>
+<li>ACID</li>
+<li>Two-phase locking</li>
+<li>Recovery</li>
+<li>OLTP vs OLAP</li>
+<li>Star vs snowflake schema</li>
+<li>Classification vs clustering</li>
+<li>Hadoop/HDFS</li>
+<li>NoSQL types</li>
+</ul>
+</section>
+<section id="final-summary" class="level1">
+<h1>126. Final Summary</h1>
+<p>Unit IV is one of the broadest units in Computer Science.</p>
+<p>The most important progression is:</p>
+<pre class="text"><code>Database Concepts
+      ↓
+Data Modeling
+      ↓
+Relational Model
+      ↓
+SQL
+      ↓
+Normalization
+      ↓
+Query Processing
+      ↓
+Transactions
+      ↓
+Recovery
+      ↓
+Security
+      ↓
+Data Warehousing
+      ↓
+Data Mining
+      ↓
+Big Data
+      ↓
+Hadoop / HDFS
+      ↓
+NoSQL</code></pre>
+<p>The highest-value concepts for examination preparation are:</p>
+<pre class="text"><code>Three-Schema Architecture
+Data Independence
+ER Model
+Relational Algebra
+Relational Calculus
+Codd Rules
+SQL
+Functional Dependencies
+Normalization
+ACID
+Concurrency Control
+Recovery
+OLTP / OLAP
+Data Mining
+Association Rules
+Big Data
+MapReduce
+HDFS
+NoSQL</code></pre>
+<p>Revise the <strong>comparison tables, SQL examples, normalization rules, transaction concepts, data-mining measures, MapReduce flow, and NoSQL models</strong> repeatedly before the examination.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

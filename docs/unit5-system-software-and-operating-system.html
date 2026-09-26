@@ -1,0 +1,4113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit V – System Software and Operating System – UGC NET Computer Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7bafb279d5a926c0766e5c3e4e4c1c07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UGC NET Computer Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">🏠 Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./paper1.html"> 
+<span class="menu-text">📘 Paper 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./paper2.html" aria-current="page"> 
+<span class="menu-text">💻 Paper 2</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit5-system-software-and-operating-system.html">Unit V – System Software and Operating System</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UGC NET Paper 2 – Computer Science &amp; Applications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit1-discrete-structures-and-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit I – Discrete Structures and Optimization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit2-computer-system-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit II – Computer System Architecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit3-programming-languages-and-computer-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit III – Programming Languages and Computer Graphics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit4-database-management-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IV – Database Management Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit5-system-software-and-operating-system.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Unit V – System Software and Operating System</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit6-software-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VI – Software Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit7-data-structures-and-algorithms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VII – Data Structures and Algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit8-theory-of-computation-and-compilers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit VIII – Theory of Computation and Compilers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit9-data-communication-and-computer-networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit IX – Data Communication and Computer Networks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unit10-artificial-intelligence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit X – Artificial Intelligence (AI)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-a-system-software" id="toc-part-a-system-software" class="nav-link active" data-scroll-target="#part-a-system-software">Part A – System Software</a>
+  <ul class="collapse">
+  <li><a href="#system-software" id="toc-system-software" class="nav-link" data-scroll-target="#system-software">1. System Software</a></li>
+  </ul></li>
+  <li><a href="#machine-language" id="toc-machine-language" class="nav-link" data-scroll-target="#machine-language">2. Machine Language</a></li>
+  <li><a href="#assembly-language" id="toc-assembly-language" class="nav-link" data-scroll-target="#assembly-language">3. Assembly Language</a></li>
+  <li><a href="#high-level-languages" id="toc-high-level-languages" class="nav-link" data-scroll-target="#high-level-languages">4. High-Level Languages</a></li>
+  <li><a href="#machine-vs-assembly-vs-high-level-language" id="toc-machine-vs-assembly-vs-high-level-language" class="nav-link" data-scroll-target="#machine-vs-assembly-vs-high-level-language">5. Machine vs Assembly vs High-Level Language</a></li>
+  <li><a href="#compiler" id="toc-compiler" class="nav-link" data-scroll-target="#compiler">6. Compiler</a></li>
+  <li><a href="#interpreter" id="toc-interpreter" class="nav-link" data-scroll-target="#interpreter">7. Interpreter</a></li>
+  <li><a href="#compiler-vs-interpreter" id="toc-compiler-vs-interpreter" class="nav-link" data-scroll-target="#compiler-vs-interpreter">8. Compiler vs Interpreter</a></li>
+  <li><a href="#linker" id="toc-linker" class="nav-link" data-scroll-target="#linker">9. Linker</a></li>
+  <li><a href="#loader" id="toc-loader" class="nav-link" data-scroll-target="#loader">10. Loader</a></li>
+  <li><a href="#relocation" id="toc-relocation" class="nav-link" data-scroll-target="#relocation">11. Relocation</a></li>
+  <li><a href="#macros" id="toc-macros" class="nav-link" data-scroll-target="#macros">12. Macros</a></li>
+  <li><a href="#debugger" id="toc-debugger" class="nav-link" data-scroll-target="#debugger">13. Debugger</a></li>
+  <li><a href="#part-b-basics-of-operating-systems" id="toc-part-b-basics-of-operating-systems" class="nav-link" data-scroll-target="#part-b-basics-of-operating-systems">Part B – Basics of Operating Systems</a></li>
+  <li><a href="#operating-system" id="toc-operating-system" class="nav-link" data-scroll-target="#operating-system">14. Operating System</a></li>
+  <li><a href="#operating-system-structure" id="toc-operating-system-structure" class="nav-link" data-scroll-target="#operating-system-structure">15. Operating System Structure</a></li>
+  <li><a href="#monolithic-structure" id="toc-monolithic-structure" class="nav-link" data-scroll-target="#monolithic-structure">16. Monolithic Structure</a></li>
+  <li><a href="#layered-structure" id="toc-layered-structure" class="nav-link" data-scroll-target="#layered-structure">17. Layered Structure</a></li>
+  <li><a href="#microkernel" id="toc-microkernel" class="nav-link" data-scroll-target="#microkernel">18. Microkernel</a></li>
+  <li><a href="#os-operations" id="toc-os-operations" class="nav-link" data-scroll-target="#os-operations">19. OS Operations</a></li>
+  <li><a href="#operating-system-services" id="toc-operating-system-services" class="nav-link" data-scroll-target="#operating-system-services">20. Operating-System Services</a></li>
+  <li><a href="#system-calls" id="toc-system-calls" class="nav-link" data-scroll-target="#system-calls">21. System Calls</a></li>
+  <li><a href="#system-call-examples" id="toc-system-call-examples" class="nav-link" data-scroll-target="#system-call-examples">22. System Call Examples</a></li>
+  <li><a href="#os-design-and-implementation" id="toc-os-design-and-implementation" class="nav-link" data-scroll-target="#os-design-and-implementation">23. OS Design and Implementation</a></li>
+  <li><a href="#system-boot" id="toc-system-boot" class="nav-link" data-scroll-target="#system-boot">24. System Boot</a></li>
+  <li><a href="#part-c-process-management" id="toc-part-c-process-management" class="nav-link" data-scroll-target="#part-c-process-management">Part C – Process Management</a></li>
+  <li><a href="#process" id="toc-process" class="nav-link" data-scroll-target="#process">25. Process</a></li>
+  <li><a href="#program-vs-process" id="toc-program-vs-process" class="nav-link" data-scroll-target="#program-vs-process">26. Program vs Process</a></li>
+  <li><a href="#process-states" id="toc-process-states" class="nav-link" data-scroll-target="#process-states">27. Process States</a></li>
+  <li><a href="#process-control-block" id="toc-process-control-block" class="nav-link" data-scroll-target="#process-control-block">28. Process Control Block</a></li>
+  <li><a href="#process-scheduling" id="toc-process-scheduling" class="nav-link" data-scroll-target="#process-scheduling">29. Process Scheduling</a></li>
+  <li><a href="#context-switch" id="toc-context-switch" class="nav-link" data-scroll-target="#context-switch">30. Context Switch</a></li>
+  <li><a href="#process-operations" id="toc-process-operations" class="nav-link" data-scroll-target="#process-operations">31. Process Operations</a></li>
+  <li><a href="#interprocess-communication" id="toc-interprocess-communication" class="nav-link" data-scroll-target="#interprocess-communication">32. Interprocess Communication</a></li>
+  <li><a href="#shared-memory" id="toc-shared-memory" class="nav-link" data-scroll-target="#shared-memory">33. Shared Memory</a></li>
+  <li><a href="#message-passing" id="toc-message-passing" class="nav-link" data-scroll-target="#message-passing">34. Message Passing</a></li>
+  <li><a href="#client-server-communication" id="toc-client-server-communication" class="nav-link" data-scroll-target="#client-server-communication">35. Client-Server Communication</a></li>
+  <li><a href="#part-d-process-synchronization" id="toc-part-d-process-synchronization" class="nav-link" data-scroll-target="#part-d-process-synchronization">Part D – Process Synchronization</a></li>
+  <li><a href="#process-synchronization" id="toc-process-synchronization" class="nav-link" data-scroll-target="#process-synchronization">36. Process Synchronization</a></li>
+  <li><a href="#race-condition" id="toc-race-condition" class="nav-link" data-scroll-target="#race-condition">37. Race Condition</a></li>
+  <li><a href="#critical-section" id="toc-critical-section" class="nav-link" data-scroll-target="#critical-section">38. Critical Section</a></li>
+  <li><a href="#mutual-exclusion" id="toc-mutual-exclusion" class="nav-link" data-scroll-target="#mutual-exclusion">39. Mutual Exclusion</a></li>
+  <li><a href="#progress" id="toc-progress" class="nav-link" data-scroll-target="#progress">40. Progress</a></li>
+  <li><a href="#bounded-waiting" id="toc-bounded-waiting" class="nav-link" data-scroll-target="#bounded-waiting">41. Bounded Waiting</a></li>
+  <li><a href="#petersons-solution" id="toc-petersons-solution" class="nav-link" data-scroll-target="#petersons-solution">42. Peterson’s Solution</a></li>
+  <li><a href="#semaphores" id="toc-semaphores" class="nav-link" data-scroll-target="#semaphores">43. Semaphores</a>
+  <ul class="collapse">
+  <li><a href="#binary-semaphore" id="toc-binary-semaphore" class="nav-link" data-scroll-target="#binary-semaphore">Binary Semaphore</a></li>
+  <li><a href="#counting-semaphore" id="toc-counting-semaphore" class="nav-link" data-scroll-target="#counting-semaphore">Counting Semaphore</a></li>
+  </ul></li>
+  <li><a href="#synchronization-example" id="toc-synchronization-example" class="nav-link" data-scroll-target="#synchronization-example">44. Synchronization Example</a></li>
+  <li><a href="#part-e-threads" id="toc-part-e-threads" class="nav-link" data-scroll-target="#part-e-threads">Part E – Threads</a></li>
+  <li><a href="#thread" id="toc-thread" class="nav-link" data-scroll-target="#thread">45. Thread</a></li>
+  <li><a href="#process-vs-thread" id="toc-process-vs-thread" class="nav-link" data-scroll-target="#process-vs-thread">46. Process vs Thread</a></li>
+  <li><a href="#multicore-programming" id="toc-multicore-programming" class="nav-link" data-scroll-target="#multicore-programming">47. Multicore Programming</a></li>
+  <li><a href="#multithreading-models" id="toc-multithreading-models" class="nav-link" data-scroll-target="#multithreading-models">48. Multithreading Models</a>
+  <ul class="collapse">
+  <li><a href="#many-to-one" id="toc-many-to-one" class="nav-link" data-scroll-target="#many-to-one">Many-to-One</a></li>
+  <li><a href="#one-to-one" id="toc-one-to-one" class="nav-link" data-scroll-target="#one-to-one">One-to-One</a></li>
+  <li><a href="#many-to-many" id="toc-many-to-many" class="nav-link" data-scroll-target="#many-to-many">Many-to-Many</a></li>
+  </ul></li>
+  <li><a href="#thread-libraries" id="toc-thread-libraries" class="nav-link" data-scroll-target="#thread-libraries">49. Thread Libraries</a></li>
+  <li><a href="#implicit-threading" id="toc-implicit-threading" class="nav-link" data-scroll-target="#implicit-threading">50. Implicit Threading</a></li>
+  <li><a href="#threading-issues" id="toc-threading-issues" class="nav-link" data-scroll-target="#threading-issues">51. Threading Issues</a></li>
+  <li><a href="#part-f-cpu-scheduling" id="toc-part-f-cpu-scheduling" class="nav-link" data-scroll-target="#part-f-cpu-scheduling">Part F – CPU Scheduling</a></li>
+  <li><a href="#cpu-scheduling" id="toc-cpu-scheduling" class="nav-link" data-scroll-target="#cpu-scheduling">52. CPU Scheduling</a></li>
+  <li><a href="#scheduling-criteria" id="toc-scheduling-criteria" class="nav-link" data-scroll-target="#scheduling-criteria">53. Scheduling Criteria</a>
+  <ul class="collapse">
+  <li><a href="#cpu-utilization" id="toc-cpu-utilization" class="nav-link" data-scroll-target="#cpu-utilization">CPU Utilization</a></li>
+  <li><a href="#throughput" id="toc-throughput" class="nav-link" data-scroll-target="#throughput">Throughput</a></li>
+  <li><a href="#turnaround-time" id="toc-turnaround-time" class="nav-link" data-scroll-target="#turnaround-time">Turnaround Time</a></li>
+  <li><a href="#waiting-time" id="toc-waiting-time" class="nav-link" data-scroll-target="#waiting-time">Waiting Time</a></li>
+  <li><a href="#response-time" id="toc-response-time" class="nav-link" data-scroll-target="#response-time">Response Time</a></li>
+  </ul></li>
+  <li><a href="#preemptive-vs-non-preemptive" id="toc-preemptive-vs-non-preemptive" class="nav-link" data-scroll-target="#preemptive-vs-non-preemptive">54. Preemptive vs Non-Preemptive</a>
+  <ul class="collapse">
+  <li><a href="#preemptive" id="toc-preemptive" class="nav-link" data-scroll-target="#preemptive">Preemptive</a></li>
+  <li><a href="#non-preemptive" id="toc-non-preemptive" class="nav-link" data-scroll-target="#non-preemptive">Non-Preemptive</a></li>
+  </ul></li>
+  <li><a href="#first-come-first-served" id="toc-first-come-first-served" class="nav-link" data-scroll-target="#first-come-first-served">55. First-Come, First-Served</a></li>
+  <li><a href="#shortest-job-first" id="toc-shortest-job-first" class="nav-link" data-scroll-target="#shortest-job-first">56. Shortest-Job-First</a></li>
+  <li><a href="#shortest-remaining-time-first" id="toc-shortest-remaining-time-first" class="nav-link" data-scroll-target="#shortest-remaining-time-first">57. Shortest-Remaining-Time-First</a></li>
+  <li><a href="#priority-scheduling" id="toc-priority-scheduling" class="nav-link" data-scroll-target="#priority-scheduling">58. Priority Scheduling</a></li>
+  <li><a href="#round-robin" id="toc-round-robin" class="nav-link" data-scroll-target="#round-robin">59. Round Robin</a></li>
+  <li><a href="#multilevel-queue" id="toc-multilevel-queue" class="nav-link" data-scroll-target="#multilevel-queue">60. Multilevel Queue</a></li>
+  <li><a href="#multilevel-feedback-queue" id="toc-multilevel-feedback-queue" class="nav-link" data-scroll-target="#multilevel-feedback-queue">61. Multilevel Feedback Queue</a></li>
+  <li><a href="#scheduling-algorithm-comparison" id="toc-scheduling-algorithm-comparison" class="nav-link" data-scroll-target="#scheduling-algorithm-comparison">62. Scheduling Algorithm Comparison</a></li>
+  <li><a href="#thread-scheduling" id="toc-thread-scheduling" class="nav-link" data-scroll-target="#thread-scheduling">63. Thread Scheduling</a></li>
+  <li><a href="#multiple-processor-scheduling" id="toc-multiple-processor-scheduling" class="nav-link" data-scroll-target="#multiple-processor-scheduling">64. Multiple-Processor Scheduling</a>
+  <ul class="collapse">
+  <li><a href="#asymmetric-multiprocessing" id="toc-asymmetric-multiprocessing" class="nav-link" data-scroll-target="#asymmetric-multiprocessing">Asymmetric Multiprocessing</a></li>
+  <li><a href="#symmetric-multiprocessing" id="toc-symmetric-multiprocessing" class="nav-link" data-scroll-target="#symmetric-multiprocessing">Symmetric Multiprocessing</a></li>
+  </ul></li>
+  <li><a href="#real-time-cpu-scheduling" id="toc-real-time-cpu-scheduling" class="nav-link" data-scroll-target="#real-time-cpu-scheduling">65. Real-Time CPU Scheduling</a>
+  <ul class="collapse">
+  <li><a href="#hard-real-time" id="toc-hard-real-time" class="nav-link" data-scroll-target="#hard-real-time">Hard Real-Time</a></li>
+  <li><a href="#soft-real-time" id="toc-soft-real-time" class="nav-link" data-scroll-target="#soft-real-time">Soft Real-Time</a></li>
+  <li><a href="#rate-monotonic" id="toc-rate-monotonic" class="nav-link" data-scroll-target="#rate-monotonic">Rate Monotonic</a></li>
+  <li><a href="#earliest-deadline-first" id="toc-earliest-deadline-first" class="nav-link" data-scroll-target="#earliest-deadline-first">Earliest Deadline First</a></li>
+  </ul></li>
+  <li><a href="#part-g-deadlocks" id="toc-part-g-deadlocks" class="nav-link" data-scroll-target="#part-g-deadlocks">Part G – Deadlocks</a></li>
+  <li><a href="#deadlock" id="toc-deadlock" class="nav-link" data-scroll-target="#deadlock">66. Deadlock</a></li>
+  <li><a href="#four-necessary-conditions" id="toc-four-necessary-conditions" class="nav-link" data-scroll-target="#four-necessary-conditions">67. Four Necessary Conditions</a>
+  <ul class="collapse">
+  <li><a href="#mutual-exclusion-1" id="toc-mutual-exclusion-1" class="nav-link" data-scroll-target="#mutual-exclusion-1">Mutual Exclusion</a></li>
+  <li><a href="#hold-and-wait" id="toc-hold-and-wait" class="nav-link" data-scroll-target="#hold-and-wait">Hold and Wait</a></li>
+  <li><a href="#no-preemption" id="toc-no-preemption" class="nav-link" data-scroll-target="#no-preemption">No Preemption</a></li>
+  <li><a href="#circular-wait" id="toc-circular-wait" class="nav-link" data-scroll-target="#circular-wait">Circular Wait</a></li>
+  </ul></li>
+  <li><a href="#resource-allocation-graph" id="toc-resource-allocation-graph" class="nav-link" data-scroll-target="#resource-allocation-graph">68. Resource Allocation Graph</a></li>
+  <li><a href="#methods-for-handling-deadlocks" id="toc-methods-for-handling-deadlocks" class="nav-link" data-scroll-target="#methods-for-handling-deadlocks">69. Methods for Handling Deadlocks</a></li>
+  <li><a href="#deadlock-prevention" id="toc-deadlock-prevention" class="nav-link" data-scroll-target="#deadlock-prevention">70. Deadlock Prevention</a></li>
+  <li><a href="#deadlock-avoidance" id="toc-deadlock-avoidance" class="nav-link" data-scroll-target="#deadlock-avoidance">71. Deadlock Avoidance</a></li>
+  <li><a href="#bankers-algorithm" id="toc-bankers-algorithm" class="nav-link" data-scroll-target="#bankers-algorithm">72. Banker’s Algorithm</a></li>
+  <li><a href="#deadlock-detection" id="toc-deadlock-detection" class="nav-link" data-scroll-target="#deadlock-detection">73. Deadlock Detection</a></li>
+  <li><a href="#deadlock-recovery" id="toc-deadlock-recovery" class="nav-link" data-scroll-target="#deadlock-recovery">74. Deadlock Recovery</a></li>
+  <li><a href="#part-h-memory-management" id="toc-part-h-memory-management" class="nav-link" data-scroll-target="#part-h-memory-management">Part H – Memory Management</a></li>
+  <li><a href="#memory-management" id="toc-memory-management" class="nav-link" data-scroll-target="#memory-management">75. Memory Management</a></li>
+  <li><a href="#contiguous-memory-allocation" id="toc-contiguous-memory-allocation" class="nav-link" data-scroll-target="#contiguous-memory-allocation">76. Contiguous Memory Allocation</a></li>
+  <li><a href="#internal-fragmentation" id="toc-internal-fragmentation" class="nav-link" data-scroll-target="#internal-fragmentation">77. Internal Fragmentation</a></li>
+  <li><a href="#external-fragmentation" id="toc-external-fragmentation" class="nav-link" data-scroll-target="#external-fragmentation">78. External Fragmentation</a></li>
+  <li><a href="#swapping" id="toc-swapping" class="nav-link" data-scroll-target="#swapping">79. Swapping</a></li>
+  <li><a href="#paging" id="toc-paging" class="nav-link" data-scroll-target="#paging">80. Paging</a></li>
+  <li><a href="#page-number-and-offset" id="toc-page-number-and-offset" class="nav-link" data-scroll-target="#page-number-and-offset">81. Page Number and Offset</a></li>
+  <li><a href="#translation-lookaside-buffer" id="toc-translation-lookaside-buffer" class="nav-link" data-scroll-target="#translation-lookaside-buffer">82. Translation Lookaside Buffer</a></li>
+  <li><a href="#segmentation" id="toc-segmentation" class="nav-link" data-scroll-target="#segmentation">83. Segmentation</a></li>
+  <li><a href="#paging-vs-segmentation" id="toc-paging-vs-segmentation" class="nav-link" data-scroll-target="#paging-vs-segmentation">84. Paging vs Segmentation</a></li>
+  <li><a href="#demand-paging" id="toc-demand-paging" class="nav-link" data-scroll-target="#demand-paging">85. Demand Paging</a></li>
+  <li><a href="#page-fault" id="toc-page-fault" class="nav-link" data-scroll-target="#page-fault">86. Page Fault</a></li>
+  <li><a href="#page-replacement" id="toc-page-replacement" class="nav-link" data-scroll-target="#page-replacement">87. Page Replacement</a></li>
+  <li><a href="#fifo-page-replacement" id="toc-fifo-page-replacement" class="nav-link" data-scroll-target="#fifo-page-replacement">88. FIFO Page Replacement</a></li>
+  <li><a href="#optimal-page-replacement" id="toc-optimal-page-replacement" class="nav-link" data-scroll-target="#optimal-page-replacement">89. Optimal Page Replacement</a></li>
+  <li><a href="#lru" id="toc-lru" class="nav-link" data-scroll-target="#lru">90. LRU</a></li>
+  <li><a href="#page-replacement-comparison" id="toc-page-replacement-comparison" class="nav-link" data-scroll-target="#page-replacement-comparison">91. Page Replacement Comparison</a></li>
+  <li><a href="#allocation-of-frames" id="toc-allocation-of-frames" class="nav-link" data-scroll-target="#allocation-of-frames">92. Allocation of Frames</a></li>
+  <li><a href="#thrashing" id="toc-thrashing" class="nav-link" data-scroll-target="#thrashing">93. Thrashing</a></li>
+  <li><a href="#memory-mapped-files" id="toc-memory-mapped-files" class="nav-link" data-scroll-target="#memory-mapped-files">94. Memory-Mapped Files</a></li>
+  <li><a href="#part-i-storage-management" id="toc-part-i-storage-management" class="nav-link" data-scroll-target="#part-i-storage-management">Part I – Storage Management</a></li>
+  <li><a href="#mass-storage" id="toc-mass-storage" class="nav-link" data-scroll-target="#mass-storage">95. Mass Storage</a></li>
+  <li><a href="#disk-structure" id="toc-disk-structure" class="nav-link" data-scroll-target="#disk-structure">96. Disk Structure</a></li>
+  <li><a href="#disk-scheduling" id="toc-disk-scheduling" class="nav-link" data-scroll-target="#disk-scheduling">97. Disk Scheduling</a></li>
+  <li><a href="#fcfs-disk-scheduling" id="toc-fcfs-disk-scheduling" class="nav-link" data-scroll-target="#fcfs-disk-scheduling">98. FCFS Disk Scheduling</a></li>
+  <li><a href="#sstf" id="toc-sstf" class="nav-link" data-scroll-target="#sstf">99. SSTF</a></li>
+  <li><a href="#scan" id="toc-scan" class="nav-link" data-scroll-target="#scan">100. SCAN</a></li>
+  <li><a href="#c-scan" id="toc-c-scan" class="nav-link" data-scroll-target="#c-scan">101. C-SCAN</a></li>
+  <li><a href="#look-and-c-look" id="toc-look-and-c-look" class="nav-link" data-scroll-target="#look-and-c-look">102. LOOK and C-LOOK</a></li>
+  <li><a href="#disk-scheduling-comparison" id="toc-disk-scheduling-comparison" class="nav-link" data-scroll-target="#disk-scheduling-comparison">103. Disk Scheduling Comparison</a></li>
+  <li><a href="#raid" id="toc-raid" class="nav-link" data-scroll-target="#raid">104. RAID</a></li>
+  <li><a href="#raid-levels" id="toc-raid-levels" class="nav-link" data-scroll-target="#raid-levels">105. RAID Levels</a>
+  <ul class="collapse">
+  <li><a href="#raid-0" id="toc-raid-0" class="nav-link" data-scroll-target="#raid-0">RAID 0</a></li>
+  <li><a href="#raid-1" id="toc-raid-1" class="nav-link" data-scroll-target="#raid-1">RAID 1</a></li>
+  <li><a href="#raid-5" id="toc-raid-5" class="nav-link" data-scroll-target="#raid-5">RAID 5</a></li>
+  <li><a href="#raid-6" id="toc-raid-6" class="nav-link" data-scroll-target="#raid-6">RAID 6</a></li>
+  </ul></li>
+  <li><a href="#part-j-file-and-io-systems" id="toc-part-j-file-and-io-systems" class="nav-link" data-scroll-target="#part-j-file-and-io-systems">Part J – File and I/O Systems</a></li>
+  <li><a href="#file" id="toc-file" class="nav-link" data-scroll-target="#file">106. File</a></li>
+  <li><a href="#file-access-methods" id="toc-file-access-methods" class="nav-link" data-scroll-target="#file-access-methods">107. File Access Methods</a>
+  <ul class="collapse">
+  <li><a href="#sequential-access" id="toc-sequential-access" class="nav-link" data-scroll-target="#sequential-access">Sequential Access</a></li>
+  <li><a href="#direct-access" id="toc-direct-access" class="nav-link" data-scroll-target="#direct-access">Direct Access</a></li>
+  <li><a href="#indexed-access" id="toc-indexed-access" class="nav-link" data-scroll-target="#indexed-access">Indexed Access</a></li>
+  </ul></li>
+  <li><a href="#directory-structure" id="toc-directory-structure" class="nav-link" data-scroll-target="#directory-structure">108. Directory Structure</a>
+  <ul class="collapse">
+  <li><a href="#single-level-directory" id="toc-single-level-directory" class="nav-link" data-scroll-target="#single-level-directory">Single-Level Directory</a></li>
+  <li><a href="#two-level-directory" id="toc-two-level-directory" class="nav-link" data-scroll-target="#two-level-directory">Two-Level Directory</a></li>
+  <li><a href="#tree-structure" id="toc-tree-structure" class="nav-link" data-scroll-target="#tree-structure">Tree Structure</a></li>
+  </ul></li>
+  <li><a href="#file-system-mounting" id="toc-file-system-mounting" class="nav-link" data-scroll-target="#file-system-mounting">109. File-System Mounting</a></li>
+  <li><a href="#file-sharing" id="toc-file-sharing" class="nav-link" data-scroll-target="#file-sharing">110. File Sharing</a></li>
+  <li><a href="#file-system-structure" id="toc-file-system-structure" class="nav-link" data-scroll-target="#file-system-structure">111. File-System Structure</a></li>
+  <li><a href="#directory-implementation" id="toc-directory-implementation" class="nav-link" data-scroll-target="#directory-implementation">112. Directory Implementation</a></li>
+  <li><a href="#file-allocation-methods" id="toc-file-allocation-methods" class="nav-link" data-scroll-target="#file-allocation-methods">113. File Allocation Methods</a>
+  <ul class="collapse">
+  <li><a href="#contiguous-allocation" id="toc-contiguous-allocation" class="nav-link" data-scroll-target="#contiguous-allocation">Contiguous Allocation</a></li>
+  <li><a href="#linked-allocation" id="toc-linked-allocation" class="nav-link" data-scroll-target="#linked-allocation">Linked Allocation</a></li>
+  <li><a href="#indexed-allocation" id="toc-indexed-allocation" class="nav-link" data-scroll-target="#indexed-allocation">Indexed Allocation</a></li>
+  </ul></li>
+  <li><a href="#free-space-management" id="toc-free-space-management" class="nav-link" data-scroll-target="#free-space-management">114. Free-Space Management</a>
+  <ul class="collapse">
+  <li><a href="#bitmap" id="toc-bitmap" class="nav-link" data-scroll-target="#bitmap">Bitmap</a></li>
+  </ul></li>
+  <li><a href="#file-system-efficiency-and-performance" id="toc-file-system-efficiency-and-performance" class="nav-link" data-scroll-target="#file-system-efficiency-and-performance">115. File-System Efficiency and Performance</a></li>
+  <li><a href="#file-system-recovery" id="toc-file-system-recovery" class="nav-link" data-scroll-target="#file-system-recovery">116. File-System Recovery</a></li>
+  <li><a href="#io-hardware" id="toc-io-hardware" class="nav-link" data-scroll-target="#io-hardware">117. I/O Hardware</a></li>
+  <li><a href="#application-io-interface" id="toc-application-io-interface" class="nav-link" data-scroll-target="#application-io-interface">118. Application I/O Interface</a></li>
+  <li><a href="#kernel-io-subsystem" id="toc-kernel-io-subsystem" class="nav-link" data-scroll-target="#kernel-io-subsystem">119. Kernel I/O Subsystem</a></li>
+  <li><a href="#interrupt-driven-io" id="toc-interrupt-driven-io" class="nav-link" data-scroll-target="#interrupt-driven-io">120. Interrupt-Driven I/O</a></li>
+  <li><a href="#dma" id="toc-dma" class="nav-link" data-scroll-target="#dma">121. DMA</a></li>
+  <li><a href="#transforming-io-requests-to-hardware-operations" id="toc-transforming-io-requests-to-hardware-operations" class="nav-link" data-scroll-target="#transforming-io-requests-to-hardware-operations">122. Transforming I/O Requests to Hardware Operations</a></li>
+  <li><a href="#part-k-security-and-protection" id="toc-part-k-security-and-protection" class="nav-link" data-scroll-target="#part-k-security-and-protection">Part K – Security and Protection</a></li>
+  <li><a href="#protection" id="toc-protection" class="nav-link" data-scroll-target="#protection">123. Protection</a></li>
+  <li><a href="#access-matrix" id="toc-access-matrix" class="nav-link" data-scroll-target="#access-matrix">124. Access Matrix</a></li>
+  <li><a href="#access-rights" id="toc-access-rights" class="nav-link" data-scroll-target="#access-rights">125. Access Rights</a></li>
+  <li><a href="#access-control" id="toc-access-control" class="nav-link" data-scroll-target="#access-control">126. Access Control</a></li>
+  <li><a href="#revocation-of-access-rights" id="toc-revocation-of-access-rights" class="nav-link" data-scroll-target="#revocation-of-access-rights">127. Revocation of Access Rights</a></li>
+  <li><a href="#program-threats" id="toc-program-threats" class="nav-link" data-scroll-target="#program-threats">128. Program Threats</a></li>
+  <li><a href="#system-and-network-threats" id="toc-system-and-network-threats" class="nav-link" data-scroll-target="#system-and-network-threats">129. System and Network Threats</a></li>
+  <li><a href="#cryptography" id="toc-cryptography" class="nav-link" data-scroll-target="#cryptography">130. Cryptography</a>
+  <ul class="collapse">
+  <li><a href="#symmetric-cryptography" id="toc-symmetric-cryptography" class="nav-link" data-scroll-target="#symmetric-cryptography">Symmetric Cryptography</a></li>
+  <li><a href="#asymmetric-cryptography" id="toc-asymmetric-cryptography" class="nav-link" data-scroll-target="#asymmetric-cryptography">Asymmetric Cryptography</a></li>
+  </ul></li>
+  <li><a href="#hashing" id="toc-hashing" class="nav-link" data-scroll-target="#hashing">131. Hashing</a></li>
+  <li><a href="#user-authentication" id="toc-user-authentication" class="nav-link" data-scroll-target="#user-authentication">132. User Authentication</a></li>
+  <li><a href="#security-defenses" id="toc-security-defenses" class="nav-link" data-scroll-target="#security-defenses">133. Security Defenses</a></li>
+  <li><a href="#part-l-virtual-machines" id="toc-part-l-virtual-machines" class="nav-link" data-scroll-target="#part-l-virtual-machines">Part L – Virtual Machines</a></li>
+  <li><a href="#virtual-machine" id="toc-virtual-machine" class="nav-link" data-scroll-target="#virtual-machine">134. Virtual Machine</a></li>
+  <li><a href="#system-virtual-machine" id="toc-system-virtual-machine" class="nav-link" data-scroll-target="#system-virtual-machine">135. System Virtual Machine</a></li>
+  <li><a href="#process-virtual-machine" id="toc-process-virtual-machine" class="nav-link" data-scroll-target="#process-virtual-machine">136. Process Virtual Machine</a></li>
+  <li><a href="#hypervisor" id="toc-hypervisor" class="nav-link" data-scroll-target="#hypervisor">137. Hypervisor</a>
+  <ul class="collapse">
+  <li><a href="#type-1" id="toc-type-1" class="nav-link" data-scroll-target="#type-1">Type 1</a></li>
+  <li><a href="#type-2" id="toc-type-2" class="nav-link" data-scroll-target="#type-2">Type 2</a></li>
+  </ul></li>
+  <li><a href="#virtualization" id="toc-virtualization" class="nav-link" data-scroll-target="#virtualization">138. Virtualization</a></li>
+  <li><a href="#part-m-linux-operating-system" id="toc-part-m-linux-operating-system" class="nav-link" data-scroll-target="#part-m-linux-operating-system">Part M – Linux Operating System</a></li>
+  <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux">139. Linux</a></li>
+  <li><a href="#linux-design-principles" id="toc-linux-design-principles" class="nav-link" data-scroll-target="#linux-design-principles">140. Linux Design Principles</a></li>
+  <li><a href="#linux-kernel-modules" id="toc-linux-kernel-modules" class="nav-link" data-scroll-target="#linux-kernel-modules">141. Linux Kernel Modules</a></li>
+  <li><a href="#linux-process-management" id="toc-linux-process-management" class="nav-link" data-scroll-target="#linux-process-management">142. Linux Process Management</a></li>
+  <li><a href="#linux-scheduling" id="toc-linux-scheduling" class="nav-link" data-scroll-target="#linux-scheduling">143. Linux Scheduling</a></li>
+  <li><a href="#linux-memory-management" id="toc-linux-memory-management" class="nav-link" data-scroll-target="#linux-memory-management">144. Linux Memory Management</a></li>
+  <li><a href="#linux-file-systems" id="toc-linux-file-systems" class="nav-link" data-scroll-target="#linux-file-systems">145. Linux File Systems</a></li>
+  <li><a href="#linux-io" id="toc-linux-io" class="nav-link" data-scroll-target="#linux-io">146. Linux I/O</a></li>
+  <li><a href="#linux-ipc" id="toc-linux-ipc" class="nav-link" data-scroll-target="#linux-ipc">147. Linux IPC</a></li>
+  <li><a href="#linux-network-structure" id="toc-linux-network-structure" class="nav-link" data-scroll-target="#linux-network-structure">148. Linux Network Structure</a></li>
+  <li><a href="#part-n-windows-operating-systems" id="toc-part-n-windows-operating-systems" class="nav-link" data-scroll-target="#part-n-windows-operating-systems">Part N – Windows Operating Systems</a></li>
+  <li><a href="#windows-design-principles" id="toc-windows-design-principles" class="nav-link" data-scroll-target="#windows-design-principles">149. Windows Design Principles</a></li>
+  <li><a href="#windows-system-components" id="toc-windows-system-components" class="nav-link" data-scroll-target="#windows-system-components">150. Windows System Components</a></li>
+  <li><a href="#terminal-services" id="toc-terminal-services" class="nav-link" data-scroll-target="#terminal-services">151. Terminal Services</a></li>
+  <li><a href="#fast-user-switching" id="toc-fast-user-switching" class="nav-link" data-scroll-target="#fast-user-switching">152. Fast User Switching</a></li>
+  <li><a href="#windows-file-system" id="toc-windows-file-system" class="nav-link" data-scroll-target="#windows-file-system">153. Windows File System</a></li>
+  <li><a href="#windows-networking" id="toc-windows-networking" class="nav-link" data-scroll-target="#windows-networking">154. Windows Networking</a></li>
+  <li><a href="#part-o-distributed-systems" id="toc-part-o-distributed-systems" class="nav-link" data-scroll-target="#part-o-distributed-systems">Part O – Distributed Systems</a></li>
+  <li><a href="#distributed-operating-system" id="toc-distributed-operating-system" class="nav-link" data-scroll-target="#distributed-operating-system">155. Distributed Operating System</a></li>
+  <li><a href="#network-based-operating-systems" id="toc-network-based-operating-systems" class="nav-link" data-scroll-target="#network-based-operating-systems">156. Network-Based Operating Systems</a></li>
+  <li><a href="#network-structure" id="toc-network-structure" class="nav-link" data-scroll-target="#network-structure">157. Network Structure</a></li>
+  <li><a href="#communication-structure" id="toc-communication-structure" class="nav-link" data-scroll-target="#communication-structure">158. Communication Structure</a></li>
+  <li><a href="#communication-protocols" id="toc-communication-protocols" class="nav-link" data-scroll-target="#communication-protocols">159. Communication Protocols</a></li>
+  <li><a href="#robustness" id="toc-robustness" class="nav-link" data-scroll-target="#robustness">160. Robustness</a></li>
+  <li><a href="#design-issues-in-distributed-systems" id="toc-design-issues-in-distributed-systems" class="nav-link" data-scroll-target="#design-issues-in-distributed-systems">161. Design Issues in Distributed Systems</a></li>
+  <li><a href="#distributed-file-systems" id="toc-distributed-file-systems" class="nav-link" data-scroll-target="#distributed-file-systems">162. Distributed File Systems</a></li>
+  <li><a href="#centralized-vs-distributed-systems" id="toc-centralized-vs-distributed-systems" class="nav-link" data-scroll-target="#centralized-vs-distributed-systems">163. Centralized vs Distributed Systems</a></li>
+  <li><a href="#important-operating-system-comparison" id="toc-important-operating-system-comparison" class="nav-link" data-scroll-target="#important-operating-system-comparison">164. Important Operating System Comparison</a></li>
+  <li><a href="#important-cpu-scheduling-formulas" id="toc-important-cpu-scheduling-formulas" class="nav-link" data-scroll-target="#important-cpu-scheduling-formulas">165. Important CPU Scheduling Formulas</a>
+  <ul class="collapse">
+  <li><a href="#turnaround-time-1" id="toc-turnaround-time-1" class="nav-link" data-scroll-target="#turnaround-time-1">Turnaround Time</a></li>
+  <li><a href="#waiting-time-1" id="toc-waiting-time-1" class="nav-link" data-scroll-target="#waiting-time-1">Waiting Time</a></li>
+  <li><a href="#response-time-1" id="toc-response-time-1" class="nav-link" data-scroll-target="#response-time-1">Response Time</a></li>
+  </ul></li>
+  <li><a href="#important-paging-formula" id="toc-important-paging-formula" class="nav-link" data-scroll-target="#important-paging-formula">166. Important Paging Formula</a></li>
+  <li><a href="#important-deadlock-formula" id="toc-important-deadlock-formula" class="nav-link" data-scroll-target="#important-deadlock-formula">167. Important Deadlock Formula</a></li>
+  <li><a href="#important-raid-revision" id="toc-important-raid-revision" class="nav-link" data-scroll-target="#important-raid-revision">168. Important RAID Revision</a></li>
+  <li><a href="#important-linux-revision" id="toc-important-linux-revision" class="nav-link" data-scroll-target="#important-linux-revision">169. Important Linux Revision</a></li>
+  <li><a href="#important-windows-revision" id="toc-important-windows-revision" class="nav-link" data-scroll-target="#important-windows-revision">170. Important Windows Revision</a></li>
+  <li><a href="#important-distributed-system-revision" id="toc-important-distributed-system-revision" class="nav-link" data-scroll-target="#important-distributed-system-revision">171. Important Distributed-System Revision</a></li>
+  <li><a href="#ugc-net-high-priority-areas" id="toc-ugc-net-high-priority-areas" class="nav-link" data-scroll-target="#ugc-net-high-priority-areas">172. UGC NET High-Priority Areas</a>
+  <ul class="collapse">
+  <li><a href="#system-software-1" id="toc-system-software-1" class="nav-link" data-scroll-target="#system-software-1">System Software</a></li>
+  <li><a href="#operating-system-basics" id="toc-operating-system-basics" class="nav-link" data-scroll-target="#operating-system-basics">Operating-System Basics</a></li>
+  <li><a href="#processes" id="toc-processes" class="nav-link" data-scroll-target="#processes">Processes</a></li>
+  <li><a href="#synchronization" id="toc-synchronization" class="nav-link" data-scroll-target="#synchronization">Synchronization</a></li>
+  <li><a href="#threads" id="toc-threads" class="nav-link" data-scroll-target="#threads">Threads</a></li>
+  <li><a href="#cpu-scheduling-1" id="toc-cpu-scheduling-1" class="nav-link" data-scroll-target="#cpu-scheduling-1">CPU Scheduling</a></li>
+  <li><a href="#deadlocks" id="toc-deadlocks" class="nav-link" data-scroll-target="#deadlocks">Deadlocks</a></li>
+  <li><a href="#memory" id="toc-memory" class="nav-link" data-scroll-target="#memory">Memory</a></li>
+  <li><a href="#storage" id="toc-storage" class="nav-link" data-scroll-target="#storage">Storage</a></li>
+  <li><a href="#file-systems" id="toc-file-systems" class="nav-link" data-scroll-target="#file-systems">File Systems</a></li>
+  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security">Security</a></li>
+  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines">Virtual Machines</a></li>
+  <li><a href="#linux-1" id="toc-linux-1" class="nav-link" data-scroll-target="#linux-1">Linux</a></li>
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
+  <li><a href="#distributed-systems" id="toc-distributed-systems" class="nav-link" data-scroll-target="#distributed-systems">Distributed Systems</a></li>
+  </ul></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">173. Common Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#process-vs-program" id="toc-process-vs-program" class="nav-link" data-scroll-target="#process-vs-program">Process vs Program</a></li>
+  <li><a href="#process-vs-thread-1" id="toc-process-vs-thread-1" class="nav-link" data-scroll-target="#process-vs-thread-1">Process vs Thread</a></li>
+  <li><a href="#paging-vs-segmentation-1" id="toc-paging-vs-segmentation-1" class="nav-link" data-scroll-target="#paging-vs-segmentation-1">Paging vs Segmentation</a></li>
+  <li><a href="#internal-vs-external-fragmentation" id="toc-internal-vs-external-fragmentation" class="nav-link" data-scroll-target="#internal-vs-external-fragmentation">Internal vs External Fragmentation</a></li>
+  <li><a href="#compiler-vs-interpreter-1" id="toc-compiler-vs-interpreter-1" class="nav-link" data-scroll-target="#compiler-vs-interpreter-1">Compiler vs Interpreter</a></li>
+  <li><a href="#linker-vs-loader" id="toc-linker-vs-loader" class="nav-link" data-scroll-target="#linker-vs-loader">Linker vs Loader</a></li>
+  <li><a href="#deadlock-prevention-vs-avoidance" id="toc-deadlock-prevention-vs-avoidance" class="nav-link" data-scroll-target="#deadlock-prevention-vs-avoidance">Deadlock Prevention vs Avoidance</a></li>
+  <li><a href="#starvation-vs-deadlock" id="toc-starvation-vs-deadlock" class="nav-link" data-scroll-target="#starvation-vs-deadlock">Starvation vs Deadlock</a></li>
+  <li><a href="#semaphore-vs-mutex" id="toc-semaphore-vs-mutex" class="nav-link" data-scroll-target="#semaphore-vs-mutex">Semaphore vs Mutex</a></li>
+  <li><a href="#fcfs-vs-round-robin" id="toc-fcfs-vs-round-robin" class="nav-link" data-scroll-target="#fcfs-vs-round-robin">FCFS vs Round Robin</a></li>
+  </ul></li>
+  <li><a href="#one-minute-revision" id="toc-one-minute-revision" class="nav-link" data-scroll-target="#one-minute-revision">174. One-Minute Revision</a></li>
+  <li><a href="#must-remember" id="toc-must-remember" class="nav-link" data-scroll-target="#must-remember">175. Must Remember</a></li>
+  <li><a href="#final-exam-strategy" id="toc-final-exam-strategy" class="nav-link" data-scroll-target="#final-exam-strategy">176. Final Exam Strategy</a></li>
+  <li><a href="#final-summary" id="toc-final-summary" class="nav-link" data-scroll-target="#final-summary">177. Final Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit V – System Software and Operating System</h1>
+<p class="subtitle lead">UGC NET Computer Science and Applications – Paper II</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This unit covers system software, operating-system concepts, processes, threads, CPU scheduling, deadlocks, memory management, storage management, file systems, security, virtual machines, Linux, Windows, and distributed operating systems.</p>
+<section id="part-a-system-software" class="level1">
+<h1>Part A – System Software</h1>
+<section id="system-software" class="level2">
+<h2 class="anchored" data-anchor-id="system-software">1. System Software</h2>
+<p>System software provides a platform and services for application programs.</p>
+<p>Examples:</p>
+<ul>
+<li>Operating systems</li>
+<li>Compilers</li>
+<li>Assemblers</li>
+<li>Linkers</li>
+<li>Loaders</li>
+<li>Debuggers</li>
+<li>Macro processors</li>
+</ul>
+<p>System software works close to the hardware.</p>
+</section>
+</section>
+<section id="machine-language" class="level1">
+<h1>2. Machine Language</h1>
+<p>Machine language consists of instructions directly represented in binary form.</p>
+<p>Example:</p>
+<pre class="text"><code>10110000 01100001</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>Directly executed by hardware</li>
+<li>No translation required at execution time</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>Difficult for humans to write</li>
+<li>Difficult to debug</li>
+<li>Machine dependent</li>
+</ul>
+</section>
+<section id="assembly-language" class="level1">
+<h1>3. Assembly Language</h1>
+<p>Assembly language uses symbolic instructions instead of binary codes.</p>
+<p>Example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode asm code-with-copy"><code class="sourceCode fasm"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">MOV</span> <span class="kw">AX</span><span class="op">,</span> <span class="dv">10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">ADD</span> <span class="kw">AX</span><span class="op">,</span> <span class="dv">20</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>An <strong>assembler</strong> translates assembly language into machine code.</p>
+<pre class="text"><code>Assembly Program
+       |
+       v
+   Assembler
+       |
+       v
+ Machine/Object Code</code></pre>
+</section>
+<section id="high-level-languages" class="level1">
+<h1>4. High-Level Languages</h1>
+<p>High-level languages are closer to human language than machine language.</p>
+<p>Examples:</p>
+<ul>
+<li>C</li>
+<li>C++</li>
+<li>Java</li>
+<li>Python</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Easier to write</li>
+<li>Easier to maintain</li>
+<li>More portable</li>
+<li>Supports abstraction</li>
+</ul>
+</section>
+<section id="machine-vs-assembly-vs-high-level-language" class="level1">
+<h1>5. Machine vs Assembly vs High-Level Language</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Machine</th>
+<th>Assembly</th>
+<th>High-level</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Binary instructions</td>
+<td>Mnemonics</td>
+<td>Human-oriented syntax</td>
+</tr>
+<tr class="even">
+<td>Very difficult</td>
+<td>Easier than machine language</td>
+<td>Easier</td>
+</tr>
+<tr class="odd">
+<td>Machine dependent</td>
+<td>Usually machine dependent</td>
+<td>More portable</td>
+</tr>
+<tr class="even">
+<td>No assembler required</td>
+<td>Requires assembler</td>
+<td>Requires compiler/interpreter</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="compiler" class="level1">
+<h1>6. Compiler</h1>
+<p>A compiler translates a high-level program into target code.</p>
+<pre class="text"><code>Source Program
+      |
+      v
+   Compiler
+      |
+      v
+Object/Target Code</code></pre>
+<p>A compiler generally analyzes the entire source program before producing target code, although modern implementations can use many compilation strategies.</p>
+<p>Common compiler phases include:</p>
+<pre class="text"><code>Lexical Analysis
+       ↓
+Syntax Analysis
+       ↓
+Semantic Analysis
+       ↓
+Intermediate Representation
+       ↓
+Optimization
+       ↓
+Code Generation</code></pre>
+</section>
+<section id="interpreter" class="level1">
+<h1>7. Interpreter</h1>
+<p>An interpreter executes a program through interpretation rather than producing a traditional standalone machine-code executable in the same way as a conventional ahead-of-time compiler.</p>
+<p>Simplified view:</p>
+<pre class="text"><code>Source Program
+      |
+      v
+ Interpreter
+      |
+      v
+ Execution</code></pre>
+</section>
+<section id="compiler-vs-interpreter" class="level1">
+<h1>8. Compiler vs Interpreter</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Compiler</th>
+<th>Interpreter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Usually translates source toward target code</td>
+<td>Executes by interpretation</td>
+</tr>
+<tr class="even">
+<td>Compilation occurs before normal execution</td>
+<td>Translation/interpretation occurs during execution</td>
+</tr>
+<tr class="odd">
+<td>Errors can be reported during compilation</td>
+<td>Errors may appear as execution reaches the relevant code</td>
+</tr>
+<tr class="even">
+<td>Generated code can be reused</td>
+<td>Interpretation may repeat work</td>
+</tr>
+</tbody>
+</table>
+<p>Modern languages may use combinations of compilation, interpretation, and just-in-time compilation.</p>
+</section>
+<section id="linker" class="level1">
+<h1>9. Linker</h1>
+<p>A linker combines object files and libraries to create an executable or another linked program.</p>
+<pre class="text"><code>Object File 1
+Object File 2
+Library
+    |
+    v
+  Linker
+    |
+    v
+Executable</code></pre>
+</section>
+<section id="loader" class="level1">
+<h1>10. Loader</h1>
+<p>A loader loads an executable program into memory and prepares it for execution.</p>
+<p>Typical sequence:</p>
+<pre class="text"><code>Source
+  ↓
+Compiler
+  ↓
+Object Code
+  ↓
+Linker
+  ↓
+Executable
+  ↓
+Loader
+  ↓
+Main Memory</code></pre>
+</section>
+<section id="relocation" class="level1">
+<h1>11. Relocation</h1>
+<p>Relocation adjusts address-dependent code or data when a program is placed at a particular memory location.</p>
+<p>A program may contain relocatable addresses before loading.</p>
+<p>The loader/linker can adjust them according to the actual placement.</p>
+</section>
+<section id="macros" class="level1">
+<h1>12. Macros</h1>
+<p>A macro is a named sequence of instructions or source statements that can be expanded when used.</p>
+<p>Example:</p>
+<pre class="text"><code>INCR X</code></pre>
+<p>may expand into several instructions.</p>
+<p>A <strong>macro processor</strong> performs macro expansion.</p>
+<p>Advantages:</p>
+<ul>
+<li>Reduces repeated source code</li>
+<li>Improves source-level convenience</li>
+</ul>
+</section>
+<section id="debugger" class="level1">
+<h1>13. Debugger</h1>
+<p>A debugger helps programmers find and analyze program errors.</p>
+<p>Common debugger features:</p>
+<ul>
+<li>Breakpoints</li>
+<li>Step-by-step execution</li>
+<li>Variable inspection</li>
+<li>Stack inspection</li>
+<li>Watch expressions</li>
+<li>Call stack</li>
+</ul>
+</section>
+<section id="part-b-basics-of-operating-systems" class="level1">
+<h1>Part B – Basics of Operating Systems</h1>
+</section>
+<section id="operating-system" class="level1">
+<h1>14. Operating System</h1>
+<p>An Operating System (OS) is system software that manages computer hardware and provides services to application programs.</p>
+<p>Main responsibilities:</p>
+<ul>
+<li>Process management</li>
+<li>Memory management</li>
+<li>File management</li>
+<li>I/O management</li>
+<li>Storage management</li>
+<li>Protection and security</li>
+<li>Networking</li>
+<li>User interface</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Linux</li>
+<li>Windows</li>
+<li>macOS</li>
+<li>Android</li>
+</ul>
+</section>
+<section id="operating-system-structure" class="level1">
+<h1>15. Operating System Structure</h1>
+<p>An OS can be organized using different structures.</p>
+<p>Common approaches:</p>
+<ul>
+<li>Simple structure</li>
+<li>Layered structure</li>
+<li>Monolithic structure</li>
+<li>Microkernel</li>
+<li>Modular structure</li>
+<li>Hybrid structure</li>
+</ul>
+</section>
+<section id="monolithic-structure" class="level1">
+<h1>16. Monolithic Structure</h1>
+<p>Most OS services execute in a large kernel address space.</p>
+<p>Advantages:</p>
+<ul>
+<li>Efficient communication</li>
+<li>Good performance</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>Large kernel</li>
+<li>Less isolation between components</li>
+</ul>
+</section>
+<section id="layered-structure" class="level1">
+<h1>17. Layered Structure</h1>
+<p>The OS is divided into layers.</p>
+<pre class="text"><code>User Programs
+     ↓
+Application Services
+     ↓
+File System
+     ↓
+Memory / Process Management
+     ↓
+Hardware</code></pre>
+<p>Each layer provides services to the layer above it.</p>
+</section>
+<section id="microkernel" class="level1">
+<h1>18. Microkernel</h1>
+<p>A microkernel keeps only essential services in the kernel.</p>
+<p>Other services can run in user space.</p>
+<p>Typical microkernel responsibilities:</p>
+<ul>
+<li>Basic scheduling</li>
+<li>Interprocess communication</li>
+<li>Basic memory management</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Modularity</li>
+<li>Better isolation</li>
+<li>Easier extension</li>
+</ul>
+<p>Potential disadvantage:</p>
+<ul>
+<li>Communication overhead can affect performance depending on implementation.</li>
+</ul>
+</section>
+<section id="os-operations" class="level1">
+<h1>19. OS Operations</h1>
+<p>An operating system manages:</p>
+<pre class="text"><code>CPU
+Memory
+Storage
+I/O Devices
+Files
+Processes
+Users
+Security</code></pre>
+<p>It also handles interrupts and exceptions.</p>
+</section>
+<section id="operating-system-services" class="level1">
+<h1>20. Operating-System Services</h1>
+<p>Common OS services:</p>
+<ol type="1">
+<li>Program execution</li>
+<li>I/O operations</li>
+<li>File-system manipulation</li>
+<li>Communication</li>
+<li>Error detection</li>
+<li>Resource allocation</li>
+<li>Accounting</li>
+<li>Protection and security</li>
+</ol>
+</section>
+<section id="system-calls" class="level1">
+<h1>21. System Calls</h1>
+<p>A system call provides an interface between a user program and the operating-system kernel.</p>
+<pre class="text"><code>User Program
+     |
+     | System Call
+     v
+   Kernel
+     |
+     v
+Hardware / OS Service</code></pre>
+<p>Examples of system-call categories:</p>
+<ul>
+<li>Process control</li>
+<li>File management</li>
+<li>Device management</li>
+<li>Information maintenance</li>
+<li>Communication</li>
+<li>Protection</li>
+</ul>
+</section>
+<section id="system-call-examples" class="level1">
+<h1>22. System Call Examples</h1>
+<p>Unix/Linux examples include:</p>
+<pre class="text"><code>fork()
+exec()
+wait()
+open()
+read()
+write()
+close()</code></pre>
+</section>
+<section id="os-design-and-implementation" class="level1">
+<h1>23. OS Design and Implementation</h1>
+<p>Important design considerations:</p>
+<ul>
+<li>Performance</li>
+<li>Reliability</li>
+<li>Security</li>
+<li>Portability</li>
+<li>Maintainability</li>
+<li>Modularity</li>
+<li>Scalability</li>
+</ul>
+<p>Implementation may involve:</p>
+<ul>
+<li>C</li>
+<li>C++</li>
+<li>Assembly</li>
+<li>Other low-level languages</li>
+</ul>
+</section>
+<section id="system-boot" class="level1">
+<h1>24. System Boot</h1>
+<p>Booting is the process of starting a computer and loading the operating system.</p>
+<p>Simplified sequence:</p>
+<pre class="text"><code>Power On
+   ↓
+Firmware
+   ↓
+Bootloader
+   ↓
+OS Kernel
+   ↓
+System Initialization
+   ↓
+Login / User Environment</code></pre>
+</section>
+<section id="part-c-process-management" class="level1">
+<h1>Part C – Process Management</h1>
+</section>
+<section id="process" class="level1">
+<h1>25. Process</h1>
+<p>A process is a program in execution.</p>
+<p>A process contains resources such as:</p>
+<ul>
+<li>Program code</li>
+<li>Data</li>
+<li>Stack</li>
+<li>CPU state</li>
+<li>Program counter</li>
+<li>Registers</li>
+<li>Open files</li>
+</ul>
+</section>
+<section id="program-vs-process" class="level1">
+<h1>26. Program vs Process</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Program</th>
+<th>Process</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Passive entity</td>
+<td>Active entity</td>
+</tr>
+<tr class="even">
+<td>Stored instructions</td>
+<td>Program in execution</td>
+</tr>
+<tr class="odd">
+<td>Does not itself have execution state</td>
+<td>Has execution state</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="process-states" class="level1">
+<h1>27. Process States</h1>
+<p>Common process states:</p>
+<pre class="text"><code>New
+ |
+ v
+Ready &lt;----&gt; Running
+              |
+              v
+           Waiting
+              |
+              v
+            Ready
+
+Running
+   |
+   v
+Terminated</code></pre>
+<p>Typical states:</p>
+<ul>
+<li>New</li>
+<li>Ready</li>
+<li>Running</li>
+<li>Waiting/Blocked</li>
+<li>Terminated</li>
+</ul>
+</section>
+<section id="process-control-block" class="level1">
+<h1>28. Process Control Block</h1>
+<p>The <strong>PCB</strong> stores information about a process.</p>
+<p>Typical fields:</p>
+<ul>
+<li>Process ID</li>
+<li>Process state</li>
+<li>Program counter</li>
+<li>CPU registers</li>
+<li>CPU scheduling information</li>
+<li>Memory-management information</li>
+<li>Accounting information</li>
+<li>I/O status information</li>
+</ul>
+</section>
+<section id="process-scheduling" class="level1">
+<h1>29. Process Scheduling</h1>
+<p>The OS selects processes for execution.</p>
+<p>Important scheduling queues:</p>
+<ul>
+<li>Job queue</li>
+<li>Ready queue</li>
+<li>Device queues</li>
+</ul>
+</section>
+<section id="context-switch" class="level1">
+<h1>30. Context Switch</h1>
+<p>A context switch occurs when the CPU changes from one process/thread to another.</p>
+<p>The OS saves the state of the current process and restores the state of the next process.</p>
+<pre class="text"><code>Process A
+   |
+   | Save state
+   v
+Kernel
+   |
+   | Restore state
+   v
+Process B</code></pre>
+<p>Context switching has overhead.</p>
+</section>
+<section id="process-operations" class="level1">
+<h1>31. Process Operations</h1>
+<p>Typical process operations:</p>
+<ul>
+<li>Create</li>
+<li>Execute</li>
+<li>Block</li>
+<li>Wake</li>
+<li>Suspend</li>
+<li>Resume</li>
+<li>Terminate</li>
+</ul>
+</section>
+<section id="interprocess-communication" class="level1">
+<h1>32. Interprocess Communication</h1>
+<p>IPC means <strong>Interprocess Communication</strong>.</p>
+<p>Processes may communicate using:</p>
+<ol type="1">
+<li>Shared memory</li>
+<li>Message passing</li>
+</ol>
+</section>
+<section id="shared-memory" class="level1">
+<h1>33. Shared Memory</h1>
+<p>Processes communicate through a shared memory region.</p>
+<pre class="text"><code>Process A
+    \
+     \ 
+   Shared Memory
+     /
+    /
+Process B</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>Fast after setup</li>
+<li>Suitable for large data exchange</li>
+</ul>
+<p>Challenge:</p>
+<ul>
+<li>Requires synchronization</li>
+</ul>
+</section>
+<section id="message-passing" class="level1">
+<h1>34. Message Passing</h1>
+<p>Processes exchange messages.</p>
+<p>Operations may be:</p>
+<pre class="text"><code>send(message)
+receive(message)</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>Useful for distributed systems</li>
+<li>No shared address space required</li>
+</ul>
+</section>
+<section id="client-server-communication" class="level1">
+<h1>35. Client-Server Communication</h1>
+<p>Client/server systems can use IPC and networking mechanisms.</p>
+<p>Common approaches:</p>
+<ul>
+<li>Sockets</li>
+<li>Remote Procedure Calls</li>
+<li>Pipes in suitable local scenarios</li>
+</ul>
+<pre class="text"><code>Client
+   |
+ Request
+   |
+   v
+Server
+   |
+ Response
+   |
+   v
+Client</code></pre>
+</section>
+<section id="part-d-process-synchronization" class="level1">
+<h1>Part D – Process Synchronization</h1>
+</section>
+<section id="process-synchronization" class="level1">
+<h1>36. Process Synchronization</h1>
+<p>Synchronization coordinates processes or threads accessing shared resources.</p>
+<p>It prevents incorrect results caused by uncontrolled concurrent execution.</p>
+</section>
+<section id="race-condition" class="level1">
+<h1>37. Race Condition</h1>
+<p>A race condition occurs when the result depends on the timing or order of concurrent operations.</p>
+<p>Example:</p>
+<p>Two processes update the same bank balance simultaneously.</p>
+<p>Without proper synchronization:</p>
+<pre class="text"><code>Initial balance = 1000
+
+Process A reads 1000
+Process B reads 1000
+
+A writes 1100
+B writes 900
+
+Final = 900</code></pre>
+<p>The expected result may be 1000, depending on the intended operations.</p>
+</section>
+<section id="critical-section" class="level1">
+<h1>38. Critical Section</h1>
+<p>A critical section is a part of a program where shared data or a shared resource is accessed.</p>
+<p>Requirements for a correct critical-section solution:</p>
+<ol type="1">
+<li>Mutual exclusion</li>
+<li>Progress</li>
+<li>Bounded waiting</li>
+</ol>
+</section>
+<section id="mutual-exclusion" class="level1">
+<h1>39. Mutual Exclusion</h1>
+<p>Only one process can execute its critical section for the same shared resource at a time.</p>
+</section>
+<section id="progress" class="level1">
+<h1>40. Progress</h1>
+<p>If no process is executing in its critical section, processes that want to enter should not be postponed indefinitely.</p>
+</section>
+<section id="bounded-waiting" class="level1">
+<h1>41. Bounded Waiting</h1>
+<p>A process should not wait forever after requesting entry into its critical section.</p>
+</section>
+<section id="petersons-solution" class="level1">
+<h1>42. Peterson’s Solution</h1>
+<p>Peterson’s solution is a classical software solution for mutual exclusion between two processes.</p>
+<p>It uses shared variables conceptually similar to:</p>
+<pre class="text"><code>flag[i]
+turn</code></pre>
+<p>The flag indicates interest in entering the critical section.</p>
+<p>The turn variable helps decide which process should enter.</p>
+<p>Important limitation:</p>
+<ul>
+<li>Classical Peterson’s solution is for two processes and relies on assumptions about memory operations that may not hold directly on modern hardware without appropriate memory-ordering considerations.</li>
+</ul>
+</section>
+<section id="semaphores" class="level1">
+<h1>43. Semaphores</h1>
+<p>A semaphore is a synchronization variable accessed using atomic operations.</p>
+<p>Two classic operations:</p>
+<pre class="text"><code>wait()
+signal()</code></pre>
+<p>They are also commonly called:</p>
+<pre class="text"><code>P()
+V()</code></pre>
+<section id="binary-semaphore" class="level2">
+<h2 class="anchored" data-anchor-id="binary-semaphore">Binary Semaphore</h2>
+<p>Can represent:</p>
+<pre class="text"><code>0 or 1</code></pre>
+<p>It can be used for mutual exclusion.</p>
+</section>
+<section id="counting-semaphore" class="level2">
+<h2 class="anchored" data-anchor-id="counting-semaphore">Counting Semaphore</h2>
+<p>Can represent a non-negative count of available instances of a resource.</p>
+</section>
+</section>
+<section id="synchronization-example" class="level1">
+<h1>44. Synchronization Example</h1>
+<p>Suppose only one process can access a printer at a time.</p>
+<pre class="text"><code>wait(printer)
+
+Use printer
+
+signal(printer)</code></pre>
+</section>
+<section id="part-e-threads" class="level1">
+<h1>Part E – Threads</h1>
+</section>
+<section id="thread" class="level1">
+<h1>45. Thread</h1>
+<p>A thread is a unit of CPU execution within a process.</p>
+<p>Threads of the same process can share:</p>
+<ul>
+<li>Code</li>
+<li>Data</li>
+<li>Files</li>
+<li>Address space</li>
+</ul>
+<p>Each thread normally has its own:</p>
+<ul>
+<li>Program counter</li>
+<li>Registers</li>
+<li>Stack</li>
+</ul>
+</section>
+<section id="process-vs-thread" class="level1">
+<h1>46. Process vs Thread</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Process</th>
+<th>Thread</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Independent execution environment</td>
+<td>Execution unit within a process</td>
+</tr>
+<tr class="even">
+<td>More expensive to create</td>
+<td>Usually cheaper to create</td>
+</tr>
+<tr class="odd">
+<td>Separate address space normally</td>
+<td>Threads share process address space</td>
+</tr>
+<tr class="even">
+<td>IPC can be expensive</td>
+<td>Communication can be easier through shared memory</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="multicore-programming" class="level1">
+<h1>47. Multicore Programming</h1>
+<p>A multicore processor has multiple CPU cores.</p>
+<p>Multithreading can allow work to run in parallel on multiple cores.</p>
+<p>Challenges:</p>
+<ul>
+<li>Identifying parallel tasks</li>
+<li>Synchronization</li>
+<li>Load balancing</li>
+<li>Data dependencies</li>
+<li>Debugging</li>
+</ul>
+</section>
+<section id="multithreading-models" class="level1">
+<h1>48. Multithreading Models</h1>
+<p>Common models:</p>
+<ol type="1">
+<li>Many-to-one</li>
+<li>One-to-one</li>
+<li>Many-to-many</li>
+</ol>
+<section id="many-to-one" class="level2">
+<h2 class="anchored" data-anchor-id="many-to-one">Many-to-One</h2>
+<p>Many user threads map to one kernel thread.</p>
+<pre class="text"><code>T T T T
+ \| |/
+  Kernel Thread</code></pre>
+<p>A blocking system call can block all user threads, and true parallelism on multiple cores is not obtained through that single kernel thread.</p>
+</section>
+<section id="one-to-one" class="level2">
+<h2 class="anchored" data-anchor-id="one-to-one">One-to-One</h2>
+<p>Each user thread maps to one kernel thread.</p>
+<pre class="text"><code>T → K
+T → K
+T → K</code></pre>
+<p>Allows greater parallelism but may have higher overhead.</p>
+</section>
+<section id="many-to-many" class="level2">
+<h2 class="anchored" data-anchor-id="many-to-many">Many-to-Many</h2>
+<p>Many user threads are multiplexed over a set of kernel threads.</p>
+</section>
+</section>
+<section id="thread-libraries" class="level1">
+<h1>49. Thread Libraries</h1>
+<p>Thread libraries provide APIs for creating and managing threads.</p>
+<p>Examples:</p>
+<ul>
+<li>POSIX Pthreads</li>
+<li>Windows threads</li>
+<li>Java threading APIs</li>
+</ul>
+</section>
+<section id="implicit-threading" class="level1">
+<h1>50. Implicit Threading</h1>
+<p>Implicit threading allows compilers, runtime systems, or libraries to manage much of the thread creation and scheduling.</p>
+<p>Examples/concepts:</p>
+<ul>
+<li>Thread pools</li>
+<li>OpenMP</li>
+<li>Grand Central Dispatch</li>
+<li>Task-based parallelism</li>
+</ul>
+</section>
+<section id="threading-issues" class="level1">
+<h1>51. Threading Issues</h1>
+<p>Important issues:</p>
+<ul>
+<li>Thread cancellation</li>
+<li>Signal handling</li>
+<li>Thread pools</li>
+<li>Thread-local storage</li>
+<li>Fork and exec semantics</li>
+<li>Synchronization</li>
+</ul>
+</section>
+<section id="part-f-cpu-scheduling" class="level1">
+<h1>Part F – CPU Scheduling</h1>
+</section>
+<section id="cpu-scheduling" class="level1">
+<h1>52. CPU Scheduling</h1>
+<p>CPU scheduling selects a process/thread from the ready queue for CPU execution.</p>
+<p>Goals can include:</p>
+<ul>
+<li>High CPU utilization</li>
+<li>High throughput</li>
+<li>Low turnaround time</li>
+<li>Low waiting time</li>
+<li>Low response time</li>
+<li>Fairness</li>
+</ul>
+</section>
+<section id="scheduling-criteria" class="level1">
+<h1>53. Scheduling Criteria</h1>
+<section id="cpu-utilization" class="level2">
+<h2 class="anchored" data-anchor-id="cpu-utilization">CPU Utilization</h2>
+<p>Percentage of time the CPU is busy.</p>
+<p>Goal:</p>
+<pre class="text"><code>Maximize</code></pre>
+</section>
+<section id="throughput" class="level2">
+<h2 class="anchored" data-anchor-id="throughput">Throughput</h2>
+<p>Number of processes completed per unit time.</p>
+<p>Goal:</p>
+<pre class="text"><code>Maximize</code></pre>
+</section>
+<section id="turnaround-time" class="level2">
+<h2 class="anchored" data-anchor-id="turnaround-time">Turnaround Time</h2>
+<p>Time from process submission to completion.</p>
+<pre class="text"><code>Turnaround Time =
+Completion Time - Arrival Time</code></pre>
+</section>
+<section id="waiting-time" class="level2">
+<h2 class="anchored" data-anchor-id="waiting-time">Waiting Time</h2>
+<p>Total time spent waiting in the ready queue.</p>
+</section>
+<section id="response-time" class="level2">
+<h2 class="anchored" data-anchor-id="response-time">Response Time</h2>
+<p>Time from request submission until the first response.</p>
+</section>
+</section>
+<section id="preemptive-vs-non-preemptive" class="level1">
+<h1>54. Preemptive vs Non-Preemptive</h1>
+<section id="preemptive" class="level3">
+<h3 class="anchored" data-anchor-id="preemptive">Preemptive</h3>
+<p>The OS can interrupt a running process and assign the CPU to another process.</p>
+</section>
+<section id="non-preemptive" class="level3">
+<h3 class="anchored" data-anchor-id="non-preemptive">Non-Preemptive</h3>
+<p>A running process normally keeps the CPU until it terminates, blocks, or voluntarily gives up the CPU.</p>
+</section>
+</section>
+<section id="first-come-first-served" class="level1">
+<h1>55. First-Come, First-Served</h1>
+<p>FCFS schedules processes according to arrival order.</p>
+<p>Example:</p>
+<pre class="text"><code>P1 → P2 → P3</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>Simple</li>
+<li>Easy to implement</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Can produce large waiting times</li>
+<li>Convoy effect</li>
+</ul>
+</section>
+<section id="shortest-job-first" class="level1">
+<h1>56. Shortest-Job-First</h1>
+<p>SJF selects the process with the smallest CPU burst.</p>
+<p>Advantages:</p>
+<ul>
+<li>Minimum average waiting time under ideal assumptions for non-preemptive scheduling</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>Requires burst-time prediction</li>
+<li>Long processes may starve</li>
+</ul>
+</section>
+<section id="shortest-remaining-time-first" class="level1">
+<h1>57. Shortest-Remaining-Time-First</h1>
+<p>SRTF is the preemptive version associated with shortest-job scheduling.</p>
+<p>The process with the smallest remaining CPU burst is selected.</p>
+</section>
+<section id="priority-scheduling" class="level1">
+<h1>58. Priority Scheduling</h1>
+<p>Each process receives a priority.</p>
+<p>The scheduler selects a process according to priority.</p>
+<p>A problem can be:</p>
+<pre class="text"><code>Starvation</code></pre>
+<p>A common solution is:</p>
+<pre class="text"><code>Aging</code></pre>
+<p>Aging gradually increases the priority of waiting processes.</p>
+</section>
+<section id="round-robin" class="level1">
+<h1>59. Round Robin</h1>
+<p>Round Robin uses a time quantum.</p>
+<p>Example:</p>
+<pre class="text"><code>P1 → P2 → P3 → P1 → P2 → ...</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>Good response for interactive systems</li>
+<li>Fair CPU sharing</li>
+</ul>
+<p>Important parameter:</p>
+<pre class="text"><code>Time quantum</code></pre>
+<p>If the quantum is too small:</p>
+<ul>
+<li>Many context switches</li>
+</ul>
+<p>If it is too large:</p>
+<ul>
+<li>Behavior approaches FCFS</li>
+</ul>
+</section>
+<section id="multilevel-queue" class="level1">
+<h1>60. Multilevel Queue</h1>
+<p>The ready queue is divided into separate queues.</p>
+<p>Example:</p>
+<pre class="text"><code>System processes
+Interactive processes
+Batch processes</code></pre>
+<p>Each queue may use its own scheduling policy.</p>
+</section>
+<section id="multilevel-feedback-queue" class="level1">
+<h1>61. Multilevel Feedback Queue</h1>
+<p>Processes can move between queues based on their behavior and scheduling rules.</p>
+<p>It can provide flexible scheduling but is more complex to configure.</p>
+</section>
+<section id="scheduling-algorithm-comparison" class="level1">
+<h1>62. Scheduling Algorithm Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Preemptive?</th>
+<th>Important point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FCFS</td>
+<td>No</td>
+<td>Arrival order</td>
+</tr>
+<tr class="even">
+<td>SJF</td>
+<td>No</td>
+<td>Shortest burst</td>
+</tr>
+<tr class="odd">
+<td>SRTF</td>
+<td>Yes</td>
+<td>Shortest remaining time</td>
+</tr>
+<tr class="even">
+<td>Priority</td>
+<td>Can be either</td>
+<td>Priority based</td>
+</tr>
+<tr class="odd">
+<td>Round Robin</td>
+<td>Yes</td>
+<td>Time quantum</td>
+</tr>
+<tr class="even">
+<td>Multilevel Queue</td>
+<td>Depends</td>
+<td>Separate fixed queues</td>
+</tr>
+<tr class="odd">
+<td>MLFQ</td>
+<td>Usually preemptive</td>
+<td>Processes can move between queues</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="thread-scheduling" class="level1">
+<h1>63. Thread Scheduling</h1>
+<p>Thread scheduling may be performed at:</p>
+<ul>
+<li>User level</li>
+<li>Kernel level</li>
+</ul>
+<p>Many-to-one systems can schedule user threads within a process while the kernel schedules the process.</p>
+</section>
+<section id="multiple-processor-scheduling" class="level1">
+<h1>64. Multiple-Processor Scheduling</h1>
+<p>In multiprocessor systems, scheduling involves multiple CPUs/cores.</p>
+<p>Important approaches:</p>
+<ul>
+<li>Asymmetric multiprocessing</li>
+<li>Symmetric multiprocessing</li>
+</ul>
+<section id="asymmetric-multiprocessing" class="level3">
+<h3 class="anchored" data-anchor-id="asymmetric-multiprocessing">Asymmetric Multiprocessing</h3>
+<p>One processor may handle scheduling/system activities while others execute assigned work.</p>
+</section>
+<section id="symmetric-multiprocessing" class="level3">
+<h3 class="anchored" data-anchor-id="symmetric-multiprocessing">Symmetric Multiprocessing</h3>
+<p>Each processor can perform scheduling and other OS activities.</p>
+<p>Important issue:</p>
+<pre class="text"><code>Load balancing</code></pre>
+</section>
+</section>
+<section id="real-time-cpu-scheduling" class="level1">
+<h1>65. Real-Time CPU Scheduling</h1>
+<p>Real-time systems have timing requirements.</p>
+<p>Two broad categories:</p>
+<section id="hard-real-time" class="level3">
+<h3 class="anchored" data-anchor-id="hard-real-time">Hard Real-Time</h3>
+<p>Missing a deadline can cause unacceptable failure.</p>
+</section>
+<section id="soft-real-time" class="level3">
+<h3 class="anchored" data-anchor-id="soft-real-time">Soft Real-Time</h3>
+<p>Missing a deadline reduces quality but may not cause total system failure.</p>
+<p>Important algorithms/concepts:</p>
+<ul>
+<li>Rate Monotonic Scheduling</li>
+<li>Earliest Deadline First</li>
+</ul>
+</section>
+<section id="rate-monotonic" class="level2">
+<h2 class="anchored" data-anchor-id="rate-monotonic">Rate Monotonic</h2>
+<p>Static priority based on task period.</p>
+<p>Shorter period:</p>
+<pre class="text"><code>Higher priority</code></pre>
+</section>
+<section id="earliest-deadline-first" class="level2">
+<h2 class="anchored" data-anchor-id="earliest-deadline-first">Earliest Deadline First</h2>
+<p>The task with the earliest deadline gets higher scheduling priority.</p>
+</section>
+</section>
+<section id="part-g-deadlocks" class="level1">
+<h1>Part G – Deadlocks</h1>
+</section>
+<section id="deadlock" class="level1">
+<h1>66. Deadlock</h1>
+<p>A deadlock occurs when a set of processes are permanently waiting for resources held by one another.</p>
+<p>Example:</p>
+<pre class="text"><code>P1 holds R1 → waits for R2
+P2 holds R2 → waits for R1</code></pre>
+</section>
+<section id="four-necessary-conditions" class="level1">
+<h1>67. Four Necessary Conditions</h1>
+<p>Deadlock requires all four conditions:</p>
+<ol type="1">
+<li>Mutual exclusion</li>
+<li>Hold and wait</li>
+<li>No preemption</li>
+<li>Circular wait</li>
+</ol>
+<section id="mutual-exclusion-1" class="level2">
+<h2 class="anchored" data-anchor-id="mutual-exclusion-1">Mutual Exclusion</h2>
+<p>At least one resource is non-shareable.</p>
+</section>
+<section id="hold-and-wait" class="level2">
+<h2 class="anchored" data-anchor-id="hold-and-wait">Hold and Wait</h2>
+<p>A process holds resources while waiting for additional resources.</p>
+</section>
+<section id="no-preemption" class="level2">
+<h2 class="anchored" data-anchor-id="no-preemption">No Preemption</h2>
+<p>Resources cannot be forcibly taken away under the model.</p>
+</section>
+<section id="circular-wait" class="level2">
+<h2 class="anchored" data-anchor-id="circular-wait">Circular Wait</h2>
+<p>A circular chain of waiting processes exists.</p>
+</section>
+</section>
+<section id="resource-allocation-graph" class="level1">
+<h1>68. Resource Allocation Graph</h1>
+<p>A resource allocation graph can represent processes and resources.</p>
+<pre class="text"><code>P1 → R1
+R1 → P2
+P2 → R2
+R2 → P1</code></pre>
+<p>A cycle may indicate deadlock under appropriate assumptions, especially when each resource type has a single instance.</p>
+</section>
+<section id="methods-for-handling-deadlocks" class="level1">
+<h1>69. Methods for Handling Deadlocks</h1>
+<p>Four general approaches:</p>
+<ol type="1">
+<li>Deadlock prevention</li>
+<li>Deadlock avoidance</li>
+<li>Deadlock detection and recovery</li>
+<li>Ignore the problem in some systems when appropriate</li>
+</ol>
+</section>
+<section id="deadlock-prevention" class="level1">
+<h1>70. Deadlock Prevention</h1>
+<p>Prevention ensures at least one necessary condition cannot hold.</p>
+<p>Examples:</p>
+<ul>
+<li>Break hold-and-wait</li>
+<li>Allow preemption where possible</li>
+<li>Impose a total ordering on resources to prevent circular wait</li>
+</ul>
+</section>
+<section id="deadlock-avoidance" class="level1">
+<h1>71. Deadlock Avoidance</h1>
+<p>Avoidance requires information about future resource needs.</p>
+<p>The system checks whether granting a request keeps the system in a safe state.</p>
+</section>
+<section id="bankers-algorithm" class="level1">
+<h1>72. Banker’s Algorithm</h1>
+<p>The Banker’s algorithm is a classical deadlock-avoidance algorithm.</p>
+<p>Important concepts:</p>
+<pre class="text"><code>Available
+Max
+Allocation
+Need</code></pre>
+<p>Formula:</p>
+<pre class="text"><code>Need = Max - Allocation</code></pre>
+<p>A state is safe if there is an order in which every process can obtain its remaining resources and finish.</p>
+</section>
+<section id="deadlock-detection" class="level1">
+<h1>73. Deadlock Detection</h1>
+<p>A system may allow deadlocks and periodically detect them.</p>
+<p>For multiple instances of resources, detection uses data such as:</p>
+<pre class="text"><code>Available
+Allocation
+Request</code></pre>
+</section>
+<section id="deadlock-recovery" class="level1">
+<h1>74. Deadlock Recovery</h1>
+<p>After detecting deadlock, possible actions include:</p>
+<ul>
+<li>Terminating processes</li>
+<li>Preempting resources</li>
+<li>Rolling back selected processes</li>
+</ul>
+</section>
+<section id="part-h-memory-management" class="level1">
+<h1>Part H – Memory Management</h1>
+</section>
+<section id="memory-management" class="level1">
+<h1>75. Memory Management</h1>
+<p>The OS manages allocation and deallocation of main memory.</p>
+<p>Responsibilities:</p>
+<ul>
+<li>Track memory use</li>
+<li>Allocate memory</li>
+<li>Deallocate memory</li>
+<li>Provide address translation</li>
+<li>Protect processes</li>
+</ul>
+</section>
+<section id="contiguous-memory-allocation" class="level1">
+<h1>76. Contiguous Memory Allocation</h1>
+<p>Each process occupies one contiguous block of memory.</p>
+<p>Approaches include:</p>
+<ul>
+<li>Fixed partitioning</li>
+<li>Variable partitioning</li>
+</ul>
+<p>Problems:</p>
+<ul>
+<li>Internal fragmentation</li>
+<li>External fragmentation</li>
+</ul>
+</section>
+<section id="internal-fragmentation" class="level1">
+<h1>77. Internal Fragmentation</h1>
+<p>Allocated memory contains unused space inside the allocated region.</p>
+</section>
+<section id="external-fragmentation" class="level1">
+<h1>78. External Fragmentation</h1>
+<p>Free memory exists, but it is divided into small non-contiguous holes.</p>
+</section>
+<section id="swapping" class="level1">
+<h1>79. Swapping</h1>
+<p>Swapping temporarily moves a process between main memory and secondary storage.</p>
+<pre class="text"><code>Main Memory
+    |
+    | Swap out
+    v
+Disk
+    |
+    | Swap in
+    v
+Main Memory</code></pre>
+</section>
+<section id="paging" class="level1">
+<h1>80. Paging</h1>
+<p>Paging divides:</p>
+<pre class="text"><code>Logical memory → Pages
+Physical memory → Frames</code></pre>
+<p>Pages and frames normally have the same fixed size.</p>
+<p>A page table maps pages to frames.</p>
+<pre class="text"><code>Logical Address
+     |
+     v
+Page Number + Offset
+     |
+     v
+Page Table
+     |
+     v
+Frame Number + Offset
+     |
+     v
+Physical Address</code></pre>
+</section>
+<section id="page-number-and-offset" class="level1">
+<h1>81. Page Number and Offset</h1>
+<p>If page size is:</p>
+<pre class="text"><code>2^n bytes</code></pre>
+<p>then the offset requires:</p>
+<pre class="text"><code>n bits</code></pre>
+<p>The remaining logical-address bits identify the page number.</p>
+</section>
+<section id="translation-lookaside-buffer" class="level1">
+<h1>82. Translation Lookaside Buffer</h1>
+<p>TLB is a fast cache containing recent page-table mappings.</p>
+<pre class="text"><code>CPU
+ |
+ v
+TLB
+ | \
+ |  \ Miss
+ |   \
+Hit   Page Table
+ |       |
+ +-------+
+     |
+Physical Address</code></pre>
+<p>A TLB hit is faster than accessing the page table in memory for the mapping.</p>
+</section>
+<section id="segmentation" class="level1">
+<h1>83. Segmentation</h1>
+<p>Segmentation divides a program into logical segments.</p>
+<p>Examples:</p>
+<ul>
+<li>Code</li>
+<li>Data</li>
+<li>Stack</li>
+<li>Procedures</li>
+</ul>
+<p>A logical address can be represented as:</p>
+<pre class="text"><code>Segment Number + Offset</code></pre>
+</section>
+<section id="paging-vs-segmentation" class="level1">
+<h1>84. Paging vs Segmentation</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Paging</th>
+<th>Segmentation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fixed-size pages</td>
+<td>Variable-size logical segments</td>
+</tr>
+<tr class="even">
+<td>Based on physical-memory frames</td>
+<td>Represents logical program units</td>
+</tr>
+<tr class="odd">
+<td>Reduces external fragmentation</td>
+<td>Can have external fragmentation</td>
+</tr>
+<tr class="even">
+<td>Page table</td>
+<td>Segment table</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="demand-paging" class="level1">
+<h1>85. Demand Paging</h1>
+<p>Demand paging loads a page into memory only when it is needed.</p>
+<p>If the required page is not in memory:</p>
+<pre class="text"><code>Page fault</code></pre>
+</section>
+<section id="page-fault" class="level1">
+<h1>86. Page Fault</h1>
+<p>Basic sequence:</p>
+<pre class="text"><code>CPU references page
+       |
+       v
+Page present?
+   /       \
+ Yes        No
+ |          |
+Continue   Page Fault
+              |
+              v
+        Load page from disk
+              |
+              v
+        Update page table
+              |
+              v
+        Restart instruction</code></pre>
+</section>
+<section id="page-replacement" class="level1">
+<h1>87. Page Replacement</h1>
+<p>When no free frame is available, the OS may replace an existing page.</p>
+<p>Important algorithms:</p>
+<ul>
+<li>FIFO</li>
+<li>Optimal</li>
+<li>LRU</li>
+<li>Second-Chance/Clock</li>
+</ul>
+</section>
+<section id="fifo-page-replacement" class="level1">
+<h1>88. FIFO Page Replacement</h1>
+<p>FIFO replaces the page that entered memory first.</p>
+<p>Advantage:</p>
+<ul>
+<li>Simple</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Can suffer from Belady’s anomaly</li>
+</ul>
+</section>
+<section id="optimal-page-replacement" class="level1">
+<h1>89. Optimal Page Replacement</h1>
+<p>Replaces the page that will not be used for the longest time in the future.</p>
+<p>It gives the minimum possible page faults for a reference string under the standard model.</p>
+<p>Limitation:</p>
+<ul>
+<li>Future references are not known in actual execution</li>
+</ul>
+<p>It is mainly used as a benchmark.</p>
+</section>
+<section id="lru" class="level1">
+<h1>90. LRU</h1>
+<p>LRU means <strong>Least Recently Used</strong>.</p>
+<p>It replaces the page that has not been used for the longest time in the past.</p>
+</section>
+<section id="page-replacement-comparison" class="level1">
+<h1>91. Page Replacement Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Principle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FIFO</td>
+<td>Oldest loaded page</td>
+</tr>
+<tr class="even">
+<td>Optimal</td>
+<td>Farthest future use</td>
+</tr>
+<tr class="odd">
+<td>LRU</td>
+<td>Least recent past use</td>
+</tr>
+<tr class="even">
+<td>Clock</td>
+<td>Approximation of LRU</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="allocation-of-frames" class="level1">
+<h1>92. Allocation of Frames</h1>
+<p>The OS decides how many frames each process receives.</p>
+<p>Approaches:</p>
+<ul>
+<li>Equal allocation</li>
+<li>Proportional allocation</li>
+<li>Priority allocation</li>
+</ul>
+</section>
+<section id="thrashing" class="level1">
+<h1>93. Thrashing</h1>
+<p>Thrashing occurs when a system spends excessive time handling page faults and swapping pages rather than executing useful work.</p>
+<p>Causes:</p>
+<ul>
+<li>Too few frames</li>
+<li>Excessive degree of multiprogramming</li>
+<li>Poor locality relative to available memory</li>
+</ul>
+<p>Symptoms:</p>
+<pre class="text"><code>High paging activity
+Low CPU utilization
+Poor performance</code></pre>
+</section>
+<section id="memory-mapped-files" class="level1">
+<h1>94. Memory-Mapped Files</h1>
+<p>A file is mapped into a process’s virtual address space.</p>
+<p>The process accesses the file through memory-like operations.</p>
+<p>Advantages:</p>
+<ul>
+<li>Convenient file access</li>
+<li>Can improve performance for suitable workloads</li>
+<li>Useful for sharing data between processes in some systems</li>
+</ul>
+</section>
+<section id="part-i-storage-management" class="level1">
+<h1>Part I – Storage Management</h1>
+</section>
+<section id="mass-storage" class="level1">
+<h1>95. Mass Storage</h1>
+<p>Mass storage provides large-capacity persistent storage.</p>
+<p>Examples:</p>
+<ul>
+<li>HDD</li>
+<li>SSD</li>
+<li>Optical storage</li>
+<li>Other persistent storage technologies</li>
+</ul>
+</section>
+<section id="disk-structure" class="level1">
+<h1>96. Disk Structure</h1>
+<p>A traditional magnetic disk contains:</p>
+<ul>
+<li>Platters</li>
+<li>Tracks</li>
+<li>Sectors</li>
+<li>Cylinders</li>
+<li>Read/write heads</li>
+</ul>
+<p>A disk address may be described using these physical concepts, although modern systems commonly use logical block addressing.</p>
+</section>
+<section id="disk-scheduling" class="level1">
+<h1>97. Disk Scheduling</h1>
+<p>Disk scheduling determines the order in which disk requests are serviced.</p>
+<p>Important algorithms:</p>
+<ul>
+<li>FCFS</li>
+<li>SSTF</li>
+<li>SCAN</li>
+<li>C-SCAN</li>
+<li>LOOK</li>
+<li>C-LOOK</li>
+</ul>
+</section>
+<section id="fcfs-disk-scheduling" class="level1">
+<h1>98. FCFS Disk Scheduling</h1>
+<p>Services requests in arrival order.</p>
+<p>Advantage:</p>
+<ul>
+<li>Simple</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>May result in large head movement</li>
+</ul>
+</section>
+<section id="sstf" class="level1">
+<h1>99. SSTF</h1>
+<p>SSTF means <strong>Shortest Seek Time First</strong>.</p>
+<p>The request closest to the current head position is selected.</p>
+<p>Advantage:</p>
+<ul>
+<li>Can reduce average seek distance</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Possible starvation of far-away requests</li>
+</ul>
+</section>
+<section id="scan" class="level1">
+<h1>100. SCAN</h1>
+<p>SCAN moves the disk head in one direction, servicing requests, then reverses direction.</p>
+<p>It is often called the <strong>elevator algorithm</strong>.</p>
+</section>
+<section id="c-scan" class="level1">
+<h1>101. C-SCAN</h1>
+<p>C-SCAN services requests in one direction.</p>
+<p>After reaching one end, the head returns to the beginning without servicing requests on the return path.</p>
+</section>
+<section id="look-and-c-look" class="level1">
+<h1>102. LOOK and C-LOOK</h1>
+<p>LOOK stops at the last pending request in a direction rather than moving all the way to the physical end.</p>
+<p>C-LOOK is the circular version.</p>
+</section>
+<section id="disk-scheduling-comparison" class="level1">
+<h1>103. Disk Scheduling Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Main idea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FCFS</td>
+<td>Arrival order</td>
+</tr>
+<tr class="even">
+<td>SSTF</td>
+<td>Nearest request</td>
+</tr>
+<tr class="odd">
+<td>SCAN</td>
+<td>Elevator movement</td>
+</tr>
+<tr class="even">
+<td>C-SCAN</td>
+<td>Circular scan</td>
+</tr>
+<tr class="odd">
+<td>LOOK</td>
+<td>SCAN without going to physical end</td>
+</tr>
+<tr class="even">
+<td>C-LOOK</td>
+<td>Circular LOOK</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="raid" class="level1">
+<h1>104. RAID</h1>
+<p>RAID means <strong>Redundant Array of Independent Disks</strong>.</p>
+<p>It combines multiple disks to improve:</p>
+<ul>
+<li>Reliability</li>
+<li>Performance</li>
+<li>Capacity utilization</li>
+</ul>
+</section>
+<section id="raid-levels" class="level1">
+<h1>105. RAID Levels</h1>
+<section id="raid-0" class="level2">
+<h2 class="anchored" data-anchor-id="raid-0">RAID 0</h2>
+<p>Striping without redundancy.</p>
+<pre class="text"><code>Data → Disk 1 + Disk 2 + Disk 3</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>High performance</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>No fault tolerance</li>
+</ul>
+</section>
+<section id="raid-1" class="level2">
+<h2 class="anchored" data-anchor-id="raid-1">RAID 1</h2>
+<p>Mirroring.</p>
+<pre class="text"><code>Disk 1 = Data
+Disk 2 = Copy</code></pre>
+<p>Advantage:</p>
+<ul>
+<li>High redundancy</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Uses additional storage</li>
+</ul>
+</section>
+<section id="raid-5" class="level2">
+<h2 class="anchored" data-anchor-id="raid-5">RAID 5</h2>
+<p>Striping with distributed parity.</p>
+<p>Can tolerate failure of one disk in the standard RAID 5 configuration.</p>
+</section>
+<section id="raid-6" class="level2">
+<h2 class="anchored" data-anchor-id="raid-6">RAID 6</h2>
+<p>Striping with double distributed parity.</p>
+<p>Can tolerate failure of two disks in the standard configuration.</p>
+</section>
+</section>
+<section id="part-j-file-and-io-systems" class="level1">
+<h1>Part J – File and I/O Systems</h1>
+</section>
+<section id="file" class="level1">
+<h1>106. File</h1>
+<p>A file is a named collection of related information stored on secondary storage.</p>
+<p>File attributes may include:</p>
+<ul>
+<li>Name</li>
+<li>Type</li>
+<li>Size</li>
+<li>Location</li>
+<li>Protection</li>
+<li>Creation time</li>
+<li>Modification time</li>
+</ul>
+</section>
+<section id="file-access-methods" class="level1">
+<h1>107. File Access Methods</h1>
+<p>Common methods:</p>
+<ol type="1">
+<li>Sequential access</li>
+<li>Direct/random access</li>
+<li>Indexed access</li>
+</ol>
+<section id="sequential-access" class="level2">
+<h2 class="anchored" data-anchor-id="sequential-access">Sequential Access</h2>
+<p>Records are processed in order.</p>
+</section>
+<section id="direct-access" class="level2">
+<h2 class="anchored" data-anchor-id="direct-access">Direct Access</h2>
+<p>The program can access a particular location directly.</p>
+</section>
+<section id="indexed-access" class="level2">
+<h2 class="anchored" data-anchor-id="indexed-access">Indexed Access</h2>
+<p>An index helps locate records efficiently.</p>
+</section>
+</section>
+<section id="directory-structure" class="level1">
+<h1>108. Directory Structure</h1>
+<p>Common directory structures:</p>
+<ul>
+<li>Single-level</li>
+<li>Two-level</li>
+<li>Tree-structured</li>
+<li>Acyclic graph</li>
+<li>General graph</li>
+</ul>
+<section id="single-level-directory" class="level2">
+<h2 class="anchored" data-anchor-id="single-level-directory">Single-Level Directory</h2>
+<p>All files are in one directory.</p>
+</section>
+<section id="two-level-directory" class="level2">
+<h2 class="anchored" data-anchor-id="two-level-directory">Two-Level Directory</h2>
+<p>Each user has a separate directory.</p>
+</section>
+<section id="tree-structure" class="level2">
+<h2 class="anchored" data-anchor-id="tree-structure">Tree Structure</h2>
+<p>Directories can contain subdirectories.</p>
+<pre class="text"><code>Root
+ |
+ +-- User
+ |    +-- Documents
+ |    +-- Pictures
+ |
+ +-- System</code></pre>
+</section>
+</section>
+<section id="file-system-mounting" class="level1">
+<h1>109. File-System Mounting</h1>
+<p>Mounting makes a file system available at a directory or mount point.</p>
+<p>Conceptually:</p>
+<pre class="text"><code>Storage Device
+      |
+      v
+   File System
+      |
+      v
+    Mount
+      |
+      v
+Directory Tree</code></pre>
+</section>
+<section id="file-sharing" class="level1">
+<h1>110. File Sharing</h1>
+<p>File systems can support sharing between users and processes.</p>
+<p>Mechanisms include:</p>
+<ul>
+<li>Access permissions</li>
+<li>ACLs</li>
+<li>File locks</li>
+<li>Network file sharing</li>
+</ul>
+</section>
+<section id="file-system-structure" class="level1">
+<h1>111. File-System Structure</h1>
+<p>A file system manages:</p>
+<ul>
+<li>Files</li>
+<li>Directories</li>
+<li>Metadata</li>
+<li>Free space</li>
+<li>Allocation</li>
+<li>Protection</li>
+</ul>
+<p>Typical conceptual layers:</p>
+<pre class="text"><code>Application
+     ↓
+Logical File System
+     ↓
+File-Organization Module
+     ↓
+Basic File System
+     ↓
+I/O Control
+     ↓
+Device Drivers
+     ↓
+Hardware</code></pre>
+</section>
+<section id="directory-implementation" class="level1">
+<h1>112. Directory Implementation</h1>
+<p>Directory information can be implemented using:</p>
+<ul>
+<li>Linear lists</li>
+<li>Hash tables</li>
+<li>Tree structures in some systems</li>
+</ul>
+<p>Hashing can improve lookup performance.</p>
+</section>
+<section id="file-allocation-methods" class="level1">
+<h1>113. File Allocation Methods</h1>
+<p>Common allocation methods:</p>
+<ol type="1">
+<li>Contiguous allocation</li>
+<li>Linked allocation</li>
+<li>Indexed allocation</li>
+</ol>
+<section id="contiguous-allocation" class="level2">
+<h2 class="anchored" data-anchor-id="contiguous-allocation">Contiguous Allocation</h2>
+<p>File blocks are stored consecutively.</p>
+<p>Advantages:</p>
+<ul>
+<li>Fast sequential access</li>
+<li>Fast direct access</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>External fragmentation</li>
+<li>Difficult file growth</li>
+</ul>
+</section>
+<section id="linked-allocation" class="level2">
+<h2 class="anchored" data-anchor-id="linked-allocation">Linked Allocation</h2>
+<p>Each file block points to the next block.</p>
+<p>Advantage:</p>
+<ul>
+<li>No external fragmentation caused by requiring contiguous blocks</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Poor direct access</li>
+<li>Pointer overhead</li>
+</ul>
+</section>
+<section id="indexed-allocation" class="level2">
+<h2 class="anchored" data-anchor-id="indexed-allocation">Indexed Allocation</h2>
+<p>An index block stores pointers to file blocks.</p>
+<p>Advantage:</p>
+<ul>
+<li>Supports direct access</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>Index block overhead</li>
+</ul>
+</section>
+</section>
+<section id="free-space-management" class="level1">
+<h1>114. Free-Space Management</h1>
+<p>The file system tracks unused blocks.</p>
+<p>Methods:</p>
+<ul>
+<li>Bitmaps/bit vectors</li>
+<li>Linked lists</li>
+<li>Grouping</li>
+<li>Counting</li>
+</ul>
+<section id="bitmap" class="level2">
+<h2 class="anchored" data-anchor-id="bitmap">Bitmap</h2>
+<p>One bit represents whether a block is free or allocated.</p>
+<p>Example:</p>
+<pre class="text"><code>0 1 1 0 0 1</code></pre>
+<p>The exact meaning of 0/1 depends on the implementation.</p>
+</section>
+</section>
+<section id="file-system-efficiency-and-performance" class="level1">
+<h1>115. File-System Efficiency and Performance</h1>
+<p>Important considerations:</p>
+<ul>
+<li>Caching</li>
+<li>Buffering</li>
+<li>Read-ahead</li>
+<li>Disk scheduling</li>
+<li>Block size</li>
+<li>Allocation method</li>
+<li>Free-space management</li>
+</ul>
+</section>
+<section id="file-system-recovery" class="level1">
+<h1>116. File-System Recovery</h1>
+<p>Recovery techniques can include:</p>
+<ul>
+<li>Journaling</li>
+<li>Consistency checking</li>
+<li>Backup</li>
+<li>Checkpoints</li>
+<li>Replication</li>
+</ul>
+</section>
+<section id="io-hardware" class="level1">
+<h1>117. I/O Hardware</h1>
+<p>I/O hardware includes:</p>
+<ul>
+<li>Keyboard</li>
+<li>Mouse</li>
+<li>Disk</li>
+<li>Network card</li>
+<li>Display</li>
+<li>Printer</li>
+</ul>
+<p>Important hardware concepts:</p>
+<ul>
+<li>Device controller</li>
+<li>Device registers</li>
+<li>Interrupts</li>
+<li>DMA</li>
+</ul>
+</section>
+<section id="application-io-interface" class="level1">
+<h1>118. Application I/O Interface</h1>
+<p>Applications interact with I/O devices through OS abstractions.</p>
+<p>Examples:</p>
+<pre class="text"><code>open()
+read()
+write()
+close()</code></pre>
+</section>
+<section id="kernel-io-subsystem" class="level1">
+<h1>119. Kernel I/O Subsystem</h1>
+<p>The kernel I/O subsystem manages:</p>
+<ul>
+<li>Device drivers</li>
+<li>Buffering</li>
+<li>Caching</li>
+<li>Spooling</li>
+<li>Error handling</li>
+<li>Device-independent interfaces</li>
+</ul>
+</section>
+<section id="interrupt-driven-io" class="level1">
+<h1>120. Interrupt-Driven I/O</h1>
+<p>A device can interrupt the CPU when it requires attention or has completed an operation.</p>
+<pre class="text"><code>CPU starts I/O
+      |
+      v
+CPU does other work
+      |
+      v
+Device completes
+      |
+      v
+Interrupt
+      |
+      v
+OS handles event</code></pre>
+</section>
+<section id="dma" class="level1">
+<h1>121. DMA</h1>
+<p>DMA means <strong>Direct Memory Access</strong>.</p>
+<p>A DMA controller can transfer data between an I/O device and memory with limited CPU involvement.</p>
+<pre class="text"><code>I/O Device
+    |
+    v
+DMA Controller
+    |
+    v
+Main Memory</code></pre>
+<p>Advantages:</p>
+<ul>
+<li>Efficient large data transfers</li>
+<li>Reduces CPU involvement</li>
+</ul>
+</section>
+<section id="transforming-io-requests-to-hardware-operations" class="level1">
+<h1>122. Transforming I/O Requests to Hardware Operations</h1>
+<p>Simplified process:</p>
+<pre class="text"><code>Application
+    |
+    v
+System Call
+    |
+    v
+Kernel I/O Subsystem
+    |
+    v
+Device Driver
+    |
+    v
+Device Controller
+    |
+    v
+Hardware</code></pre>
+</section>
+<section id="part-k-security-and-protection" class="level1">
+<h1>Part K – Security and Protection</h1>
+</section>
+<section id="protection" class="level1">
+<h1>123. Protection</h1>
+<p>Protection controls how processes and users access system resources.</p>
+<p>Security is broader and includes protection against external and internal threats.</p>
+</section>
+<section id="access-matrix" class="level1">
+<h1>124. Access Matrix</h1>
+<p>An access matrix represents which subjects can perform which operations on objects.</p>
+<pre class="text"><code>             File A     File B     Printer
+User A       Read       Read       Use
+User B       Read/Write -         -</code></pre>
+<p>Rows represent subjects.</p>
+<p>Columns represent objects.</p>
+<p>Cells contain access rights.</p>
+</section>
+<section id="access-rights" class="level1">
+<h1>125. Access Rights</h1>
+<p>Common rights:</p>
+<pre class="text"><code>Read
+Write
+Execute
+Delete
+Create
+Append</code></pre>
+</section>
+<section id="access-control" class="level1">
+<h1>126. Access Control</h1>
+<p>Access control determines who can access what and which operations are allowed.</p>
+<p>Common approaches:</p>
+<ul>
+<li>Access Control Lists</li>
+<li>Capability lists</li>
+<li>Role-based access control</li>
+</ul>
+</section>
+<section id="revocation-of-access-rights" class="level1">
+<h1>127. Revocation of Access Rights</h1>
+<p>Revocation removes previously granted permissions.</p>
+<p>Important questions:</p>
+<ul>
+<li>Immediate or delayed?</li>
+<li>Selective or general?</li>
+<li>Temporary or permanent?</li>
+</ul>
+</section>
+<section id="program-threats" class="level1">
+<h1>128. Program Threats</h1>
+<p>Examples:</p>
+<ul>
+<li>Trojan horse</li>
+<li>Trap door/backdoor</li>
+<li>Logic bomb</li>
+<li>Virus</li>
+<li>Worm</li>
+<li>Buffer overflow</li>
+<li>Code injection</li>
+</ul>
+</section>
+<section id="system-and-network-threats" class="level1">
+<h1>129. System and Network Threats</h1>
+<p>Examples:</p>
+<ul>
+<li>Denial of Service</li>
+<li>Distributed Denial of Service</li>
+<li>Spoofing</li>
+<li>Sniffing</li>
+<li>Phishing</li>
+<li>Man-in-the-middle attacks</li>
+<li>Port scanning</li>
+</ul>
+</section>
+<section id="cryptography" class="level1">
+<h1>130. Cryptography</h1>
+<p>Cryptography protects information using mathematical techniques.</p>
+<p>Basic goals:</p>
+<pre class="text"><code>Confidentiality
+Integrity
+Authentication
+Non-repudiation</code></pre>
+<section id="symmetric-cryptography" class="level2">
+<h2 class="anchored" data-anchor-id="symmetric-cryptography">Symmetric Cryptography</h2>
+<p>The same secret key is used for encryption and decryption.</p>
+<pre class="text"><code>Plaintext
+   |
+Secret Key
+   |
+Encryption
+   |
+Ciphertext
+   |
+Secret Key
+   |
+Decryption
+   |
+Plaintext</code></pre>
+<p>Example:</p>
+<ul>
+<li>AES</li>
+</ul>
+</section>
+<section id="asymmetric-cryptography" class="level2">
+<h2 class="anchored" data-anchor-id="asymmetric-cryptography">Asymmetric Cryptography</h2>
+<p>Uses a key pair:</p>
+<pre class="text"><code>Public key
+Private key</code></pre>
+<p>Examples:</p>
+<ul>
+<li>RSA</li>
+<li>ECC</li>
+</ul>
+</section>
+</section>
+<section id="hashing" class="level1">
+<h1>131. Hashing</h1>
+<p>A cryptographic hash function produces a fixed-size digest from input data.</p>
+<p>Properties commonly desired:</p>
+<ul>
+<li>One-way resistance</li>
+<li>Collision resistance</li>
+<li>Efficient computation</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>SHA-256</li>
+<li>SHA-3</li>
+</ul>
+</section>
+<section id="user-authentication" class="level1">
+<h1>132. User Authentication</h1>
+<p>Authentication verifies identity.</p>
+<p>Methods:</p>
+<ol type="1">
+<li>Something you know</li>
+<li>Something you have</li>
+<li>Something you are</li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li>Password</li>
+<li>Security token</li>
+<li>Fingerprint</li>
+</ul>
+<p>Multi-factor authentication combines multiple categories.</p>
+</section>
+<section id="security-defenses" class="level1">
+<h1>133. Security Defenses</h1>
+<p>Important defenses:</p>
+<ul>
+<li>Strong authentication</li>
+<li>Least privilege</li>
+<li>Firewalls</li>
+<li>Antivirus/endpoint protection</li>
+<li>Secure configuration</li>
+<li>Patching</li>
+<li>Encryption</li>
+<li>Backups</li>
+<li>Monitoring</li>
+<li>Intrusion detection</li>
+<li>Network segmentation</li>
+</ul>
+</section>
+<section id="part-l-virtual-machines" class="level1">
+<h1>Part L – Virtual Machines</h1>
+</section>
+<section id="virtual-machine" class="level1">
+<h1>134. Virtual Machine</h1>
+<p>A virtual machine provides an abstraction of a computer system.</p>
+<p>It can run an operating system or applications in an isolated virtual environment.</p>
+</section>
+<section id="system-virtual-machine" class="level1">
+<h1>135. System Virtual Machine</h1>
+<p>Provides a complete virtual hardware environment.</p>
+<p>Example:</p>
+<pre class="text"><code>Physical Hardware
+      |
+      v
+Hypervisor
+      |
+ +----+----+
+ |         |
+ VM1      VM2
+ |         |
+OS        OS</code></pre>
+</section>
+<section id="process-virtual-machine" class="level1">
+<h1>136. Process Virtual Machine</h1>
+<p>Provides a runtime environment for a single program.</p>
+<p>Example:</p>
+<pre class="text"><code>Java Virtual Machine</code></pre>
+</section>
+<section id="hypervisor" class="level1">
+<h1>137. Hypervisor</h1>
+<p>A hypervisor manages virtual machines.</p>
+<p>Two broad categories:</p>
+<section id="type-1" class="level3">
+<h3 class="anchored" data-anchor-id="type-1">Type 1</h3>
+<p>Runs directly on hardware.</p>
+<pre class="text"><code>Hardware
+   |
+Hypervisor
+   |
+VMs</code></pre>
+</section>
+<section id="type-2" class="level3">
+<h3 class="anchored" data-anchor-id="type-2">Type 2</h3>
+<p>Runs on top of a host operating system.</p>
+<pre class="text"><code>Hardware
+   |
+Host OS
+   |
+Hypervisor
+   |
+VMs</code></pre>
+</section>
+</section>
+<section id="virtualization" class="level1">
+<h1>138. Virtualization</h1>
+<p>Virtualization abstracts physical resources into virtual resources.</p>
+<p>Resources can include:</p>
+<ul>
+<li>CPU</li>
+<li>Memory</li>
+<li>Storage</li>
+<li>Network</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Isolation</li>
+<li>Server consolidation</li>
+<li>Flexible resource allocation</li>
+<li>Testing environments</li>
+<li>Scalability</li>
+</ul>
+</section>
+<section id="part-m-linux-operating-system" class="level1">
+<h1>Part M – Linux Operating System</h1>
+</section>
+<section id="linux" class="level1">
+<h1>139. Linux</h1>
+<p>Linux is an open-source Unix-like operating-system kernel. Linux distributions combine the kernel with system software and applications.</p>
+<p>Examples of distributions:</p>
+<ul>
+<li>Ubuntu</li>
+<li>Fedora</li>
+<li>Debian</li>
+<li>Arch Linux</li>
+</ul>
+</section>
+<section id="linux-design-principles" class="level1">
+<h1>140. Linux Design Principles</h1>
+<p>Important concepts associated with Unix/Linux design:</p>
+<ul>
+<li>Modularity</li>
+<li>Multiuser operation</li>
+<li>Multitasking</li>
+<li>Portability</li>
+<li>Strong command-line tools</li>
+<li>Hierarchical file system</li>
+<li>Process-oriented design</li>
+</ul>
+</section>
+<section id="linux-kernel-modules" class="level1">
+<h1>141. Linux Kernel Modules</h1>
+<p>Kernel modules are components that can be loaded into and removed from the kernel as needed.</p>
+<p>They can provide:</p>
+<ul>
+<li>Device drivers</li>
+<li>File systems</li>
+<li>Other kernel functionality</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Modularity</li>
+<li>Extensibility</li>
+<li>Reduced need to rebuild the entire kernel for every component</li>
+</ul>
+</section>
+<section id="linux-process-management" class="level1">
+<h1>142. Linux Process Management</h1>
+<p>Linux represents processes using kernel data structures.</p>
+<p>Common commands:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb73"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="ex">top</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="bu">kill</span></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="fu">nice</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="ex">renice</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Process creation and execution concepts include:</p>
+<pre class="text"><code>fork()
+exec()
+wait()</code></pre>
+</section>
+<section id="linux-scheduling" class="level1">
+<h1>143. Linux Scheduling</h1>
+<p>Linux uses sophisticated scheduling mechanisms.</p>
+<p>Modern Linux scheduling includes scheduling classes and policies appropriate for different workloads.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Scheduling priorities</li>
+<li>Time sharing</li>
+<li>Fairness</li>
+<li>Real-time scheduling</li>
+</ul>
+</section>
+<section id="linux-memory-management" class="level1">
+<h1>144. Linux Memory Management</h1>
+<p>Linux memory management includes:</p>
+<ul>
+<li>Virtual memory</li>
+<li>Paging</li>
+<li>Page cache</li>
+<li>Memory allocation</li>
+<li>Memory protection</li>
+<li>Swapping where configured</li>
+</ul>
+</section>
+<section id="linux-file-systems" class="level1">
+<h1>145. Linux File Systems</h1>
+<p>Linux provides a hierarchical file system.</p>
+<p>Important directories often include:</p>
+<pre class="text"><code>/
+├── bin
+├── boot
+├── dev
+├── etc
+├── home
+├── lib
+├── proc
+├── root
+├── tmp
+├── usr
+└── var</code></pre>
+<p>The exact contents vary by distribution and configuration.</p>
+</section>
+<section id="linux-io" class="level1">
+<h1>146. Linux I/O</h1>
+<p>Linux provides device abstraction and device drivers.</p>
+<p>Devices are commonly represented through entries under:</p>
+<pre class="text"><code>/dev</code></pre>
+<p>Important mechanisms:</p>
+<ul>
+<li>Device drivers</li>
+<li>Interrupts</li>
+<li>DMA</li>
+<li>Buffering</li>
+<li>Caching</li>
+</ul>
+</section>
+<section id="linux-ipc" class="level1">
+<h1>147. Linux IPC</h1>
+<p>Linux supports IPC mechanisms such as:</p>
+<ul>
+<li>Pipes</li>
+<li>Named pipes</li>
+<li>Signals</li>
+<li>Shared memory</li>
+<li>Message queues</li>
+<li>Semaphores</li>
+<li>Sockets</li>
+</ul>
+</section>
+<section id="linux-network-structure" class="level1">
+<h1>148. Linux Network Structure</h1>
+<p>Linux provides networking through the kernel networking stack.</p>
+<p>Important concepts:</p>
+<ul>
+<li>Network interfaces</li>
+<li>TCP/IP</li>
+<li>Sockets</li>
+<li>Routing</li>
+<li>Firewalls</li>
+</ul>
+</section>
+<section id="part-n-windows-operating-systems" class="level1">
+<h1>Part N – Windows Operating Systems</h1>
+</section>
+<section id="windows-design-principles" class="level1">
+<h1>149. Windows Design Principles</h1>
+<p>Windows is a family of operating systems based on a modular architecture.</p>
+<p>Important concepts include:</p>
+<ul>
+<li>Protected execution</li>
+<li>Multitasking</li>
+<li>Virtual memory</li>
+<li>Security</li>
+<li>Plug-and-play support</li>
+<li>Networking</li>
+</ul>
+</section>
+<section id="windows-system-components" class="level1">
+<h1>150. Windows System Components</h1>
+<p>Major concepts include:</p>
+<ul>
+<li>User applications</li>
+<li>System services</li>
+<li>Windows subsystem</li>
+<li>Executive services</li>
+<li>Kernel</li>
+<li>Hardware abstraction layer</li>
+<li>Device drivers</li>
+</ul>
+<p>A simplified model:</p>
+<pre class="text"><code>Applications
+     |
+System Services / APIs
+     |
+Windows Executive
+     |
+Kernel
+     |
+Hardware Abstraction / Drivers
+     |
+Hardware</code></pre>
+</section>
+<section id="terminal-services" class="level1">
+<h1>151. Terminal Services</h1>
+<p>Terminal Services is the historical Windows terminology associated with remote desktop/session services.</p>
+<p>It allows users to access applications or desktops remotely.</p>
+<p>Modern Windows terminology commonly refers to related technology as <strong>Remote Desktop Services</strong>.</p>
+</section>
+<section id="fast-user-switching" class="level1">
+<h1>152. Fast User Switching</h1>
+<p>Fast User Switching allows one user to leave a session active while another user logs in.</p>
+<pre class="text"><code>User A session → remains active
+       |
+       v
+Switch user
+       |
+       v
+User B session</code></pre>
+</section>
+<section id="windows-file-system" class="level1">
+<h1>153. Windows File System</h1>
+<p>Common Windows file systems include:</p>
+<ul>
+<li>NTFS</li>
+<li>FAT32</li>
+<li>exFAT</li>
+</ul>
+<p>NTFS provides features such as:</p>
+<ul>
+<li>File permissions</li>
+<li>Journaling</li>
+<li>Large-volume support</li>
+<li>Metadata management</li>
+</ul>
+</section>
+<section id="windows-networking" class="level1">
+<h1>154. Windows Networking</h1>
+<p>Windows supports:</p>
+<ul>
+<li>TCP/IP</li>
+<li>DNS</li>
+<li>DHCP</li>
+<li>SMB</li>
+<li>Network authentication</li>
+<li>Remote access</li>
+</ul>
+</section>
+<section id="part-o-distributed-systems" class="level1">
+<h1>Part O – Distributed Systems</h1>
+</section>
+<section id="distributed-operating-system" class="level1">
+<h1>155. Distributed Operating System</h1>
+<p>A distributed operating system manages resources and computation across multiple networked computers.</p>
+<pre class="text"><code>Node A ---- Node B
+   |          |
+   |          |
+Node C ---- Node D</code></pre>
+<p>The system attempts to provide coordinated services across the nodes.</p>
+</section>
+<section id="network-based-operating-systems" class="level1">
+<h1>156. Network-Based Operating Systems</h1>
+<p>A network operating system allows computers to communicate and share resources over a network.</p>
+<p>Examples of services:</p>
+<ul>
+<li>File sharing</li>
+<li>Printer sharing</li>
+<li>User authentication</li>
+<li>Remote access</li>
+</ul>
+<p>A distributed operating system attempts to provide stronger integration of distributed resources.</p>
+</section>
+<section id="network-structure" class="level1">
+<h1>157. Network Structure</h1>
+<p>A distributed system contains:</p>
+<ul>
+<li>Nodes</li>
+<li>Network links</li>
+<li>Communication protocols</li>
+<li>Distributed services</li>
+</ul>
+<p>Important network structures:</p>
+<ul>
+<li>Client/server</li>
+<li>Peer-to-peer</li>
+<li>Multi-tier</li>
+<li>Clustered systems</li>
+</ul>
+</section>
+<section id="communication-structure" class="level1">
+<h1>158. Communication Structure</h1>
+<p>Processes in distributed systems communicate using:</p>
+<ul>
+<li>Message passing</li>
+<li>Sockets</li>
+<li>RPC</li>
+<li>Remote method mechanisms</li>
+<li>Middleware</li>
+</ul>
+</section>
+<section id="communication-protocols" class="level1">
+<h1>159. Communication Protocols</h1>
+<p>Protocols define rules for communication.</p>
+<p>Important examples:</p>
+<pre class="text"><code>TCP
+UDP
+IP
+HTTP
+DNS
+FTP
+SMTP</code></pre>
+<p>At different layers, different protocols perform different functions.</p>
+</section>
+<section id="robustness" class="level1">
+<h1>160. Robustness</h1>
+<p>A distributed system should continue operating despite some failures.</p>
+<p>Techniques:</p>
+<ul>
+<li>Replication</li>
+<li>Redundancy</li>
+<li>Failure detection</li>
+<li>Recovery</li>
+<li>Checkpointing</li>
+<li>Fault tolerance</li>
+</ul>
+</section>
+<section id="design-issues-in-distributed-systems" class="level1">
+<h1>161. Design Issues in Distributed Systems</h1>
+<p>Important issues:</p>
+<ul>
+<li>Scalability</li>
+<li>Transparency</li>
+<li>Fault tolerance</li>
+<li>Security</li>
+<li>Synchronization</li>
+<li>Naming</li>
+<li>Communication</li>
+<li>Consistency</li>
+<li>Load balancing</li>
+<li>Heterogeneity</li>
+</ul>
+</section>
+<section id="distributed-file-systems" class="level1">
+<h1>162. Distributed File Systems</h1>
+<p>A distributed file system allows files to be stored and accessed across networked machines.</p>
+<p>Goals:</p>
+<ul>
+<li>Location transparency</li>
+<li>Availability</li>
+<li>Fault tolerance</li>
+<li>Scalability</li>
+<li>Efficient access</li>
+</ul>
+<p>Examples/concepts:</p>
+<ul>
+<li>NFS</li>
+<li>SMB</li>
+<li>HDFS</li>
+<li>Distributed object/file storage systems</li>
+</ul>
+</section>
+<section id="centralized-vs-distributed-systems" class="level1">
+<h1>163. Centralized vs Distributed Systems</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Centralized</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Main processing/storage at central location</td>
+<td>Resources distributed across nodes</td>
+</tr>
+<tr class="even">
+<td>Easier centralized control</td>
+<td>More complex coordination</td>
+</tr>
+<tr class="odd">
+<td>Central failure can be critical</td>
+<td>Can provide fault tolerance through redundancy</td>
+</tr>
+<tr class="even">
+<td>Limited scalability depending on design</td>
+<td>Can scale across nodes</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="important-operating-system-comparison" class="level1">
+<h1>164. Important Operating System Comparison</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Compiler</td>
+<td>Translates program toward target code</td>
+</tr>
+<tr class="even">
+<td>Interpreter</td>
+<td>Executes through interpretation</td>
+</tr>
+<tr class="odd">
+<td>Linker</td>
+<td>Combines object files/libraries</td>
+</tr>
+<tr class="even">
+<td>Loader</td>
+<td>Loads executable into memory</td>
+</tr>
+<tr class="odd">
+<td>Process</td>
+<td>Program in execution</td>
+</tr>
+<tr class="even">
+<td>PCB</td>
+<td>Process information</td>
+</tr>
+<tr class="odd">
+<td>Thread</td>
+<td>Unit of execution within process</td>
+</tr>
+<tr class="even">
+<td>IPC</td>
+<td>Process communication</td>
+</tr>
+<tr class="odd">
+<td>Semaphore</td>
+<td>Synchronization mechanism</td>
+</tr>
+<tr class="even">
+<td>Critical section</td>
+<td>Shared-resource code section</td>
+</tr>
+<tr class="odd">
+<td>FCFS</td>
+<td>Arrival order</td>
+</tr>
+<tr class="even">
+<td>SJF</td>
+<td>Shortest CPU burst</td>
+</tr>
+<tr class="odd">
+<td>SRTF</td>
+<td>Shortest remaining burst</td>
+</tr>
+<tr class="even">
+<td>Round Robin</td>
+<td>Time quantum</td>
+</tr>
+<tr class="odd">
+<td>Deadlock</td>
+<td>Permanent waiting cycle</td>
+</tr>
+<tr class="even">
+<td>Paging</td>
+<td>Pages and frames</td>
+</tr>
+<tr class="odd">
+<td>Segmentation</td>
+<td>Logical variable-size segments</td>
+</tr>
+<tr class="even">
+<td>TLB</td>
+<td>Fast address-translation cache</td>
+</tr>
+<tr class="odd">
+<td>Thrashing</td>
+<td>Excessive paging</td>
+</tr>
+<tr class="even">
+<td>RAID</td>
+<td>Disk redundancy/performance</td>
+</tr>
+<tr class="odd">
+<td>DMA</td>
+<td>Direct memory access</td>
+</tr>
+<tr class="even">
+<td>Access matrix</td>
+<td>Subjects × objects × rights</td>
+</tr>
+<tr class="odd">
+<td>VM</td>
+<td>Virtualized computer environment</td>
+</tr>
+<tr class="even">
+<td>HDFS</td>
+<td>Distributed file system</td>
+</tr>
+<tr class="odd">
+<td>Distributed OS</td>
+<td>Coordinates distributed resources</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="important-cpu-scheduling-formulas" class="level1">
+<h1>165. Important CPU Scheduling Formulas</h1>
+<section id="turnaround-time-1" class="level2">
+<h2 class="anchored" data-anchor-id="turnaround-time-1">Turnaround Time</h2>
+<pre class="text"><code>Turnaround Time =
+Completion Time - Arrival Time</code></pre>
+</section>
+<section id="waiting-time-1" class="level2">
+<h2 class="anchored" data-anchor-id="waiting-time-1">Waiting Time</h2>
+<p>For a process:</p>
+<pre class="text"><code>Waiting Time =
+Turnaround Time - CPU Burst Time</code></pre>
+</section>
+<section id="response-time-1" class="level2">
+<h2 class="anchored" data-anchor-id="response-time-1">Response Time</h2>
+<pre class="text"><code>Response Time =
+First CPU Start Time - Arrival Time</code></pre>
+</section>
+</section>
+<section id="important-paging-formula" class="level1">
+<h1>166. Important Paging Formula</h1>
+<p>If:</p>
+<pre class="text"><code>Logical address size = m bits
+Page size = 2^n bytes</code></pre>
+<p>then:</p>
+<pre class="text"><code>Offset bits = n
+Page-number bits = m - n</code></pre>
+<p>Number of pages:</p>
+<pre class="text"><code>2^(page-number bits)</code></pre>
+</section>
+<section id="important-deadlock-formula" class="level1">
+<h1>167. Important Deadlock Formula</h1>
+<p>For Banker’s algorithm:</p>
+<pre class="text"><code>Need = Max - Allocation</code></pre>
+<p>A safe sequence exists when processes can be completed while respecting available resources.</p>
+</section>
+<section id="important-raid-revision" class="level1">
+<h1>168. Important RAID Revision</h1>
+<pre class="text"><code>RAID 0 → Striping, no redundancy
+RAID 1 → Mirroring
+RAID 5 → Distributed parity, one-disk fault tolerance
+RAID 6 → Double distributed parity, two-disk fault tolerance</code></pre>
+</section>
+<section id="important-linux-revision" class="level1">
+<h1>169. Important Linux Revision</h1>
+<pre class="text"><code>Linux
+ |
+ +-- Kernel
+ +-- Processes
+ +-- Virtual Memory
+ +-- File Systems
+ +-- Device Drivers
+ +-- IPC
+ +-- Networking
+ +-- Kernel Modules</code></pre>
+</section>
+<section id="important-windows-revision" class="level1">
+<h1>170. Important Windows Revision</h1>
+<pre class="text"><code>Windows
+ |
+ +-- Applications
+ +-- System Services
+ +-- Executive
+ +-- Kernel
+ +-- Drivers
+ +-- File Systems
+ +-- Networking</code></pre>
+</section>
+<section id="important-distributed-system-revision" class="level1">
+<h1>171. Important Distributed-System Revision</h1>
+<pre class="text"><code>Distributed System
+       |
+       +-- Nodes
+       +-- Communication
+       +-- Synchronization
+       +-- Fault tolerance
+       +-- Security
+       +-- Scalability
+       +-- Distributed files</code></pre>
+</section>
+<section id="ugc-net-high-priority-areas" class="level1">
+<h1>172. UGC NET High-Priority Areas</h1>
+<p>Focus strongly on:</p>
+<section id="system-software-1" class="level2">
+<h2 class="anchored" data-anchor-id="system-software-1">System Software</h2>
+<ul>
+<li>Machine language</li>
+<li>Assembly language</li>
+<li>High-level languages</li>
+<li>Compiler</li>
+<li>Interpreter</li>
+<li>Linker</li>
+<li>Loader</li>
+<li>Relocation</li>
+<li>Macro processor</li>
+<li>Debugger</li>
+</ul>
+</section>
+<section id="operating-system-basics" class="level2">
+<h2 class="anchored" data-anchor-id="operating-system-basics">Operating-System Basics</h2>
+<ul>
+<li>OS services</li>
+<li>System calls</li>
+<li>OS structures</li>
+<li>Kernel</li>
+<li>Booting</li>
+</ul>
+</section>
+<section id="processes" class="level2">
+<h2 class="anchored" data-anchor-id="processes">Processes</h2>
+<ul>
+<li>Process states</li>
+<li>PCB</li>
+<li>Context switching</li>
+<li>IPC</li>
+<li>Shared memory</li>
+<li>Message passing</li>
+</ul>
+</section>
+<section id="synchronization" class="level2">
+<h2 class="anchored" data-anchor-id="synchronization">Synchronization</h2>
+<ul>
+<li>Critical-section problem</li>
+<li>Mutual exclusion</li>
+<li>Progress</li>
+<li>Bounded waiting</li>
+<li>Peterson’s solution</li>
+<li>Semaphores</li>
+</ul>
+</section>
+<section id="threads" class="level2">
+<h2 class="anchored" data-anchor-id="threads">Threads</h2>
+<ul>
+<li>Multithreading</li>
+<li>Many-to-one</li>
+<li>One-to-one</li>
+<li>Many-to-many</li>
+<li>Thread libraries</li>
+<li>Thread pools</li>
+</ul>
+</section>
+<section id="cpu-scheduling-1" class="level2">
+<h2 class="anchored" data-anchor-id="cpu-scheduling-1">CPU Scheduling</h2>
+<ul>
+<li>FCFS</li>
+<li>SJF</li>
+<li>SRTF</li>
+<li>Priority</li>
+<li>Round Robin</li>
+<li>Multilevel Queue</li>
+<li>MLFQ</li>
+<li>Multiprocessor scheduling</li>
+<li>Real-time scheduling</li>
+</ul>
+</section>
+<section id="deadlocks" class="level2">
+<h2 class="anchored" data-anchor-id="deadlocks">Deadlocks</h2>
+<ul>
+<li>Four necessary conditions</li>
+<li>Resource allocation graph</li>
+<li>Prevention</li>
+<li>Avoidance</li>
+<li>Banker’s algorithm</li>
+<li>Detection</li>
+<li>Recovery</li>
+</ul>
+</section>
+<section id="memory" class="level2">
+<h2 class="anchored" data-anchor-id="memory">Memory</h2>
+<ul>
+<li>Contiguous allocation</li>
+<li>Fragmentation</li>
+<li>Swapping</li>
+<li>Paging</li>
+<li>Segmentation</li>
+<li>TLB</li>
+<li>Demand paging</li>
+<li>Page replacement</li>
+<li>Frame allocation</li>
+<li>Thrashing</li>
+</ul>
+</section>
+<section id="storage" class="level2">
+<h2 class="anchored" data-anchor-id="storage">Storage</h2>
+<ul>
+<li>Disk scheduling</li>
+<li>FCFS</li>
+<li>SSTF</li>
+<li>SCAN</li>
+<li>C-SCAN</li>
+<li>LOOK</li>
+<li>C-LOOK</li>
+<li>RAID</li>
+</ul>
+</section>
+<section id="file-systems" class="level2">
+<h2 class="anchored" data-anchor-id="file-systems">File Systems</h2>
+<ul>
+<li>File access</li>
+<li>Directory structures</li>
+<li>Mounting</li>
+<li>File allocation</li>
+<li>Free-space management</li>
+<li>I/O</li>
+<li>DMA</li>
+<li>Interrupts</li>
+</ul>
+</section>
+<section id="security" class="level2">
+<h2 class="anchored" data-anchor-id="security">Security</h2>
+<ul>
+<li>Protection</li>
+<li>Access matrix</li>
+<li>ACL</li>
+<li>Threats</li>
+<li>Authentication</li>
+<li>Cryptography</li>
+<li>Security defenses</li>
+</ul>
+</section>
+<section id="virtual-machines" class="level2">
+<h2 class="anchored" data-anchor-id="virtual-machines">Virtual Machines</h2>
+<ul>
+<li>System VM</li>
+<li>Process VM</li>
+<li>Type 1 hypervisor</li>
+<li>Type 2 hypervisor</li>
+<li>Virtualization</li>
+</ul>
+</section>
+<section id="linux-1" class="level2">
+<h2 class="anchored" data-anchor-id="linux-1">Linux</h2>
+<ul>
+<li>Kernel modules</li>
+<li>Processes</li>
+<li>Scheduling</li>
+<li>Memory</li>
+<li>File systems</li>
+<li>I/O</li>
+<li>IPC</li>
+<li>Networking</li>
+</ul>
+</section>
+<section id="windows" class="level2">
+<h2 class="anchored" data-anchor-id="windows">Windows</h2>
+<ul>
+<li>Architecture</li>
+<li>System components</li>
+<li>Terminal/remote services</li>
+<li>Fast User Switching</li>
+<li>File systems</li>
+<li>Networking</li>
+</ul>
+</section>
+<section id="distributed-systems" class="level2">
+<h2 class="anchored" data-anchor-id="distributed-systems">Distributed Systems</h2>
+<ul>
+<li>Network OS</li>
+<li>Communication</li>
+<li>Protocols</li>
+<li>Fault tolerance</li>
+<li>Distributed file systems</li>
+<li>Design issues</li>
+</ul>
+</section>
+</section>
+<section id="common-mistakes" class="level1">
+<h1>173. Common Mistakes</h1>
+<section id="process-vs-program" class="level3">
+<h3 class="anchored" data-anchor-id="process-vs-program">Process vs Program</h3>
+<pre class="text"><code>Program  → Passive instructions
+Process  → Program in execution</code></pre>
+</section>
+<section id="process-vs-thread-1" class="level3">
+<h3 class="anchored" data-anchor-id="process-vs-thread-1">Process vs Thread</h3>
+<pre class="text"><code>Process → Independent execution environment
+Thread  → Execution unit within a process</code></pre>
+</section>
+<section id="paging-vs-segmentation-1" class="level3">
+<h3 class="anchored" data-anchor-id="paging-vs-segmentation-1">Paging vs Segmentation</h3>
+<pre class="text"><code>Paging      → Fixed-size pages
+Segmentation → Logical variable-size segments</code></pre>
+</section>
+<section id="internal-vs-external-fragmentation" class="level3">
+<h3 class="anchored" data-anchor-id="internal-vs-external-fragmentation">Internal vs External Fragmentation</h3>
+<pre class="text"><code>Internal → Wasted space inside allocated block
+External → Free space scattered outside allocated blocks</code></pre>
+</section>
+<section id="compiler-vs-interpreter-1" class="level3">
+<h3 class="anchored" data-anchor-id="compiler-vs-interpreter-1">Compiler vs Interpreter</h3>
+<pre class="text"><code>Compiler    → Translation toward target code
+Interpreter → Execution through interpretation</code></pre>
+</section>
+<section id="linker-vs-loader" class="level3">
+<h3 class="anchored" data-anchor-id="linker-vs-loader">Linker vs Loader</h3>
+<pre class="text"><code>Linker → Combines object files/libraries
+Loader → Loads executable into memory</code></pre>
+</section>
+<section id="deadlock-prevention-vs-avoidance" class="level3">
+<h3 class="anchored" data-anchor-id="deadlock-prevention-vs-avoidance">Deadlock Prevention vs Avoidance</h3>
+<pre class="text"><code>Prevention → Break a necessary condition
+Avoidance  → Grant requests only if state remains safe</code></pre>
+</section>
+<section id="starvation-vs-deadlock" class="level3">
+<h3 class="anchored" data-anchor-id="starvation-vs-deadlock">Starvation vs Deadlock</h3>
+<pre class="text"><code>Starvation → Process waits indefinitely because others keep getting service
+Deadlock   → Processes wait for one another in a cycle</code></pre>
+</section>
+<section id="semaphore-vs-mutex" class="level3">
+<h3 class="anchored" data-anchor-id="semaphore-vs-mutex">Semaphore vs Mutex</h3>
+<p>A mutex is generally used as a mutual-exclusion lock associated with ownership semantics in many systems.</p>
+<p>A semaphore is a synchronization/counting mechanism and may represent multiple resource instances.</p>
+</section>
+<section id="fcfs-vs-round-robin" class="level3">
+<h3 class="anchored" data-anchor-id="fcfs-vs-round-robin">FCFS vs Round Robin</h3>
+<pre class="text"><code>FCFS → Arrival order
+RR   → Time quantum</code></pre>
+</section>
+</section>
+<section id="one-minute-revision" class="level1">
+<h1>174. One-Minute Revision</h1>
+<pre class="text"><code>System Software
+      ↓
+Compiler / Interpreter
+      ↓
+Linker / Loader
+      ↓
+Operating System
+      ↓
+Processes
+      ↓
+Threads
+      ↓
+CPU Scheduling
+      ↓
+Synchronization
+      ↓
+Deadlocks
+      ↓
+Memory Management
+      ↓
+Storage Management
+      ↓
+File Systems
+      ↓
+I/O
+      ↓
+Security
+      ↓
+Virtual Machines
+      ↓
+Linux / Windows
+      ↓
+Distributed Systems</code></pre>
+</section>
+<section id="must-remember" class="level1">
+<h1>175. Must Remember</h1>
+<pre class="text"><code>Compiler       → Translation
+Interpreter    → Interpretation
+Linker         → Linking
+Loader         → Loading
+PCB            → Process information
+IPC            → Process communication
+Semaphore      → Synchronization
+Peterson       → Two-process mutual exclusion
+FCFS           → Arrival order
+SJF            → Shortest burst
+SRTF           → Shortest remaining time
+RR             → Time quantum
+Banker's       → Deadlock avoidance
+Paging         → Pages + frames
+Segmentation   → Logical segments
+TLB            → Fast address translation
+FIFO           → Oldest page
+LRU            → Least recently used
+Thrashing      → Excessive paging
+RAID 0         → Striping
+RAID 1         → Mirroring
+RAID 5         → Distributed parity
+DMA            → Direct memory access
+Access Matrix  → Subjects + Objects + Rights
+VM             → Virtual machine
+HDFS           → Distributed file system</code></pre>
+</section>
+<section id="final-exam-strategy" class="level1">
+<h1>176. Final Exam Strategy</h1>
+<p>Study Unit V in this order:</p>
+<ol type="1">
+<li>System software</li>
+<li>OS basics and system calls</li>
+<li>Processes and PCB</li>
+<li>IPC</li>
+<li>Critical sections and synchronization</li>
+<li>Threads</li>
+<li>CPU scheduling</li>
+<li>Deadlocks</li>
+<li>Memory management</li>
+<li>Page replacement</li>
+<li>Disk scheduling</li>
+<li>File systems</li>
+<li>I/O</li>
+<li>Security</li>
+<li>Virtual machines</li>
+<li>Linux</li>
+<li>Windows</li>
+<li>Distributed systems</li>
+</ol>
+<p>For numerical questions, practice:</p>
+<ul>
+<li>FCFS scheduling</li>
+<li>SJF scheduling</li>
+<li>SRTF scheduling</li>
+<li>Priority scheduling</li>
+<li>Round Robin</li>
+<li>Waiting/turnaround/response time</li>
+<li>Banker’s algorithm</li>
+<li>Page replacement</li>
+<li>Paging address calculations</li>
+<li>Disk scheduling</li>
+<li>RAID concepts</li>
+</ul>
+<p>For theory questions, repeatedly revise:</p>
+<ul>
+<li>System calls</li>
+<li>Process states</li>
+<li>PCB</li>
+<li>IPC</li>
+<li>Peterson’s solution</li>
+<li>Semaphores</li>
+<li>Thread models</li>
+<li>Deadlock conditions</li>
+<li>Deadlock avoidance</li>
+<li>Paging vs segmentation</li>
+<li>TLB</li>
+<li>Thrashing</li>
+<li>File allocation</li>
+<li>Disk scheduling</li>
+<li>RAID</li>
+<li>DMA</li>
+<li>Access matrix</li>
+<li>Cryptography</li>
+<li>Virtualization</li>
+<li>Linux architecture</li>
+<li>Windows components</li>
+<li>Distributed systems</li>
+</ul>
+</section>
+<section id="final-summary" class="level1">
+<h1>177. Final Summary</h1>
+<p>Unit V covers the complete relationship between software, the operating system, hardware resources, and distributed computing.</p>
+<p>The major progression is:</p>
+<pre class="text"><code>System Software
+      ↓
+Operating System
+      ↓
+Process Management
+      ↓
+Threads
+      ↓
+CPU Scheduling
+      ↓
+Synchronization
+      ↓
+Deadlocks
+      ↓
+Memory Management
+      ↓
+Storage Management
+      ↓
+File Systems and I/O
+      ↓
+Security
+      ↓
+Virtual Machines
+      ↓
+Linux
+      ↓
+Windows
+      ↓
+Distributed Systems</code></pre>
+<p>The highest-priority UGC NET topics are:</p>
+<pre class="text"><code>System Calls
+Process States
+PCB
+IPC
+Critical Section
+Peterson's Solution
+Semaphores
+Thread Models
+CPU Scheduling
+Deadlocks
+Banker's Algorithm
+Paging
+Page Replacement
+TLB
+Thrashing
+Disk Scheduling
+RAID
+File Allocation
+DMA
+Access Matrix
+Cryptography
+Virtualization
+Linux
+Windows
+Distributed Systems</code></pre>
+<p>The best way to prepare this unit is to combine <strong>conceptual understanding with numerical practice</strong>, especially for CPU scheduling, deadlocks, page replacement, paging, and disk scheduling.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
